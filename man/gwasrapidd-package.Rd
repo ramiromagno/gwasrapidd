@@ -27,7 +27,7 @@ Other contributors:
 \itemize{
   \item Ana-Teresa Maia \email{maia.anateresa@gmail.com} (0000-0002-0454-9207) [thesis advisor]
   \item University of Algarve [copyright holder]
-  \item Fundação para a Ciência e Tecnologia [funder]
+  \item Fundação para a Ciência e Tecnologia [copyright holder, funder]
 }
 
 }
