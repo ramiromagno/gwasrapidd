@@ -1,4 +1,4 @@
-# gwasrapidd <img src="man/figures/logo.png" align="right" height=140/>
+# gwasrapidd <img src="man/figures/logo.svg" align="right" height=140/>
 
 [![Travis build status](https://travis-ci.org/ramiromagno/gwasrapidd.svg?branch=master)](https://travis-ci.org/ramiromagno/gwasrapidd)
 
