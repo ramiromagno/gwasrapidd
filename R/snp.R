@@ -281,14 +281,14 @@ snp_content_to_tibble <- function(snp_content) {
   snp$`_links` <- NULL
 
   snp_df <- tibble::as_tibble(snp)
-  if(identical(class(locations), "data.frame"))
+  if("data.frame" %in% class(locations))
     location_df <- filter_genomic_location_by_chr_name(locations)
   else { # expecting a list of data frames
     location_df <- purrr::map_dfr(locations, filter_genomic_location_by_chr_name)
   }
 
   #genomic_contexts_df <- tibble::tibble(genomicContexts = list(drop_links(genomicContexts)))
-  if(identical(class(genomicContexts), "data.frame"))
+  if("data.frame" %in% class(genomicContexts))
     genomic_contexts_df <- tibble::tibble(genomicContexts = list(drop_links(genomicContexts)))
   else { # expecting a list of data frames
     genomic_contexts_df <- tibble::tibble(genomicContexts = purrr::map(genomicContexts, drop_links))
@@ -474,11 +474,38 @@ is_rs_id <- function(str, convert_NA_to_FALSE = FALSE) {
 #' @return TODO.
 #'
 #' @examples
-#'
+#' get_snps(c("rs6431996", "rs7546498", "rs123"))
 #'
 #' @export
-# get_snps <- function(snp_ids) {
-#
-#
-#
-# }
+get_snps <- function(snp_ids, verbose = FALSE, warnings = TRUE, remove_duplicated_snps = FALSE) {
+
+  valid_rs_ids <- is_rs_id(snp_ids)
+  if(!all(valid_rs_ids))
+    stop("The following are not valid SNP IDs: ",
+         concatenate::cc_and(quote(unique(snp_ids[!valid_rs_ids])), oxford = TRUE), ".")
+
+  endpoint <- "/singleNucleotidePolymorphisms"
+
+  # Prepend the endpoint to assemble the resource URLs
+  resource_urls <- sprintf("%s/%s", endpoint, snp_ids)
+
+  # Request all SNPs by ID
+  responses <- purrr::map(resource_urls, request, verbose = verbose, warnings = warnings)
+  is_valid_response <-
+    purrr::map_lgl(responses, is_response_successful) & !purrr::map_lgl(responses, is_content_empty)
+
+  snps <- purrr::map_dfr(
+    .x = responses[is_valid_response],
+    .f = function(x) { snp_content_to_tibble(x$content) })
+
+  if(identical(nrow(snps), 0L) && warnings)
+    warning("No snps found within the queried genomic ranges.")
+
+  # If remove_duplicated_snps = TRUE, we remove those duplicated entries (rows).
+  if(remove_duplicated_snps) {
+    rsId <- NULL # To appease R CMD check (not happy with this.)
+    snps <- dplyr::distinct(snps, rsId, .keep_all = TRUE)
+  }
+
+  return(snps)
+}
