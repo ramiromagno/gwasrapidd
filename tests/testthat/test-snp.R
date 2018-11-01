@@ -141,3 +141,27 @@ test_that("Test filter_genomic_location_by_chr_name.", {
     filter_genomic_location_by_chr_name(tbl_input),
     tbl_output)
 })
+
+#
+## is_rs_id
+#
+
+test_that("Test is_rs_id errors.", {
+  expect_error(is_rs_id(1), "str argument must be a character vector.")
+  expect_error(
+    is_rs_id(character(0)),
+    "str contains no values, it must contain at least one string."
+  )
+})
+
+test_that("Test is_rs_id", {
+  expect_equal(is_rs_id(c("rs0001")), TRUE)
+  expect_equal(is_rs_id(c("rs123", "rs0001", "rs09123")), c(TRUE, TRUE, TRUE))
+  expect_equal(is_rs_id(c("rs123", "rs0001", NA_character_)), c(TRUE, TRUE, NA))
+  expect_equal(is_rs_id(c("rs1", "rs")), c(TRUE, FALSE))
+  expect_equal(is_rs_id(" rs123"), FALSE)
+  expect_equal(is_rs_id("rs 12312"), FALSE)
+  expect_equal(is_rs_id(
+    c("rs123", "rs0001", NA_character_),
+    convert_NA_to_FALSE = TRUE), c(TRUE, TRUE, FALSE))
+})

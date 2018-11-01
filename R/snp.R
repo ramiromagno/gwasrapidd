@@ -410,6 +410,58 @@ snps_by_location <- function(chr, start, end,
     return(snps)
 }
 
+#' Is a string a valid rsID?
+#'
+#' Find which strings are valid SNP reference IDs, i.e., of the form rs[0-9]+.
+#' Please note that this only does a syntax validation on the strings. It does
+#' not check whether the actual IDs exist in dbSNP.
+#'
+#' @param str A character vector of putative SNP reference IDs of the form
+#'   rs[0-9]+.
+#' @param convert_NA_to_FALSE Whether to preserve \code{NA}
+#'   (\code{convert_NA_to_FALSE = FALSE}) or whether to return \code{FALSE} when
+#'   an \code{NA} is found (\code{convert_NA_to_FALSE = TRUE}).
+#' @return Returns a logical vector of the same length as \code{str},
+#'   \code{TRUE} for strings that are valid rs IDs, and \code{FALSE} otherwise.
+#' @examples
+#' # Check if strings are rsIDs
+#' is_rs_id(c("rs123")) # TRUE
+#'
+#' # Test a vector of rsIDs
+#' is_rs_id(
+#'   c("rs123", "rs0001", "rs09123")) # TRUE TRUE TRUE
+#'
+#' # By default NAs are returned as they are.
+#' is_rs_id(
+#'   c("rs123", "rs0001", NA_character_)) # TRUE TRUE NA
+#'
+#' # Use the argument convert_NA_to_FALSE = TRUE to get FALSE instead of NA.
+#' is_rs_id(
+#'   c("rs123", "rs0001", NA_character_),
+#'   convert_NA_to_FALSE = TRUE) # TRUE TRUE FALSE
+#'
+#' @export
+is_rs_id <- function(str, convert_NA_to_FALSE = FALSE) {
+
+  if(!is.character(str))
+    stop("str argument must be a character vector.")
+
+  if(identical(length(str), 0L))
+    stop("str contains no values, it must contain at least one string.")
+
+  # Replace NA with "".
+  if(convert_NA_to_FALSE) {
+    str2 <- str
+    str2[is.na(str)] <- ""
+  } else {
+    str2 <- str
+  }
+
+  is_rs_id <- stringr::str_detect(str2, "^rs\\d+$")
+
+  return(is_rs_id)
+}
+
 #' Get SNPs by rsId.
 #'
 #' Retrieve SNPs by Id.
