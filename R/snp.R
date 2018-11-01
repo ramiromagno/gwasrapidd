@@ -365,8 +365,12 @@ snp_content_to_tibble <- function(snp_content) {
 #'   }
 #'}
 #'
+#' @examples
+#' \donttest{get_snps_by_location("X", 1L, 20000L)
+#' get_snps_by_location("6", 1L, 250000L)}
+#'
 #' @export
-snps_by_location <- function(chr, start, end,
+get_snps_by_location <- function(chr, start, end,
                              verbose = FALSE,
                              warnings = FALSE,
                              drop_links = TRUE,
@@ -469,15 +473,45 @@ is_rs_id <- function(str, convert_NA_to_FALSE = FALSE) {
 #' @param snp_ids SNP Ids, starting with "rs".
 #' @param verbose Whether to be chatty or not.
 #' @param warnings Whether to print warnings or not.
-#' @param collapse Whether to bind all queries into one single dataframe.
+#' @param remove_duplicated_snps Whether to remove duplicated SNPs.
 #'
-#' @return TODO.
-#'
+#' @return A \code{\link[tibble]{tibble}} where rows are SNPs and columns are
+#'   the following variables:
+#'   \itemize{
+#'   \item \code{rsId}, the SNP Id;
+#'   \item \code{merged}, whether this SNP has been merged with another SNP in a newer genome build;
+#'   \item \code{chromosomeName}, the name of the chromosome where the SNP is located;
+#'   \item \code{chromosomePosition}, the genomic position along the chromosome (1-based indexing);
+#'   \item \code{region.name}, the genomic location of this SNP according to the
+#'   \href{https://en.wikipedia.org/wiki/Locus_(genetics)}{cytogenetic banding
+#'   nomenclature}; \item \code{functionalClass}, the SNP’s functional class;
+#'   \item \code{lastUpdateDate}, the last date this SNP’s mapping information
+#'   was updated;
+#'   \item \code{genomicContexts}, the genomic contexts for this
+#'   SNP, including upstream, downstream and mapped genes. This is a
+#'   \code{\link[tibble]{tibble}} of genomic contexts for each SNP, containing the columns:
+#'   \itemize{
+#'   \item \code{isIntergenic} TODO.
+#'   \item \code{isUpstream} TODO.
+#'   \item \code{isDownstream} TODO.
+#'   \item \code{distance} TODO.
+#'   \item \code{source} TODO.
+#'   \item \code{mappingMethod} TODO.
+#'   \item \code{isClosestGene} TODO.
+#'   \item \code{gene.geneName} TODO.
+#'   \item \code{gene.entrezGeneIds} TODO.
+#'   \item \code{gene.ensemblGeneIds} TODO.
+#'   \item \code{location.chromosomeName} TODO.
+#'   \item \code{location.chromosomePosition} TODO.
+#'   \item \code{location.region.name} TODO.
+#'   \item \code{location._links.snps.href} TODO.
+#'   }
+#' }
 #' @examples
-#' get_snps(c("rs6431996", "rs7546498", "rs123"))
+#' \donttest{get_snps_by_id(c("rs6431996", "rs7546498", "rs123"))}
 #'
 #' @export
-get_snps <- function(snp_ids, verbose = FALSE, warnings = TRUE, remove_duplicated_snps = FALSE) {
+get_snps_by_id <- function(snp_ids, verbose = FALSE, warnings = TRUE, remove_duplicated_snps = FALSE) {
 
   valid_rs_ids <- is_rs_id(snp_ids)
   if(!all(valid_rs_ids))

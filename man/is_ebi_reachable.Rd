@@ -18,7 +18,8 @@ change this parameter.}
 \item{chatty}{Whether to be verbose (\code{TRUE}) or not (\code{FALSE}).}
 }
 \value{
-A logical value: \code{TRUE} if EBI server is reachable, \code{FALSE} otherwise.
+A logical value: \code{TRUE} if EBI server is reachable, \code{FALSE}
+  otherwise.
 }
 \description{
 Check if the EBI server where the GWAS Catalog REST API server is running is
@@ -28,8 +29,7 @@ reachable. This function attempts to connect to
 description of the connection attempt.
 }
 \examples{
-is_ebi_reachable()
-
-is_ebi_reachable(chatty = TRUE)
+\donttest{is_ebi_reachable()
+is_ebi_reachable(chatty = TRUE)}
 
 }

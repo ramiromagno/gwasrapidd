@@ -13,12 +13,12 @@
 #'   change this parameter.
 #' @param chatty Whether to be verbose (\code{TRUE}) or not (\code{FALSE}).
 #'
-#' @return A logical value: \code{TRUE} if EBI server is reachable, \code{FALSE} otherwise.
+#' @return A logical value: \code{TRUE} if EBI server is reachable, \code{FALSE}
+#'   otherwise.
 #'
 #' @examples
-#' is_ebi_reachable()
-#'
-#' is_ebi_reachable(chatty = TRUE)
+#' \donttest{is_ebi_reachable()
+#' is_ebi_reachable(chatty = TRUE)}
 #'
 #' @export
 is_ebi_reachable <-
