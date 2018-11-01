@@ -38,3 +38,4 @@ is_links(
   convert_NA_to_FALSE = TRUE) # TRUE FALSE FALSE TRUE FALSE
 
 }
+\keyword{internal}

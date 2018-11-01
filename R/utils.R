@@ -28,7 +28,7 @@ quote <- function(str) sprintf("\"%s\"", str)
 #'   c("_links", "links", "A_links", "_linksB", NA_character_),
 #'   convert_NA_to_FALSE = TRUE) # TRUE FALSE FALSE TRUE FALSE
 #'
-#' @export
+#' @keywords internal
 is_links <- function(str, convert_NA_to_FALSE = FALSE) {
   if (!is.character(str))
     stop("str argument must be a character vector.")
