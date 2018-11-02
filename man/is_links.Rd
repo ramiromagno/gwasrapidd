@@ -21,7 +21,7 @@ Find which strings match the the following regular expression:
 \code{^_links.*$}.
 }
 \examples{
-# Is "_links"?
+\donttest{# Is "_links"?
 is_links("_links") # TRUE
 
 # Test a bunch of strings:
@@ -36,6 +36,6 @@ is_links(
 is_links(
   c("_links", "links", "A_links", "_linksB", NA_character_),
   convert_NA_to_FALSE = TRUE) # TRUE FALSE FALSE TRUE FALSE
-
+}
 }
 \keyword{internal}

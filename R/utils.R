@@ -12,7 +12,7 @@ quote <- function(str) sprintf("\"%s\"", str)
 #'   an \code{NA} is found (\code{convert_NA_to_FALSE = TRUE}).
 #' @return A logical vector.
 #' @examples
-#' # Is "_links"?
+#' \donttest{# Is "_links"?
 #' is_links("_links") # TRUE
 #'
 #' # Test a bunch of strings:
@@ -27,7 +27,7 @@ quote <- function(str) sprintf("\"%s\"", str)
 #' is_links(
 #'   c("_links", "links", "A_links", "_linksB", NA_character_),
 #'   convert_NA_to_FALSE = TRUE) # TRUE FALSE FALSE TRUE FALSE
-#'
+#' }
 #' @keywords internal
 is_links <- function(str, convert_NA_to_FALSE = FALSE) {
   if (!is.character(str))
