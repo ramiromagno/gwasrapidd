@@ -2,13 +2,13 @@
 % Please edit documentation in R/snp.R
 \name{get_snps_by_id}
 \alias{get_snps_by_id}
-\title{Get SNPs by rsId.}
+\title{Get SNPs by rsID.}
 \usage{
 get_snps_by_id(snp_ids, verbose = FALSE, warnings = TRUE,
   remove_duplicated_snps = FALSE)
 }
 \arguments{
-\item{snp_ids}{SNP Ids, starting with "rs".}
+\item{snp_ids}{SNP IDs, starting with "rs".}
 
 \item{verbose}{Whether to be chatty or not.}
 
@@ -20,14 +20,14 @@ get_snps_by_id(snp_ids, verbose = FALSE, warnings = TRUE,
 A \code{\link[tibble]{tibble}} where rows are SNPs and columns are
   the following variables:
   \itemize{
-  \item \code{rsId}, the SNP Id;
+  \item \code{rsId}, Reference SNP cluster ID (rsID);
   \item \code{merged}, whether this SNP has been merged with another SNP in a newer genome build;
   \item \code{chromosomeName}, the name of the chromosome where the SNP is located;
   \item \code{chromosomePosition}, the genomic position along the chromosome (1-based indexing);
   \item \code{region.name}, the genomic location of this SNP according to the
   \href{https://en.wikipedia.org/wiki/Locus_(genetics)}{cytogenetic banding
-  nomenclature}; \item \code{functionalClass}, the SNP’s functional class;
-  \item \code{lastUpdateDate}, the last date this SNP’s mapping information
+  nomenclature}; \item \code{functionalClass}, the functional class of the SNP;
+  \item \code{lastUpdateDate}, the last date this mapping information
   was updated;
   \item \code{genomicContexts}, the genomic contexts for this
   SNP, including upstream, downstream and mapped genes. This is a
@@ -51,7 +51,7 @@ A \code{\link[tibble]{tibble}} where rows are SNPs and columns are
 }
 }
 \description{
-Retrieve SNPs by Id.
+Retrieve SNPs by Reference SNP cluster ID (rsID).
 }
 \examples{
 \donttest{get_snps_by_id(c("rs6431996", "rs7546498", "rs123"))}

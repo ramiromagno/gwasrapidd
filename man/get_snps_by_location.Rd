@@ -33,7 +33,7 @@ A \code{\link[tibble]{tibble}} where rows are SNPs and columns are:
   \itemize{
   \item \code{query_grange}, the query genomic range (if
   \code{query_grange == TRUE});
-  \item \code{rsId}, the SNP Id;
+  \item \code{rsId}, the Reference SNP cluster ID;
   \item \code{merged}, Whether this SNP has been merged with another SNP in a
   newer genome build;
   \item \code{chromosomeName}, the name of the chromosome where the SNP is
@@ -42,8 +42,8 @@ A \code{\link[tibble]{tibble}} where rows are SNPs and columns are:
   along the chromosome (1-based indexing); \item \code{region.name}, the
   genomic location of this SNP according to the
   \href{https://en.wikipedia.org/wiki/Locus_(genetics)}{cytogenetic banding
-  nomenclature}; \item \code{functionalClass}, the SNP’s functional class;
-  \item \code{lastUpdateDate}, the last date this SNP’s mapping information
+  nomenclature}; \item \code{functionalClass}, the functional class of the SNP;
+  \item \code{lastUpdateDate}, the last date the mapping information
   was updated;
   \item \code{genomicContexts}, the genomic contexts for this
   SNP, including upstream, downstream and mapped genes. This is a

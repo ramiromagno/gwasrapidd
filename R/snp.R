@@ -332,7 +332,7 @@ snp_content_to_tibble <- function(snp_content) {
 #'   \itemize{
 #'   \item \code{query_grange}, the query genomic range (if
 #'   \code{query_grange == TRUE});
-#'   \item \code{rsId}, the SNP Id;
+#'   \item \code{rsId}, the Reference SNP cluster ID;
 #'   \item \code{merged}, Whether this SNP has been merged with another SNP in a
 #'   newer genome build;
 #'   \item \code{chromosomeName}, the name of the chromosome where the SNP is
@@ -341,8 +341,8 @@ snp_content_to_tibble <- function(snp_content) {
 #'   along the chromosome (1-based indexing); \item \code{region.name}, the
 #'   genomic location of this SNP according to the
 #'   \href{https://en.wikipedia.org/wiki/Locus_(genetics)}{cytogenetic banding
-#'   nomenclature}; \item \code{functionalClass}, the SNP’s functional class;
-#'   \item \code{lastUpdateDate}, the last date this SNP’s mapping information
+#'   nomenclature}; \item \code{functionalClass}, the functional class of the SNP;
+#'   \item \code{lastUpdateDate}, the last date the mapping information
 #'   was updated;
 #'   \item \code{genomicContexts}, the genomic contexts for this
 #'   SNP, including upstream, downstream and mapped genes. This is a
@@ -466,11 +466,11 @@ is_rs_id <- function(str, convert_NA_to_FALSE = FALSE) {
   return(is_rs_id)
 }
 
-#' Get SNPs by rsId.
+#' Get SNPs by rsID.
 #'
-#' Retrieve SNPs by Id.
+#' Retrieve SNPs by Reference SNP cluster ID (rsID).
 #'
-#' @param snp_ids SNP Ids, starting with "rs".
+#' @param snp_ids SNP IDs, starting with "rs".
 #' @param verbose Whether to be chatty or not.
 #' @param warnings Whether to print warnings or not.
 #' @param remove_duplicated_snps Whether to remove duplicated SNPs.
@@ -478,14 +478,14 @@ is_rs_id <- function(str, convert_NA_to_FALSE = FALSE) {
 #' @return A \code{\link[tibble]{tibble}} where rows are SNPs and columns are
 #'   the following variables:
 #'   \itemize{
-#'   \item \code{rsId}, the SNP Id;
+#'   \item \code{rsId}, Reference SNP cluster ID (rsID);
 #'   \item \code{merged}, whether this SNP has been merged with another SNP in a newer genome build;
 #'   \item \code{chromosomeName}, the name of the chromosome where the SNP is located;
 #'   \item \code{chromosomePosition}, the genomic position along the chromosome (1-based indexing);
 #'   \item \code{region.name}, the genomic location of this SNP according to the
 #'   \href{https://en.wikipedia.org/wiki/Locus_(genetics)}{cytogenetic banding
-#'   nomenclature}; \item \code{functionalClass}, the SNP’s functional class;
-#'   \item \code{lastUpdateDate}, the last date this SNP’s mapping information
+#'   nomenclature}; \item \code{functionalClass}, the functional class of the SNP;
+#'   \item \code{lastUpdateDate}, the last date this mapping information
 #'   was updated;
 #'   \item \code{genomicContexts}, the genomic contexts for this
 #'   SNP, including upstream, downstream and mapped genes. This is a
