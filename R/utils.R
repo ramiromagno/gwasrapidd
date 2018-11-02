@@ -67,16 +67,14 @@ drop_links <- function(lst) {
 
   # If list is empty, do nothing and return as is.
   if(length(lst) < 1L) {
-    warning("Input list has no names. Nothing to do.\n",
-            "Returning the input list as is.")
+    warning("Input list is empty. Nothing to do. Returning the input list as is.")
     return(lst)
   }
 
   # If list has no named elements, return as is.
   if(is.null(names(lst))) {
-    warning("Input list has no names. Nothing to do.\n",
-            "Returning the input list as is.")
-    return(lst)
+     warning("Input list has no names. Nothing to do. Returning the input list as is.")
+     return(lst)
   }
 
   # Which elements to keep (logical)
