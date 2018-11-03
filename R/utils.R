@@ -128,4 +128,4 @@ recursive_apply <- function(x, fn)
 #'
 #' @keywords internal
 null_to_na <- function(lst)
-  recursive_apply(lst, function(x) if(is.null(x)) NA else x)
+  recursive_apply(lst, function(x) if(is.null(x)) NA_character_ else x)

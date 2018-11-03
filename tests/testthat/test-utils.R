@@ -38,3 +38,28 @@ test_that("Test drop_links", {
   expect_identical(drop_links(lst_wlinks), lst_nolinks)
 })
 
+#
+## recursive_apply
+#
+
+test_that("Test recursive_apply", {
+  lst1 <- list(a = 1, b = 2, c = 3)
+  df1 <- tibble::tibble(a = 1, b = 2, c = 3)
+  df2 <- data.frame(a = 1, b = 2, c = 3)
+  expect_identical(recursive_apply(lst1, identity), lst1)
+  expect_identical(recursive_apply(df1, identity), df1)
+  expect_identical(recursive_apply(df2, identity), tibble::as.tibble(df2))
+  expect_identical(recursive_apply(lst1, function(x){x+1}), list(a = 2, b = 3, c = 4))
+  expect_identical(recursive_apply(df1, function(x){x+1}), tibble::tibble(a = 2, b = 3, c = 4))
+})
+
+#
+## null_to_na
+#
+
+test_that("Test null_to_na", {
+  lst1 <- list(a = 1, b = 2, c = NULL)
+  df1 <- tibble::tibble(a = 1, b = 2, c = list(NULL))
+  expect_identical(null_to_na(lst1), list(a = 1, b = 2, c = NA_character_))
+  expect_identical(null_to_na(df1), tibble::tibble(a = 1, b = 2, c = list(NA_character_)))
+})
