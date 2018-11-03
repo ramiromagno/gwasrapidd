@@ -1,6 +1,14 @@
 context("test-utils")
 
 #
+## quote
+#
+test_that("Test quote", {
+  expect_identical(quote("a"), "\"a\"")
+  expect_identical(quote(""), "\"\"")
+})
+
+#
 ## is_links
 #
 
