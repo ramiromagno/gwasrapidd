@@ -23,6 +23,8 @@ test_that("Test is_links", {
   expect_identical(is_links(
     c("_links", "links", "A_links", "_linksB", NA_character_), convert_NA_to_FALSE = TRUE),
   c(TRUE, FALSE, FALSE, TRUE, FALSE))
+  expect_error(is_links(1), "str argument must be a character vector.")
+  expect_error(is_links(character()), "str contains no values, it must contain at least one string.")
 })
 
 #
