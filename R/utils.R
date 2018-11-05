@@ -1,4 +1,4 @@
-quote <- function(str) sprintf("\"%s\"", str)
+add_quotes <- function(str) sprintf("\"%s\"", str)
 
 
 #' Does a string start with \code{_links.*}?

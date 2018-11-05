@@ -3,9 +3,9 @@ context("test-utils")
 #
 ## quote
 #
-test_that("Test quote", {
-  expect_identical(quote("a"), "\"a\"")
-  expect_identical(quote(""), "\"\"")
+test_that("Test add_quotes2", {
+  expect_identical(add_quotes("a"), "\"a\"")
+  expect_identical(add_quotes(""), "\"\"")
 })
 
 #
@@ -37,13 +37,15 @@ test_that("Test drop_links", {
   lst_nolinks <- list(x = vec1, y = vec2)
   lst_wlinks <- list(x = vec1, y = vec2, "_links" = vec2)
   expect_error(drop_links(vec1), "lst must be of type list.")
-  # Keep an eye on https://github.com/r-lib/testthat/issues/599
-  #empty_lst <- list()
-  #warn_msg <- "Input list is empty. Nothing to do. Returning the input list as is."
-  #expect_warning(drop_links(empty_lst), warn_msg)
-  #lst_nonames <- list(vec1, vec2)
-  #warn_msg2 <- "Input list has no names. Nothing to do. Returning the input list as is."
-  #expect_warning(drop_links(lst_nonames), warn_msg2)
+
+  empty_lst <- list()
+  warn_msg <- "Input list is empty. Nothing to do. Returning the input list as is."
+  expect_warning(drop_links(empty_lst), warn_msg)
+
+  lst_nonames <- list(vec1, vec2)
+  warn_msg2 <- "Input list has no names. Nothing to do. Returning the input list as is."
+  expect_warning(drop_links(lst_nonames), warn_msg2)
+
   expect_identical(drop_links(lst_nolinks), lst_nolinks)
   expect_identical(drop_links(lst_wlinks), lst_nolinks)
 })

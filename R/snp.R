@@ -134,7 +134,7 @@ as_genomic_range <- function(chr, start, end, starting_position_index = 1L) {
   valid_chr_names <- chr %in% chromosomes
   if(!all(valid_chr_names))
     stop("The following are not human chromosome names: ",
-         concatenate::cc_and(quote(unique(chr[!valid_chr_names])), oxford = TRUE), ".")
+         concatenate::cc_and(add_quotes(unique(chr[!valid_chr_names])), oxford = TRUE), ".")
 
   is_start_below_starting_pos <- start < starting_position_index
   if(any(is_start_below_starting_pos))
@@ -516,7 +516,7 @@ get_snps_by_id <- function(snp_ids, verbose = FALSE, warnings = TRUE, remove_dup
   valid_rs_ids <- is_rs_id(snp_ids)
   if(!all(valid_rs_ids))
     stop("The following are not valid SNP IDs: ",
-         concatenate::cc_and(quote(unique(snp_ids[!valid_rs_ids])), oxford = TRUE), ".")
+         concatenate::cc_and(add_quotes(unique(snp_ids[!valid_rs_ids])), oxford = TRUE), ".")
 
   endpoint <- "/singleNucleotidePolymorphisms"
 
