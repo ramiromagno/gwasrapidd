@@ -15,9 +15,4 @@ A vector of string wrapped in quotes.
 \description{
 Wrap a string in quotes.
 }
-\examples{
-
-add_quotes("a") # "a"
-
-}
 \keyword{internal}

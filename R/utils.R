@@ -5,9 +5,6 @@
 #' @param str A character vector of strings.
 #'
 #' @return A vector of string wrapped in quotes.
-#' @examples
-#'
-#' add_quotes("a") # "a"
 #'
 #' @keywords internal
 add_quotes <- function(str) sprintf("\"%s\"", str)

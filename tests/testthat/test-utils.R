@@ -1,7 +1,7 @@
 context("test-utils")
 
 #
-## quote
+## add_quotes
 #
 test_that("Test add_quotes", {
   expect_identical(add_quotes("a"), "\"a\"")
