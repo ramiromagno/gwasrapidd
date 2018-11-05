@@ -34,6 +34,24 @@ test_that("Test is_genomic_range convert_NA_to_FALSE option.", {
 ## as_genomic_range
 #
 
+test_that("Test as_genomic_range: positions greater than max_end_position", {
+  expect_error(as_genomic_range("X", 1000000000L, 1000000001L), "All start positions must be lesser than 999999999, these are not: 1000000000.")
+  expect_error(as_genomic_range("X", 999999999L, 1000000000L), "All end positions must be lesser than 999999999, these are not: 1000000000.")
+})
+
+test_that("Test as_genomic_range: start pos", {
+  expect_error(as_genomic_range("X", 1, 2L), "start needs to be an integer vector, append an \"L\" to the number.")
+  expect_error(as_genomic_range("X", "1", 2L), "start needs to be an integer vector.")
+  expect_error(as_genomic_range("X", integer(0), 2L), "start is empty, must have at least one start position.")
+})
+
+test_that("Test as_genomic_range: end pos", {
+  expect_error(as_genomic_range("X", 1L, 2), "end needs to be an integer vector, append an \"L\" to the number.")
+  expect_error(as_genomic_range("X", 1L, "2"), "end needs to be an integer vector.")
+  expect_error(as_genomic_range("X", 1L, integer(0)), "end is empty, must have at least one end position.")
+})
+
+
 test_that("Test as_genomic_range: starting_position_index option.", {
   expect_identical(as_genomic_range("1", 1L, 2L, starting_position_index = 0L),
                    "1:1-2")
@@ -64,9 +82,14 @@ test_that("Test as_genomic_range: starting_position_index option.", {
     "All start positions must be greater than 1, these are not: 0 and -1.",
     fixed = TRUE
   )
+  expect_error(as_genomic_range("X", 1L, 0L), "All end positions must be greater than 1, these are not: 0.")
 })
 
 test_that("Test as_genomic_range: chromosome names.", {
+  expect_error(as_genomic_range(1, 1L, 2L), "chr needs to a character vector.")
+  expect_error(as_genomic_range(1L, 1L, 2L), "chr needs to a character vector.")
+  expect_error(as_genomic_range(FALSE, 1L, 2L), "chr needs to a character vector.")
+
   expect_error(
     as_genomic_range(character(0L), 1L, 2L),
     "chr is empty, must have at least one human chromosome name."

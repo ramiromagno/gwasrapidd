@@ -95,6 +95,10 @@ is_genomic_range <- function(str, convert_NA_to_FALSE = FALSE) {
 #' @export
 as_genomic_range <- function(chr, start, end, starting_position_index = 1L) {
 
+  # This needs to be in agreement with is_genomic_range() which does not allow
+  # positions longer than 9-digits numbers.
+  max_end_position <- 999999999L
+
   if(!(identical(starting_position_index, 0L) || identical(starting_position_index, 1L)))
     stop("starting_position_index must be either 0L or 1L.")
 
@@ -116,7 +120,7 @@ as_genomic_range <- function(chr, start, end, starting_position_index = 1L) {
   if(is.numeric(end) && !is.integer(end))
     stop("end needs to be an integer vector, append an \"L\" to the number.")
 
-  if(!is.numeric(start) && !is.integer(end))
+  if(!is.numeric(end) && !is.integer(end))
     stop("end needs to be an integer vector.")
 
   if(identical(length(end), 0L))
@@ -146,6 +150,16 @@ as_genomic_range <- function(chr, start, end, starting_position_index = 1L) {
     stop("All end positions must be greater than ", starting_position_index, ", these are not: ",
          concatenate::cc_and(end[is_end_below_starting_pos], oxford = TRUE), ".")
 
+  is_start_above_max_ending_pos <- start > max_end_position
+  if(any(is_start_above_max_ending_pos))
+    stop("All start positions must be lesser than ", max_end_position, ", these are not: ",
+         concatenate::cc_and(start[is_start_above_max_ending_pos], oxford = TRUE), ".")
+
+  is_end_above_max_ending_pos <- end > max_end_position
+  if(any(is_end_above_max_ending_pos))
+    stop("All end positions must be lesser than ", max_end_position, ", these are not: ",
+         concatenate::cc_and(end[is_end_above_max_ending_pos], oxford = TRUE), ".")
+
   # Generate genomic ranges strings.
   gen_ranges <- sprintf("%s:%d-%d", chr, start, end)
 
@@ -153,13 +167,7 @@ as_genomic_range <- function(chr, start, end, starting_position_index = 1L) {
   start_gr_end <- start > end
   if(any(start_gr_end))
     stop("start positions cannot be larger than end positions: ",
-         concatenate::cc_and(gen_ranges[start_gr_end], oxford = TRUE), ".")
-
-  # Check that all genomic ranges' strings conform to criteria of is_genomic_range.
-  is_gen_ranges <- is_genomic_range(gen_ranges)
-  if(!all(is_gen_ranges))
-    stop("The following are not well-formed genomic ranges: ",
-         concatenate::cc_and(gen_ranges[!is_gen_ranges], oxford = TRUE), ".")
+      concatenate::cc_and(gen_ranges[start_gr_end], oxford = TRUE), ".")
 
   return(gen_ranges)
 

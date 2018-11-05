@@ -3,7 +3,7 @@ context("test-utils")
 #
 ## quote
 #
-test_that("Test add_quotes2", {
+test_that("Test add_quotes", {
   expect_identical(add_quotes("a"), "\"a\"")
   expect_identical(add_quotes(""), "\"\"")
 })
@@ -34,8 +34,7 @@ test_that("Test is_links", {
 test_that("Test drop_links", {
   vec1 <- 1:10
   vec2 <- LETTERS[vec1]
-  lst_nolinks <- list(x = vec1, y = vec2)
-  lst_wlinks <- list(x = vec1, y = vec2, "_links" = vec2)
+
   expect_error(drop_links(vec1), "lst must be of type list.")
 
   empty_lst <- list()
@@ -46,8 +45,17 @@ test_that("Test drop_links", {
   warn_msg2 <- "Input list has no names. Nothing to do. Returning the input list as is."
   expect_warning(drop_links(lst_nonames), warn_msg2)
 
+  lst_nolinks <- list(x = vec1, y = vec2)
+  lst_wlinks <- list(x = vec1, y = vec2, "_links" = vec2)
   expect_identical(drop_links(lst_nolinks), lst_nolinks)
   expect_identical(drop_links(lst_wlinks), lst_nolinks)
+
+  # Empty list that had names but all have been dropped: names(lst) is character(0),
+  # not NULL.
+  empty_lst2 <- list()
+  names(empty_lst2) <- character(0)
+  expect_warning(val <- drop_links(list("_links" = vec2)), "Returned list has no elements left.")
+  expect_identical(val, empty_lst2)
 })
 
 #
