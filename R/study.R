@@ -60,6 +60,7 @@ publication_to_tibble <- function(publication_content) {
   pub_content <- publication_content
 
   pub_content[["author_fullname"]] <- publication_content$author$fullname
+  pub_content[["author_orcid"]] <- publication_content$author$orcid
   pub_content$author <- NULL
 
   tibble::as_tibble(pub_content)
@@ -68,15 +69,12 @@ publication_to_tibble <- function(publication_content) {
 
 #' Convert a study list object to a tibble.
 #'
-#' Converts the content returned by a request to
-#' \code{"/studies/{study_accession}"} to a
-#' \code{\link[tibble]{tibble}}.
+#' Convert a study list object to a tibble.
 #'
-#' @param study_content The response content (list).
+#' @param study_content The study content (list).
 #'
-#' @return TODO.
+#' @return A \code{\link[tibble]{tibble}} version of \code{study_content}.
 #'
-#' @export
 #' @keywords internal
 study_content_to_tibble <- function(study_content) {
 
