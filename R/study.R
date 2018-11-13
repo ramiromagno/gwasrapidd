@@ -46,3 +46,155 @@ is_study_accession <- function(str, convert_NA_to_FALSE = FALSE) {
   return(is_accession)
 }
 
+publication_to_tibble <- function(publication_content) {
+
+  pub_content <- publication_content
+
+  pub_content[["author_fullname"]] <- publication_content$author$fullname
+  pub_content$author <- NULL
+
+  tibble::as_tibble(pub_content)
+}
+
+
+#' Convert a study list object to a tibble.
+#'
+#' Converts the content returned by a request to
+#' \code{"/studies/{study_accession}"} to a
+#' \code{\link[tibble]{tibble}}.
+#'
+#' @param study_content The response content (list).
+#'
+#' @return TODO.
+#'
+#' @export
+#' @keywords internal
+study_content_to_tibble <- function(study_content) {
+
+  study <- study_content
+
+  study[["platforms_manufacturer"]] <- study$platforms$manufacturer
+  study$platforms <- NULL
+  study$ancestries <- list(study$ancestries)
+  #study$ancestries <- NULL
+  study[["diseaseTrait_trait"]] <- study$diseaseTrait$trait
+  study$diseaseTrait <- NULL
+
+  study$genotypingTechnologies <- study$genotypingTechnologies$genotypingTechnology
+  study$publicationInfo <- list(publication_to_tibble(drop_links(study$publicationInfo)))
+  study$`_links` <- NULL
+
+  study_df <- tibble::as_tibble(study)
+
+  return(study_df)
+
+}
+
+
+
+#' Get association study by accession ID
+#'
+#' Get association studies in the GWAS Catalog by their
+#' accession ID.
+#'
+#' @param study_ids study IDs as a character vector, e.g., "GCST000854".
+#' @param verbose Whether to be chatty or not.
+#' @param warnings Whether to print warnings or not.
+#' @param remove_duplicated_studies Whether to remove duplicated studies.
+#'
+#' @return A \code{\link[tibble]{tibble}} where rows are studies and columns are
+#'   the following variables:
+#'   \itemize{
+#'   \item \code{accessionId}, GWAS Catalog study accession ID;
+#'   \item \code{diseaseTrait_trait}, Free text description of the trait investigated in this study;
+#'   \item \code{initialSampleSize}, 	Initial sample description;
+#'   \item \code{replicationSampleSize}, Replication sample description;
+#'   \item \code{gxe}, Whether the study investigates a gene-environment interaction;
+#'   \item \code{gxg}, Whether the study investigates a gene-gene interaction;
+#'   \item \code{snpCount}, Number of SNPs passing QC;
+#'   \item \code{qualifier}, Qualifier of number of SNPs passing QC (eg >);
+#'   \item \code{imputed}, Whether SNPs were imputed;
+#'   \item \code{pooled}, Whether samples were pooled;
+#'   \item \code{studyDesignComment}, Any other relevant study design information;
+#'   \item \code{fullPvalueSet}, Whether full summary statistics are available for this study;
+#'   \item \code{userRequested}, Whether the addition of this study to the Catalog was requested by a user;
+#'   \item \code{ancestries}, Ancestry entries for this study. A list of
+#'   \code{\link[tibble]{tibble}}s whose columns are:
+#'   \itemize{
+#'   \item \code{type}, TODO;
+#'   \item \code{numberOfIndividuals}, TODO;
+#'   \item \code{ancestralGroups}, TODO;
+#'   \item \code{countryOfOrigin}, TODO;
+#'   \item \code{countryOfRecruitment}, TODO;
+#'   }
+#'   \item \code{genotypingTechnologies}, Genotyping technology used in this study;
+#'   \item \code{publicationInfo}, Convenience representation of the publication.
+#'   A list of #'   \code{\link[tibble]{tibble}}s whose columns are:
+#'   \itemize{
+#'   \item \code{pubmedId}, PubMed ID;
+#'   \item \code{publicationDate}, Publication date;
+#'   \item \code{publication}, Journal;
+#'   \item \code{title}, Title of the association study;
+#'   \item \code{author_fullname}, First author name;
+#'   }
+#'   \item \code{platforms_manufacturer}, Genotyping platform(s) used in this study;
+#' }
+#' @examples
+#' \donttest{get_studies_by_id(c("GCST000854", "GCST005268"))}
+#'
+#' @export
+get_studies_by_id <- function(study_ids, verbose = FALSE, warnings = TRUE, remove_duplicated_studies = FALSE) {
+
+  valid_study_ids <- is_study_accession(study_ids, convert_NA_to_FALSE = TRUE)
+  if(!all(valid_study_ids))
+    stop("The following are not valid study accession IDs: ",
+         concatenate::cc_and(add_quotes(unique(study_ids[!valid_study_ids])), oxford = TRUE), ".")
+
+  endpoint <- "/studies"
+
+  # Prepend the endpoint to assemble the resource URLs
+  resource_urls <- sprintf("%s/%s", endpoint, study_ids)
+
+  # Request all studies by ID
+  responses <- purrr::map(resource_urls, request, verbose = verbose, warnings = warnings)
+
+  is_valid_response <-
+    purrr::map_lgl(responses, is_response_successful) & !purrr::map_lgl(responses, is_content_empty)
+
+  studies <- purrr::map_dfr(
+    .x = responses[is_valid_response],
+    .f = function(x) { study_content_to_tibble(x$content) })
+
+  if(identical(nrow(studies), 0L) && warnings)
+    warning("No studies found.")
+
+  #If remove_duplicated_studies = TRUE, we remove those duplicated entries (rows).
+  if(remove_duplicated_studies) {
+    accessionId <- NULL # To appease R CMD check (not happy with this.)
+    studies <- dplyr::distinct(studies, accessionId, .keep_all = TRUE)
+  }
+
+  # re-order columns
+  studies <- dplyr::select(
+    studies,
+    "accessionId",
+    "diseaseTrait_trait",
+    "initialSampleSize",
+    "replicationSampleSize",
+    "gxe",
+    "gxg",
+    "snpCount",
+    "qualifier",
+    "imputed",
+    "pooled",
+    "studyDesignComment",
+    "fullPvalueSet",
+    "userRequested",
+    "ancestries",
+    "genotypingTechnologies",
+    "publicationInfo",
+    "platforms_manufacturer"
+  )
+
+  return(studies)
+}
