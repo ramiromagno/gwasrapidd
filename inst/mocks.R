@@ -21,3 +21,10 @@ start_capturing()
 request()
 
 stop_capturing()
+
+#
+# Request captures for functions in study.R
+#
+start_capturing()
+request("/studies/GCST000854")
+stop_capturing()
