@@ -1,5 +1,9 @@
 context("test-study")
 
+#
+## is_study_accession
+#
+
 test_that("Test is_study_accession convert_NA_to_FALSE option.", {
   expect_equal(is_study_accession(NA_character_), as.logical(NA))
   expect_equal(is_study_accession(c(NA_character_, NA_character_)), as.logical(c(NA, NA)))
@@ -24,4 +28,37 @@ test_that("Test is_study_accession.", {
   expect_equal(is_study_accession("CST000001"),    FALSE)
   expect_equal(is_study_accession("GCS000001"),    FALSE)
   expect_equal(is_study_accession("GCST12345"),    FALSE)
+})
+
+#
+## publication_to_tibble
+#
+test_that("Test publication_to_tibble", {
+
+  pub_content <- list(
+    pubmedId = "21041247",
+    publicationDate = "2010-11-01",
+    publication = "Am J Psychiatry",
+    title = "Genome-wide association study of suicide attempts in mood disorder patients.",
+    author = list(fullname = "Perlis RH", orcid = NA),
+    `_links` = list(
+      studies = list(
+        href = "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000854{?projection}", templated = TRUE)
+      )
+  )
+
+  pub_tibble <- tibble::tibble(
+    pubmedId = "21041247",
+    publicationDate = "2010-11-01",
+    publication = "Am J Psychiatry",
+    title = "Genome-wide association study of suicide attempts in mood disorder patients.",
+    `_links` = list(
+      studies = list(
+        href = "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000854{?projection}", templated = TRUE)
+    ),
+    author_fullname = "Perlis RH",
+    author_orcid = NA
+  )
+
+  expect_identical(publication_to_tibble(pub_content), pub_tibble)
 })
