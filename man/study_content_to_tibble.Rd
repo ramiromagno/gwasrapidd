@@ -7,14 +7,12 @@
 study_content_to_tibble(study_content)
 }
 \arguments{
-\item{study_content}{The response content (list).}
+\item{study_content}{The study content (list).}
 }
 \value{
-TODO.
+A \code{\link[tibble]{tibble}} version of \code{study_content}.
 }
 \description{
-Converts the content returned by a request to
-\code{"/studies/{study_accession}"} to a
-\code{\link[tibble]{tibble}}.
+Convert a study list object to a tibble.
 }
 \keyword{internal}
