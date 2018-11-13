@@ -46,6 +46,15 @@ is_study_accession <- function(str, convert_NA_to_FALSE = FALSE) {
   return(is_accession)
 }
 
+#' Convert a publication list object to a tibble.
+#'
+#' Convert a publication list object to a tibble.
+#'
+#' @param publication_content The publication content (list).
+#'
+#' @return A \code{\link[tibble]{tibble}} version of \code{publication_content}.
+#'
+#' @keywords internal
 publication_to_tibble <- function(publication_content) {
 
   pub_content <- publication_content
