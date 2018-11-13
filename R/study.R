@@ -119,7 +119,7 @@ study_content_to_tibble <- function(study_content) {
 #'   \item \code{gxe}, Whether the study investigates a gene-environment interaction;
 #'   \item \code{gxg}, Whether the study investigates a gene-gene interaction;
 #'   \item \code{snpCount}, Number of SNPs passing QC;
-#'   \item \code{qualifier}, Qualifier of number of SNPs passing QC (eg >);
+#'   \item \code{qualifier}, Qualifier of number of SNPs passing QC (e.g. >);
 #'   \item \code{imputed}, Whether SNPs were imputed;
 #'   \item \code{pooled}, Whether samples were pooled;
 #'   \item \code{studyDesignComment}, Any other relevant study design information;
