@@ -39,10 +39,7 @@ is_ebi_reachable <-
     # Check whether there is a DNS service running
     if (is.character(am_i_online) &&
         identical(am_i_online, "nodns")) {
-      message(
-        "It seems there is no Domain Name Server (DNS) service running.\n",
-        "Please make sure your computer can translate domain names to IP addresses before proceeding."
-      )
+      message("It seems there is no Domain Name Server (DNS) service running.")
       return(FALSE)
     } else {
       if (chatty)
