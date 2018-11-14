@@ -27,4 +27,5 @@ stop_capturing()
 #
 start_capturing()
 request("/studies/GCST000854")
+request("/studies/GCST000000")
 stop_capturing()

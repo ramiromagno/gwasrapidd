@@ -33,6 +33,7 @@ test_that("Test is_study_accession.", {
 #
 ## publication_to_tibble
 #
+
 test_that("Test publication_to_tibble", {
 
   pub_content <- list(
@@ -62,6 +63,10 @@ test_that("Test publication_to_tibble", {
 
   expect_identical(publication_to_tibble(pub_content), pub_tibble)
 })
+
+#
+## study_content_to_tibble
+#
 
 with_mock_api({
   test_that("study_content_to_tibble", {
@@ -125,5 +130,93 @@ with_mock_api({
 
     expect_identical(study_content_to_tibble(response$content),
                      response_tibble)
+  })
+})
+
+
+with_mock_api({
+  test_that("get_studies_by_id on GCST000854", {
+    study_tbl <- get_studies_by_id("GCST000854")
+    expect_is(study_tbl, "tbl_df")
+    expected_colnames <- c("accessionId",
+                           "diseaseTrait_trait",
+                           "initialSampleSize",
+                           "replicationSampleSize",
+                           "gxe",
+                           "gxg",
+                           "snpCount",
+                           "qualifier",
+                           "imputed",
+                           "pooled",
+                           "studyDesignComment",
+                           "fullPvalueSet",
+                           "userRequested",
+                           "ancestries",
+                           "genotypingTechnologies",
+                           "publicationInfo",
+                           "platforms_manufacturer")
+    expect_named(study_tbl, expected_colnames)
+    expect_identical(study_tbl$accessionId, "GCST000854")
+    expect_identical(study_tbl$diseaseTrait_trait, "Suicide risk")
+    expect_identical(
+      study_tbl$initialSampleSize,
+      "3,117 European ancestry Bipolar disorder cases, 1,273 European ancestry Major depressive disorder cases"
+    )
+    expect_identical(
+      study_tbl$replicationSampleSize,
+      "2,698 European ancestry Bipolar disorder cases, 1,649 Major depressive disorder cases"
+    )
+    expect_identical(study_tbl$gxe, FALSE)
+    expect_identical(study_tbl$gxg, FALSE)
+    expect_identical(study_tbl$snpCount, 1922309L)
+    expect_identical(study_tbl$qualifier, NA_character_)
+    expect_identical(study_tbl$imputed, TRUE)
+    expect_identical(study_tbl$pooled, FALSE)
+    expect_identical(study_tbl$studyDesignComment, NA_character_)
+    expect_identical(study_tbl$fullPvalueSet, FALSE)
+    expect_identical(study_tbl$userRequested, FALSE)
+    expect_identical(study_tbl$genotypingTechnologies, "Genome-wide genotyping array")
+    expect_identical(study_tbl$platforms_manufacturer, "Affymetrix")
+  })
+})
+
+with_mock_api({
+  test_that("get_studies_by_id on an invalid study accession ID", {
+    expect_error(get_studies_by_id("1"), "The following are not valid study accession IDs: \"1\".")
+  })
+})
+
+with_mock_api({
+  test_that("get_studies_by_id on an non-existing study accession ID", {
+    expect_warning(get_studies_by_id("GCST000000"),
+                   "The request for https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000000 did not completed successfully.",
+                   "In get_studies_by_id(\"GCST000000\") : No studies found.")
+  })
+})
+
+with_mock_api({
+  test_that("get_studies_by_id: test remove_duplicated_studies option", {
+    study_tbl <- get_studies_by_id(c("GCST000854", "GCST000854"), remove_duplicated_studies = TRUE)
+    expect_is(study_tbl, "tbl_df")
+    expected_colnames <- c("accessionId",
+                           "diseaseTrait_trait",
+                           "initialSampleSize",
+                           "replicationSampleSize",
+                           "gxe",
+                           "gxg",
+                           "snpCount",
+                           "qualifier",
+                           "imputed",
+                           "pooled",
+                           "studyDesignComment",
+                           "fullPvalueSet",
+                           "userRequested",
+                           "ancestries",
+                           "genotypingTechnologies",
+                           "publicationInfo",
+                           "platforms_manufacturer")
+    expect_named(study_tbl, expected_colnames)
+    expect_identical(study_tbl$accessionId, "GCST000854")
+    expect_identical(nrow(study_tbl), 1L)
   })
 })

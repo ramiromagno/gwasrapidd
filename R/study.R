@@ -172,9 +172,28 @@ get_studies_by_id <- function(study_ids, verbose = FALSE, warnings = TRUE, remov
     .x = responses[is_valid_response],
     .f = function(x) { study_content_to_tibble(x$content) })
 
-  if(identical(nrow(studies), 0L) && warnings)
+  if(identical(nrow(studies), 0L) && warnings) {
     warning("No studies found.")
-
+    return(tibble::tibble(
+      "accessionId" = character(),
+      "diseaseTrait_trait" = character(),
+      "initialSampleSize" = character(),
+      "replicationSampleSize" = character(),
+      "gxe" = logical(),
+      "gxg" = logical(),
+      "snpCount" = integer(),
+      "qualifier" = character(),
+      "imputed" = logical(),
+      "pooled" = logical(),
+      "studyDesignComment" = character(),
+      "fullPvalueSet" = logical(),
+      "userRequested" = logical(),
+      "ancestries" = list(),
+      "genotypingTechnologies" = character(),
+      "publicationInfo" = list(),
+      "platforms_manufacturer" = character()
+    ))
+  }
   #If remove_duplicated_studies = TRUE, we remove those duplicated entries (rows).
   if(remove_duplicated_studies) {
     accessionId <- NULL # To appease R CMD check (not happy with this.)
