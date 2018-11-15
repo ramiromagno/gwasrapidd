@@ -18,8 +18,7 @@ stop_capturing()
 # Request captures for functions in snp.R
 #
 start_capturing()
-request()
-
+request("/singleNucleotidePolymorphisms/rs10910092")
 stop_capturing()
 
 #
