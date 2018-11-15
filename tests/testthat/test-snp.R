@@ -188,3 +188,88 @@ test_that("Test is_rs_id", {
     c("rs123", "rs0001", NA_character_),
     convert_NA_to_FALSE = TRUE), c(TRUE, TRUE, FALSE))
 })
+
+#
+## filter_genomic_location_by_chr_name
+#
+
+test_that("filter_genomic_location_by_chr_name: check input type", {
+  expect_error(filter_genomic_location_by_chr_name(list()),
+               "df needs to be a dataframe.")
+  df <- tibble::tibble("chromosomeName" = character(),
+                       "chromosomePosition" = integer(),
+                       "region.name" = character(),
+                       "_links.snps.href" = character())
+
+  error_msg <- "df must contain all of the following variables:\nchromosomeName, chromosomePosition, region.name and _links.snps.href."
+  # All columns except the first
+  expect_error(filter_genomic_location_by_chr_name(df[, -1]),
+               error_msg)
+
+  # All columns except the second
+  expect_error(filter_genomic_location_by_chr_name(df[, -2]),
+               error_msg)
+
+  # All columns except the third
+  expect_error(filter_genomic_location_by_chr_name(df[, -3]),
+               error_msg)
+
+  # All columns except the fourth
+  expect_error(filter_genomic_location_by_chr_name(df[, -4]),
+               error_msg)
+
+  expect_silent(df2 <- filter_genomic_location_by_chr_name(df, warnings = FALSE))
+  df3 <- tibble::tibble("chromosomeName" = NA_character_,
+                        "chromosomePosition" = NA_integer_,
+                        "region.name" = NA_character_,
+                        "_links.snps.href" = NA_character_)
+  expect_identical(df2, df3)
+  expect_warning(filter_genomic_location_by_chr_name(df, warnings = TRUE),
+                "The dataframe df is empty. Filling in NAs...")
+})
+
+
+with_mock_api({
+  test_that("filter_genomic_location_by_chr_name: typical use case", {
+    snp_lst <- request("/singleNucleotidePolymorphisms/rs10910092")
+    expect_is(snp_lst, "list")
+    # Two locations are returned: 1:2570077 and CHR_HSCHR1_1_CTG3:2570077
+    # (nrow == 2)
+    expect_identical(nrow(snp_lst$content$locations), 2L)
+    expect_identical(snp_lst$content$locations$chromosomeName,
+                     c("1", "CHR_HSCHR1_1_CTG3"))
+    location_tbl <- filter_genomic_location_by_chr_name(snp_lst$content$locations)
+    # After filtering, only one location is returned (nrow == 1)
+    expect_identical(nrow(location_tbl), 1L)
+    expect_identical(location_tbl$chromosomeName, "1")
+  })
+})
+
+with_mock_api({
+  test_that("filter_genomic_location_by_chr_name: post filtering resulting in empty dataframe", {
+
+    df_NA <- tibble::tibble("chromosomeName" = NA_character_,
+                          "chromosomePosition" = NA_integer_,
+                          "region.name" = NA_character_,
+                          "_links.snps.href" = NA_character_)
+
+    snp_lst <- request("/singleNucleotidePolymorphisms/rs10910092")
+
+    # Removing the first row, i.e. the genomic location in chromosome 1
+    # leaving only the genomic location CHR_HSCHR1_1_CTG3 that should
+    # now be removed by filter_genomic_location_by_chr_name().
+    location_tbl <- snp_lst$content$locations[-1, ]
+     expect_warning(
+       location_tbl2 <- filter_genomic_location_by_chr_name(location_tbl),
+       "Filtering of genomic locations resulted in an empty dataframe!")
+    # After filtering, the dataframe should now have one row only of NAs
+    expect_identical(location_tbl2, df_NA)
+
+     expect_silent(
+       location_tbl2 <-
+         filter_genomic_location_by_chr_name(location_tbl,
+                                             warnings = FALSE))
+
+    expect_identical(location_tbl2, df_NA)
+  })
+})
