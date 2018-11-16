@@ -140,6 +140,30 @@ test_that("Test as_genomic_range: start is less or equal than end.", {
   )
 })
 
+#
+## is_rs_id
+#
+
+test_that("Test is_rs_id errors.", {
+  expect_error(is_rs_id(1), "str argument must be a character vector.")
+  expect_error(
+    is_rs_id(character(0)),
+    "str contains no values, it must contain at least one string."
+  )
+})
+
+test_that("Test is_rs_id", {
+  expect_equal(is_rs_id(c("rs0001")), TRUE)
+  expect_equal(is_rs_id(c("rs123", "rs0001", "rs09123")), c(TRUE, TRUE, TRUE))
+  expect_equal(is_rs_id(c("rs123", "rs0001", NA_character_)), c(TRUE, TRUE, NA))
+  expect_equal(is_rs_id(c("rs1", "rs")), c(TRUE, FALSE))
+  expect_equal(is_rs_id(" rs123"), FALSE)
+  expect_equal(is_rs_id("rs 12312"), FALSE)
+  expect_equal(is_rs_id(
+    c("rs123", "rs0001", NA_character_),
+    convert_NA_to_FALSE = TRUE), c(TRUE, TRUE, FALSE))
+})
+
 
 #
 ## filter_genomic_location_by_chr_name
@@ -165,28 +189,26 @@ test_that("Test filter_genomic_location_by_chr_name.", {
     tbl_output)
 })
 
-#
-## is_rs_id
-#
-
-test_that("Test is_rs_id errors.", {
-  expect_error(is_rs_id(1), "str argument must be a character vector.")
-  expect_error(
-    is_rs_id(character(0)),
-    "str contains no values, it must contain at least one string."
+test_that("filter_genomic_location_by_chr_name: more than one location.", {
+  tbl_input <- tibble::tibble(
+    chromosomeName = c("1", "1"),
+    chromosomePosition = c(2570077L, 2570077L),
+    region.name = c("1p36.32", "1p36.32"),
+    `_links.snps.href` = c(
+      "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs10910092",
+      "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs10910092"
+    )
   )
-})
-
-test_that("Test is_rs_id", {
-  expect_equal(is_rs_id(c("rs0001")), TRUE)
-  expect_equal(is_rs_id(c("rs123", "rs0001", "rs09123")), c(TRUE, TRUE, TRUE))
-  expect_equal(is_rs_id(c("rs123", "rs0001", NA_character_)), c(TRUE, TRUE, NA))
-  expect_equal(is_rs_id(c("rs1", "rs")), c(TRUE, FALSE))
-  expect_equal(is_rs_id(" rs123"), FALSE)
-  expect_equal(is_rs_id("rs 12312"), FALSE)
-  expect_equal(is_rs_id(
-    c("rs123", "rs0001", NA_character_),
-    convert_NA_to_FALSE = TRUE), c(TRUE, TRUE, FALSE))
+  tbl_output <- tibble::tibble(
+    chromosomeName = c("1"),
+    chromosomePosition = c(2570077L),
+    region.name = c("1p36.32"),
+    `_links.snps.href` = "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs10910092"
+  )
+  expect_identical(
+    filter_genomic_location_by_chr_name(tbl_input, warnings = FALSE),
+    tbl_output)
+  expect_warning(filter_genomic_location_by_chr_name(tbl_input, warnings = TRUE), "Filtering of genomic locations did not result in one unique location!\nPicking the first, ad hoc.")
 })
 
 #
