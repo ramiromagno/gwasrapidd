@@ -1,0 +1,133 @@
+{
+    "_embedded": {
+        "singleNucleotidePolymorphisms": [
+            {
+                "rsId": "rs192021326",
+                "merged": 1,
+                "functionalClass": "intergenic_variant",
+                "lastUpdateDate": "2018-08-10T00:07:59.891+0000",
+                "locations": [
+                    {
+                        "chromosomeName": "X",
+                        "chromosomePosition": 16426,
+                        "region": {
+                            "name": "Xp22.33"
+                        },
+                        "_links": {
+                            "snps": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs192021326"
+                            }
+                        }
+                    }
+                ],
+                "genomicContexts": [
+                    {
+                        "isIntergenic": true,
+                        "isUpstream": false,
+                        "isDownstream": true,
+                        "distance": 237317,
+                        "gene": {
+                            "geneName": "AL954722.1",
+                            "entrezGeneIds": [
+
+                            ],
+                            "ensemblGeneIds": [
+                                {
+                                    "ensemblGeneId": "ENSG00000228572"
+                                }
+                            ]
+                        },
+                        "location": {
+                            "chromosomeName": "X",
+                            "chromosomePosition": 16426,
+                            "region": {
+                                "name": "Xp22.33"
+                            },
+                            "_links": {
+                                "snps": {
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs192021326"
+                                }
+                            }
+                        },
+                        "source": "Ensembl",
+                        "mappingMethod": "Ensembl_pipeline",
+                        "isClosestGene": true,
+                        "_links": {
+                            "snp": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs192021326"
+                            }
+                        }
+                    },
+                    {
+                        "isIntergenic": true,
+                        "isUpstream": false,
+                        "isDownstream": true,
+                        "distance": 259898,
+                        "gene": {
+                            "geneName": "PLCXD1",
+                            "entrezGeneIds": [
+                                {
+                                    "entrezGeneId": "55344"
+                                }
+                            ],
+                            "ensemblGeneIds": [
+
+                            ]
+                        },
+                        "location": {
+                            "chromosomeName": "X",
+                            "chromosomePosition": 16426,
+                            "region": {
+                                "name": "Xp22.33"
+                            },
+                            "_links": {
+                                "snps": {
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs192021326"
+                                }
+                            }
+                        },
+                        "source": "NCBI",
+                        "mappingMethod": "Ensembl_pipeline",
+                        "isClosestGene": true,
+                        "_links": {
+                            "snp": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs192021326"
+                            }
+                        }
+                    }
+                ],
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs192021326"
+                    },
+                    "singleNucleotidePolymorphism": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs192021326"
+                    },
+                    "associationsBySnpSummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs192021326/associations?projection=associationBySnp"
+                    },
+                    "currentSnp": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs192021326/currentSnp"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs192021326/associations"
+                    },
+                    "studies": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs192021326/studies"
+                    }
+                }
+            }
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/snpLocation/X:1-20000"
+        }
+    },
+    "page": {
+        "size": 0,
+        "totalElements": 1,
+        "totalPages": 1,
+        "number": 0
+    }
+}
