@@ -164,7 +164,6 @@ test_that("Test is_rs_id", {
     convert_NA_to_FALSE = TRUE), c(TRUE, TRUE, FALSE))
 })
 
-
 #
 ## filter_genomic_location_by_chr_name
 #
@@ -293,5 +292,44 @@ with_mock_api({
                                              warnings = FALSE))
 
     expect_identical(location_tbl2, df_NA)
+  })
+})
+
+#
+## get_snps_by_location
+#
+
+with_mock_api({
+  test_that("get_snps_by_location: no-frills return", {
+    snps <- get_snps_by_location("X", 1L, 20000L)
+    expected_colnames <- c("query_grange",
+                           "rsId",
+                           "merged",
+                           "chromosomeName",
+                           "chromosomePosition",
+                           "region.name",
+                           "functionalClass",
+                           "lastUpdateDate",
+                           "genomicContexts")
+    expect_named(snps, expected_colnames)
+    expect_identical(nrow(snps), 1L)
+    expect_identical(snps$query_grange, "X:1-20000")
+  })
+})
+
+with_mock_api({
+  test_that("get_snps_by_location: warnings", {
+    snps <- get_snps_by_location("X", 1L, 10L)
+    expected_colnames <- c("query_grange",
+                           "rsId",
+                           "merged",
+                           "chromosomeName",
+                           "chromosomePosition",
+                           "region.name",
+                           "functionalClass",
+                           "lastUpdateDate",
+                           "genomicContexts")
+    expect_named(snps, expected_colnames)
+    expect_identical(nrow(snps), 0L)
   })
 })

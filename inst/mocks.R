@@ -20,6 +20,7 @@ stop_capturing()
 start_capturing()
 request("/singleNucleotidePolymorphisms/rs10910092")
 request("/snpLocation/X:1-20000")
+request("/snpLocation/X:1-10")
 request("/snpLocation/6:1-250000")
 stop_capturing()
 

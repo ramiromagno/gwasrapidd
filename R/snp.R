@@ -408,9 +408,25 @@ get_snps_by_location <- function(chr, start, end,
       .y = genomic_ranges[is_valid_response],
       .f = snp_content)
 
-    if(identical(nrow(snps), 0L) && warnings)
-      warning("No snps found within the queried genomic ranges.")
+    if (identical(nrow(snps), 0L)) {
+      if(warnings)
+        warning("No snps found within the queried genomic ranges.")
+      # Empty tibble
+      if(query_grange)
+        snps <- tibble::tibble(query_grange = character())
 
+      snps <- tibble::add_column(snps,
+        rsId = character(),
+        merged = integer(),
+        chromosomeName = character(),
+        chromosomePosition = integer(),
+        region.name = character(),
+        functionalClass = character(),
+        lastUpdateDate = character(),
+        genomicContexts = list()
+      )
+      return(snps)
+    }
     # Because of multiple genomic range queries, of overlapping intervals
     # the same SNP may show up more than once. If remove_duplicated_snps = TRUE
     # we remove those duplicated entries (rows).
