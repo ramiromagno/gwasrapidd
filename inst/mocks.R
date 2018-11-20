@@ -5,6 +5,14 @@ library(httptest)
 .mockPaths("tests/testthat/")
 options(httptest.verbose=TRUE)
 
+
+#
+# Request captures for functions in metadata.R
+#
+start_capturing()
+request("/metadata")
+stop_capturing()
+
 #
 # Request captures for functions in request.R
 #
