@@ -181,7 +181,7 @@ test_that("Test filter_genomic_location_by_chr_name.", {
     chromosomeName = c("1"),
     chromosomePosition = c(2570077L),
     region.name = c("1p36.32"),
-    `_links.snps.href` = "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs10910092"
+    `_links.snps` = list(tibble::tibble(href = "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs10910092"))
   )
   expect_identical(
     filter_genomic_location_by_chr_name(tbl_input),
@@ -202,7 +202,7 @@ test_that("filter_genomic_location_by_chr_name: more than one location.", {
     chromosomeName = c("1"),
     chromosomePosition = c(2570077L),
     region.name = c("1p36.32"),
-    `_links.snps.href` = "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs10910092"
+    `_links.snps` = list(tibble::tibble(href = "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs10910092"))
   )
   expect_identical(
     filter_genomic_location_by_chr_name(tbl_input, warnings = FALSE),
@@ -222,7 +222,7 @@ test_that("filter_genomic_location_by_chr_name: check input type", {
                        "region.name" = character(),
                        "_links.snps.href" = character())
 
-  error_msg <- "df must contain all of the following variables:\nchromosomeName, chromosomePosition, region.name and _links.snps.href."
+  error_msg <- "df must contain the following variables:\nchromosomeName, chromosomePosition, region.name, and _links.snps.href or _links.snps."
   # All columns except the first
   expect_error(filter_genomic_location_by_chr_name(df[, -1]),
                error_msg)
@@ -243,7 +243,7 @@ test_that("filter_genomic_location_by_chr_name: check input type", {
   df3 <- tibble::tibble("chromosomeName" = NA_character_,
                         "chromosomePosition" = NA_integer_,
                         "region.name" = NA_character_,
-                        "_links.snps.href" = NA_character_)
+                        "_links.snps" = list(tibble::tibble(href = NA_character_)))
   expect_identical(df2, df3)
   expect_warning(filter_genomic_location_by_chr_name(df, warnings = TRUE),
                 "The dataframe df is empty. Filling in NAs...")
@@ -272,7 +272,7 @@ with_mock_api({
     df_NA <- tibble::tibble("chromosomeName" = NA_character_,
                           "chromosomePosition" = NA_integer_,
                           "region.name" = NA_character_,
-                          "_links.snps.href" = NA_character_)
+                          "_links.snps" = list(tibble::tibble(href = NA_character_)))
 
     snp_lst <- request("/singleNucleotidePolymorphisms/rs10910092")
 
@@ -331,5 +331,22 @@ with_mock_api({
                            "genomicContexts")
     expect_named(snps, expected_colnames)
     expect_identical(nrow(snps), 0L)
+  })
+})
+
+with_mock_api({
+  test_that("get_snps_by_location: https://github.com/ramiromagno/gwasrapidd/issues/1#issue-382781858", {
+    snps <- get_snps_by_location("8", 125843656L, 128157561L)
+    expected_colnames <- c("query_grange",
+                           "rsId",
+                           "merged",
+                           "chromosomeName",
+                           "chromosomePosition",
+                           "region.name",
+                           "functionalClass",
+                           "lastUpdateDate",
+                           "genomicContexts")
+    expect_named(snps, expected_colnames)
+    expect_identical(nrow(snps), 119L)
   })
 })

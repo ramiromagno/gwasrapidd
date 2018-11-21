@@ -201,26 +201,36 @@ filter_genomic_location_by_chr_name <- function(df, chr_names_to_keep = chromoso
 
   genomic_locations_variables <- c("chromosomeName",
                                    "chromosomePosition",
-                                   "region.name",
-                                   "_links.snps.href")
+                                   "region.name")
+  vars1 <- c(genomic_locations_variables, "_links.snps.href")
+  vars2 <- c(genomic_locations_variables, "_links.snps")
 
   if(!is.data.frame(df))
     stop("df needs to be a dataframe.")
 
-  if(!(all(genomic_locations_variables %in% colnames(df))))
-    stop("df must contain all of the following variables:\n",
-         concatenate::cc_and(genomic_locations_variables),".")
+  if(!(all(vars1 %in% colnames(df)) || all(vars2 %in% colnames(df))))
+    stop("df must contain the following variables:\n",
+         "chromosomeName, chromosomePosition, region.name, and _links.snps.href or _links.snps.")
+
+  # If column _links.snps.href exists then transform it to
+  # _links.snps and wrap each of its elements in a list of one tibble.
+  if("_links.snps.href" %in% colnames(df)) {
+    df$`_links.snps.href` <-
+      lapply(df$`_links.snps.href`,
+             function(snp_url) tibble::tibble(href = snp_url))
+    names(df)[names(df) == "_links.snps.href"] <- "_links.snps"
+  }
+
+  location_empty_tbl <- tibble::tibble("chromosomeName" = NA_character_,
+                        "chromosomePosition" = NA_integer_,
+                        "region.name" = NA_character_,
+                        "_links.snps" = list(tibble::tibble(href = NA_character_)))
 
   if(identical(nrow(df), 0L)) {
     if(warnings)
       warning("The dataframe df is empty. Filling in NAs...")
 
-    # A one-row tibble filled with NA values.
-    df2 <- tibble::tibble("chromosomeName" = NA_character_,
-                          "chromosomePosition" = NA_integer_,
-                          "region.name" = NA_character_,
-                          "_links.snps.href" = NA_character_)
-    return(df2)
+    return(location_empty_tbl)
   }
 
   # To appease R CMD check (not happy with this.)
@@ -233,12 +243,7 @@ filter_genomic_location_by_chr_name <- function(df, chr_names_to_keep = chromoso
     if(warnings)
       warning("Filtering of genomic locations resulted in an empty dataframe!")
 
-    # A one-row tibble filled with NA values.
-    df2 <- tibble::tibble("chromosomeName" = NA_character_,
-                          "chromosomePosition" = NA_integer_,
-                          "region.name" = NA_character_,
-                          "_links.snps.href" = NA_character_)
-    return(df2)
+    return(location_empty_tbl)
   }
 
   # If only one genomic location is found, nice!,
@@ -295,7 +300,6 @@ snp_content_to_tibble <- function(snp_content) {
     location_df <- purrr::map_dfr(locations, filter_genomic_location_by_chr_name)
   }
 
-  #genomic_contexts_df <- tibble::tibble(genomicContexts = list(drop_links(genomicContexts)))
   if("data.frame" %in% class(genomicContexts))
     genomic_contexts_df <- tibble::tibble(genomicContexts = list(drop_links(genomicContexts)))
   else { # expecting a list of data frames
@@ -308,7 +312,7 @@ snp_content_to_tibble <- function(snp_content) {
   snp2 <- dplyr::bind_cols(snp_df, location_df, genomic_contexts_df)
   # Reorder columns
   snp3 <- dplyr::select(snp2, "rsId", "merged",
-                        "chromosomeName", "chromosomePosition", "region.name",
+                        "chromosomeName", "chromosomePosition", "region.name", "_links.snps",
                         "functionalClass", "lastUpdateDate", "genomicContexts")
   snp4 <- drop_links(snp3)
 
