@@ -83,3 +83,28 @@ test_that("Test null_to_na", {
   expect_identical(null_to_na(lst1), list(a = 1, b = 2, c = NA_character_))
   expect_identical(null_to_na(df1), tibble::tibble(a = 1, b = 2, c = list(NA_character_)))
 })
+
+
+#
+## nr_to_na
+#
+
+test_that("Test nr_to_na", {
+  lst1 <- list(a = 1, b = "nr", c = "NR")
+  df1 <- tibble::tibble(a = 1, b = "nr", c = list("NR"))
+  expect_identical(nr_to_na(lst1), list(a = 1, b = "nr", c = NA_character_))
+  expect_identical(nr_to_na(df1), tibble::tibble(a = 1, b = "nr", c = list(NA_character_)))
+})
+
+#
+## missing_to_na
+#
+
+test_that("Test missing_to_na", {
+  lst1 <- list(a = NULL, b = "nr", c = "NR", d = list(a = NULL, b = "nr", c = "NR"))
+  df1 <- tibble::tibble(a = 1, b = "nr", c = list("NR"))
+  expect_identical(missing_to_na(lst1),
+                   list(a = NA_character_, b = "nr", c = NA_character_,
+                        d = list(a = NA_character_, b = "nr", c = NA_character_)))
+  expect_identical(missing_to_na(df1), tibble::tibble(a = 1, b = "nr", c = list(NA_character_)))
+})

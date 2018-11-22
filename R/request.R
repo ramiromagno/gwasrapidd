@@ -90,8 +90,8 @@ request <- function(resource_url = "/", base_url = gwas_rest_api_base_url, verbo
   content <- jsonlite::fromJSON(httr::content(response, "text"),
                                 flatten = TRUE)
 
-  # Assuming NULL means not available (NA)
-  content <- null_to_na(content)
+  # Assuming NULL and "NR" means not available (NA)
+  content <- missing_to_na(content)
 
   return(list(response_code = response_code, content = content))
 }

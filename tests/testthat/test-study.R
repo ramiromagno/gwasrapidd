@@ -94,7 +94,7 @@ with_mock_api({
           ancestralGroups = list(
             tibble::tibble(ancestralGroup = "European"),
             tibble::tibble(ancestralGroup = "European"),
-            tibble::tibble(ancestralGroup = "NR")
+            tibble::tibble(ancestralGroup = NA_character_)
           ),
           countryOfOrigin = list(list(), list(), list()),
           countryOfRecruitment = list(
