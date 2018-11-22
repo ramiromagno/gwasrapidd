@@ -27,7 +27,7 @@ is_study_accession("GCST123456") # TRUE
 
 # Test a bunch of strings:
 is_study_accession(
-  c("GCST123456", "GCST000042", "123456")) # TRUE TRUE NA
+  c("GCST123456", "GCST000042", "123456")) # TRUE TRUE FALSE
 
 # By default NAs are returned as they are.
 is_study_accession(
