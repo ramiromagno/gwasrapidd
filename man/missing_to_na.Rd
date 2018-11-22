@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{missing_to_na}
 \alias{missing_to_na}
-\title{Recursively map all missing values to NA.}
+\title{Recursively map all missing values to \code{NA}.}
 \usage{
 missing_to_na(lst)
 }
@@ -13,10 +13,11 @@ missing_to_na(lst)
 A list whose missing values have been replaced by NA.
 }
 \description{
-Recursively map all missing values to NA.
+Traverse a recursive list and map missing values to \code{\link[base]{NA}}.
+Missing values are: \itemize{ \item \code{NULL} \item \code{"NR"} }
 }
 \details{
-Note: This function is case sensitive on "NR", i.e., it will leave "nr"
-untouched.
+Note: This function is case sensitive on \code{"NR"}, i.e., it will leave
+\code{"nr"} untouched.
 }
 \keyword{internal}

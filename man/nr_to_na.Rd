@@ -17,7 +17,7 @@ Traverse a recursive list and map \code{"NR"} (Not Recorded) values to
 \code{\link[base]{NA}}.
 }
 \details{
-Note: This function is case sensitive on "NR", i.e., it will leave "nr"
-untouched.
+Note: This function is case sensitive on \code{"NR"}, i.e., it will leave
+\code{"nr"} untouched.
 }
 \keyword{internal}

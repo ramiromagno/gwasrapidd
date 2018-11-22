@@ -144,8 +144,8 @@ null_to_na <- function(lst)
 #' Traverse a recursive list and map \code{"NR"} (Not Recorded) values to
 #' \code{\link[base]{NA}}.
 #'
-#' Note: This function is case sensitive on "NR", i.e., it will leave "nr"
-#' untouched.
+#' Note: This function is case sensitive on \code{"NR"}, i.e., it will leave
+#' \code{"nr"} untouched.
 #'
 #' @param lst A list.
 #'
@@ -155,22 +155,30 @@ null_to_na <- function(lst)
 nr_to_na <- function(lst)
   recursive_apply(lst, function(x) if(identical(x, "NR")) NA_character_ else x)
 
-#' Recursively map all missing values to NA.
+#' Recursively map all missing values to \code{NA}.
 #'
-#' Traverse a recursive list and map missing values to
-#' \code{\link[base]{NA}}. Missing values are:
-#' \itemize{
-#' \item \code{NULL
-#' \item \code{"NR"}
-#' }
+#' Traverse a recursive list and map missing values to \code{\link[base]{NA}}.
+#' Missing values are: \itemize{ \item \code{NULL} \item \code{"NR"} }
 #'
-#' Note: This function is case sensitive on "NR", i.e., it will leave "nr"
-#' untouched.
+#' Note: This function is case sensitive on \code{"NR"}, i.e., it will leave
+#' \code{"nr"} untouched.
 #'
 #' @param lst A list.
 #'
 #' @return A list whose missing values have been replaced by NA.
 #'
 #' @keywords internal
-missing_to_na <- function(lst)
-  recursive_apply(lst, function(x) if(is.null(x) || identical(x, "NR")) NA_character_ else x)
+missing_to_na <- function(lst) {
+  recursive_apply(lst, function(x) {
+    if (is.null(x)) {
+      return(NA_character_)
+    }
+
+    if (is.character(x)) {
+      y <- x
+      y[y == "NR"] <- NA_character_
+      return(y)
+    }
+    return(x)
+  })
+}
