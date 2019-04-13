@@ -1,0 +1,126 @@
+{
+    "_embedded": {
+        "associations": [
+            {
+                "riskFrequency": "NR",
+                "pvalueDescription": null,
+                "pvalueMantissa": 3,
+                "pvalueExponent": -10,
+                "multiSnpHaplotype": false,
+                "snpInteraction": true,
+                "snpType": "novel",
+                "standardError": null,
+                "range": null,
+                "description": null,
+                "orPerCopyNum": null,
+                "betaNum": null,
+                "betaUnit": null,
+                "betaDirection": null,
+                "loci": [
+                    {
+                        "haplotypeSnpCount": null,
+                        "description": "SNP x SNP interaction",
+                        "strongestRiskAlleles": [
+                            {
+                                "riskAlleleName": "rs3798440-A",
+                                "riskFrequency": null,
+                                "genomeWide": true,
+                                "limitedList": false,
+                                "_links": {
+                                    "snp": {
+                                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs3798440"
+                                    }
+                                }
+                            }
+                        ],
+                        "authorReportedGenes": [
+                            {
+                                "geneName": "MYO6",
+                                "entrezGeneIds": [
+                                    {
+                                        "entrezGeneId": "4646"
+                                    }
+                                ],
+                                "ensemblGeneIds": [
+                                    {
+                                        "ensemblGeneId": "ENSG00000196586"
+                                    }
+                                ]
+                            }
+                        ],
+                        "_links": {
+                            "association": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/24299710{?projection}",
+                                "templated": true
+                            }
+                        }
+                    },
+                    {
+                        "haplotypeSnpCount": null,
+                        "description": "SNP x SNP interaction",
+                        "strongestRiskAlleles": [
+                            {
+                                "riskAlleleName": "rs9350602-C",
+                                "riskFrequency": null,
+                                "genomeWide": true,
+                                "limitedList": false,
+                                "_links": {
+                                    "snp": {
+                                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs9350602"
+                                    }
+                                }
+                            }
+                        ],
+                        "authorReportedGenes": [
+                            {
+                                "geneName": "MYO6",
+                                "entrezGeneIds": [
+                                    {
+                                        "entrezGeneId": "4646"
+                                    }
+                                ],
+                                "ensemblGeneIds": [
+                                    {
+                                        "ensemblGeneId": "ENSG00000196586"
+                                    }
+                                ]
+                            }
+                        ],
+                        "_links": {
+                            "association": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/24299710{?projection}",
+                                "templated": true
+                            }
+                        }
+                    }
+                ],
+                "lastMappingDate": "2018-07-27T22:06:23.000+0000",
+                "lastUpdateDate": "2018-07-27T22:06:24.000+0000",
+                "pvalue": 3.0E-10,
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/24299710"
+                    },
+                    "association": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/24299710{?projection}",
+                        "templated": true
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/24299710/snps"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/24299710/study"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/24299710/efoTraits"
+                    }
+                }
+            }
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs3798440/associations"
+        }
+    }
+}

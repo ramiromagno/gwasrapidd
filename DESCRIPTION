@@ -21,8 +21,8 @@ BugReports: https://github.com/ramiromagno/gwasrapidd/issues
 Encoding: UTF-8
 Language: en-US
 LazyData: true
-RoxygenNote: 6.1.0
-Imports: 
+RoxygenNote: 6.1.1
+Imports:
     magrittr,
     httr,
     urltools,
@@ -32,9 +32,47 @@ Imports:
     dplyr,
     jsonlite,
     purrr,
-    tibble
-Suggests: 
+    tibble,
+    glue,
+    tidyr,
+    assertthat,
+    rlang,
+    methods,
+    lubridate,
+    plyr
+Suggests:
     httptest,
     spelling,
     testthat,
-    covr
+    covr,
+    knitr,
+    rmarkdown
+Collate:
+    'class-associations.R'
+    'class-studies.R'
+    'class-traits.R'
+    'class-variants.R'
+    'ebi_server.R'
+    'generics.R'
+    'get_associations.R'
+    'get_metadata.R'
+    'get_studies.R'
+    'get_traits.R'
+    'get_variants.R'
+    'gwasrapidd-package.R'
+    'list_joins.R'
+    'missing.R'
+    'parse-associations.R'
+    'parse-studies.R'
+    'parse-traits.R'
+    'parse-utils.R'
+    'parse-variants.R'
+    'post-studies.R'
+    'post-traits.R'
+    'recursive_apply.R'
+    'request.R'
+    's4-utils.R'
+    'sure.R'
+    'utils-pipe.R'
+    'utils.R'
+VignetteBuilder: knitr

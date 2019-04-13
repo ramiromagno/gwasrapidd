@@ -1,0 +1,48 @@
+---
+title: "Frequently asked questions"
+author: ""
+date: "`r Sys.Date()`"
+output:
+  rmarkdown::html_vignette:
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## 1 | What is the difference between a trait and reported trait?
+
+There are two levels of trait description in the GWAS Catalog: (EFO) trait and reported trait.
+
+Studies are assigned one or more terms from the [Experimental Factor Ontology (EFO)](https://www.ebi.ac.uk/efo/), i.e., an EFO trait, or simply trait, that best represents the phenotype under investigation.
+
+In addition, each study is also assigned a free text reported trait. This is written by the GWAS Catalog curators and reflects the author language, and where necessary, it includes more specific and detailed description of the experimental design, e.g., interaction studies or studies with a background trait.
+
+
+As an example take the study with accession identifier `GCST000206` by EM Behrens et al. (2008). We can get the EFO trait with `get_traits()` and the reported trait with `get_studies()`:
+
+The (EFO) trait for the Behrens study is `chronic childhood arthritis`:
+
+```{r}
+library(gwasrapidd)
+efo_trait <- get_traits(study_id = 'GCST000206')
+efo_trait@traits$trait
+```
+
+whereas the reported trait is `Arthritis (juvenile idiopathic)`:
+
+```{r}
+study <- get_studies(study_id = 'GCST000206')
+study@studies$reported_trait
+```
+
+
+
+

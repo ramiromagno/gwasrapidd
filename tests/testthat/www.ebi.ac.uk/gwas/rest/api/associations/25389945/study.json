@@ -1,0 +1,112 @@
+{
+    "initialSampleSize": "2,605 European ancestry cases, 16,168 European ancestry controls",
+    "gxe": false,
+    "gxg": false,
+    "snpCount": 2618094,
+    "qualifier": "at least",
+    "imputed": true,
+    "pooled": false,
+    "studyDesignComment": null,
+    "accessionId": "GCST005108",
+    "fullPvalueSet": false,
+    "userRequested": false,
+    "platforms": [
+        {
+            "manufacturer": "Illumina"
+        }
+    ],
+    "ancestries": [
+        {
+            "type": "replication",
+            "numberOfIndividuals": 25035,
+            "ancestralGroups": [
+                {
+                    "ancestralGroup": "European"
+                }
+            ],
+            "countryOfOrigin": [
+                {
+                    "majorArea": "NR",
+                    "region": "NR",
+                    "countryName": "NR"
+                }
+            ],
+            "countryOfRecruitment": [
+                {
+                    "majorArea": "Europe",
+                    "region": "Northern Europe",
+                    "countryName": "U.K."
+                }
+            ]
+        },
+        {
+            "type": "initial",
+            "numberOfIndividuals": 18773,
+            "ancestralGroups": [
+                {
+                    "ancestralGroup": "European"
+                }
+            ],
+            "countryOfOrigin": [
+                {
+                    "majorArea": "NR",
+                    "region": "NR",
+                    "countryName": "NR"
+                }
+            ],
+            "countryOfRecruitment": [
+                {
+                    "majorArea": "Europe",
+                    "region": "Northern Europe",
+                    "countryName": "U.K."
+                }
+            ]
+        }
+    ],
+    "diseaseTrait": {
+        "trait": "Major depressive disorder"
+    },
+    "genotypingTechnologies": [
+        {
+            "genotypingTechnology": "Genome-wide genotyping array"
+        }
+    ],
+    "replicationSampleSize": "8,508 European ancestry cases, 16,527 European ancestry controls",
+    "publicationInfo": {
+        "pubmedId": "29187746",
+        "publicationDate": "2017-11-30",
+        "publication": "Transl Psychiatry",
+        "title": "Genome-wide haplotype-based association analysis of major depressive disorder in Generation Scotland and UK Biobank.",
+        "author": {
+            "fullname": "Howard DM",
+            "orcid": "0000-0002-6005-1972"
+        },
+        "_links": {
+            "studies": {
+                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005108{?projection}",
+                "templated": true
+            }
+        }
+    },
+    "_links": {
+        "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005108"
+        },
+        "study": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005108{?projection}",
+            "templated": true
+        },
+        "associationsByStudySummary": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005108/associations?projection=associationByStudy"
+        },
+        "efoTraits": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005108/efoTraits"
+        },
+        "snps": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005108/snps"
+        },
+        "associations": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005108/associations"
+        }
+    }
+}

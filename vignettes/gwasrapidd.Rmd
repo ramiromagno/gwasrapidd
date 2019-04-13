@@ -1,0 +1,89 @@
+---
+title: "Getting started with gwasrapidd"
+author: "Ramiro Magno"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Overview
+
+gwasrapidd is a REST API R client for the [GWAS
+Catalog](https://www.ebi.ac.uk/gwas), allowing you to download:
+
+- Studies with `get_studies()`
+- Associations with `get_associations()`
+- Variants with `get_variants()`
+- Traits with `get_traits()`
+
+Each function returns an S4 object that encapsulates a set of tables (dataframes), that together, form a relational database for each object type.
+
+## Installation
+
+```{r, eval = FALSE}
+# Install the development version from GitHub:
+# install.packages("devtools")
+devtools::install_github("ramiromagno/gwasrapidd")
+```
+
+## Cheatsheet
+
+<a href="https://github.com/rstudio/cheatsheets/blob/master/data-import.pdf"><img src="https://raw.githubusercontent.com/rstudio/cheatsheets/master/pngs/thumbnails/data-import-cheatsheet-thumbs.png" width="630" height="252"/></a>  
+
+
+## Getting started
+
+The GWAS Catalog is a service provided by the EMBL-EBI and NHGRI that offers a
+manually curated and freely available database of published genome-wide
+association studies (GWAS). The Catalog website and infrastructure is hosted by
+the [EMBL-EBI](https://www.ebi.ac.uk).
+
+There are three ways to access the Catalog database:
+
+- via the Web interface at
+[https://www.ebi.ac.uk/gwas](https://www.ebi.ac.uk/gwas)
+- by downloading a
+database dump in TSV or RDF/OWL formats:
+[https://www.ebi.ac.uk/gwas/docs/file-downloads](https://www.ebi.ac.uk/gwas/docs/file-downloads)
+- or through the GWAS Catalog REST API:
+[https://www.ebi.ac.uk/gwas/rest/docs/api](https://www.ebi.ac.uk/gwas/rest/docs/api)
+
+gwasrapidd facilitates the access to the Catalog via the Catalog REST API,
+allowing you to programmatically retrieve data directly into R.
+
+
+
+## Usage
+
+The Catalog REST API provides four types of data objects for retrieval:
+
+- Studies
+- Associations
+- Variants
+- Traits
+
+gwasrapidd provides four corresponding functions to get each of the object
+types: `get_studies()`, `get_associations()`, `get_variants()` and
+`get_traits()`.
+
+
+
+## Examples
+
+### Searching for information about Diabetes mellitus
+
+```{r}
+
+```
+
+
