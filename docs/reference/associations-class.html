@@ -8,6 +8,13 @@
 
 <title>An S4 class to represent a set of GWAS Catalog associations — associations-class • gwasrapidd</title>
 
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
@@ -177,14 +184,16 @@ primary key.</p>
 <dt>genome_wide</dt><dd><p>TODO</p></dd>
 <dt>limited_list</dt><dd><p>TODO</p></dd>
 </dl></p></dd>
-    <dt><code>author_reported_genes</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing author's reported genes. Columns:
+    <dt><code>genes</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing author reported genes. Columns:
 <dl class='dl-horizontal'>
 <dt>association_id</dt><dd><p>GWAS Catalog association accession identifier, e.g., <code>20250</code>.</p></dd>
-<dt>locus_id</dt><dd><p>TODO</p></dd>
-<dt>variant_id</dt><dd><p>GWAS Catalog variant identifier, mostly Reference SNP
-cluster identifiers, i.e., rs ids. See Section
-<a href='https://www.ncbi.nlm.nih.gov/books/NBK44417/#Content.what_is_a_reference_snp_or__rs_i'>RefSNPs
-(rs) Defined</a> in the NCBI's SNP FAQ Archive.</p></dd>
+<dt>locus_id</dt><dd><p>TODO.</p></dd>
+<dt>gene_name</dt><dd><p>TODO.</p></dd>
+</dl></p></dd>
+    <dt><code>ensembl_ids</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing Ensembl gene identifiers. Columns:
+<dl class='dl-horizontal'>
+<dt>association_id</dt><dd><p>GWAS Catalog association accession identifier, e.g., <code>20250</code>.</p></dd>
+<dt>locus_id</dt><dd><p>TODO.</p></dd>
 <dt>gene_name</dt><dd><p>Gene symbol according to <a href='https://www.genenames.org/'>HUGO Gene Nomenclature (HGNC)</a>.</p></dd>
 <dt>entrez_id</dt><dd><p>The Entrez identifier of a gene, see ref.
 <a href='https://dx.doi.org/10.1093%2Fnar%2Fgkq1237'>10.1093/nar/gkq1237</a> for
@@ -192,6 +201,15 @@ more information.</p></dd>
 <dt>ensembl_id</dt><dd><p>The Ensembl identifier of an Ensembl gene, see Section
 <a href='https://www.ensembl.org/info/genome/genebuild/genome_annotation.html'>Gene
 annotation in Ensembl</a> for more information.</p></dd>
+</dl></p></dd>
+    <dt><code>entrez_ids</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing Entrez gene identifiers. Columns:
+<dl class='dl-horizontal'>
+<dt>association_id</dt><dd><p>GWAS Catalog association accession identifier, e.g., <code>20250</code>.</p></dd>
+<dt>locus_id</dt><dd><p>TODO.</p></dd>
+<dt>gene_name</dt><dd><p>Gene symbol according to <a href='https://www.genenames.org/'>HUGO Gene Nomenclature (HGNC)</a>.</p></dd>
+<dt>entrez_id</dt><dd><p>The Entrez identifier of a gene, see ref.
+<a href='https://dx.doi.org/10.1093%2Fnar%2Fgkq1237'>10.1093/nar/gkq1237</a> for
+more information.</p></dd>
 </dl></p></dd>
 </dl>
     

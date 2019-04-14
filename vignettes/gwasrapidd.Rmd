@@ -1,7 +1,7 @@
 ---
 title: "Getting started with gwasrapidd"
-author: "Ramiro Magno"
-date: "`r Sys.Date()`"
+author: ""
+date: ""
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Getting started with gwasrapidd}
@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 ## Overview
 
 gwasrapidd is a REST API R client for the [GWAS
-Catalog](https://www.ebi.ac.uk/gwas), allowing you to download:
+Catalog](https://www.ebi.ac.uk/gwas), allowing you to programatically download:
 
 - Studies with `get_studies()`
 - Associations with `get_associations()`
@@ -38,8 +38,7 @@ devtools::install_github("ramiromagno/gwasrapidd")
 
 ## Cheatsheet
 
-<a href="https://github.com/rstudio/cheatsheets/blob/master/data-import.pdf"><img src="https://raw.githubusercontent.com/rstudio/cheatsheets/master/pngs/thumbnails/data-import-cheatsheet-thumbs.png" width="630" height="252"/></a>  
-
+TODO
 
 ## Getting started
 
@@ -50,12 +49,12 @@ the [EMBL-EBI](https://www.ebi.ac.uk).
 
 There are three ways to access the Catalog database:
 
-- via the Web interface at
+- Via the Web interface at
 [https://www.ebi.ac.uk/gwas](https://www.ebi.ac.uk/gwas)
-- by downloading a
+- By downloading a
 database dump in TSV or RDF/OWL formats:
 [https://www.ebi.ac.uk/gwas/docs/file-downloads](https://www.ebi.ac.uk/gwas/docs/file-downloads)
-- or through the GWAS Catalog REST API:
+- Or through the GWAS Catalog REST API:
 [https://www.ebi.ac.uk/gwas/rest/docs/api](https://www.ebi.ac.uk/gwas/rest/docs/api)
 
 gwasrapidd facilitates the access to the Catalog via the Catalog REST API,
@@ -73,9 +72,12 @@ The Catalog REST API provides four types of data objects for retrieval:
 - Traits
 
 gwasrapidd provides four corresponding functions to get each of the object
-types: `get_studies()`, `get_associations()`, `get_variants()` and
-`get_traits()`.
+types:
 
+- `get_studies()`
+- `get_associations()`
+- `get_variants()`
+- `get_traits()`
 
 
 ## Examples

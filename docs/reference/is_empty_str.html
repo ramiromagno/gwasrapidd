@@ -8,6 +8,13 @@
 
 <title>Is string empty or an all whitespace string? — is_empty_str • gwasrapidd</title>
 
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
@@ -117,7 +124,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Is string empty or an all whitespace string?</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ramiromagno/gwasrapidd/blob/master/R/utils.R'><code>R/utils.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/ramiromagno/gwasrapidd/blob/master/R/parse-utils.R'><code>R/parse-utils.R</code></a></small>
     <div class="hidden name"><code>is_empty_str.Rd</code></div>
     </div>
 
@@ -127,14 +134,20 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>is_empty_str</span>(<span class='no'>string</span>)</pre>
+    <pre class="usage"><span class='fu'>is_empty_str</span>(<span class='no'>str</span>, <span class='kw'>convert_NA_to_FALSE</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>string</th>
+      <th>str</th>
       <td><p>A <code><a href='https://www.rdocumentation.org/packages/base/topics/character'>character</a></code> vector.</p></td>
+    </tr>
+    <tr>
+      <th>convert_NA_to_FALSE</th>
+      <td><p>Whether to treat <code>NA</code> as <code>NA</code>
+(<code>convert_NA_to_FALSE = FALSE</code>) or whether to return <code>FALSE</code> when
+an <code>NA</code> is found (<code>convert_NA_to_FALSE = TRUE</code>).</p></td>
     </tr>
     </table>
     

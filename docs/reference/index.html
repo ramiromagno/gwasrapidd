@@ -8,6 +8,13 @@
 
 <title>Function reference • gwasrapidd</title>
 
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
@@ -147,27 +154,9 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="drop_links.html">drop_links()</a></code> </p>
-        </td>
-        <td><p>Discard elements whose name starts with "_links".</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="efotraits-class.html">efotraits-class</a></code> </p>
-        </td>
-        <td><p>An S4 class to represent a set of GWAS Catalog EFO traits.</p></td>
-      </tr><tr>
-        
-        <td>
           <p><code><a href="filter_by_id.html">filter_by_id()</a></code> </p>
         </td>
         <td><p>Filter GWAS Catalog objects by Id</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="gc_request.html">gc_request()</a></code> </p>
-        </td>
-        <td><p>Request a GWAS Catalog REST API endpoint</p></td>
       </tr><tr>
         
         <td>
@@ -177,15 +166,15 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="get_efotraits.html">get_efotraits()</a></code> </p>
+          <p><code><a href="get_child_efo.html">get_child_efo()</a></code> </p>
         </td>
-        <td><p>Get GWAS Catalog EFO traits</p></td>
+        <td><p>Get all child terms of this trait in the EFO hierarchy</p></td>
       </tr><tr>
         
         <td>
           <p><code><a href="get_metadata.html">get_metadata()</a></code> </p>
         </td>
-        <td><p>GWAS Catalog Metadata</p></td>
+        <td><p>Get GWAS Catalog metadata</p></td>
       </tr><tr>
         
         <td>
@@ -195,15 +184,15 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="get_variants.html">get_variants()</a></code> </p>
+          <p><code><a href="get_traits.html">get_traits()</a></code> </p>
         </td>
-        <td><p>Get GWAS Catalog variants</p></td>
+        <td><p>Get GWAS Catalog EFO traits</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="is_association_id.html">is_association_id()</a></code> </p>
+          <p><code><a href="get_variants.html">get_variants()</a></code> </p>
         </td>
-        <td><p>Is a string a GWAS Catalog study accession ID?</p></td>
+        <td><p>Get GWAS Catalog variants</p></td>
       </tr><tr>
         
         <td>
@@ -213,45 +202,45 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="is_efo_id.html">is_efo_id()</a></code> </p>
+          <p><code><a href="n_associations.html">n_associations()</a></code> </p>
         </td>
-        <td><p>Is a string an EFO trait ID?</p></td>
+        <td><p>Number of associations</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="is_efo_id2.html">is_efo_id2()</a></code> </p>
+          <p><code><a href="n_studies.html">n_studies()</a></code> </p>
         </td>
-        <td><p>Is a string an EFO trait ID in the broad sense?</p></td>
+        <td><p>Number of studies</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="is_embedded.html">is_embedded()</a></code> </p>
+          <p><code><a href="n_traits.html">n_traits()</a></code> </p>
         </td>
-        <td><p>Is the GWAS response wrapped in an '_embedded' object?</p></td>
+        <td><p>Number of traits</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="is_human_chromosome.html">is_human_chromosome()</a></code> </p>
+          <p><code><a href="n_variants.html">n_variants()</a></code> </p>
         </td>
-        <td><p>Is a string a human chromosome name?</p></td>
+        <td><p>Number of variants</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="is_paginated.html">is_paginated()</a></code> </p>
+          <p><code><a href="open_in_pubmed.html">open_in_pubmed()</a></code> </p>
         </td>
-        <td><p>Is the GWAS response paged?</p></td>
+        <td><p>Browse PubMed from PubMed identifiers.</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="is_rs_id.html">is_rs_id()</a></code> </p>
+          <p><code><a href="set_testing_fast.html">set_testing_fast()</a></code> </p>
         </td>
-        <td><p>Is a string a valid rsID?</p></td>
+        <td><p>Setup the environment to skip slow tests</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="is_study_id.html">is_study_id()</a></code> </p>
+          <p><code><a href="set_testing_slow.html">set_testing_slow()</a></code> </p>
         </td>
-        <td><p>Is a string a GWAS Catalog study accession ID?</p></td>
+        <td><p>Setup the environment to still run slow tests</p></td>
       </tr><tr>
         
         <td>
@@ -261,9 +250,27 @@
       </tr><tr>
         
         <td>
+          <p><code><a href="skip_if_testing_is_fast.html">skip_if_testing_is_fast()</a></code> </p>
+        </td>
+        <td><p>Skips a test if TEST_FAST is 'true'</p></td>
+      </tr><tr>
+        
+        <td>
           <p><code><a href="studies-class.html">studies-class</a></code> </p>
         </td>
         <td><p>An S4 class to represent a set of GWAS Catalog studies</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="subset.html">`[`(<i>&lt;studies&gt;</i>,<i>&lt;missing&gt;</i>,<i>&lt;missing&gt;</i>,<i>&lt;missing&gt;</i>)</a></code> <code><a href="subset.html">`[`(<i>&lt;studies&gt;</i>,<i>&lt;numeric&gt;</i>,<i>&lt;missing&gt;</i>,<i>&lt;missing&gt;</i>)</a></code> <code><a href="subset.html">`[`(<i>&lt;studies&gt;</i>,<i>&lt;character&gt;</i>,<i>&lt;missing&gt;</i>,<i>&lt;missing&gt;</i>)</a></code> <code><a href="subset.html">`[`(<i>&lt;associations&gt;</i>,<i>&lt;missing&gt;</i>,<i>&lt;missing&gt;</i>,<i>&lt;missing&gt;</i>)</a></code> <code><a href="subset.html">`[`(<i>&lt;associations&gt;</i>,<i>&lt;numeric&gt;</i>,<i>&lt;missing&gt;</i>,<i>&lt;missing&gt;</i>)</a></code> <code><a href="subset.html">`[`(<i>&lt;associations&gt;</i>,<i>&lt;character&gt;</i>,<i>&lt;missing&gt;</i>,<i>&lt;missing&gt;</i>)</a></code> <code><a href="subset.html">`[`(<i>&lt;variants&gt;</i>,<i>&lt;missing&gt;</i>,<i>&lt;missing&gt;</i>,<i>&lt;missing&gt;</i>)</a></code> <code><a href="subset.html">`[`(<i>&lt;variants&gt;</i>,<i>&lt;numeric&gt;</i>,<i>&lt;missing&gt;</i>,<i>&lt;missing&gt;</i>)</a></code> <code><a href="subset.html">`[`(<i>&lt;variants&gt;</i>,<i>&lt;character&gt;</i>,<i>&lt;missing&gt;</i>,<i>&lt;missing&gt;</i>)</a></code> <code><a href="subset.html">`[`(<i>&lt;traits&gt;</i>,<i>&lt;missing&gt;</i>,<i>&lt;missing&gt;</i>,<i>&lt;missing&gt;</i>)</a></code> <code><a href="subset.html">`[`(<i>&lt;traits&gt;</i>,<i>&lt;numeric&gt;</i>,<i>&lt;missing&gt;</i>,<i>&lt;missing&gt;</i>)</a></code> <code><a href="subset.html">`[`(<i>&lt;traits&gt;</i>,<i>&lt;character&gt;</i>,<i>&lt;missing&gt;</i>,<i>&lt;missing&gt;</i>)</a></code> </p>
+        </td>
+        <td><p>Subsetting GWAS Catalog objects</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="traits-class.html">traits-class</a></code> </p>
+        </td>
+        <td><p>An S4 class to represent a set of GWAS Catalog EFO traits.</p></td>
       </tr><tr>
         
         <td>

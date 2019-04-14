@@ -8,6 +8,13 @@
 
 <title>Get GWAS Catalog studies — get_studies • gwasrapidd</title>
 
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
@@ -143,7 +150,7 @@ studies that match simultaneously all criteria provided, then set
   <span class='kw'>variant_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>efo_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>pubmed_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>user_requested</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>full_pvalue_set</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>efo_uri</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>efo_trait</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>reported_trait</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>set_operation</span> <span class='kw'>=</span> <span class='st'>"union"</span>,
-  <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>warnings</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+  <span class='kw'>interactive</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>warnings</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -205,6 +212,11 @@ tells how studies retrieved by different criteria  should be combined:
 <code>'union'</code> binds together all results removing duplicates and
 <code>'intersection'</code> only keeps same studies found with different
 criteria.</p></td>
+    </tr>
+    <tr>
+      <th>interactive</th>
+      <td><p>A logical. If all studies are requested, whether to ask
+interactively if we really want to proceed.</p></td>
     </tr>
     <tr>
       <th>verbose</th>

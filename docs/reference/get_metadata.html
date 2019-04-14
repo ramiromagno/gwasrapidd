@@ -6,8 +6,15 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>GWAS Catalog Metadata — get_metadata • gwasrapidd</title>
+<title>Get GWAS Catalog metadata — get_metadata • gwasrapidd</title>
 
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
@@ -30,14 +37,15 @@
 
 
 
-<meta property="og:title" content="GWAS Catalog Metadata — get_metadata" />
+<meta property="og:title" content="Get GWAS Catalog metadata — get_metadata" />
 
 <meta property="og:description" content="Provides a list of the resources the GWAS Catalog data is currently mapped
-against, namely:
-Ensembl release number;
-Genome build version;
-dbSNP version.
-" />
+against: Ensembl
+release number, Genome build
+version and
+dbSNP
+version.In addition, the date since this combination of resource versions
+has been in use is also returned." />
 
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -121,65 +129,49 @@ dbSNP version.
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>GWAS Catalog Metadata</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ramiromagno/gwasrapidd/blob/master/R/metadata.R'><code>R/metadata.R</code></a></small>
+    <h1>Get GWAS Catalog metadata</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ramiromagno/gwasrapidd/blob/master/R/get_metadata.R'><code>R/get_metadata.R</code></a></small>
     <div class="hidden name"><code>get_metadata.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
     <p>Provides a list of the resources the GWAS Catalog data is currently mapped
-against, namely:</p><ul>
-<li><p>Ensembl release number;</p></li>
-<li><p>Genome build version;</p></li>
-<li><p>dbSNP version.</p></li>
-</ul>
+against: <a href='https://www.ensembl.org/info/docs/api/versions.html'>Ensembl
+release number</a>, <a href='https://www.ncbi.nlm.nih.gov/grc/human'>Genome build
+version</a> and
+<a href='https://www.ncbi.nlm.nih.gov/projects/SNP/snp_summary.cgi'>dbSNP
+version</a>.In addition, the date since this combination of resource versions
+has been in use is also returned.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>get_metadata</span>(<span class='kw'>warnings</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>get_metadata</span>(<span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>warnings</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
+      <th>verbose</th>
+      <td><p>Whether to be chatty.</p></td>
+    </tr>
+    <tr>
       <th>warnings</th>
-      <td><p>A <code><a href='https://www.rdocumentation.org/packages/base/topics/logical'>logical</a></code> value indicating whether to trigger a warning if the request is not successful.</p></td>
+      <td><p>Whether to trigger a warning if the request is not successful.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A named <code><a href='https://www.rdocumentation.org/packages/base/topics/list'>list</a></code> vector whose <code><a href='https://www.rdocumentation.org/packages/base/topics/names'>names</a></code> are:</p><ul>
-<li><p><code>ensembl_release_number</code>: Ensembl release number;</p></li>
-<li><p><code>genome_build_version</code>: Genome build version;</p></li>
-<li><p><code>dbsnp_version</code>: dbSNP version.</p></li>
+    <p>A named <code><a href='https://www.rdocumentation.org/packages/base/topics/list'>list</a></code> whose <code><a href='https://www.rdocumentation.org/packages/base/topics/names'>names</a></code> are:</p><ul>
+<li><p><code>ensembl_release_number</code>: <a href='https://www.ensembl.org/info/docs/api/versions.html'>Ensembl release number</a>;</p></li>
+<li><p><code>genome_build_version</code>: <a href='https://www.ncbi.nlm.nih.gov/grc/human'>Genome build version</a>;</p></li>
+<li><p><code>dbsnp_version</code>: <a href='https://www.ncbi.nlm.nih.gov/projects/SNP/snp_summary.cgi'>dbSNP version</a>.</p></li>
 <li><p><code>usage_start_date</code>: Date since this combination of resource versions has been in use.</p></li>
 </ul>
 
     
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>In addition, the date since this combination of resource versions has been
-in use is also returned.</p>
-    
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>get_metadata</span>()</div><div class='output co'>#&gt; $ensembl_release_number
-#&gt; [1] 95
-#&gt; 
-#&gt; $genome_build_version
-#&gt; [1] "GRCh38.p12"
-#&gt; 
-#&gt; $dbsnp_version
-#&gt; [1] 151
-#&gt; 
-#&gt; $usage_start_date
-#&gt; [1] "2019-01-12 14:00:01 UTC"
-#&gt; </div><div class='input'># ensembl_release_number  genome_build_version  dbsnp_version                 usage_start_date
-#                   "94"          "GRCh38.p12"          "151"   "2018-10-02T13:00:02.054+0000"
-</div><div class='input'>
-</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -187,11 +179,7 @@ in use is also returned.</p>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-
-      <li><a href="#details">Details</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+          </ul>
 
   </div>
 </div>

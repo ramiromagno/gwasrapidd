@@ -8,6 +8,13 @@
 
 <title>Is a string an EFO trait ID? — is_efo_id • gwasrapidd</title>
 
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
@@ -131,7 +138,7 @@ expression: <code>^EFO_\\d{7}$</code>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>is_efo_id</span>(<span class='no'>str</span>, <span class='kw'>convert_NA_to_FALSE</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>is_efo_id</span>(<span class='no'>str</span>, <span class='kw'>convert_NA_to_FALSE</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -153,19 +160,6 @@ an <code>NA</code> is found (<code>convert_NA_to_FALSE = TRUE</code>).</p></td>
     <p>A logical vector.</p>
     
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># Can "EFO_1234567" be a valid EFO trait ID?</span>
-<span class='fu'>is_efo_trait</span>(<span class='st'>"EFO_1234567"</span>) <span class='co'># TRUE</span></div><div class='output co'>#&gt; <span class='error'>Error in is_efo_trait("EFO_1234567"): could not find function "is_efo_trait"</span></div><div class='input'>
-<span class='co'># Test a bunch of strings:</span>
-<span class='fu'>is_efo_trait</span>(
-  <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"EFO_1234567"</span>, <span class='st'>"EFO_0000042"</span>, <span class='st'>"123456"</span>)) <span class='co'># TRUE TRUE FALSE</span></div><div class='output co'>#&gt; <span class='error'>Error in is_efo_trait(c("EFO_1234567", "EFO_0000042", "123456")): could not find function "is_efo_trait"</span></div><div class='input'>
-<span class='co'># By default NAs are returned as they are.</span>
-<span class='fu'>is_efo_trait</span>(
-  <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"1234567"</span>, <span class='st'>"EFO_1234567"</span>, <span class='fl'>NA_character_</span>)) <span class='co'># FALSE TRUE NA</span></div><div class='output co'>#&gt; <span class='error'>Error in is_efo_trait(c("1234567", "EFO_1234567", NA_character_)): could not find function "is_efo_trait"</span></div><div class='input'>
-<span class='co'># Use the argument convert_NA_to_FALSE = TRUE to get FALSE instead of NA.</span>
-<span class='fu'>is_efo_trait</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"1234567"</span>, <span class='st'>"EFO_1234567"</span>, <span class='fl'>NA_character_</span>),
-                   <span class='kw'>convert_NA_to_FALSE</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>) <span class='co'># FALSE TRUE FALSE</span></div><div class='output co'>#&gt; <span class='error'>Error in is_efo_trait(c("1234567", "EFO_1234567", NA_character_), convert_NA_to_FALSE = TRUE): could not find function "is_efo_trait"</span></div><div class='input'>
-</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -173,9 +167,7 @@ an <code>NA</code> is found (<code>convert_NA_to_FALSE = TRUE</code>).</p></td>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+          </ul>
 
   </div>
 </div>

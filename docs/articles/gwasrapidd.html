@@ -6,6 +6,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Getting started with gwasrapidd • gwasrapidd</title>
+<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
@@ -84,7 +90,7 @@
       <h1>Getting started with gwasrapidd</h1>
                         <h4 class="author">Ramiro Magno</h4>
             
-            <h4 class="date">2019-04-03</h4>
+            <h4 class="date">2019-04-15</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/ramiromagno/gwasrapidd/blob/master/vignettes/gwasrapidd.Rmd"><code>vignettes/gwasrapidd.Rmd</code></a></small>
       <div class="hidden name"><code>gwasrapidd.Rmd</code></div>
@@ -93,9 +99,37 @@
 
     
     
-<div id="introduction" class="section level2">
+<div id="overview" class="section level2">
 <h2 class="hasAnchor">
-<a href="#introduction" class="anchor"></a>Introduction</h2>
+<a href="#overview" class="anchor"></a>Overview</h2>
+<p>gwasrapidd is a REST API R client for the <a href="https://www.ebi.ac.uk/gwas">GWAS Catalog</a>, allowing you to download:</p>
+<ul>
+<li>Studies with <code><a href="../reference/get_studies.html">get_studies()</a></code>
+</li>
+<li>Associations with <code><a href="../reference/get_associations.html">get_associations()</a></code>
+</li>
+<li>Variants with <code><a href="../reference/get_variants.html">get_variants()</a></code>
+</li>
+<li>Traits with <code><a href="../reference/get_traits.html">get_traits()</a></code>
+</li>
+</ul>
+<p>Each function returns an S4 object that encapsulates a set of tables (dataframes), that together, form a relational database for each object type.</p>
+</div>
+<div id="installation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#installation" class="anchor"></a>Installation</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># Install the development version from GitHub:</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co"># install.packages("devtools")</span></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"ramiromagno/gwasrapidd"</span>)</a></code></pre></div>
+</div>
+<div id="cheatsheet" class="section level2">
+<h2 class="hasAnchor">
+<a href="#cheatsheet" class="anchor"></a>Cheatsheet</h2>
+<p><a href="https://github.com/rstudio/cheatsheets/blob/master/data-import.pdf"><img src="https://raw.githubusercontent.com/rstudio/cheatsheets/master/pngs/thumbnails/data-import-cheatsheet-thumbs.png" width="630" height="252"></a></p>
+</div>
+<div id="getting-started" class="section level2">
+<h2 class="hasAnchor">
+<a href="#getting-started" class="anchor"></a>Getting started</h2>
 <p>The GWAS Catalog is a service provided by the EMBL-EBI and NHGRI that offers a manually curated and freely available database of published genome-wide association studies (GWAS). The Catalog website and infrastructure is hosted by the <a href="https://www.ebi.ac.uk">EMBL-EBI</a>.</p>
 <p>There are three ways to access the Catalog database:</p>
 <ul>
@@ -108,21 +142,25 @@
 </ul>
 <p>gwasrapidd facilitates the access to the Catalog via the Catalog REST API, allowing you to programmatically retrieve data directly into R.</p>
 </div>
-<div id="quick-start" class="section level2">
+<div id="usage" class="section level2">
 <h2 class="hasAnchor">
-<a href="#quick-start" class="anchor"></a>Quick start</h2>
-<p>As of this writing, the Catalog REST API provides four types of data objects for retrieval:</p>
+<a href="#usage" class="anchor"></a>Usage</h2>
+<p>The Catalog REST API provides four types of data objects for retrieval:</p>
 <ul>
 <li>Studies</li>
 <li>Associations</li>
 <li>Variants</li>
 <li>Traits</li>
 </ul>
-<p>gwasrapidd provides four corresponding functions to get each of the object types: <code><a href="../reference/get_studies.html">get_studies()</a></code>, <code><a href="../reference/get_associations.html">get_associations()</a></code>, <code><a href="../reference/get_variants.html">get_variants()</a></code> and <code><a href="../reference/get_efotraits.html">get_efotraits()</a></code>.</p>
+<p>gwasrapidd provides four corresponding functions to get each of the object types: <code><a href="../reference/get_studies.html">get_studies()</a></code>, <code><a href="../reference/get_associations.html">get_associations()</a></code>, <code><a href="../reference/get_variants.html">get_variants()</a></code> and <code><a href="../reference/get_traits.html">get_traits()</a></code>.</p>
 </div>
 <div id="examples" class="section level2">
 <h2 class="hasAnchor">
 <a href="#examples" class="anchor"></a>Examples</h2>
+<div id="searching-for-information-about-diabetes-mellitus" class="section level3">
+<h3 class="hasAnchor">
+<a href="#searching-for-information-about-diabetes-mellitus" class="anchor"></a>Searching for information about Diabetes mellitus</h3>
+</div>
 </div>
   </div>
 
@@ -131,8 +169,11 @@
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-<li><a href="#introduction">Introduction</a></li>
-      <li><a href="#quick-start">Quick start</a></li>
+<li><a href="#overview">Overview</a></li>
+      <li><a href="#installation">Installation</a></li>
+      <li><a href="#cheatsheet">Cheatsheet</a></li>
+      <li><a href="#getting-started">Getting started</a></li>
+      <li><a href="#usage">Usage</a></li>
       <li><a href="#examples">Examples</a></li>
       </ul>
 </div>
