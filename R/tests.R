@@ -33,12 +33,12 @@ set_testing_slow <- function() {
 #' Please note that this function is to be used in gwasrapidd development.
 #'
 #' @export
-skip_if_testing_is_fast <-function()
+skip_if_testing_is_fast <- function()
 {
   # If slow we return TRUE, so that the following expectations are run.
   if (!identical(Sys.getenv("TEST_FAST"), "true")) {
     return(invisible(TRUE))
   }
   # If fast, then we skip the next expectations.
-  skip("¡Arriba, arriba! ¡Ándale, ándale!")
+  testthat::skip("Arriba, arriba! Andale, andale!")
 }
