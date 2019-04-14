@@ -4,26 +4,29 @@ context("test-get_studies")
 ## get_studies, all studies
 #
 
-# with_mock_api({
-#   test_that("get_studies: get all studies non-interactively", {
-#     my_studies <- get_studies(interactive = FALSE)
-#     expect_is(my_studies, 'studies')
-#   })
-# })
-#
-# with_mock_api({
-#   test_that("get_studies: get all studies interactively (yes answer)", {
-#     with_mock(readline = function(...) 'y', my_studies <- get_studies(interactive = TRUE))
-#     expect_is(my_studies, 'studies')
-#   })
-# })
-#
-# with_mock_api({
-#   test_that("get_studies: get all studies interactively (no answer)", {
-#     with_mock(readline = function(...) 'n', my_studies <- get_studies(interactive = TRUE))
-#     expect_identical(my_studies, studies()) # returns empty studies object
-#   })
-# })
+with_mock_api({
+  test_that("get_studies: get all studies non-interactively", {
+    skip_if_testing_is_fast()
+    my_studies <- get_studies(interactive = FALSE)
+    expect_is(my_studies, 'studies')
+  })
+})
+
+with_mock_api({
+  test_that("get_studies: get all studies interactively (yes answer)", {
+    skip_if_testing_is_fast()
+    with_mock(readline = function(...) 'y', my_studies <- get_studies(interactive = TRUE))
+    expect_is(my_studies, 'studies')
+  })
+})
+
+with_mock_api({
+  test_that("get_studies: get all studies interactively (no answer)", {
+    skip_if_testing_is_fast()
+    with_mock(readline = function(...) 'n', my_studies <- get_studies(interactive = TRUE))
+    expect_identical(my_studies, studies()) # returns empty studies object
+  })
+})
 
 #
 ## get_studies, exceptions
@@ -88,4 +91,173 @@ with_mock_api({
     expect_is(my_studies, 'studies')
   })
 })
+
 #
+## get_studies, by efo id
+#
+with_mock_api({
+  test_that("get_studies: by efo id", {
+    my_studies <- get_studies(efo_id = c('EFO_0000537', 'EFO_0000305'))
+    expect_is(my_studies, 'studies')
+  })
+})
+
+#
+## get_studies, by pubmed id
+#
+with_mock_api({
+  test_that("get_studies: by pubmed id", {
+    my_studies <- get_studies(pubmed_id = c('21626137', '25890600'))
+    expect_is(my_studies, 'studies')
+  })
+})
+
+#
+## get_studies, by user_requested
+#
+with_mock_api({
+  test_that("get_studies: by user_requested", {
+    skip_if_testing_is_fast()
+    my_studies1 <- get_studies(user_requested = TRUE)
+    expect_is(my_studies1, 'studies')
+    my_studies2 <- get_studies(user_requested = FALSE)
+    expect_is(my_studies2, 'studies')
+  })
+})
+
+#
+## get_studies, by full_pvalue_set
+#
+with_mock_api({
+  test_that("get_studies: by full_pvalue_set", {
+    skip_if_testing_is_fast()
+    my_studies1 <- get_studies(full_pvalue_set = TRUE)
+    expect_is(my_studies1, 'studies')
+    my_studies2 <- get_studies(full_pvalue_set = FALSE)
+    expect_is(my_studies2, 'studies')
+  })
+})
+
+#
+## get_studies, by efo_uri
+#
+with_mock_api({
+  test_that("get_studies: by efo_uri", {
+    my_studies <- get_studies(efo_uri = c('http://www.ebi.ac.uk/efo/EFO_0004761', 'http://www.ebi.ac.uk/efo/EFO_0000305'))
+    expect_is(my_studies, 'studies')
+  })
+})
+
+#
+## get_studies, by efo_trait
+#
+with_mock_api({
+  test_that("get_studies: by efo_trait", {
+    my_studies <- get_studies(efo_trait = c("lung adenocarcinoma", "uric acid measurement"))
+    expect_is(my_studies, 'studies')
+  })
+})
+
+#
+## get_studies, by reported_trait
+#
+with_mock_api({
+  test_that("get_studies: by reported_trait", {
+    my_studies <- get_studies(reported_trait = c("breast cancer", 'lung adenocarcinoma'))
+    expect_is(my_studies, 'studies')
+    rep_traits <- tolower(my_studies@studies$reported_trait)
+    expect_true(all(rep_traits %in% c("breast cancer", 'lung adenocarcinoma')))
+  })
+})
+
+
+test_that("get_studies_by_study_id: study_id is NULL", {
+  expect_identical(get_studies_by_study_id(), studies())
+})
+test_that("get_studies_by_study_id: status code is not 200", {
+  bad_response <- list(response_code = 404L, status = 'Not OK', url = NA, content = NA)
+  with_mock(`gwasrapidd:::gc_get` = function(...) bad_response,
+            expect_identical(get_studies_by_study_id(study_id = 'GCST001085'), studies()))
+})
+
+test_that("get_studies_by_association_id: association_id is NULL", {
+  expect_identical(get_studies_by_association_id(), studies())
+})
+test_that("get_studies_by_association_id: status code is not 200", {
+  bad_response <- list(response_code = 404L, status = 'Not OK', url = NA, content = NA)
+  with_mock(`gwasrapidd:::gc_get` = function(...) bad_response,
+            expect_identical(get_studies(association_id = c('25389945', '24299710')), studies()))
+})
+
+test_that("get_studies_by_variant_id: variant_id is NULL", {
+  expect_identical(get_studies_by_variant_id(), studies())
+})
+test_that("get_studies_by_variant_id: status code is not 200", {
+  bad_response <- list(response_code = 404L, status = 'Not OK', url = NA, content = NA)
+  with_mock(`gwasrapidd:::gc_get` = function(...) bad_response,
+            expect_identical(get_studies(variant_id = c('rs3798440', 'rs7329174')), studies()))
+})
+
+
+test_that("get_studies_by_efo_id: efo_id is NULL", {
+  expect_identical(get_studies_by_efo_id(), studies())
+})
+test_that("get_studies_by_efo_id: status code is not 200", {
+  bad_response <- list(response_code = 404L, status = 'Not OK', url = NA, content = NA)
+  with_mock(`gwasrapidd:::gc_get` = function(...) bad_response,
+            expect_identical(get_studies(efo_id = c('EFO_0000537', 'EFO_0000305')), studies()))
+})
+
+test_that("get_studies_by_pubmed_id: pubmed is NULL", {
+  expect_identical(get_studies_by_pubmed_id(), studies())
+})
+test_that("get_studies_by_pubmed_id: status code is not 200", {
+  bad_response <- list(response_code = 404L, status = 'Not OK', url = NA, content = NA)
+  with_mock(`gwasrapidd:::gc_get` = function(...) bad_response,
+            expect_identical(get_studies(pubmed_id = c('21626137', '25890600')), studies()))
+})
+
+test_that("get_studies_by_user_requested: user_requested is NULL", {
+  expect_identical(get_studies_by_user_requested(), studies())
+})
+test_that("get_studies_by_user_requested: status code is not 200", {
+  bad_response <- list(response_code = 404L, status = 'Not OK', url = NA, content = NA)
+  with_mock(`gwasrapidd:::gc_get` = function(...) bad_response,
+            expect_identical(get_studies(user_requested = TRUE), studies()))
+})
+
+test_that("get_studies_by_full_pvalue_set: full_pvalue_set is NULL", {
+  expect_identical(get_studies_by_full_pvalue_set(), studies())
+})
+test_that("get_studies_by_full_pvalue_set: status code is not 200", {
+  bad_response <- list(response_code = 404L, status = 'Not OK', url = NA, content = NA)
+  with_mock(`gwasrapidd:::gc_get` = function(...) bad_response,
+            expect_identical(get_studies(full_pvalue_set = TRUE), studies()))
+})
+
+test_that("get_studies_by_efo_uri: efo_uri is NULL: status code is not 200", {
+  expect_identical(get_studies_by_efo_uri(), studies())
+})
+test_that("get_studies_by_efo_uri: status code is not 200", {
+  bad_response <- list(response_code = 404L, status = 'Not OK', url = NA, content = NA)
+  efo_uris <- c('http://www.ebi.ac.uk/efo/EFO_0004761', 'http://www.ebi.ac.uk/efo/EFO_0000305')
+  with_mock(`gwasrapidd:::gc_get` = function(...) bad_response, expect_identical(get_studies(efo_uri = efo_uris), studies()))
+})
+
+test_that("get_studies_by_efo_trait: efo_trait is NULL", {
+  expect_identical(get_studies_by_efo_trait(), studies())
+})
+test_that("get_studies_by_efo_trait: status code is not 200", {
+  bad_response <- list(response_code = 404L, status = 'Not OK', url = NA, content = NA)
+  with_mock(`gwasrapidd:::gc_get` = function(...) bad_response,
+            expect_identical(get_studies(efo_trait = c("lung adenocarcinoma", "uric acid measurement")), studies()))
+})
+
+test_that("get_studies_by_reported_trait: reported_trait is NULL", {
+  expect_identical(get_studies_by_reported_trait(), studies())
+})
+test_that("get_studies_by_reported_trait: status code is not 200", {
+  bad_response <- list(response_code = 404L, status = 'Not OK', url = NA, content = NA)
+  with_mock(`gwasrapidd:::gc_get` = function(...) bad_response,
+            expect_identical(get_studies(reported_trait = c("breast cancer", 'lung adenocarcinoma')), studies()))
+})

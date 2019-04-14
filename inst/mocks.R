@@ -70,3 +70,41 @@ start_capturing()
 gwasrapidd:::gc_get('/singleNucleotidePolymorphisms/rs7329174/')
 gwasrapidd:::gc_get('/singleNucleotidePolymorphisms/rs7329174/studies')
 stop_capturing()
+
+
+# test-get_studies.R
+capture_requests({
+  gwasrapidd:::gc_get('/efoTraits/EFO_0000537/studies')
+  gwasrapidd:::gc_get('/efoTraits/EFO_0000305/studies')
+})
+
+capture_requests({
+  gwasrapidd:::gc_get('/studies/search/findByPublicationIdPubmedId?pubmedId=21626137')
+  gwasrapidd:::gc_get('/studies/search/findByPublicationIdPubmedId?pubmedId=25890600')
+})
+
+capture_requests({
+  gwasrapidd:::gc_get('/studies/search/findByUserRequested?userRequested=true')
+  gwasrapidd:::gc_get('/studies/search/findByUserRequested?userRequested=false')
+})
+
+capture_requests({
+  gwasrapidd:::gc_get('/studies/search/findByFullPvalueSet?fullPvalueSet=true')
+  gwasrapidd:::gc_get('/studies/search/findByFullPvalueSet?fullPvalueSet=false')
+})
+
+# Note the translation of the slash '/' to %2f.
+capture_requests({
+  gwasrapidd:::gc_get('/studies/search/findByEfoUri?uri=http://www.ebi.ac.uk/efo%2fEFO_0004761')
+  gwasrapidd:::gc_get('/studies/search/findByEfoUri?uri=http://www.ebi.ac.uk/efo%2fEFO_0000305')
+})
+
+capture_requests({
+  gwasrapidd:::gc_get('/studies/search/findByEfoTrait?efoTrait=lung%20adenocarcinoma')
+  gwasrapidd:::gc_get('/studies/search/findByEfoTrait?efoTrait=uric%20acid%20measurement')
+})
+
+capture_requests({
+  gwasrapidd:::gc_get('/studies/search/findByDiseaseTrait?diseaseTrait=lung%20adenocarcinoma')
+  gwasrapidd:::gc_get('/studies/search/findByDiseaseTrait?diseaseTrait=breast%20cancer')
+})
