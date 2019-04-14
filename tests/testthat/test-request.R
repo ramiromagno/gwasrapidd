@@ -233,12 +233,6 @@ with_mock_api({
   })
 })
 
-with_mock_api({
-  test_that("gc_request_all: some or all pages failed to return", {
-    gc_request_all('/efoTraits')
-  })
-})
-
 # This test simulates is_ok having one or more FALSEs
 # is_ok <- purrr::map_lgl(objs, ~ identical(.x$status, "OK"))
 with_mock_api({
