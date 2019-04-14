@@ -14,3 +14,4 @@ check if \code{TEST_FAST} is 'true', if it is, then it will skip the next
 expectations within a \code{test_that()} block.
 Please note that this function is to be used in gwasrapidd development.
 }
+\keyword{internal}

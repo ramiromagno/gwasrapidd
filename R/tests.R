@@ -7,7 +7,7 @@
 #' expectations within a \code{test_that()} block.
 #' Please note that this function is to be used in gwasrapidd development.
 #'
-#' @export
+#' @keywords internal
 set_testing_fast <- function() {
   Sys.setenv(TEST_FAST = "true")
 }
@@ -21,7 +21,7 @@ set_testing_fast <- function() {
 #' expectations with a \code{test_that()} block.
 #' Please note that this function is to be used in gwasrapidd development.
 #'
-#' @export
+#' @keywords internal
 set_testing_slow <- function() {
   Sys.setenv(TEST_FAST = "false")
 }
@@ -32,11 +32,12 @@ set_testing_slow <- function() {
 #' the test otherwise it still runs the following expectations.
 #' Please note that this function is to be used in gwasrapidd development.
 #'
-#' @export
+#' @keywords internal
 skip_if_testing_is_fast <- function()
 {
   # If slow we return TRUE, so that the following expectations are run.
-  if (!identical(Sys.getenv("TEST_FAST"), "true")) {
+  # Note that both 'true' or simply '' (empty string) will lead to skipping.
+  if (identical(Sys.getenv("TEST_FAST"), "false")) {
     return(invisible(TRUE))
   }
   # If fast, then we skip the next expectations.

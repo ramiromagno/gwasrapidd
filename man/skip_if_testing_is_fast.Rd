@@ -11,3 +11,4 @@ This function checks the value of \code{TEST_FAST}, if it is 'true' it skips
 the test otherwise it still runs the following expectations.
 Please note that this function is to be used in gwasrapidd development.
 }
+\keyword{internal}
