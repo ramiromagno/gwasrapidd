@@ -22,3 +22,4 @@ devtools::install_github("ramiromagno/gwasrapidd")
 
 TODO
 
+Please note that the 'gwasrapidd' project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
