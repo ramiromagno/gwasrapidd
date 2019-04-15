@@ -28,8 +28,3 @@ reachable. This function attempts to connect to
 \code{FALSE} otherwise. Set \code{chatty = TRUE} for a step by step
 description of the connection attempt.
 }
-\examples{
-\donttest{is_ebi_reachable()
-is_ebi_reachable(chatty = TRUE)}
-
-}

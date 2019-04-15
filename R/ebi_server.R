@@ -16,10 +16,6 @@
 #' @return A logical value: \code{TRUE} if EBI server is reachable, \code{FALSE}
 #'   otherwise.
 #'
-#' @examples
-#' \donttest{is_ebi_reachable()
-#' is_ebi_reachable(chatty = TRUE)}
-#'
 #' @export
 is_ebi_reachable <-
   function(url = "https://www.ebi.ac.uk", port = 443L, chatty = FALSE) {
