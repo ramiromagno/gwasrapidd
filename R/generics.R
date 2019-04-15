@@ -239,115 +239,110 @@ setMethod("filter_by_id",
             return(y)
           })
 
-#' Subsetting GWAS Catalog objects
-#'
-#' This function allows you to subset \linkS4class{studies},
-#' \linkS4class{associations}, \linkS4class{variants}, or \linkS4class{traits},
-#' by their respective identifiers or by position.
-#'
-#'
-#' @param x A \linkS4class{studies}, \linkS4class{associations},
-#'   \linkS4class{variants}, or \linkS4class{traits} object.
-#' @param i Position of the identifier or the name of the identifier itself.
-#'
-#' @return An object of the same class as \code{x}, i.e.,
-#'   \linkS4class{studies}, \linkS4class{associations}, \linkS4class{variants},
-#'   or \linkS4class{traits}.
-#' @name subset
-NULL
+# #' Subsetting GWAS Catalog objects
+# #'
+# #' We can subset \linkS4class{studies},
+# #' \linkS4class{associations}, \linkS4class{variants}, or \linkS4class{traits},
+# #' by their respective identifiers or by position using the \code{`[`} operator.
+# #'
+# #' @usage x[i]
+# #'
+# #' @param x A \linkS4class{studies}, \linkS4class{associations},
+# #'   \linkS4class{variants}, or \linkS4class{traits} object.
+# #' @param i Position of the identifier or the name of the identifier itself.
+# #'
+# #' @return An object of the same class as \code{x}, i.e.,
+# #'   \linkS4class{studies}, \linkS4class{associations}, \linkS4class{variants},
+# #'   or \linkS4class{traits}.
+# #' @name `[`
+# NULL
 
 
-#' @rdname subset
-#' @export
-setMethod("[",
-          signature(x = "studies", i = "missing", j = "missing", drop = "missing"),
-          definition = function(x, i) x)
+# #' @export
+# setMethod("[",
+#           signature(x = "studies", i = "missing", j = "missing", drop = "missing"),
+#           definition = function(x, i) x)
+#
+# #' @export
+# setMethod("[",
+#           signature(x = "studies", i = "numeric", j = "missing", drop = "missing"),
+#           definition = function(x, i) {
+#             study_ids <- unique(x@studies$study_id)[i]
+#             filter_by_id(x, id = study_ids)
+#           })
+#
+#
+# #' @export
+# setMethod("[",
+#           signature(x = "studies", i = "character", j = "missing", drop = "missing"),
+#           definition = function(x, i) {
+#             filter_by_id(x, id = i)
+#           })
+#
+#
+# #' @export
+# setMethod("[",
+#           signature(x = "associations", i = "missing", j = "missing", drop = "missing"),
+#           definition = function(x, i) x)
+#
+#
+# #' @export
+# setMethod("[",
+#           signature(x = "associations", i = "numeric", j = "missing", drop = "missing"),
+#           definition = function(x, i) {
+#             association_ids <- unique(x@associations$association_id)[i]
+#             filter_by_id(x, id = association_ids)
+#           })
+#
+# #' @export
+# setMethod("[",
+#           signature(x = "associations", i = "character", j = "missing", drop = "missing"),
+#           definition = function(x, i) {
+#             filter_by_id(x, id = i)
+#           })
+#
+# #' @export
+# setMethod("[",
+#           signature(x = "variants", i = "missing", j = "missing", drop = "missing"),
+#           definition = function(x, i) x)
+#
+#
+# #' @export
+# setMethod("[",
+#           signature(x = "variants", i = "numeric", j = "missing", drop = "missing"),
+#           definition = function(x, i) {
+#             variant_ids <- unique(x@variants$variant_id)[i]
+#             filter_by_id(x, id = variant_ids)
+#           })
+#
+# #' @export
+# setMethod("[",
+#           signature(x = "variants", i = "character", j = "missing", drop = "missing"),
+#           definition = function(x, i) {
+#             filter_by_id(x, id = i)
+#           })
+#
+# #' @export
+# setMethod("[",
+#           signature(x = "traits", i = "missing", j = "missing", drop = "missing"),
+#           definition = function(x, i) x)
+#
+# #' @export
+# setMethod("[",
+#           signature(x = "traits", i = "numeric", j = "missing", drop = "missing"),
+#           definition = function(x, i) {
+#             efo_ids <- unique(x@traits$efo_id)[i]
+#             filter_by_id(x, id = efo_ids)
+#           })
+#
+# #' @export
+# setMethod("[",
+#           signature(x = "traits", i = "character", j = "missing", drop = "missing"),
+#           definition = function(x, i) {
+#             filter_by_id(x, id = i)
+#           })
 
-#' @rdname subset
-#' @export
-setMethod("[",
-          signature(x = "studies", i = "numeric", j = "missing", drop = "missing"),
-          definition = function(x, i) {
-            study_ids <- unique(x@studies$study_id)[i]
-            filter_by_id(x, id = study_ids)
-          })
 
-#' @rdname subset
-#' @export
-setMethod("[",
-          signature(x = "studies", i = "character", j = "missing", drop = "missing"),
-          definition = function(x, i) {
-            filter_by_id(x, id = i)
-          })
-
-#' @rdname subset
-#' @export
-setMethod("[",
-          signature(x = "associations", i = "missing", j = "missing", drop = "missing"),
-          definition = function(x, i) x)
-
-#' @rdname subset
-#' @export
-setMethod("[",
-          signature(x = "associations", i = "numeric", j = "missing", drop = "missing"),
-          definition = function(x, i) {
-            association_ids <- unique(x@associations$association_id)[i]
-            filter_by_id(x, id = association_ids)
-          })
-
-#' @rdname subset
-#' @export
-setMethod("[",
-          signature(x = "associations", i = "character", j = "missing", drop = "missing"),
-          definition = function(x, i) {
-            filter_by_id(x, id = i)
-          })
-
-#' @rdname subset
-#' @export
-setMethod("[",
-          signature(x = "variants", i = "missing", j = "missing", drop = "missing"),
-          definition = function(x, i) x)
-
-#' @rdname subset
-#' @export
-setMethod("[",
-          signature(x = "variants", i = "numeric", j = "missing", drop = "missing"),
-          definition = function(x, i) {
-            variant_ids <- unique(x@variants$variant_id)[i]
-            filter_by_id(x, id = variant_ids)
-          })
-
-#' @rdname subset
-#' @export
-setMethod("[",
-          signature(x = "variants", i = "character", j = "missing", drop = "missing"),
-          definition = function(x, i) {
-            filter_by_id(x, id = i)
-          })
-
-#' @rdname subset
-#' @export
-setMethod("[",
-          signature(x = "traits", i = "missing", j = "missing", drop = "missing"),
-          definition = function(x, i) x)
-
-#' @rdname subset
-#' @export
-setMethod("[",
-          signature(x = "traits", i = "numeric", j = "missing", drop = "missing"),
-          definition = function(x, i) {
-            efo_ids <- unique(x@traits$efo_id)[i]
-            filter_by_id(x, id = efo_ids)
-          })
-
-#' @rdname subset
-#' @export
-setMethod("[",
-          signature(x = "traits", i = "character", j = "missing", drop = "missing"),
-          definition = function(x, i) {
-            filter_by_id(x, id = i)
-          })
 
 #' Number of studies
 #'
