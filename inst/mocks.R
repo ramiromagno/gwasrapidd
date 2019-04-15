@@ -140,3 +140,9 @@ capture_requests({
   gwasrapidd:::gc_get('/efoTraits/search/findByEfoTrait?trait=lung%20adenocarcinoma', page_size = 1000L)
   gwasrapidd:::gc_get('/efoTraits/search/findByEfoTrait?trait=uric%20acid%20measurement', page_size = 1000L)
 })
+
+# test-post-traits.R
+capture_requests({
+  gwasrapidd:::gc_request_all(base_url = 'https://www.ebi.ac.uk/ols/api/ontologies/efo', resource_url = '/descendants?id=EFO_0004761')
+  gwasrapidd:::gc_request_all(base_url = 'https://www.ebi.ac.uk/ols/api/ontologies/efo', resource_url = '/descendants?id=EFO_0000305')
+})

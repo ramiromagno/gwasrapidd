@@ -1,3 +1,17 @@
+#' Get all child terms of this trait in the EFO hierarchy
+#'
+#' @param efo_id A \href{https://www.ebi.ac.uk/efo/}{EFO} identifier.
+#' @param verbose A \code{logical} indicating whether the function should be
+#'   verbose about the different queries or not.
+#' @param warnings A \code{logical} indicating whether to print warnings, if any.
+#' @param page_size An \code{integer} scalar indicating the
+#'   \href{https://www.ebi.ac.uk/gwas/rest/docs/api#_paging_resources}{page}
+#'   value to be used in the JSON requests, can be between \code{1} and
+#'   \code{1000}.
+#' @param progress_bar Whether to show a progress bar as the paginated resources
+#'   are retrieved.
+#'
+#' @return A character vector of EFO identifiers.
 #' @keywords internal
 child_efo_ids <- function(efo_id, verbose = FALSE, warnings = TRUE, page_size = 20L, progress_bar = TRUE) {
 
