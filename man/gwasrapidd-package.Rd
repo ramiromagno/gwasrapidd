@@ -23,11 +23,14 @@ Useful links:
 \author{
 \strong{Maintainer}: Ramiro Magno \email{ramiro.magno@gmail.com} (0000-0001-5226-3441)
 
+Authors:
+\itemize{
+  \item Ana-Teresa Maia \email{maia.anateresa@gmail.com} (0000-0002-0454-9207)
+}
+
 Other contributors:
 \itemize{
-  \item Ana-Teresa Maia \email{maia.anateresa@gmail.com} (0000-0002-0454-9207) [thesis advisor]
-  \item University of Algarve [copyright holder]
-  \item Fundação para a Ciência e Tecnologia [funder]
+  \item Centre for Biomedical Research, University of Algarve [copyright holder, funder]
 }
 
 }
