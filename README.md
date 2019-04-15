@@ -13,9 +13,9 @@ MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.or
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 
 The goal of gwasrapidd is to retrieve data from the [NHGRI-EBI
-Catalog](https://www.ebi.ac.uk/gwas) via the [REST
-API](https://www.ebi.ac.uk/gwas/docs/api) of published genome-wide
-association studies.
+Catalog](https://www.ebi.ac.uk/gwas) of published genome-wide
+association studies via the [REST
+API](https://www.ebi.ac.uk/gwas/docs/api).
 
 Get started by reading the [gwasrapidd
 documentation](https://rmagno.eu/gwasrapidd/articles/gwasrapidd.html).
