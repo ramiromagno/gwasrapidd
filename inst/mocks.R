@@ -146,3 +146,38 @@ capture_requests({
   gwasrapidd:::gc_request_all(base_url = 'https://www.ebi.ac.uk/ols/api/ontologies/efo', resource_url = '/descendants?id=EFO_0004761')
   gwasrapidd:::gc_request_all(base_url = 'https://www.ebi.ac.uk/ols/api/ontologies/efo', resource_url = '/descendants?id=EFO_0000305')
 })
+
+# test-get_variants.R
+capture_requests({
+  gwasrapidd:::gc_get('/studies/GCST001085/snps')
+  gwasrapidd:::gc_get('/studies/GCST000392/snps')
+})
+capture_requests({
+  gwasrapidd:::gc_get('/associations/25389945/snps')
+  gwasrapidd:::gc_get('/associations/24299710/snps')
+})
+
+capture_requests({
+  gwasrapidd:::gc_get('/singleNucleotidePolymorphisms/rs3798440/')
+  gwasrapidd:::gc_get('/singleNucleotidePolymorphisms/rs7329174/')
+})
+capture_requests({
+  gwasrapidd::get_variants(efo_id = c('EFO_0000537', 'EFO_0000305'))
+})
+
+capture_requests({
+  gwasrapidd::get_variants(efo_id = 'EFO_0007990')
+})
+capture_requests({
+  gwasrapidd:::gc_get('/singleNucleotidePolymorphisms/search/findByPubmedId?pubmedId=21626137')
+})
+capture_requests({
+  gwasrapidd::get_studies(efo_trait = c("lung adenocarcinoma", "uric acid measurement"))
+})
+capture_requests({
+  gwasrapidd:::gc_get('/singleNucleotidePolymorphisms/search/findByEfoTrait?efoTrait=lung%20adenocarcinoma')
+  gwasrapidd:::gc_get('/singleNucleotidePolymorphisms/search/findByEfoTrait?efoTrait=uric%20acid%20measurement')
+})
+capture_requests({
+  gwasrapidd::get_variants(genomic_range = list(chromosome = "22", start = 1L, end = "15473564"))
+})

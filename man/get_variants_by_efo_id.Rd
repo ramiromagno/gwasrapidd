@@ -5,7 +5,7 @@
 \title{Get GWAS Catalog studies by EFO identifier}
 \usage{
 get_variants_by_efo_id(efo_id = NULL, verbose = FALSE,
-  warnings = TRUE, page_size = 1000L)
+  warnings = TRUE, page_size = 20L)
 }
 \arguments{
 \item{efo_id}{A character vector of \href{https://www.ebi.ac.uk/efo/}{EFO}

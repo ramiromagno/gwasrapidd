@@ -5,7 +5,7 @@
 \title{Get GWAS Catalog variants by genomic range}
 \usage{
 get_variants_by_genomic_range(chromosome = NULL, start = NULL,
-  end = NULL, verbose = FALSE, warnings = TRUE, page_size = 1000L)
+  end = NULL, verbose = FALSE, warnings = TRUE, page_size = 20L)
 }
 \arguments{
 \item{chromosome}{A \code{character} of human chromosome names: autosomal

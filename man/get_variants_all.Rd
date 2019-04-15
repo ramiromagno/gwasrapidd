@@ -4,7 +4,7 @@
 \alias{get_variants_all}
 \title{Get all GWAS Catalog variants}
 \usage{
-get_variants_all(verbose = FALSE, warnings = TRUE, page_size = 1000L)
+get_variants_all(verbose = FALSE, warnings = TRUE, page_size = 20L)
 }
 \arguments{
 \item{verbose}{A \code{logical} indicating whether the function should be

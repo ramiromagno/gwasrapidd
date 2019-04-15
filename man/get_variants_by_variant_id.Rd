@@ -5,7 +5,7 @@
 \title{Get GWAS Catalog variants by variant identifiers}
 \usage{
 get_variants_by_variant_id(variant_id = NULL, verbose = FALSE,
-  warnings = TRUE, page_size = 1000L)
+  warnings = TRUE, page_size = 20L)
 }
 \arguments{
 \item{variant_id}{A \code{character} vector of GWAS Catalog variant identifiers.}

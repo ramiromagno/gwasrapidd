@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get GWAS Catalog variants by PubMed identifiers — get_variants_by_pubmed_id • gwasrapidd</title>
+<title>Get all child terms of this trait in the EFO hierarchy — child_efo_ids • gwasrapidd</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -37,10 +37,9 @@
 
 
 
-<meta property="og:title" content="Get GWAS Catalog variants by PubMed identifiers — get_variants_by_pubmed_id" />
+<meta property="og:title" content="Get all child terms of this trait in the EFO hierarchy — child_efo_ids" />
 
-<meta property="og:description" content="Gets variants whose associated publications match
- PubMed identifiers." />
+<meta property="og:description" content="Get all child terms of this trait in the EFO hierarchy" />
 
 <meta property="og:image" content="https://rmagno.eu/gwasrapidd/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -124,28 +123,26 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get GWAS Catalog variants by PubMed identifiers</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ramiromagno/gwasrapidd/blob/master/R/get_variants.R'><code>R/get_variants.R</code></a></small>
-    <div class="hidden name"><code>get_variants_by_pubmed_id.Rd</code></div>
+    <h1>Get all child terms of this trait in the EFO hierarchy</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ramiromagno/gwasrapidd/blob/master/R/post-traits.R'><code>R/post-traits.R</code></a></small>
+    <div class="hidden name"><code>child_efo_ids.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Gets variants whose associated publications match
- <a href='https://en.wikipedia.org/wiki/PubMed'>PubMed</a> identifiers.</p>
+    <p>Get all child terms of this trait in the EFO hierarchy</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>get_variants_by_pubmed_id</span>(<span class='kw'>pubmed_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>warnings</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>page_size</span> <span class='kw'>=</span> <span class='fl'>20L</span>)</pre>
+    <pre class="usage"><span class='fu'>child_efo_ids</span>(<span class='no'>efo_id</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>warnings</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>page_size</span> <span class='kw'>=</span> <span class='fl'>20L</span>, <span class='kw'>progress_bar</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>pubmed_id</th>
-      <td><p>An <code>integer</code> vector of
-<a href='https://en.wikipedia.org/wiki/PubMed'>PubMed</a> identifiers.</p></td>
+      <th>efo_id</th>
+      <td><p>A <a href='https://www.ebi.ac.uk/efo/'>EFO</a> identifier.</p></td>
     </tr>
     <tr>
       <th>verbose</th>
@@ -163,11 +160,16 @@ verbose about the different queries or not.</p></td>
 value to be used in the JSON requests, can be between <code>1</code> and
 <code>1000</code>.</p></td>
     </tr>
+    <tr>
+      <th>progress_bar</th>
+      <td><p>Whether to show a progress bar as the paginated resources
+are retrieved.</p></td>
+    </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A <a href='variants-class.html'>variants</a> object.</p>
+    <p>A character vector of EFO identifiers.</p>
     
 
   </div>
