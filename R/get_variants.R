@@ -14,7 +14,7 @@
 #'
 #' @return A \linkS4class{variants} object.
 #' @keywords internal
-get_variants_by_study_id <- function(study_id = NULL, verbose = FALSE, warnings = TRUE, page_size = 1000L) {
+get_variants_by_study_id <- function(study_id = NULL, verbose = FALSE, warnings = TRUE, page_size = 20L) {
 
   if(rlang::is_null(study_id))
     return(variants())
@@ -62,7 +62,7 @@ get_variants_by_study_id <- function(study_id = NULL, verbose = FALSE, warnings 
 #'
 #' @return A \linkS4class{variants} object.
 #' @keywords internal
-get_variants_by_association_id <- function(association_id = NULL, verbose = FALSE, warnings = TRUE, page_size = 1000L) {
+get_variants_by_association_id <- function(association_id = NULL, verbose = FALSE, warnings = TRUE, page_size = 20L) {
 
   if(rlang::is_null(association_id))
     return(variants())
@@ -110,7 +110,7 @@ get_variants_by_association_id <- function(association_id = NULL, verbose = FALS
 #'
 #' @return A \linkS4class{variants} object.
 #' @keywords internal
-get_variants_by_variant_id <- function(variant_id = NULL, verbose = FALSE, warnings = TRUE, page_size = 1000L) {
+get_variants_by_variant_id <- function(variant_id = NULL, verbose = FALSE, warnings = TRUE, page_size = 20L) {
 
   if(rlang::is_null(variant_id))
     return(variants())
@@ -161,7 +161,7 @@ get_variants_by_variant_id <- function(variant_id = NULL, verbose = FALSE, warni
 #'
 #' @return A \linkS4class{variants} object.
 #' @keywords internal
-get_variants_by_efo_id <- function(efo_id = NULL, verbose = FALSE, warnings = TRUE, page_size = 1000L) {
+get_variants_by_efo_id <- function(efo_id = NULL, verbose = FALSE, warnings = TRUE, page_size = 20L) {
 
   if(rlang::is_null(efo_id))
     return(variants())
@@ -206,7 +206,7 @@ get_variants_by_efo_id <- function(efo_id = NULL, verbose = FALSE, warnings = TR
 #'
 #' @return A \linkS4class{variants} object.
 #' @keywords internal
-get_variants_by_pubmed_id <- function(pubmed_id = NULL, verbose = FALSE, warnings = TRUE, page_size = 1000L) {
+get_variants_by_pubmed_id <- function(pubmed_id = NULL, verbose = FALSE, warnings = TRUE, page_size = 20L) {
 
   if(rlang::is_null(pubmed_id))
     return(variants())
@@ -257,7 +257,7 @@ get_variants_by_pubmed_id <- function(pubmed_id = NULL, verbose = FALSE, warning
 #'
 #' @return A \linkS4class{variants} object.
 #' @keywords internal
-get_variants_by_genomic_range <- function(chromosome = NULL, start = NULL, end = NULL, verbose = FALSE, warnings = TRUE, page_size = 1000L) {
+get_variants_by_genomic_range <- function(chromosome = NULL, start = NULL, end = NULL, verbose = FALSE, warnings = TRUE, page_size = 20L) {
 
   # If all three genomic arguments are NULL just return an empty variants object.
   if(rlang::is_null(chromosome) && rlang::is_null(start) && rlang::is_null(end))
@@ -354,7 +354,7 @@ get_variants_by_genomic_range <- function(chromosome = NULL, start = NULL, end =
 #'
 #' @return A \linkS4class{variants} object.
 #' @keywords internal
-get_variants_by_gene_name <- function(gene_name = NULL, verbose = FALSE, warnings = TRUE, page_size = 1000L) {
+get_variants_by_gene_name <- function(gene_name = NULL, verbose = FALSE, warnings = TRUE, page_size = 20L) {
 
   if(rlang::is_null(gene_name))
     return(variants())
@@ -405,7 +405,7 @@ get_variants_by_gene_name <- function(gene_name = NULL, verbose = FALSE, warning
 #'
 #' @return A \linkS4class{variants} object.
 #' @keywords internal
-get_variants_by_efo_trait <- function(efo_trait = NULL, verbose = FALSE, warnings = TRUE, page_size = 1000L) {
+get_variants_by_efo_trait <- function(efo_trait = NULL, verbose = FALSE, warnings = TRUE, page_size = 20L) {
 
   if(rlang::is_null(efo_trait))
     return(variants())
@@ -459,7 +459,7 @@ get_variants_by_efo_trait <- function(efo_trait = NULL, verbose = FALSE, warning
 #'
 #' @return A \linkS4class{variants} object.
 #' @keywords internal
-get_variants_by_reported_trait <- function(reported_trait = NULL, verbose = FALSE, warnings = TRUE, page_size = 1000L) {
+get_variants_by_reported_trait <- function(reported_trait = NULL, verbose = FALSE, warnings = TRUE, page_size = 20L) {
 
   if(rlang::is_null(reported_trait))
     return(variants())
@@ -506,7 +506,7 @@ get_variants_by_reported_trait <- function(reported_trait = NULL, verbose = FALS
 #'
 #' @return A \linkS4class{variants} object.
 #' @keywords internal
-get_variants_all <- function(verbose = FALSE, warnings = TRUE, page_size = 1000L) {
+get_variants_all <- function(verbose = FALSE, warnings = TRUE, page_size = 20L) {
 
   resource_urls <- "/singleNucleotidePolymorphisms"
 
