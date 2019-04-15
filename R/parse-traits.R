@@ -6,8 +6,8 @@ e_obj_to_traits <- function(obj) {
 
   e <- traits()
 
-  # e_obj: alias for obj$content$traits
-  e_obj <- obj$content$traits
+  # e_obj: alias for obj$content$efoTraits
+  e_obj <- obj$content$efoTraits
 
   # If the object is empty return the traits S4 object as is, i.e., empty.
   if(rlang::is_empty(e_obj)) return(e)
