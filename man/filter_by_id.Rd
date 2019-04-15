@@ -32,3 +32,4 @@ variant, or \code{"EFO_0004761"}.}
 Use \code{filter_by_id} to filter GWAS Catalog objects by their respective
 \code{id}.
 }
+\keyword{internal}

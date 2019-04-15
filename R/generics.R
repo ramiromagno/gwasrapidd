@@ -192,11 +192,11 @@ setMethod("bind",
 #'   or an integer \code{24299710} if an association, or \code{"rs10910092"} if a
 #'   variant, or \code{"EFO_0004761"}.
 #'
-#' @export
+#' @keywords internal
 setGeneric("filter_by_id", function(x, id) standardGeneric('filter_by_id'))
 
 #' @rdname filter_by_id
-#' @export
+#' @keywords internal
 setMethod("filter_by_id",
           signature(x = "studies", id = "character"),
           definition = function(x, id) {
@@ -207,7 +207,7 @@ setMethod("filter_by_id",
           })
 
 #' @rdname filter_by_id
-#' @export
+#' @keywords internal
 setMethod("filter_by_id",
           signature(x = "associations", id = "integer"),
           definition = function(x, id) {
@@ -218,7 +218,7 @@ setMethod("filter_by_id",
           })
 
 #' @rdname filter_by_id
-#' @export
+#' @keywords internal
 setMethod("filter_by_id",
           signature(x = "variants", id = "character"),
           definition = function(x, id) {
@@ -229,7 +229,7 @@ setMethod("filter_by_id",
           })
 
 #' @rdname filter_by_id
-#' @export
+#' @keywords internal
 setMethod("filter_by_id",
           signature(x = "traits", id = "character"),
           definition = function(x, id) {
