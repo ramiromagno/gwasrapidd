@@ -108,3 +108,35 @@ capture_requests({
   gwasrapidd:::gc_get('/studies/search/findByDiseaseTrait?diseaseTrait=lung%20adenocarcinoma')
   gwasrapidd:::gc_get('/studies/search/findByDiseaseTrait?diseaseTrait=breast%20cancer')
 })
+
+# test-get_traits.R
+capture_requests({
+  gwasrapidd:::gc_get('/efoTraits/EFO_0000537/')
+  gwasrapidd:::gc_get('/efoTraits/EFO_0000305/')
+  gwasrapidd:::gc_get('/efoTraits/', page_size = 1000L)
+})
+
+capture_requests({
+  gwasrapidd:::gc_get('/studies/GCST001085/efoTraits')
+  gwasrapidd:::gc_get('/studies/GCST000392/efoTraits')
+})
+
+capture_requests({
+  gwasrapidd:::gc_get('/associations/25389945/efoTraits')
+  gwasrapidd:::gc_get('/associations/24299710/efoTraits')
+})
+
+capture_requests({
+  gwasrapidd:::gc_get('/efoTraits/search/findByPubmedId?pubmedId=21626137', page_size = 1000L)
+  gwasrapidd:::gc_get('/efoTraits/search/findByPubmedId?pubmedId=25890600', page_size = 1000L)
+})
+
+capture_requests({
+  gwasrapidd:::gc_get('/efoTraits/search/findByEfoUri?uri=http://www.ebi.ac.uk/efo%2fEFO_0004761', page_size = 1000L)
+  gwasrapidd:::gc_get('/efoTraits/search/findByEfoUri?uri=http://www.ebi.ac.uk/efo%2fEFO_0000305', page_size = 1000L)
+})
+
+capture_requests({
+  gwasrapidd:::gc_get('/efoTraits/search/findByEfoTrait?trait=lung%20adenocarcinoma', page_size = 1000L)
+  gwasrapidd:::gc_get('/efoTraits/search/findByEfoTrait?trait=uric%20acid%20measurement', page_size = 1000L)
+})

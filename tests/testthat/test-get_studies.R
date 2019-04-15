@@ -31,16 +31,16 @@ with_mock_api({
 #
 ## get_studies, exceptions
 #
-  test_that("get_studies: exceptions", {
-    expect_error(get_studies(set_operation = 'invalid_option'),
-                 "set_operation must be either 'union' or 'intersection'")
-    expect_error(get_studies(verbose = 1L),
-                 "verbose must be either TRUE or FALSE")
-    expect_error(get_studies(verbose = NA),
-                 "verbose must be either TRUE or FALSE")
-    expect_error(get_studies(warnings = NA),
-                 "warnings must be either TRUE or FALSE")
-  })
+test_that("get_studies: exceptions", {
+  expect_error(get_studies(set_operation = 'invalid_option'),
+               "set_operation must be either 'union' or 'intersection'")
+  expect_error(get_studies(verbose = 1L),
+               "verbose must be either TRUE or FALSE")
+  expect_error(get_studies(verbose = NA),
+               "verbose must be either TRUE or FALSE")
+  expect_error(get_studies(warnings = NA),
+               "warnings must be either TRUE or FALSE")
+})
 
 #
 ## get_studies, by study id
