@@ -1,13 +1,24 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
 # gwasrapidd <img src="man/figures/logo.svg" align="right" height=140/>
 
-[![Travis build status](https://travis-ci.org/ramiromagno/gwasrapidd.svg?branch=master)](https://travis-ci.org/ramiromagno/gwasrapidd)
-[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/ramiromagno/gwasrapidd?branch=master&svg=true)](https://ci.appveyor.com/project/ramiromagno/gwasrapidd)
+[![Travis build
+status](https://travis-ci.org/ramiromagno/gwasrapidd.svg?branch=master)](https://travis-ci.org/ramiromagno/gwasrapidd)
+[![AppVeyor build
+status](https://ci.appveyor.com/api/projects/status/github/ramiromagno/gwasrapidd?branch=master&svg=true)](https://ci.appveyor.com/project/ramiromagno/gwasrapidd)
 [![codecov](https://codecov.io/gh/ramiromagno/gwasrapidd/branch/master/graph/badge.svg)](https://codecov.io/gh/ramiromagno/gwasrapidd)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License:
+MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 
-The goal of gwasrapidd is to retrieve data from the [NHGRI-EBI Catalog of published genome-wide association studies](https://www.ebi.ac.uk/gwas) via the [REST API](https://www.ebi.ac.uk/gwas/docs/api).
+The goal of gwasrapidd is to retrieve data from the [NHGRI-EBI
+Catalog](https://www.ebi.ac.uk/gwas) via the [REST
+API](https://www.ebi.ac.uk/gwas/docs/api) of published genome-wide
+association studies.
 
+Get started by reading the [gwasrapidd
+documentation](https://rmagno.eu/gwasrapidd/articles/gwasrapidd.html).
 
 ## Installation
 
@@ -20,6 +31,36 @@ devtools::install_github("ramiromagno/gwasrapidd")
 
 ## Example
 
-TODO
+Get the study related to triple-negative breast cancer:
 
-Please note that the 'gwasrapidd' project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
+``` r
+library(gwasrapidd)
+studies <- get_studies(efo_trait = 'triple-negative breast cancer')
+studies@studies[1:4]
+#> # A tibble: 1 x 4
+#>   study_id  reported_trait        initial_sample_size  replication_sample_…
+#>   <chr>     <chr>                 <chr>                <chr>               
+#> 1 GCST0023… Breast cancer (estro… 1,529 European ance… 2,148 European ance…
+```
+
+Find associated variants:
+
+``` r
+variants <- get_variants(study_id = 'GCST002305')
+variants@variants[c('variant_id', 'functional_class')]
+#> # A tibble: 6 x 2
+#>   variant_id functional_class   
+#>   <chr>      <chr>              
+#> 1 rs4245739  3_prime_UTR_variant
+#> 2 rs2363956  missense_variant   
+#> 3 rs10069690 intron_variant     
+#> 4 rs3757318  intron_variant     
+#> 5 rs10771399 intergenic_variant 
+#> 6 rs10771399 intergenic_variant
+```
+
+-----
+
+Please note that the ‘gwasrapidd’ project is released with a
+[Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to
+this project, you agree to abide by its terms.
