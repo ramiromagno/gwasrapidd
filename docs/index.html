@@ -27,7 +27,7 @@
 <![endif]-->
 </head>
 <body>
-    <div class="container template-home">
+    <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -39,7 +39,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">gwasrapidd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9001</span>
       </span>
     </div>
 
@@ -87,13 +87,19 @@
 
       
       </header><div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
+    
+
+    
+    
+<!-- README.md is generated from README.Rmd. Please edit that file -->
 <div id="gwasrapidd" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#gwasrapidd" class="anchor"></a>gwasrapidd <img src="reference/figures/logo.svg" align="right" height="140/">
 </h1></div>
 
-<p>The goal of gwasrapidd is to retrieve data from the <a href="https://www.ebi.ac.uk/gwas">NHGRI-EBI Catalog of published genome-wide association studies</a> via the <a href="https://www.ebi.ac.uk/gwas/docs/api">REST API</a>.</p>
+<p>The goal of gwasrapidd is to retrieve data from the <a href="https://www.ebi.ac.uk/gwas">NHGRI-EBI Catalog</a> via the <a href="https://www.ebi.ac.uk/gwas/docs/api">REST API</a> of published genome-wide association studies.</p>
+<p>Get started by reading the <a href="https://rmagno.eu/gwasrapidd/articles/gwasrapidd.html">gwasrapidd documentation</a>.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -104,7 +110,27 @@
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
-<p>TODO</p>
+<p>Get the study related to triple-negative breast cancer:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(gwasrapidd)</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">studies &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_studies.html">get_studies</a></span>(<span class="dt">efo_trait =</span> <span class="st">'triple-negative breast cancer'</span>)</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">studies<span class="op">@</span>studies[<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>]</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#&gt; # A tibble: 1 x 4</span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt;   study_id  reported_trait        initial_sample_size  replication_sample_…</span></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#&gt;   &lt;chr&gt;     &lt;chr&gt;                 &lt;chr&gt;                &lt;chr&gt;               </span></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt; 1 GCST0023… Breast cancer (estro… 1,529 European ance… 2,148 European ance…</span></a></code></pre></div>
+<p>Find associated variants:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">variants &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_variants.html">get_variants</a></span>(<span class="dt">study_id =</span> <span class="st">'GCST002305'</span>)</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">variants<span class="op">@</span>variants[<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">'variant_id'</span>, <span class="st">'functional_class'</span>)]</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">#&gt; # A tibble: 6 x 2</span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="co">#&gt;   variant_id functional_class   </span></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">#&gt;   &lt;chr&gt;      &lt;chr&gt;              </span></a>
+<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">#&gt; 1 rs4245739  3_prime_UTR_variant</span></a>
+<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co">#&gt; 2 rs2363956  missense_variant   </span></a>
+<a class="sourceLine" id="cb3-8" data-line-number="8"><span class="co">#&gt; 3 rs10069690 intron_variant     </span></a>
+<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="co">#&gt; 4 rs3757318  intron_variant     </span></a>
+<a class="sourceLine" id="cb3-10" data-line-number="10"><span class="co">#&gt; 5 rs10771399 intergenic_variant </span></a>
+<a class="sourceLine" id="cb3-11" data-line-number="11"><span class="co">#&gt; 6 rs10771399 intergenic_variant</span></a></code></pre></div>
+<hr>
 <p>Please note that the ‘gwasrapidd’ project is released with a <a href="CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 </div>
@@ -136,7 +162,7 @@
 </ul>
 </div>
 
-  <div class="dev-status">
+      <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://travis-ci.org/ramiromagno/gwasrapidd"><img src="https://travis-ci.org/ramiromagno/gwasrapidd.svg?branch=master" alt="Travis build status"></a></li>
@@ -147,7 +173,9 @@
 </ul>
 </div>
 </div>
+
 </div>
+
 
       <footer><div class="copyright">
   <p>Developed by Ramiro Magno, Ana-Teresa Maia, Centre for Biomedical Research, University of Algarve.</p>
