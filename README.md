@@ -22,7 +22,7 @@ documentation](https://rmagno.eu/gwasrapidd/articles/gwasrapidd.html).
 
 ## Installation
 
-Install the development version from GitHub with:
+You can install the current, experimental version of gwasrapidd with:
 
 ``` r
 # install.packages("devtools")
@@ -59,7 +59,7 @@ variants@variants[c('variant_id', 'functional_class')]
 #> 6 rs10771399 intergenic_variant
 ```
 
------
+## Contributors
 
 Please note that the ‘gwasrapidd’ project is released with a
 [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to
