@@ -6,7 +6,7 @@
 \alias{intersect}
 \alias{setdiff}
 \alias{setequal}
-\title{Set operations on GWAS Catalog objects}
+\title{Set operations on GWAS Catalog objects.}
 \usage{
 union(x, y, ...)
 
@@ -17,14 +17,16 @@ setdiff(x, y, ...)
 setequal(x, y, ...)
 }
 \arguments{
-\item{x, y}{Objects of either class \linkS4class{studies}, \linkS4class{associations},
-\linkS4class{variants}, or \linkS4class{traits}.}
+\item{x, y}{Objects of either class \linkS4class{studies},
+\linkS4class{associations}, \linkS4class{variants}, or
+\linkS4class{traits}.}
 
 \item{...}{other arguments passed on to methods.}
 }
 \value{
-An object of the same class as \code{x} and \code{y}, i.e., \linkS4class{studies}, \linkS4class{associations},
-\linkS4class{variants}, or \linkS4class{traits}.
+An object of the same class as \code{x} and \code{y}, i.e.,
+  \linkS4class{studies}, \linkS4class{associations}, \linkS4class{variants},
+  or \linkS4class{traits}.
 }
 \description{
 Performs set union, intersection, and (asymmetric!) difference on two objects

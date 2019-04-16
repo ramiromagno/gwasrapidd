@@ -2,21 +2,18 @@
 % Please edit documentation in R/generics.R
 \name{n}
 \alias{n}
-\title{Number of GWAS Catalog Entities}
+\title{Number of GWAS Catalog entities}
 \usage{
 n(x)
 }
 \arguments{
 \item{x}{A \linkS4class{studies}, an
 \linkS4class{associations}, a \linkS4class{variants}, or a
-\linkS4class{tratis} object.}
+\linkS4class{traits} object.}
 }
 \value{
 An integer scalar.
 }
 \description{
 This function returns the number of unique entities in a GWAS Catalog object.
-A GWAS Catalog object can be: a \linkS4class{studies}, an
-\linkS4class{associations}, a \linkS4class{variants}, or a
-\linkS4class{tratis} object.
 }
