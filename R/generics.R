@@ -257,27 +257,26 @@ setMethod("filter_by_id",
 # #' @name `[`
 # NULL
 
-
-# #' @export
-# setMethod("[",
-#           signature(x = "studies", i = "missing", j = "missing", drop = "missing"),
-#           definition = function(x, i) x)
-#
-# #' @export
-# setMethod("[",
-#           signature(x = "studies", i = "numeric", j = "missing", drop = "missing"),
-#           definition = function(x, i) {
-#             study_ids <- unique(x@studies$study_id)[i]
-#             filter_by_id(x, id = study_ids)
-#           })
-#
-#
-# #' @export
-# setMethod("[",
-#           signature(x = "studies", i = "character", j = "missing", drop = "missing"),
-#           definition = function(x, i) {
-#             filter_by_id(x, id = i)
-#           })
+#' #' @export
+#' setMethod("[",
+#'           signature(x = "studies", i = "missing", j = "missing", drop = "missing"),
+#'           definition = function(x) x)
+#'
+#' #' @export
+#' setMethod("[",
+#'           signature(x = "studies", i = "numeric", j = "missing", drop = "missing"),
+#'           definition = function(x, i) {
+#'             study_ids <- unique(x@studies$study_id)[i]
+#'             filter_by_id(x, id = study_ids)
+#'           })
+#'
+#'
+#' #' @export
+#' setMethod("[",
+#'           signature(x = "studies", i = "character", j = "missing", drop = "missing"),
+#'           definition = function(x, i) {
+#'             filter_by_id(x, id = i)
+#'           })
 #
 #
 # #' @export

@@ -102,6 +102,9 @@
     </li>
   </ul>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
@@ -137,11 +140,17 @@
     <tbody>
       <tr>
         <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
+          <h2 id="section-gwas-catalog-entities" class="hasAnchor"><a href="#section-gwas-catalog-entities" class="anchor"></a>GWAS Catalog Entities</h2>
+          <p class="section-desc"><p>S4 classes for studies, associations, variants and traits</p></p>
         </th>
       </tr>
       <tr>
+        
+        <td>
+          <p><code><a href="studies-class.html">studies-class</a></code> </p>
+        </td>
+        <td><p>An S4 class to represent a set of GWAS Catalog studies</p></td>
+      </tr><tr>
         
         <td>
           <p><code><a href="associations-class.html">associations-class</a></code> </p>
@@ -150,9 +159,29 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="bind.html">bind()</a></code> </p>
+          <p><code><a href="variants-class.html">variants-class</a></code> </p>
         </td>
-        <td><p>Bind GWAS Catalog objects</p></td>
+        <td><p>An S4 class to represent a set of GWAS Catalog variants</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="traits-class.html">traits-class</a></code> </p>
+        </td>
+        <td><p>An S4 class to represent a set of GWAS Catalog EFO traits.</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-get-gwas-catalog-entities" class="hasAnchor"><a href="#section-get-gwas-catalog-entities" class="anchor"></a>Get GWAS Catalog Entities</h2>
+          <p class="section-desc"><p>Receive data from the GWAS Catalog REST API.</p></p>
+        </th>
+      </tr>
+      <tr>
+        
+        <td>
+          <p><code><a href="get_studies.html">get_studies()</a></code> </p>
+        </td>
+        <td><p>Get GWAS Catalog studies</p></td>
       </tr><tr>
         
         <td>
@@ -162,21 +191,9 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="get_child_efo.html">get_child_efo()</a></code> </p>
+          <p><code><a href="get_variants.html">get_variants()</a></code> </p>
         </td>
-        <td><p>Get all child terms of this trait in the EFO hierarchy</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="get_metadata.html">get_metadata()</a></code> </p>
-        </td>
-        <td><p>Get GWAS Catalog metadata</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="get_studies.html">get_studies()</a></code> </p>
-        </td>
-        <td><p>Get GWAS Catalog studies</p></td>
+        <td><p>Get GWAS Catalog variants</p></td>
       </tr><tr>
         
         <td>
@@ -186,45 +203,23 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="get_variants.html">get_variants()</a></code> </p>
+          <p><code><a href="get_metadata.html">get_metadata()</a></code> </p>
         </td>
-        <td><p>Get GWAS Catalog variants</p></td>
-      </tr><tr>
+        <td><p>Get GWAS Catalog metadata</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-data-wrangling-of-gwas-catalog-entities" class="hasAnchor"><a href="#section-data-wrangling-of-gwas-catalog-entities" class="anchor"></a>Data Wrangling of GWAS Catalog Entities</h2>
+          <p class="section-desc"><p>S4 methods for subsetting, combining and tallying studies, associations, variants and traits.</p></p>
+        </th>
+      </tr>
+      <tr>
         
         <td>
-          <p><code><a href="is_ebi_reachable.html">is_ebi_reachable()</a></code> </p>
+          <p><code><a href="bind.html">bind()</a></code> </p>
         </td>
-        <td><p>Is the GWAS Catalog REST API server reachable?</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="n_associations.html">n_associations()</a></code> </p>
-        </td>
-        <td><p>Number of associations</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="n_studies.html">n_studies()</a></code> </p>
-        </td>
-        <td><p>Number of studies</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="n_traits.html">n_traits()</a></code> </p>
-        </td>
-        <td><p>Number of traits</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="n_variants.html">n_variants()</a></code> </p>
-        </td>
-        <td><p>Number of variants</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="open_in_pubmed.html">open_in_pubmed()</a></code> </p>
-        </td>
-        <td><p>Browse PubMed from PubMed identifiers.</p></td>
+        <td><p>Bind GWAS Catalog objects</p></td>
       </tr><tr>
         
         <td>
@@ -234,21 +229,69 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="studies-class.html">studies-class</a></code> </p>
+          <p><code><a href="n_studies.html">n_studies()</a></code> </p>
         </td>
-        <td><p>An S4 class to represent a set of GWAS Catalog studies</p></td>
+        <td><p>Number of studies</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="traits-class.html">traits-class</a></code> </p>
+          <p><code><a href="n_associations.html">n_associations()</a></code> </p>
         </td>
-        <td><p>An S4 class to represent a set of GWAS Catalog EFO traits.</p></td>
+        <td><p>Number of associations</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="variants-class.html">variants-class</a></code> </p>
+          <p><code><a href="n_variants.html">n_variants()</a></code> </p>
         </td>
-        <td><p>An S4 class to represent a set of GWAS Catalog variants</p></td>
+        <td><p>Number of variants</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="n_traits.html">n_traits()</a></code> </p>
+        </td>
+        <td><p>Number of traits</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-get-data-outside-from-gwas-catalog" class="hasAnchor"><a href="#section-get-data-outside-from-gwas-catalog" class="anchor"></a>Get data outside from GWAS Catalog</h2>
+          <p class="section-desc"><p>Functions to provide easy access to other web resources.</p></p>
+        </th>
+      </tr>
+      <tr>
+        
+        <td>
+          <p><code><a href="get_child_efo.html">get_child_efo()</a></code> </p>
+        </td>
+        <td><p>Get all child terms of this trait in the EFO hierarchy</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-easily-navigate-web-resources" class="hasAnchor"><a href="#section-easily-navigate-web-resources" class="anchor"></a>Easily navigate web resources</h2>
+          <p class="section-desc"><p>Functions that allow you to quickly browse linked information.</p></p>
+        </th>
+      </tr>
+      <tr>
+        
+        <td>
+          <p><code><a href="open_in_pubmed.html">open_in_pubmed()</a></code> </p>
+        </td>
+        <td><p>Browse PubMed from PubMed identifiers.</p></td>
+      </tr>
+    </tbody><tbody>
+      <tr>
+        <th colspan="2">
+          <h2 id="section-check-functions" class="hasAnchor"><a href="#section-check-functions" class="anchor"></a>Check functions</h2>
+          <p class="section-desc"><p>Test and diagnose common impediments.</p></p>
+        </th>
+      </tr>
+      <tr>
+        
+        <td>
+          <p><code><a href="is_ebi_reachable.html">is_ebi_reachable()</a></code> </p>
+        </td>
+        <td><p>Is the GWAS Catalog REST API server reachable?</p></td>
       </tr>
     </tbody>
     </table>
@@ -257,7 +300,12 @@
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
+      <li><a href="#section-gwas-catalog-entities">GWAS Catalog Entities</a></li>
+      <li><a href="#section-get-gwas-catalog-entities">Get GWAS Catalog Entities</a></li>
+      <li><a href="#section-data-wrangling-of-gwas-catalog-entities">Data Wrangling of GWAS Catalog Entities</a></li>
+      <li><a href="#section-get-data-outside-from-gwas-catalog">Get data outside from GWAS Catalog</a></li>
+      <li><a href="#section-easily-navigate-web-resources">Easily navigate web resources</a></li>
+      <li><a href="#section-check-functions">Check functions</a></li>
     </ul>
   </div>
 </div>

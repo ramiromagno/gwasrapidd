@@ -1,1 +1,45 @@
 url: https://rmagno.eu/gwasrapidd
+
+reference:
+- title: "GWAS Catalog Entities"
+  desc: "S4 classes for studies, associations, variants and traits"
+  contents:
+  - '`studies-class`'
+  - '`associations-class`'
+  - '`variants-class`'
+  - '`traits-class`'
+- title: "Get GWAS Catalog Entities"
+  desc: "Receive data from the GWAS Catalog REST API."
+  contents:
+  - get_studies
+  - get_associations
+  - get_variants
+  - get_traits
+  - get_metadata
+- title: "Data Wrangling of GWAS Catalog Entities"
+  desc: >
+    S4 methods for subsetting, combining and tallying studies,
+    associations, variants and traits.
+  contents:
+  - bind
+  - union
+  - intersect
+  - setdiff
+  - setequal
+  - n_studies
+  - n_associations
+  - n_variants
+  - n_traits
+- title: "Get data outside from GWAS Catalog"
+  desc: "Functions to provide easy access to other web resources."
+  contents:
+  - get_child_efo
+- title: "Easily navigate web resources"
+  desc: "Functions that allow you to quickly browse linked information."
+  contents:
+  - open_in_pubmed
+- title: "Check functions"
+  desc: "Test and diagnose common impediments."
+  contents:
+  - is_ebi_reachable
+

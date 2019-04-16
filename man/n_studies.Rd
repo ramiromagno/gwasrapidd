@@ -4,7 +4,10 @@
 \name{n_studies}
 \alias{n_studies}
 \alias{n_studies,studies-method}
-\title{Number of studies}
+\title{#' @export
+setMethod("[",
+          signature(x = "studies", i = "missing", j = "missing", drop = "missing"),
+          definition = function(x) x)}
 \usage{
 n_studies(x)
 
@@ -17,5 +20,22 @@ n_studies(x)
 An integer scalar.
 }
 \description{
+#' @export
+setMethod("[",
+          signature(x = "studies", i = "numeric", j = "missing", drop = "missing"),
+          definition = function(x, i) {
+            study_ids <- unique(x@studies$study_id)[i]
+            filter_by_id(x, id = study_ids)
+          })
+}
+\details{
+#' @export
+setMethod("[",
+          signature(x = "studies", i = "character", j = "missing", drop = "missing"),
+          definition = function(x, i) {
+            filter_by_id(x, id = i)
+          })
+Number of studies
+
 This function returns the number of unique studies in a \linkS4class{studies} object.
 }
