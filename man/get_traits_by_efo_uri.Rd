@@ -5,7 +5,7 @@
 \title{Get GWAS Catalog traits by EFO URIs}
 \usage{
 get_traits_by_efo_uri(efo_uri = NULL, verbose = FALSE,
-  warnings = TRUE, page_size = 1000L)
+  warnings = TRUE, page_size = 20L)
 }
 \arguments{
 \item{efo_uri}{A \code{character} vector of

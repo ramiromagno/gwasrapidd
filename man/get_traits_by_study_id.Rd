@@ -5,7 +5,7 @@
 \title{Get GWAS Catalog traits by study identifiers}
 \usage{
 get_traits_by_study_id(study_id = NULL, verbose = FALSE,
-  warnings = TRUE, page_size = 1000L)
+  warnings = TRUE, page_size = 20L)
 }
 \arguments{
 \item{study_id}{A \code{character} vector of GWAS Catalog study accession

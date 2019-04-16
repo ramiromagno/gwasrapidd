@@ -5,7 +5,7 @@
 \title{Get GWAS Catalog traits by PubMed identifiers}
 \usage{
 get_traits_by_pubmed_id(pubmed_id = NULL, verbose = FALSE,
-  warnings = TRUE, page_size = 1000L)
+  warnings = TRUE, page_size = 20L)
 }
 \arguments{
 \item{pubmed_id}{An \code{integer} vector of

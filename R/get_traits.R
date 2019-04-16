@@ -14,7 +14,7 @@
 #'
 #' @return A \linkS4class{traits} object.
 #' @keywords internal
-get_traits_by_study_id <- function(study_id = NULL, verbose = FALSE, warnings = TRUE, page_size = 1000L) {
+get_traits_by_study_id <- function(study_id = NULL, verbose = FALSE, warnings = TRUE, page_size = 20L) {
 
   if(rlang::is_null(study_id))
     return(traits())
@@ -63,7 +63,7 @@ get_traits_by_study_id <- function(study_id = NULL, verbose = FALSE, warnings = 
 #'
 #' @return A \linkS4class{traits} object.
 #' @keywords internal
-get_traits_by_association_id <- function(association_id = NULL, verbose = FALSE, warnings = TRUE, page_size = 1000L) {
+get_traits_by_association_id <- function(association_id = NULL, verbose = FALSE, warnings = TRUE, page_size = 20L) {
 
   if(rlang::is_null(association_id))
     return(traits())
@@ -112,7 +112,7 @@ get_traits_by_association_id <- function(association_id = NULL, verbose = FALSE,
 #'
 #' @return A \linkS4class{traits} object.
 #' @keywords internal
-get_traits_by_efo_id <- function(efo_id = NULL, verbose = FALSE, warnings = TRUE, page_size = 1000L) {
+get_traits_by_efo_id <- function(efo_id = NULL, verbose = FALSE, warnings = TRUE, page_size = 20L) {
 
   if(rlang::is_null(efo_id))
     return(traits())
@@ -162,7 +162,7 @@ get_traits_by_efo_id <- function(efo_id = NULL, verbose = FALSE, warnings = TRUE
 #'
 #' @return A \linkS4class{traits} object.
 #' @keywords internal
-get_traits_by_pubmed_id <- function(pubmed_id = NULL, verbose = FALSE, warnings = TRUE, page_size = 1000L) {
+get_traits_by_pubmed_id <- function(pubmed_id = NULL, verbose = FALSE, warnings = TRUE, page_size = 20L) {
 
   if(rlang::is_null(pubmed_id))
     return(traits())
@@ -211,7 +211,7 @@ get_traits_by_pubmed_id <- function(pubmed_id = NULL, verbose = FALSE, warnings 
 #'
 #' @return A \linkS4class{traits} object.
 #' @keywords internal
-get_traits_by_efo_uri <- function(efo_uri = NULL, verbose = FALSE, warnings = TRUE, page_size = 1000L) {
+get_traits_by_efo_uri <- function(efo_uri = NULL, verbose = FALSE, warnings = TRUE, page_size = 20L) {
 
   if(rlang::is_null(efo_uri))
     return(traits())
@@ -262,7 +262,7 @@ get_traits_by_efo_uri <- function(efo_uri = NULL, verbose = FALSE, warnings = TR
 #'
 #' @return A \linkS4class{traits} object.
 #' @keywords internal
-get_traits_by_efo_trait <- function(efo_trait = NULL, verbose = FALSE, warnings = TRUE, page_size = 1000L) {
+get_traits_by_efo_trait <- function(efo_trait = NULL, verbose = FALSE, warnings = TRUE, page_size = 20L) {
 
   if(rlang::is_null(efo_trait))
     return(traits())
@@ -309,7 +309,7 @@ get_traits_by_efo_trait <- function(efo_trait = NULL, verbose = FALSE, warnings 
 #'
 #' @return A \linkS4class{traits} object.
 #' @keywords internal
-get_traits_all <- function(verbose = FALSE, warnings = TRUE, page_size = 1000L) {
+get_traits_all <- function(verbose = FALSE, warnings = TRUE, page_size = 20L) {
 
   resource_urls <- "/efoTraits"
 

@@ -4,7 +4,7 @@
 \alias{get_traits_all}
 \title{Get all GWAS Catalog EFO traits}
 \usage{
-get_traits_all(verbose = FALSE, warnings = TRUE, page_size = 1000L)
+get_traits_all(verbose = FALSE, warnings = TRUE, page_size = 20L)
 }
 \arguments{
 \item{verbose}{A \code{logical} indicating whether the function should be

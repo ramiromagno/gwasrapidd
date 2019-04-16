@@ -15,6 +15,7 @@ stop_capturing()
 #
 # Request captures for functions in request.R
 #
+
 start_capturing()
 gwasrapidd:::gc_request()
 gwasrapidd:::gc_request(base_url = "https://httpbin.org", resource_url = "/html")
@@ -65,6 +66,9 @@ gwasrapidd:::gc_get('/singleNucleotidePolymorphisms/search/findByDiseaseTrait?di
 gwasrapidd::get_studies(interactive = FALSE)
 stop_capturing()
 
+capture_requests({
+  gwasrapidd:::gc_get('/studies/search/findByEfoUri?uri=http://www.ebi.ac.uk/efo/EFO_0004761')
+})
 #
 start_capturing()
 gwasrapidd:::gc_get('/singleNucleotidePolymorphisms/rs7329174/')
@@ -137,8 +141,8 @@ capture_requests({
 })
 
 capture_requests({
-  gwasrapidd:::gc_get('/efoTraits/search/findByEfoTrait?trait=lung%20adenocarcinoma', page_size = 1000L)
-  gwasrapidd:::gc_get('/efoTraits/search/findByEfoTrait?trait=uric%20acid%20measurement', page_size = 1000L)
+  gwasrapidd:::gc_get('/efoTraits/search/findByEfoTrait?trait=lung%20adenocarcinoma')
+  gwasrapidd:::gc_get('/efoTraits/search/findByEfoTrait?trait=uric%20acid%20measurement')
 })
 
 # test-post-traits.R

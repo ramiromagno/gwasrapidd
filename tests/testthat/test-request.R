@@ -4,23 +4,6 @@ context("test-request")
 # gc_request()
 #
 
-with_mock_api({
-  test_that("gc_request: bare", {
-    response <- gc_request()
-    expect_is(response, "list")
-    expect_named(response, c('url', 'response_code', 'status', 'content'))
-  })
-})
-
-with_mock_api({
-  test_that("gc_request: verbose flag", {
-    response <- gc_request(verbose = TRUE)
-    expect_is(response, "list")
-    expect_named(response, c('url', 'response_code', 'status', 'content'))
-  })
-})
-
-
 test_that("gc_request: warnings flag", {
   response <- expect_warning(gc_request(resource_url = "/foo", warnings = TRUE))
   expect_is(response, "list")

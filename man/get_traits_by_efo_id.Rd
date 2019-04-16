@@ -5,7 +5,7 @@
 \title{Get GWAS Catalog traits by EFO identifier}
 \usage{
 get_traits_by_efo_id(efo_id = NULL, verbose = FALSE, warnings = TRUE,
-  page_size = 1000L)
+  page_size = 20L)
 }
 \arguments{
 \item{efo_id}{A character vector of \href{https://www.ebi.ac.uk/efo/}{EFO}

@@ -5,7 +5,7 @@
 \title{Get GWAS Catalog associations by variant identifiers}
 \usage{
 get_associations_by_variant_id(variant_id = NULL, verbose = FALSE,
-  warnings = TRUE, page_size = 1000L)
+  warnings = TRUE, page_size = 20L)
 }
 \arguments{
 \item{variant_id}{A \code{character} vector of GWAS Catalog variant identifiers.}

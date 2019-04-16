@@ -5,7 +5,7 @@
 \title{Get GWAS Catalog associations by EFO traits}
 \usage{
 get_associations_by_efo_trait(efo_trait = NULL, verbose = FALSE,
-  warnings = TRUE, page_size = 1000L)
+  warnings = TRUE, page_size = 20L)
 }
 \arguments{
 \item{efo_trait}{A \code{character} vector of

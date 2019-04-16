@@ -14,7 +14,7 @@
 #'
 #' @return A \linkS4class{associations} object.
 #' @keywords internal
-get_associations_by_study_id <- function(study_id = NULL, verbose = FALSE, warnings = TRUE, page_size = 1000L) {
+get_associations_by_study_id <- function(study_id = NULL, verbose = FALSE, warnings = TRUE, page_size = 20L) {
 
   if(rlang::is_null(study_id))
     return(associations())
@@ -62,7 +62,7 @@ get_associations_by_study_id <- function(study_id = NULL, verbose = FALSE, warni
 #'
 #' @return A \linkS4class{associations} object.
 #' @keywords internal
-get_associations_by_association_id <- function(association_id = NULL, verbose = FALSE, warnings = TRUE, page_size = 1000L) {
+get_associations_by_association_id <- function(association_id = NULL, verbose = FALSE, warnings = TRUE, page_size = 20L) {
 
   if(rlang::is_null(association_id))
     return(associations())
@@ -110,7 +110,7 @@ get_associations_by_association_id <- function(association_id = NULL, verbose = 
 #'
 #' @return A \linkS4class{associations} object.
 #' @keywords internal
-get_associations_by_variant_id <- function(variant_id = NULL, verbose = FALSE, warnings = TRUE, page_size = 1000L) {
+get_associations_by_variant_id <- function(variant_id = NULL, verbose = FALSE, warnings = TRUE, page_size = 20L) {
 
   if(rlang::is_null(variant_id))
     return(associations())
@@ -160,7 +160,7 @@ get_associations_by_variant_id <- function(variant_id = NULL, verbose = FALSE, w
 #'
 #' @return A \linkS4class{associations} object.
 #' @keywords internal
-get_associations_by_efo_id <- function(efo_id = NULL, verbose = FALSE, warnings = TRUE, page_size = 1000L) {
+get_associations_by_efo_id <- function(efo_id = NULL, verbose = FALSE, warnings = TRUE, page_size = 20L) {
 
   if(rlang::is_null(efo_id))
     return(associations())
@@ -212,7 +212,7 @@ get_associations_by_efo_id <- function(efo_id = NULL, verbose = FALSE, warnings 
 #'
 #' @return A \linkS4class{associations} object.
 #' @keywords internal
-get_associations_by_pubmed_id <- function(pubmed_id = NULL, verbose = FALSE, warnings = TRUE, page_size = 1000L) {
+get_associations_by_pubmed_id <- function(pubmed_id = NULL, verbose = FALSE, warnings = TRUE, page_size = 20L) {
 
   if(rlang::is_null(pubmed_id))
     return(associations())
@@ -263,7 +263,7 @@ get_associations_by_pubmed_id <- function(pubmed_id = NULL, verbose = FALSE, war
 #'
 #' @return A \linkS4class{associations} object.
 #' @keywords internal
-get_associations_by_efo_trait <- function(efo_trait = NULL, verbose = FALSE, warnings = TRUE, page_size = 1000L) {
+get_associations_by_efo_trait <- function(efo_trait = NULL, verbose = FALSE, warnings = TRUE, page_size = 20L) {
 
   if(rlang::is_null(efo_trait))
     return(associations())
@@ -310,7 +310,7 @@ get_associations_by_efo_trait <- function(efo_trait = NULL, verbose = FALSE, war
 #'
 #' @return A \linkS4class{associations} object.
 #' @keywords internal
-get_associations_all <- function(verbose = FALSE, warnings = TRUE, page_size = 1000L) {
+get_associations_all <- function(verbose = FALSE, warnings = TRUE, page_size = 20L) {
 
   resource_urls <- "/associations"
 
