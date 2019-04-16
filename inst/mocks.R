@@ -185,3 +185,6 @@ capture_requests({
 capture_requests({
   gwasrapidd::get_variants(genomic_range = list(chromosome = "22", start = 1L, end = "15473564"))
 })
+capture_requests({
+  gwasrapidd::get_variants(gene_name = 'BRCA1')
+})

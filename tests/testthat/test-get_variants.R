@@ -69,6 +69,26 @@ with_mock_api({
 })
 
 #
+## get_variants, by genomic range
+#
+with_mock_api({
+  test_that("get_variants: by genomic range", {
+    my_variants <- get_variants(genomic_range = list(chromosome = "22", start = 1L, end = "15473564"))
+    expect_is(my_variants, 'variants')
+  })
+})
+
+#
+## get_variants, by gene name
+#
+with_mock_api({
+  test_that("get_variants: by gene name", {
+    my_variants <- get_variants(gene_name = 'BRCA1')
+    expect_is(my_variants, 'variants')
+  })
+})
+
+#
 ## get_variants, by efo_trait
 #
 with_mock_api({
@@ -121,7 +141,6 @@ test_that("get_variants_by_association_id: status code is not 200", {
   with_mock(`gwasrapidd:::gc_get` = function(...) bad_response,
             expect_identical(get_variants(association_id = c('25389945', '24299710')), variants()))
 })
-
 
 test_that("get_variants_by_variant_id: variant_id is NULL", {
   expect_identical(get_variants_by_variant_id(), variants())
