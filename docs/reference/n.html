@@ -6,10 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>#' @export
-setMethod("[",
-          signature(x = "studies", i = "missing", j = "missing", drop = "missing"),
-          definition = function(x) x) — n_studies • gwasrapidd</title>
+<title>Number of GWAS Catalog Entities — n • gwasrapidd</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -42,18 +39,12 @@ setMethod("[",
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="#' @export
-setMethod("[",
-          signature(x = "studies", i = "missing", j = "missing", drop = "missing"),
-          definition = function(x) x) — n_studies" />
+<meta property="og:title" content="Number of GWAS Catalog Entities — n" />
 
-<meta property="og:description" content="#' @export
-setMethod(&quot;[&quot;,
-          signature(x = &quot;studies&quot;, i = &quot;numeric&quot;, j = &quot;missing&quot;, drop = &quot;missing&quot;),
-          definition = function(x, i) 
-            study_ids &amp;lt;- unique(x@studies$study_id)[i]
-            filter_by_id(x, id = study_ids)
-          )" />
+<meta property="og:description" content="This function returns the number of unique entities in a GWAS Catalog object.
+A GWAS Catalog object can be: a studies, an
+associations, a variants, or a
+tratis object." />
 
 <meta property="og:image" content="https://rmagno.eu/gwasrapidd/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -140,54 +131,36 @@ setMethod(&quot;[&quot;,
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>#' @export
-setMethod("[",
-          signature(x = "studies", i = "missing", j = "missing", drop = "missing"),
-          definition = function(x) x)</h1>
+    <h1>Number of GWAS Catalog Entities</h1>
     <small class="dont-index">Source: <a href='https://github.com/ramiromagno/gwasrapidd/blob/master/R/generics.R'><code>R/generics.R</code></a></small>
-    <div class="hidden name"><code>n_studies.Rd</code></div>
+    <div class="hidden name"><code>n.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>#' @export
-setMethod("[",
-          signature(x = "studies", i = "numeric", j = "missing", drop = "missing"),
-          definition = function(x, i) 
-            study_ids &lt;- unique(x@studies$study_id)[i]
-            filter_by_id(x, id = study_ids)
-          )</p>
+    <p>This function returns the number of unique entities in a GWAS Catalog object.
+A GWAS Catalog object can be: a <a href='studies-class.html'>studies</a>, an
+<a href='associations-class.html'>associations</a>, a <a href='variants-class.html'>variants</a>, or a
+tratis object.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>n_studies</span>(<span class='no'>x</span>)
-
-<span class='co'># S4 method for studies</span>
-<span class='fu'>n_studies</span>(<span class='no'>x</span>)</pre>
+    <pre class="usage"><span class='fu'>n</span>(<span class='no'>x</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>A <a href='studies-class.html'>studies</a> object.</p></td>
+      <td><p>A <a href='studies-class.html'>studies</a>, an
+<a href='associations-class.html'>associations</a>, a <a href='variants-class.html'>variants</a>, or a
+tratis object.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>An integer scalar.</p>
-    
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>#' @export
-setMethod("[",
-          signature(x = "studies", i = "character", j = "missing", drop = "missing"),
-          definition = function(x, i) 
-            filter_by_id(x, id = i)
-          )
-Number of studies</p>
-<p>This function returns the number of unique studies in a <a href='studies-class.html'>studies</a> object.</p>
     
 
   </div>
@@ -197,8 +170,6 @@ Number of studies</p>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-
-      <li><a href="#details">Details</a></li>
           </ul>
 
   </div>

@@ -257,26 +257,26 @@ setMethod("filter_by_id",
 # #' @name `[`
 # NULL
 
-#' #' @export
-#' setMethod("[",
-#'           signature(x = "studies", i = "missing", j = "missing", drop = "missing"),
-#'           definition = function(x) x)
-#'
-#' #' @export
-#' setMethod("[",
-#'           signature(x = "studies", i = "numeric", j = "missing", drop = "missing"),
-#'           definition = function(x, i) {
-#'             study_ids <- unique(x@studies$study_id)[i]
-#'             filter_by_id(x, id = study_ids)
-#'           })
-#'
-#'
-#' #' @export
-#' setMethod("[",
-#'           signature(x = "studies", i = "character", j = "missing", drop = "missing"),
-#'           definition = function(x, i) {
-#'             filter_by_id(x, id = i)
-#'           })
+# #' @export
+# setMethod("[",
+#           signature(x = "studies", i = "missing", j = "missing", drop = "missing"),
+#           definition = function(x) x)
+#
+# #' @export
+# setMethod("[",
+#           signature(x = "studies", i = "numeric", j = "missing", drop = "missing"),
+#           definition = function(x, i) {
+#             study_ids <- unique(x@studies$study_id)[i]
+#             filter_by_id(x, id = study_ids)
+#           })
+#
+#
+# #' @export
+# setMethod("[",
+#           signature(x = "studies", i = "character", j = "missing", drop = "missing"),
+#           definition = function(x, i) {
+#             filter_by_id(x, id = i)
+#           })
 #
 #
 # #' @export
@@ -342,83 +342,131 @@ setMethod("filter_by_id",
 #           })
 
 
-
-#' Number of studies
+#' Number of GWAS Catalog Entities
 #'
-#' This function returns the number of unique studies in a \linkS4class{studies} object.
+#' This function returns the number of unique entities in a GWAS Catalog object.
+#' A GWAS Catalog object can be: a \linkS4class{studies}, an
+#' \linkS4class{associations}, a \linkS4class{variants}, or a
+#' \linkS4class{tratis} object.
 #'
-#' @param x A \linkS4class{studies} object.
-#'
-#' @return An integer scalar.
-#'
-#' @export
-setGeneric('n_studies', function(x) standardGeneric('n_studies'))
-
-#' Number of associations
-#'
-#' This function returns the number of unique associations in a \linkS4class{associations} object.
-#'
-#' @param x A \linkS4class{associations} object.
+#' @param x A \linkS4class{studies}, an
+#' \linkS4class{associations}, a \linkS4class{variants}, or a
+#' \linkS4class{traits} object.
 #'
 #' @return An integer scalar.
 #'
 #' @export
-setGeneric('n_associations', function(x) standardGeneric('n_associations'))
+setGeneric('n', function(x) standardGeneric('n'))
 
-#' Number of variants
-#'
-#' This function returns the number of unique variants in a \linkS4class{variants} object.
-#'
-#' @param x A \linkS4class{variants} object.
-#'
-#' @return An integer scalar.
-#'
 #' @export
-setGeneric('n_variants', function(x) standardGeneric('n_variants'))
-
-#' Number of traits
-#'
-#' This function returns the number of unique traits in a \linkS4class{traits} object.
-#'
-#' @param x A \linkS4class{traits} object.
-#'
-#' @return An integer scalar.
-#'
-#' @export
-setGeneric('n_traits', function(x) standardGeneric('n_traits'))
-
-#' @rdname n_studies
-#' @export
-setMethod("n_studies",
+setMethod("n",
           signature(x = "studies"),
           definition = function(x) {
             n <- dplyr::n_distinct(x@studies$study_id)
             return(n)
           })
 
-#' @rdname n_associations
 #' @export
-setMethod("n_associations",
+setMethod("n",
           signature(x = "associations"),
           definition = function(x) {
             n <- dplyr::n_distinct(x@associations$association_id)
             return(n)
           })
 
-#' @rdname n_variants
 #' @export
-setMethod("n_variants",
+setMethod("n",
           signature(x = "variants"),
           definition = function(x) {
             n <- dplyr::n_distinct(x@variants$variant_id)
             return(n)
           })
 
-#' @rdname n_traits
 #' @export
-setMethod("n_traits",
+setMethod("n",
           signature(x = "traits"),
           definition = function(x) {
             n <- dplyr::n_distinct(x@traits$efo_id)
             return(n)
           })
+
+
+#' #' Number of studies
+#' #'
+#' #' This function returns the number of unique studies in a \linkS4class{studies} object.
+#' #'
+#' #' @param x A \linkS4class{studies} object.
+#' #'
+#' #' @return An integer scalar.
+#' #'
+#' #' @export
+#' setGeneric('n_studies', function(x) standardGeneric('n_studies'))
+#'
+#' #' Number of associations
+#' #'
+#' #' This function returns the number of unique associations in a \linkS4class{associations} object.
+#' #'
+#' #' @param x A \linkS4class{associations} object.
+#' #'
+#' #' @return An integer scalar.
+#' #'
+#' #' @export
+#' setGeneric('n_associations', function(x) standardGeneric('n_associations'))
+#'
+#' #' Number of variants
+#' #'
+#' #' This function returns the number of unique variants in a \linkS4class{variants} object.
+#' #'
+#' #' @param x A \linkS4class{variants} object.
+#' #'
+#' #' @return An integer scalar.
+#' #'
+#' #' @export
+#' setGeneric('n_variants', function(x) standardGeneric('n_variants'))
+#'
+#' #' Number of traits
+#' #'
+#' #' This function returns the number of unique traits in a \linkS4class{traits} object.
+#' #'
+#' #' @param x A \linkS4class{traits} object.
+#' #'
+#' #' @return An integer scalar.
+#' #'
+#' #' @export
+#' setGeneric('n_traits', function(x) standardGeneric('n_traits'))
+#'
+#' #' @rdname n_studies
+#' #' @export
+#' setMethod("n_studies",
+#'           signature(x = "studies"),
+#'           definition = function(x) {
+#'             n <- dplyr::n_distinct(x@studies$study_id)
+#'             return(n)
+#'           })
+#'
+#' #' @rdname n_associations
+#' #' @export
+#' setMethod("n_associations",
+#'           signature(x = "associations"),
+#'           definition = function(x) {
+#'             n <- dplyr::n_distinct(x@associations$association_id)
+#'             return(n)
+#'           })
+#'
+#' #' @rdname n_variants
+#' #' @export
+#' setMethod("n_variants",
+#'           signature(x = "variants"),
+#'           definition = function(x) {
+#'             n <- dplyr::n_distinct(x@variants$variant_id)
+#'             return(n)
+#'           })
+#'
+#' #' @rdname n_traits
+#' #' @export
+#' setMethod("n_traits",
+#'           signature(x = "traits"),
+#'           definition = function(x) {
+#'             n <- dplyr::n_distinct(x@traits$efo_id)
+#'             return(n)
+#'           })
