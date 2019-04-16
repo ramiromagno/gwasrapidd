@@ -39,7 +39,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">gwasrapidd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9002</span>
       </span>
     </div>
 
@@ -98,14 +98,14 @@
 <a href="#gwasrapidd" class="anchor"></a>gwasrapidd <img src="reference/figures/logo.svg" align="right" height="140/">
 </h1></div>
 
-<p>The goal of gwasrapidd is to retrieve data from the <a href="https://www.ebi.ac.uk/gwas">NHGRI-EBI Catalog</a> via the <a href="https://www.ebi.ac.uk/gwas/docs/api">REST API</a> of published genome-wide association studies.</p>
+<p>The goal of gwasrapidd is to retrieve data from the <a href="https://www.ebi.ac.uk/gwas">NHGRI-EBI Catalog</a> of published genome-wide association studies via the <a href="https://www.ebi.ac.uk/gwas/docs/api">REST API</a>.</p>
 <p>Get started by reading the <a href="https://rmagno.eu/gwasrapidd/articles/gwasrapidd.html">gwasrapidd documentation</a>.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>Install the development version from GitHub with:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># install.packages("devtools")</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"ramiromagno/gwasrapidd"</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb1-2" data-line-number="2">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"ramiromagno/gwasrapidd"</span>)</a></code></pre></div>
 </div>
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
@@ -115,9 +115,9 @@
 <a class="sourceLine" id="cb2-2" data-line-number="2">studies &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_studies.html">get_studies</a></span>(<span class="dt">efo_trait =</span> <span class="st">'triple-negative breast cancer'</span>)</a>
 <a class="sourceLine" id="cb2-3" data-line-number="3">studies<span class="op">@</span>studies[<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>]</a>
 <a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#&gt; # A tibble: 1 x 4</span></a>
-<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt;   study_id  reported_trait       initial_sample_size  replication_sample_…</span></a>
-<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#&gt;   &lt;chr&gt;     &lt;chr&gt;                &lt;chr&gt;                &lt;chr&gt;               </span></a>
-<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt; 1 GCST0023… Breast cancer (estr… 1,529 European ance… 2,148 European ance…</span></a></code></pre></div>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt;   study_id  reported_trait        initial_sample_size  replication_sample_…</span></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#&gt;   &lt;chr&gt;     &lt;chr&gt;                 &lt;chr&gt;                &lt;chr&gt;               </span></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt; 1 GCST0023… Breast cancer (estro… 1,529 European ance… 2,148 European ance…</span></a></code></pre></div>
 <p>Find associated variants:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">variants &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_variants.html">get_variants</a></span>(<span class="dt">study_id =</span> <span class="st">'GCST002305'</span>)</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2">variants<span class="op">@</span>variants[<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">'variant_id'</span>, <span class="st">'functional_class'</span>)]</a>
