@@ -387,7 +387,7 @@ get_studies_by_efo_uri <- function(efo_uri = NULL, verbose = FALSE, warnings = T
   # I really want to use URLencode here and not urltools::url_encode
   # as I often use elsewhere.
   resource_urls <- sprintf("/%s%s", "studies/search/findByEfoUri?uri=",
-                           URLencode(efo_uri, reserved = TRUE))
+                           utils::URLencode(efo_uri, reserved = TRUE))
 
   responses <- purrr::map(
     resource_urls,
