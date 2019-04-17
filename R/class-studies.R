@@ -47,31 +47,41 @@ setOldClass(c("tbl_df", "tbl", "data.frame"))
 #' @slot ancestries A \code{\link[tibble]{tibble}} listing ancestry of samples used in each study.
 #' \describe{
 #' \item{study_id}{GWAS Catalog study accession identifier.}
-#' \item{ancestry_id}{}
-#' \item{type}{}
-#' \item{number_of_individuals}{}
+#' \item{ancestry_id}{Ancestry identifier.}
+#' \item{type}{Stage of the ancestry sample: either \code{'initial'} or \code{'replication'}.}
+#' \item{number_of_individuals}{Number of individuals comprising this ancestry sample.}
 #' }
 #' @slot ancestral_groups A \code{\link[tibble]{tibble}} listing ancestral groups used in each ancestry.
 #' \describe{
 #' \item{study_id}{GWAS Catalog study accession identifier.}
-#' \item{ancestry_id}{}
-#' \item{ancestral_group}{}
+#' \item{ancestry_id}{Ancestry identifier.}
+#' \item{ancestral_group}{Genetic ancentry groups present in the sample.}
 #' }
 #' @slot countries_of_origin A \code{\link[tibble]{tibble}} listing countries of origin of samples.
 #' \describe{
 #' \item{study_id}{GWAS Catalog study accession identifier.}
-#' \item{ancestry_id}{}
-#' \item{country_name}{}
-#' \item{major_area}{}
-#' \item{region}{}
+#' \item{ancestry_id}{Ancestry identifier.}
+#' \item{country_name}{Country name, according to
+#' \href{https://unstats.un.org/unsd/methodology/m49/overview/}{The United
+#' Nations M49 Standard of Geographic Regions.}}
+#' \item{major_area}{Region name, according to
+#' \href{https://unstats.un.org/unsd/methodology/m49/overview/}{The United
+#' Nations M49 Standard of Geographic Regions.}} \item{region}{Sub-region name,
+#' according to \href{https://unstats.un.org/unsd/methodology/m49/overview/}{The
+#' United Nations M49 Standard of Geographic Regions.}}
 #' }
 #' @slot countries_of_recruitment A \code{\link[tibble]{tibble}} listing countries of recruitment of samples.
 #' \describe{
 #' \item{study_id}{GWAS Catalog study accession identifier.}
-#' \item{ancestry_id}{}
-#' \item{country_name}{}
-#' \item{major_area}{}
-#' \item{region}{}
+#' \item{ancestry_id}{Ancestry identifier.}
+#' \item{country_name}{Country name, according to
+#' \href{https://unstats.un.org/unsd/methodology/m49/overview/}{The United
+#' Nations M49 Standard of Geographic Regions.}}
+#' \item{major_area}{Region name, according to
+#' \href{https://unstats.un.org/unsd/methodology/m49/overview/}{The United
+#' Nations M49 Standard of Geographic Regions.}} \item{region}{Sub-region name,
+#' according to \href{https://unstats.un.org/unsd/methodology/m49/overview/}{The
+#' United Nations M49 Standard of Geographic Regions.}}
 #' }
 #' @slot publications A \code{\link[tibble]{tibble}} listing publications associated with each study.
 #' \describe{
@@ -102,14 +112,14 @@ setClass(
 #'
 #' Constructor for the S4 \linkS4class{studies} object.
 #'
-#' @param studies TODO.
-#' @param genotyping_techs TODO.
-#' @param platforms TODO.
-#' @param ancestries TODO.
-#' @param ancestral_groups TODO.
-#' @param countries_of_origin TODO.
-#' @param countries_of_recruitment TODO.
-#' @param publications TODO.
+#' @param studies A \code{\link{studies_tbl}} tibble.
+#' @param genotyping_techs A \code{\link{genotyping_techs_tbl}} tibble.
+#' @param platforms A \code{\link{platforms_tbl}} tibble.
+#' @param ancestries A \code{\link{ancestries_tbl}} tibble.
+#' @param ancestral_groups A \code{\link{ancestral_groups_tbl}} tibble.
+#' @param countries_of_origin A \code{\link{countries_tbl}} tibble.
+#' @param countries_of_recruitment A \code{\link{countries_tbl}} tibble.
+#' @param publications A \code{\link{publications_tbl}} tibble.
 #'
 #' @return An object of class \linkS4class{studies}.
 #' @keywords internal
@@ -280,9 +290,15 @@ ancestral_groups_tbl <- function(study_id = character(),
 #'
 #' @param study_id GWAS Catalog study accession identifier.
 #' @param ancestry_id Ancestry identifier.
-#' @param country_name Country name (TODO, M49 standard).
-#' @param major_area Major area (TODO, M49 standard).
-#' @param region Region (TODO, M49 standard).
+#' @param country_name Country name, according to
+#' \href{https://unstats.un.org/unsd/methodology/m49/overview/}{The United
+#' Nations M49 Standard of Geographic Regions.}
+#' @param major_area Region name, according to
+#' \href{https://unstats.un.org/unsd/methodology/m49/overview/}{The United
+#' Nations M49 Standard of Geographic Regions.}
+#' @param region Sub-region name, according to
+#' \href{https://unstats.un.org/unsd/methodology/m49/overview/}{The United
+#' Nations M49 Standard of Geographic Regions.}
 #' @return A \code{\link[tibble]{tibble}} whose columns are the named arguments
 #'   to the function.
 #' @keywords internal

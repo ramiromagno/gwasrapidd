@@ -55,34 +55,44 @@ genotyping array"}.}
 \item{\code{ancestries}}{A \code{\link[tibble]{tibble}} listing ancestry of samples used in each study.
 \describe{
 \item{study_id}{GWAS Catalog study accession identifier.}
-\item{ancestry_id}{}
-\item{type}{}
-\item{number_of_individuals}{}
+\item{ancestry_id}{Ancestry identifier.}
+\item{type}{Stage of the ancestry sample: either \code{'initial'} or \code{'replication'}.}
+\item{number_of_individuals}{Number of individuals comprising this ancestry sample.}
 }}
 
 \item{\code{ancestral_groups}}{A \code{\link[tibble]{tibble}} listing ancestral groups used in each ancestry.
 \describe{
 \item{study_id}{GWAS Catalog study accession identifier.}
-\item{ancestry_id}{}
-\item{ancestral_group}{}
+\item{ancestry_id}{Ancestry identifier.}
+\item{ancestral_group}{Genetic ancentry groups present in the sample.}
 }}
 
 \item{\code{countries_of_origin}}{A \code{\link[tibble]{tibble}} listing countries of origin of samples.
 \describe{
 \item{study_id}{GWAS Catalog study accession identifier.}
-\item{ancestry_id}{}
-\item{country_name}{}
-\item{major_area}{}
-\item{region}{}
+\item{ancestry_id}{Ancestry identifier.}
+\item{country_name}{Country name, according to
+\href{https://unstats.un.org/unsd/methodology/m49/overview/}{The United
+Nations M49 Standard of Geographic Regions.}}
+\item{major_area}{Region name, according to
+\href{https://unstats.un.org/unsd/methodology/m49/overview/}{The United
+Nations M49 Standard of Geographic Regions.}} \item{region}{Sub-region name,
+according to \href{https://unstats.un.org/unsd/methodology/m49/overview/}{The
+United Nations M49 Standard of Geographic Regions.}}
 }}
 
 \item{\code{countries_of_recruitment}}{A \code{\link[tibble]{tibble}} listing countries of recruitment of samples.
 \describe{
 \item{study_id}{GWAS Catalog study accession identifier.}
-\item{ancestry_id}{}
-\item{country_name}{}
-\item{major_area}{}
-\item{region}{}
+\item{ancestry_id}{Ancestry identifier.}
+\item{country_name}{Country name, according to
+\href{https://unstats.un.org/unsd/methodology/m49/overview/}{The United
+Nations M49 Standard of Geographic Regions.}}
+\item{major_area}{Region name, according to
+\href{https://unstats.un.org/unsd/methodology/m49/overview/}{The United
+Nations M49 Standard of Geographic Regions.}} \item{region}{Sub-region name,
+according to \href{https://unstats.un.org/unsd/methodology/m49/overview/}{The
+United Nations M49 Standard of Geographic Regions.}}
 }}
 
 \item{\code{publications}}{A \code{\link[tibble]{tibble}} listing publications associated with each study.

@@ -13,21 +13,21 @@ studies(studies = studies_tbl(),
   publications = publications_tbl())
 }
 \arguments{
-\item{studies}{TODO.}
+\item{studies}{A \code{\link{studies_tbl}} tibble.}
 
-\item{genotyping_techs}{TODO.}
+\item{genotyping_techs}{A \code{\link{genotyping_techs_tbl}} tibble.}
 
-\item{platforms}{TODO.}
+\item{platforms}{A \code{\link{platforms_tbl}} tibble.}
 
-\item{ancestries}{TODO.}
+\item{ancestries}{A \code{\link{ancestries_tbl}} tibble.}
 
-\item{ancestral_groups}{TODO.}
+\item{ancestral_groups}{A \code{\link{ancestral_groups_tbl}} tibble.}
 
-\item{countries_of_origin}{TODO.}
+\item{countries_of_origin}{A \code{\link{countries_tbl}} tibble.}
 
-\item{countries_of_recruitment}{TODO.}
+\item{countries_of_recruitment}{A \code{\link{countries_tbl}} tibble.}
 
-\item{publications}{TODO.}
+\item{publications}{A \code{\link{publications_tbl}} tibble.}
 }
 \value{
 An object of class \linkS4class{studies}.

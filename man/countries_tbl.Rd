@@ -13,11 +13,17 @@ countries_tbl(study_id = character(), ancestry_id = integer(),
 
 \item{ancestry_id}{Ancestry identifier.}
 
-\item{country_name}{Country name (TODO, M49 standard).}
+\item{country_name}{Country name, according to
+\href{https://unstats.un.org/unsd/methodology/m49/overview/}{The United
+Nations M49 Standard of Geographic Regions.}}
 
-\item{major_area}{Major area (TODO, M49 standard).}
+\item{major_area}{Region name, according to
+\href{https://unstats.un.org/unsd/methodology/m49/overview/}{The United
+Nations M49 Standard of Geographic Regions.}}
 
-\item{region}{Region (TODO, M49 standard).}
+\item{region}{Sub-region name, according to
+\href{https://unstats.un.org/unsd/methodology/m49/overview/}{The United
+Nations M49 Standard of Geographic Regions.}}
 }
 \value{
 A \code{\link[tibble]{tibble}} whose columns are the named arguments
