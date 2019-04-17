@@ -31,7 +31,7 @@ not reported, these are estimated using the standard error, when available.}
 \item{or_per_copy_number}{Reported odds ratio (OR) associated
 with strongest SNP risk allele. Note that all ORs included in the
 Catalog are >1.}
-\item{beta_number}{Beta-coefficient associated with strongest SNP risk allele.}
+\item{beta_number}{Beta coefficient associated with strongest SNP risk allele.}
 \item{beta_unit}{Beta coefficient unit.}
 \item{beta_direction}{Beta coefficient direction.}
 \item{beta_description}{Additional beta coefficient comment.}
@@ -42,33 +42,47 @@ Catalog are >1.}
 \item{\code{loci}}{A \code{\link[tibble]{tibble}} listing loci. Columns:
 \describe{
 \item{association_id}{GWAS Catalog association accession identifier, e.g., \code{20250}.}
-\item{locus_id}{TODO}
-\item{haplotype_snp_count}{TODO}
-\item{description}{TODO}
+\item{locus_id}{A locus identifier referring to a single variant locus or to
+a multi-loci entity such as a multi-SNP haplotype.}
+\item{haplotype_snp_count}{Number of variants per locus. Most loci are
+single-SNP loci, i.e., there is a one to one relationship between a variant
+and a \code{locus_id} (\code{haplotype_snp_count == NA}). There are however cases of associations involving
+multiple loci at once, such as SNP-SNP interactions and multi-SNP haplotypes.
+This is signalled in the columns: \code{multiple_snp_haplotype} and
+\code{snp_interaction} with value \code{TRUE}.}
+\item{description}{Description of the locus identifier \code{locus_id}, e.g.,
+\code{'Single variant'}, \code{SNP x SNP interaction}, or \code{3-SNP
+Haplotype}.}
 }}
 
 \item{\code{risk_alleles}}{A \code{\link[tibble]{tibble}} listing risk alleles. Columns:
 \describe{
 \item{association_id}{GWAS Catalog association accession identifier, e.g., \code{20250}.}
-\item{locus_id}{TODO}
-\item{variant_id}{TODO}
-\item{risk_allele}{TODO}
-\item{risk_frequency}{TODO}
-\item{genome_wide}{TODO}
-\item{limited_list}{TODO}
+\item{locus_id}{A locus identifier referring to a single variant locus or to
+a multi-loci entity such as a multi-SNP haplotype.}
+\item{variant_id}{Variant identifier, e.g., \code{'rs1333048'}.}
+\item{risk_allele}{Risk allele or effect allele.}
+\item{risk_frequency}{Reported risk/effect allele frequency associated with
+strongest SNP in controls (if not available among all controls, among the
+control group with the largest sample size). If the associated locus is a
+haplotype the haplotype frequency will be extracted.}
+\item{genome_wide}{Undocumented.}
+\item{limited_list}{Undocumented.}
 }}
 
 \item{\code{genes}}{A \code{\link[tibble]{tibble}} listing author reported genes. Columns:
 \describe{
 \item{association_id}{GWAS Catalog association accession identifier, e.g., \code{20250}.}
-\item{locus_id}{TODO.}
-\item{gene_name}{TODO.}
+\item{locus_id}{A locus identifier referring to a single variant locus or to
+a multi-loci entity such as a multi-SNP haplotype.}
+\item{gene_name}{Gene symbol according to \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.}
 }}
 
 \item{\code{ensembl_ids}}{A \code{\link[tibble]{tibble}} listing Ensembl gene identifiers. Columns:
 \describe{
 \item{association_id}{GWAS Catalog association accession identifier, e.g., \code{20250}.}
-\item{locus_id}{TODO.}
+\item{locus_id}{A locus identifier referring to a single variant locus or to
+a multi-loci entity such as a multi-SNP haplotype.}
 \item{gene_name}{Gene symbol according to \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.}
 \item{entrez_id}{The Entrez identifier of a gene, see ref.
 \href{https://dx.doi.org/10.1093\%2Fnar\%2Fgkq1237}{10.1093/nar/gkq1237} for
@@ -81,7 +95,8 @@ annotation in Ensembl} for more information.}
 \item{\code{entrez_ids}}{A \code{\link[tibble]{tibble}} listing Entrez gene identifiers. Columns:
 \describe{
 \item{association_id}{GWAS Catalog association accession identifier, e.g., \code{20250}.}
-\item{locus_id}{TODO.}
+\item{locus_id}{A locus identifier referring to a single variant locus or to
+a multi-loci entity such as a multi-SNP haplotype.}
 \item{gene_name}{Gene symbol according to \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.}
 \item{entrez_id}{The Entrez identifier of a gene, see ref.
 \href{https://dx.doi.org/10.1093\%2Fnar\%2Fgkq1237}{10.1093/nar/gkq1237} for
