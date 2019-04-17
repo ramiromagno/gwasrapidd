@@ -21,5 +21,5 @@ httptest::set_requester(function (response) {
     httptest::gsub_request("^https\\://www.ebi.ac.uk/gwas/rest/api/", "mocks/gc/") %>%
     httptest::gsub_request("^https\\://www.ebi.ac.uk/efo/", "mocks/efo/") %>%
     httptest::gsub_request("^https\\://www.ebi.ac.uk/ols/api/ontologies/efo", "mocks/ols/efo/") %>%
-    httptest::gsub_request("^https://httpbin.org/", "mocks/httpbin/")
+    httptest::gsub_request("^https\\://httpbin.org/", "mocks/httpbin/")
 })
