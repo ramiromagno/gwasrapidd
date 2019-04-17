@@ -10,19 +10,19 @@ risk_alleles_tbl(association_id = integer(), locus_id = integer(),
   limited_list = logical())
 }
 \arguments{
-\item{association_id}{TODO.}
+\item{association_id}{An integer vector of association identifiers.}
 
-\item{locus_id}{TODO.}
+\item{locus_id}{An integer vector of locus identifiers.}
 
-\item{variant_id}{TODO.}
+\item{variant_id}{A character vector of variant identifiers.}
 
-\item{risk_allele}{TODO.}
+\item{risk_allele}{A character vector of risk or effect allele names.}
 
-\item{risk_frequency}{TODO.}
+\item{risk_frequency}{A numeric vector of the frequency of risk or effect alleles.}
 
-\item{genome_wide}{TODO.}
+\item{genome_wide}{A logical vector.}
 
-\item{limited_list}{TODO.}
+\item{limited_list}{A logical vector.}
 }
 \value{
 A \code{\link[tibble]{tibble}} whose columns are the named arguments

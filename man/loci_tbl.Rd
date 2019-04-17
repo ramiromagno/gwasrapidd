@@ -8,13 +8,14 @@ loci_tbl(association_id = integer(), locus_id = integer(),
   haplotype_snp_count = integer(), description = character())
 }
 \arguments{
-\item{association_id}{TODO.}
+\item{association_id}{An integer vector of association identifiers.}
 
-\item{locus_id}{TODO.}
+\item{locus_id}{An integer vector of locus identifiers.}
 
-\item{haplotype_snp_count}{TODO.}
+\item{haplotype_snp_count}{An integer vector indicating the number of
+variants in the haplotype.}
 
-\item{description}{TODO.}
+\item{description}{A character vector of descriptions, one per locus identifier.}
 }
 \value{
 A \code{\link[tibble]{tibble}} whose columns are the named arguments

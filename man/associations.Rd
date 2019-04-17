@@ -9,17 +9,17 @@ associations(associations = associations_tbl(), loci = loci_tbl(),
   ensembl_ids = ensembl_ids_tbl(), entrez_ids = entrez_ids_tbl())
 }
 \arguments{
-\item{associations}{TODO.}
+\item{associations}{An \code{\link{associations_tbl}} tibble.}
 
-\item{loci}{TODO.}
+\item{loci}{A \code{\link{loci_tbl}} tibble.}
 
-\item{risk_alleles}{TODO.}
+\item{risk_alleles}{A \code{\link{risk_alleles_tbl}} tibble.}
 
-\item{genes}{TODO.}
+\item{genes}{A \code{\link{reported_genes_tbl}} tibble.}
 
-\item{ensembl_ids}{TODO.}
+\item{ensembl_ids}{A \code{\link{ensembl_ids_tbl}} tibble.}
 
-\item{entrez_ids}{TODO.}
+\item{entrez_ids}{A \code{\link{entrez_ids_tbl}} tibble.}
 }
 \value{
 An object of class \linkS4class{associations}.

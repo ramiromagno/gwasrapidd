@@ -108,12 +108,12 @@ setClass(
 #'
 #' Constructor for the S4 \linkS4class{associations} object.
 #'
-#' @param associations TODO.
-#' @param loci TODO.
-#' @param risk_alleles TODO.
-#' @param genes TODO.
-#' @param ensembl_ids TODO.
-#' @param entrez_ids TODO.
+#' @param associations An \code{\link{associations_tbl}} tibble.
+#' @param loci A \code{\link{loci_tbl}} tibble.
+#' @param risk_alleles A \code{\link{risk_alleles_tbl}} tibble.
+#' @param genes A \code{\link{reported_genes_tbl}} tibble.
+#' @param ensembl_ids A \code{\link{ensembl_ids_tbl}} tibble.
+#' @param entrez_ids A \code{\link{entrez_ids_tbl}} tibble.
 #'
 #' @return An object of class \linkS4class{associations}.
 #' @keywords internal
@@ -137,23 +137,25 @@ associations <- function(associations = associations_tbl(),
 #'
 #' Creates an associations table.
 #'
-#' @param association_id TODO.
-#' @param pvalue TODO.
-#' @param pvalue_description TODO.
-#' @param pvalue_mantissa TODO.
-#' @param pvalue_exponent TODO.
-#' @param multiple_snp_haplotype TODO.
-#' @param snp_interaction TODO.
-#' @param snp_type TODO.
-#' @param standard_error TODO.
-#' @param range TODO.
-#' @param or_per_copy_number TODO.
-#' @param beta_number TODO.
-#' @param beta_unit TODO.
-#' @param beta_direction TODO.
-#' @param beta_description TODO.
-#' @param last_mapping_date TODO.
-#' @param last_update_date TODO.
+#' @param association_id An integer vector of association identifiers.
+#' @param pvalue A numeric vector of p-values.
+#' @param pvalue_description A character vector of p-value context descriptions.
+#' @param pvalue_mantissa An integer vector of p-value mantissas.
+#' @param pvalue_exponent An integer vector of p-value exponents.
+#' @param multiple_snp_haplotype A logical vector.
+#' @param snp_interaction A logical vector.
+#' @param snp_type A character vector indicating SNP novelty: 'novel' or 'known'.
+#' @param standard_error A numeric vector of standard errors.
+#' @param range A character vector of free text descriptions of confidence intervals.
+#' @param or_per_copy_number A numeric vector of odds ratios.
+#' @param beta_number A numeric vector of beta coefficients.
+#' @param beta_unit A character vector of beta coefficient units.
+#' @param beta_direction A character vector of beta coefficient directions.
+#' @param beta_description A character vector of beta descriptions.
+#' @param last_mapping_date  A \code{\link[base]{POSIXct}} object indicating
+#'   last time this association was mapped to Ensembl.
+#' @param last_update_date A \code{\link[base]{POSIXct}} object indicating the
+#' last time the associations have been updated.
 #'
 #' @return A \code{\link[tibble]{tibble}} whose columns are the named arguments
 #'   to the function.
@@ -203,10 +205,11 @@ associations_tbl <- function(
 #'
 #' Creates a loci table.
 #'
-#' @param association_id TODO.
-#' @param locus_id TODO.
-#' @param haplotype_snp_count TODO.
-#' @param description TODO.
+#' @param association_id An integer vector of association identifiers.
+#' @param locus_id An integer vector of locus identifiers.
+#' @param haplotype_snp_count An integer vector indicating the number of
+#'   variants in the haplotype.
+#' @param description A character vector of descriptions, one per locus identifier.
 #'
 #' @return A \code{\link[tibble]{tibble}} whose columns are the named arguments
 #'   to the function.
@@ -232,13 +235,13 @@ loci_tbl <- function(
 #'
 #' Creates a risk alleles table.
 #'
-#' @param association_id TODO.
-#' @param locus_id TODO.
-#' @param variant_id TODO.
-#' @param risk_allele TODO.
-#' @param risk_frequency TODO.
-#' @param genome_wide TODO.
-#' @param limited_list TODO.
+#' @param association_id An integer vector of association identifiers.
+#' @param locus_id An integer vector of locus identifiers.
+#' @param variant_id A character vector of variant identifiers.
+#' @param risk_allele A character vector of risk or effect allele names.
+#' @param risk_frequency A numeric vector of the frequency of risk or effect alleles.
+#' @param genome_wide A logical vector.
+#' @param limited_list A logical vector.
 #'
 #' @return A \code{\link[tibble]{tibble}} whose columns are the named arguments
 #'   to the function.
@@ -269,9 +272,10 @@ risk_alleles_tbl <- function(
 #'
 #' Creates an authors' reported genes table.
 #'
-#' @param association_id TODO.
-#' @param locus_id TODO.
-#' @param gene_name TODO.
+#' @param association_id An integer vector of association identifiers.
+#' @param locus_id An integer vector of locus identifiers.
+#' @param gene_name A character vector of gene symbol according to
+#'   \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.
 #'
 #' @return A \code{\link[tibble]{tibble}} whose columns are the named arguments
 #'   to the function.
@@ -293,10 +297,11 @@ reported_genes_tbl <- function(
 #'
 #' Creates an Ensembl gene identifiers' table.
 #'
-#' @param association_id TODO.
-#' @param locus_id TODO.
-#' @param gene_name TODO.
-#' @param ensembl_id TODO.
+#' @param association_id An integer vector of association identifiers.
+#' @param locus_id An integer vector of locus identifiers.
+#' @param gene_name A character vector of gene symbol according to
+#'   \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.
+#' @param ensembl_id A character vector of Ensembl identifiers.
 #'
 #' @return A \code{\link[tibble]{tibble}} whose columns are the named arguments
 #'   to the function.
@@ -320,10 +325,11 @@ ensembl_ids_tbl <- function(
 #'
 #' Creates an Entrez gene identifiers' table.
 #'
-#' @param association_id TODO.
-#' @param locus_id TODO.
-#' @param gene_name TODO.
-#' @param entrez_id TODO.
+#' @param association_id An integer vector of association identifiers.
+#' @param locus_id An integer vector of locus identifiers.
+#' @param gene_name A character vector of gene symbol according to
+#'   \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.
+#' @param entrez_id A character vector of Entrez identifiers.
 #'
 #' @return A \code{\link[tibble]{tibble}} whose columns are the named arguments
 #'   to the function.

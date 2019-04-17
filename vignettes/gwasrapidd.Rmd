@@ -16,30 +16,6 @@ knitr::opts_chunk$set(
 )
 ```
 
-## Overview
-
-gwasrapidd is a REST API R client for the [GWAS
-Catalog](https://www.ebi.ac.uk/gwas), allowing you to programatically download:
-
-- Studies with `get_studies()`
-- Associations with `get_associations()`
-- Variants with `get_variants()`
-- Traits with `get_traits()`
-
-Each function returns an S4 object that encapsulates a set of tables (dataframes), that together, form a relational database for each object type.
-
-## Installation
-
-```{r, eval = FALSE}
-# Install the development version from GitHub:
-# install.packages("devtools")
-devtools::install_github("ramiromagno/gwasrapidd")
-```
-
-## Cheatsheet
-
-TODO
-
 ## Getting started
 
 The GWAS Catalog is a service provided by the EMBL-EBI and NHGRI that offers a
@@ -60,8 +36,6 @@ database dump in TSV or RDF/OWL formats:
 gwasrapidd facilitates the access to the Catalog via the Catalog REST API,
 allowing you to programmatically retrieve data directly into R.
 
-
-
 ## Usage
 
 The Catalog REST API provides four types of data objects for retrieval:
@@ -79,13 +53,5 @@ types:
 - `get_variants()`
 - `get_traits()`
 
-
-## Examples
-
-### Searching for information about Diabetes mellitus
-
-```{r}
-
-```
 
 

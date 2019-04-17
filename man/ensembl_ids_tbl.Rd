@@ -8,13 +8,14 @@ ensembl_ids_tbl(association_id = integer(), locus_id = integer(),
   gene_name = character(), ensembl_id = character())
 }
 \arguments{
-\item{association_id}{TODO.}
+\item{association_id}{An integer vector of association identifiers.}
 
-\item{locus_id}{TODO.}
+\item{locus_id}{An integer vector of locus identifiers.}
 
-\item{gene_name}{TODO.}
+\item{gene_name}{A character vector of gene symbol according to
+\href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.}
 
-\item{ensembl_id}{TODO.}
+\item{ensembl_id}{A character vector of Ensembl identifiers.}
 }
 \value{
 A \code{\link[tibble]{tibble}} whose columns are the named arguments
