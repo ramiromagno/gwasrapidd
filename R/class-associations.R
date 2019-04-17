@@ -8,25 +8,29 @@ setOldClass(c("tbl_df", "tbl", "data.frame"))
 #' associations table --- main table. All tables have the column \code{association_id} as
 #' primary key.
 #'
-#' @slot associations A \code{\link[tibble]{tibble}} listing
+#' @slot associations A \code{\link[tibble]{tibble}} listing associations. Columns:
 #' \describe{
 #' \item{association_id}{GWAS Catalog association accession identifier, e.g., \code{20250}.}
-#' \item{pvalue}{TODO}
-#' \item{pvalue_description}{TODO}
-#' \item{pvalue_mantissa}{TODO}
-#' \item{pvalue_exponent}{TODO}
-#' \item{multiple_snp_haplotype}{TODO}
-#' \item{snp_interaction}{TODO}
-#' \item{snp_type}{TODO}
-#' \item{standard_error}{TODO}
-#' \item{range}{TODO}
-#' \item{or_per_copy_number}{TODO}
-#' \item{beta_number}{TODO}
-#' \item{beta_unit}{TODO}
-#' \item{beta_direction}{TODO}
-#' \item{beta_description}{TODO}
-#' \item{last_mapping_date}{TODO}
-#' \item{last_update_date}{TODO}
+#' \item{pvalue}{Reported p-value for strongest variant risk allele.}
+#' \item{pvalue_description}{Information describing context of p-value.}
+#' \item{pvalue_mantissa}{Mantissa of p-value.}
+#' \item{pvalue_exponent}{Exponent of p-value.}
+#' \item{multiple_snp_haplotype}{Whether the association is for a multi-SNP haplotype.}
+#' \item{snp_interaction}{Whether the association is for a SNP-SNP interaction.}
+#' \item{snp_type}{Whether the SNP has previously been reported. Either \code{'known'} or \code{'novel'}.}
+#' \item{standard_error}{Standard error of the effect size.}
+#' \item{range}{Reported 95\% confidence interval associated with strongest SNP
+#' risk allele, along with unit in the case of beta-coefficients. If 95% CIs have not been
+#' not reported, these are estimated using the standard error, when available.}
+#' \item{or_per_copy_number}{Reported odds ratio (OR) associated
+#' with strongest SNP risk allele. Note that all ORs included in the
+#' Catalog are >1.}
+#' \item{beta_number}{Beta-coefficient associated with strongest SNP risk allele.}
+#' \item{beta_unit}{Beta coefficient unit.}
+#' \item{beta_direction}{Beta coefficient direction.}
+#' \item{beta_description}{Additional beta coefficient comment.}
+#' \item{last_mapping_date}{Last time this association was mapped to Ensembl.}
+#' \item{last_update_date}{Last time this association was updated.}
 #' }
 #' @slot loci A \code{\link[tibble]{tibble}} listing loci. Columns:
 #' \describe{
