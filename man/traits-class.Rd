@@ -7,12 +7,12 @@
 \description{
 The traits object consists of one slot only, a table
 (\code{\link[tibble]{tibble}}) of GWAS Catalog EFO traits. Each EFO trait is
-an observation (row) in the traits table --- main table.
+an observation (row) in the \code{traits} table --- main table.
 }
 \section{Slots}{
 
 \describe{
-\item{\code{traits}}{A \code{\link[tibble]{tibble}} listing EFO traits Columns:
+\item{\code{traits}}{A \code{\link[tibble]{tibble}} listing EFO traits. Columns:
 \describe{
 \item{efo_id}{\href{https://www.ebi.ac.uk/efo/}{EFO} identifier.}
 \item{trait}{\href{https://www.ebi.ac.uk/efo/}{EFO} trait description.}

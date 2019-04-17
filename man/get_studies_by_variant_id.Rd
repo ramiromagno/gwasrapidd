@@ -8,14 +8,14 @@ get_studies_by_variant_id(variant_id = NULL, verbose = FALSE,
   warnings = TRUE, page_size = 20L)
 }
 \arguments{
-\item{variant_id}{A \code{character} vector of GWAS Catalog variant identifiers.}
+\item{variant_id}{A character vector of GWAS Catalog variant identifiers.}
 
-\item{verbose}{A \code{logical} indicating whether the function should be
+\item{verbose}{Whether the function should be
 verbose about the different queries or not.}
 
-\item{warnings}{A \code{logical} indicating whether to print warnings, if any.}
+\item{warnings}{Whether to print warnings.}
 
-\item{page_size}{An \code{integer} scalar indicating the
+\item{page_size}{An integer scalar indicating the
 \href{https://www.ebi.ac.uk/gwas/rest/docs/api#_paging_resources}{page}
 value to be used in the JSON requests, can be between \code{1} and
 \code{1000}.}

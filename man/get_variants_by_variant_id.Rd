@@ -8,12 +8,12 @@ get_variants_by_variant_id(variant_id = NULL, verbose = FALSE,
   warnings = TRUE, page_size = 20L)
 }
 \arguments{
-\item{variant_id}{A \code{character} vector of GWAS Catalog variant identifiers.}
+\item{variant_id}{A character vector of GWAS Catalog variant identifiers.}
 
-\item{verbose}{A \code{logical} indicating whether the function should be
-verbose about the different queries or not.}
+\item{verbose}{Whether the function should be verbose about the different
+queries or not.}
 
-\item{warnings}{A \code{logical} indicating whether to print warnings, if any.}
+\item{warnings}{Whether to print warnings, if any.}
 
 \item{page_size}{An \code{integer} scalar indicating the
 \href{https://www.ebi.ac.uk/gwas/rest/docs/api#_paging_resources}{page}

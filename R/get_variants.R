@@ -2,12 +2,12 @@
 #'
 #' Gets variants by GWAS Catalog internal study identifiers.
 #'
-#' @param study_id A \code{character} vector of GWAS Catalog study accession
+#' @param study_id A character vector of GWAS Catalog study accession
 #'   identifiers.
-#' @param verbose A \code{logical} indicating whether the function should be
-#'   verbose about the different queries or not.
-#' @param warnings A \code{logical} indicating whether to print warnings, if any.
-#' @param page_size An \code{integer} scalar indicating the
+#' @param verbose Whether the function should be verbose about the different
+#'   queries or not.
+#' @param warnings Whether to print warnings.
+#' @param page_size An integer scalar indicating the
 #'   \href{https://www.ebi.ac.uk/gwas/rest/docs/api#_paging_resources}{page}
 #'   value to be used in the JSON requests, can be between \code{1} and
 #'   \code{1000}.
@@ -50,12 +50,12 @@ get_variants_by_study_id <- function(study_id = NULL, verbose = FALSE, warnings 
 #'
 #' Gets variants by GWAS Catalog internal association identifiers.
 #'
-#' @param association_id An \code{integer} vector of GWAS Catalog association
+#' @param association_id An integer vector of GWAS Catalog association
 #'   identifiers.
-#' @param verbose A \code{logical} indicating whether the function should be
-#'   verbose about the different queries or not.
-#' @param warnings A \code{logical} indicating whether to print warnings, if any.
-#' @param page_size An \code{integer} scalar indicating the
+#' @param verbose Whether the function should be verbose about the different
+#'   queries or not.
+#' @param warnings Whether to print warnings.
+#' @param page_size An integer scalar indicating the
 #'   \href{https://www.ebi.ac.uk/gwas/rest/docs/api#_paging_resources}{page}
 #'   value to be used in the JSON requests, can be between \code{1} and
 #'   \code{1000}.
@@ -99,10 +99,10 @@ get_variants_by_association_id <- function(association_id = NULL, verbose = FALS
 #'
 #' Gets variants by variant identifiers.
 #'
-#' @param variant_id A \code{character} vector of GWAS Catalog variant identifiers.
-#' @param verbose A \code{logical} indicating whether the function should be
-#'   verbose about the different queries or not.
-#' @param warnings A \code{logical} indicating whether to print warnings, if any.
+#' @param variant_id A character vector of GWAS Catalog variant identifiers.
+#' @param verbose Whether the function should be verbose about the different
+#'   queries or not.
+#' @param warnings Whether to print warnings, if any.
 #' @param page_size An \code{integer} scalar indicating the
 #'   \href{https://www.ebi.ac.uk/gwas/rest/docs/api#_paging_resources}{page}
 #'   value to be used in the JSON requests, can be between \code{1} and
@@ -151,10 +151,10 @@ get_variants_by_variant_id <- function(variant_id = NULL, verbose = FALSE, warni
 #'
 #' @param efo_id A character vector of \href{https://www.ebi.ac.uk/efo/}{EFO}
 #'   identifiers.
-#' @param verbose A \code{logical} indicating whether the function should be
-#'   verbose about the different queries or not.
-#' @param warnings A \code{logical} indicating whether to print warnings, if any.
-#' @param page_size An \code{integer} scalar indicating the
+#' @param verbose Whether the function should be verbose about the different
+#'   queries or not.
+#' @param warnings Whether to print warnings.
+#' @param page_size An integer scalar indicating the
 #'   \href{https://www.ebi.ac.uk/gwas/rest/docs/api#_paging_resources}{page}
 #'   value to be used in the JSON requests, can be between \code{1} and
 #'   \code{1000}.
@@ -194,12 +194,12 @@ get_variants_by_efo_id <- function(efo_id = NULL, verbose = FALSE, warnings = TR
 #' Gets variants whose associated publications match
 #'  \href{https://en.wikipedia.org/wiki/PubMed}{PubMed} identifiers.
 #'
-#' @param pubmed_id An \code{integer} vector of
+#' @param pubmed_id An integer vector of
 #'   \href{https://en.wikipedia.org/wiki/PubMed}{PubMed} identifiers.
-#' @param verbose A \code{logical} indicating whether the function should be
-#'   verbose about the different queries or not.
-#' @param warnings A \code{logical} indicating whether to print warnings, if any.
-#' @param page_size An \code{integer} scalar indicating the
+#' @param verbose Whether the function should be verbose about the different
+#'   queries or not.
+#' @param warnings Whether to print warnings.
+#' @param page_size An integer scalar indicating the
 #'   \href{https://www.ebi.ac.uk/gwas/rest/docs/api#_paging_resources}{page}
 #'   value to be used in the JSON requests, can be between \code{1} and
 #'   \code{1000}.
@@ -243,14 +243,14 @@ get_variants_by_pubmed_id <- function(pubmed_id = NULL, verbose = FALSE, warning
 #'
 #' Gets variants by genomic range.
 #'
-#' @param chromosome A \code{character} of human chromosome names: autosomal
+#' @param chromosome A character vector of human chromosome names: autosomal
 #' and sexual chromosomes only, i.e., 1--22, X and Y.
 #' @param start Start position of range (starts at 1).
 #' @param end End position of range (inclusive).
-#' @param verbose A \code{logical} indicating whether the function should be
-#'   verbose about the different queries or not.
-#' @param warnings A \code{logical} indicating whether to print warnings, if any.
-#' @param page_size An \code{integer} scalar indicating the
+#' @param verbose Whether the function should be verbose about the different
+#'   queries or not.
+#' @param warnings Whether to print warnings.
+#' @param page_size An integer scalar indicating the
 #'   \href{https://www.ebi.ac.uk/gwas/rest/docs/api#_paging_resources}{page}
 #'   value to be used in the JSON requests, can be between \code{1} and
 #'   \code{1000}.
@@ -344,10 +344,10 @@ get_variants_by_genomic_range <- function(chromosome = NULL, start = NULL, end =
 #' Gets variants whose genomic context includes a specific gene or genes.
 #'
 #' @param gene_name A \code{character} vector of gene names.
-#' @param verbose A \code{logical} indicating whether the function should be
-#'   verbose about the different queries or not.
-#' @param warnings A \code{logical} indicating whether to print warnings, if any.
-#' @param page_size An \code{integer} scalar indicating the
+#' @param verbose Whether the function should be verbose about the different
+#'   queries or not.
+#' @param warnings Whether to print warnings.
+#' @param page_size An integer scalar indicating the
 #'   \href{https://www.ebi.ac.uk/gwas/rest/docs/api#_paging_resources}{page}
 #'   value to be used in the JSON requests, can be between \code{1} and
 #'   \code{1000}.
@@ -392,12 +392,12 @@ get_variants_by_gene_name <- function(gene_name = NULL, verbose = FALSE, warning
 #' Gets variants that match \href{https://www.ebi.ac.uk/efo/}{EFO} trait
 #' description.
 #'
-#' @param efo_trait A \code{character} vector of
+#' @param efo_trait A character vector of
 #'   \href{https://www.ebi.ac.uk/efo/}{EFO} trait descriptions, e.g.,
 #'   \code{'uric acid measurement'}.
-#' @param verbose A \code{logical} indicating whether the function should be
+#' @param verbose Whether the function should be
 #'   verbose about the different queries or not.
-#' @param warnings A \code{logical} indicating whether to print warnings, if any.
+#' @param warnings Whether to print warnings.
 #' @param page_size An \code{integer} scalar indicating the
 #'   \href{https://www.ebi.ac.uk/gwas/rest/docs/api#_paging_resources}{page}
 #'   value to be used in the JSON requests, can be between \code{1} and
@@ -447,12 +447,12 @@ get_variants_by_efo_trait <- function(efo_trait = NULL, verbose = FALSE, warning
 #' \code{reported_trait} are currently case sensitive but this should not be the
 #' case.
 #'
-#' @param reported_trait A \code{character} vector of phenotypic traits as
+#' @param reported_trait A character vector of phenotypic traits as
 #'   reported by the original authors' the study.
-#' @param verbose A \code{logical} indicating whether the function should be
-#'   verbose about the different queries or not.
-#' @param warnings A \code{logical} indicating whether to print warnings, if any.
-#' @param page_size An \code{integer} scalar indicating the
+#' @param verbose Whether the function should be verbose about the different
+#'   queries or not.
+#' @param warnings Whether to print warnings.
+#' @param page_size An integer scalar indicating the
 #'   \href{https://www.ebi.ac.uk/gwas/rest/docs/api#_paging_resources}{page}
 #'   value to be used in the JSON requests, can be between \code{1} and
 #'   \code{1000}.
@@ -496,10 +496,10 @@ get_variants_by_reported_trait <- function(reported_trait = NULL, verbose = FALS
 #'
 #' Gets all variants. Beware this can take several minutes!
 #'
-#' @param verbose A \code{logical} indicating whether the function should be
+#' @param verbose Whether the function should be
 #'   verbose about the different queries or not.
-#' @param warnings A \code{logical} indicating whether to print warnings, if any.
-#' @param page_size An \code{integer} scalar indicating the
+#' @param warnings Whether to print warnings.
+#' @param page_size An integer scalar indicating the
 #'   \href{https://www.ebi.ac.uk/gwas/rest/docs/api#_paging_resources}{page}
 #'   value to be used in the JSON requests, can be between \code{1} and
 #'   \code{1000}.
@@ -540,37 +540,36 @@ get_variants_all <- function(verbose = FALSE, warnings = TRUE, page_size = 20L) 
 #' variants that match simultaneously all criteria provided, then set
 #' \code{set_operation} to \code{'intersection'}.
 #'
-#' @param study_id A \code{character} vector of GWAS Catalog study accession
+#' @param study_id A character vector of GWAS Catalog study accession
 #'   identifiers.
-#' @param association_id An \code{integer} vector of GWAS Catalog association
+#' @param association_id An integer vector of GWAS Catalog association
 #'   identifiers.
-#' @param variant_id A \code{character} vector of GWAS Catalog variant identifiers.
+#' @param variant_id A character vector of GWAS Catalog variant identifiers.
 #' @param efo_id A character vector of \href{https://www.ebi.ac.uk/efo/}{EFO}
 #'   identifiers.
-#' @param pubmed_id An \code{integer} vector of
-#'   \href{https://en.wikipedia.org/wiki/PubMed}{PubMed} identifiers.
-#' @param genomic_range A named \code{list} of three vectors:
+#' @param pubmed_id An integer vector of
+#'   \href{https://www.ncbi.nlm.nih.gov/pubmed}{PubMed} identifiers.
+#' @param genomic_range A named list of three vectors:
 #' \describe{ \item{chromosome}{A character vector of chromosome names of the
 #' form 1--22, X or Y.} \item{start}{A numeric vector of start positions,
 #' starting at 1.} \item{end}{A numeric vector of end positions.} }
 #' The three vectors need to be of the same length so that \code{chromosome}
-#' names, \code{start} and \code{end} positions are matched by position hence
-#' defining a genomic range.
+#' names, \code{start} and \code{end} positions can be matched by position.
 #' @param gene_name Gene symbol according to
 #'   \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.
-#' @param efo_trait A \code{character} vector of
+#' @param efo_trait A character vector of
 #'   \href{https://www.ebi.ac.uk/efo/}{EFO} trait descriptions, e.g.,
 #'   \code{'uric acid measurement'}.
-#' @param reported_trait A \code{character} vector of phenotypic traits as
-#'   reported by the original authors' the study.
+#' @param reported_trait A character vector of phenotypic traits as
+#'   reported by the original authors of the study.
 #' @param set_operation Either \code{'union'} or \code{'intersection'}. This
 #'   tells how variants retrieved by different criteria  should be combined:
 #'   \code{'union'} binds together all results removing duplicates and
 #'   \code{'intersection'} only keeps same variants found with different
 #'   criteria.
-#' @param verbose A \code{logical} indicating whether the function should be
+#' @param verbose Whether the function should be
 #'   verbose about the different queries or not.
-#' @param warnings A \code{logical} indicating whether to print warnings, if any.
+#' @param warnings Whether to print warnings.
 #'
 #' @return A \linkS4class{variants} object.
 #' @export

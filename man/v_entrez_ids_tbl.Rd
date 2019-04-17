@@ -8,11 +8,12 @@ v_entrez_ids_tbl(variant_id = character(), gene_name = character(),
   entrez_id = character())
 }
 \arguments{
-\item{variant_id}{TODO.}
+\item{variant_id}{A character vector of variant identifiers.}
 
-\item{gene_name}{TODO.}
+\item{gene_name}{A character vector of gene symbols according to
+\href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.}
 
-\item{entrez_id}{TODO.}
+\item{entrez_id}{A character vector of Entrez identifiers.}
 }
 \value{
 A \code{\link[tibble]{tibble}} whose columns are the named arguments

@@ -5,27 +5,59 @@ setOldClass(c("tbl_df", "tbl", "data.frame"))
 #' The variants object consists of four slots, each a table
 #' (\code{\link[tibble]{tibble}}), that combined form a relational database of a
 #' subset of GWAS Catalog variants Each variant is an observation (row) in the
-#' variants table --- main table. All tables have the column \code{variant_id} as
+#' \code{variants} table --- main table. All tables have the column \code{variant_id} as
 #' primary key.
 #'
 #' @slot variants A \code{\link[tibble]{tibble}} listing variants. Columns:
 #' \describe{
-#' \item{TODO}{TODO}
+#' \item{variant_id}{Variant identifier, e.g., \code{'rs1333048'}.}
+#' \item{merged}{Whether this SNP has been merged with another SNP in a newer genome build.}
+#' \item{functional_class}{Class according to Ensembl's predicted consequences
+#' that each variant allele may have on transcripts. See
+#' \href{https://www.ensembl.org/info/genome/variation/prediction/predicted_data.html}{Ensembl
+#' Variation - Calculated variant consequences}.}
+#' \item{chromosome_name}{Chromosome name.}
+#' \item{chromosome_position}{Chromosome position.}
+#' \item{chromosome_region}{\href{https://ghr.nlm.nih.gov/primer/howgeneswork/genelocation}{Cytogenetic
+#' location}.}
+#' \item{last_update_date}{Last time this variant was updated.}
 #' }
 #' @slot genomic_contexts A \code{\link[tibble]{tibble}} listing genomic
 #'   contexts associated with each variant. Columns:
 #' \describe{
-#' \item{TODO}{TODO}
+#' \item{variant_id}{Variant identifier.}
+#' \item{gene_name}{Gene symbol according to
+#' \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.}
+#' \item{chromosome_name}{Chromosome name.}
+#' \item{chromosome_position}{Chromosome position.}
+#' \item{distance}{Genomic distance between the variant and the gene (in base pairs).}
+#' \item{is_closest_gene}{Whether this is the closest gene to this variant.}
+#' \item{is_intergenic}{Whether this variant is intergenic, i.e, if there is no
+#' gene up or downstream within 100kb.}
+#' \item{is_upstream}{Whether this variant is upstream of this gene.}
+#' \item{is_downstream}{Whether this variant is downstream of this gene.}
+#' \item{source}{Gene mapping source, either \code{Ensembl} or \code{NCBI}.}
+#' \item{mapping_method}{Gene mapping method.}
 #' }
 #' @slot ensembl_ids A \code{\link[tibble]{tibble}} listing gene Ensembl
 #'   identifiers associated with each genomic context. Columns:
 #' \describe{
-#' \item{TODO}{TODO}
+#' \item{variant_id}{Variant identifier.}
+#' \item{gene_name}{Gene symbol according to
+#' \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.}
+#' \item{ensembl_id}{The Ensembl identifier of an Ensembl gene, see Section
+#' \href{https://www.ensembl.org/info/genome/genebuild/genome_annotation.html}{Gene
+#' annotation in Ensembl} for more information.}
 #' }
 #' @slot entrez_ids A \code{\link[tibble]{tibble}} listing gene Entrez
 #'   identifiers associated with each genomic context. Columns:
 #' \describe{
-#' \item{TODO}{TODO}
+#' \item{variant_id}{Variant identifier.}
+#' \item{gene_name}{Gene symbol according to
+#' \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.}
+#' \item{entrez_id}{The Entrez identifier of a gene, see ref.
+#' \href{https://dx.doi.org/10.1093\%2Fnar\%2Fgkq1237}{10.1093/nar/gkq1237} for
+#' more information.}
 #' }
 #' @export
 setClass(
@@ -42,11 +74,10 @@ setClass(
 #'
 #' Constructor for the S4 \linkS4class{variants} object.
 #'
-#' @param variants TODO.
-#' @param genomic_contexts TODO.
-#' @param risk_alleles TODO.
-#' @param ensembl_ids TODO.
-#' @param entrez_ids TODO.
+#' @param variants A \code{\link{variants_tbl}} tibble.
+#' @param genomic_contexts A \code{\link{genomic_contexts_tbl}} tibble.
+#' @param ensembl_ids A \code{\link{v_ensembl_ids_tbl}} tibble.
+#' @param entrez_ids A \code{\link{v_entrez_ids_tbl}} tibble.
 #'
 #' @return An object of class \linkS4class{variants}.
 #' @keywords internal
@@ -66,16 +97,19 @@ variants <- function(variants = variants_tbl(),
 #'
 #' Creates a variants table.
 #'
-#' @param variant_id TODO.
-#' @param merged TODO.
-#' @param functional_class TODO.
-#' @param chromosome_name TODO.
-#' @param chromosome_position TODO.
-#' @param chromosome_region TODO.
-#' @param last_update_date TODO.
+#' @param variant_id A character vector of variant identifiers.
+#' @param merged A logical vector indicating if a SNP has been merged with
+#' another SNP in a newer genome build.
+#' @param functional_class A character vector of functional classes, see
+#'   \code{functional_class} in slot \code{variants} of \linkS4class{variants}.
+#' @param chromosome_name A character vector of chromosome names.
+#' @param chromosome_position An integer vector of chromosome positions.
+#' @param chromosome_region A character vector of cytogenetic regions.
+#' @param last_update_date A \code{\link[base]{POSIXct}} object indicating the
+#' last time the variants have been updated.
 #'
 #' @return A \code{\link[tibble]{tibble}} whose columns are the named arguments
-#'   to the function.
+#' to the function.
 #' @keywords internal
 variants_tbl <- function(variant_id = character(),
                          merged = integer(),
@@ -102,19 +136,21 @@ variants_tbl <- function(variant_id = character(),
 #'
 #' Creates a genomic contexts table.
 #'
-#' @param variant_id TODO.
-#' @param gene_name TODO.
-#' @param chromosome_name TODO.
-#' @param distance TODO.
-#' @param is_closest_gene TODO.
-#' @param is_intergenic TODO.
-#' @param is_upstream TODO.
-#' @param is_downstream TODO.
-#' @param source TODO.
-#' @param mapping_method TODO.
+#' @param variant_id A character vector of variant identifiers.
+#' @param gene_name A character vector of gene symbols according to
+#' \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.
+#' @param chromosome_name A character vector of chromosome names.
+#' @param chromosome_position An integer vector of chromosome positions.
+#' @param distance An integer vector of genomic positions.
+#' @param is_closest_gene A logical vector.
+#' @param is_intergenic A logical vector.
+#' @param is_upstream A logical vector.
+#' @param is_downstream A logical vector.
+#' @param source A character vector of gene mapping sources.
+#' @param mapping_method A character vector of gene mapping methods.
 #'
 #' @return A \code{\link[tibble]{tibble}} whose columns are the named arguments
-#'   to the function.
+#' to the function.
 #' @keywords internal
 genomic_contexts_tbl <- function(variant_id = character(),
                                  gene_name = character(),
@@ -149,9 +185,10 @@ genomic_contexts_tbl <- function(variant_id = character(),
 #'
 #' Creates a gene Ensembl identifiers table.
 #'
-#' @param variant_id TODO.
-#' @param gene_name TODO.
-#' @param ensembl_id TODO.
+#' @param variant_id A character vector of variant identifiers.
+#' @param gene_name A character vector of gene symbols according to
+#' \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.
+#' @param ensembl_id A character vector of Ensembl identifiers.
 #'
 #' @return A \code{\link[tibble]{tibble}} whose columns are the named arguments
 #'   to the function.
@@ -170,9 +207,10 @@ v_ensembl_ids_tbl <- function(variant_id = character(),
 #'
 #' Creates a gene Entrez identifiers table.
 #'
-#' @param variant_id TODO.
-#' @param gene_name TODO.
-#' @param entrez_id TODO.
+#' @param variant_id A character vector of variant identifiers.
+#' @param gene_name A character vector of gene symbols according to
+#' \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.
+#' @param entrez_id A character vector of Entrez identifiers.
 #'
 #' @return A \code{\link[tibble]{tibble}} whose columns are the named arguments
 #'   to the function.

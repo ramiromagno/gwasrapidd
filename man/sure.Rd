@@ -10,16 +10,16 @@ sure(before_question = NULL, after_saying_no = NULL,
 \arguments{
 \item{before_question}{String with message to be printed before question.}
 
-\item{after_saying_no}{String with message to be printed after answering 'no'.}
+\item{after_saying_no}{String with message to be printed after answering \code{'no'}.}
 
-\item{after_saying_yes}{String with message to be printed after answering 'yes'.}
+\item{after_saying_yes}{String with message to be printed after answering \code{'yes'}.}
 
 \item{default_answer}{String with answer to question, if run in
 non-interactive mode.}
 }
 \value{
-A logical indicating if answer was 'yes'/'y' (TRUE) or otherwise
-  (FALSE).
+A logical indicating if answer was \code{'yes'}/\code{'y'} (\code{TRUE}) or otherwise
+  (\code{FALSE}).
 }
 \description{
 This function asks you interactively for permission to continue or not.

@@ -10,23 +10,26 @@ variants_tbl(variant_id = character(), merged = integer(),
   last_update_date = lubridate::ymd_hms())
 }
 \arguments{
-\item{variant_id}{TODO.}
+\item{variant_id}{A character vector of variant identifiers.}
 
-\item{merged}{TODO.}
+\item{merged}{A logical vector indicating if a SNP has been merged with
+another SNP in a newer genome build.}
 
-\item{functional_class}{TODO.}
+\item{functional_class}{A character vector of functional classes, see
+\code{functional_class} in slot \code{variants} of \linkS4class{variants}.}
 
-\item{chromosome_name}{TODO.}
+\item{chromosome_name}{A character vector of chromosome names.}
 
-\item{chromosome_position}{TODO.}
+\item{chromosome_position}{An integer vector of chromosome positions.}
 
-\item{chromosome_region}{TODO.}
+\item{chromosome_region}{A character vector of cytogenetic regions.}
 
-\item{last_update_date}{TODO.}
+\item{last_update_date}{A \code{\link[base]{POSIXct}} object indicating the
+last time the variants have been updated.}
 }
 \value{
 A \code{\link[tibble]{tibble}} whose columns are the named arguments
-  to the function.
+to the function.
 }
 \description{
 Creates a variants table.

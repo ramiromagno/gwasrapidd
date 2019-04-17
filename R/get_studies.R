@@ -2,12 +2,12 @@
 #'
 #' Gets studies by GWAS Catalog internal study identifiers.
 #'
-#' @param study_id A \code{character} vector of GWAS Catalog study accession
+#' @param study_id A character vector of GWAS Catalog study accession
 #'   identifiers.
-#' @param verbose A \code{logical} indicating whether the function should be
-#'   verbose about the different queries or not.
-#' @param warnings A \code{logical} indicating whether to print warnings, if any.
-#' @param page_size An \code{integer} scalar indicating the
+#' @param verbose Whether the function should be verbose about the different
+#'   queries or not.
+#' @param warnings Whether to print warnings.
+#' @param page_size An integer scalar indicating the
 #'   \href{https://www.ebi.ac.uk/gwas/rest/docs/api#_paging_resources}{page}
 #'   value to be used in the JSON requests, can be between \code{1} and
 #'   \code{1000}.
@@ -51,11 +51,11 @@ get_studies_by_study_id <- function(study_id = NULL, verbose = FALSE, warnings =
 #'
 #' Gets studies by GWAS Catalog internal association identifiers.
 #'
-#' @param association_id An \code{integer} vector of GWAS Catalog association
+#' @param association_id An integer vector of GWAS Catalog association
 #'   identifiers.
-#' @param verbose A \code{logical} indicating whether the function should be
-#'   verbose about the different queries or not.
-#' @param warnings A \code{logical} indicating whether to print warnings, if any.
+#' @param verbose Whether the function should be verbose about the different
+#'   queries or not.
+#' @param warnings Whether to print warnings.
 #' @param page_size An \code{integer} scalar indicating the
 #'   \href{https://www.ebi.ac.uk/gwas/rest/docs/api#_paging_resources}{page}
 #'   value to be used in the JSON requests, can be between \code{1} and
@@ -100,11 +100,11 @@ get_studies_by_association_id <- function(association_id = NULL, verbose = FALSE
 #'
 #' Gets studies by variant identifiers.
 #'
-#' @param variant_id A \code{character} vector of GWAS Catalog variant identifiers.
-#' @param verbose A \code{logical} indicating whether the function should be
+#' @param variant_id A character vector of GWAS Catalog variant identifiers.
+#' @param verbose Whether the function should be
 #'   verbose about the different queries or not.
-#' @param warnings A \code{logical} indicating whether to print warnings, if any.
-#' @param page_size An \code{integer} scalar indicating the
+#' @param warnings Whether to print warnings.
+#' @param page_size An integer scalar indicating the
 #'   \href{https://www.ebi.ac.uk/gwas/rest/docs/api#_paging_resources}{page}
 #'   value to be used in the JSON requests, can be between \code{1} and
 #'   \code{1000}.
@@ -151,10 +151,10 @@ get_studies_by_variant_id <- function(variant_id = NULL, verbose = FALSE, warnin
 #'
 #' @param efo_id A character vector of \href{https://www.ebi.ac.uk/efo/}{EFO}
 #'   identifiers.
-#' @param verbose A \code{logical} indicating whether the function should be
-#'   verbose about the different queries or not.
-#' @param warnings A \code{logical} indicating whether to print warnings, if any.
-#' @param page_size An \code{integer} scalar indicating the
+#' @param verbose Whether the function should be verbose about the different
+#'   queries or not.
+#' @param warnings Whether to print warnings.
+#' @param page_size An integer scalar indicating the
 #'   \href{https://www.ebi.ac.uk/gwas/rest/docs/api#_paging_resources}{page}
 #'   value to be used in the JSON requests, can be between \code{1} and
 #'   \code{1000}.
@@ -199,14 +199,14 @@ get_studies_by_efo_id <- function(efo_id = NULL, verbose = FALSE, warnings = TRU
 #' Get GWAS Catalog studies by PubMed identifiers
 #'
 #' Gets studies whose associated publications match
-#'  \href{https://en.wikipedia.org/wiki/PubMed}{PubMed} identifiers.
+#'  \href{https://www.ncbi.nlm.nih.gov/pubmed}{PubMed} identifiers.
 #'
-#' @param pubmed_id An \code{integer} vector of
-#'   \href{https://en.wikipedia.org/wiki/PubMed}{PubMed} identifiers.
-#' @param verbose A \code{logical} indicating whether the function should be
+#' @param pubmed_id An integer vector of
+#'   \href{https://www.ncbi.nlm.nih.gov/pubmed}{PubMed} identifiers.
+#' @param verbose Whether the function should be
 #'   verbose about the different queries or not.
-#' @param warnings A \code{logical} indicating whether to print warnings, if any.
-#' @param page_size An \code{integer} scalar indicating the
+#' @param warnings Whether to print warnings.
+#' @param page_size An integer scalar indicating the
 #'   \href{https://www.ebi.ac.uk/gwas/rest/docs/api#_paging_resources}{page}
 #'   value to be used in the JSON requests, can be between \code{1} and
 #'   \code{1000}.
@@ -254,10 +254,10 @@ get_studies_by_pubmed_id <- function(pubmed_id = NULL, verbose = FALSE, warnings
 #' @param user_requested A \code{logical} (scalar!) indicating to retrieve
 #'   either studies requested by users of the Catalog (\code{TRUE}) or otherwise
 #'   (\code{FALSE}).
-#' @param verbose A \code{logical} indicating whether the function should be
-#'   verbose about the different queries or not.
-#' @param warnings A \code{logical} indicating whether to print warnings, if any.
-#' @param page_size An \code{integer} scalar indicating the
+#' @param verbose Whether the function should be verbose about the different
+#'   queries or not.
+#' @param warnings Whether to print warnings.
+#' @param page_size An integer scalar indicating the
 #'   \href{https://www.ebi.ac.uk/gwas/rest/docs/api#_paging_resources}{page}
 #'   value to be used in the JSON requests, can be between \code{1} and
 #'   \code{1000}.
@@ -310,10 +310,10 @@ get_studies_by_user_requested <- function(
 #' @param full_pvalue_set A \code{logical} (scalar!) indicating to retrieve
 #'   studies with full summary statistics (\code{TRUE}) or studies without it
 #'   (\code{FALSE}).
-#' @param verbose A \code{logical} indicating whether the function should be
-#'   verbose about the different queries or not.
-#' @param warnings A \code{logical} indicating whether to print warnings, if any.
-#' @param page_size An \code{integer} scalar indicating the
+#' @param verbose Whether the function should be verbose about the different
+#'   queries or not.
+#' @param warnings Whether to print warnings.
+#' @param page_size An integer scalar indicating the
 #'   \href{https://www.ebi.ac.uk/gwas/rest/docs/api#_paging_resources}{page}
 #'   value to be used in the JSON requests, can be between \code{1} and
 #'   \code{1000}.
@@ -362,12 +362,12 @@ get_studies_by_full_pvalue_set <- function(
 #'
 #' Gets studies that match \href{https://www.ebi.ac.uk/efo/}{EFO} URI.
 #'
-#' @param efo_uri A \code{character} vector of
+#' @param efo_uri A character vector of
 #'   \href{https://www.ebi.ac.uk/efo/}{EFO} URIs.
-#' @param verbose A \code{logical} indicating whether the function should be
+#' @param verbose Whether the function should be
 #'   verbose about the different queries or not.
-#' @param warnings A \code{logical} indicating whether to print warnings, if any.
-#' @param page_size An \code{integer} scalar indicating the
+#' @param warnings Whether to print warnings.
+#' @param page_size An integer scalar indicating the
 #'   \href{https://www.ebi.ac.uk/gwas/rest/docs/api#_paging_resources}{page}
 #'   value to be used in the JSON requests, can be between \code{1} and
 #'   \code{1000}.
@@ -417,10 +417,10 @@ get_studies_by_efo_uri <- function(efo_uri = NULL, verbose = FALSE, warnings = T
 #' @param efo_trait A \code{character} vector of
 #'   \href{https://www.ebi.ac.uk/efo/}{EFO} trait descriptions, e.g.,
 #'   \code{'uric acid measurement'}.
-#' @param verbose A \code{logical} indicating whether the function should be
-#'   verbose about the different queries or not.
-#' @param warnings A \code{logical} indicating whether to print warnings, if any.
-#' @param page_size An \code{integer} scalar indicating the
+#' @param verbose Whether the function should be verbose about the different
+#'   queries or not.
+#' @param warnings Whether to print warnings.
+#' @param page_size An integer scalar indicating the
 #'   \href{https://www.ebi.ac.uk/gwas/rest/docs/api#_paging_resources}{page}
 #'   value to be used in the JSON requests, can be between \code{1} and
 #'   \code{1000}.
@@ -465,12 +465,12 @@ get_studies_by_efo_trait <- function(efo_trait = NULL, verbose = FALSE, warnings
 #' Gets studies that match the reported traits, as reported by the original
 #' authors' of the study.
 #'
-#' @param reported_trait A \code{character} vector of phenotypic traits as
+#' @param reported_trait A character vector of phenotypic traits as
 #'   reported by the original authors' the study.
-#' @param verbose A \code{logical} indicating whether the function should be
+#' @param verbose Whether the function should be
 #'   verbose about the different queries or not.
-#' @param warnings A \code{logical} indicating whether to print warnings, if any.
-#' @param page_size An \code{integer} scalar indicating the
+#' @param warnings Whether to print warnings.
+#' @param page_size An integer scalar indicating the
 #'   \href{https://www.ebi.ac.uk/gwas/rest/docs/api#_paging_resources}{page}
 #'   value to be used in the JSON requests, can be between \code{1} and
 #'   \code{1000}.
@@ -514,10 +514,10 @@ get_studies_by_reported_trait <- function(reported_trait = NULL, verbose = FALSE
 #'
 #' Gets all studies. Beware this can take several minutes!
 #'
-#' @param verbose A \code{logical} indicating whether the function should be
+#' @param verbose Whether the function should be
 #'   verbose about the different queries or not.
-#' @param warnings A \code{logical} indicating whether to print warnings, if any.
-#' @param page_size An \code{integer} scalar indicating the
+#' @param warnings Whether to print warnings.
+#' @param page_size An integer scalar indicating the
 #'   \href{https://www.ebi.ac.uk/gwas/rest/docs/api#_paging_resources}{page}
 #'   value to be used in the JSON requests, can be between \code{1} and
 #'   \code{1000}.
@@ -558,26 +558,26 @@ get_studies_all <- function(verbose = FALSE, warnings = TRUE, page_size = 20L) {
 #' studies that match simultaneously all criteria provided, then set
 #' \code{set_operation} to \code{'intersection'}.
 #'
-#' @param study_id A \code{character} vector of GWAS Catalog study accession
+#' @param study_id A character vector of GWAS Catalog study accession
 #'   identifiers.
-#' @param association_id An \code{integer} vector of GWAS Catalog association
+#' @param association_id An integer vector of GWAS Catalog association
 #'   identifiers.
-#' @param variant_id A \code{character} vector of GWAS Catalog variant identifiers.
+#' @param variant_id A character vector of GWAS Catalog variant identifiers.
 #' @param efo_id A character vector of \href{https://www.ebi.ac.uk/efo/}{EFO}
 #'   identifiers.
-#' @param pubmed_id An \code{integer} vector of
+#' @param pubmed_id An integer vector of
 #'   \href{https://en.wikipedia.org/wiki/PubMed}{PubMed} identifiers.
 #' @param user_requested A \code{logical} (scalar!) indicating to retrieve either studies
 #'   requested by users of the Catalog (\code{TRUE}) or otherwise
 #'   (\code{FALSE}).
 #' @param full_pvalue_set A \code{logical} (scalar!) indicating to retrieve studies with full
 #'   summary statistics (\code{TRUE}) or studies without it (\code{FALSE}).
-#' @param efo_uri A \code{character} vector of \href{https://www.ebi.ac.uk/efo/}{EFO} URIs.
-#' @param efo_trait A \code{character} vector of
+#' @param efo_uri A character vector of \href{https://www.ebi.ac.uk/efo/}{EFO} URIs.
+#' @param efo_trait A character vector of
 #'   \href{https://www.ebi.ac.uk/efo/}{EFO} trait descriptions, e.g.,
 #'   \code{'uric acid measurement'}.
-#' @param reported_trait A \code{character} vector of phenotypic traits as
-#'   reported by the original authors' the study.
+#' @param reported_trait A character vector of phenotypic traits as
+#'   reported by the original authors of the study.
 #' @param set_operation Either \code{'union'} or \code{'intersection'}. This
 #'   tells how studies retrieved by different criteria  should be combined:
 #'   \code{'union'} binds together all results removing duplicates and
@@ -585,9 +585,9 @@ get_studies_all <- function(verbose = FALSE, warnings = TRUE, page_size = 20L) {
 #'   criteria.
 #' @param interactive A logical. If all studies are requested, whether to ask
 #'   interactively if we really want to proceed.
-#' @param verbose A \code{logical} indicating whether the function should be
-#'   verbose about the different queries or not.
-#' @param warnings A \code{logical} indicating whether to print warnings, if any.
+#' @param verbose Whether the function should be verbose about the different
+#'   queries or not.
+#' @param warnings Whether to print warnings.
 #'
 #' @return A \linkS4class{studies} object.
 #' @export

@@ -9,15 +9,13 @@ variants(variants = variants_tbl(),
   ensembl_ids = v_ensembl_ids_tbl(), entrez_ids = v_entrez_ids_tbl())
 }
 \arguments{
-\item{variants}{TODO.}
+\item{variants}{A \code{\link{variants_tbl}} tibble.}
 
-\item{genomic_contexts}{TODO.}
+\item{genomic_contexts}{A \code{\link{genomic_contexts_tbl}} tibble.}
 
-\item{ensembl_ids}{TODO.}
+\item{ensembl_ids}{A \code{\link{v_ensembl_ids_tbl}} tibble.}
 
-\item{entrez_ids}{TODO.}
-
-\item{risk_alleles}{TODO.}
+\item{entrez_ids}{A \code{\link{v_entrez_ids_tbl}} tibble.}
 }
 \value{
 An object of class \linkS4class{variants}.

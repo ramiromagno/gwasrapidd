@@ -4,9 +4,9 @@ setOldClass(c("tbl_df", "tbl", "data.frame"))
 #'
 #' The traits object consists of one slot only, a table
 #' (\code{\link[tibble]{tibble}}) of GWAS Catalog EFO traits. Each EFO trait is
-#' an observation (row) in the traits table --- main table.
+#' an observation (row) in the \code{traits} table --- main table.
 #'
-#' @slot traits A \code{\link[tibble]{tibble}} listing EFO traits Columns:
+#' @slot traits A \code{\link[tibble]{tibble}} listing EFO traits. Columns:
 #' \describe{
 #' \item{efo_id}{\href{https://www.ebi.ac.uk/efo/}{EFO} identifier.}
 #' \item{trait}{\href{https://www.ebi.ac.uk/efo/}{EFO} trait description.}

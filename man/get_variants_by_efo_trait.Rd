@@ -8,14 +8,14 @@ get_variants_by_efo_trait(efo_trait = NULL, verbose = FALSE,
   warnings = TRUE, page_size = 20L)
 }
 \arguments{
-\item{efo_trait}{A \code{character} vector of
+\item{efo_trait}{A character vector of
 \href{https://www.ebi.ac.uk/efo/}{EFO} trait descriptions, e.g.,
 \code{'uric acid measurement'}.}
 
-\item{verbose}{A \code{logical} indicating whether the function should be
+\item{verbose}{Whether the function should be
 verbose about the different queries or not.}
 
-\item{warnings}{A \code{logical} indicating whether to print warnings, if any.}
+\item{warnings}{Whether to print warnings.}
 
 \item{page_size}{An \code{integer} scalar indicating the
 \href{https://www.ebi.ac.uk/gwas/rest/docs/api#_paging_resources}{page}

@@ -11,37 +11,36 @@ get_variants(study_id = NULL, association_id = NULL,
   warnings = TRUE)
 }
 \arguments{
-\item{study_id}{A \code{character} vector of GWAS Catalog study accession
+\item{study_id}{A character vector of GWAS Catalog study accession
 identifiers.}
 
-\item{association_id}{An \code{integer} vector of GWAS Catalog association
+\item{association_id}{An integer vector of GWAS Catalog association
 identifiers.}
 
-\item{variant_id}{A \code{character} vector of GWAS Catalog variant identifiers.}
+\item{variant_id}{A character vector of GWAS Catalog variant identifiers.}
 
 \item{efo_id}{A character vector of \href{https://www.ebi.ac.uk/efo/}{EFO}
 identifiers.}
 
-\item{pubmed_id}{An \code{integer} vector of
-\href{https://en.wikipedia.org/wiki/PubMed}{PubMed} identifiers.}
+\item{pubmed_id}{An integer vector of
+\href{https://www.ncbi.nlm.nih.gov/pubmed}{PubMed} identifiers.}
 
-\item{genomic_range}{A named \code{list} of three vectors:
+\item{genomic_range}{A named list of three vectors:
 \describe{ \item{chromosome}{A character vector of chromosome names of the
 form 1--22, X or Y.} \item{start}{A numeric vector of start positions,
 starting at 1.} \item{end}{A numeric vector of end positions.} }
 The three vectors need to be of the same length so that \code{chromosome}
-names, \code{start} and \code{end} positions are matched by position hence
-defining a genomic range.}
+names, \code{start} and \code{end} positions can be matched by position.}
 
 \item{gene_name}{Gene symbol according to
 \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.}
 
-\item{efo_trait}{A \code{character} vector of
+\item{efo_trait}{A character vector of
 \href{https://www.ebi.ac.uk/efo/}{EFO} trait descriptions, e.g.,
 \code{'uric acid measurement'}.}
 
-\item{reported_trait}{A \code{character} vector of phenotypic traits as
-reported by the original authors' the study.}
+\item{reported_trait}{A character vector of phenotypic traits as
+reported by the original authors of the study.}
 
 \item{set_operation}{Either \code{'union'} or \code{'intersection'}. This
 tells how variants retrieved by different criteria  should be combined:
@@ -49,10 +48,10 @@ tells how variants retrieved by different criteria  should be combined:
 \code{'intersection'} only keeps same variants found with different
 criteria.}
 
-\item{verbose}{A \code{logical} indicating whether the function should be
+\item{verbose}{Whether the function should be
 verbose about the different queries or not.}
 
-\item{warnings}{A \code{logical} indicating whether to print warnings, if any.}
+\item{warnings}{Whether to print warnings.}
 }
 \value{
 A \linkS4class{variants} object.

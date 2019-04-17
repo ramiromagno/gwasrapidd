@@ -8,7 +8,7 @@
 The variants object consists of four slots, each a table
 (\code{\link[tibble]{tibble}}), that combined form a relational database of a
 subset of GWAS Catalog variants Each variant is an observation (row) in the
-variants table --- main table. All tables have the column \code{variant_id} as
+\code{variants} table --- main table. All tables have the column \code{variant_id} as
 primary key.
 }
 \section{Slots}{
@@ -16,25 +16,57 @@ primary key.
 \describe{
 \item{\code{variants}}{A \code{\link[tibble]{tibble}} listing variants. Columns:
 \describe{
-\item{TODO}{TODO}
+\item{variant_id}{Variant identifier, e.g., \code{'rs1333048'}.}
+\item{merged}{Whether this SNP has been merged with another SNP in a newer genome build.}
+\item{functional_class}{Class according to Ensembl's predicted consequences
+that each variant allele may have on transcripts. See
+\href{https://www.ensembl.org/info/genome/variation/prediction/predicted_data.html}{Ensembl
+Variation - Calculated variant consequences}.}
+\item{chromosome_name}{Chromosome name.}
+\item{chromosome_position}{Chromosome position.}
+\item{chromosome_region}{\href{https://ghr.nlm.nih.gov/primer/howgeneswork/genelocation}{Cytogenetic
+location}.}
+\item{last_update_date}{Last time this variant was updated.}
 }}
 
 \item{\code{genomic_contexts}}{A \code{\link[tibble]{tibble}} listing genomic
   contexts associated with each variant. Columns:
 \describe{
-\item{TODO}{TODO}
+\item{variant_id}{Variant identifier.}
+\item{gene_name}{Gene symbol according to
+\href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.}
+\item{chromosome_name}{Chromosome name.}
+\item{chromosome_position}{Chromosome position.}
+\item{distance}{Genomic distance between the variant and the gene (in base pairs).}
+\item{is_closest_gene}{Whether this is the closest gene to this variant.}
+\item{is_intergenic}{Whether this variant is intergenic, i.e, if there is no
+gene up or downstream within 100kb.}
+\item{is_upstream}{Whether this variant is upstream of this gene.}
+\item{is_downstream}{Whether this variant is downstream of this gene.}
+\item{source}{Gene mapping source, either \code{Ensembl} or \code{NCBI}.}
+\item{mapping_method}{Gene mapping method.}
 }}
 
 \item{\code{ensembl_ids}}{A \code{\link[tibble]{tibble}} listing gene Ensembl
   identifiers associated with each genomic context. Columns:
 \describe{
-\item{TODO}{TODO}
+\item{variant_id}{Variant identifier.}
+\item{gene_name}{Gene symbol according to
+\href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.}
+\item{ensembl_id}{The Ensembl identifier of an Ensembl gene, see Section
+\href{https://www.ensembl.org/info/genome/genebuild/genome_annotation.html}{Gene
+annotation in Ensembl} for more information.}
 }}
 
 \item{\code{entrez_ids}}{A \code{\link[tibble]{tibble}} listing gene Entrez
   identifiers associated with each genomic context. Columns:
 \describe{
-\item{TODO}{TODO}
+\item{variant_id}{Variant identifier.}
+\item{gene_name}{Gene symbol according to
+\href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.}
+\item{entrez_id}{The Entrez identifier of a gene, see ref.
+\href{https://dx.doi.org/10.1093\%2Fnar\%2Fgkq1237}{10.1093/nar/gkq1237} for
+more information.}
 }}
 }}
 

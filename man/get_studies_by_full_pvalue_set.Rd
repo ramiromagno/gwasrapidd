@@ -12,12 +12,12 @@ get_studies_by_full_pvalue_set(full_pvalue_set = NULL, verbose = FALSE,
 studies with full summary statistics (\code{TRUE}) or studies without it
 (\code{FALSE}).}
 
-\item{verbose}{A \code{logical} indicating whether the function should be
-verbose about the different queries or not.}
+\item{verbose}{Whether the function should be verbose about the different
+queries or not.}
 
-\item{warnings}{A \code{logical} indicating whether to print warnings, if any.}
+\item{warnings}{Whether to print warnings.}
 
-\item{page_size}{An \code{integer} scalar indicating the
+\item{page_size}{An integer scalar indicating the
 \href{https://www.ebi.ac.uk/gwas/rest/docs/api#_paging_resources}{page}
 value to be used in the JSON requests, can be between \code{1} and
 \code{1000}.}

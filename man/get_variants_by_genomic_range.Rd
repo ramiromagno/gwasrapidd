@@ -8,19 +8,19 @@ get_variants_by_genomic_range(chromosome = NULL, start = NULL,
   end = NULL, verbose = FALSE, warnings = TRUE, page_size = 20L)
 }
 \arguments{
-\item{chromosome}{A \code{character} of human chromosome names: autosomal
+\item{chromosome}{A character vector of human chromosome names: autosomal
 and sexual chromosomes only, i.e., 1--22, X and Y.}
 
 \item{start}{Start position of range (starts at 1).}
 
 \item{end}{End position of range (inclusive).}
 
-\item{verbose}{A \code{logical} indicating whether the function should be
-verbose about the different queries or not.}
+\item{verbose}{Whether the function should be verbose about the different
+queries or not.}
 
-\item{warnings}{A \code{logical} indicating whether to print warnings, if any.}
+\item{warnings}{Whether to print warnings.}
 
-\item{page_size}{An \code{integer} scalar indicating the
+\item{page_size}{An integer scalar indicating the
 \href{https://www.ebi.ac.uk/gwas/rest/docs/api#_paging_resources}{page}
 value to be used in the JSON requests, can be between \code{1} and
 \code{1000}.}

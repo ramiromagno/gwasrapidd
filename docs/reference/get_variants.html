@@ -162,17 +162,17 @@ variants that match simultaneously all criteria provided, then set
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>study_id</th>
-      <td><p>A <code>character</code> vector of GWAS Catalog study accession
+      <td><p>A character vector of GWAS Catalog study accession
 identifiers.</p></td>
     </tr>
     <tr>
       <th>association_id</th>
-      <td><p>An <code>integer</code> vector of GWAS Catalog association
+      <td><p>An integer vector of GWAS Catalog association
 identifiers.</p></td>
     </tr>
     <tr>
       <th>variant_id</th>
-      <td><p>A <code>character</code> vector of GWAS Catalog variant identifiers.</p></td>
+      <td><p>A character vector of GWAS Catalog variant identifiers.</p></td>
     </tr>
     <tr>
       <th>efo_id</th>
@@ -181,17 +181,16 @@ identifiers.</p></td>
     </tr>
     <tr>
       <th>pubmed_id</th>
-      <td><p>An <code>integer</code> vector of
-<a href='https://en.wikipedia.org/wiki/PubMed'>PubMed</a> identifiers.</p></td>
+      <td><p>An integer vector of
+<a href='https://www.ncbi.nlm.nih.gov/pubmed'>PubMed</a> identifiers.</p></td>
     </tr>
     <tr>
       <th>genomic_range</th>
-      <td><p>A named <code>list</code> of three vectors:</p><dl class='dl-horizontal'>
+      <td><p>A named list of three vectors:</p><dl class='dl-horizontal'>
 <dt>chromosome</dt><dd><p>A character vector of chromosome names of the
 form 1--22, X or Y.</p></dd> <dt>start</dt><dd><p>A numeric vector of start positions,
 starting at 1.</p></dd> <dt>end</dt><dd><p>A numeric vector of end positions.</p></dd> </dl><p>The three vectors need to be of the same length so that <code>chromosome</code>
-names, <code>start</code> and <code>end</code> positions are matched by position hence
-defining a genomic range.</p></td>
+names, <code>start</code> and <code>end</code> positions can be matched by position.</p></td>
     </tr>
     <tr>
       <th>gene_name</th>
@@ -200,14 +199,14 @@ defining a genomic range.</p></td>
     </tr>
     <tr>
       <th>efo_trait</th>
-      <td><p>A <code>character</code> vector of
+      <td><p>A character vector of
 <a href='https://www.ebi.ac.uk/efo/'>EFO</a> trait descriptions, e.g.,
 <code>'uric acid measurement'</code>.</p></td>
     </tr>
     <tr>
       <th>reported_trait</th>
-      <td><p>A <code>character</code> vector of phenotypic traits as
-reported by the original authors' the study.</p></td>
+      <td><p>A character vector of phenotypic traits as
+reported by the original authors of the study.</p></td>
     </tr>
     <tr>
       <th>set_operation</th>
@@ -219,12 +218,12 @@ criteria.</p></td>
     </tr>
     <tr>
       <th>verbose</th>
-      <td><p>A <code>logical</code> indicating whether the function should be
+      <td><p>Whether the function should be
 verbose about the different queries or not.</p></td>
     </tr>
     <tr>
       <th>warnings</th>
-      <td><p>A <code>logical</code> indicating whether to print warnings, if any.</p></td>
+      <td><p>Whether to print warnings.</p></td>
     </tr>
     </table>
     

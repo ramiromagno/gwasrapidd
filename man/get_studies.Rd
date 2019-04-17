@@ -11,18 +11,18 @@ get_studies(study_id = NULL, association_id = NULL,
   interactive = TRUE, verbose = FALSE, warnings = TRUE)
 }
 \arguments{
-\item{study_id}{A \code{character} vector of GWAS Catalog study accession
+\item{study_id}{A character vector of GWAS Catalog study accession
 identifiers.}
 
-\item{association_id}{An \code{integer} vector of GWAS Catalog association
+\item{association_id}{An integer vector of GWAS Catalog association
 identifiers.}
 
-\item{variant_id}{A \code{character} vector of GWAS Catalog variant identifiers.}
+\item{variant_id}{A character vector of GWAS Catalog variant identifiers.}
 
 \item{efo_id}{A character vector of \href{https://www.ebi.ac.uk/efo/}{EFO}
 identifiers.}
 
-\item{pubmed_id}{An \code{integer} vector of
+\item{pubmed_id}{An integer vector of
 \href{https://en.wikipedia.org/wiki/PubMed}{PubMed} identifiers.}
 
 \item{user_requested}{A \code{logical} (scalar!) indicating to retrieve either studies
@@ -32,14 +32,14 @@ requested by users of the Catalog (\code{TRUE}) or otherwise
 \item{full_pvalue_set}{A \code{logical} (scalar!) indicating to retrieve studies with full
 summary statistics (\code{TRUE}) or studies without it (\code{FALSE}).}
 
-\item{efo_uri}{A \code{character} vector of \href{https://www.ebi.ac.uk/efo/}{EFO} URIs.}
+\item{efo_uri}{A character vector of \href{https://www.ebi.ac.uk/efo/}{EFO} URIs.}
 
-\item{efo_trait}{A \code{character} vector of
+\item{efo_trait}{A character vector of
 \href{https://www.ebi.ac.uk/efo/}{EFO} trait descriptions, e.g.,
 \code{'uric acid measurement'}.}
 
-\item{reported_trait}{A \code{character} vector of phenotypic traits as
-reported by the original authors' the study.}
+\item{reported_trait}{A character vector of phenotypic traits as
+reported by the original authors of the study.}
 
 \item{set_operation}{Either \code{'union'} or \code{'intersection'}. This
 tells how studies retrieved by different criteria  should be combined:
@@ -50,10 +50,10 @@ criteria.}
 \item{interactive}{A logical. If all studies are requested, whether to ask
 interactively if we really want to proceed.}
 
-\item{verbose}{A \code{logical} indicating whether the function should be
-verbose about the different queries or not.}
+\item{verbose}{Whether the function should be verbose about the different
+queries or not.}
 
-\item{warnings}{A \code{logical} indicating whether to print warnings, if any.}
+\item{warnings}{Whether to print warnings.}
 }
 \value{
 A \linkS4class{studies} object.

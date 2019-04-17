@@ -17,13 +17,13 @@ stop_quietly <- function() {
 #' messages for a both a positive and negative answer.
 #'
 #' @param before_question String with message to be printed before question.
-#' @param after_saying_no String with message to be printed after answering 'no'.
-#' @param after_saying_yes String with message to be printed after answering 'yes'.
+#' @param after_saying_no String with message to be printed after answering \code{'no'}.
+#' @param after_saying_yes String with message to be printed after answering \code{'yes'}.
 #' @param default_answer String with answer to question, if run in
 #'   non-interactive mode.
 #'
-#' @return A logical indicating if answer was 'yes'/'y' (TRUE) or otherwise
-#'   (FALSE).
+#' @return A logical indicating if answer was \code{'yes'}/\code{'y'} (\code{TRUE}) or otherwise
+#'   (\code{FALSE}).
 #' @keywords internal
 sure <- function(before_question = NULL, after_saying_no = NULL, after_saying_yes = NULL, default_answer = NULL) {
 

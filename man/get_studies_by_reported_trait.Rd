@@ -8,15 +8,15 @@ get_studies_by_reported_trait(reported_trait = NULL, verbose = FALSE,
   warnings = TRUE, page_size = 20L)
 }
 \arguments{
-\item{reported_trait}{A \code{character} vector of phenotypic traits as
+\item{reported_trait}{A character vector of phenotypic traits as
 reported by the original authors' the study.}
 
-\item{verbose}{A \code{logical} indicating whether the function should be
+\item{verbose}{Whether the function should be
 verbose about the different queries or not.}
 
-\item{warnings}{A \code{logical} indicating whether to print warnings, if any.}
+\item{warnings}{Whether to print warnings.}
 
-\item{page_size}{An \code{integer} scalar indicating the
+\item{page_size}{An integer scalar indicating the
 \href{https://www.ebi.ac.uk/gwas/rest/docs/api#_paging_resources}{page}
 value to be used in the JSON requests, can be between \code{1} and
 \code{1000}.}

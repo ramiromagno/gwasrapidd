@@ -8,7 +8,7 @@
 The studies object consists of eight slots, each a table
 (\code{\link[tibble]{tibble}}), that combined form a relational database of a
 subset of GWAS Catalog studies. Each study is an observation (row) in the
-studies table --- main table. All tables have the column \code{study_id} as
+\code{studies} table --- main table. All tables have the column \code{study_id} as
 primary key.
 }
 \section{Slots}{

@@ -142,7 +142,7 @@ primary key." />
     <p>The association object consists of four slots, each a table
 (<code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code>), that combined form a relational database of a
 subset of GWAS Catalog associations. Each association is an observation (row) in the
-associations table --- main table. All tables have the column <code>association_id</code> as
+<code>associations</code> table --- main table. All tables have the column <code>association_id</code> as
 primary key.</p>
     
     </div>
@@ -152,53 +152,71 @@ primary key.</p>
 
     
     <dl class='dl-horizontal'>
-<dt><code>associations</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing
+<dt><code>associations</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing associations. Columns:
 <dl class='dl-horizontal'>
 <dt>association_id</dt><dd><p>GWAS Catalog association accession identifier, e.g., <code>20250</code>.</p></dd>
-<dt>pvalue</dt><dd><p>TODO</p></dd>
-<dt>pvalue_description</dt><dd><p>TODO</p></dd>
-<dt>pvalue_mantissa</dt><dd><p>TODO</p></dd>
-<dt>pvalue_exponent</dt><dd><p>TODO</p></dd>
-<dt>multiple_snp_haplotype</dt><dd><p>TODO</p></dd>
-<dt>snp_interaction</dt><dd><p>TODO</p></dd>
-<dt>snp_type</dt><dd><p>TODO</p></dd>
-<dt>standard_error</dt><dd><p>TODO</p></dd>
-<dt>range</dt><dd><p>TODO</p></dd>
-<dt>or_per_copy_number</dt><dd><p>TODO</p></dd>
-<dt>beta_number</dt><dd><p>TODO</p></dd>
-<dt>beta_unit</dt><dd><p>TODO</p></dd>
-<dt>beta_direction</dt><dd><p>TODO</p></dd>
-<dt>beta_description</dt><dd><p>TODO</p></dd>
-<dt>last_mapping_date</dt><dd><p>TODO</p></dd>
-<dt>last_update_date</dt><dd><p>TODO</p></dd>
+<dt>pvalue</dt><dd><p>Reported p-value for strongest variant risk or effect allele.</p></dd>
+<dt>pvalue_description</dt><dd><p>Information describing context of p-value.</p></dd>
+<dt>pvalue_mantissa</dt><dd><p>Mantissa of p-value.</p></dd>
+<dt>pvalue_exponent</dt><dd><p>Exponent of p-value.</p></dd>
+<dt>multiple_snp_haplotype</dt><dd><p>Whether the association is for a multi-SNP haplotype.</p></dd>
+<dt>snp_interaction</dt><dd><p>Whether the association is for a SNP-SNP interaction.</p></dd>
+<dt>snp_type</dt><dd><p>Whether the SNP has previously been reported. Either <code>'known'</code> or <code>'novel'</code>.</p></dd>
+<dt>standard_error</dt><dd><p>Standard error of the effect size.</p></dd>
+<dt>range</dt><dd><p>Reported 95% confidence interval associated with strongest SNP
+risk allele, along with unit in the case of beta coefficients. If 95% CIs have not been
+not reported, these are estimated using the standard error, when available.</p></dd>
+<dt>or_per_copy_number</dt><dd><p>Reported odds ratio (OR) associated
+with strongest SNP risk allele. Note that all ORs included in the
+Catalog are &gt;1.</p></dd>
+<dt>beta_number</dt><dd><p>Beta coefficient associated with strongest SNP risk allele.</p></dd>
+<dt>beta_unit</dt><dd><p>Beta coefficient unit.</p></dd>
+<dt>beta_direction</dt><dd><p>Beta coefficient direction.</p></dd>
+<dt>beta_description</dt><dd><p>Additional beta coefficient comment.</p></dd>
+<dt>last_mapping_date</dt><dd><p>Last time this association was mapped to Ensembl.</p></dd>
+<dt>last_update_date</dt><dd><p>Last time this association was updated.</p></dd>
 </dl></p></dd>
     <dt><code>loci</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing loci. Columns:
 <dl class='dl-horizontal'>
 <dt>association_id</dt><dd><p>GWAS Catalog association accession identifier, e.g., <code>20250</code>.</p></dd>
-<dt>locus_id</dt><dd><p>TODO</p></dd>
-<dt>haplotype_snp_count</dt><dd><p>TODO</p></dd>
-<dt>description</dt><dd><p>TODO</p></dd>
+<dt>locus_id</dt><dd><p>A locus identifier referring to a single variant locus or to
+a multi-loci entity such as a multi-SNP haplotype.</p></dd>
+<dt>haplotype_snp_count</dt><dd><p>Number of variants per locus. Most loci are
+single-SNP loci, i.e., there is a one to one relationship between a variant
+and a <code>locus_id</code> (<code>haplotype_snp_count == NA</code>). There are however cases of associations involving
+multiple loci at once, such as SNP-SNP interactions and multi-SNP haplotypes.
+This is signalled in the columns: <code>multiple_snp_haplotype</code> and
+<code>snp_interaction</code> with value <code>TRUE</code>.</p></dd>
+<dt>description</dt><dd><p>Description of the locus identifier, e.g.,
+<code>'Single variant'</code>, <code>SNP x SNP interaction</code>, or <code>3-SNP
+Haplotype</code>.</p></dd>
 </dl></p></dd>
     <dt><code>risk_alleles</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing risk alleles. Columns:
 <dl class='dl-horizontal'>
 <dt>association_id</dt><dd><p>GWAS Catalog association accession identifier, e.g., <code>20250</code>.</p></dd>
-<dt>locus_id</dt><dd><p>TODO</p></dd>
-<dt>variant_id</dt><dd><p>TODO</p></dd>
-<dt>risk_allele</dt><dd><p>TODO</p></dd>
-<dt>risk_frequency</dt><dd><p>TODO</p></dd>
-<dt>genome_wide</dt><dd><p>TODO</p></dd>
-<dt>limited_list</dt><dd><p>TODO</p></dd>
+<dt>locus_id</dt><dd><p>A locus identifier referring to a single variant locus or to
+a multi-loci entity such as a multi-SNP haplotype.</p></dd>
+<dt>variant_id</dt><dd><p>Variant identifier, e.g., <code>'rs1333048'</code>.</p></dd>
+<dt>risk_allele</dt><dd><p>Risk allele or effect allele.</p></dd>
+<dt>risk_frequency</dt><dd><p>Reported risk/effect allele frequency associated with
+strongest SNP in controls (if not available among all controls, among the
+control group with the largest sample size). If the associated locus is a
+haplotype the haplotype frequency will be extracted.</p></dd>
+<dt>genome_wide</dt><dd><p>Whether this variant allele has been part of a genome-wide study or not.</p></dd>
+<dt>limited_list</dt><dd><p>Undocumented.</p></dd>
 </dl></p></dd>
     <dt><code>genes</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing author reported genes. Columns:
 <dl class='dl-horizontal'>
 <dt>association_id</dt><dd><p>GWAS Catalog association accession identifier, e.g., <code>20250</code>.</p></dd>
-<dt>locus_id</dt><dd><p>TODO.</p></dd>
-<dt>gene_name</dt><dd><p>TODO.</p></dd>
+<dt>locus_id</dt><dd><p>A locus identifier referring to a single variant locus or to
+a multi-loci entity such as a multi-SNP haplotype.</p></dd>
+<dt>gene_name</dt><dd><p>Gene symbol according to <a href='https://www.genenames.org/'>HUGO Gene Nomenclature (HGNC)</a>.</p></dd>
 </dl></p></dd>
     <dt><code>ensembl_ids</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing Ensembl gene identifiers. Columns:
 <dl class='dl-horizontal'>
 <dt>association_id</dt><dd><p>GWAS Catalog association accession identifier, e.g., <code>20250</code>.</p></dd>
-<dt>locus_id</dt><dd><p>TODO.</p></dd>
+<dt>locus_id</dt><dd><p>A locus identifier referring to a single variant locus or to
+a multi-loci entity such as a multi-SNP haplotype.</p></dd>
 <dt>gene_name</dt><dd><p>Gene symbol according to <a href='https://www.genenames.org/'>HUGO Gene Nomenclature (HGNC)</a>.</p></dd>
 <dt>entrez_id</dt><dd><p>The Entrez identifier of a gene, see ref.
 <a href='https://dx.doi.org/10.1093%2Fnar%2Fgkq1237'>10.1093/nar/gkq1237</a> for
@@ -210,7 +228,8 @@ annotation in Ensembl</a> for more information.</p></dd>
     <dt><code>entrez_ids</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing Entrez gene identifiers. Columns:
 <dl class='dl-horizontal'>
 <dt>association_id</dt><dd><p>GWAS Catalog association accession identifier, e.g., <code>20250</code>.</p></dd>
-<dt>locus_id</dt><dd><p>TODO.</p></dd>
+<dt>locus_id</dt><dd><p>A locus identifier referring to a single variant locus or to
+a multi-loci entity such as a multi-SNP haplotype.</p></dd>
 <dt>gene_name</dt><dd><p>Gene symbol according to <a href='https://www.genenames.org/'>HUGO Gene Nomenclature (HGNC)</a>.</p></dd>
 <dt>entrez_id</dt><dd><p>The Entrez identifier of a gene, see ref.
 <a href='https://dx.doi.org/10.1093%2Fnar%2Fgkq1237'>10.1093/nar/gkq1237</a> for

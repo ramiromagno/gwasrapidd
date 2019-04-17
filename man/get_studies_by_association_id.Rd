@@ -8,13 +8,13 @@ get_studies_by_association_id(association_id = NULL, verbose = FALSE,
   warnings = TRUE, page_size = 20L)
 }
 \arguments{
-\item{association_id}{An \code{integer} vector of GWAS Catalog association
+\item{association_id}{An integer vector of GWAS Catalog association
 identifiers.}
 
-\item{verbose}{A \code{logical} indicating whether the function should be
-verbose about the different queries or not.}
+\item{verbose}{Whether the function should be verbose about the different
+queries or not.}
 
-\item{warnings}{A \code{logical} indicating whether to print warnings, if any.}
+\item{warnings}{Whether to print warnings.}
 
 \item{page_size}{An \code{integer} scalar indicating the
 \href{https://www.ebi.ac.uk/gwas/rest/docs/api#_paging_resources}{page}

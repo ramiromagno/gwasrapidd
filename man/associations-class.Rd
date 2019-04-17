@@ -8,7 +8,7 @@
 The association object consists of four slots, each a table
 (\code{\link[tibble]{tibble}}), that combined form a relational database of a
 subset of GWAS Catalog associations. Each association is an observation (row) in the
-associations table --- main table. All tables have the column \code{association_id} as
+\code{associations} table --- main table. All tables have the column \code{association_id} as
 primary key.
 }
 \section{Slots}{
@@ -26,7 +26,7 @@ primary key.
 \item{snp_type}{Whether the SNP has previously been reported. Either \code{'known'} or \code{'novel'}.}
 \item{standard_error}{Standard error of the effect size.}
 \item{range}{Reported 95\% confidence interval associated with strongest SNP
-risk allele, along with unit in the case of beta-coefficients. If 95% CIs have not been
+risk allele, along with unit in the case of beta coefficients. If 95\% CIs have not been
 not reported, these are estimated using the standard error, when available.}
 \item{or_per_copy_number}{Reported odds ratio (OR) associated
 with strongest SNP risk allele. Note that all ORs included in the
@@ -50,7 +50,7 @@ and a \code{locus_id} (\code{haplotype_snp_count == NA}). There are however case
 multiple loci at once, such as SNP-SNP interactions and multi-SNP haplotypes.
 This is signalled in the columns: \code{multiple_snp_haplotype} and
 \code{snp_interaction} with value \code{TRUE}.}
-\item{description}{Description of the locus identifier \code{locus_id}, e.g.,
+\item{description}{Description of the locus identifier, e.g.,
 \code{'Single variant'}, \code{SNP x SNP interaction}, or \code{3-SNP
 Haplotype}.}
 }}
@@ -66,7 +66,7 @@ a multi-loci entity such as a multi-SNP haplotype.}
 strongest SNP in controls (if not available among all controls, among the
 control group with the largest sample size). If the associated locus is a
 haplotype the haplotype frequency will be extracted.}
-\item{genome_wide}{Undocumented.}
+\item{genome_wide}{Whether this variant allele has been part of a genome-wide study or not.}
 \item{limited_list}{Undocumented.}
 }}
 

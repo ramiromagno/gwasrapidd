@@ -12,29 +12,32 @@ genomic_contexts_tbl(variant_id = character(), gene_name = character(),
   mapping_method = character())
 }
 \arguments{
-\item{variant_id}{TODO.}
+\item{variant_id}{A character vector of variant identifiers.}
 
-\item{gene_name}{TODO.}
+\item{gene_name}{A character vector of gene symbols according to
+\href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.}
 
-\item{chromosome_name}{TODO.}
+\item{chromosome_name}{A character vector of chromosome names.}
 
-\item{distance}{TODO.}
+\item{chromosome_position}{An integer vector of chromosome positions.}
 
-\item{is_closest_gene}{TODO.}
+\item{distance}{An integer vector of genomic positions.}
 
-\item{is_intergenic}{TODO.}
+\item{is_closest_gene}{A logical vector.}
 
-\item{is_upstream}{TODO.}
+\item{is_intergenic}{A logical vector.}
 
-\item{is_downstream}{TODO.}
+\item{is_upstream}{A logical vector.}
 
-\item{source}{TODO.}
+\item{is_downstream}{A logical vector.}
 
-\item{mapping_method}{TODO.}
+\item{source}{A character vector of gene mapping sources.}
+
+\item{mapping_method}{A character vector of gene mapping methods.}
 }
 \value{
 A \code{\link[tibble]{tibble}} whose columns are the named arguments
-  to the function.
+to the function.
 }
 \description{
 Creates a genomic contexts table.
