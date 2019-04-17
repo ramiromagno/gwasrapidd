@@ -1,8 +1,8 @@
-function (request) {
-  require(magrittr, quietly=TRUE)
-  request %>%
-    httptest::gsub_request("https\\://www.ebi.ac.uk/gwas/rest/api/", "gc/")
-}
+# function (request) {
+#   require(magrittr, quietly=TRUE)
+#   request %>%
+#     httptest::gsub_request("https\\://www.ebi.ac.uk/gwas/rest/api/", "gc/")
+# }
 
 # httptest::set_requester(
 #   list(
@@ -11,3 +11,15 @@ function (request) {
 #     function (request) { httptest::gsub_request(request, "https:\\://www.ebi.ac.uk/ols/api/ontologies/efo", "ols/") }
 #   )
 # )
+
+httptest::set_requester(function (response) {
+  response %>%
+    httptest::gsub_request("^https\\://www.ebi.ac.uk/gwas/rest/api/studies/", "mocks/gc/s/") %>%
+    httptest::gsub_request("^https\\://www.ebi.ac.uk/gwas/rest/api/associations/", "mocks/gc/a/") %>%
+    httptest::gsub_request("^https\\://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/", "mocks/gc/v/") %>%
+    httptest::gsub_request("^https\\://www.ebi.ac.uk/gwas/rest/api/efoTraits/", "mocks/gc/t/") %>%
+    httptest::gsub_request("^https\\://www.ebi.ac.uk/gwas/rest/api/", "mocks/gc/") %>%
+    httptest::gsub_request("^https\\://www.ebi.ac.uk/efo/", "mocks/efo/") %>%
+    httptest::gsub_request("^https\\://www.ebi.ac.uk/ols/api/ontologies/efo", "mocks/ols/efo/") %>%
+    httptest::gsub_request("^https://httpbin.org/", "mocks/httpbin/")
+})
