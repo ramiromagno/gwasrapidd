@@ -2,7 +2,7 @@
 % Please edit documentation in R/generics.R
 \name{filter_by_id}
 \alias{filter_by_id}
-\title{Filter GWAS Catalog objects by identifier}
+\title{Filter GWAS Catalog objects by identifier.}
 \usage{
 filter_by_id(x, id)
 }

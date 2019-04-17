@@ -11,12 +11,10 @@ bind(x, ...)
 \linkS4class{associations}, \linkS4class{variants}, or
 \linkS4class{traits}.}
 
-\item{...}{Objects of the same class: either \linkS4class{studies}, \linkS4class{associations},
-\linkS4class{variants}, or \linkS4class{traits}.}
+\item{...}{Objects of the same class as \code{x}.}
 }
 \value{
-An object of the same class as \code{x}, i.e., \linkS4class{studies}, \linkS4class{associations},
-\linkS4class{variants}, or \linkS4class{traits}.
+An object of the same class as \code{x}.
 }
 \description{
 Binds together GWAS Catalog objects of the same class.

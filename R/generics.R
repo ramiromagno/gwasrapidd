@@ -153,11 +153,9 @@ setMethod("setequal",
 #' @param x An object of class: \linkS4class{studies},
 #'   \linkS4class{associations}, \linkS4class{variants}, or
 #'   \linkS4class{traits}.
-#' @param ... Objects of the same class: either \linkS4class{studies}, \linkS4class{associations},
-#' \linkS4class{variants}, or \linkS4class{traits}.
+#' @param ... Objects of the same class as \code{x}.
 #'
-#' @return An object of the same class as \code{x}, i.e., \linkS4class{studies}, \linkS4class{associations},
-#' \linkS4class{variants}, or \linkS4class{traits}.
+#' @return An object of the same class as \code{x}.
 #' @export
 setGeneric('bind', function(x, ...) standardGeneric('bind'))
 
@@ -182,7 +180,7 @@ setMethod("bind",
           signature = "traits",
           definition = p_endofunction(dplyr::bind_rows, "traits"))
 
-#' Filter GWAS Catalog objects by identifier
+#' Filter GWAS Catalog objects by identifier.
 #'
 #' Use \code{filter_by_id} to filter GWAS Catalog objects by their respective
 #' identifier (\code{id}).
@@ -257,89 +255,156 @@ setMethod("filter_by_id",
 # #' @name `[`
 # NULL
 
-# #' @export
-# setMethod("[",
-#           signature(x = "studies", i = "missing", j = "missing", drop = "missing"),
-#           definition = function(x) x)
-#
-# #' @export
-# setMethod("[",
-#           signature(x = "studies", i = "numeric", j = "missing", drop = "missing"),
-#           definition = function(x, i) {
-#             study_ids <- unique(x@studies$study_id)[i]
-#             filter_by_id(x, id = study_ids)
-#           })
-#
-#
-# #' @export
-# setMethod("[",
-#           signature(x = "studies", i = "character", j = "missing", drop = "missing"),
-#           definition = function(x, i) {
-#             filter_by_id(x, id = i)
-#           })
-#
-#
-# #' @export
-# setMethod("[",
-#           signature(x = "associations", i = "missing", j = "missing", drop = "missing"),
-#           definition = function(x, i) x)
-#
-#
-# #' @export
-# setMethod("[",
-#           signature(x = "associations", i = "numeric", j = "missing", drop = "missing"),
-#           definition = function(x, i) {
-#             association_ids <- unique(x@associations$association_id)[i]
-#             filter_by_id(x, id = association_ids)
-#           })
-#
-# #' @export
-# setMethod("[",
-#           signature(x = "associations", i = "character", j = "missing", drop = "missing"),
-#           definition = function(x, i) {
-#             filter_by_id(x, id = i)
-#           })
-#
-# #' @export
-# setMethod("[",
-#           signature(x = "variants", i = "missing", j = "missing", drop = "missing"),
-#           definition = function(x, i) x)
-#
-#
-# #' @export
-# setMethod("[",
-#           signature(x = "variants", i = "numeric", j = "missing", drop = "missing"),
-#           definition = function(x, i) {
-#             variant_ids <- unique(x@variants$variant_id)[i]
-#             filter_by_id(x, id = variant_ids)
-#           })
-#
-# #' @export
-# setMethod("[",
-#           signature(x = "variants", i = "character", j = "missing", drop = "missing"),
-#           definition = function(x, i) {
-#             filter_by_id(x, id = i)
-#           })
-#
-# #' @export
-# setMethod("[",
-#           signature(x = "traits", i = "missing", j = "missing", drop = "missing"),
-#           definition = function(x, i) x)
-#
-# #' @export
-# setMethod("[",
-#           signature(x = "traits", i = "numeric", j = "missing", drop = "missing"),
-#           definition = function(x, i) {
-#             efo_ids <- unique(x@traits$efo_id)[i]
-#             filter_by_id(x, id = efo_ids)
-#           })
-#
-# #' @export
-# setMethod("[",
-#           signature(x = "traits", i = "character", j = "missing", drop = "missing"),
-#           definition = function(x, i) {
-#             filter_by_id(x, id = i)
-#           })
+#' Subset a studies object
+#'
+#' You can subset \linkS4class{studies} by identifier or by position using the
+#' \code{`[`} operator.
+#'
+#' @param x A \linkS4class{studies} object.
+#' @param i Position of the identifier or the name of the identifier itself.
+#' @param j Not used.
+#' @param ... Additional arguments not used here.
+#' @param drop Not used.
+#'
+#' @return A \linkS4class{studies} object.
+#' @name subset-studies
+NULL
+
+#' @rdname subset-studies
+#' @export
+setMethod("[",
+          signature(x = "studies", i = "missing", j = "missing", drop = "missing"),
+          definition = function(x, i, j, ..., drop = FALSE) x)
+
+#' @rdname subset-studies
+#' @export
+setMethod("[",
+          signature(x = "studies", i = "numeric", j = "missing", drop = "missing"),
+          definition = function(x, i, j, ..., drop = FALSE) {
+            study_ids <- unique(x@studies$study_id)[i]
+            filter_by_id(x, id = study_ids)
+          })
+
+#' @rdname subset-studies
+#' @export
+setMethod("[",
+          signature(x = "studies", i = "character", j = "missing", drop = "missing"),
+          definition = function(x, i, j, ..., drop = FALSE) {
+            filter_by_id(x, id = i)
+          })
+
+#' Subset an associations object
+#'
+#' You can subset \linkS4class{associations} by identifier or by position using the
+#' \code{`[`} operator.
+#'
+#' @param x A \linkS4class{associations} object.
+#' @param i Position of the identifier or the name of the identifier itself.
+#' @param j Not used.
+#' @param ... Additional arguments not used here.
+#' @param drop Not used.
+#'
+#' @return A \linkS4class{associations} object.
+#' @name subset-associations
+NULL
+
+#' @rdname subset-associations
+#' @export
+setMethod("[",
+          signature(x = "associations", i = "missing", j = "missing", drop = "missing"),
+          definition = function(x, i, j, ..., drop = FALSE) x)
+
+#' @rdname subset-associations
+#' @export
+setMethod("[",
+          signature(x = "associations", i = "numeric", j = "missing", drop = "missing"),
+          definition = function(x, i, j, ..., drop = FALSE) {
+            association_ids <- unique(x@associations$association_id)[i]
+            filter_by_id(x, id = association_ids)
+          })
+
+#' @rdname subset-associations
+#' @export
+setMethod("[",
+          signature(x = "associations", i = "character", j = "missing", drop = "missing"),
+          definition = function(x, i, j, ..., drop = FALSE) {
+            filter_by_id(x, id = i)
+          })
+
+#' Subset a variants object
+#'
+#' You can subset \linkS4class{variants} by identifier or by position using the
+#' \code{`[`} operator.
+#'
+#' @param x A \linkS4class{variants} object.
+#' @param i Position of the identifier or the name of the identifier itself.
+#' @param j Not used.
+#' @param ... Additional arguments not used here.
+#' @param drop Not used.
+#'
+#' @return A \linkS4class{variants} object.
+#' @name subset-variants
+NULL
+
+#' @rdname subset-variants
+#' @export
+setMethod("[",
+          signature(x = "variants", i = "missing", j = "missing", drop = "missing"),
+          definition = function(x, i, j, ..., drop = FALSE) x)
+
+#' @rdname subset-variants
+#' @export
+setMethod("[",
+          signature(x = "variants", i = "numeric", j = "missing", drop = "missing"),
+          definition = function(x, i, j, ..., drop = FALSE) {
+            variant_ids <- unique(x@variants$variant_id)[i]
+            filter_by_id(x, id = variant_ids)
+          })
+
+#' @rdname subset-variants
+#' @export
+setMethod("[",
+          signature(x = "variants", i = "character", j = "missing", drop = "missing"),
+          definition = function(x, i, j, ..., drop = FALSE) {
+            filter_by_id(x, id = i)
+          })
+
+#' Subset a traits object
+#'
+#' You can subset \linkS4class{traits} by identifier or by position using the
+#' \code{`[`} operator.
+#'
+#' @param x A \linkS4class{traits} object.
+#' @param i Position of the identifier or the name of the identifier itself.
+#' @param j Not used.
+#' @param ... Additional arguments not used here.
+#' @param drop Not used.
+#' @return A \linkS4class{traits} object.
+#' @name subset-traits
+NULL
+
+#' @rdname subset-traits
+#' @export
+setMethod("[",
+          signature(x = "traits", i = "missing", j = "missing", drop = "missing"),
+          definition = function(x, i, j, ..., drop = FALSE) x)
+
+#' @rdname subset-traits
+#' @export
+setMethod("[",
+          signature(x = "traits", i = "numeric", j = "missing", drop = "missing"),
+          definition = function(x, i, j, ..., drop = FALSE) {
+            efo_ids <- unique(x@traits$efo_id)[i]
+            filter_by_id(x, id = efo_ids)
+          })
+
+#' @rdname subset-traits
+#' @export
+setMethod("[",
+          signature(x = "traits", i = "character", j = "missing", drop = "missing"),
+          definition = function(x, i, j, ..., drop = FALSE) {
+            filter_by_id(x, id = i)
+          })
 
 
 #' Number of GWAS Catalog entities
@@ -355,6 +420,7 @@ setMethod("filter_by_id",
 #' @export
 setGeneric('n', function(x) standardGeneric('n'))
 
+#' @rdname n
 #' @export
 setMethod("n",
           signature(x = "studies"),
@@ -363,6 +429,7 @@ setMethod("n",
             return(n)
           })
 
+#' @rdname n
 #' @export
 setMethod("n",
           signature(x = "associations"),
@@ -371,6 +438,7 @@ setMethod("n",
             return(n)
           })
 
+#' @rdname n
 #' @export
 setMethod("n",
           signature(x = "variants"),
@@ -379,6 +447,7 @@ setMethod("n",
             return(n)
           })
 
+#' @rdname n
 #' @export
 setMethod("n",
           signature(x = "traits"),

@@ -16,9 +16,16 @@ reference:
   - get_variants
   - get_traits
   - get_metadata
+- title: "Subset GWAS Catalog Entities"
+  desc: "Extract specific observations from studies, associations, variants or traits."
+  contents:
+  - '`subset-studies`'
+  - '`subset-associations`'
+  - '`subset-variants`'
+  - '`subset-traits`'
 - title: "Data Wrangling of GWAS Catalog Entities"
   desc: >
-    S4 methods for subsetting, combining and tallying studies,
+    S4 methods for combining and tallying studies,
     associations, variants and traits.
   contents:
   - 'n'
