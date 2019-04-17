@@ -1,0 +1,119 @@
+{
+    "initialSampleSize": "3,117 European ancestry Bipolar disorder cases, 1,273 European ancestry Major depressive disorder cases",
+    "gxe": false,
+    "gxg": false,
+    "snpCount": 1922309,
+    "qualifier": null,
+    "imputed": true,
+    "pooled": false,
+    "studyDesignComment": null,
+    "accessionId": "GCST000854",
+    "fullPvalueSet": false,
+    "userRequested": false,
+    "platforms": [
+        {
+            "manufacturer": "Affymetrix"
+        }
+    ],
+    "ancestries": [
+        {
+            "type": "initial",
+            "numberOfIndividuals": 4390,
+            "ancestralGroups": [
+                {
+                    "ancestralGroup": "European"
+                }
+            ],
+            "countryOfOrigin": [
+
+            ],
+            "countryOfRecruitment": [
+                {
+                    "majorArea": "Europe",
+                    "region": "Northern Europe",
+                    "countryName": "U.K."
+                }
+            ]
+        },
+        {
+            "type": "replication",
+            "numberOfIndividuals": 2698,
+            "ancestralGroups": [
+                {
+                    "ancestralGroup": "European"
+                }
+            ],
+            "countryOfOrigin": [
+
+            ],
+            "countryOfRecruitment": [
+                {
+                    "majorArea": "Europe",
+                    "region": "Western Europe",
+                    "countryName": "Germany"
+                }
+            ]
+        },
+        {
+            "type": "replication",
+            "numberOfIndividuals": 1649,
+            "ancestralGroups": [
+                {
+                    "ancestralGroup": "NR"
+                }
+            ],
+            "countryOfOrigin": [
+
+            ],
+            "countryOfRecruitment": [
+
+            ]
+        }
+    ],
+    "diseaseTrait": {
+        "trait": "Suicide risk"
+    },
+    "genotypingTechnologies": [
+        {
+            "genotypingTechnology": "Genome-wide genotyping array"
+        }
+    ],
+    "replicationSampleSize": "2,698 European ancestry Bipolar disorder cases, 1,649 Major depressive disorder cases",
+    "publicationInfo": {
+        "pubmedId": "21041247",
+        "publicationDate": "2010-11-01",
+        "publication": "Am J Psychiatry",
+        "title": "Genome-wide association study of suicide attempts in mood disorder patients.",
+        "author": {
+            "fullname": "Perlis RH",
+            "orcid": null
+        },
+        "_links": {
+            "studies": {
+                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000854{?projection}",
+                "templated": true
+            }
+        }
+    },
+    "_links": {
+        "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000854"
+        },
+        "study": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000854{?projection}",
+            "templated": true
+        },
+        "associationsByStudySummary": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000854/associations?projection=associationByStudy"
+        },
+        "efoTraits": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000854/efoTraits"
+        },
+        "snps": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000854/snps"
+        },
+        "associations": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000854/associations"
+        }
+    }
+}

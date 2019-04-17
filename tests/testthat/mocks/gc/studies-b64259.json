@@ -1,0 +1,2805 @@
+{
+    "_embedded": {
+        "studies": [
+            {
+                "initialSampleSize": "944 European ancestry individuals",
+                "gxe": false,
+                "gxg": false,
+                "snpCount": 5137218,
+                "qualifier": null,
+                "imputed": true,
+                "pooled": false,
+                "studyDesignComment": null,
+                "accessionId": "GCST006136",
+                "fullPvalueSet": true,
+                "userRequested": false,
+                "platforms": [
+                    {
+                        "manufacturer": "Illumina"
+                    }
+                ],
+                "ancestries": [
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 944,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "European"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ]
+                    }
+                ],
+                "diseaseTrait": {
+                    "trait": "Alzheimer's disease progression score"
+                },
+                "genotypingTechnologies": [
+                    {
+                        "genotypingTechnology": "Genome-wide genotyping array"
+                    }
+                ],
+                "replicationSampleSize": "NA",
+                "publicationInfo": {
+                    "pubmedId": "29860282",
+                    "publicationDate": "2018-05-29",
+                    "publication": "Brain",
+                    "title": "Genetic study of multimodal imaging Alzheimer's disease progression score implicates novel loci.",
+                    "author": {
+                        "fullname": "Scelsi MA",
+                        "orcid": null
+                    },
+                    "_links": {
+                        "studies": [
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006135{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006134{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006136{?projection}",
+                                "templated": true
+                            }
+                        ]
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006136"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006136{?projection}",
+                        "templated": true
+                    },
+                    "associationsByStudySummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006136/associations?projection=associationByStudy"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006136/efoTraits"
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006136/snps"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006136/associations"
+                    }
+                }
+            },
+            {
+                "initialSampleSize": "340 European ancestry never-smoker cases, 493 European ancestry ever-smoker cases, 746 European ancestry never-smoker controls, 994 European ancestry ever-smoker controls",
+                "gxe": true,
+                "gxg": false,
+                "snpCount": 133648,
+                "qualifier": null,
+                "imputed": true,
+                "pooled": false,
+                "studyDesignComment": "ImmunoChip ",
+                "accessionId": "GCST006410",
+                "fullPvalueSet": false,
+                "userRequested": false,
+                "platforms": [
+                    {
+                        "manufacturer": "Illumina"
+                    }
+                ],
+                "ancestries": [
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 2573,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "European"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Europe",
+                                "region": "Northern Europe",
+                                "countryName": "Sweden"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "replication",
+                        "numberOfIndividuals": 1516,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "European"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Europe",
+                                "region": "Northern Europe",
+                                "countryName": "Sweden"
+                            }
+                        ]
+                    }
+                ],
+                "diseaseTrait": {
+                    "trait": "ACPA-positive rheumatoid arthritis (smoking interaction)"
+                },
+                "genotypingTechnologies": [
+                    {
+                        "genotypingTechnology": "Targeted genotyping array"
+                    }
+                ],
+                "replicationSampleSize": "187 European ancestry never-smoker cases, 421 European ancestry ever-smoker cases, 461 European ancestry never-smoker controls, 447 European ancestry ever-smoker controls",
+                "publicationInfo": {
+                    "pubmedId": "26272072",
+                    "publicationDate": "2015-08-12",
+                    "publication": "Rheumatology (Oxford)",
+                    "title": "An Immunochip-based interaction study of contrasting interaction effects with smoking in ACPA-positive versus ACPA-negative rheumatoid arthritis.",
+                    "author": {
+                        "fullname": "Jiang X",
+                        "orcid": null
+                    },
+                    "_links": {
+                        "studies": [
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006807{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006410{?projection}",
+                                "templated": true
+                            }
+                        ]
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006410"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006410{?projection}",
+                        "templated": true
+                    },
+                    "associationsByStudySummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006410/associations?projection=associationByStudy"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006410/efoTraits"
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006410/snps"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006410/associations"
+                    }
+                }
+            },
+            {
+                "initialSampleSize": "3,323 European ancestry cases, 15,785 European ancestry controls",
+                "gxe": false,
+                "gxg": false,
+                "snpCount": 107144,
+                "qualifier": null,
+                "imputed": false,
+                "pooled": false,
+                "studyDesignComment": "ImmunoChip",
+                "accessionId": "GCST005826",
+                "fullPvalueSet": false,
+                "userRequested": false,
+                "platforms": [
+                    {
+                        "manufacturer": "Illumina"
+                    }
+                ],
+                "ancestries": [
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 19108,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "European"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Northern America",
+                                "region": null,
+                                "countryName": "U.S."
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Western Europe",
+                                "countryName": "Netherlands"
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Northern Europe",
+                                "countryName": "Sweden"
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Northern Europe",
+                                "countryName": "U.K."
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Southern Europe",
+                                "countryName": "Spain"
+                            }
+                        ]
+                    }
+                ],
+                "diseaseTrait": {
+                    "trait": "Sero-negative rheumatoid arthritis"
+                },
+                "genotypingTechnologies": [
+                    {
+                        "genotypingTechnology": "Targeted genotyping array"
+                    }
+                ],
+                "replicationSampleSize": "NA",
+                "publicationInfo": {
+                    "pubmedId": "28706201",
+                    "publicationDate": "2017-07-12",
+                    "publication": "Sci Rep",
+                    "title": "Genotypic variability based association identifies novel non-additive loci DHCR7 and IRF4 in sero-negative rheumatoid arthritis.",
+                    "author": {
+                        "fullname": "Wei WH",
+                        "orcid": "0000-0001-5774-5941"
+                    },
+                    "_links": {
+                        "studies": {
+                            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005826{?projection}",
+                            "templated": true
+                        }
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005826"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005826{?projection}",
+                        "templated": true
+                    },
+                    "associationsByStudySummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005826/associations?projection=associationByStudy"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005826/efoTraits"
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005826/snps"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005826/associations"
+                    }
+                }
+            },
+            {
+                "initialSampleSize": "45,465 European ancestry females, 44,088 European ancestry males",
+                "gxe": false,
+                "gxg": false,
+                "snpCount": 11133794,
+                "qualifier": null,
+                "imputed": true,
+                "pooled": false,
+                "studyDesignComment": null,
+                "accessionId": "GCST005755",
+                "fullPvalueSet": false,
+                "userRequested": false,
+                "platforms": [
+                    {
+                        "manufacturer": "Illumina"
+                    }
+                ],
+                "ancestries": [
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 89553,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "European"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ]
+                    }
+                ],
+                "diseaseTrait": {
+                    "trait": "Cognitive empathy"
+                },
+                "genotypingTechnologies": [
+                    {
+                        "genotypingTechnology": "Genome-wide genotyping array"
+                    }
+                ],
+                "replicationSampleSize": "NA",
+                "publicationInfo": {
+                    "pubmedId": "28584286",
+                    "publicationDate": "2017-06-05",
+                    "publication": "Mol Psychiatry",
+                    "title": "Genome-wide meta-analysis of cognitive empathy: heritability, and correlates with sex, neuropsychiatric conditions and cognition.",
+                    "author": {
+                        "fullname": "Warrier V",
+                        "orcid": null
+                    },
+                    "_links": {
+                        "studies": {
+                            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005755{?projection}",
+                            "templated": true
+                        }
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005755"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005755{?projection}",
+                        "templated": true
+                    },
+                    "associationsByStudySummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005755/associations?projection=associationByStudy"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005755/efoTraits"
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005755/snps"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005755/associations"
+                    }
+                }
+            },
+            {
+                "initialSampleSize": "145,366 European ancestry individuals, 2,610 Erasmus Rupchen (founder/genetic isolate) individuals, 509  Talana (founder/genetic isolate) individuals, 15,044 East Asian ancestry individuals, 2,275 Malay ancestry individuals, 2,110 Indian ancestry individuals,  2,506 Asian ancestry individuals",
+                "gxe": false,
+                "gxg": false,
+                "snpCount": 11000000,
+                "qualifier": "~",
+                "imputed": true,
+                "pooled": false,
+                "studyDesignComment": null,
+                "accessionId": "GCST006291",
+                "fullPvalueSet": false,
+                "userRequested": false,
+                "platforms": [
+                    {
+                        "manufacturer": "Affymetrix"
+                    },
+                    {
+                        "manufacturer": "Illumina"
+                    }
+                ],
+                "ancestries": [
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 2506,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "Asian unspecified"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Asia",
+                                "region": "South-eastern Asia",
+                                "countryName": "Singapore"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 2110,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "South Asian"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Asia",
+                                "region": "South-eastern Asia",
+                                "countryName": "Singapore"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 2275,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "South East Asian"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Asia",
+                                "region": "South-eastern Asia",
+                                "countryName": "Singapore"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 15044,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "East Asian"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Asia",
+                                "region": "Eastern Asia",
+                                "countryName": "China"
+                            },
+                            {
+                                "majorArea": "Asia",
+                                "region": "Eastern Asia",
+                                "countryName": "Japan"
+                            },
+                            {
+                                "majorArea": "Asia",
+                                "region": "South-eastern Asia",
+                                "countryName": "Singapore"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "replication",
+                        "numberOfIndividuals": 95505,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "European"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 148485,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "European"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Northern America",
+                                "region": null,
+                                "countryName": "U.S."
+                            },
+                            {
+                                "majorArea": "Oceania",
+                                "region": "Australia/New Zealand",
+                                "countryName": "Australia"
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Western Europe",
+                                "countryName": "France"
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Western Europe",
+                                "countryName": "Germany"
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Western Europe",
+                                "countryName": "Netherlands"
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Northern Europe",
+                                "countryName": "Estonia"
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Northern Europe",
+                                "countryName": "Finland"
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Northern Europe",
+                                "countryName": "U.K."
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Southern Europe",
+                                "countryName": "Croatia"
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Southern Europe",
+                                "countryName": "Italy"
+                            }
+                        ]
+                    }
+                ],
+                "diseaseTrait": {
+                    "trait": "Spherical equivalent or myopia (age of diagnosis)"
+                },
+                "genotypingTechnologies": [
+                    {
+                        "genotypingTechnology": "Genome-wide genotyping array"
+                    }
+                ],
+                "replicationSampleSize": "NA",
+                "publicationInfo": {
+                    "pubmedId": "29808027",
+                    "publicationDate": "2018-05-27",
+                    "publication": "Nat Genet",
+                    "title": "Genome-wide association meta-analysis highlights light-induced signaling as a driver for refractive error.",
+                    "author": {
+                        "fullname": "Tedja MS",
+                        "orcid": "0000-0003-0356-9684"
+                    },
+                    "_links": {
+                        "studies": [
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006291{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006289{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006290{?projection}",
+                                "templated": true
+                            }
+                        ]
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006291"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006291{?projection}",
+                        "templated": true
+                    },
+                    "associationsByStudySummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006291/associations?projection=associationByStudy"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006291/efoTraits"
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006291/snps"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006291/associations"
+                    }
+                }
+            },
+            {
+                "initialSampleSize": "5,609 Japanese ancestry female individuals",
+                "gxe": false,
+                "gxg": false,
+                "snpCount": 536506,
+                "qualifier": null,
+                "imputed": false,
+                "pooled": false,
+                "studyDesignComment": null,
+                "accessionId": "GCST006655",
+                "fullPvalueSet": true,
+                "userRequested": false,
+                "platforms": [
+                    {
+                        "manufacturer": "Affymetrix"
+                    }
+                ],
+                "ancestries": [
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 5609,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "East Asian"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ]
+                    }
+                ],
+                "diseaseTrait": {
+                    "trait": "Breast size"
+                },
+                "genotypingTechnologies": [
+                    {
+                        "genotypingTechnology": "Genome-wide genotyping array"
+                    }
+                ],
+                "replicationSampleSize": "NA",
+                "publicationInfo": {
+                    "pubmedId": "29855537",
+                    "publicationDate": "2018-05-30",
+                    "publication": "Sci Rep",
+                    "title": "Japanese GWAS identifies variants for bust-size, dysmenorrhea, and menstrual fever that are eQTLs for relevant protein-coding or long non-coding RNAs.",
+                    "author": {
+                        "fullname": "Hirata T",
+                        "orcid": null
+                    },
+                    "_links": {
+                        "studies": [
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006653{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006636{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006652{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006650{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006654{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006637{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006656{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006651{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006647{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006657{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006649{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006638{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006644{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006642{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006646{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006639{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006655{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006641{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006648{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006643{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006645{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006640{?projection}",
+                                "templated": true
+                            }
+                        ]
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006655"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006655{?projection}",
+                        "templated": true
+                    },
+                    "associationsByStudySummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006655/associations?projection=associationByStudy"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006655/efoTraits"
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006655/snps"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006655/associations"
+                    }
+                }
+            },
+            {
+                "initialSampleSize": "678 European ancestry cases",
+                "gxe": false,
+                "gxg": false,
+                "snpCount": 6089769,
+                "qualifier": null,
+                "imputed": true,
+                "pooled": false,
+                "studyDesignComment": null,
+                "accessionId": "GCST006808",
+                "fullPvalueSet": false,
+                "userRequested": false,
+                "platforms": [
+                    {
+                        "manufacturer": "Illumina"
+                    }
+                ],
+                "ancestries": [
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 678,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "European"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Europe",
+                                "region": "Western Europe",
+                                "countryName": "Germany"
+                            },
+                            {
+                                "majorArea": "Oceania",
+                                "region": "Australia/New Zealand",
+                                "countryName": "Australia"
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Western Europe",
+                                "countryName": "Netherlands"
+                            },
+                            {
+                                "majorArea": "Asia",
+                                "region": "Western Asia",
+                                "countryName": "Israel"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 1380,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "European"
+                            },
+                            {
+                                "ancestralGroup": "NR"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Oceania",
+                                "region": "Australia/New Zealand",
+                                "countryName": "Australia"
+                            },
+                            {
+                                "majorArea": "Asia",
+                                "region": "Western Asia",
+                                "countryName": "Israel"
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Northern Europe",
+                                "countryName": "U.K."
+                            },
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ]
+                    }
+                ],
+                "diseaseTrait": {
+                    "trait": "Response to anti-VEGF treatment in neovascular age-related macular degeneration (visual acuity)"
+                },
+                "genotypingTechnologies": [
+                    {
+                        "genotypingTechnology": "Genome-wide genotyping array"
+                    }
+                ],
+                "replicationSampleSize": "1,380 European and unknown ancestry cases",
+                "publicationInfo": {
+                    "pubmedId": "29852030",
+                    "publicationDate": "2018-05-30",
+                    "publication": "JAMA Ophthalmol",
+                    "title": "Association of Genetic Variants With Response to Anti-Vascular Endothelial Growth Factor Therapy in Age-Related Macular Degeneration.",
+                    "author": {
+                        "fullname": "Lorés-Motta L",
+                        "orcid": null
+                    },
+                    "_links": {
+                        "studies": {
+                            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006808{?projection}",
+                            "templated": true
+                        }
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006808"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006808{?projection}",
+                        "templated": true
+                    },
+                    "associationsByStudySummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006808/associations?projection=associationByStudy"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006808/efoTraits"
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006808/snps"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006808/associations"
+                    }
+                }
+            },
+            {
+                "initialSampleSize": "up to 300,486 European ancestry individuals",
+                "gxe": false,
+                "gxg": false,
+                "snpCount": 2500000,
+                "qualifier": "at least",
+                "imputed": true,
+                "pooled": false,
+                "studyDesignComment": null,
+                "accessionId": "GCST006269",
+                "fullPvalueSet": false,
+                "userRequested": false,
+                "platforms": [
+                    {
+                        "manufacturer": "Affymetrix"
+                    },
+                    {
+                        "manufacturer": "Illumina"
+                    }
+                ],
+                "ancestries": [
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 300486,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "European"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Northern America",
+                                "region": null,
+                                "countryName": "Canada"
+                            },
+                            {
+                                "majorArea": "Northern America",
+                                "region": null,
+                                "countryName": "U.S."
+                            },
+                            {
+                                "majorArea": "Oceania",
+                                "region": "Australia/New Zealand",
+                                "countryName": "Australia"
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Western Europe",
+                                "countryName": "Austria"
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Western Europe",
+                                "countryName": "France"
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Western Europe",
+                                "countryName": "Germany"
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Western Europe",
+                                "countryName": "Netherlands"
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Northern Europe",
+                                "countryName": "Denmark"
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Northern Europe",
+                                "countryName": "Finland"
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Northern Europe",
+                                "countryName": "Iceland"
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Northern Europe",
+                                "countryName": "Republic of Ireland"
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Northern Europe",
+                                "countryName": "Norway"
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Northern Europe",
+                                "countryName": "Sweden"
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Northern Europe",
+                                "countryName": "U.K."
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Southern Europe",
+                                "countryName": "Croatia"
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Southern Europe",
+                                "countryName": "Greece"
+                            },
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ]
+                    }
+                ],
+                "diseaseTrait": {
+                    "trait": "General cognitive ability"
+                },
+                "genotypingTechnologies": [
+                    {
+                        "genotypingTechnology": "Genome-wide genotyping array"
+                    }
+                ],
+                "replicationSampleSize": "NA",
+                "publicationInfo": {
+                    "pubmedId": "29844566",
+                    "publicationDate": "2018-05-28",
+                    "publication": "Nat Commun",
+                    "title": "Study of 300,486 individuals identifies 148 independent genetic loci influencing general cognitive function.",
+                    "author": {
+                        "fullname": "Davies G",
+                        "orcid": null
+                    },
+                    "_links": {
+                        "studies": [
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006268{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006269{?projection}",
+                                "templated": true
+                            }
+                        ]
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006269"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006269{?projection}",
+                        "templated": true
+                    },
+                    "associationsByStudySummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006269/associations?projection=associationByStudy"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006269/efoTraits"
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006269/snps"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006269/associations"
+                    }
+                }
+            },
+            {
+                "initialSampleSize": "4,943 European ancestry cases, 8,483 European ancestry controls",
+                "gxe": false,
+                "gxg": false,
+                "snpCount": 7110321,
+                "qualifier": null,
+                "imputed": true,
+                "pooled": false,
+                "studyDesignComment": null,
+                "accessionId": "GCST005831",
+                "fullPvalueSet": true,
+                "userRequested": false,
+                "platforms": [
+                    {
+                        "manufacturer": "Illumina"
+                    }
+                ],
+                "ancestries": [
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 16966,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "European"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Europe",
+                                "region": "Southern Europe",
+                                "countryName": "Spain"
+                            },
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ]
+                    }
+                ],
+                "diseaseTrait": {
+                    "trait": "Systemic lupus erythematosus"
+                },
+                "genotypingTechnologies": [
+                    {
+                        "genotypingTechnology": "Genome-wide genotyping array"
+                    }
+                ],
+                "replicationSampleSize": "NA",
+                "publicationInfo": {
+                    "pubmedId": "29848360",
+                    "publicationDate": "2018-05-29",
+                    "publication": "Arthritis Res Ther",
+                    "title": "Genome-wide association study meta-analysis identifies five new loci for systemic lupus erythematosus.",
+                    "author": {
+                        "fullname": "Julià A",
+                        "orcid": "0000-0001-6064-3620"
+                    },
+                    "_links": {
+                        "studies": {
+                            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005831{?projection}",
+                            "templated": true
+                        }
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005831"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005831{?projection}",
+                        "templated": true
+                    },
+                    "associationsByStudySummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005831/associations?projection=associationByStudy"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005831/efoTraits"
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005831/snps"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005831/associations"
+                    }
+                }
+            },
+            {
+                "initialSampleSize": "54 Hispanic or Latin American and unknown ancestry cases, 922 Hispanic or Latin American and unknown ancestry controls",
+                "gxe": false,
+                "gxg": false,
+                "snpCount": 269494,
+                "qualifier": "at least",
+                "imputed": true,
+                "pooled": false,
+                "studyDesignComment": null,
+                "accessionId": "GCST006280",
+                "fullPvalueSet": false,
+                "userRequested": false,
+                "platforms": [
+                    {
+                        "manufacturer": "Illumina"
+                    }
+                ],
+                "ancestries": [
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 940,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "NR"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Northern America",
+                                "region": null,
+                                "countryName": "U.S."
+                            },
+                            {
+                                "majorArea": "Asia",
+                                "region": "South-eastern Asia",
+                                "countryName": "Philippines"
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Eastern Europe",
+                                "countryName": "Hungary"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 36,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "Hispanic or Latin American"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Latin America and the Caribbean",
+                                "region": "South America",
+                                "countryName": "Colombia"
+                            },
+                            {
+                                "majorArea": "Latin America and the Caribbean",
+                                "region": "Caribbean",
+                                "countryName": "Puerto Rico"
+                            }
+                        ]
+                    }
+                ],
+                "diseaseTrait": {
+                    "trait": "Velopharyngeal dysfunction"
+                },
+                "genotypingTechnologies": [
+                    {
+                        "genotypingTechnology": "Genome-wide genotyping array"
+                    }
+                ],
+                "replicationSampleSize": "NA",
+                "publicationInfo": {
+                    "pubmedId": "29855589",
+                    "publicationDate": "2018-05-30",
+                    "publication": "Sci Rep",
+                    "title": "GWAS reveals loci associated with velopharyngeal dysfunction.",
+                    "author": {
+                        "fullname": "Chernus J",
+                        "orcid": null
+                    },
+                    "_links": {
+                        "studies": {
+                            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006280{?projection}",
+                            "templated": true
+                        }
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006280"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006280{?projection}",
+                        "templated": true
+                    },
+                    "associationsByStudySummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006280/associations?projection=associationByStudy"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006280/efoTraits"
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006280/snps"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006280/associations"
+                    }
+                }
+            },
+            {
+                "initialSampleSize": "195 South Indian ancestry individuals from 15 families",
+                "gxe": false,
+                "gxg": false,
+                "snpCount": 1223314,
+                "qualifier": null,
+                "imputed": false,
+                "pooled": false,
+                "studyDesignComment": null,
+                "accessionId": "GCST006049",
+                "fullPvalueSet": false,
+                "userRequested": false,
+                "platforms": [
+                    {
+                        "manufacturer": "Illumina"
+                    }
+                ],
+                "ancestries": [
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 195,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "South Asian"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Asia",
+                                "region": "South-central Asia",
+                                "countryName": "India"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "replication",
+                        "numberOfIndividuals": 4038,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "Hispanic or Latin American"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Northern America",
+                                "region": null,
+                                "countryName": "U.S."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "replication",
+                        "numberOfIndividuals": 4806,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "European"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Europe",
+                                "region": "Northern Europe",
+                                "countryName": "U.K."
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Southern Europe",
+                                "countryName": "Croatia"
+                            }
+                        ]
+                    }
+                ],
+                "diseaseTrait": {
+                    "trait": "Central corneal thickness"
+                },
+                "genotypingTechnologies": [
+                    {
+                        "genotypingTechnology": "Genome-wide genotyping array"
+                    }
+                ],
+                "replicationSampleSize": "4,038 Mexican American individuals, 4,806 European ancestry individuals",
+                "publicationInfo": {
+                    "pubmedId": "29847655",
+                    "publicationDate": "2018-04-30",
+                    "publication": "Invest Ophthalmol Vis Sci",
+                    "title": "Family-Based Genome-Wide Association Study of South Indian Pedigrees Supports WNT7B as a Central Corneal Thickness Locus.",
+                    "author": {
+                        "fullname": "Fan BJ",
+                        "orcid": null
+                    },
+                    "_links": {
+                        "studies": [
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006050{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006049{?projection}",
+                                "templated": true
+                            }
+                        ]
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006049"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006049{?projection}",
+                        "templated": true
+                    },
+                    "associationsByStudySummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006049/associations?projection=associationByStudy"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006049/efoTraits"
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006049/snps"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006049/associations"
+                    }
+                }
+            },
+            {
+                "initialSampleSize": "3,418 Japanese ancestry individuals",
+                "gxe": false,
+                "gxg": false,
+                "snpCount": 4710779,
+                "qualifier": null,
+                "imputed": true,
+                "pooled": false,
+                "studyDesignComment": null,
+                "accessionId": "GCST006068",
+                "fullPvalueSet": false,
+                "userRequested": false,
+                "platforms": [
+                    {
+                        "manufacturer": "Illumina"
+                    }
+                ],
+                "ancestries": [
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 3418,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "East Asian"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Asia",
+                                "region": "Eastern Asia",
+                                "countryName": "Japan"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "replication",
+                        "numberOfIndividuals": 2692,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "East Asian"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Asia",
+                                "region": "Eastern Asia",
+                                "countryName": "Japan"
+                            }
+                        ]
+                    }
+                ],
+                "diseaseTrait": {
+                    "trait": "Sub-foveal choroidal thickness"
+                },
+                "genotypingTechnologies": [
+                    {
+                        "genotypingTechnology": "Genome-wide genotyping array"
+                    },
+                    {
+                        "genotypingTechnology": "Targeted genotyping array"
+                    }
+                ],
+                "replicationSampleSize": "2,692 Japanese ancestry individuals",
+                "publicationInfo": {
+                    "pubmedId": "29844195",
+                    "publicationDate": "2018-05-28",
+                    "publication": "Proc Natl Acad Sci U S A",
+                    "title": "CFH and VIPR2 as susceptibility loci in choroidal thickness and pachychoroid disease central serous chorioretinopathy.",
+                    "author": {
+                        "fullname": "Hosoda Y",
+                        "orcid": null
+                    },
+                    "_links": {
+                        "studies": {
+                            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006068{?projection}",
+                            "templated": true
+                        }
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006068"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006068{?projection}",
+                        "templated": true
+                    },
+                    "associationsByStudySummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006068/associations?projection=associationByStudy"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006068/efoTraits"
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006068/snps"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006068/associations"
+                    }
+                }
+            },
+            {
+                "initialSampleSize": "240 Han Chinese ancestry cases, 1,031 Han Chinese ancestry controls",
+                "gxe": false,
+                "gxg": false,
+                "snpCount": 802980,
+                "qualifier": null,
+                "imputed": false,
+                "pooled": false,
+                "studyDesignComment": null,
+                "accessionId": "GCST006584",
+                "fullPvalueSet": false,
+                "userRequested": false,
+                "platforms": [
+                    {
+                        "manufacturer": "Illumina"
+                    }
+                ],
+                "ancestries": [
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 1271,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "East Asian"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Asia",
+                                "region": "Eastern Asia",
+                                "countryName": "China"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "replication",
+                        "numberOfIndividuals": 2104,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "East Asian"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Asia",
+                                "region": "Eastern Asia",
+                                "countryName": "China"
+                            }
+                        ]
+                    }
+                ],
+                "diseaseTrait": {
+                    "trait": "Pemphigus vulgaris"
+                },
+                "genotypingTechnologies": [
+                    {
+                        "genotypingTechnology": "Genome-wide genotyping array"
+                    }
+                ],
+                "replicationSampleSize": "252 Han Chinese ancestry cases, 1,852 Han Chinese ancestry controls",
+                "publicationInfo": {
+                    "pubmedId": "29857070",
+                    "publicationDate": "2018-05-28",
+                    "publication": "J Invest Dermatol",
+                    "title": "Association study and fine-mapping major histocompatibility complex analysis of pemphigus vulgaris in a Han Chinese population.",
+                    "author": {
+                        "fullname": "Gao J",
+                        "orcid": null
+                    },
+                    "_links": {
+                        "studies": {
+                            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006584{?projection}",
+                            "templated": true
+                        }
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006584"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006584{?projection}",
+                        "templated": true
+                    },
+                    "associationsByStudySummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006584/associations?projection=associationByStudy"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006584/efoTraits"
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006584/snps"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006584/associations"
+                    }
+                }
+            },
+            {
+                "initialSampleSize": "7,647 European ancestry individuals, 2,104 Black individuals",
+                "gxe": false,
+                "gxg": false,
+                "snpCount": null,
+                "qualifier": null,
+                "imputed": true,
+                "pooled": false,
+                "studyDesignComment": null,
+                "accessionId": "GCST006056",
+                "fullPvalueSet": false,
+                "userRequested": false,
+                "platforms": [
+                    {
+                        "manufacturer": "Affymetrix"
+                    }
+                ],
+                "ancestries": [
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 7647,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "European"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Northern America",
+                                "region": null,
+                                "countryName": "U.S."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 2104,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "African unspecified"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Northern America",
+                                "region": null,
+                                "countryName": "U.S."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "replication",
+                        "numberOfIndividuals": 1304,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "European"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Northern America",
+                                "region": null,
+                                "countryName": "U.S."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "replication",
+                        "numberOfIndividuals": 608,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "African unspecified"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Northern America",
+                                "region": null,
+                                "countryName": "U.S."
+                            }
+                        ]
+                    }
+                ],
+                "diseaseTrait": {
+                    "trait": "Fructosamine levels"
+                },
+                "genotypingTechnologies": [
+                    {
+                        "genotypingTechnology": "Genome-wide genotyping array"
+                    }
+                ],
+                "replicationSampleSize": "1,304 European ancestry individuals, 608 Black individuals",
+                "publicationInfo": {
+                    "pubmedId": "29844224",
+                    "publicationDate": "2018-05-28",
+                    "publication": "Diabetes",
+                    "title": "Genome-Wide Association Study of Serum Fructosamine and Glycated Albumin in Adults Without Diagnosed Diabetes: Results from the Atherosclerosis Risk in Communities Study.",
+                    "author": {
+                        "fullname": "Loomis SJ",
+                        "orcid": null
+                    },
+                    "_links": {
+                        "studies": [
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006060{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006059{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006056{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006058{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006057{?projection}",
+                                "templated": true
+                            }
+                        ]
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006056"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006056{?projection}",
+                        "templated": true
+                    },
+                    "associationsByStudySummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006056/associations?projection=associationByStudy"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006056/efoTraits"
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006056/snps"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006056/associations"
+                    }
+                }
+            },
+            {
+                "initialSampleSize": "40,675 European ancestry cases, 64,643 European ancestry controls",
+                "gxe": false,
+                "gxg": false,
+                "snpCount": 8000000,
+                "qualifier": null,
+                "imputed": true,
+                "pooled": false,
+                "studyDesignComment": null,
+                "accessionId": "GCST006803",
+                "fullPvalueSet": false,
+                "userRequested": false,
+                "platforms": [
+                    {
+                        "manufacturer": "Illumina"
+                    }
+                ],
+                "ancestries": [
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 105318,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "European"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Oceania",
+                                "region": "Australia/New Zealand",
+                                "countryName": "Australia"
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Northern Europe",
+                                "countryName": "U.K."
+                            },
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "replication",
+                        "numberOfIndividuals": 15618,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "NR"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Asia",
+                                "region": "Western Asia",
+                                "countryName": "Georgia"
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Eastern Europe",
+                                "countryName": "Russian Federation"
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Northern Europe",
+                                "countryName": "Denmark"
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Southern Europe",
+                                "countryName": "Italy"
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Southern Europe",
+                                "countryName": "Serbia"
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Southern Europe",
+                                "countryName": "The former Yugoslav Republic of Macedonia"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "replication",
+                        "numberOfIndividuals": 144368,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "European"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Europe",
+                                "region": "Northern Europe",
+                                "countryName": "Norway"
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Northern Europe",
+                                "countryName": "Iceland"
+                            }
+                        ]
+                    }
+                ],
+                "diseaseTrait": {
+                    "trait": "Schizophrenia"
+                },
+                "genotypingTechnologies": [
+                    {
+                        "genotypingTechnology": "Genome-wide genotyping array"
+                    }
+                ],
+                "replicationSampleSize": "1,651 European ancestry cases, 4,111 cases, 142,717 European ancestry controls, 11,507 controls",
+                "publicationInfo": {
+                    "pubmedId": "29483656",
+                    "publicationDate": "2018-02-26",
+                    "publication": "Nat Genet",
+                    "title": "Common schizophrenia alleles are enriched in mutation-intolerant genes and in regions under strong background selection.",
+                    "author": {
+                        "fullname": "Pardiñas AF",
+                        "orcid": "0000-0001-6845-7590"
+                    },
+                    "_links": {
+                        "studies": {
+                            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006803{?projection}",
+                            "templated": true
+                        }
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006803"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006803{?projection}",
+                        "templated": true
+                    },
+                    "associationsByStudySummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006803/associations?projection=associationByStudy"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006803/efoTraits"
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006803/snps"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006803/associations"
+                    }
+                }
+            },
+            {
+                "initialSampleSize": "6,749 Japanese ancestry active and inactive individuals aged over 56, 7,231 Japanese ancestry active and inactive individuals aged under 56 ",
+                "gxe": false,
+                "gxg": false,
+                "snpCount": 7094228,
+                "qualifier": "up to",
+                "imputed": true,
+                "pooled": false,
+                "studyDesignComment": null,
+                "accessionId": "GCST006858",
+                "fullPvalueSet": false,
+                "userRequested": false,
+                "platforms": [
+                    {
+                        "manufacturer": "Illumina"
+                    }
+                ],
+                "ancestries": [
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 13980,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "East Asian"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Asia",
+                                "region": "Eastern Asia",
+                                "countryName": "Japan"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 2036,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "East Asian"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Asia",
+                                "region": "Eastern Asia",
+                                "countryName": "Japan"
+                            }
+                        ]
+                    }
+                ],
+                "diseaseTrait": {
+                    "trait": "Leisure-time exercise behaviour (age-stratified)"
+                },
+                "genotypingTechnologies": [
+                    {
+                        "genotypingTechnology": "Genome-wide genotyping array"
+                    }
+                ],
+                "replicationSampleSize": "1,129 Japanese ancestry active and inactive individuals aged over 56, 907 Japanese ancestry active and inactive individuals aged under 56 ",
+                "publicationInfo": {
+                    "pubmedId": "30102679",
+                    "publicationDate": "2018-08-09",
+                    "publication": "Med Sci Sports Exerc",
+                    "title": "Genome-wide Association Study of Leisure-Time Exercise Behavior in Japanese Adults.",
+                    "author": {
+                        "fullname": "Hara M",
+                        "orcid": null
+                    },
+                    "_links": {
+                        "studies": [
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006858{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006857{?projection}",
+                                "templated": true
+                            }
+                        ]
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006858"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006858{?projection}",
+                        "templated": true
+                    },
+                    "associationsByStudySummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006858/associations?projection=associationByStudy"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006858/efoTraits"
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006858/snps"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006858/associations"
+                    }
+                }
+            },
+            {
+                "initialSampleSize": "757,601 European ancestry individuals",
+                "gxe": false,
+                "gxg": false,
+                "snpCount": 7100000,
+                "qualifier": "~",
+                "imputed": true,
+                "pooled": false,
+                "studyDesignComment": null,
+                "accessionId": "GCST006630",
+                "fullPvalueSet": false,
+                "userRequested": false,
+                "platforms": [
+                    {
+                        "manufacturer": "Affymetrix"
+                    },
+                    {
+                        "manufacturer": "Illumina"
+                    }
+                ],
+                "ancestries": [
+                    {
+                        "type": "replication",
+                        "numberOfIndividuals": 249262,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "European"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 757601,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "European"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Europe",
+                                "region": "Northern Europe",
+                                "countryName": "U.K."
+                            },
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ]
+                    }
+                ],
+                "diseaseTrait": {
+                    "trait": "Diastolic blood pressure"
+                },
+                "genotypingTechnologies": [
+                    {
+                        "genotypingTechnology": "Genome-wide genotyping array"
+                    }
+                ],
+                "replicationSampleSize": "249,262 European ancestry individuals",
+                "publicationInfo": {
+                    "pubmedId": "30224653",
+                    "publicationDate": "2018-09-16",
+                    "publication": "Nat Genet",
+                    "title": "Genetic analysis of over 1 million people identifies 535 new loci associated with blood pressure traits.",
+                    "author": {
+                        "fullname": "Evangelou E",
+                        "orcid": "0000-0002-5488-2999"
+                    },
+                    "_links": {
+                        "studies": [
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006629{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006627{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006628{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006624{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006626{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006630{?projection}",
+                                "templated": true
+                            }
+                        ]
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006630"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006630{?projection}",
+                        "templated": true
+                    },
+                    "associationsByStudySummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006630/associations?projection=associationByStudy"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006630/efoTraits"
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006630/snps"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006630/associations"
+                    }
+                }
+            },
+            {
+                "initialSampleSize": "757,601 European ancestry individuals",
+                "gxe": false,
+                "gxg": false,
+                "snpCount": 7100000,
+                "qualifier": "~",
+                "imputed": true,
+                "pooled": false,
+                "studyDesignComment": null,
+                "accessionId": "GCST006629",
+                "fullPvalueSet": false,
+                "userRequested": false,
+                "platforms": [
+                    {
+                        "manufacturer": "Affymetrix"
+                    },
+                    {
+                        "manufacturer": "Illumina"
+                    }
+                ],
+                "ancestries": [
+                    {
+                        "type": "replication",
+                        "numberOfIndividuals": 249262,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "European"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 757601,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "European"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Europe",
+                                "region": "Northern Europe",
+                                "countryName": "U.K."
+                            },
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ]
+                    }
+                ],
+                "diseaseTrait": {
+                    "trait": "Pulse pressure"
+                },
+                "genotypingTechnologies": [
+                    {
+                        "genotypingTechnology": "Genome-wide genotyping array"
+                    }
+                ],
+                "replicationSampleSize": "249,262 European ancestry individuals",
+                "publicationInfo": {
+                    "pubmedId": "30224653",
+                    "publicationDate": "2018-09-16",
+                    "publication": "Nat Genet",
+                    "title": "Genetic analysis of over 1 million people identifies 535 new loci associated with blood pressure traits.",
+                    "author": {
+                        "fullname": "Evangelou E",
+                        "orcid": "0000-0002-5488-2999"
+                    },
+                    "_links": {
+                        "studies": [
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006629{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006627{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006628{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006624{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006626{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006630{?projection}",
+                                "templated": true
+                            }
+                        ]
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006629"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006629{?projection}",
+                        "templated": true
+                    },
+                    "associationsByStudySummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006629/associations?projection=associationByStudy"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006629/efoTraits"
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006629/snps"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006629/associations"
+                    }
+                }
+            },
+            {
+                "initialSampleSize": "757,601 European ancestry individuals",
+                "gxe": false,
+                "gxg": false,
+                "snpCount": 7100000,
+                "qualifier": "~",
+                "imputed": true,
+                "pooled": false,
+                "studyDesignComment": null,
+                "accessionId": "GCST006628",
+                "fullPvalueSet": false,
+                "userRequested": false,
+                "platforms": [
+                    {
+                        "manufacturer": "Affymetrix"
+                    },
+                    {
+                        "manufacturer": "Illumina"
+                    }
+                ],
+                "ancestries": [
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 757601,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "European"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Europe",
+                                "region": "Northern Europe",
+                                "countryName": "U.K."
+                            },
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ]
+                    }
+                ],
+                "diseaseTrait": {
+                    "trait": "Systolic blood pressure"
+                },
+                "genotypingTechnologies": [
+                    {
+                        "genotypingTechnology": "Genome-wide genotyping array"
+                    }
+                ],
+                "replicationSampleSize": "NA",
+                "publicationInfo": {
+                    "pubmedId": "30224653",
+                    "publicationDate": "2018-09-16",
+                    "publication": "Nat Genet",
+                    "title": "Genetic analysis of over 1 million people identifies 535 new loci associated with blood pressure traits.",
+                    "author": {
+                        "fullname": "Evangelou E",
+                        "orcid": "0000-0002-5488-2999"
+                    },
+                    "_links": {
+                        "studies": [
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006629{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006627{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006628{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006624{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006626{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006630{?projection}",
+                                "templated": true
+                            }
+                        ]
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006628"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006628{?projection}",
+                        "templated": true
+                    },
+                    "associationsByStudySummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006628/associations?projection=associationByStudy"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006628/efoTraits"
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006628/snps"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006628/associations"
+                    }
+                }
+            },
+            {
+                "initialSampleSize": "757,601 European ancestry individuals",
+                "gxe": false,
+                "gxg": false,
+                "snpCount": 7100000,
+                "qualifier": "~",
+                "imputed": true,
+                "pooled": false,
+                "studyDesignComment": null,
+                "accessionId": "GCST006627",
+                "fullPvalueSet": false,
+                "userRequested": false,
+                "platforms": [
+                    {
+                        "manufacturer": "Affymetrix"
+                    },
+                    {
+                        "manufacturer": "Illumina"
+                    }
+                ],
+                "ancestries": [
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 757601,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "European"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Northern Europe",
+                                "countryName": "U.K."
+                            }
+                        ]
+                    }
+                ],
+                "diseaseTrait": {
+                    "trait": "Diastolic blood pressure"
+                },
+                "genotypingTechnologies": [
+                    {
+                        "genotypingTechnology": "Genome-wide genotyping array"
+                    }
+                ],
+                "replicationSampleSize": "NA",
+                "publicationInfo": {
+                    "pubmedId": "30224653",
+                    "publicationDate": "2018-09-16",
+                    "publication": "Nat Genet",
+                    "title": "Genetic analysis of over 1 million people identifies 535 new loci associated with blood pressure traits.",
+                    "author": {
+                        "fullname": "Evangelou E",
+                        "orcid": "0000-0002-5488-2999"
+                    },
+                    "_links": {
+                        "studies": [
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006629{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006627{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006628{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006624{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006626{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006630{?projection}",
+                                "templated": true
+                            }
+                        ]
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006627"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006627{?projection}",
+                        "templated": true
+                    },
+                    "associationsByStudySummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006627/associations?projection=associationByStudy"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006627/efoTraits"
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006627/snps"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST006627/associations"
+                    }
+                }
+            }
+        ]
+    },
+    "_links": {
+        "first": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies?page=0&size=20"
+        },
+        "prev": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies?page=307&size=20"
+        },
+        "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies"
+        },
+        "next": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies?page=309&size=20"
+        },
+        "last": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies?page=309&size=20"
+        },
+        "profile": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/profile/studies"
+        },
+        "search": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/search"
+        }
+    },
+    "page": {
+        "size": 20,
+        "totalElements": 6193,
+        "totalPages": 310,
+        "number": 308
+    }
+}

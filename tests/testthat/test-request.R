@@ -340,13 +340,33 @@ with_mock_api({
     gc_get('/associations/search/findByPubmedId?pubmedId=21626137')
     gc_get('/singleNucleotidePolymorphisms/search/findByPubmedId?pubmedId=21626137')
     gc_get('/efoTraits/search/findByPubmedId?pubmedId=21626137')
-    gc_get('/studies/search/findByEfoUri?uri=http://www.ebi.ac.uk/efo/EFO_0004761')
-    gc_get('/efoTraits/search/findByEfoUri?uri=http://www.ebi.ac.uk/efo/EFO_0004761')
     gc_get('/associations/search/findByRsIdAndAccessionId?rsId=rs16956936&accessionId=GCST000392')
     gc_get('/singleNucleotidePolymorphisms/search/findByChromBpLocationRange?chrom=22&bpStart=1&bpEnd=15500000')
     gc_get('/studies/search/findByEfoTrait?efoTrait=lung%20adenocarcinoma')
     gc_get('/efoTraits/search/findByEfoTrait?trait=lung%20adenocarcinoma')
   })
+})
+
+test_that("gc_get: studies by efo_uri", {
+  base_url <- '/studies/search/findByEfoUri?uri='
+  uri <- 'http://www.ebi.ac.uk/efo/EFO_0004761'
+  uri_encoded <- URLencode(uri, reserved = TRUE)
+  url <- paste0(base_url, uri_encoded)
+  response <- gc_get(url)
+  expect_is(response, "list")
+  expect_named(response, c('url', 'response_code', 'status', 'content'))
+  expect_identical(response$status, c('OK', 'OK'))
+})
+
+test_that("gc_get: studies by efo_uri", {
+  base_url <- '/efoTraits/search/findByEfoUri?uri='
+  uri <- 'http://www.ebi.ac.uk/efo/EFO_0004761'
+  uri_encoded <- URLencode(uri, reserved = TRUE)
+  url <- paste0(base_url, uri_encoded)
+  response <- gc_get(url)
+  expect_is(response, "list")
+  expect_named(response, c('url', 'response_code', 'status', 'content'))
+  expect_identical(response$status, 'OK')
 })
 
 test_that("gc_get: studies", {

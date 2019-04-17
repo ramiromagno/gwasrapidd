@@ -1,0 +1,112 @@
+{
+    "initialSampleSize": "7,514 European ancestry cases, 9,045 European ancestry controls",
+    "gxe": false,
+    "gxg": false,
+    "snpCount": 841622,
+    "qualifier": null,
+    "imputed": true,
+    "pooled": false,
+    "studyDesignComment": null,
+    "accessionId": "GCST000392",
+    "fullPvalueSet": true,
+    "userRequested": false,
+    "platforms": [
+        {
+            "manufacturer": "Illumina"
+        },
+        {
+            "manufacturer": "Affymetrix"
+        }
+    ],
+    "ancestries": [
+        {
+            "type": "initial",
+            "numberOfIndividuals": 16559,
+            "ancestralGroups": [
+                {
+                    "ancestralGroup": "European"
+                }
+            ],
+            "countryOfOrigin": [
+
+            ],
+            "countryOfRecruitment": [
+                {
+                    "majorArea": "Europe",
+                    "region": "Northern Europe",
+                    "countryName": "U.K."
+                }
+            ]
+        },
+        {
+            "type": "replication",
+            "numberOfIndividuals": 13279,
+            "ancestralGroups": [
+                {
+                    "ancestralGroup": "European"
+                }
+            ],
+            "countryOfOrigin": [
+
+            ],
+            "countryOfRecruitment": [
+                {
+                    "majorArea": "Europe",
+                    "region": "Northern Europe",
+                    "countryName": "U.K."
+                },
+                {
+                    "majorArea": "Europe",
+                    "region": "Northern Europe",
+                    "countryName": "Denmark"
+                }
+            ]
+        }
+    ],
+    "diseaseTrait": {
+        "trait": "Type 1 diabetes"
+    },
+    "genotypingTechnologies": [
+        {
+            "genotypingTechnology": "Genome-wide genotyping array"
+        }
+    ],
+    "replicationSampleSize": "4,267 European ancestry cases, 4,670 European ancestry controls, 4,342 European ancestry trios from 2,319 families",
+    "publicationInfo": {
+        "pubmedId": "19430480",
+        "publicationDate": "2009-05-09",
+        "publication": "Nat Genet",
+        "title": "Genome-wide association study and meta-analysis find that over 40 loci affect risk of type 1 diabetes.",
+        "author": {
+            "fullname": "Barrett JC",
+            "orcid": null
+        },
+        "_links": {
+            "studies": {
+                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000392{?projection}",
+                "templated": true
+            }
+        }
+    },
+    "_links": {
+        "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000392"
+        },
+        "study": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000392{?projection}",
+            "templated": true
+        },
+        "associationsByStudySummary": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000392/associations?projection=associationByStudy"
+        },
+        "efoTraits": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000392/efoTraits"
+        },
+        "snps": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000392/snps"
+        },
+        "associations": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000392/associations"
+        }
+    }
+}
