@@ -104,7 +104,7 @@ a_obj_to_loci_tbl <- function(association_ids, obj) {
                      loci_tbl(
                        association_id = .x,
                        locus_id = seq_along(l$description),
-                       haplotype_snp_count = missing_to_na(l$haplotypeSnpCount, na = NA_integer_),
+                       haplotype_snp_count = missing_to_na(l$haplotype_snp_count, na = NA_integer_),
                        description = missing_to_na(l$description)
                      )
                    }

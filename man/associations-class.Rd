@@ -17,7 +17,7 @@ primary key.
 \item{\code{associations}}{A \code{\link[tibble]{tibble}} listing associations. Columns:
 \describe{
 \item{association_id}{GWAS Catalog association accession identifier, e.g., \code{20250}.}
-\item{pvalue}{Reported p-value for strongest variant risk allele.}
+\item{pvalue}{Reported p-value for strongest variant risk or effect allele.}
 \item{pvalue_description}{Information describing context of p-value.}
 \item{pvalue_mantissa}{Mantissa of p-value.}
 \item{pvalue_exponent}{Exponent of p-value.}
