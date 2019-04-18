@@ -362,6 +362,8 @@ get_associations_all <- function(verbose = FALSE, warnings = TRUE, page_size = 2
 #'   \code{'union'} binds together all results removing duplicates and
 #'   \code{'intersection'} only keeps same associations found with different
 #'   criteria.
+#' @param interactive A logical. If all associations are requested, whether to ask
+#'   interactively if we really want to proceed.
 #' @param verbose A \code{logical} indicating whether the function should be
 #'   verbose about the different queries or not.
 #' @param warnings A \code{logical} indicating whether to print warnings, if any.
@@ -375,6 +377,7 @@ get_associations <- function(study_id = NULL,
                         pubmed_id = NULL,
                         efo_trait = NULL,
                         set_operation = 'union',
+                        interactive = TRUE,
                         verbose = FALSE,
                         warnings = TRUE) {
 
@@ -426,18 +429,28 @@ get_associations <- function(study_id = NULL,
                              warnings = warnings)
 
   # If no criteria have been passed, i.e. all are NULL then got fetch all
-  # studies.
-  msg <- "You are about to download all associations from the GWAS Catalog.
-  This might take several hours..."
-  if(rlang::is_empty(list_of_associations) && sure(msg))
-    return(get_associations_all(verbose = verbose, warnings = warnings))
+  # associations.
+  if(rlang::is_empty(list_of_associations)) {
+    msg1 <- "You are about to download all associations from the GWAS Catalog.\nThis might take several minutes."
+    msg2 <- 'Returning an empty associations object!'
+    msg3 <- 'OK! Getting all associations then. This is going to take a while...'
+    if(interactive)
+      default_answer = NULL  # i.e., use interactive mode.
+    else
+      default_answer = 'y'
+    if(sure(before_question = msg1, after_saying_no = msg2, after_saying_yes = msg3, default_answer = default_answer))
+      return(get_associations_all(verbose = verbose, warnings = warnings))
+    else
+      return(associations())
+  } else {
 
-  if(identical(set_operation, "union")) {
-    return(purrr::reduce(list_of_associations, union))
-  }
+    if (identical(set_operation, "union")) {
+      return(purrr::reduce(list_of_associations, union))
+    }
 
-  if(identical(set_operation, "intersection")) {
-    return(purrr::reduce(list_of_associations, intersect))
+    if (identical(set_operation, "intersection")) {
+      return(purrr::reduce(list_of_associations, intersect))
+    }
   }
 
 }
