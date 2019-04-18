@@ -2,7 +2,7 @@ setOldClass(c("tbl_df", "tbl", "data.frame"))
 
 #' An S4 class to represent a set of GWAS Catalog associations
 #'
-#' The association object consists of four slots, each a table
+#' The association object consists of six slots, each a table
 #' (\code{\link[tibble]{tibble}}), that combined form a relational database of a
 #' subset of GWAS Catalog associations. Each association is an observation (row) in the
 #' \code{associations} table --- main table. All tables have the column \code{association_id} as
