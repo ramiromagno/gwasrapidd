@@ -4,6 +4,12 @@ context("test-request")
 # gc_request()
 #
 
+test_that("gc_request: verbose flag", {
+  response <- expect_message(gc_request(verbose = TRUE))
+  expect_is(response, "list")
+  expect_named(response, c('url', 'response_code', 'status', 'content'))
+})
+
 test_that("gc_request: warnings flag", {
   response <- expect_warning(gc_request(resource_url = "/foo", warnings = TRUE))
   expect_is(response, "list")

@@ -6,8 +6,8 @@
 \usage{
 get_associations(study_id = NULL, association_id = NULL,
   variant_id = NULL, efo_id = NULL, pubmed_id = NULL,
-  efo_trait = NULL, set_operation = "union", verbose = FALSE,
-  warnings = TRUE)
+  efo_trait = NULL, set_operation = "union", interactive = TRUE,
+  verbose = FALSE, warnings = TRUE)
 }
 \arguments{
 \item{study_id}{A \code{character} vector of GWAS Catalog study accession
@@ -33,6 +33,9 @@ tells how associations retrieved by different criteria  should be combined:
 \code{'union'} binds together all results removing duplicates and
 \code{'intersection'} only keeps same associations found with different
 criteria.}
+
+\item{interactive}{A logical. If all associations are requested, whether to ask
+interactively if we really want to proceed.}
 
 \item{verbose}{A \code{logical} indicating whether the function should be
 verbose about the different queries or not.}

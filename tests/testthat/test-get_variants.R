@@ -1,7 +1,7 @@
 context("test-get_variants")
 
 #
-## get_studies, exceptions
+## get_variants, exceptions
 #
 test_that("get_variants: exceptions", {
   expect_error(get_variants(set_operation = 'invalid_option'),
