@@ -7,5 +7,5 @@ httptest::set_redactor(function (response) {
     httptest::gsub_response("^https\\://www.ebi.ac.uk/gwas/rest/api/", "gc/") %>%
     httptest::gsub_response("^https\\://www.ebi.ac.uk/efo/", "efo/") %>%
     httptest::gsub_response("^https\\://www.ebi.ac.uk/ols/api/ontologies/efo/", "ols/efo/") %>%
-    httptest::gsub_response("^https://httpbin.org/", "httpbin/")
+    httptest::gsub_response("^https\\://httpbin.org/", "httpbin/")
 })
