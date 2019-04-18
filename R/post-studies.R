@@ -8,11 +8,10 @@
 #'
 #' @export
 open_in_pubmed <- function(pubmed_id) {
-  if (!(rlang::is_integer(pubmed_id) ||
-        rlang::is_character(pubmed_id)))
-    stop("pubmed_id must be an integer or character scalar.")
+  if (!(rlang::is_double(pubmed_id) || rlang::is_integer(pubmed_id) || rlang::is_character(pubmed_id) ))
+    stop("pubmed_id must be a vector of numbers.")
 
-  if (rlang::is_integer(pubmed_id))
+  if (rlang::is_double(pubmed_id) || rlang::is_integer(pubmed_id))
     pubmed_id2 <- as.character(pubmed_id)
   else
     pubmed_id2 <- pubmed_id
@@ -27,6 +26,6 @@ open_in_pubmed <- function(pubmed_id) {
 
   purrr::walk(urls, utils::browseURL)
 
-  return(invisible())
+  return(invisible(TRUE))
 }
 
