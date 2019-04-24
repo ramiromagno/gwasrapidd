@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get GWAS Catalog variants by their association identifiers — get_variants_by_association_id • gwasrapidd</title>
+<title>Browse GTEx from SNP identifiers. — open_in_gtex • gwasrapidd</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -39,9 +39,10 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Get GWAS Catalog variants by their association identifiers — get_variants_by_association_id" />
+<meta property="og:title" content="Browse GTEx from SNP identifiers. — open_in_gtex" />
 
-<meta property="og:description" content="Gets variants by GWAS Catalog internal association identifiers." />
+<meta property="og:description" content="This function launches the web browser and opens a tab for each SNP
+identifier on GTEx portal." />
 
 <meta property="og:image" content="https://rmagno.eu/gwasrapidd/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -128,49 +129,28 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get GWAS Catalog variants by their association identifiers</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ramiromagno/gwasrapidd/blob/master/R/get_variants.R'><code>R/get_variants.R</code></a></small>
-    <div class="hidden name"><code>get_variants_by_association_id.Rd</code></div>
+    <h1>Browse GTEx from SNP identifiers.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ramiromagno/gwasrapidd/blob/master/R/post-variants.R'><code>R/post-variants.R</code></a></small>
+    <div class="hidden name"><code>open_in_gtex.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Gets variants by GWAS Catalog internal association identifiers.</p>
+    <p>This function launches the web browser and opens a tab for each SNP
+identifier on GTEx portal.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>get_variants_by_association_id</span>(<span class='kw'>association_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>warnings</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>page_size</span> <span class='kw'>=</span> <span class='fl'>20L</span>)</pre>
+    <pre class="usage"><span class='fu'>open_in_gtex</span>(<span class='no'>variant_id</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>association_id</th>
-      <td><p>An integer vector of GWAS Catalog association
-identifiers.</p></td>
-    </tr>
-    <tr>
-      <th>verbose</th>
-      <td><p>Whether the function should be verbose about the different
-queries or not.</p></td>
-    </tr>
-    <tr>
-      <th>warnings</th>
-      <td><p>Whether to print warnings.</p></td>
-    </tr>
-    <tr>
-      <th>page_size</th>
-      <td><p>An integer scalar indicating the
-<a href='https://www.ebi.ac.uk/gwas/rest/docs/api#_paging_resources'>page</a>
-value to be used in the JSON requests, can be between <code>1</code> and
-<code>1000</code>.</p></td>
+      <th>variant_id</th>
+      <td><p>A variant identifier, a character vector.</p></td>
     </tr>
     </table>
-    
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>A <a href='variants-class.html'>variants</a> object.</p>
     
 
   </div>
@@ -178,9 +158,7 @@ value to be used in the JSON requests, can be between <code>1</code> and
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#value">Value</a></li>
-          </ul>
+                </ul>
 
   </div>
 </div>
