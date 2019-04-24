@@ -207,7 +207,7 @@ setMethod("filter_by_id",
 
 #' @keywords internal
 setMethod("filter_by_id",
-          signature(x = "associations", id = "integer"),
+          signature(x = "associations", id = "character"),
           definition = function(x, id) {
             association_id <- rlang::expr(association_id)
             lst <- purrr::map(s4_to_list(x), ~ dplyr::filter(.x, !!association_id %in% id))
