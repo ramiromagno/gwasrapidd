@@ -1,7 +1,7 @@
 Package: gwasrapidd
 Type: Package
 Title: REST API Client for the NHGRI-EBI GWAS Catalog
-Version: 0.0.0.9006
+Version: 0.0.0.9007
 Authors@R: c(
     person(given = "Ramiro", family = "Magno", email = "ramiro.magno@gmail.com",
     role = c("aut", "cre"), comment = c(ORCID = "0000-0001-5226-3441")),
@@ -67,6 +67,7 @@ Collate:
     'parse-variants.R'
     'post-studies.R'
     'post-traits.R'
+    'post-variants.R'
     'recursive_apply.R'
     'request.R'
     's4-utils.R'
