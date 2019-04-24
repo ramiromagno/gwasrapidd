@@ -92,7 +92,7 @@ Sounds interesting... To quickly browse to the PubMed entry for this publication
 open_in_pubmed(my_studies@publications$pubmed_id) 
 ```
 
-Now if we want to know the variants previously associated with autoimmune disease as used by @Light2014, we need to retrieve statistical association information on these variants and then filter them based on the same level of significance ($P < 1\times 10^{-6}$) [@Light2014].
+Now if we want to know the variants previously associated with autoimmune disease, as used by @Light2014, we need to retrieve statistical association information on these variants, and then filter them based on the same level of significance ($P < 1\times 10^{-6}$) [@Light2014].
 
 So let's start by getting the associations by `study_id`:
 
@@ -101,28 +101,34 @@ So let's start by getting the associations by `study_id`:
 my_associations <- get_associations(study_id = "GCST003097")
 ```
 
-Seemingly there are `r n(my_associations)` associations.
+Seemingly, there are `r n(my_associations)` associations.
 
 ```{r}
 n(my_associations)
 ```
 
-However not all variants meet the level of significance ($P < 1\times 10^{-6}$) as required by @Light2014:
+However, not all variants meet the level of significance, as required by @Light2014:
 
 ```{r}
+# Get association ids for which pvalue is less than 1e-6.
 dplyr::filter(my_associations@associations, pvalue < 1e-6) %>% # Filter by p-value
   dplyr::pull(association_id) %>% # Extract column association_id
   as.character() -> association_ids # Convert to character
+```
+
+```{r}
 # Extract associations by association id
 my_associations2 <- my_associations[association_ids]
 n(my_associations2)
 ```
 
-Of the `r n(my_associations)` associations found in GWAS Catalog, `r n(my_associations2)` meet the p-value threshold of $1\times 10^{-6}$. Here are the variants, risk allele and risk frequency:
+Of the `r n(my_associations)` associations found in GWAS Catalog, `r n(my_associations2)` meet the p-value threshold of $1\times 10^{-6}$. Here are the variants, and their respective risk allele and risk frequency:
 
 ```{r}
-my_associations2@risk_alleles[c('variant_id', 'risk_allele', 'risk_frequency')] %>% print(n = Inf)
+my_associations2@risk_alleles[c('variant_id', 'risk_allele', 'risk_frequency')] %>%
+  print(n = Inf)
 ```
 
+### Example 2 | 
 
 ## References
