@@ -31,7 +31,7 @@ devtools::install_github("ramiromagno/gwasrapidd")
 
 ## Cheatsheet
 
-<a href="https://github.com/ramiromagno/gwasrapidd/blob/master/inst/cheatsheet/gwasrapidd_cheatsheet.pdf"><img src="https://raw.githubusercontent.com/ramiromagno/gwasrapidd/inst/cheatsheet/gwasrapidd_cheatsheet_thumbs.png" width="420" height="300"/></a>
+<a href="https://github.com/ramiromagno/gwasrapidd/blob/master/inst/cheatsheet/gwasrapidd_cheatsheet.pdf"><img src="https://raw.githubusercontent.com/ramiromagno/gwasrapidd/master/inst/cheatsheet/gwasrapidd_cheatsheet_thumbs.png" width="420" height="300"/></a>
 
 ## Example
 
