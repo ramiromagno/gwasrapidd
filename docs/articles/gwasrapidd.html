@@ -156,70 +156,76 @@
 <p>Sounds interesting… To quickly browse to the PubMed entry for this publication:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="co"># This launches your web browser at https://www.ncbi.nlm.nih.gov/pubmed/26301688</span></a>
 <a class="sourceLine" id="cb5-2" data-line-number="2"><span class="kw"><a href="../reference/open_in_pubmed.html">open_in_pubmed</a></span>(my_studies<span class="op">@</span>publications<span class="op">$</span>pubmed_id) </a></code></pre></div>
-<p>Now if we want to know the variants previously associated with autoimmune disease as used by <span class="citation">Light et al. (2014)</span>, we need to retrieve statistical association information on these variants and then filter them based on the same level of significance (<span class="math inline">\(P &lt; 1\times 10^{-6}\)</span>) <span class="citation">(Light et al. 2014)</span>.</p>
+<p>Now if we want to know the variants previously associated with autoimmune disease, as used by <span class="citation">Light et al. (2014)</span>, we need to retrieve statistical association information on these variants, and then filter them based on the same level of significance (<span class="math inline">\(P &lt; 1\times 10^{-6}\)</span>) <span class="citation">(Light et al. 2014)</span>.</p>
 <p>So let’s start by getting the associations by <code>study_id</code>:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="co"># You could have also used get_associations(efo_trait = 'autoimmune disease')</span></a>
 <a class="sourceLine" id="cb6-2" data-line-number="2">my_associations &lt;-<span class="st"> </span><span class="kw"><a href="../reference/get_associations.html">get_associations</a></span>(<span class="dt">study_id =</span> <span class="st">"GCST003097"</span>)</a></code></pre></div>
-<p>Seemingly there are 46 associations.</p>
+<p>Seemingly, there are 46 associations.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw"><a href="../reference/n.html">n</a></span>(my_associations)</a>
 <a class="sourceLine" id="cb7-2" data-line-number="2"><span class="co">#&gt; [1] 46</span></a></code></pre></div>
-<p>However not all variants meet the level of significance (<span class="math inline">\(P &lt; 1\times 10^{-6}\)</span>) as required by <span class="citation">Light et al. (2014)</span>:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(my_associations<span class="op">@</span>associations, pvalue <span class="op">&lt;</span><span class="st"> </span><span class="fl">1e-6</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># Filter by p-value</span></a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span>(association_id) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># Extract column association_id</span></a>
-<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/character">as.character</a></span>() -&gt;<span class="st"> </span>association_ids <span class="co"># Convert to character</span></a>
-<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="co"># Extract associations by association id</span></a>
-<a class="sourceLine" id="cb8-5" data-line-number="5">my_associations2 &lt;-<span class="st"> </span>my_associations[association_ids]</a>
-<a class="sourceLine" id="cb8-6" data-line-number="6"><span class="kw"><a href="../reference/n.html">n</a></span>(my_associations2)</a>
-<a class="sourceLine" id="cb8-7" data-line-number="7"><span class="co">#&gt; [1] 44</span></a></code></pre></div>
-<p>Of the 46 associations found in GWAS Catalog, 44 meet the p-value threshold of <span class="math inline">\(1\times 10^{-6}\)</span>. Here are the variants, risk allele and risk frequency:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">my_associations2<span class="op">@</span>risk_alleles[<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">'variant_id'</span>, <span class="st">'risk_allele'</span>, <span class="st">'risk_frequency'</span>)] <span class="op">%&gt;%</span><span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/print">print</a></span>(<span class="dt">n =</span> <span class="ot">Inf</span>)</a>
-<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="co">#&gt; # A tibble: 44 x 3</span></a>
-<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="co">#&gt;    variant_id  risk_allele risk_frequency</span></a>
-<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="co">#&gt;    &lt;chr&gt;       &lt;chr&gt;                &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="co">#&gt;  1 rs2066363   C                    0.34 </span></a>
-<a class="sourceLine" id="cb9-6" data-line-number="6"><span class="co">#&gt;  2 rs114846446 A                    0.01 </span></a>
-<a class="sourceLine" id="cb9-7" data-line-number="7"><span class="co">#&gt;  3 rs7672495   C                    0.18 </span></a>
-<a class="sourceLine" id="cb9-8" data-line-number="8"><span class="co">#&gt;  4 rs7660520   A                    0.26 </span></a>
-<a class="sourceLine" id="cb9-9" data-line-number="9"><span class="co">#&gt;  5 rs7831697   G                    0.25 </span></a>
-<a class="sourceLine" id="cb9-10" data-line-number="10"><span class="co">#&gt;  6 rs7042370   T                    0.43 </span></a>
-<a class="sourceLine" id="cb9-11" data-line-number="11"><span class="co">#&gt;  7 rs10988542  C                    0.08 </span></a>
-<a class="sourceLine" id="cb9-12" data-line-number="12"><span class="co">#&gt;  8 rs7100025   G                    0.34 </span></a>
-<a class="sourceLine" id="cb9-13" data-line-number="13"><span class="co">#&gt;  9 rs77150043  T                    0.23 </span></a>
-<a class="sourceLine" id="cb9-14" data-line-number="14"><span class="co">#&gt; 10 rs2807264   C                    0.21 </span></a>
-<a class="sourceLine" id="cb9-15" data-line-number="15"><span class="co">#&gt; 11 rs12863738  T                    0.17 </span></a>
-<a class="sourceLine" id="cb9-16" data-line-number="16"><span class="co">#&gt; 12 rs11580078  G                    0.43 </span></a>
-<a class="sourceLine" id="cb9-17" data-line-number="17"><span class="co">#&gt; 13 rs6679677   A                    0.09 </span></a>
-<a class="sourceLine" id="cb9-18" data-line-number="18"><span class="co">#&gt; 14 rs34884278  C                    0.3  </span></a>
-<a class="sourceLine" id="cb9-19" data-line-number="19"><span class="co">#&gt; 15 rs6689858   C                    0.290</span></a>
-<a class="sourceLine" id="cb9-20" data-line-number="20"><span class="co">#&gt; 16 rs2075184   T                    0.23 </span></a>
-<a class="sourceLine" id="cb9-21" data-line-number="21"><span class="co">#&gt; 17 rs36001488  C                    0.48 </span></a>
-<a class="sourceLine" id="cb9-22" data-line-number="22"><span class="co">#&gt; 18 rs4676410   A                    0.19 </span></a>
-<a class="sourceLine" id="cb9-23" data-line-number="23"><span class="co">#&gt; 19 rs4625      G                    0.31 </span></a>
-<a class="sourceLine" id="cb9-24" data-line-number="24"><span class="co">#&gt; 20 rs7725052   C                    0.43 </span></a>
-<a class="sourceLine" id="cb9-25" data-line-number="25"><span class="co">#&gt; 21 rs7731626   A                    0.39 </span></a>
-<a class="sourceLine" id="cb9-26" data-line-number="26"><span class="co">#&gt; 22 rs755374    T                    0.32 </span></a>
-<a class="sourceLine" id="cb9-27" data-line-number="27"><span class="co">#&gt; 23 rs36051895  T                    0.290</span></a>
-<a class="sourceLine" id="cb9-28" data-line-number="28"><span class="co">#&gt; 24 rs4246905   T                    0.28 </span></a>
-<a class="sourceLine" id="cb9-29" data-line-number="29"><span class="co">#&gt; 25 rs706778    T                    0.41 </span></a>
-<a class="sourceLine" id="cb9-30" data-line-number="30"><span class="co">#&gt; 26 rs10822050  C                    0.39 </span></a>
-<a class="sourceLine" id="cb9-31" data-line-number="31"><span class="co">#&gt; 27 rs17885785  T                    0.2  </span></a>
-<a class="sourceLine" id="cb9-32" data-line-number="32"><span class="co">#&gt; 28 rs17466626  G                    0.02 </span></a>
-<a class="sourceLine" id="cb9-33" data-line-number="33"><span class="co">#&gt; 29 rs1689510   C                    0.31 </span></a>
-<a class="sourceLine" id="cb9-34" data-line-number="34"><span class="co">#&gt; 30 rs12598357  G                    0.39 </span></a>
-<a class="sourceLine" id="cb9-35" data-line-number="35"><span class="co">#&gt; 31 rs12928404  C                    0.38 </span></a>
-<a class="sourceLine" id="cb9-36" data-line-number="36"><span class="co">#&gt; 32 rs12232497  C                    0.45 </span></a>
-<a class="sourceLine" id="cb9-37" data-line-number="37"><span class="co">#&gt; 33 rs62131887  T                    0.28 </span></a>
-<a class="sourceLine" id="cb9-38" data-line-number="38"><span class="co">#&gt; 34 rs2836882   A                    0.27 </span></a>
-<a class="sourceLine" id="cb9-39" data-line-number="39"><span class="co">#&gt; 35 rs62324212  A                    0.42 </span></a>
-<a class="sourceLine" id="cb9-40" data-line-number="40"><span class="co">#&gt; 36 rs4869313   T                    0.42 </span></a>
-<a class="sourceLine" id="cb9-41" data-line-number="41"><span class="co">#&gt; 37 rs11741255  A                    0.42 </span></a>
-<a class="sourceLine" id="cb9-42" data-line-number="42"><span class="co">#&gt; 38 rs11145763  C                    0.4  </span></a>
-<a class="sourceLine" id="cb9-43" data-line-number="43"><span class="co">#&gt; 39 rs1250563   C                    0.290</span></a>
-<a class="sourceLine" id="cb9-44" data-line-number="44"><span class="co">#&gt; 40 rs1332099   T                    0.46 </span></a>
-<a class="sourceLine" id="cb9-45" data-line-number="45"><span class="co">#&gt; 41 rs72743477  G                    0.21 </span></a>
-<a class="sourceLine" id="cb9-46" data-line-number="46"><span class="co">#&gt; 42 rs117372389 T                    0.02 </span></a>
-<a class="sourceLine" id="cb9-47" data-line-number="47"><span class="co">#&gt; 43 rs602662    G                    0.49 </span></a>
-<a class="sourceLine" id="cb9-48" data-line-number="48"><span class="co">#&gt; 44 rs2738774   A                    0.32</span></a></code></pre></div>
+<p>However, not all variants meet the level of significance, as required by <span class="citation">Light et al. (2014)</span>:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="co"># Get association ids for which pvalue is less than 1e-6.</span></a>
+<a class="sourceLine" id="cb8-2" data-line-number="2">dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(my_associations<span class="op">@</span>associations, pvalue <span class="op">&lt;</span><span class="st"> </span><span class="fl">1e-6</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># Filter by p-value</span></a>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span>(association_id) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># Extract column association_id</span></a>
+<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/character">as.character</a></span>() -&gt;<span class="st"> </span>association_ids <span class="co"># Convert to character</span></a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="co"># Extract associations by association id</span></a>
+<a class="sourceLine" id="cb9-2" data-line-number="2">my_associations2 &lt;-<span class="st"> </span>my_associations[association_ids]</a>
+<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="kw"><a href="../reference/n.html">n</a></span>(my_associations2)</a>
+<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="co">#&gt; [1] 44</span></a></code></pre></div>
+<p>Of the 46 associations found in GWAS Catalog, 44 meet the p-value threshold of <span class="math inline">\(1\times 10^{-6}\)</span>. Here are the variants, and their respective risk allele and risk frequency:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">my_associations2<span class="op">@</span>risk_alleles[<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">'variant_id'</span>, <span class="st">'risk_allele'</span>, <span class="st">'risk_frequency'</span>)] <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/print">print</a></span>(<span class="dt">n =</span> <span class="ot">Inf</span>)</a>
+<a class="sourceLine" id="cb10-3" data-line-number="3"><span class="co">#&gt; # A tibble: 44 x 3</span></a>
+<a class="sourceLine" id="cb10-4" data-line-number="4"><span class="co">#&gt;    variant_id  risk_allele risk_frequency</span></a>
+<a class="sourceLine" id="cb10-5" data-line-number="5"><span class="co">#&gt;    &lt;chr&gt;       &lt;chr&gt;                &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb10-6" data-line-number="6"><span class="co">#&gt;  1 rs2066363   C                    0.34 </span></a>
+<a class="sourceLine" id="cb10-7" data-line-number="7"><span class="co">#&gt;  2 rs114846446 A                    0.01 </span></a>
+<a class="sourceLine" id="cb10-8" data-line-number="8"><span class="co">#&gt;  3 rs7672495   C                    0.18 </span></a>
+<a class="sourceLine" id="cb10-9" data-line-number="9"><span class="co">#&gt;  4 rs7660520   A                    0.26 </span></a>
+<a class="sourceLine" id="cb10-10" data-line-number="10"><span class="co">#&gt;  5 rs7831697   G                    0.25 </span></a>
+<a class="sourceLine" id="cb10-11" data-line-number="11"><span class="co">#&gt;  6 rs7042370   T                    0.43 </span></a>
+<a class="sourceLine" id="cb10-12" data-line-number="12"><span class="co">#&gt;  7 rs10988542  C                    0.08 </span></a>
+<a class="sourceLine" id="cb10-13" data-line-number="13"><span class="co">#&gt;  8 rs7100025   G                    0.34 </span></a>
+<a class="sourceLine" id="cb10-14" data-line-number="14"><span class="co">#&gt;  9 rs77150043  T                    0.23 </span></a>
+<a class="sourceLine" id="cb10-15" data-line-number="15"><span class="co">#&gt; 10 rs2807264   C                    0.21 </span></a>
+<a class="sourceLine" id="cb10-16" data-line-number="16"><span class="co">#&gt; 11 rs12863738  T                    0.17 </span></a>
+<a class="sourceLine" id="cb10-17" data-line-number="17"><span class="co">#&gt; 12 rs11580078  G                    0.43 </span></a>
+<a class="sourceLine" id="cb10-18" data-line-number="18"><span class="co">#&gt; 13 rs6679677   A                    0.09 </span></a>
+<a class="sourceLine" id="cb10-19" data-line-number="19"><span class="co">#&gt; 14 rs34884278  C                    0.3  </span></a>
+<a class="sourceLine" id="cb10-20" data-line-number="20"><span class="co">#&gt; 15 rs6689858   C                    0.290</span></a>
+<a class="sourceLine" id="cb10-21" data-line-number="21"><span class="co">#&gt; 16 rs2075184   T                    0.23 </span></a>
+<a class="sourceLine" id="cb10-22" data-line-number="22"><span class="co">#&gt; 17 rs36001488  C                    0.48 </span></a>
+<a class="sourceLine" id="cb10-23" data-line-number="23"><span class="co">#&gt; 18 rs4676410   A                    0.19 </span></a>
+<a class="sourceLine" id="cb10-24" data-line-number="24"><span class="co">#&gt; 19 rs4625      G                    0.31 </span></a>
+<a class="sourceLine" id="cb10-25" data-line-number="25"><span class="co">#&gt; 20 rs7725052   C                    0.43 </span></a>
+<a class="sourceLine" id="cb10-26" data-line-number="26"><span class="co">#&gt; 21 rs7731626   A                    0.39 </span></a>
+<a class="sourceLine" id="cb10-27" data-line-number="27"><span class="co">#&gt; 22 rs755374    T                    0.32 </span></a>
+<a class="sourceLine" id="cb10-28" data-line-number="28"><span class="co">#&gt; 23 rs36051895  T                    0.290</span></a>
+<a class="sourceLine" id="cb10-29" data-line-number="29"><span class="co">#&gt; 24 rs4246905   T                    0.28 </span></a>
+<a class="sourceLine" id="cb10-30" data-line-number="30"><span class="co">#&gt; 25 rs706778    T                    0.41 </span></a>
+<a class="sourceLine" id="cb10-31" data-line-number="31"><span class="co">#&gt; 26 rs10822050  C                    0.39 </span></a>
+<a class="sourceLine" id="cb10-32" data-line-number="32"><span class="co">#&gt; 27 rs17885785  T                    0.2  </span></a>
+<a class="sourceLine" id="cb10-33" data-line-number="33"><span class="co">#&gt; 28 rs17466626  G                    0.02 </span></a>
+<a class="sourceLine" id="cb10-34" data-line-number="34"><span class="co">#&gt; 29 rs1689510   C                    0.31 </span></a>
+<a class="sourceLine" id="cb10-35" data-line-number="35"><span class="co">#&gt; 30 rs12598357  G                    0.39 </span></a>
+<a class="sourceLine" id="cb10-36" data-line-number="36"><span class="co">#&gt; 31 rs12928404  C                    0.38 </span></a>
+<a class="sourceLine" id="cb10-37" data-line-number="37"><span class="co">#&gt; 32 rs12232497  C                    0.45 </span></a>
+<a class="sourceLine" id="cb10-38" data-line-number="38"><span class="co">#&gt; 33 rs62131887  T                    0.28 </span></a>
+<a class="sourceLine" id="cb10-39" data-line-number="39"><span class="co">#&gt; 34 rs2836882   A                    0.27 </span></a>
+<a class="sourceLine" id="cb10-40" data-line-number="40"><span class="co">#&gt; 35 rs62324212  A                    0.42 </span></a>
+<a class="sourceLine" id="cb10-41" data-line-number="41"><span class="co">#&gt; 36 rs4869313   T                    0.42 </span></a>
+<a class="sourceLine" id="cb10-42" data-line-number="42"><span class="co">#&gt; 37 rs11741255  A                    0.42 </span></a>
+<a class="sourceLine" id="cb10-43" data-line-number="43"><span class="co">#&gt; 38 rs11145763  C                    0.4  </span></a>
+<a class="sourceLine" id="cb10-44" data-line-number="44"><span class="co">#&gt; 39 rs1250563   C                    0.290</span></a>
+<a class="sourceLine" id="cb10-45" data-line-number="45"><span class="co">#&gt; 40 rs1332099   T                    0.46 </span></a>
+<a class="sourceLine" id="cb10-46" data-line-number="46"><span class="co">#&gt; 41 rs72743477  G                    0.21 </span></a>
+<a class="sourceLine" id="cb10-47" data-line-number="47"><span class="co">#&gt; 42 rs117372389 T                    0.02 </span></a>
+<a class="sourceLine" id="cb10-48" data-line-number="48"><span class="co">#&gt; 43 rs602662    G                    0.49 </span></a>
+<a class="sourceLine" id="cb10-49" data-line-number="49"><span class="co">#&gt; 44 rs2738774   A                    0.32</span></a></code></pre></div>
+</div>
+<div id="example-2" class="section level3">
+<h3 class="hasAnchor">
+<a href="#example-2" class="anchor"></a>Example 2 |</h3>
 </div>
 </div>
 <div id="references" class="section level2 unnumbered">
