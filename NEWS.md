@@ -1,3 +1,7 @@
+## gwasrapidd 0.0.0.9006
+
+- Added a cheatsheet.
+
 ## gwasrapidd 0.0.0.9005
 
 - Improved test coverage significantly.
