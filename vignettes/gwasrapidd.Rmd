@@ -19,6 +19,8 @@ knitr::opts_chunk$set(
 
 ## Getting started
 
+### The GWAS Catalog
+
 The GWAS Catalog is a service provided by the EMBL-EBI and NHGRI that offers a
 manually curated and freely available database of published genome-wide
 association studies (GWAS). The Catalog website and infrastructure is hosted by
@@ -34,45 +36,50 @@ database dump in TSV or RDF/OWL formats:
 - Or through the GWAS Catalog REST API:
 [https://www.ebi.ac.uk/gwas/rest/docs/api](https://www.ebi.ac.uk/gwas/rest/docs/api)
 
-gwasrapidd facilitates the access to the Catalog via the Catalog REST API,
+gwasrapidd facilitates the access to the Catalog via the REST API,
 allowing you to programmatically retrieve data directly into R.
 
-## Usage
+### GWAS Catalog Entities
 
-The Catalog REST API provides four types of data objects for retrieval:
+The Catalog REST API is organized around four core entities: studies, associations, variants, and traits. **gwasrapidd** provides four corresponding functions to get each of the entities: `get_studies()`, `get_associations()`, `get_variants()`, and `get_traits()`.
 
-- Studies
-- Associations
-- Variants
-- Traits
+Each function maps to an appropriately named S4 classed object: [studies](https://rmagno.eu/gwasrapidd/reference/studies-class.html), [associations](https://rmagno.eu/gwasrapidd/reference/associations-class.html), [variants](https://rmagno.eu/gwasrapidd/reference/variants-class.html), and [traits](https://rmagno.eu/gwasrapidd/reference/traits-class.html) (see Figure 1).
 
-gwasrapidd provides four corresponding functions to get each of the object
-types:
 
-- `get_studies()`
-- `get_associations()`
-- `get_variants()`
-- `get_traits()`
-
-</br>
-
-```{r echo=FALSE, out.width=500, fig.cap="gwasrapidd retrieval functions."}
+```{r echo=FALSE, fig.align="left", out.width=500, fig.cap="Figure 1 | gwasrapidd retrieval functions."}
 # All defaults
 knitr::include_graphics("../man/figures/get_fns.png")
 ```
 
-```{r echo=FALSE, out.width=500, fig.cap="gwasrapidd arguments for retrieval functions."}
+You can use a combination of several search criteria with each retrieval function as shown in Figure 2. For example, if you want to get studies using either one of these two criteria: *study accession identifier* and *variant identifier*, you could run the following code:
+
+```{r eval=FALSE}
+my_studies <- get_studies(study_id = 'GCST000858', variant_id = 'rs12752552')
+```
+
+This command returns all studies that match either `'GCST000858'` or `'rs12752552'`. This is equivalent to running `get_studies` separately on each criteria, and combining the results afterwards:
+
+```{r eval=FALSE}
+s1 <- get_studies(study_id = 'GCST000858')
+s2 <- get_studies(variant_id = 'rs12752552')
+my_studies <- union(s1, s2)
+```
+
+All four retrieval functions accept the `set_operation` parameter which defines the way the results obtained with each criterion are combined. The two options for this parameter are `'union'` (default) or `'intersection'`, resulting, respectively, in an OR or AND operation.
+
+
+```{r echo=FALSE, fig.align="left", out.width=500, fig.cap="Figure 2 | gwasrapidd arguments for retrieval functions. Colors indicate the criteria that can be used for retrieving GWAS Catalog entities: studies (green), associations (red), variants (purple), and traits (orange)."}
 # All defaults
 knitr::include_graphics("../man/figures/get_criteria.png")
 ```
 
-## Examples
+### Examples
 
-### Example 1 | Finding Risk Alleles Associated with Autoimmune Disease
+#### Example 1 | Finding Risk Alleles Associated with Autoimmune Disease
 
 As a first example, take the work by @Light2014. In this work the authors focused on variants that had been previously reported in genome-wide association studies (GWAS) for autoimmune disease. 
 
-With gwasrapidd we can interrogate the GWAS Catalog for the study/studies by searching by *autoimmune disease* (an EFO trait). To do that let's load gwasrapidd first:
+With **gwasrapidd** we can interrogate the GWAS Catalog for the study/studies by searching by *autoimmune disease* (an EFO trait). To do that let's load gwasrapidd first:
 
 ```{r}
 library(gwasrapidd)
@@ -104,7 +111,7 @@ Sounds interesting... To quickly browse to the PubMed entry for this publication
 open_in_pubmed(my_studies@publications$pubmed_id) 
 ```
 
-Now if we want to know the variants previously associated with autoimmune disease, as used by @Light2014, we need to retrieve statistical association information on these variants, and then filter them based on the same level of significance ($P < 1\times 10^{-6}$) [@Light2014].
+Now if we want to know the variants previously associated with autoimmune disease, as used by @Light2014, we need to retrieve statistical association information on these variants, and then filter them based on the same level of significance $P < 1\times 10^{-6}$ [@Light2014].
 
 So let's start by getting the associations by `study_id`:
 
@@ -140,7 +147,5 @@ Of the `r n(my_associations)` associations found in GWAS Catalog, `r n(my_associ
 my_associations2@risk_alleles[c('variant_id', 'risk_allele', 'risk_frequency')] %>%
   print(n = Inf)
 ```
-
-### Example 2 | 
 
 ## References
