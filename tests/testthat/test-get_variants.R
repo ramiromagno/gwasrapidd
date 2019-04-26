@@ -183,3 +183,27 @@ test_that("get_variants_by_reported_trait: status code is not 200", {
   with_mock(`gwasrapidd:::gc_get` = function(...) bad_response,
             expect_identical(get_variants(reported_trait = c("breast cancer", 'lung adenocarcinoma')), variants()))
 })
+
+#
+## exists_variant
+#
+test_that("exists_variant: 200 response", {
+  with_mock_api({
+    expect_true(exists_variant(variant_id = 'rs3798440'))
+  })
+})
+
+
+test_that("exists_variant: 404 response", {
+  not_found_response <- list(response_code = 404L, status = 'Not OK', url = NA, content = NA)
+  with_mock(`gwasrapidd:::gc_get` = function(...) not_found_response,
+            expect_false(exists_variant(variant_id = 'foo'))
+            )
+})
+
+test_that("exists_variant: exceptions", {
+  expect_identical(exists_variant(variant_id = NULL), logical())
+  expect_error(exists_variant(variant_id = NA_character_))
+  expect_error(exists_variant(variant_id = character()))
+  expect_error(exists_variant(variant_id = 42L))
+})

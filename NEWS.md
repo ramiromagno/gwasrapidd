@@ -1,10 +1,14 @@
+## gwasrapidd 0.0.0.9009
+
+- Added function `exists_variant()`
+
 ## gwasrapidd 0.0.0.9008
 
 - Improved the Getting Started vignette.
 
 ## gwasrapidd 0.0.0.9007
 
-- Added two new functions: `open_in_dbsnp` and `open_in_gtex`.
+- Added two new functions: `open_in_dbsnp()` and `open_in_gtex()`.
 
 ## gwasrapidd 0.0.0.9006
 

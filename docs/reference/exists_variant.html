@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Browse GTEx from SNP identifiers. — open_in_gtex • gwasrapidd</title>
+<title>Check if a variant exists in the Catalog. — exists_variant • gwasrapidd</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -39,10 +39,13 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Browse GTEx from SNP identifiers. — open_in_gtex" />
+<meta property="og:title" content="Check if a variant exists in the Catalog. — exists_variant" />
 
-<meta property="og:description" content="This function launches the web browser and opens a tab for each SNP
-identifier on GTEx portal." />
+<meta property="og:description" content="This function attempts to get a variant by its variant identifier and checks
+the response code. If the response code is 200 then the response has been
+successful, meaning that the variant does exist in the GWAS Catalog. If the
+response is 404 then the variant is not found in the Catalog database. Other
+errors are mapped to NA." />
 
 <meta property="og:image" content="https://rmagno.eu/gwasrapidd/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -129,28 +132,50 @@ identifier on GTEx portal." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Browse GTEx from SNP identifiers.</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ramiromagno/gwasrapidd/blob/master/R/post-variants.R'><code>R/post-variants.R</code></a></small>
-    <div class="hidden name"><code>open_in_gtex.Rd</code></div>
+    <h1>Check if a variant exists in the Catalog.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ramiromagno/gwasrapidd/blob/master/R/get_variants.R'><code>R/get_variants.R</code></a></small>
+    <div class="hidden name"><code>exists_variant.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>This function launches the web browser and opens a tab for each SNP
-identifier on GTEx portal.</p>
+    <p>This function attempts to get a variant by its variant identifier and checks
+the response code. If the response code is 200 then the response has been
+successful, meaning that the variant does exist in the GWAS Catalog. If the
+response is 404 then the variant is not found in the Catalog database. Other
+errors are mapped to NA.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>open_in_gtex</span>(<span class='no'>variant_id</span>)</pre>
+    <pre class="usage"><span class='fu'>exists_variant</span>(<span class='kw'>variant_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>page_size</span> <span class='kw'>=</span> <span class='fl'>20L</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>variant_id</th>
-      <td><p>A variant identifier, a character vector.</p></td>
+      <td><p>A character vector of GWAS Catalog variant identifiers.</p></td>
+    </tr>
+    <tr>
+      <th>verbose</th>
+      <td><p>Whether the function should be
+verbose about the different queries or not.</p></td>
+    </tr>
+    <tr>
+      <th>page_size</th>
+      <td><p>An integer scalar indicating the
+<a href='https://www.ebi.ac.uk/gwas/rest/docs/api#_paging_resources'>page</a>
+value to be used in the JSON requests, can be between <code>1</code> and
+<code>1000</code>.</p></td>
     </tr>
     </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A named logical vector, <code>TRUE</code> indicates that the variant does
+  exist in the Catalog, <code>FALSE</code> otherwise. <code>NA</code> codes other types
+  of errors. The names of the vector are the variant identifiers passed as
+  <code>variant_id</code>.</p>
     
 
   </div>
@@ -158,7 +183,9 @@ identifier on GTEx portal.</p>
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-                </ul>
+      
+      <li><a href="#value">Value</a></li>
+          </ul>
 
   </div>
 </div>

@@ -679,3 +679,58 @@ get_variants <- function(study_id = NULL,
 
 }
 
+#' Check if a variant exists in the Catalog.
+#'
+#' This function attempts to get a variant by its variant identifier and checks
+#' the response code. If the response code is 200 then the response has been
+#' successful, meaning that the variant does exist in the GWAS Catalog. If the
+#' response is 404 then the variant is not found in the Catalog database. Other
+#' errors are mapped to NA.
+#'
+#' @param variant_id A character vector of GWAS Catalog variant identifiers.
+#' @param verbose Whether the function should be
+#'   verbose about the different queries or not.
+#' @param page_size An integer scalar indicating the
+#'   \href{https://www.ebi.ac.uk/gwas/rest/docs/api#_paging_resources}{page}
+#'   value to be used in the JSON requests, can be between \code{1} and
+#'   \code{1000}.
+#'
+#' @return A named logical vector, \code{TRUE} indicates that the variant does
+#'   exist in the Catalog, \code{FALSE} otherwise. \code{NA} codes other types
+#'   of errors. The names of the vector are the variant identifiers passed as
+#'   \code{variant_id}.
+#' @export
+exists_variant <- function(variant_id = NULL, verbose = FALSE, page_size = 20L) {
+
+  if(rlang::is_null(variant_id))
+    return(logical())
+
+  assertthat::assert_that(
+    is.character(variant_id),
+    length(variant_id) > 0,
+    assertthat::noNA(variant_id))
+
+  resource_urls <- sprintf("/%s/%s/%s", "singleNucleotidePolymorphisms",
+                           urltools::url_encode(variant_id),
+                           "")
+
+  responses <- purrr::map(
+    resource_urls,
+    gc_get,
+    verbose = verbose,
+    warnings = FALSE,
+    page_size = page_size)
+
+  # Check which variants returned 200 (status == 'OK), i.e., variants do exists in the Catalog.
+  variant_exists <- purrr::map_lgl(responses, ~ .x$response_code == 200L)
+
+  # Check which variants returned 404, i.e., variants do NOT exist in the Catalog.
+  variant_not_exists <- purrr::map_lgl(responses, ~ .x$response_code == 404L)
+
+  other_error_responses <- !(variant_exists | variant_not_exists)
+
+  variant_exists[other_error_responses] <- NA
+  names(variant_exists) <- variant_id
+
+  return(variant_exists)
+}
