@@ -17,14 +17,39 @@ knitr::opts_chunk$set(
 )
 ```
 
-## 1 | What is the difference between a trait and reported trait?
+## 1 | How to be sure that I can establish a connection to the GWAS Catalog server?
+
+You can check that gwasrapidd is able to connect to [https://www.ebi.ac.uk](https://www.ebi.ac.uk) my making a connection attempt with the function `is_ebi_reachable()`:
+
+```{r eval=FALSE}
+library(gwasrapidd)
+is_ebi_reachable()
+```
+
+Returns `TRUE` if the connection is possible, or `FALSE` otherwise. If the connection is not possible, use the parameter `chatty = TRUE` to learn at what point the connection is failing.
+
+```{r eval=FALSE}
+library(gwasrapidd)
+is_ebi_reachable(chatty = TRUE)
+```
+
+
+## 2 | What resources is the GWAS Catalog database currently mapped against?
+
+The GWAS Catalog is mapped against [Ensembl](https://www.ensembl.org), [dbSNP](https://www.ncbi.nlm.nih.gov/snp/) and a specific [assembly version](https://www.ncbi.nlm.nih.gov/grc/human) of the human genome. You can get this info with `get_metadata()`:
+
+```{r}
+library(gwasrapidd)
+get_metadata()
+```
+
+## 3 | What is the difference between a trait and reported trait?
 
 There are two levels of trait description in the GWAS Catalog: (EFO) trait and reported trait.
 
 Studies are assigned one or more terms from the [Experimental Factor Ontology (EFO)](https://www.ebi.ac.uk/efo/), i.e., an EFO trait, or simply trait, that best represents the phenotype under investigation.
 
 In addition, each study is also assigned a free text reported trait. This is written by the GWAS Catalog curators and reflects the author language, and where necessary, it includes more specific and detailed description of the experimental design, e.g., interaction studies or studies with a background trait.
-
 
 As an example take the study with accession identifier `GCST000206` by EM Behrens et al. (2008). We can get the EFO trait with `get_traits()` and the reported trait with `get_studies()`:
 
@@ -43,6 +68,10 @@ study <- get_studies(study_id = 'GCST000206')
 study@studies$reported_trait
 ```
 
+## 4 | Genomic coordinates of genomic contexts seem to be wrong?
 
+The REST API response for variants contains an element named *genomic contexts*. This element is mapped onto the table `genomic_contexts` of a [variants](https://rmagno.eu/gwasrapidd/reference/variants-class.html) S4 object.
 
+Now, there is indeed a server-side bug with the column `chromosome_position` of the `genomic_contexts` table: the chromosome position returned is that of the variant and not of the gene (*genomic context*) as it should be.
 
+The GWAS Catalog team is aware of this bug, and they plan to fix it, eventually. For the time being, just do not rely on `chromosome_position` of the `genomic_contexts` table.
