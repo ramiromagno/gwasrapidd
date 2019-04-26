@@ -101,22 +101,86 @@
 
     
     
-<div id="what-is-the-difference-between-a-trait-and-reported-trait" class="section level2">
+<div id="how-to-be-sure-that-i-can-establish-a-connection-to-the-gwas-catalog-server" class="section level2">
 <h2 class="hasAnchor">
-<a href="#what-is-the-difference-between-a-trait-and-reported-trait" class="anchor"></a>1 | What is the difference between a trait and reported trait?</h2>
+<a href="#how-to-be-sure-that-i-can-establish-a-connection-to-the-gwas-catalog-server" class="anchor"></a>1 | How to be sure that I can establish a connection to the GWAS Catalog server?</h2>
+<p>You can check that gwasrapidd is able to connect to <a href="https://www.ebi.ac.uk" class="uri">https://www.ebi.ac.uk</a> my making a connection attempt with the function <code><a href="../reference/is_ebi_reachable.html">is_ebi_reachable()</a></code>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(gwasrapidd)</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw"><a href="../reference/is_ebi_reachable.html">is_ebi_reachable</a></span>()</a></code></pre></div>
+<p>Returns <code>TRUE</code> if the connection is possible, or <code>FALSE</code> otherwise. If the connection is not possible, use the parameter <code>chatty = TRUE</code> to learn at what point the connection is failing.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(gwasrapidd)</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw"><a href="../reference/is_ebi_reachable.html">is_ebi_reachable</a></span>(<span class="dt">chatty =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+</div>
+<div id="what-resources-is-the-gwas-catalog-database-currently-mapped-against" class="section level2">
+<h2 class="hasAnchor">
+<a href="#what-resources-is-the-gwas-catalog-database-currently-mapped-against" class="anchor"></a>2 | What resources is the GWAS Catalog database currently mapped against?</h2>
+<p>The GWAS Catalog is mapped against <a href="https://www.ensembl.org">Ensembl</a>, <a href="https://www.ncbi.nlm.nih.gov/snp/">dbSNP</a> and a specific <a href="https://www.ncbi.nlm.nih.gov/grc/human">assembly version</a> of the human genome. You can get this info with <code><a href="../reference/get_metadata.html">get_metadata()</a></code>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(gwasrapidd)</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw"><a href="../reference/get_metadata.html">get_metadata</a></span>()</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">#&gt; $ensembl_release_number</span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="co">#&gt; [1] 95</span></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">#&gt; $genome_build_version</span></a>
+<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co">#&gt; [1] "GRCh38.p12"</span></a>
+<a class="sourceLine" id="cb3-8" data-line-number="8"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="co">#&gt; $dbsnp_version</span></a>
+<a class="sourceLine" id="cb3-10" data-line-number="10"><span class="co">#&gt; [1] 151</span></a>
+<a class="sourceLine" id="cb3-11" data-line-number="11"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb3-12" data-line-number="12"><span class="co">#&gt; $usage_start_date</span></a>
+<a class="sourceLine" id="cb3-13" data-line-number="13"><span class="co">#&gt; [1] "2019-01-12 14:00:01 UTC"</span></a></code></pre></div>
+</div>
+<div id="what-is-the-difference-between-a-trait-and-a-reported-trait" class="section level2">
+<h2 class="hasAnchor">
+<a href="#what-is-the-difference-between-a-trait-and-a-reported-trait" class="anchor"></a>3 | What is the difference between a trait and a reported trait?</h2>
 <p>There are two levels of trait description in the GWAS Catalog: (EFO) trait and reported trait.</p>
 <p>Studies are assigned one or more terms from the <a href="https://www.ebi.ac.uk/efo/">Experimental Factor Ontology (EFO)</a>, i.e., an EFO trait, or simply trait, that best represents the phenotype under investigation.</p>
 <p>In addition, each study is also assigned a free text reported trait. This is written by the GWAS Catalog curators and reflects the author language, and where necessary, it includes more specific and detailed description of the experimental design, e.g., interaction studies or studies with a background trait.</p>
 <p>As an example take the study with accession identifier <code>GCST000206</code> by EM Behrens et al. (2008). We can get the EFO trait with <code><a href="../reference/get_traits.html">get_traits()</a></code> and the reported trait with <code><a href="../reference/get_studies.html">get_studies()</a></code>:</p>
 <p>The (EFO) trait for the Behrens study is <code>chronic childhood arthritis</code>:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(gwasrapidd)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">efo_trait &lt;-<span class="st"> </span><span class="kw"><a href="../reference/get_traits.html">get_traits</a></span>(<span class="dt">study_id =</span> <span class="st">'GCST000206'</span>)</a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">efo_trait<span class="op">@</span>traits<span class="op">$</span>trait</a>
-<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co">#&gt; [1] "chronic childhood arthritis"</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(gwasrapidd)</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">efo_trait &lt;-<span class="st"> </span><span class="kw"><a href="../reference/get_traits.html">get_traits</a></span>(<span class="dt">study_id =</span> <span class="st">'GCST000206'</span>)</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">efo_trait<span class="op">@</span>traits<span class="op">$</span>trait</a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#&gt; [1] "chronic childhood arthritis"</span></a></code></pre></div>
 <p>whereas the reported trait is <code>Arthritis (juvenile idiopathic)</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">study &lt;-<span class="st"> </span><span class="kw"><a href="../reference/get_studies.html">get_studies</a></span>(<span class="dt">study_id =</span> <span class="st">'GCST000206'</span>)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2">study<span class="op">@</span>studies<span class="op">$</span>reported_trait</a>
-<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#&gt; [1] "Arthritis (juvenile idiopathic)"</span></a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">study &lt;-<span class="st"> </span><span class="kw"><a href="../reference/get_studies.html">get_studies</a></span>(<span class="dt">study_id =</span> <span class="st">'GCST000206'</span>)</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">study<span class="op">@</span>studies<span class="op">$</span>reported_trait</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="co">#&gt; [1] "Arthritis (juvenile idiopathic)"</span></a></code></pre></div>
+</div>
+<div id="genomic-coordinates-of-genomic-contexts-seem-to-be-wrong" class="section level2">
+<h2 class="hasAnchor">
+<a href="#genomic-coordinates-of-genomic-contexts-seem-to-be-wrong" class="anchor"></a>4 | Genomic coordinates of genomic contexts seem to be wrong?</h2>
+<p>The REST API response for variants contains an element named <em>genomic contexts</em>. This element is mapped onto the table <code>genomic_contexts</code> of a <a href="https://rmagno.eu/gwasrapidd/reference/variants-class.html">variants</a> S4 object.</p>
+<p>Now, there is indeed a server-side bug with the column <code>chromosome_position</code> of the <code>genomic_contexts</code> table: the chromosome position returned is that of the variant and not of the gene (<em>genomic context</em>) as it should be.</p>
+<p>The GWAS Catalog team is aware of this bug, and they plan to fix it, eventually. For the time being, just do not rely on <code>chromosome_position</code> of the <code>genomic_contexts</code> table.</p>
+<!--
+## 5 | How to search by EFO identifier, including its child terms?
+
+The [Experimental Factor Ontology (EFO)](https://www.ebi.ac.uk/efo/) identifiers can have one or more child terms as part of its EFO hierarchy. These child terms have a narrower meaning, and oftentimes one would like to search by an EFO identifier and also by all its child identifiers. This functionality is provided by the [GWAS Catalog Web User Interface](https://www.ebi.ac.uk/gwas/) in a check box, see image below.
+
+<img src="../man/figures/child_trait.png" style="display: block; margin: auto auto auto 0;" />
+
+However there is no such option for the REST API. To circumvent this problem you can use the function `get_child_efo()` that will get all child terms of a given EFO identifier. Here's an example with the EFO identifier `'EFO_0005543'` (glioma):
+
+
+
+```r
+library(gwasrapidd)
+my_efo_id <- 'EFO_0005543'
+my_studies <- get_studies(efo_id = my_efo_id)
+n(my_studies)
+#> [1] 5
+```
+
+
+```r
+child_efo_ids <- get_child_efo(efo_id = my_efo_id)
+my_studies_w_children <- get_studies(efo_id = c(my_efo_id, child_efo_ids[['my_efo_id']]))
+n(my_studies_w_children)
+#> [1] 5
+```
+
+We find 5 studies using `'EFO_0005543'` only, and 5 studies if we include also the child EFO identifiers.
+-->
 </div>
   </div>
 
@@ -125,7 +189,10 @@
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-<li><a href="#what-is-the-difference-between-a-trait-and-reported-trait">1 | What is the difference between a trait and reported trait?</a></li>
+<li><a href="#how-to-be-sure-that-i-can-establish-a-connection-to-the-gwas-catalog-server">1 | How to be sure that I can establish a connection to the GWAS Catalog server?</a></li>
+      <li><a href="#what-resources-is-the-gwas-catalog-database-currently-mapped-against">2 | What resources is the GWAS Catalog database currently mapped against?</a></li>
+      <li><a href="#what-is-the-difference-between-a-trait-and-a-reported-trait">3 | What is the difference between a trait and a reported trait?</a></li>
+      <li><a href="#genomic-coordinates-of-genomic-contexts-seem-to-be-wrong">4 | Genomic coordinates of genomic contexts seem to be wrong?</a></li>
       </ul>
 </div>
       </div>

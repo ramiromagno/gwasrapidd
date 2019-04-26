@@ -43,7 +43,7 @@ library(gwasrapidd)
 get_metadata()
 ```
 
-## 3 | What is the difference between a trait and reported trait?
+## 3 | What is the difference between a trait and a reported trait?
 
 There are two levels of trait description in the GWAS Catalog: (EFO) trait and reported trait.
 
@@ -75,3 +75,32 @@ The REST API response for variants contains an element named *genomic contexts*.
 Now, there is indeed a server-side bug with the column `chromosome_position` of the `genomic_contexts` table: the chromosome position returned is that of the variant and not of the gene (*genomic context*) as it should be.
 
 The GWAS Catalog team is aware of this bug, and they plan to fix it, eventually. For the time being, just do not rely on `chromosome_position` of the `genomic_contexts` table.
+
+<!--
+## 5 | How to search by EFO identifier, including its child terms?
+
+The [Experimental Factor Ontology (EFO)](https://www.ebi.ac.uk/efo/) identifiers can have one or more child terms as part of its EFO hierarchy. These child terms have a narrower meaning, and oftentimes one would like to search by an EFO identifier and also by all its child identifiers. This functionality is provided by the [GWAS Catalog Web User Interface](https://www.ebi.ac.uk/gwas/) in a check box, see image below.
+
+```{r echo=FALSE, fig.align="left"}
+# All defaults
+knitr::include_graphics("../man/figures/child_trait.png")
+```
+
+However there is no such option for the REST API. To circumvent this problem you can use the function `get_child_efo()` that will get all child terms of a given EFO identifier. Here's an example with the EFO identifier `'EFO_0005543'` (glioma):
+
+
+```{r}
+library(gwasrapidd)
+my_efo_id <- 'EFO_0005543'
+my_studies <- get_studies(efo_id = my_efo_id)
+n(my_studies)
+```
+
+```{r}
+child_efo_ids <- get_child_efo(efo_id = my_efo_id)
+my_studies_w_children <- get_studies(efo_id = c(my_efo_id, child_efo_ids[['my_efo_id']]))
+n(my_studies_w_children)
+```
+
+We find `r n(my_studies)` studies using `'EFO_0005543'` only, and `r n(my_studies_w_children)` studies if we include also the child EFO identifiers.
+--> 
