@@ -67,5 +67,5 @@ variants@variants[c('variant_id', 'functional_class')]
 ## Contributors
 
 Please note that the ‘gwasrapidd’ project is released with a
-[Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to
-this project, you agree to abide by its terms.
+[Contributor Code of Conduct](.github/CODE_OF_CONDUCT.md). By
+contributing to this project, you agree to abide by its terms.
