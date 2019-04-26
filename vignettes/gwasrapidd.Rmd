@@ -17,9 +17,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-## Getting started
-
-### The GWAS Catalog
+## The GWAS Catalog
 
 The GWAS Catalog is a service provided by the EMBL-EBI and NHGRI that offers a
 manually curated and freely available database of published genome-wide
@@ -39,7 +37,7 @@ database dump in TSV or RDF/OWL formats:
 gwasrapidd facilitates the access to the Catalog via the REST API,
 allowing you to programmatically retrieve data directly into R.
 
-### GWAS Catalog Entities
+## GWAS Catalog Entities
 
 The Catalog REST API is organized around four core entities: studies, associations, variants, and traits. **gwasrapidd** provides four corresponding functions to get each of the entities: `get_studies()`, `get_associations()`, `get_variants()`, and `get_traits()`.
 
@@ -73,9 +71,7 @@ All four retrieval functions accept the `set_operation` parameter which defines 
 knitr::include_graphics("../man/figures/get_criteria.png")
 ```
 
-### Examples
-
-#### Example 1 | Finding Risk Alleles Associated with Autoimmune Disease
+## Example 1 | Finding Risk Alleles Associated with Autoimmune Disease
 
 As a first example, take the work by @Light2014. In this work the authors focused on variants that had been previously reported in genome-wide association studies (GWAS) for autoimmune disease. 
 

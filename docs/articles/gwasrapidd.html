@@ -101,12 +101,9 @@
 
     
     
-<div id="getting-started" class="section level2">
+<div id="the-gwas-catalog" class="section level2">
 <h2 class="hasAnchor">
-<a href="#getting-started" class="anchor"></a>Getting started</h2>
-<div id="the-gwas-catalog" class="section level3">
-<h3 class="hasAnchor">
-<a href="#the-gwas-catalog" class="anchor"></a>The GWAS Catalog</h3>
+<a href="#the-gwas-catalog" class="anchor"></a>The GWAS Catalog</h2>
 <p>The GWAS Catalog is a service provided by the EMBL-EBI and NHGRI that offers a manually curated and freely available database of published genome-wide association studies (GWAS). The Catalog website and infrastructure is hosted by the <a href="https://www.ebi.ac.uk">EMBL-EBI</a>.</p>
 <p>There are three ways to access the Catalog database:</p>
 <ul>
@@ -119,9 +116,9 @@
 </ul>
 <p>gwasrapidd facilitates the access to the Catalog via the REST API, allowing you to programmatically retrieve data directly into R.</p>
 </div>
-<div id="gwas-catalog-entities" class="section level3">
-<h3 class="hasAnchor">
-<a href="#gwas-catalog-entities" class="anchor"></a>GWAS Catalog Entities</h3>
+<div id="gwas-catalog-entities" class="section level2">
+<h2 class="hasAnchor">
+<a href="#gwas-catalog-entities" class="anchor"></a>GWAS Catalog Entities</h2>
 <p>The Catalog REST API is organized around four core entities: studies, associations, variants, and traits. <strong>gwasrapidd</strong> provides four corresponding functions to get each of the entities: <code><a href="../reference/get_studies.html">get_studies()</a></code>, <code><a href="../reference/get_associations.html">get_associations()</a></code>, <code><a href="../reference/get_variants.html">get_variants()</a></code>, and <code><a href="../reference/get_traits.html">get_traits()</a></code>.</p>
 <p>Each function maps to an appropriately named S4 classed object: <a href="https://rmagno.eu/gwasrapidd/reference/studies-class.html">studies</a>, <a href="https://rmagno.eu/gwasrapidd/reference/associations-class.html">associations</a>, <a href="https://rmagno.eu/gwasrapidd/reference/variants-class.html">variants</a>, and <a href="https://rmagno.eu/gwasrapidd/reference/traits-class.html">traits</a> (see Figure 1).</p>
 <div class="figure" style="text-align: left">
@@ -142,12 +139,9 @@ Figure 2 | gwasrapidd arguments for retrieval functions. Colors indicate the cri
 </p>
 </div>
 </div>
-<div id="examples" class="section level3">
-<h3 class="hasAnchor">
-<a href="#examples" class="anchor"></a>Examples</h3>
-<div id="example-1-finding-risk-alleles-associated-with-autoimmune-disease" class="section level4">
-<h4 class="hasAnchor">
-<a href="#example-1-finding-risk-alleles-associated-with-autoimmune-disease" class="anchor"></a>Example 1 | Finding Risk Alleles Associated with Autoimmune Disease</h4>
+<div id="example-1-finding-risk-alleles-associated-with-autoimmune-disease" class="section level2">
+<h2 class="hasAnchor">
+<a href="#example-1-finding-risk-alleles-associated-with-autoimmune-disease" class="anchor"></a>Example 1 | Finding Risk Alleles Associated with Autoimmune Disease</h2>
 <p>As a first example, take the work by <span class="citation">Light et al. (2014)</span>. In this work the authors focused on variants that had been previously reported in genome-wide association studies (GWAS) for autoimmune disease.</p>
 <p>With <strong>gwasrapidd</strong> we can interrogate the GWAS Catalog for the study/studies by searching by <em>autoimmune disease</em> (an EFO trait). To do that let’s load gwasrapidd first:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(gwasrapidd)</a></code></pre></div>
@@ -231,8 +225,6 @@ Figure 2 | gwasrapidd arguments for retrieval functions. Colors indicate the cri
 <a class="sourceLine" id="cb12-48" data-line-number="48"><span class="co">#&gt; 43 rs602662    G                    0.49 </span></a>
 <a class="sourceLine" id="cb12-49" data-line-number="49"><span class="co">#&gt; 44 rs2738774   A                    0.32</span></a></code></pre></div>
 </div>
-</div>
-</div>
 <div id="references" class="section level2 unnumbered">
 <h2 class="hasAnchor">
 <a href="#references" class="anchor"></a>References</h2>
@@ -249,7 +241,9 @@ Figure 2 | gwasrapidd arguments for retrieval functions. Colors indicate the cri
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-<li><a href="#getting-started">Getting started</a></li>
+<li><a href="#the-gwas-catalog">The GWAS Catalog</a></li>
+      <li><a href="#gwas-catalog-entities">GWAS Catalog Entities</a></li>
+      <li><a href="#example-1-finding-risk-alleles-associated-with-autoimmune-disease">Example 1 | Finding Risk Alleles Associated with Autoimmune Disease</a></li>
       <li><a href="#references">References</a></li>
       </ul>
 </div>
