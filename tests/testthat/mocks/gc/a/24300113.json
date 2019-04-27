@@ -1,0 +1,141 @@
+{
+    "riskFrequency": "NR",
+    "pvalueDescription": null,
+    "pvalueMantissa": 7,
+    "pvalueExponent": -14,
+    "multiSnpHaplotype": false,
+    "snpInteraction": true,
+    "snpType": "known",
+    "standardError": null,
+    "range": null,
+    "description": null,
+    "orPerCopyNum": null,
+    "betaNum": null,
+    "betaUnit": null,
+    "betaDirection": null,
+    "loci": [
+        {
+            "haplotypeSnpCount": null,
+            "description": "SNP x SNP interaction",
+            "strongestRiskAlleles": [
+                {
+                    "riskAlleleName": "rs1333048-G",
+                    "riskFrequency": null,
+                    "genomeWide": true,
+                    "limitedList": false,
+                    "_links": {
+                        "snp": {
+                            "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs1333048"
+                        }
+                    }
+                }
+            ],
+            "authorReportedGenes": [
+                {
+                    "geneName": "CDKN2A",
+                    "entrezGeneIds": [
+                        {
+                            "entrezGeneId": "1029"
+                        }
+                    ],
+                    "ensemblGeneIds": [
+                        {
+                            "ensemblGeneId": "ENSG00000147889"
+                        }
+                    ]
+                },
+                {
+                    "geneName": "CDKN2B",
+                    "entrezGeneIds": [
+                        {
+                            "entrezGeneId": "1030"
+                        }
+                    ],
+                    "ensemblGeneIds": [
+                        {
+                            "ensemblGeneId": "ENSG00000147883"
+                        }
+                    ]
+                }
+            ],
+            "_links": {
+                "association": {
+                    "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/24300113{?projection}",
+                    "templated": true
+                }
+            }
+        },
+        {
+            "haplotypeSnpCount": null,
+            "description": "SNP x SNP interaction",
+            "strongestRiskAlleles": [
+                {
+                    "riskAlleleName": "rs1333049-G",
+                    "riskFrequency": null,
+                    "genomeWide": true,
+                    "limitedList": false,
+                    "_links": {
+                        "snp": {
+                            "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs1333049"
+                        }
+                    }
+                }
+            ],
+            "authorReportedGenes": [
+                {
+                    "geneName": "CDKN2A",
+                    "entrezGeneIds": [
+                        {
+                            "entrezGeneId": "1029"
+                        }
+                    ],
+                    "ensemblGeneIds": [
+                        {
+                            "ensemblGeneId": "ENSG00000147889"
+                        }
+                    ]
+                },
+                {
+                    "geneName": "CDKN2B",
+                    "entrezGeneIds": [
+                        {
+                            "entrezGeneId": "1030"
+                        }
+                    ],
+                    "ensemblGeneIds": [
+                        {
+                            "ensemblGeneId": "ENSG00000147883"
+                        }
+                    ]
+                }
+            ],
+            "_links": {
+                "association": {
+                    "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/24300113{?projection}",
+                    "templated": true
+                }
+            }
+        }
+    ],
+    "lastMappingDate": "2018-07-27T00:50:42.000+0000",
+    "lastUpdateDate": "2018-07-27T00:50:42.000+0000",
+    "pvalue": 7.0E-14,
+    "_links": {
+        "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/24300113"
+        },
+        "association": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/24300113{?projection}",
+            "templated": true
+        },
+        "snps": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/24300113/snps"
+        },
+        "efoTraits": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/24300113/efoTraits"
+        },
+        "study": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/24300113/study"
+        }
+    }
+}

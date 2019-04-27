@@ -77,7 +77,7 @@ test_that("n(): associations that are NA", {
 })
 
 with_mock_api({
-  test_that("n(): 1 associations: '25389945'", {
+  test_that("n(): 1 association: '25389945'", {
     my_association <- get_associations(association_id = '25389945')
     expect_is(my_association, 'associations')
     expect_identical(n(my_association), 1L)
@@ -148,3 +148,58 @@ with_mock_api({
 #
 ## `[`(): Subset operator for GWAS Catalog S4 objects.
 #
+
+### studies
+with_mock_api({
+  test_that("subsetting studies with `[`", {
+    study_ids <- c('GCST001085', 'GCST000392')
+    my_studies <- get_studies(study_id = study_ids)
+    expect_is(my_studies, 'studies')
+    expect_identical(my_studies, my_studies[])
+    expect_identical(my_studies['GCST001085']@studies$study_id, 'GCST001085')
+    expect_identical(my_studies['GCST001085'], my_studies[1])
+    expect_identical(my_studies['GCST000392']@studies$study_id, 'GCST000392')
+    expect_identical(my_studies['GCST000392'], my_studies[2])
+  })
+})
+
+### associations
+with_mock_api({
+  test_that("subsetting associations with `[`", {
+    association_ids <- c('25389945', '24300113')
+    my_associations <- get_associations(association_id = association_ids)
+    expect_is(my_associations, 'associations')
+    expect_identical(my_associations, my_associations[])
+    expect_identical(my_associations['25389945']@associations$association_id, '25389945')
+    expect_identical(my_associations['25389945'], my_associations[1])
+    expect_identical(my_associations['24300113']@associations$association_id, '24300113')
+    expect_identical(my_associations['24300113'], my_associations[2])
+  })
+})
+
+### variants
+with_mock_api({
+  test_that("subsetting variants with `[`", {
+    my_variants <- get_variants(variant_id = c('rs3798440', 'rs7329174'))
+    expect_is(my_variants, 'variants')
+    expect_identical(my_variants, my_variants[])
+    expect_identical(my_variants['rs3798440']@variants$variant_id, 'rs3798440')
+    expect_identical(my_variants['rs3798440'], my_variants[1])
+    expect_identical(my_variants['rs7329174']@variants$variant_id, 'rs7329174')
+    expect_identical(my_variants['rs7329174'], my_variants[2])
+  })
+})
+
+### traits
+with_mock_api({
+  test_that("subsetting traits with `[`", {
+    trait_ids <- c('EFO_0000537', 'EFO_0000305')
+    my_traits <- get_traits(efo_id = trait_ids)
+    expect_is(my_traits, 'traits')
+    expect_identical(my_traits, my_traits[])
+    expect_identical(my_traits['EFO_0000537']@traits$efo_id, 'EFO_0000537')
+    expect_identical(my_traits['EFO_0000537'], my_traits[1])
+    expect_identical(my_traits['EFO_0000305']@traits$efo_id, 'EFO_0000305')
+    expect_identical(my_traits['EFO_0000305'], my_traits[2])
+  })
+})

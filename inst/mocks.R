@@ -125,6 +125,7 @@ capture_requests({
 capture_requests({
   gwasrapidd::get_associations(study_id = 'GCST001085')
   gwasrapidd::get_associations(association_id = '25389945')
+  gwasrapidd::get_associations(association_id = '24300113')
   gwasrapidd::get_associations(variant_id = c('rs3798440', 'rs7329174'))
   gwasrapidd::get_associations(efo_id = 'EFO_0007990')
   gwasrapidd::get_associations(pubmed_id = '21626137')
