@@ -315,3 +315,67 @@ with_mock_api({
     expect_true(setequal(union(t1, t2), union(t2, t1))) # setequal is invariant to order
   })
 })
+
+#
+## bind() on S4 studies.
+#
+with_mock_api({
+  test_that("bind S4 studies", {
+    s1 <- get_studies(study_id = 'GCST001085')
+    s2 <- get_studies(study_id = 'GCST000392')
+    s3 <- get_studies(study_id = c('GCST001085', 'GCST000392'))
+    expect_is(s1, 'studies')
+    expect_is(s2, 'studies')
+    expect_is(s3, 'studies')
+    expect_true(identical(bind(s1, s2), s3))
+    expect_false(identical(bind(s2, s1), s3))
+  })
+})
+
+#
+## bind() on S4 associations.
+#
+with_mock_api({
+  test_that("bind S4 associations", {
+    a1 <- get_associations(association_id = '25389945')
+    a2 <- get_associations(association_id = '24300113')
+    a3 <- get_associations(association_id = c('25389945', '24300113'))
+    expect_is(a1, 'associations')
+    expect_is(a2, 'associations')
+    expect_is(a3, 'associations')
+    expect_true(identical(bind(a1, a2), a3))
+    expect_false(identical(bind(a2, a1), a3))
+  })
+})
+
+#
+## bind() on S4 variants.
+#
+with_mock_api({
+  test_that("bind S4 variants", {
+    v1 <- get_variants(variant_id = 'rs3798440')
+    v2 <- get_variants(variant_id = 'rs7329174')
+    v3 <- get_variants(variant_id = c('rs3798440', 'rs7329174'))
+    expect_is(v1, 'variants')
+    expect_is(v2, 'variants')
+    expect_is(v3, 'variants')
+    expect_true(identical(bind(v1, v2), v3))
+    expect_false(identical(bind(v2, v1), v3))
+  })
+})
+
+#
+## bind() on S4 traits.
+#
+with_mock_api({
+  test_that("bind S4 traits", {
+    t1 <- get_traits(efo_id = 'EFO_0000537')
+    t2 <- get_traits(efo_id = 'EFO_0000305')
+    t3 <- get_traits(efo_id = c('EFO_0000537', 'EFO_0000305'))
+    expect_is(t1, 'traits')
+    expect_is(t2, 'traits')
+    expect_is(t3, 'traits')
+    expect_true(identical(bind(t1, t2), t3))
+    expect_false(identical(bind(t2, t1), t3))
+  })
+})
