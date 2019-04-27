@@ -4,11 +4,11 @@
 \alias{loci_tbl}
 \title{Creates a loci table.}
 \usage{
-loci_tbl(association_id = integer(), locus_id = integer(),
+loci_tbl(association_id = character(), locus_id = integer(),
   haplotype_snp_count = integer(), description = character())
 }
 \arguments{
-\item{association_id}{An integer vector of association identifiers.}
+\item{association_id}{A character vector of association identifiers.}
 
 \item{locus_id}{An integer vector of locus identifiers.}
 

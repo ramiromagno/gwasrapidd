@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gwasrapidd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9009</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9010</span>
       </span>
     </div>
 
@@ -168,8 +168,7 @@ Figure 2 | gwasrapidd arguments for retrieval functions. Colors indicate the cri
 <p>However, not all variants meet the level of significance, as required by <span class="citation">Light et al. (2014)</span>:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="co"># Get association ids for which pvalue is less than 1e-6.</span></a>
 <a class="sourceLine" id="cb10-2" data-line-number="2">dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(my_associations<span class="op">@</span>associations, pvalue <span class="op">&lt;</span><span class="st"> </span><span class="fl">1e-6</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># Filter by p-value</span></a>
-<a class="sourceLine" id="cb10-3" data-line-number="3"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span>(association_id) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># Extract column association_id</span></a>
-<a class="sourceLine" id="cb10-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/character">as.character</a></span>() -&gt;<span class="st"> </span>association_ids <span class="co"># Convert to character</span></a></code></pre></div>
+<a class="sourceLine" id="cb10-3" data-line-number="3"><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span>(association_id) -&gt;<span class="st"> </span>association_ids <span class="co"># Extract column association_id</span></a></code></pre></div>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="co"># Extract associations by association id</span></a>
 <a class="sourceLine" id="cb11-2" data-line-number="2">my_associations2 &lt;-<span class="st"> </span>my_associations[association_ids]</a>
 <a class="sourceLine" id="cb11-3" data-line-number="3"><span class="kw"><a href="../reference/n.html">n</a></span>(my_associations2)</a>

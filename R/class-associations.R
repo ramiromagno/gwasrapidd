@@ -10,7 +10,7 @@ setOldClass(c("tbl_df", "tbl", "data.frame"))
 #'
 #' @slot associations A \code{\link[tibble]{tibble}} listing associations. Columns:
 #' \describe{
-#' \item{association_id}{GWAS Catalog association accession identifier, e.g., \code{20250}.}
+#' \item{association_id}{GWAS Catalog association accession identifier, e.g., \code{"20250"}.}
 #' \item{pvalue}{Reported p-value for strongest variant risk or effect allele.}
 #' \item{pvalue_description}{Information describing context of p-value.}
 #' \item{pvalue_mantissa}{Mantissa of p-value.}
@@ -34,7 +34,7 @@ setOldClass(c("tbl_df", "tbl", "data.frame"))
 #' }
 #' @slot loci A \code{\link[tibble]{tibble}} listing loci. Columns:
 #' \describe{
-#' \item{association_id}{GWAS Catalog association accession identifier, e.g., \code{20250}.}
+#' \item{association_id}{GWAS Catalog association accession identifier, e.g., \code{"20250"}.}
 #' \item{locus_id}{A locus identifier referring to a single variant locus or to
 #' a multi-loci entity such as a multi-SNP haplotype.}
 #' \item{haplotype_snp_count}{Number of variants per locus. Most loci are
@@ -49,7 +49,7 @@ setOldClass(c("tbl_df", "tbl", "data.frame"))
 #' }
 #' @slot risk_alleles A \code{\link[tibble]{tibble}} listing risk alleles. Columns:
 #' \describe{
-#' \item{association_id}{GWAS Catalog association accession identifier, e.g., \code{20250}.}
+#' \item{association_id}{GWAS Catalog association accession identifier, e.g., \code{"20250"}.}
 #' \item{locus_id}{A locus identifier referring to a single variant locus or to
 #' a multi-loci entity such as a multi-SNP haplotype.}
 #' \item{variant_id}{Variant identifier, e.g., \code{'rs1333048'}.}
@@ -63,14 +63,14 @@ setOldClass(c("tbl_df", "tbl", "data.frame"))
 #' }
 #' @slot genes A \code{\link[tibble]{tibble}} listing author reported genes. Columns:
 #' \describe{
-#' \item{association_id}{GWAS Catalog association accession identifier, e.g., \code{20250}.}
+#' \item{association_id}{GWAS Catalog association accession identifier, e.g., \code{"20250"}.}
 #' \item{locus_id}{A locus identifier referring to a single variant locus or to
 #' a multi-loci entity such as a multi-SNP haplotype.}
 #' \item{gene_name}{Gene symbol according to \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.}
 #' }
 #' @slot ensembl_ids A \code{\link[tibble]{tibble}} listing Ensembl gene identifiers. Columns:
 #' \describe{
-#' \item{association_id}{GWAS Catalog association accession identifier, e.g., \code{20250}.}
+#' \item{association_id}{GWAS Catalog association accession identifier, e.g., \code{"20250"}.}
 #' \item{locus_id}{A locus identifier referring to a single variant locus or to
 #' a multi-loci entity such as a multi-SNP haplotype.}
 #' \item{gene_name}{Gene symbol according to \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.}
@@ -83,7 +83,7 @@ setOldClass(c("tbl_df", "tbl", "data.frame"))
 #' }
 #' @slot entrez_ids A \code{\link[tibble]{tibble}} listing Entrez gene identifiers. Columns:
 #' \describe{
-#' \item{association_id}{GWAS Catalog association accession identifier, e.g., \code{20250}.}
+#' \item{association_id}{GWAS Catalog association accession identifier, e.g., \code{"20250"}.}
 #' \item{locus_id}{A locus identifier referring to a single variant locus or to
 #' a multi-loci entity such as a multi-SNP haplotype.}
 #' \item{gene_name}{Gene symbol according to \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.}
@@ -137,7 +137,7 @@ associations <- function(associations = associations_tbl(),
 #'
 #' Creates an associations table.
 #'
-#' @param association_id An integer vector of association identifiers.
+#' @param association_id A character vector of association identifiers.
 #' @param pvalue A numeric vector of p-values.
 #' @param pvalue_description A character vector of p-value context descriptions.
 #' @param pvalue_mantissa An integer vector of p-value mantissas.
@@ -161,7 +161,7 @@ associations <- function(associations = associations_tbl(),
 #'   to the function.
 #' @keywords internal
 associations_tbl <- function(
-  association_id = integer(),
+  association_id = character(),
   pvalue = double(),
   pvalue_description = character(),
   pvalue_mantissa = integer(),
@@ -205,7 +205,7 @@ associations_tbl <- function(
 #'
 #' Creates a loci table.
 #'
-#' @param association_id An integer vector of association identifiers.
+#' @param association_id A character vector of association identifiers.
 #' @param locus_id An integer vector of locus identifiers.
 #' @param haplotype_snp_count An integer vector indicating the number of
 #'   variants in the haplotype.
@@ -215,7 +215,7 @@ associations_tbl <- function(
 #'   to the function.
 #' @keywords internal
 loci_tbl <- function(
-  association_id = integer(),
+  association_id = character(),
   locus_id = integer(),
   haplotype_snp_count = integer(),
   description = character()
@@ -235,7 +235,7 @@ loci_tbl <- function(
 #'
 #' Creates a risk alleles table.
 #'
-#' @param association_id An integer vector of association identifiers.
+#' @param association_id A character vector of association identifiers.
 #' @param locus_id An integer vector of locus identifiers.
 #' @param variant_id A character vector of variant identifiers.
 #' @param risk_allele A character vector of risk or effect allele names.
@@ -247,7 +247,7 @@ loci_tbl <- function(
 #'   to the function.
 #' @keywords internal
 risk_alleles_tbl <- function(
-  association_id = integer(),
+  association_id = character(),
   locus_id = integer(),
   variant_id = character(),
   risk_allele = character(),
@@ -272,7 +272,7 @@ risk_alleles_tbl <- function(
 #'
 #' Creates an authors' reported genes table.
 #'
-#' @param association_id An integer vector of association identifiers.
+#' @param association_id A character vector of association identifiers.
 #' @param locus_id An integer vector of locus identifiers.
 #' @param gene_name A character vector of gene symbol according to
 #'   \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.
@@ -281,7 +281,7 @@ risk_alleles_tbl <- function(
 #'   to the function.
 #' @keywords internal
 reported_genes_tbl <- function(
-  association_id = integer(),
+  association_id = character(),
   locus_id = integer(),
   gene_name = character()
 ) {
@@ -297,7 +297,7 @@ reported_genes_tbl <- function(
 #'
 #' Creates an Ensembl gene identifiers' table.
 #'
-#' @param association_id An integer vector of association identifiers.
+#' @param association_id A character vector of association identifiers.
 #' @param locus_id An integer vector of locus identifiers.
 #' @param gene_name A character vector of gene symbol according to
 #'   \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.
@@ -307,7 +307,7 @@ reported_genes_tbl <- function(
 #'   to the function.
 #' @keywords internal
 ensembl_ids_tbl <- function(
-  association_id = integer(),
+  association_id = character(),
   locus_id = integer(),
   gene_name = character(),
   ensembl_id = character()
@@ -325,7 +325,7 @@ ensembl_ids_tbl <- function(
 #'
 #' Creates an Entrez gene identifiers' table.
 #'
-#' @param association_id An integer vector of association identifiers.
+#' @param association_id A character vector of association identifiers.
 #' @param locus_id An integer vector of locus identifiers.
 #' @param gene_name A character vector of gene symbol according to
 #'   \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.
@@ -335,7 +335,7 @@ ensembl_ids_tbl <- function(
 #'   to the function.
 #' @keywords internal
 entrez_ids_tbl <- function(
-  association_id = integer(),
+  association_id = character(),
   locus_id = integer(),
   gene_name = character(),
   entrez_id = character()

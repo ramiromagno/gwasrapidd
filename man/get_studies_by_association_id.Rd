@@ -8,7 +8,7 @@ get_studies_by_association_id(association_id = NULL, verbose = FALSE,
   warnings = TRUE, page_size = 20L)
 }
 \arguments{
-\item{association_id}{An integer vector of GWAS Catalog association
+\item{association_id}{A character vector of GWAS Catalog association
 identifiers.}
 
 \item{verbose}{Whether the function should be verbose about the different

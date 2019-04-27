@@ -13,7 +13,7 @@ get_associations(study_id = NULL, association_id = NULL,
 \item{study_id}{A \code{character} vector of GWAS Catalog study accession
 identifiers.}
 
-\item{association_id}{An \code{integer} vector of GWAS Catalog association
+\item{association_id}{A \code{character} vector of GWAS Catalog association
 identifiers.}
 
 \item{variant_id}{A \code{character} vector of GWAS Catalog variant identifiers.}

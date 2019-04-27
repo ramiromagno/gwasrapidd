@@ -4,13 +4,13 @@
 \alias{risk_alleles_tbl}
 \title{Creates a risk alleles table.}
 \usage{
-risk_alleles_tbl(association_id = integer(), locus_id = integer(),
+risk_alleles_tbl(association_id = character(), locus_id = integer(),
   variant_id = character(), risk_allele = character(),
   risk_frequency = double(), genome_wide = logical(),
   limited_list = logical())
 }
 \arguments{
-\item{association_id}{An integer vector of association identifiers.}
+\item{association_id}{A character vector of association identifiers.}
 
 \item{locus_id}{An integer vector of locus identifiers.}
 

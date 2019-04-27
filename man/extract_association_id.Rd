@@ -11,7 +11,7 @@ extract_association_id(urls)
 \code{".*{association_id}$"}.}
 }
 \value{
-An integer vector of association identifiers.
+A character vector of association identifiers.
 }
 \description{
 This function extracts association identifiers from URLs of the form:

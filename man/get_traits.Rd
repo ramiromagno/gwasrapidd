@@ -12,7 +12,7 @@ get_traits(study_id = NULL, association_id = NULL, efo_id = NULL,
 \item{study_id}{A \code{character} vector of GWAS Catalog study accession
 identifiers.}
 
-\item{association_id}{An \code{integer} vector of GWAS Catalog association
+\item{association_id}{A \code{character} vector of GWAS Catalog association
 identifiers.}
 
 \item{efo_id}{A character vector of \href{https://www.ebi.ac.uk/efo/}{EFO}

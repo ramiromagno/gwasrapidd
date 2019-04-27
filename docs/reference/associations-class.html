@@ -78,7 +78,7 @@ primary key." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gwasrapidd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9009</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9010</span>
       </span>
     </div>
 
@@ -154,7 +154,7 @@ primary key.</p>
     <dl class='dl-horizontal'>
 <dt><code>associations</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing associations. Columns:
 <dl class='dl-horizontal'>
-<dt>association_id</dt><dd><p>GWAS Catalog association accession identifier, e.g., <code>20250</code>.</p></dd>
+<dt>association_id</dt><dd><p>GWAS Catalog association accession identifier, e.g., <code>"20250"</code>.</p></dd>
 <dt>pvalue</dt><dd><p>Reported p-value for strongest variant risk or effect allele.</p></dd>
 <dt>pvalue_description</dt><dd><p>Information describing context of p-value.</p></dd>
 <dt>pvalue_mantissa</dt><dd><p>Mantissa of p-value.</p></dd>
@@ -178,7 +178,7 @@ Catalog are &gt;1.</p></dd>
 </dl></p></dd>
     <dt><code>loci</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing loci. Columns:
 <dl class='dl-horizontal'>
-<dt>association_id</dt><dd><p>GWAS Catalog association accession identifier, e.g., <code>20250</code>.</p></dd>
+<dt>association_id</dt><dd><p>GWAS Catalog association accession identifier, e.g., <code>"20250"</code>.</p></dd>
 <dt>locus_id</dt><dd><p>A locus identifier referring to a single variant locus or to
 a multi-loci entity such as a multi-SNP haplotype.</p></dd>
 <dt>haplotype_snp_count</dt><dd><p>Number of variants per locus. Most loci are
@@ -193,7 +193,7 @@ Haplotype</code>.</p></dd>
 </dl></p></dd>
     <dt><code>risk_alleles</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing risk alleles. Columns:
 <dl class='dl-horizontal'>
-<dt>association_id</dt><dd><p>GWAS Catalog association accession identifier, e.g., <code>20250</code>.</p></dd>
+<dt>association_id</dt><dd><p>GWAS Catalog association accession identifier, e.g., <code>"20250"</code>.</p></dd>
 <dt>locus_id</dt><dd><p>A locus identifier referring to a single variant locus or to
 a multi-loci entity such as a multi-SNP haplotype.</p></dd>
 <dt>variant_id</dt><dd><p>Variant identifier, e.g., <code>'rs1333048'</code>.</p></dd>
@@ -207,14 +207,14 @@ haplotype the haplotype frequency will be extracted.</p></dd>
 </dl></p></dd>
     <dt><code>genes</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing author reported genes. Columns:
 <dl class='dl-horizontal'>
-<dt>association_id</dt><dd><p>GWAS Catalog association accession identifier, e.g., <code>20250</code>.</p></dd>
+<dt>association_id</dt><dd><p>GWAS Catalog association accession identifier, e.g., <code>"20250"</code>.</p></dd>
 <dt>locus_id</dt><dd><p>A locus identifier referring to a single variant locus or to
 a multi-loci entity such as a multi-SNP haplotype.</p></dd>
 <dt>gene_name</dt><dd><p>Gene symbol according to <a href='https://www.genenames.org/'>HUGO Gene Nomenclature (HGNC)</a>.</p></dd>
 </dl></p></dd>
     <dt><code>ensembl_ids</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing Ensembl gene identifiers. Columns:
 <dl class='dl-horizontal'>
-<dt>association_id</dt><dd><p>GWAS Catalog association accession identifier, e.g., <code>20250</code>.</p></dd>
+<dt>association_id</dt><dd><p>GWAS Catalog association accession identifier, e.g., <code>"20250"</code>.</p></dd>
 <dt>locus_id</dt><dd><p>A locus identifier referring to a single variant locus or to
 a multi-loci entity such as a multi-SNP haplotype.</p></dd>
 <dt>gene_name</dt><dd><p>Gene symbol according to <a href='https://www.genenames.org/'>HUGO Gene Nomenclature (HGNC)</a>.</p></dd>
@@ -227,7 +227,7 @@ annotation in Ensembl</a> for more information.</p></dd>
 </dl></p></dd>
     <dt><code>entrez_ids</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing Entrez gene identifiers. Columns:
 <dl class='dl-horizontal'>
-<dt>association_id</dt><dd><p>GWAS Catalog association accession identifier, e.g., <code>20250</code>.</p></dd>
+<dt>association_id</dt><dd><p>GWAS Catalog association accession identifier, e.g., <code>"20250"</code>.</p></dd>
 <dt>locus_id</dt><dd><p>A locus identifier referring to a single variant locus or to
 a multi-loci entity such as a multi-SNP haplotype.</p></dd>
 <dt>gene_name</dt><dd><p>Gene symbol according to <a href='https://www.genenames.org/'>HUGO Gene Nomenclature (HGNC)</a>.</p></dd>

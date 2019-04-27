@@ -1,3 +1,10 @@
+## gwasrapidd 0.0.0.9010
+
+- Changed type of column `association_id` in the S4 class `associations` from
+`integer()` to `character()`. This saves us from unnecessary coercions from 
+integer to character when searching by association identifers.
+- The cheatsheet is also changed to reflect this update.
+
 ## gwasrapidd 0.0.0.9009
 
 - Added function `exists_variant()`

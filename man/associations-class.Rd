@@ -16,7 +16,7 @@ primary key.
 \describe{
 \item{\code{associations}}{A \code{\link[tibble]{tibble}} listing associations. Columns:
 \describe{
-\item{association_id}{GWAS Catalog association accession identifier, e.g., \code{20250}.}
+\item{association_id}{GWAS Catalog association accession identifier, e.g., \code{"20250"}.}
 \item{pvalue}{Reported p-value for strongest variant risk or effect allele.}
 \item{pvalue_description}{Information describing context of p-value.}
 \item{pvalue_mantissa}{Mantissa of p-value.}
@@ -41,7 +41,7 @@ Catalog are >1.}
 
 \item{\code{loci}}{A \code{\link[tibble]{tibble}} listing loci. Columns:
 \describe{
-\item{association_id}{GWAS Catalog association accession identifier, e.g., \code{20250}.}
+\item{association_id}{GWAS Catalog association accession identifier, e.g., \code{"20250"}.}
 \item{locus_id}{A locus identifier referring to a single variant locus or to
 a multi-loci entity such as a multi-SNP haplotype.}
 \item{haplotype_snp_count}{Number of variants per locus. Most loci are
@@ -57,7 +57,7 @@ Haplotype}.}
 
 \item{\code{risk_alleles}}{A \code{\link[tibble]{tibble}} listing risk alleles. Columns:
 \describe{
-\item{association_id}{GWAS Catalog association accession identifier, e.g., \code{20250}.}
+\item{association_id}{GWAS Catalog association accession identifier, e.g., \code{"20250"}.}
 \item{locus_id}{A locus identifier referring to a single variant locus or to
 a multi-loci entity such as a multi-SNP haplotype.}
 \item{variant_id}{Variant identifier, e.g., \code{'rs1333048'}.}
@@ -72,7 +72,7 @@ haplotype the haplotype frequency will be extracted.}
 
 \item{\code{genes}}{A \code{\link[tibble]{tibble}} listing author reported genes. Columns:
 \describe{
-\item{association_id}{GWAS Catalog association accession identifier, e.g., \code{20250}.}
+\item{association_id}{GWAS Catalog association accession identifier, e.g., \code{"20250"}.}
 \item{locus_id}{A locus identifier referring to a single variant locus or to
 a multi-loci entity such as a multi-SNP haplotype.}
 \item{gene_name}{Gene symbol according to \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.}
@@ -80,7 +80,7 @@ a multi-loci entity such as a multi-SNP haplotype.}
 
 \item{\code{ensembl_ids}}{A \code{\link[tibble]{tibble}} listing Ensembl gene identifiers. Columns:
 \describe{
-\item{association_id}{GWAS Catalog association accession identifier, e.g., \code{20250}.}
+\item{association_id}{GWAS Catalog association accession identifier, e.g., \code{"20250"}.}
 \item{locus_id}{A locus identifier referring to a single variant locus or to
 a multi-loci entity such as a multi-SNP haplotype.}
 \item{gene_name}{Gene symbol according to \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.}
@@ -94,7 +94,7 @@ annotation in Ensembl} for more information.}
 
 \item{\code{entrez_ids}}{A \code{\link[tibble]{tibble}} listing Entrez gene identifiers. Columns:
 \describe{
-\item{association_id}{GWAS Catalog association accession identifier, e.g., \code{20250}.}
+\item{association_id}{GWAS Catalog association accession identifier, e.g., \code{"20250"}.}
 \item{locus_id}{A locus identifier referring to a single variant locus or to
 a multi-loci entity such as a multi-SNP haplotype.}
 \item{gene_name}{Gene symbol according to \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.}

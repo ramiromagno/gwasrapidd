@@ -6,12 +6,11 @@
 #' @param urls A character vector of URLs of the form
 #'   \code{".*{association_id}$"}.
 #'
-#' @return An integer vector of association identifiers.
+#' @return A character vector of association identifiers.
 #' @keywords internal
 extract_association_id <- function(urls) {
-  assoc_ids_c <- stringr::str_extract(urls, "(\\d+)$")
-  assoc_ids_i <- as.integer(assoc_ids_c)
-  return(assoc_ids_i)
+  assoc_ids <- stringr::str_extract(urls, "(\\d+)$")
+  return(assoc_ids)
 }
 
 #' Extract allele names from strings of the form rs123-G

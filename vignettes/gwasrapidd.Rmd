@@ -127,8 +127,7 @@ However, not all variants meet the level of significance, as required by @Light2
 ```{r}
 # Get association ids for which pvalue is less than 1e-6.
 dplyr::filter(my_associations@associations, pvalue < 1e-6) %>% # Filter by p-value
-  dplyr::pull(association_id) %>% # Extract column association_id
-  as.character() -> association_ids # Convert to character
+  dplyr::pull(association_id) -> association_ids # Extract column association_id
 ```
 
 ```{r}

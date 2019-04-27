@@ -4,11 +4,11 @@
 \alias{entrez_ids_tbl}
 \title{Creates an Entrez gene identifiers' table.}
 \usage{
-entrez_ids_tbl(association_id = integer(), locus_id = integer(),
+entrez_ids_tbl(association_id = character(), locus_id = integer(),
   gene_name = character(), entrez_id = character())
 }
 \arguments{
-\item{association_id}{An integer vector of association identifiers.}
+\item{association_id}{A character vector of association identifiers.}
 
 \item{locus_id}{An integer vector of locus identifiers.}
 

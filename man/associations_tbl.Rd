@@ -4,7 +4,7 @@
 \alias{associations_tbl}
 \title{Creates an associations table.}
 \usage{
-associations_tbl(association_id = integer(), pvalue = double(),
+associations_tbl(association_id = character(), pvalue = double(),
   pvalue_description = character(), pvalue_mantissa = integer(),
   pvalue_exponent = integer(), multiple_snp_haplotype = logical(),
   snp_interaction = logical(), snp_type = character(),
@@ -16,7 +16,7 @@ associations_tbl(association_id = integer(), pvalue = double(),
   last_update_date = lubridate::ymd_hms())
 }
 \arguments{
-\item{association_id}{An integer vector of association identifiers.}
+\item{association_id}{A character vector of association identifiers.}
 
 \item{pvalue}{A numeric vector of p-values.}
 

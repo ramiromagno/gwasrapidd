@@ -58,7 +58,7 @@ a_obj_to_associations_tbl <- function(association_ids, obj) {
   with(
     obj,
     associations_tbl(
-      association_id = missing_to_na(association_ids, na = NA_integer_),
+      association_id = missing_to_na(association_ids),
       pvalue = missing_to_na(pvalue),
       pvalue_description = missing_to_na(pvalueDescription),
       pvalue_mantissa = missing_to_na(pvalueMantissa, na = NA_integer_),

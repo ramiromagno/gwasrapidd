@@ -50,7 +50,7 @@ get_associations_by_study_id <- function(study_id = NULL, verbose = FALSE, warni
 #'
 #' Gets associations by GWAS Catalog internal association identifiers.
 #'
-#' @param association_id An \code{integer} vector of GWAS Catalog association
+#' @param association_id A \code{character} vector of GWAS Catalog association
 #'   identifiers.
 #' @param verbose A \code{logical} indicating whether the function should be
 #'   verbose about the different queries or not.
@@ -347,7 +347,7 @@ get_associations_all <- function(verbose = FALSE, warnings = TRUE, page_size = 2
 #'
 #' @param study_id A \code{character} vector of GWAS Catalog study accession
 #'   identifiers.
-#' @param association_id An \code{integer} vector of GWAS Catalog association
+#' @param association_id A \code{character} vector of GWAS Catalog association
 #'   identifiers.
 #' @param variant_id A \code{character} vector of GWAS Catalog variant identifiers.
 #' @param efo_id A character vector of \href{https://www.ebi.ac.uk/efo/}{EFO}

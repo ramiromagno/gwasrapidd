@@ -5,9 +5,9 @@ context("test-parse-utils")
 #
 
 test_that("extract_association_id", {
-  expect_identical(extract_association_id("https://www.ebi.ac.uk/gwas/rest/api/associations/16510553"), 16510553L)
-  expect_identical(extract_association_id("/associations/16510553"), 16510553L)
-  expect_identical(extract_association_id(c("/associations/16510553", "/associations/24534")), c(16510553L, 24534L))
+  expect_identical(extract_association_id("https://www.ebi.ac.uk/gwas/rest/api/associations/16510553"), '16510553')
+  expect_identical(extract_association_id("/associations/16510553"), '16510553')
+  expect_identical(extract_association_id(c("/associations/16510553", "/associations/24534")), c('16510553', '24534'))
 })
 
 #
