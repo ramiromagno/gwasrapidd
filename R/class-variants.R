@@ -85,12 +85,14 @@ variants <- function(variants = variants_tbl(),
                      genomic_contexts = genomic_contexts_tbl(),
                      ensembl_ids = v_ensembl_ids_tbl(),
                      entrez_ids = v_entrez_ids_tbl()) {
-  methods::new("variants",
+  s4_variants <- methods::new("variants",
       variants = variants,
       genomic_contexts = genomic_contexts,
       ensembl_ids = ensembl_ids,
       entrez_ids = entrez_ids
   )
+  # Drop rows in tibbles whose value of variant_id == NA_character.
+  variants_drop_na(s4_variants)
 }
 
 #' Creates a variants table.
@@ -225,4 +227,30 @@ v_entrez_ids_tbl <- function(variant_id = character(),
   return(tbl)
 }
 
+#' Drop any NA variants.
+#'
+#' This function takes a variants S4 object and removes any variant identifiers
+#' that might have been NA. This ensures that there is always a non-NA
+#' \code{variant_id} value in all tables. This is important as the \code{variant_id}
+#' is the primary key.
+#'
+#' @param s4_variants An object of class \linkS4class{variants}.
+#'
+#' @return An object of class \linkS4class{variants}.
+#' @keywords internal
+variants_drop_na <- function(s4_variants) {
 
+  # Drop any variant_id == NA_character_
+  s4_variants@variants <- tidyr::drop_na(s4_variants@variants, variant_id)
+
+  # Extract non-NA variant ids
+  variant_ids <- s4_variants@variants$variant_id
+
+  # Filter remaining tibbles with non-NA variant ids to ensure that the primary
+  # key (variant_id) always exists and is not NA.
+  s4_variants@genomic_contexts <- dplyr::filter(s4_variants@genomic_contexts, variant_id %in% variant_ids)
+  s4_variants@ensembl_ids <- dplyr::filter(s4_variants@ensembl_ids, variant_id %in% variant_ids)
+  s4_variants@entrez_ids <- dplyr::filter(s4_variants@entrez_ids, variant_id %in% variant_ids)
+
+  return(s4_variants)
+}

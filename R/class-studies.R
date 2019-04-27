@@ -131,7 +131,7 @@ studies <- function(studies = studies_tbl(),
                     countries_of_origin = countries_tbl(),
                     countries_of_recruitment = countries_tbl(),
                     publications = publications_tbl()) {
-  methods::new("studies",
+  s4_studies <- methods::new("studies",
       studies = studies,
       genotyping_techs = genotyping_techs,
       platforms = platforms,
@@ -141,6 +141,9 @@ studies <- function(studies = studies_tbl(),
       countries_of_recruitment = countries_of_recruitment,
       publications = publications
   )
+
+  # Drop rows in tibbles whose value of study_id == NA_character.
+  studies_drop_na(s4_studies)
 }
 
 #' Creates a studies table.
@@ -350,4 +353,36 @@ publications_tbl <- function(study_id = character(),
     author_orcid = author_orcid
   )
   return(tbl)
+}
+
+#' Drop any NA studies.
+#'
+#' This function takes a studies S4 object and removes any study identifiers
+#' that might have been NA. This ensures that there is always a non-NA
+#' \code{study_id} value in all tables. This is important as the \code{study_id}
+#' is the primary key.
+#'
+#' @param s4_studies An object of class \linkS4class{studies}.
+#'
+#' @return An object of class \linkS4class{studies}.
+#' @keywords internal
+studies_drop_na <- function(s4_studies) {
+
+  # Drop any study_id == NA_character_
+  s4_studies@studies <- tidyr::drop_na(s4_studies@studies, study_id)
+
+  # Extract non-NA study ids
+  study_ids <- s4_studies@studies$study_id
+
+  # Filter remaining tibbles with non-NA study ids to ensure that the primary
+  # key (study_id) always exists and is not NA.
+  s4_studies@genotyping_techs <- dplyr::filter(s4_studies@genotyping_techs, study_id %in% study_ids)
+  s4_studies@platforms <- dplyr::filter(s4_studies@platforms, study_id %in% study_ids)
+  s4_studies@ancestries <- dplyr::filter(s4_studies@ancestries, study_id %in% study_ids)
+  s4_studies@ancestral_groups <- dplyr::filter(s4_studies@ancestral_groups, study_id %in% study_ids)
+  s4_studies@countries_of_origin <- dplyr::filter(s4_studies@countries_of_origin, study_id %in% study_ids)
+  s4_studies@countries_of_recruitment <- dplyr::filter(s4_studies@countries_of_recruitment, study_id %in% study_ids)
+  s4_studies@publications <- dplyr::filter(s4_studies@publications, study_id %in% study_ids)
+
+  return(s4_studies)
 }

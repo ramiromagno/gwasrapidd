@@ -31,7 +31,9 @@ setClass(
 #' @return An object of class \linkS4class{traits}.
 #' @keywords internal
 traits <- function(traits = traits_tbl()) {
-  methods::new("traits", traits = traits)
+  s4_traits <- methods::new("traits", traits = traits)
+  # Drop rows in tibbles whose value of efo_id == NA_character.
+  traits_drop_na(s4_traits)
 }
 
 #' @keywords internal
@@ -43,4 +45,23 @@ traits_tbl <- function(efo_id = character(),
                         uri = uri)
   tbl2 <- dplyr::distinct(tbl)
   return(tbl2)
+}
+
+#' Drop any NA traits.
+#'
+#' This function takes a traits S4 object and removes any EFO trait identifiers
+#' that might have been NA. This ensures that there is always a non-NA
+#' \code{efo_id} value in all tables. This is important as the \code{efo_id}
+#' is the primary key.
+#'
+#' @param s4_traits An object of class \linkS4class{traits}.
+#'
+#' @return An object of class \linkS4class{traits}.
+#' @keywords internal
+traits_drop_na <- function(s4_traits) {
+
+  # Drop any efo_id == NA_character_
+  s4_traits@traits <- tidyr::drop_na(s4_traits@traits, efo_id)
+
+  return(s4_traits)
 }

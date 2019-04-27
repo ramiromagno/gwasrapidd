@@ -123,7 +123,8 @@ associations <- function(associations = associations_tbl(),
                          genes = reported_genes_tbl(),
                          ensembl_ids = ensembl_ids_tbl(),
                          entrez_ids = entrez_ids_tbl()) {
-  methods::new("associations",
+
+  s4_associations <- methods::new("associations",
       associations = associations,
       loci = loci,
       risk_alleles = risk_alleles,
@@ -131,6 +132,9 @@ associations <- function(associations = associations_tbl(),
       ensembl_ids = ensembl_ids,
       entrez_ids = entrez_ids
   )
+
+  # Drop rows in tibbles whose value of association_id == NA_character.
+  associations_drop_na(s4_associations)
 }
 
 #' Creates an associations table.
@@ -347,4 +351,35 @@ entrez_ids_tbl <- function(
     entrez_id = entrez_id
   )
   return(tbl)
+}
+
+
+#' Drop any NA associations.
+#'
+#' This function takes an associations S4 object and removes any association identifiers
+#' that might have been NA. This ensures that there is always a non-NA
+#' \code{association_id} value in all tables. This is important as the \code{association_id}
+#' is the primary key.
+#'
+#' @param s4_associations An object of class \linkS4class{associations}.
+#'
+#' @return An object of class \linkS4class{associations}.
+#' @keywords internal
+associations_drop_na <- function(s4_associations) {
+
+  # Drop any association_id == NA_character_
+  s4_associations@associations <- tidyr::drop_na(s4_associations@associations, association_id)
+
+  # Extract non-NA association ids
+  association_ids <- s4_associations@associations$association_id
+
+  # Filter remaining tibbles with non-NA association ids to ensure that the primary
+  # key (association_id) always exists and is not NA.
+  s4_associations@loci <- dplyr::filter(s4_associations@loci, association_id %in% association_ids)
+  s4_associations@risk_alleles <- dplyr::filter(s4_associations@risk_alleles, association_id %in% association_ids)
+  s4_associations@genes <- dplyr::filter(s4_associations@genes, association_id %in% association_ids)
+  s4_associations@ensembl_ids <- dplyr::filter(s4_associations@ensembl_ids, association_id %in% association_ids)
+  s4_associations@entrez_ids <- dplyr::filter(s4_associations@entrez_ids, association_id %in% association_ids)
+
+  return(s4_associations)
 }
