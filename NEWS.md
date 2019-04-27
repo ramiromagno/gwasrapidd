@@ -7,7 +7,7 @@ integer to character when searching by association identifers.
 
 ## gwasrapidd 0.0.0.9009
 
-- Added function `exists_variant()`
+- Added function `exists_variant()`.
 
 ## gwasrapidd 0.0.0.9008
 
