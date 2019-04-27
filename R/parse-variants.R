@@ -163,3 +163,33 @@ v_obj_to_entrez_ids_tbl <- function(obj) {
   )
 }
 
+#' Filter variants by standard human chromosomes.
+#'
+#' This function filters a \linkS4class{variants} object by standard human chromosomes, i.e.,
+#' 1--22, X and Y. In addition to these chromosomes, some variants retrieved
+#' from the GWAS Catalog might be also mapped to non-standard locations, such as
+#' GRC assembly patches, haplotype (HAPs) or pseudo autosomal regions (PARs).
+#' When this happens the main table \code{variants} includes rows for these
+#' cases too. This function removes these.
+#'
+#' @param s4_variants An object of class \linkS4class{variants}.
+#' @param chromosomes A character vector of valid chromosome names. Default is
+#'   autosomal chromosomes 1 thru 22 and, X, Y, and MT.
+#' @return An object of class \linkS4class{variants}.
+#' @keywords internal
+filter_variants_by_standard_chromosomes <- function(s4_variants, chromosomes = c(1:22, "X", "Y", "MT")) {
+
+  not_valid_chr_name_lgl <- !is_human_chromosome(chromosomes)
+  if (any(not_valid_chr_name_lgl))
+    stop(
+      "These are not valid chromosome names: ",
+      concatenate::cc_and(chromosomes[not_valid_chr_name_lgl], oxford = TRUE),
+      "."
+    )
+
+  s4_variants@variants <- dplyr::filter(s4_variants@variants, chromosome_name %in% chromosomes)
+  variant_ids <- s4_variants@variants$variant_id
+
+  # Filter variants by variant_ids
+  return(s4_variants[variant_ids])
+}
