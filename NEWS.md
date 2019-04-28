@@ -1,3 +1,6 @@
+## gwasrapidd 0.0.0.9013
+- Added the dataset `cytogenetic_bands`.
+
 ## gwasrapidd 0.0.0.9012
 - Updated README installation command to use the new `remotes` package.
 - Devel version badge is now hardcoded directly instead of using a call to `badger`.

@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gwasrapidd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9012</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9013</span>
       </span>
     </div>
 
@@ -157,7 +157,7 @@
 
 The [Experimental Factor Ontology (EFO)](https://www.ebi.ac.uk/efo/) identifiers can have one or more child terms as part of its EFO hierarchy. These child terms have a narrower meaning, and oftentimes one would like to search by an EFO identifier and also by all its child identifiers. This functionality is provided by the [GWAS Catalog Web User Interface](https://www.ebi.ac.uk/gwas/) in a check box, see image below.
 
-<img src="../man/figures/child_trait.png" width="545" style="display: block; margin: auto auto auto 0;" />
+<img src="../man/figures/child_trait.png" style="display: block; margin: auto auto auto 0;" />
 
 However there is no such option for the REST API. To circumvent this problem you can use the function `get_child_efo()` that will get all child terms of a given EFO identifier. Here's an example with the EFO identifier `'EFO_0005543'` (glioma):
 
