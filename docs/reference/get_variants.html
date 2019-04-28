@@ -80,7 +80,7 @@ set_operation to 'intersection'." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gwasrapidd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9010</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9011</span>
       </span>
     </div>
 
@@ -154,8 +154,8 @@ variants that match simultaneously all criteria provided, then set
     <pre class="usage"><span class='fu'>get_variants</span>(<span class='kw'>study_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>association_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>variant_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>efo_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>pubmed_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>genomic_range</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>gene_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>efo_trait</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>reported_trait</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>set_operation</span> <span class='kw'>=</span> <span class='st'>"union"</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>warnings</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+  <span class='kw'>reported_trait</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>set_operation</span> <span class='kw'>=</span> <span class='st'>"union"</span>,
+  <span class='kw'>std_chromosomes_only</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>warnings</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -215,6 +215,11 @@ tells how variants retrieved by different criteria  should be combined:
 <code>'union'</code> binds together all results removing duplicates and
 <code>'intersection'</code> only keeps same variants found with different
 criteria.</p></td>
+    </tr>
+    <tr>
+      <th>std_chromosomes_only</th>
+      <td><p>Whether to return only variants mapped to
+standard chromosomes: 1 thru 22, X, Y, and MT.</p></td>
     </tr>
     <tr>
       <th>verbose</th>

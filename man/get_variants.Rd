@@ -7,8 +7,8 @@
 get_variants(study_id = NULL, association_id = NULL,
   variant_id = NULL, efo_id = NULL, pubmed_id = NULL,
   genomic_range = NULL, gene_name = NULL, efo_trait = NULL,
-  reported_trait = NULL, set_operation = "union", verbose = FALSE,
-  warnings = TRUE)
+  reported_trait = NULL, set_operation = "union",
+  std_chromosomes_only = TRUE, verbose = FALSE, warnings = TRUE)
 }
 \arguments{
 \item{study_id}{A character vector of GWAS Catalog study accession
@@ -47,6 +47,9 @@ tells how variants retrieved by different criteria  should be combined:
 \code{'union'} binds together all results removing duplicates and
 \code{'intersection'} only keeps same variants found with different
 criteria.}
+
+\item{std_chromosomes_only}{Whether to return only variants mapped to
+standard chromosomes: 1 thru 22, X, Y, and MT.}
 
 \item{verbose}{Whether the function should be
 verbose about the different queries or not.}

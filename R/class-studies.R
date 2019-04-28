@@ -369,20 +369,21 @@ publications_tbl <- function(study_id = character(),
 studies_drop_na <- function(s4_studies) {
 
   # Drop any study_id == NA_character_
-  s4_studies@studies <- tidyr::drop_na(s4_studies@studies, study_id)
+  study_id <- rlang::expr(study_id)
+  s4_studies@studies <- tidyr::drop_na(s4_studies@studies, !!study_id)
 
   # Extract non-NA study ids
   study_ids <- s4_studies@studies$study_id
 
   # Filter remaining tibbles with non-NA study ids to ensure that the primary
   # key (study_id) always exists and is not NA.
-  s4_studies@genotyping_techs <- dplyr::filter(s4_studies@genotyping_techs, study_id %in% study_ids)
-  s4_studies@platforms <- dplyr::filter(s4_studies@platforms, study_id %in% study_ids)
-  s4_studies@ancestries <- dplyr::filter(s4_studies@ancestries, study_id %in% study_ids)
-  s4_studies@ancestral_groups <- dplyr::filter(s4_studies@ancestral_groups, study_id %in% study_ids)
-  s4_studies@countries_of_origin <- dplyr::filter(s4_studies@countries_of_origin, study_id %in% study_ids)
-  s4_studies@countries_of_recruitment <- dplyr::filter(s4_studies@countries_of_recruitment, study_id %in% study_ids)
-  s4_studies@publications <- dplyr::filter(s4_studies@publications, study_id %in% study_ids)
+  s4_studies@genotyping_techs <- dplyr::filter(s4_studies@genotyping_techs, !!study_id %in% study_ids)
+  s4_studies@platforms <- dplyr::filter(s4_studies@platforms, study_id %in% !!study_ids)
+  s4_studies@ancestries <- dplyr::filter(s4_studies@ancestries, study_id %in% !!study_ids)
+  s4_studies@ancestral_groups <- dplyr::filter(s4_studies@ancestral_groups, !!study_id %in% study_ids)
+  s4_studies@countries_of_origin <- dplyr::filter(s4_studies@countries_of_origin, !!study_id %in% study_ids)
+  s4_studies@countries_of_recruitment <- dplyr::filter(s4_studies@countries_of_recruitment, !!study_id %in% study_ids)
+  s4_studies@publications <- dplyr::filter(s4_studies@publications, !!study_id %in% study_ids)
 
   return(s4_studies)
 }

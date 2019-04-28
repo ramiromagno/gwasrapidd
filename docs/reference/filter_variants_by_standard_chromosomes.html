@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get GWAS Catalog associations by EFO traits — get_associations_by_efo_trait • gwasrapidd</title>
+<title>Filter variants by standard human chromosomes. — filter_variants_by_standard_chromosomes • gwasrapidd</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -39,10 +39,14 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Get GWAS Catalog associations by EFO traits — get_associations_by_efo_trait" />
+<meta property="og:title" content="Filter variants by standard human chromosomes. — filter_variants_by_standard_chromosomes" />
 
-<meta property="og:description" content="Gets associations that match EFO trait
-description." />
+<meta property="og:description" content="This function filters a variants object by standard human chromosomes, i.e.,
+1--22, X and Y. In addition to these chromosomes, some variants retrieved
+from the GWAS Catalog might be also mapped to non-standard locations, such as
+GRC assembly patches, haplotype (HAPs) or pseudo autosomal regions (PARs).
+When this happens the main table variants includes rows for these
+cases too. This function removes these." />
 
 <meta property="og:image" content="https://rmagno.eu/gwasrapidd/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -129,51 +133,42 @@ description." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get GWAS Catalog associations by EFO traits</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ramiromagno/gwasrapidd/blob/master/R/get_associations.R'><code>R/get_associations.R</code></a></small>
-    <div class="hidden name"><code>get_associations_by_efo_trait.Rd</code></div>
+    <h1>Filter variants by standard human chromosomes.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ramiromagno/gwasrapidd/blob/master/R/parse-variants.R'><code>R/parse-variants.R</code></a></small>
+    <div class="hidden name"><code>filter_variants_by_standard_chromosomes.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Gets associations that match <a href='https://www.ebi.ac.uk/efo/'>EFO</a> trait
-description.</p>
+    <p>This function filters a <a href='variants-class.html'>variants</a> object by standard human chromosomes, i.e.,
+1--22, X and Y. In addition to these chromosomes, some variants retrieved
+from the GWAS Catalog might be also mapped to non-standard locations, such as
+GRC assembly patches, haplotype (HAPs) or pseudo autosomal regions (PARs).
+When this happens the main table <code>variants</code> includes rows for these
+cases too. This function removes these.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>get_associations_by_efo_trait</span>(<span class='kw'>efo_trait</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>warnings</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>page_size</span> <span class='kw'>=</span> <span class='fl'>20L</span>)</pre>
+    <pre class="usage"><span class='fu'>filter_variants_by_standard_chromosomes</span>(<span class='no'>s4_variants</span>,
+  <span class='kw'>chromosomes</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>1</span>:<span class='fl'>22</span>, <span class='st'>"X"</span>, <span class='st'>"Y"</span>, <span class='st'>"MT"</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>efo_trait</th>
-      <td><p>A <code>character</code> vector of
-<a href='https://www.ebi.ac.uk/efo/'>EFO</a> trait descriptions, e.g.,
-<code>'uric acid measurement'</code>.</p></td>
+      <th>s4_variants</th>
+      <td><p>An object of class <a href='variants-class.html'>variants</a>.</p></td>
     </tr>
     <tr>
-      <th>verbose</th>
-      <td><p>A <code>logical</code> indicating whether the function should be
-verbose about the different queries or not.</p></td>
-    </tr>
-    <tr>
-      <th>warnings</th>
-      <td><p>A <code>logical</code> indicating whether to print warnings, if any.</p></td>
-    </tr>
-    <tr>
-      <th>page_size</th>
-      <td><p>An <code>integer</code> scalar indicating the
-<a href='https://www.ebi.ac.uk/gwas/rest/docs/api#_paging_resources'>page</a>
-value to be used in the JSON requests, can be between <code>1</code> and
-<code>1000</code>.</p></td>
+      <th>chromosomes</th>
+      <td><p>A character vector of valid chromosome names. Default is
+autosomal chromosomes 1 thru 22 and, X, Y, and MT.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A <a href='associations-class.html'>associations</a> object.</p>
+    <p>An object of class <a href='variants-class.html'>variants</a>.</p>
     
 
   </div>

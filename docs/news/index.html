@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gwasrapidd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9010</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9011</span>
       </span>
     </div>
 
@@ -130,6 +130,17 @@
       <small>Source: <a href='https://github.com/ramiromagno/gwasrapidd/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
+    <div id="gwasrapidd-0-0-0-9011" class="section level2">
+<h2 class="hasAnchor">
+<a href="#gwasrapidd-0-0-0-9011" class="anchor"></a>gwasrapidd 0.0.0.9011</h2>
+<ul>
+<li>
+<code><a href="../reference/get_variants.html">get_variants()</a></code> now accepts a new parameter: <code>std_chromosomes_only</code>. This allows to select whether variants mapped to scaffolds other than the standard chromosomes are returned. By default, now, <code><a href="../reference/get_variants.html">get_variants()</a></code> only returns variants mapped to chromosomes 1 thru 22, X, Y, or MT. This behaviour is now in line with results returned by the Web UI.</li>
+<li>Fixed bug with <code>multiple_snp_haplotype</code> and <code>snp_interaction</code>. NA values in columns multiple_snp_haplotype and snp_interaction of associations tibble in associations S4 object were being mapped to character type instead of logical. This is now fixed.</li>
+<li>Constructors for GWAS Catalog S4 objects ensure no NAs are in primary keys.</li>
+<li>Increased test coverage.</li>
+</ul>
+</div>
     <div id="gwasrapidd-0-0-0-9010" class="section level2">
 <h2 class="hasAnchor">
 <a href="#gwasrapidd-0-0-0-9010" class="anchor"></a>gwasrapidd 0.0.0.9010</h2>
@@ -142,8 +153,7 @@
 <h2 class="hasAnchor">
 <a href="#gwasrapidd-0-0-0-9009" class="anchor"></a>gwasrapidd 0.0.0.9009</h2>
 <ul>
-<li>Added function <code><a href="../reference/exists_variant.html">exists_variant()</a></code>
-</li>
+<li>Added function <code><a href="../reference/exists_variant.html">exists_variant()</a></code>.</li>
 </ul>
 </div>
     <div id="gwasrapidd-0-0-0-9008" class="section level2">
@@ -194,6 +204,7 @@
     <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
+        <li><a href="#gwasrapidd-0-0-0-9011">0.0.0.9011</a></li>
         <li><a href="#gwasrapidd-0-0-0-9010">0.0.0.9010</a></li>
         <li><a href="#gwasrapidd-0-0-0-9009">0.0.0.9009</a></li>
         <li><a href="#gwasrapidd-0-0-0-9008">0.0.0.9008</a></li>

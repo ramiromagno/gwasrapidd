@@ -1,3 +1,9 @@
+## gwasrapidd 0.0.0.9011
+- `get_variants()` now accepts a new parameter: `std_chromosomes_only`. This allows to select whether  variants mapped to scaffolds other than the standard chromosomes are returned. By default, now, `get_variants()` only returns variants mapped to chromosomes 1 thru 22, X, Y, or MT. This behaviour is now in line with results returned by the Web UI.
+- Fixed bug with `multiple_snp_haplotype` and `snp_interaction`. NA values in columns multiple_snp_haplotype and snp_interaction of associations tibble in associations S4 object were being mapped to character type instead of logical. This is now fixed.
+- Constructors for GWAS Catalog S4 objects ensure no NAs are in primary keys.
+- Increased test coverage.
+
 ## gwasrapidd 0.0.0.9010
 
 - Changed type of column `association_id` in the S4 class `associations` from

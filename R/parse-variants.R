@@ -187,7 +187,8 @@ filter_variants_by_standard_chromosomes <- function(s4_variants, chromosomes = c
       "."
     )
 
-  s4_variants@variants <- dplyr::filter(s4_variants@variants, chromosome_name %in% chromosomes)
+  chromosome_name <- rlang::expr(chromosome_name)
+  s4_variants@variants <- dplyr::filter(s4_variants@variants, !!chromosome_name %in% chromosomes)
   variant_ids <- s4_variants@variants$variant_id
 
   # Filter variants by variant_ids

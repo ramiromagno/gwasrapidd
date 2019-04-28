@@ -368,18 +368,19 @@ entrez_ids_tbl <- function(
 associations_drop_na <- function(s4_associations) {
 
   # Drop any association_id == NA_character_
-  s4_associations@associations <- tidyr::drop_na(s4_associations@associations, association_id)
+  association_id <- rlang::expr(association_id)
+  s4_associations@associations <- tidyr::drop_na(s4_associations@associations, !!association_id)
 
   # Extract non-NA association ids
   association_ids <- s4_associations@associations$association_id
 
   # Filter remaining tibbles with non-NA association ids to ensure that the primary
   # key (association_id) always exists and is not NA.
-  s4_associations@loci <- dplyr::filter(s4_associations@loci, association_id %in% association_ids)
-  s4_associations@risk_alleles <- dplyr::filter(s4_associations@risk_alleles, association_id %in% association_ids)
-  s4_associations@genes <- dplyr::filter(s4_associations@genes, association_id %in% association_ids)
-  s4_associations@ensembl_ids <- dplyr::filter(s4_associations@ensembl_ids, association_id %in% association_ids)
-  s4_associations@entrez_ids <- dplyr::filter(s4_associations@entrez_ids, association_id %in% association_ids)
+  s4_associations@loci <- dplyr::filter(s4_associations@loci, !!association_id %in% association_ids)
+  s4_associations@risk_alleles <- dplyr::filter(s4_associations@risk_alleles, !!association_id %in% association_ids)
+  s4_associations@genes <- dplyr::filter(s4_associations@genes, !!association_id %in% association_ids)
+  s4_associations@ensembl_ids <- dplyr::filter(s4_associations@ensembl_ids, !!association_id %in% association_ids)
+  s4_associations@entrez_ids <- dplyr::filter(s4_associations@entrez_ids, !!association_id %in% association_ids)
 
   return(s4_associations)
 }

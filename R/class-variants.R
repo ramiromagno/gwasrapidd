@@ -241,16 +241,17 @@ v_entrez_ids_tbl <- function(variant_id = character(),
 variants_drop_na <- function(s4_variants) {
 
   # Drop any variant_id == NA_character_
-  s4_variants@variants <- tidyr::drop_na(s4_variants@variants, variant_id)
+  variant_id <- rlang::expr(variant_id)
+  s4_variants@variants <- tidyr::drop_na(s4_variants@variants, !!variant_id)
 
   # Extract non-NA variant ids
   variant_ids <- s4_variants@variants$variant_id
 
   # Filter remaining tibbles with non-NA variant ids to ensure that the primary
   # key (variant_id) always exists and is not NA.
-  s4_variants@genomic_contexts <- dplyr::filter(s4_variants@genomic_contexts, variant_id %in% variant_ids)
-  s4_variants@ensembl_ids <- dplyr::filter(s4_variants@ensembl_ids, variant_id %in% variant_ids)
-  s4_variants@entrez_ids <- dplyr::filter(s4_variants@entrez_ids, variant_id %in% variant_ids)
+  s4_variants@genomic_contexts <- dplyr::filter(s4_variants@genomic_contexts, !!variant_id %in% variant_ids)
+  s4_variants@ensembl_ids <- dplyr::filter(s4_variants@ensembl_ids, !!variant_id %in% variant_ids)
+  s4_variants@entrez_ids <- dplyr::filter(s4_variants@entrez_ids, !!variant_id %in% variant_ids)
 
   return(s4_variants)
 }

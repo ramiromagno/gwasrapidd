@@ -567,6 +567,8 @@ get_variants_all <- function(verbose = FALSE, warnings = TRUE, page_size = 20L) 
 #'   \code{'union'} binds together all results removing duplicates and
 #'   \code{'intersection'} only keeps same variants found with different
 #'   criteria.
+#' @param std_chromosomes_only Whether to return only variants mapped to
+#'   standard chromosomes: 1 thru 22, X, Y, and MT.
 #' @param verbose Whether the function should be
 #'   verbose about the different queries or not.
 #' @param warnings Whether to print warnings.
@@ -583,6 +585,7 @@ get_variants <- function(study_id = NULL,
                          efo_trait = NULL,
                          reported_trait = NULL,
                          set_operation = 'union',
+                         std_chromosomes_only = TRUE,
                          verbose = FALSE,
                          warnings = TRUE) {
 
@@ -595,6 +598,9 @@ get_variants <- function(study_id = NULL,
 
   if(!(rlang::is_scalar_logical(warnings) && warnings %in% c(TRUE, FALSE)))
     stop("warnings must be either TRUE or FALSE")
+
+  if(!(rlang::is_scalar_logical(std_chromosomes_only) && std_chromosomes_only %in% c(TRUE, FALSE)))
+    stop("std_chromosomes_only must be either TRUE or FALSE")
 
   if(!rlang::is_null(genomic_range) &&
      !all(rlang::has_name(genomic_range, c("chromosome", "start", "end")))) {
@@ -666,15 +672,25 @@ get_variants <- function(study_id = NULL,
   # variants.
   msg <- "You are about to download all variants from the GWAS Catalog.
   This might take several hours..."
-  if(rlang::is_empty(list_of_variants) && sure(msg))
-    return(get_variants_all(verbose = verbose, warnings = warnings))
+  if(rlang::is_empty(list_of_variants) && sure(msg)) {
+    v <- get_variants_all(verbose = verbose, warnings = warnings)
+    if(std_chromosomes_only)
+      v <- filter_variants_by_standard_chromosomes(v)
+    return(v)
+  }
 
   if(identical(set_operation, "union")) {
-    return(purrr::reduce(list_of_variants, union))
+    v <- purrr::reduce(list_of_variants, union)
+    if(std_chromosomes_only)
+      v <- filter_variants_by_standard_chromosomes(v)
+    return(v)
   }
 
   if(identical(set_operation, "intersection")) {
-    return(purrr::reduce(list_of_variants, intersect))
+    v <- purrr::reduce(list_of_variants, intersect)
+    if(std_chromosomes_only)
+      v <- filter_variants_by_standard_chromosomes(v)
+    return(v)
   }
 
 }

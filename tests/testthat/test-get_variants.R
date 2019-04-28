@@ -12,6 +12,8 @@ test_that("get_variants: exceptions", {
                "verbose must be either TRUE or FALSE")
   expect_error(get_variants(warnings = NA),
                "warnings must be either TRUE or FALSE")
+  expect_error(get_variants(std_chromosomes_only = NA),
+               "std_chromosomes_only must be either TRUE or FALSE")
 })
 
 #
@@ -46,6 +48,27 @@ with_mock_api({
     expect_is(my_variants, 'variants')
   })
 })
+
+# Variants that also map to scaffolds other than the normal chromosomes
+# rs10910092: maps to chr 1 and to CHR_HSCHR1_1_CTG3.
+# rs570398477: maps to chr 2 and to CHR_HSCHR2_4_CTG1.
+with_mock_api({
+  test_that("get_variants: variants that also map to scaffolds other than the normal chromosomes", {
+    my_variants <- get_variants(variant_id = c('rs10910092', 'rs570398477'),
+                                std_chromosomes_only = TRUE)
+    expect_is(my_variants, 'variants')
+    expect_identical(nrow(my_variants@variants), 2L)
+  })
+})
+with_mock_api({
+  test_that("get_variants: variants that also map to scaffolds other than the normal chromosomes", {
+    my_variants <- get_variants(variant_id = c('rs10910092', 'rs570398477'),
+                                std_chromosomes_only = FALSE)
+    expect_is(my_variants, 'variants')
+    expect_identical(nrow(my_variants@variants), 4L)
+  })
+})
+
 
 #
 ## get_variants, by efo id

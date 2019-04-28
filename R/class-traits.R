@@ -61,7 +61,8 @@ traits_tbl <- function(efo_id = character(),
 traits_drop_na <- function(s4_traits) {
 
   # Drop any efo_id == NA_character_
-  s4_traits@traits <- tidyr::drop_na(s4_traits@traits, efo_id)
+  efo_id <- rlang::expr(efo_id)
+  s4_traits@traits <- tidyr::drop_na(s4_traits@traits, !!efo_id)
 
   return(s4_traits)
 }

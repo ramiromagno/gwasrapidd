@@ -11,7 +11,7 @@ status](https://ci.appveyor.com/api/projects/status/github/ramiromagno/gwasrapid
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![](https://img.shields.io/badge/devel%20version-0.0.0.9009-blue.svg)](https://github.com/ramiromagno/gwasrapidd)
+[![](https://img.shields.io/badge/devel%20version-0.0.0.9010-blue.svg)](https://github.com/ramiromagno/gwasrapidd)
 
 The goal of gwasrapidd is to retrieve data from the [NHGRI-EBI
 Catalog](https://www.ebi.ac.uk/gwas) of published genome-wide
@@ -53,15 +53,14 @@ Find associated variants:
 ``` r
 variants <- get_variants(study_id = 'GCST002305')
 variants@variants[c('variant_id', 'functional_class')]
-#> # A tibble: 6 x 2
+#> # A tibble: 5 x 2
 #>   variant_id functional_class   
 #>   <chr>      <chr>              
 #> 1 rs4245739  3_prime_UTR_variant
 #> 2 rs2363956  missense_variant   
 #> 3 rs10069690 intron_variant     
 #> 4 rs3757318  intron_variant     
-#> 5 rs10771399 intergenic_variant 
-#> 6 rs10771399 intergenic_variant
+#> 5 rs10771399 intergenic_variant
 ```
 
 ## Contributors
