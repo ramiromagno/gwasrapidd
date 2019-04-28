@@ -14,6 +14,6 @@ A character vector of variant names.
 }
 \description{
 This function parses strings of the form \code{"rs123-G"} and returns
-the name of the variant; it uses the regex \code{(^[^-]+)-?}.
+the name of the variant; it uses the regex \code{-([ATCG\\?]+)?$}.
 }
 \keyword{internal}

@@ -33,7 +33,7 @@ allele_name <- function(risk_allele_names) {
 #' Extract variant identifiers from strings of the form rs123-G
 #'
 #' This function parses strings of the form \code{"rs123-G"} and returns
-#' the name of the variant; it uses the regex \code{(^[^-]+)-?}.
+#' the name of the variant; it uses the regex \code{-([ATCG\\?]+)?$}.
 #'
 #' @param risk_allele_names
 #'
@@ -41,7 +41,7 @@ allele_name <- function(risk_allele_names) {
 #'
 #' @keywords internal
 variant_name <- function(risk_allele_names) {
-  str <- stringr::str_replace(risk_allele_names, "-([ATCG]+)?$", "")
+  str <- stringr::str_replace(risk_allele_names, "-([ATCG\\?]+)?$", "")
   str[is_empty_str(str)] <- NA_character_
   return(str)
 }
