@@ -11,23 +11,22 @@ status](https://ci.appveyor.com/api/projects/status/github/ramiromagno/gwasrapid
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![](https://img.shields.io/badge/devel%20version-0.0.0.9010-blue.svg)](https://github.com/ramiromagno/gwasrapidd)
+[![](https://img.shields.io/badge/devel%20version-0.0.0.9012-blue.svg)](https://github.com/ramiromagno/gwasrapidd)
 
-The goal of gwasrapidd is to retrieve data from the [NHGRI-EBI
-Catalog](https://www.ebi.ac.uk/gwas) of published genome-wide
-association studies via the [REST
-API](https://www.ebi.ac.uk/gwas/docs/api).
+The goal of gwasrapidd is to provide programmatic access to the
+[NHGRI-EBI Catalog](https://www.ebi.ac.uk/gwas) of published genome-wide
+association studies.
 
-Get started by reading the [gwasrapidd
-documentation](https://rmagno.eu/gwasrapidd/articles/gwasrapidd.html).
+Get started by reading the
+[documentation](https://rmagno.eu/gwasrapidd/articles/gwasrapidd.html).
 
 ## Installation
 
 You can install the current, experimental version of gwasrapidd with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("ramiromagno/gwasrapidd")
+# install.packages("remotes")
+remotes::install_github("ramiromagno/gwasrapidd")
 ```
 
 ## Cheatsheet
