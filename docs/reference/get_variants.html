@@ -80,7 +80,7 @@ set_operation to 'intersection'." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gwasrapidd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9013</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9014</span>
       </span>
     </div>
 
@@ -153,9 +153,10 @@ variants that match simultaneously all criteria provided, then set
 
     <pre class="usage"><span class='fu'>get_variants</span>(<span class='kw'>study_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>association_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>variant_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>efo_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>pubmed_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>genomic_range</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>gene_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>efo_trait</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>reported_trait</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>set_operation</span> <span class='kw'>=</span> <span class='st'>"union"</span>,
-  <span class='kw'>std_chromosomes_only</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>warnings</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+  <span class='kw'>genomic_range</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>cytogenetic_band</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>gene_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>efo_trait</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>reported_trait</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>set_operation</span> <span class='kw'>=</span> <span class='st'>"union"</span>,
+  <span class='kw'>interactive</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>std_chromosomes_only</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>warnings</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -193,6 +194,11 @@ starting at 1.</p></dd> <dt>end</dt><dd><p>A numeric vector of end positions.</p
 names, <code>start</code> and <code>end</code> positions can be matched by position.</p></td>
     </tr>
     <tr>
+      <th>cytogenetic_band</th>
+      <td><p>A character vector of cytogenetic bands of the form
+<code>'1p36.11'</code>.</p></td>
+    </tr>
+    <tr>
       <th>gene_name</th>
       <td><p>Gene symbol according to
 <a href='https://www.genenames.org/'>HUGO Gene Nomenclature (HGNC)</a>.</p></td>
@@ -215,6 +221,11 @@ tells how variants retrieved by different criteria  should be combined:
 <code>'union'</code> binds together all results removing duplicates and
 <code>'intersection'</code> only keeps same variants found with different
 criteria.</p></td>
+    </tr>
+    <tr>
+      <th>interactive</th>
+      <td><p>A logical. If all variants are requested, whether to ask
+interactively if we really want to proceed.</p></td>
     </tr>
     <tr>
       <th>std_chromosomes_only</th>

@@ -339,6 +339,46 @@ get_variants_by_genomic_range <- function(chromosome = NULL, start = NULL, end =
   return(my_variants)
 }
 
+#' Get GWAS Catalog variants by cytogenetic band.
+#'
+#' Gets variants that are mapped onto specific regions as specified by
+#' cytogenetic bands. See the dataframe
+#' \code{\link[gwasrapidd]{cytogenetic_bands}} for more information on possible
+#' values.
+#'
+#' @param cytogenetic_band A \code{character} vector of cytogenetic bands of the
+#'   form \code{'1p36.11'}
+#' @param verbose Whether the function should be verbose about the different
+#'   queries or not.
+#' @param warnings Whether to print warnings.
+#' @param page_size An integer scalar indicating the
+#'   \href{https://www.ebi.ac.uk/gwas/rest/docs/api#_paging_resources}{page}
+#'   value to be used in the JSON requests, can be between \code{1} and
+#'   \code{1000}.
+#'
+#' @return A \linkS4class{variants} object.
+#' @keywords internal
+get_variants_by_cytogenetic_band <- function(cytogenetic_band = NULL, verbose = FALSE, warnings = TRUE, page_size = 20L) {
+
+  if(rlang::is_null(cytogenetic_band))
+    return(variants())
+
+  assertthat::assert_that(
+    is.character(cytogenetic_band),
+    length(cytogenetic_band) > 0,
+    assertthat::noNA(cytogenetic_band))
+
+  genomic_ranges <- cytogenetic_band_to_genomic_range(bands = cytogenetic_band)
+  my_variants <- get_variants_by_genomic_range(chromosome = genomic_ranges$chromosome,
+                                start = genomic_ranges$start,
+                                end = genomic_ranges$end,
+                                verbose = verbose,
+                                warnings = warnings,
+                                page_size = page_size)
+
+  return(my_variants)
+}
+
 #' Get GWAS Catalog variants by gene name.
 #'
 #' Gets variants whose genomic context includes a specific gene or genes.
@@ -555,6 +595,8 @@ get_variants_all <- function(verbose = FALSE, warnings = TRUE, page_size = 20L) 
 #' starting at 1.} \item{end}{A numeric vector of end positions.} }
 #' The three vectors need to be of the same length so that \code{chromosome}
 #' names, \code{start} and \code{end} positions can be matched by position.
+#' @param cytogenetic_band A character vector of cytogenetic bands of the form
+#'   \code{'1p36.11'}.
 #' @param gene_name Gene symbol according to
 #'   \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.
 #' @param efo_trait A character vector of
@@ -567,6 +609,8 @@ get_variants_all <- function(verbose = FALSE, warnings = TRUE, page_size = 20L) 
 #'   \code{'union'} binds together all results removing duplicates and
 #'   \code{'intersection'} only keeps same variants found with different
 #'   criteria.
+#' @param interactive A logical. If all variants are requested, whether to ask
+#'   interactively if we really want to proceed.
 #' @param std_chromosomes_only Whether to return only variants mapped to
 #'   standard chromosomes: 1 thru 22, X, Y, and MT.
 #' @param verbose Whether the function should be
@@ -581,10 +625,12 @@ get_variants <- function(study_id = NULL,
                          efo_id = NULL,
                          pubmed_id = NULL,
                          genomic_range = NULL,
+                         cytogenetic_band = NULL,
                          gene_name = NULL,
                          efo_trait = NULL,
                          reported_trait = NULL,
                          set_operation = 'union',
+                         interactive = TRUE,
                          std_chromosomes_only = TRUE,
                          verbose = FALSE,
                          warnings = TRUE) {
@@ -650,6 +696,12 @@ get_variants <- function(study_id = NULL,
       warnings = warnings
     )
 
+  if (!rlang::is_null(cytogenetic_band))
+    list_of_variants[['variants_by_cytogenetic_band']] <-
+    get_variants_by_cytogenetic_band(cytogenetic_band = cytogenetic_band,
+                              verbose = verbose,
+                              warnings = warnings)
+
   if (!rlang::is_null(gene_name))
     list_of_variants[['variants_by_gene_name']] <-
     get_variants_by_gene_name(gene_name = gene_name,
@@ -669,30 +721,35 @@ get_variants <- function(study_id = NULL,
                               warnings = warnings)
 
   # If no criteria have been passed, i.e. all are NULL then got fetch all
-  # variants.
-  msg <- "You are about to download all variants from the GWAS Catalog.
-  This might take several hours..."
-  if(rlang::is_empty(list_of_variants) && sure(msg)) {
-    v <- get_variants_all(verbose = verbose, warnings = warnings)
-    if(std_chromosomes_only)
-      v <- filter_variants_by_standard_chromosomes(v)
-    return(v)
-  }
+  # variants
+  if(rlang::is_empty(list_of_variants)) {
+    msg1 <- "You are about to download all variants from the GWAS Catalog.\nThis might take several hours."
+    msg2 <- 'Returning an empty variants object!'
+    msg3 <- 'OK! Getting all variants then. This is going to take a while...'
+    if(interactive)
+      default_answer = NULL  # i.e., use interactive mode.
+    else
+      default_answer = 'y'
+    if(sure(before_question = msg1, after_saying_no = msg2, after_saying_yes = msg3, default_answer = default_answer))
+      return(get_variants_all(verbose = verbose, warnings = warnings))
+    else
+      return(variants())
+  } else {
 
-  if(identical(set_operation, "union")) {
-    v <- purrr::reduce(list_of_variants, union)
-    if(std_chromosomes_only)
-      v <- filter_variants_by_standard_chromosomes(v)
-    return(v)
-  }
+    if (identical(set_operation, "union")) {
+      v <- purrr::reduce(list_of_variants, union)
+      if(std_chromosomes_only)
+        v <- filter_variants_by_standard_chromosomes(v)
+      return(v)
+    }
 
-  if(identical(set_operation, "intersection")) {
-    v <- purrr::reduce(list_of_variants, intersect)
-    if(std_chromosomes_only)
-      v <- filter_variants_by_standard_chromosomes(v)
-    return(v)
+    if (identical(set_operation, "intersection")) {
+      v <- purrr::reduce(list_of_variants, intersect)
+      if(std_chromosomes_only)
+        v <- filter_variants_by_standard_chromosomes(v)
+      return(v)
+    }
   }
-
 }
 
 #' Check if a variant exists in the Catalog.

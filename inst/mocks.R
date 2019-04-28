@@ -46,6 +46,11 @@ capture_requests({
   get_variants(efo_trait = c("lung adenocarcinoma"))
 }) %>% invisible()
 
+capture_requests({
+  get_variants(cytogenetic_band = '1p36.33')
+  get_variants(cytogenetic_band = '22q11.1')
+}) %>% invisible()
+
 #
 # Mock API fixtures for requests in test-get_studies.R
 #

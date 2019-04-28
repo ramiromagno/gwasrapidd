@@ -14,9 +14,10 @@
 #   - stain
 #   - last_download_date: time stamp of the date this script was last run.
 #
-# The 'cytogenetic_bands' tibble is saved to two files:
+# The 'cytogenetic_bands' tibble is saved to 3 files:
 #   - data-raw/cytogenetic_bands.csv
 #   - data/cytogenetic_bands.rda
+#   - R/sysdata.rda
 
 library(httr)
 library(jsonlite)
@@ -56,3 +57,9 @@ cytogenetic_bands <-
 
 readr::write_csv(cytogenetic_bands, "data-raw/cytogenetic_bands.csv")
 usethis::use_data(cytogenetic_bands, compress = "xz", overwrite = TRUE)
+# Having this dataset also exported to R/sysdata.rda so that I can use it inside
+# my functions without having R CMD check triggering a Note.
+# More about this here:
+#  - https://stackoverflow.com/questions/48105239/using-datasets-in-an-r-package
+#  - https://support.bioconductor.org/p/24756/
+usethis::use_data(cytogenetic_bands, internal = TRUE, compress = "xz", overwrite = TRUE)

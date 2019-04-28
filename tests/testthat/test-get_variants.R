@@ -102,6 +102,26 @@ with_mock_api({
 })
 
 #
+## get_variants, by cytogenetic band
+#
+with_mock_api({
+  test_that("get_variants: by cytogenetic band", {
+    my_variants <- get_variants(cytogenetic_band = '1p36.33')
+    expect_is(my_variants, 'variants')
+    expect_identical(my_variants@variants$chromosome_region, rep('1p36.33', nrow(my_variants@variants)))
+  })
+})
+
+with_mock_api({
+  test_that("get_variants: by cytogenetic band", {
+    my_variants <- get_variants(cytogenetic_band = '22q11.1')
+    expect_is(my_variants, 'variants')
+    expect_identical(my_variants@variants$chromosome_region,
+                     rep('22q11.1', nrow(my_variants@variants)))
+  })
+})
+
+#
 ## get_variants, by gene name
 #
 with_mock_api({

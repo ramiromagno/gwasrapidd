@@ -333,3 +333,37 @@ is_empty_str <- function(str, convert_NA_to_FALSE = TRUE) {
   }
   stringr::str_detect(str2, "^\\s*$")
 }
+#' Convert a cytogenetic band string to genomic coordinates.
+#'
+#' This function uses the provided \code{\link[gwasrapidd]{cytogenetic_bands}}
+#' dataframe to convert cytogenetic band names to genomic coordinates.
+#'
+#' @param bands A \code{\link[base]{character}} vector of cytogenetic bands.
+#' @keywords internal
+cytogenetic_band_to_genomic_range <- function(bands) {
+  if (!is.character(bands))
+    stop("bands argument must be a character vector.")
+
+  if (identical(length(bands), 0L))
+    stop("bands contains no values, it must contain at least one string.")
+
+  # Is it a valid existing human cytogenetic band?
+  is_band <- bands %in% cytogenetic_bands$cytogenetic_band
+
+  if(any(!is_band))
+    stop("These are not valid cytogenetic bands: ",
+         concatenate::cc_and(bands[!is_band], oxford = TRUE), ".\n",
+         "Check `cytogenetic_bands` dataframe for valid names.")
+
+  cytogenetic_band <- rlang::expr(cytogenetic_band)
+  chromosome <- rlang::expr(chromosome)
+  start <- rlang::expr(start)
+  end <- rlang::expr(end)
+
+  # This alternative to dplyr::filter(cytogenetic_bands, cytogenetic_band %in% bands)
+  # preserves order of bands in final output.
+  genomic_ranges <- purrr::map_dfr(bands, ~ dplyr::filter(cytogenetic_bands, !!cytogenetic_band %in% .x)) %>%
+    dplyr::select(!!chromosome, !!start, !!end)
+
+  return(genomic_ranges)
+}

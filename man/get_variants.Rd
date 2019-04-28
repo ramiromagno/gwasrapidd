@@ -6,9 +6,10 @@
 \usage{
 get_variants(study_id = NULL, association_id = NULL,
   variant_id = NULL, efo_id = NULL, pubmed_id = NULL,
-  genomic_range = NULL, gene_name = NULL, efo_trait = NULL,
-  reported_trait = NULL, set_operation = "union",
-  std_chromosomes_only = TRUE, verbose = FALSE, warnings = TRUE)
+  genomic_range = NULL, cytogenetic_band = NULL, gene_name = NULL,
+  efo_trait = NULL, reported_trait = NULL, set_operation = "union",
+  interactive = TRUE, std_chromosomes_only = TRUE, verbose = FALSE,
+  warnings = TRUE)
 }
 \arguments{
 \item{study_id}{A character vector of GWAS Catalog study accession
@@ -32,6 +33,9 @@ starting at 1.} \item{end}{A numeric vector of end positions.} }
 The three vectors need to be of the same length so that \code{chromosome}
 names, \code{start} and \code{end} positions can be matched by position.}
 
+\item{cytogenetic_band}{A character vector of cytogenetic bands of the form
+\code{'1p36.11'}.}
+
 \item{gene_name}{Gene symbol according to
 \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.}
 
@@ -47,6 +51,9 @@ tells how variants retrieved by different criteria  should be combined:
 \code{'union'} binds together all results removing duplicates and
 \code{'intersection'} only keeps same variants found with different
 criteria.}
+
+\item{interactive}{A logical. If all variants are requested, whether to ask
+interactively if we really want to proceed.}
 
 \item{std_chromosomes_only}{Whether to return only variants mapped to
 standard chromosomes: 1 thru 22, X, Y, and MT.}

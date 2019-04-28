@@ -161,3 +161,27 @@ test_that("is_empty_str", {
   expect_error(is_empty_str(1L), "str argument must be a character vector.")
   expect_error(is_empty_str(character()), "str contains no values, it must contain at least one string.")
 })
+
+#
+## cytogenetic_band_to_genomic_range
+#
+test_that("cytogenetic_band_to_genomic_range: exceptions", {
+  expect_error(cytogenetic_band_to_genomic_range(bands = 42L), 'bands argument must be a character vector.')
+  expect_error(cytogenetic_band_to_genomic_range(bands = character()), 'bands contains no values, it must contain at least one string.')
+  expect_error(cytogenetic_band_to_genomic_range(bands = 'atm'), 'These are not valid cytogenetic bands: atm.\nCheck `cytogenetic_bands` dataframe for valid names.')
+
+})
+
+test_that("cytogenetic_band_to_genomic_range: normal usage", {
+  g1 <-
+    structure(
+      list(
+        chromosome = c("22", "1", "8"),
+        start = c(15000001L, 1L, 97900001L),
+        end = c(17400000L, 2300000L, 100500000L)
+      ),
+      row.names = c(NA, -3L),
+      class = c("tbl_df", "tbl", "data.frame")
+    )
+  expect_identical(cytogenetic_band_to_genomic_range(bands = c('22q11.1', '1p36.33', '8q22.2')), g1)
+})
