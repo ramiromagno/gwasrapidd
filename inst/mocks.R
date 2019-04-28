@@ -131,3 +131,21 @@ capture_requests({
   gwasrapidd::get_associations(pubmed_id = '21626137')
   gwasrapidd::get_associations(efo_trait = c("lung adenocarcinoma"))
 }) %>% invisible()
+
+#
+# Mock API fixtures for requests in test-parse-variants.R
+#
+
+# Mitochondrial genome variants
+capture_requests({
+  gwasrapidd::get_variants(variant_id = 'rs147903261')
+  gwasrapidd::get_variants(variant_id = 'rs267606894')
+}) %>% invisible()
+
+# Variants that also map to scaffolds other than the normal chromosomes
+# rs10910092: maps to chr 1 and to CHR_HSCHR1_1_CTG3.
+# rs570398477: maps to chr 2 and to CHR_HSCHR2_4_CTG1.
+capture_requests({
+  gwasrapidd::get_variants(variant_id = 'rs10910092')
+  gwasrapidd::get_variants(variant_id = 'rs570398477')
+}) %>% invisible()

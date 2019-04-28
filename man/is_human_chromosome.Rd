@@ -4,14 +4,14 @@
 \alias{is_human_chromosome}
 \title{Is a string a human chromosome name?}
 \usage{
-is_human_chromosome(string, chromosomes = c(1:22, "X", "Y"),
+is_human_chromosome(string, chromosomes = c(1:22, "X", "Y", "MT"),
   convert_NA_to_FALSE = TRUE)
 }
 \arguments{
 \item{string}{A character vector of strings.}
 
 \item{chromosomes}{A character vector of valid chromosome names. Default is
-autosomal chromosomes 1 thru 22 and, X and Y.}
+autosomal chromosomes 1 thru 22 and, X, Y, and MT.}
 
 \item{convert_NA_to_FALSE}{Whether to treat \code{NA} as \code{NA}
 (\code{convert_NA_to_FALSE = FALSE}) or whether to return \code{FALSE} when

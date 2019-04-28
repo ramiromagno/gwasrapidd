@@ -121,13 +121,13 @@ is_association_id <- function(str, convert_NA_to_FALSE = TRUE) {
 #'
 #' @param string A character vector of strings.
 #' @param chromosomes A character vector of valid chromosome names. Default is
-#'   autosomal chromosomes 1 thru 22 and, X and Y.
+#'   autosomal chromosomes 1 thru 22 and, X, Y, and MT.
 #' @param convert_NA_to_FALSE Whether to treat \code{NA} as \code{NA}
 #'   (\code{convert_NA_to_FALSE = FALSE}) or whether to return \code{FALSE} when
 #'   an \code{NA} is found (\code{convert_NA_to_FALSE = TRUE}).
 #' @return A logical vector.
 #' @keywords internal
-is_human_chromosome <- function(string, chromosomes = c(1:22, "X", "Y"), convert_NA_to_FALSE = TRUE) {
+is_human_chromosome <- function(string, chromosomes = c(1:22, "X", "Y", "MT"), convert_NA_to_FALSE = TRUE) {
 
   # Replace NA with "".
   if (convert_NA_to_FALSE) {
