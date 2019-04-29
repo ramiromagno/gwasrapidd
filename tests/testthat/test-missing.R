@@ -15,6 +15,8 @@ test_that("recode_to_chr_na: typical use case", {
   expect_identical(recode_to_chr_na('', recode_empty_string = FALSE), '')
   expect_identical(recode_to_chr_na(' ', recode_empty_string = FALSE), ' ')
   expect_identical(recode_to_chr_na('  ', recode_empty_string = FALSE), '  ')
+  expect_identical(recode_to_chr_na(character(), recode_empty_string = FALSE), character())
+  expect_identical(recode_to_chr_na(character(), recode_empty_string = TRUE), character())
 })
 
 test_that("recode_to_chr_na: exceptions", {
@@ -51,6 +53,10 @@ test_that("recode_missing: input chr typical use case", {
   expect_identical(recode_missing(c('', ' ', '  '), type = 'lgl', recode_empty_string = FALSE), c(NA, NA, NA))
   expect_identical(recode_missing(c('foo', 'bar'), type = 'lgl'), c(NA, NA))
 
+  expect_identical(recode_missing(character(), type = 'int'), integer())
+  expect_identical(recode_missing(character(), type = 'dbl'), double())
+  expect_identical(recode_missing(character(), type = 'lgl'), logical())
+  expect_identical(recode_missing(character(), type = 'chr'), character())
 })
 test_that("recode_missing: input int typical use case", {
   vec <- c(1L, 2L, NA_integer_)
@@ -58,6 +64,11 @@ test_that("recode_missing: input int typical use case", {
   expect_identical(recode_missing(vec, type = 'dbl'), c(1, 2, NA_real_))
   expect_identical(recode_missing(vec, type = 'lgl'), c(TRUE, TRUE, NA))
   expect_identical(recode_missing(vec, type = 'chr'), c('1', '2', NA_character_))
+
+  expect_identical(recode_missing(integer(), type = 'int'), integer())
+  expect_identical(recode_missing(integer(), type = 'dbl'), double())
+  expect_identical(recode_missing(integer(), type = 'lgl'), logical())
+  expect_identical(recode_missing(integer(), type = 'chr'), character())
 })
 test_that("recode_missing: input dbl typical use case", {
   vec <- c(1.0, 3.14, NA_real_)
@@ -65,6 +76,11 @@ test_that("recode_missing: input dbl typical use case", {
   expect_identical(recode_missing(vec, type = 'dbl'), vec)
   expect_identical(recode_missing(vec, type = 'lgl'), c(TRUE, TRUE, NA))
   expect_identical(recode_missing(vec, type = 'chr'), c('1', '3.14', NA_character_))
+
+  expect_identical(recode_missing(double(), type = 'int'), integer())
+  expect_identical(recode_missing(double(), type = 'dbl'), double())
+  expect_identical(recode_missing(double(), type = 'lgl'), logical())
+  expect_identical(recode_missing(double(), type = 'chr'), character())
 })
 test_that("recode_missing: input lgl typical use case", {
   vec <- c(TRUE, FALSE, NA)
@@ -72,6 +88,11 @@ test_that("recode_missing: input lgl typical use case", {
   expect_identical(recode_missing(vec, type = 'dbl'), c(1, 0, NA_real_))
   expect_identical(recode_missing(vec, type = 'lgl'), vec)
   expect_identical(recode_missing(vec, type = 'chr'), c('TRUE', 'FALSE', NA_character_))
+
+  expect_identical(recode_missing(logical(), type = 'int'), integer())
+  expect_identical(recode_missing(logical(), type = 'dbl'), double())
+  expect_identical(recode_missing(logical(), type = 'lgl'), logical())
+  expect_identical(recode_missing(logical(), type = 'chr'), character())
 })
 
 test_that("recode_missing: exceptions", {

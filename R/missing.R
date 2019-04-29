@@ -56,6 +56,9 @@ recode_to_chr_na <- function(chr_vec, from = c('nr', 'NR', 'NA', 'na'), recode_e
   if(!rlang::is_character(from))
     stop('from is expected to be a character!')
 
+  if(rlang::is_character(chr_vec) && rlang::is_empty(chr_vec))
+    return(chr_vec)
+
   n <- length(from)
   if(rlang::is_character(chr_vec)) {
     chr_vec2 <- plyr::mapvalues(chr_vec, from = from, to = rep(rlang::na_chr, n), warn_missing = FALSE)
