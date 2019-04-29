@@ -14,9 +14,9 @@ e_obj_to_traits <- function(obj) {
 
   # traits table
   e@traits <- traits_tbl(
-    efo_id = recode_missing(e_obj$shortForm),
-    trait = recode_missing(e_obj$trait),
-    uri = recode_missing(e_obj$uri)
+    efo_id = recode_missing(tws(e_obj$shortForm)),
+    trait = recode_missing(tws(e_obj$trait)),
+    uri = recode_missing(tws(e_obj$uri))
   )
 
   return(e)
