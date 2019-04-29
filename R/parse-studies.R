@@ -16,9 +16,9 @@ obj_to_countries <- function(study_id, ancestries, countries) {
                      else
                        return(countries_tbl(study_id = study_id,
                                             ancestry_id = y,
-                                            country_name = missing_to_na(x$countryName),
-                                            major_area = missing_to_na(x$majorArea),
-                                            region = missing_to_na(x$region)))
+                                            country_name = recode_missing(x$countryName),
+                                            major_area = recode_missing(x$majorArea),
+                                            region = recode_missing(x$region)))
                    })
 
   tbl <- dplyr::bind_rows(a)
@@ -40,7 +40,7 @@ obj_to_ancestral_groups <- function(study_id, ancestries) {
                        return(ancestral_groups_tbl(
                          study_id = study_id,
                          ancestry_id = y,
-                         ancestral_group = missing_to_na(x$ancestralGroup)
+                         ancestral_group = recode_missing(x$ancestralGroup)
                        ))
                    })
 
@@ -55,19 +55,19 @@ obj_to_studies <- function(obj) {
 
   # studies table
   s@studies <- studies_tbl(
-    study_id = missing_to_na(obj$content$studies$accessionId),
-    reported_trait = missing_to_na(obj$content$studies$diseaseTrait$trait),
-    initial_sample_size = missing_to_na(obj$content$studies$initialSampleSize),
-    replication_sample_size = missing_to_na(obj$content$studies$replicationSampleSize),
-    gxe = missing_to_na(obj$content$studies$gxe, na = NA),
-    gxg = missing_to_na(obj$content$studies$gxg, na = NA),
-    snp_count = missing_to_na(obj$content$studies$snpCount, na = NA_integer_),
-    qualifier = missing_to_na(obj$content$studies$qualifier),
-    imputed = missing_to_na(obj$content$studies$imputed, na = NA),
-    pooled = missing_to_na(obj$content$studies$pooled, na = NA),
-    study_design_comment = missing_to_na(obj$content$studies$studyDesignComment),
-    full_pvalue_set = missing_to_na(obj$content$studies$fullPvalueSet, na = NA),
-    user_requested = missing_to_na(obj$content$studies$userRequested, na = NA)
+    study_id = recode_missing(tws(obj$content$studies$accessionId)),
+    reported_trait = recode_missing(tws(obj$content$studies$diseaseTrait$trait)),
+    initial_sample_size = recode_missing(tws(obj$content$studies$initialSampleSize)),
+    replication_sample_size = recode_missing(tws(obj$content$studies$replicationSampleSize)),
+    gxe = recode_missing(tws(obj$content$studies$gxe), type = 'lgl'),
+    gxg = recode_missing(tws(obj$content$studies$gxg), type = 'lgl'),
+    snp_count = recode_missing(tws(obj$content$studies$snpCount), type = 'int'),
+    qualifier = recode_missing(tws(obj$content$studies$qualifier)),
+    imputed = recode_missing(tws(obj$content$studies$imputed), type = 'lgl'),
+    pooled = recode_missing(tws(obj$content$studies$pooled), type = 'lgl'),
+    study_design_comment = recode_missing(tws(obj$content$studies$studyDesignComment)),
+    full_pvalue_set = recode_missing(tws(obj$content$studies$fullPvalueSet), type = 'lgl'),
+    user_requested = recode_missing(tws(obj$content$studies$userRequested), type = 'lgl')
   ) %>% dplyr::distinct()
 
   # genotyping technologies table
@@ -78,7 +78,7 @@ obj_to_studies <- function(obj) {
       if (rlang::is_empty(.y))
         return(genotyping_techs_tbl())
       genotyping_techs_tbl(study_id = .x,
-                           genotyping_technology = missing_to_na(.y$genotypingTechnology))
+                           genotyping_technology = recode_missing(tws(.y$genotypingTechnology)))
     }
   ) %>% dplyr::distinct()
 
@@ -90,7 +90,7 @@ obj_to_studies <- function(obj) {
                                     return(platforms_tbl())
 
                                   platforms_tbl(study_id = .x,
-                                                manufacturer = missing_to_na(.y$manufacturer))
+                                                manufacturer = recode_missing(tws(.y$manufacturer)))
                                 }) %>% dplyr::distinct()
 
   # ancentries table
@@ -105,7 +105,7 @@ obj_to_studies <- function(obj) {
                        study_id = .x,
                        ancestry_id = seq_along(.y$type),
                        type = .y$type,
-                       number_of_individuals = .y$numberOfIndividuals
+                       number_of_individuals = recode_missing(tws(.y$numberOfIndividuals), type = 'int')
                      )
                    }) %>% dplyr::distinct()
 
@@ -134,13 +134,13 @@ obj_to_studies <- function(obj) {
   s@publications <- {
     if(rlang::is_empty(obj$content$studies$publicationInfo)) return(publications_tbl())
     publications_tbl(
-      study_id = missing_to_na(obj$content$studies$accessionId),
-      pubmed_id = missing_to_na(obj$content$studies$publicationInfo$pubmedId, na = NA_integer_),
-      publication_date = lubridate::ymd(missing_to_na(obj$content$studies$publicationInfo$publicationDate)),
-      publication = missing_to_na(obj$content$studies$publicationInfo$publication),
-      title = missing_to_na(obj$content$studies$publicationInfo$title),
-      author_fullname = missing_to_na(obj$content$studies$publicationInfo$author$fullname),
-      author_orcid = missing_to_na(obj$content$studies$publicationInfo$author$orcid)
+      study_id = recode_missing(tws(obj$content$studies$accessionId)),
+      pubmed_id = recode_missing(tws(obj$content$studies$publicationInfo$pubmedId), type = 'int'),
+      publication_date = lubridate::ymd(recode_missing(tws(obj$content$studies$publicationInfo$publicationDate))),
+      publication = recode_missing(tws(obj$content$studies$publicationInfo$publication)),
+      title = recode_missing(tws(obj$content$studies$publicationInfo$title)),
+      author_fullname = recode_missing(tws(obj$content$studies$publicationInfo$author$fullname)),
+      author_orcid = recode_missing(tws(obj$content$studies$publicationInfo$author$orcid))
     )
   } %>% dplyr::distinct()
 
