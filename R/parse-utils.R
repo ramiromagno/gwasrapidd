@@ -333,6 +333,7 @@ is_empty_str <- function(str, convert_NA_to_FALSE = TRUE) {
   }
   stringr::str_detect(str2, "^\\s*$")
 }
+
 #' Convert a cytogenetic band string to genomic coordinates.
 #'
 #' This function uses the provided \code{\link[gwasrapidd]{cytogenetic_bands}}
@@ -367,3 +368,14 @@ cytogenetic_band_to_genomic_range <- function(bands) {
 
   return(genomic_ranges)
 }
+
+#' Trim whitespace.
+#'
+#' This function removes leading and trailing white space from strings. Note:
+#' this function does no checking on input for performance reasons. So make sure
+#' the input is really a character vector.
+#'
+#'
+#' @param x A \code{\link[base]{character}} vector.
+#' @keywords internal
+tws <- function (x) stringr::str_trim(x)
