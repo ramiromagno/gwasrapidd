@@ -27,7 +27,7 @@ setOldClass(c("tbl_df", "tbl", "data.frame"))
 #' Catalog are >1.}
 #' \item{beta_number}{Beta coefficient associated with strongest SNP risk allele.}
 #' \item{beta_unit}{Beta coefficient unit.}
-#' \item{beta_direction}{Beta coefficient direction.}
+#' \item{beta_direction}{Beta coefficient direction, either \code{'decrease'} or \code{'increase'}.}
 #' \item{beta_description}{Additional beta coefficient comment.}
 #' \item{last_mapping_date}{Last time this association was mapped to Ensembl.}
 #' \item{last_update_date}{Last time this association was updated.}
