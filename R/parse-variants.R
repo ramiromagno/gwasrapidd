@@ -41,9 +41,9 @@ v_obj_to_variants_tbl <- function(obj) {
 
   obj_to_locations <- function(location_obj) {
     tbl <- tibble::tibble(
-      chromosome_name = missing_to_na(location_obj$chromosomeName),
-      chromosome_position = missing_to_na(location_obj$chromosomePosition, NA_integer_),
-      chromosome_region = missing_to_na(location_obj$region$name)
+      chromosome_name = recode_missing(tws(location_obj$chromosomeName)),
+      chromosome_position = recode_missing(tws(location_obj$chromosomePosition), type = 'int'),
+      chromosome_region = recode_missing(tws(location_obj$region$name))
     )
     return(tbl)
   }
@@ -53,13 +53,13 @@ v_obj_to_variants_tbl <- function(obj) {
                        ~ {
                          loc <- obj_to_locations(locations[[.y]])
                          variants_tbl(
-                           variant_id = missing_to_na(rsId[.y]),
-                           merged = missing_to_na(merged[.y], na = NA_integer_),
-                           functional_class = missing_to_na(functionalClass[.y]),
-                           chromosome_name = missing_to_na(loc$chromosome_name),
-                           chromosome_position = missing_to_na(loc$chromosome_position, na = NA_integer_),
-                           chromosome_region = missing_to_na(loc$chromosome_region),
-                           last_update_date = lubridate::ymd_hms(missing_to_na(lastUpdateDate[.y]))
+                           variant_id = recode_missing(tws(rsId[.y])),
+                           merged = recode_missing(tws(merged[.y]), type = 'int'),
+                           functional_class = recode_missing(tws(functionalClass[.y])),
+                           chromosome_name = recode_missing(tws(loc$chromosome_name)),
+                           chromosome_position = recode_missing(tws(loc$chromosome_position), type = 'int'),
+                           chromosome_region = recode_missing(tws(loc$chromosome_region)),
+                           last_update_date = lubridate::ymd_hms(recode_missing(tws(lastUpdateDate[.y])))
                          )
                        }) %>% dplyr::distinct()
        )
@@ -78,17 +78,17 @@ v_obj_to_genomic_contexts_tbl <- function(obj) {
                          } else {
                            gc <- genomicContexts[[.y]]
                            genomic_contexts_tbl(
-                             variant_id = missing_to_na(rsId[.y]),
-                             gene_name = missing_to_na(gc$gene$geneName),
-                             chromosome_name = missing_to_na(gc$location$chromosomeName),
-                             chromosome_position = missing_to_na(gc$location$chromosomePosition, na = NA_integer_),
-                             distance = missing_to_na(gc$distance, na = NA_integer_),
-                             is_closest_gene = missing_to_na(gc$isClosestGene, na = NA),
-                             is_intergenic = missing_to_na(gc$isIntergenic, na = NA),
-                             is_upstream = missing_to_na(gc$isUpstream, na = NA),
-                             is_downstream = missing_to_na(gc$isDownstream, na = NA),
-                             source = missing_to_na(gc$source),
-                             mapping_method = missing_to_na(gc$mappingMethod)
+                             variant_id = recode_missing(tws(rsId[.y])),
+                             gene_name = recode_missing(tws(gc$gene$geneName)),
+                             chromosome_name = recode_missing(tws(gc$location$chromosomeName)),
+                             chromosome_position = recode_missing(tws(gc$location$chromosomePosition), type = 'int'),
+                             distance = recode_missing(tws(gc$distance), type = 'int'),
+                             is_closest_gene = recode_missing(tws(gc$isClosestGene), type = 'lgl'),
+                             is_intergenic = recode_missing(tws(gc$isIntergenic), type = 'lgl'),
+                             is_upstream = recode_missing(tws(gc$isUpstream), type = 'lgl'),
+                             is_downstream = recode_missing(tws(gc$isDownstream), type = 'lgl'),
+                             source = recode_missing(tws(gc$source)),
+                             mapping_method = recode_missing(tws(gc$mappingMethod))
                            )
                          }
                        }) %>% dplyr::distinct())
@@ -109,9 +109,9 @@ v_obj_to_ensembl_ids_tbl <- function(obj) {
       tidyr::unnest()
 
     tbl2 <- v_ensembl_ids_tbl(
-      variant_id = variant_id,
-      gene_name = tbl$geneName,
-      ensembl_id = unlist(tbl$ensemblGeneIds)
+      variant_id = recode_missing(tws(variant_id)),
+      gene_name = recode_missing(tws(tbl$geneName)),
+      ensembl_id = recode_missing(tws(unlist(tbl$ensemblGeneIds)))
     )
     return(tbl2)
   }
@@ -145,9 +145,9 @@ v_obj_to_entrez_ids_tbl <- function(obj) {
       tidyr::unnest()
 
     tbl2 <- v_entrez_ids_tbl(
-      variant_id = variant_id,
-      gene_name = tbl$geneName,
-      entrez_id = unlist(tbl$entrezGeneIds)
+      variant_id = recode_missing(tws(variant_id)),
+      gene_name = recode_missing(tws(tbl$geneName)),
+      entrez_id = recode_missing(tws(unlist(tbl$entrezGeneIds)))
     )
     return(tbl2)
   }
