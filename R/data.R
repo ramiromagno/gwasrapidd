@@ -33,6 +33,7 @@
 #'   \item{start}{Genomic start position of the cytogenetic band. Starts at 1.}
 #'   \item{end}{Genomic end position of the cytogenetic band. End position is
 #'   included in the band interval.}
+#'   \item{length}{Length of the genomic interval of cytogenetic band.}
 #'   \item{assembly}{Assembly version, should be 'GRCh38'.}
 #'   \item{stain}{\href{https://en.wikipedia.org/wiki/Giemsa_stain}{Giemsa
 #'   stain} results: Giemsa negative, \code{'gneg'}; Giemsa positive, of

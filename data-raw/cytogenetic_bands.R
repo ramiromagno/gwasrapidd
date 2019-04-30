@@ -1,15 +1,16 @@
 # Title: Human cytogenetic bands and their genomic coordinates.
 # Genome assembly version: GRCh38.
 # Source: Ensembl's REST API (https://rest.ensembl.org/info/assembly/homo_sapiens?content-type=application/json&bands=1)
-# Last download date: 28 April 2019.
+# Last download date: 30 April 2019.
 # How to run: just source this file.
+# Documentation source: R/data.R
 
-
-# Output: This script generates a tibble named 'cytogenetic_bands' of 7 columns:
+# Output: This script generates a tibble named 'cytogenetic_bands' of 8 columns:
 #   - cytogenetic_band
 #   - chromosome
 #   - start
 #   - end
+#   - length
 #   - assembly
 #   - stain
 #   - last_download_date: time stamp of the date this script was last run.
@@ -18,6 +19,8 @@
 #   - data-raw/cytogenetic_bands.csv
 #   - data/cytogenetic_bands.rda
 #   - R/sysdata.rda
+
+
 
 library(httr)
 library(jsonlite)
@@ -46,7 +49,8 @@ cytogenetic_bands <-
   dplyr::rename(chromosome = seq_region_name) %>%
   dplyr::mutate_at(vars(id), ~paste0(chromosome, id)) %>%
   dplyr::rename(cytogenetic_band = id, assembly = assembly_name) %>%
-  dplyr::select(cytogenetic_band, chromosome, start, end, assembly, stain) %>%
+  dplyr::mutate(length = end - start + 1) %>%
+  dplyr::select(cytogenetic_band, chromosome, start, end, length, assembly, stain) %>%
   dplyr::arrange(match(chromosome, c(1:22, 'X', 'Y', 'MT')), start, end) %>%
   dplyr::mutate(last_download_date = lubridate::date())
 
