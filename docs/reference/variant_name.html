@@ -42,7 +42,7 @@
 <meta property="og:title" content="Extract variant identifiers from strings of the form rs123-G — variant_name" />
 
 <meta property="og:description" content="This function parses strings of the form &quot;rs123-G&quot; and returns
-the name of the variant; it uses the regex (^[^-]+)-?." />
+the name of the variant; it uses the regex -([ATCG\?]+)?$." />
 
 <meta property="og:image" content="https://rmagno.eu/gwasrapidd/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -137,7 +137,7 @@ the name of the variant; it uses the regex (^[^-]+)-?." />
     <div class="ref-description">
     
     <p>This function parses strings of the form <code>"rs123-G"</code> and returns
-the name of the variant; it uses the regex <code>(^[^-]+)-?</code>.</p>
+the name of the variant; it uses the regex <code>-([ATCG\?]+)?$</code>.</p>
     
     </div>
 
