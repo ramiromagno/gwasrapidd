@@ -175,6 +175,7 @@ Currently, there is not an implemented solution in gwasrapidd. For example, if y
 library(gwasrapidd)
 my_efo_ids <- c('EFO_0005543', 'EFO_0004762')
 my_variants <- get_variants(efo_id = my_efo_ids)
+my_variants@variants$variant_id
 ```
 
 So it is not immediately obvious which variants resulted from the query `'EFO_0005543'` or `'EFO_0004762'`.
