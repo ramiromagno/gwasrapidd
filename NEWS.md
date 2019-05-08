@@ -1,3 +1,6 @@
+## gwasrapidd 0.0.0.9015
+- Fixed typo in cheatsheet.
+
 ## gwasrapidd 0.0.0.9014
 - `get_variants()` can now use the `cytogenetic_band` criterion.
 
