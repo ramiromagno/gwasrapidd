@@ -145,6 +145,35 @@ with_mock_api({
   })
 })
 
+test_that("n() on studies, testing 'unique' parameter", {
+  expect_identical(n(studies_ex01), 2L)
+  expect_identical(n(studies_ex02), 2L)
+  expect_identical(n(bind(studies_ex01, studies_ex02), unique = FALSE), 4L)
+  expect_identical(n(bind(studies_ex01, studies_ex02), unique = TRUE), 3L)
+})
+
+
+test_that("n() on associations, testing 'unique' parameter", {
+  expect_identical(n(associations_ex01), 4L)
+  expect_identical(n(associations_ex02), 3L)
+  expect_identical(n(bind(associations_ex01, associations_ex02), unique = FALSE), 7L)
+  expect_identical(n(bind(associations_ex01, associations_ex02), unique = TRUE), 6L)
+})
+
+test_that("n() on variants, testing 'unique' parameter", {
+  expect_identical(n(variants_ex01), 3L)
+  expect_identical(n(variants_ex02), 4L)
+  expect_identical(n(bind(variants_ex01, variants_ex02), unique = FALSE), 7L)
+  expect_identical(n(bind(variants_ex01, variants_ex02), unique = TRUE), 5L)
+})
+
+test_that("n() on traits, testing the 'unique' parameter", {
+  expect_identical(n(traits_ex01), 3L)
+  expect_identical(n(traits_ex02), 4L)
+  expect_identical(n(bind(traits_ex01, traits_ex02), unique = FALSE), 7L)
+  expect_identical(n(bind(traits_ex01, traits_ex02), unique = TRUE), 6L)
+})
+
 #
 ## filter_by_id: Filter GWAS Catalog S4 objects by identifier.
 #

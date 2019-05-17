@@ -529,44 +529,54 @@ setMethod("[",
 #' @param x A \linkS4class{studies}, an
 #' \linkS4class{associations}, a \linkS4class{variants}, or a
 #' \linkS4class{traits} object.
+#' @param unique Whether to count only unique entries (\code{TRUE}) or not
+#'   (\code{FALSE}).
 #'
 #' @return An integer scalar.
 #'
 #' @export
-setGeneric('n', function(x) standardGeneric('n'))
+setGeneric('n', function(x, unique = FALSE) standardGeneric('n'))
 
 #' @rdname n
 #' @export
 setMethod("n",
           signature(x = "studies"),
-          definition = function(x) {
-            n <- dplyr::n_distinct(x@studies$study_id)
+          definition = function(x, unique = FALSE) {
+            if(unique) n <- dplyr::n_distinct(x@studies$study_id)
+            else n <- nrow(x@studies)
             return(n)
-          })
+            }
+          )
 
 #' @rdname n
 #' @export
 setMethod("n",
           signature(x = "associations"),
-          definition = function(x) {
-            n <- dplyr::n_distinct(x@associations$association_id)
+          definition = function(x, unique = FALSE) {
+            if(unique) n <- dplyr::n_distinct(x@associations$association_id)
+            else n <- nrow(x@associations)
             return(n)
-          })
+            }
+          )
 
 #' @rdname n
 #' @export
 setMethod("n",
           signature(x = "variants"),
-          definition = function(x) {
-            n <- dplyr::n_distinct(x@variants$variant_id)
+          definition = function(x, unique = FALSE) {
+            if(unique) n <- dplyr::n_distinct(x@variants$variant_id)
+            else n <- nrow(x@variants)
             return(n)
-          })
+            }
+          )
 
 #' @rdname n
 #' @export
 setMethod("n",
           signature(x = "traits"),
-          definition = function(x) {
-            n <- dplyr::n_distinct(x@traits$efo_id)
+          definition = function(x, unique = FALSE) {
+            if(unique) n <- dplyr::n_distinct(x@traits$efo_id)
+            else n <- nrow(x@traits)
             return(n)
-          })
+            }
+          )

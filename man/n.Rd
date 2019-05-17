@@ -9,20 +9,23 @@
 \alias{n,traits-method}
 \title{Number of GWAS Catalog entities}
 \usage{
-n(x)
+n(x, unique = FALSE)
 
-\S4method{n}{studies}(x)
+\S4method{n}{studies}(x, unique = FALSE)
 
-\S4method{n}{associations}(x)
+\S4method{n}{associations}(x, unique = FALSE)
 
-\S4method{n}{variants}(x)
+\S4method{n}{variants}(x, unique = FALSE)
 
-\S4method{n}{traits}(x)
+\S4method{n}{traits}(x, unique = FALSE)
 }
 \arguments{
 \item{x}{A \linkS4class{studies}, an
 \linkS4class{associations}, a \linkS4class{variants}, or a
 \linkS4class{traits} object.}
+
+\item{unique}{Whether to count only unique entries (\code{TRUE}) or not
+(\code{FALSE}).}
 }
 \value{
 An integer scalar.
