@@ -8,20 +8,21 @@
 The studies object consists of eight slots, each a table
 (\code{\link[tibble]{tibble}}), that combined form a relational database of a
 subset of GWAS Catalog studies. Each study is an observation (row) in the
-\code{studies} table --- main table. All tables have the column \code{study_id} as
-primary key.
+\code{studies} table --- main table. All tables have the column
+\code{study_id} as primary key.
 }
 \section{Slots}{
 
 \describe{
 \item{\code{studies}}{\describe{
-\item{study_id}{GWAS Catalog study accession identifier, e.g., \code{"GCST002735"}.}
+\item{study_id}{GWAS Catalog study accession identifier, e.g.,
+\code{"GCST002735"}.}
 \item{reported_trait}{Phenotypic trait as reported by the authors of the
 study, e.g. \code{"Breast cancer"}.}
 \item{initial_sample_size}{Free text description of the initial cohort sample
 size.}
-\item{replication_sample_size}{Free text description of the replication cohort sample
-size.}
+\item{replication_sample_size}{Free text description of the replication
+cohort sample size.}
 \item{gxe}{Whether the study investigates a gene-environment interaction.}
 \item{gxg}{Whether the study investigates a gene-gene interaction.}
 \item{snp_count}{Number of variants passing quality control.}
@@ -39,35 +40,41 @@ was requested by a user.}
   technologies employed in each study. Columns:
 \describe{
 \item{study_id}{GWAS Catalog study accession identifier.}
-\item{genotyping_technology}{Genotyping technology employed, e.g. \code{"Exome
-genotyping array"}, \code{"Exome-wide sequencing"}, \code{"Genome-wide
-genotyping array"}, \code{"Genome-wide sequencing"}, or \code{"Targeted
-genotyping array"}.}
+\item{genotyping_technology}{Genotyping technology employed, e.g.
+\code{"Exome genotyping array"}, \code{"Exome-wide sequencing"},
+\code{"Genome-wide genotyping array"}, \code{"Genome-wide sequencing"}, or
+\code{"Targeted genotyping array"}.}
 }}
 
-\item{\code{platforms}}{A \code{\link[tibble]{tibble}} listing platforms used per study.
+\item{\code{platforms}}{A \code{\link[tibble]{tibble}} listing platforms used per
+  study.
 \describe{
 \item{study_id}{GWAS Catalog study accession identifier.}
 \item{manufacturer}{Platform manufacturer, e.g., \code{"Affymetrix"},
 \code{"Illumina"}, or \code{"Perlegen"}.}
 }}
 
-\item{\code{ancestries}}{A \code{\link[tibble]{tibble}} listing ancestry of samples used in each study.
+\item{\code{ancestries}}{A \code{\link[tibble]{tibble}} listing ancestry of samples
+  used in each study.
 \describe{
 \item{study_id}{GWAS Catalog study accession identifier.}
 \item{ancestry_id}{Ancestry identifier.}
-\item{type}{Stage of the ancestry sample: either \code{'initial'} or \code{'replication'}.}
-\item{number_of_individuals}{Number of individuals comprising this ancestry sample.}
+\item{type}{Stage of the ancestry sample: either \code{'initial'} or
+\code{'replication'}.}
+\item{number_of_individuals}{Number of individuals comprising this ancestry
+sample.}
 }}
 
-\item{\code{ancestral_groups}}{A \code{\link[tibble]{tibble}} listing ancestral groups used in each ancestry.
+\item{\code{ancestral_groups}}{A \code{\link[tibble]{tibble}} listing ancestral
+  groups used in each ancestry.
 \describe{
 \item{study_id}{GWAS Catalog study accession identifier.}
 \item{ancestry_id}{Ancestry identifier.}
 \item{ancestral_group}{Genetic ancentry groups present in the sample.}
 }}
 
-\item{\code{countries_of_origin}}{A \code{\link[tibble]{tibble}} listing countries of origin of samples.
+\item{\code{countries_of_origin}}{A \code{\link[tibble]{tibble}} listing countries of
+  origin of samples.
 \describe{
 \item{study_id}{GWAS Catalog study accession identifier.}
 \item{ancestry_id}{Ancestry identifier.}
@@ -81,7 +88,8 @@ according to \href{https://unstats.un.org/unsd/methodology/m49/overview/}{The
 United Nations M49 Standard of Geographic Regions.}}
 }}
 
-\item{\code{countries_of_recruitment}}{A \code{\link[tibble]{tibble}} listing countries of recruitment of samples.
+\item{\code{countries_of_recruitment}}{A \code{\link[tibble]{tibble}} listing
+  countries of recruitment of samples.
 \describe{
 \item{study_id}{GWAS Catalog study accession identifier.}
 \item{ancestry_id}{Ancestry identifier.}
@@ -95,15 +103,19 @@ according to \href{https://unstats.un.org/unsd/methodology/m49/overview/}{The
 United Nations M49 Standard of Geographic Regions.}}
 }}
 
-\item{\code{publications}}{A \code{\link[tibble]{tibble}} listing publications associated with each study.
+\item{\code{publications}}{A \code{\link[tibble]{tibble}} listing publications
+  associated with each study.
 \describe{
 \item{study_id}{GWAS Catalog study accession identifier.}
-\item{pubmed_id}{\href{https://en.wikipedia.org/wiki/PubMed}{PubMed} identifier.}
-\item{publication_date}{Publication date (online date if available) formatted as \code{\link[lubridate]{ymd}}.}
+\item{pubmed_id}{\href{https://en.wikipedia.org/wiki/PubMed}{PubMed}
+identifier.}
+\item{publication_date}{Publication date (online date if available) formatted
+as \code{\link[lubridate]{ymd}}.}
 \item{publication}{Abbreviated journal name.}
 \item{title}{Publication title.}
 \item{author_fullname}{Last name and initials of first author.}
-\item{author_orcid}{Author's \href{https://en.wikipedia.org/wiki/ORCID}{ORCID iD} (Open Researcher and Contributor ID).}
+\item{author_orcid}{Author's \href{https://en.wikipedia.org/wiki/ORCID}{ORCID
+iD} (Open Researcher and Contributor ID).}
 }}
 }}
 

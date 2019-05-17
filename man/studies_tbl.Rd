@@ -21,8 +21,8 @@ study.}
 \item{initial_sample_size}{Free text description of the initial cohort sample
 size.}
 
-\item{replication_sample_size}{Free text description of the replication cohort sample
-size.}
+\item{replication_sample_size}{Free text description of the replication
+cohort sample size.}
 
 \item{gxe}{Whether the study investigates a gene-environment interaction.}
 

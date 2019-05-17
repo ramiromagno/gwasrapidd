@@ -75,3 +75,17 @@ arguments are retrieved: this corresponds to the default option
 variants that match simultaneously all criteria provided, then set
 \code{set_operation} to \code{'intersection'}.
 }
+\examples{
+# Get variants by study identifier
+get_variants(study_id = 'GCST001085')
+
+# Get variants by association identifier
+get_variants(association_id = '25389945')
+
+# Get a variant by its identifier
+get_variants(variant_id = 'rs3798440')
+
+# Get variants by EFO trait identifier
+get_variants(efo_id = 'EFO_0005537')
+
+}

@@ -13,7 +13,7 @@ is_embedded(obj)
 A logical value.
 }
 \description{
-Checks if the response is wrapped in an '_embedded' object by checking if
-an element named '_embedded' exists.
+Checks if the response is wrapped in an '_embedded' object by checking if an
+element named '_embedded' exists.
 }
 \keyword{internal}

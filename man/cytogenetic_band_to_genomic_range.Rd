@@ -9,6 +9,11 @@ cytogenetic_band_to_genomic_range(bands)
 \arguments{
 \item{bands}{A \code{\link[base]{character}} vector of cytogenetic bands.}
 }
+\value{
+A dataframe of genomic ranges. Columns are: chromosome, start and
+  end. Each row corresponds to a queried cytogenetic band (in the same order
+  as queried).
+}
 \description{
 This function uses the provided \code{\link[gwasrapidd]{cytogenetic_bands}}
 dataframe to convert cytogenetic band names to genomic coordinates.

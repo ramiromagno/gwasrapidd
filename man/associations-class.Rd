@@ -7,33 +7,40 @@
 \description{
 The association object consists of six slots, each a table
 (\code{\link[tibble]{tibble}}), that combined form a relational database of a
-subset of GWAS Catalog associations. Each association is an observation (row) in the
-\code{associations} table --- main table. All tables have the column \code{association_id} as
-primary key.
+subset of GWAS Catalog associations. Each association is an observation (row)
+in the \code{associations} table --- main table. All tables have the column
+\code{association_id} as primary key.
 }
 \section{Slots}{
 
 \describe{
-\item{\code{associations}}{A \code{\link[tibble]{tibble}} listing associations. Columns:
+\item{\code{associations}}{A \code{\link[tibble]{tibble}} listing associations.
+  Columns:
 \describe{
-\item{association_id}{GWAS Catalog association accession identifier, e.g., \code{"20250"}.}
+\item{association_id}{GWAS Catalog association accession identifier, e.g.,
+\code{"20250"}.}
 \item{pvalue}{Reported p-value for strongest variant risk or effect allele.}
 \item{pvalue_description}{Information describing context of p-value.}
 \item{pvalue_mantissa}{Mantissa of p-value.}
 \item{pvalue_exponent}{Exponent of p-value.}
-\item{multiple_snp_haplotype}{Whether the association is for a multi-SNP haplotype.}
+\item{multiple_snp_haplotype}{Whether the association is for a multi-SNP
+haplotype.}
 \item{snp_interaction}{Whether the association is for a SNP-SNP interaction.}
-\item{snp_type}{Whether the SNP has previously been reported. Either \code{'known'} or \code{'novel'}.}
+\item{snp_type}{Whether the SNP has previously been reported. Either
+\code{'known'} or \code{'novel'}.}
 \item{standard_error}{Standard error of the effect size.}
 \item{range}{Reported 95\% confidence interval associated with strongest SNP
-risk allele, along with unit in the case of beta coefficients. If 95\% CIs have not been
-not reported, these are estimated using the standard error, when available.}
+risk allele, along with unit in the case of beta coefficients. If 95\% CIs
+have not been not reported, these are estimated using the standard error,
+when available.}
 \item{or_per_copy_number}{Reported odds ratio (OR) associated
 with strongest SNP risk allele. Note that all ORs included in the
 Catalog are >1.}
-\item{beta_number}{Beta coefficient associated with strongest SNP risk allele.}
+\item{beta_number}{Beta coefficient associated with strongest SNP risk
+allele.}
 \item{beta_unit}{Beta coefficient unit.}
-\item{beta_direction}{Beta coefficient direction, either \code{'decrease'} or \code{'increase'}.}
+\item{beta_direction}{Beta coefficient direction, either \code{'decrease'} or
+\code{'increase'}.}
 \item{beta_description}{Additional beta coefficient comment.}
 \item{last_mapping_date}{Last time this association was mapped to Ensembl.}
 \item{last_update_date}{Last time this association was updated.}
@@ -41,23 +48,27 @@ Catalog are >1.}
 
 \item{\code{loci}}{A \code{\link[tibble]{tibble}} listing loci. Columns:
 \describe{
-\item{association_id}{GWAS Catalog association accession identifier, e.g., \code{"20250"}.}
+\item{association_id}{GWAS Catalog association accession identifier, e.g.,
+\code{"20250"}.}
 \item{locus_id}{A locus identifier referring to a single variant locus or to
 a multi-loci entity such as a multi-SNP haplotype.}
 \item{haplotype_snp_count}{Number of variants per locus. Most loci are
 single-SNP loci, i.e., there is a one to one relationship between a variant
-and a \code{locus_id} (\code{haplotype_snp_count == NA}). There are however cases of associations involving
-multiple loci at once, such as SNP-SNP interactions and multi-SNP haplotypes.
-This is signalled in the columns: \code{multiple_snp_haplotype} and
-\code{snp_interaction} with value \code{TRUE}.}
+and a \code{locus_id} (\code{haplotype_snp_count == NA}). There are however
+cases of associations involving multiple loci at once, such as SNP-SNP
+interactions and multi-SNP haplotypes. This is signalled in the columns:
+\code{multiple_snp_haplotype} and \code{snp_interaction} with value
+\code{TRUE}.}
 \item{description}{Description of the locus identifier, e.g.,
 \code{'Single variant'}, \code{SNP x SNP interaction}, or \code{3-SNP
 Haplotype}.}
 }}
 
-\item{\code{risk_alleles}}{A \code{\link[tibble]{tibble}} listing risk alleles. Columns:
+\item{\code{risk_alleles}}{A \code{\link[tibble]{tibble}} listing risk alleles.
+  Columns:
 \describe{
-\item{association_id}{GWAS Catalog association accession identifier, e.g., \code{"20250"}.}
+\item{association_id}{GWAS Catalog association accession identifier, e.g.,
+\code{"20250"}.}
 \item{locus_id}{A locus identifier referring to a single variant locus or to
 a multi-loci entity such as a multi-SNP haplotype.}
 \item{variant_id}{Variant identifier, e.g., \code{'rs1333048'}.}
@@ -66,38 +77,46 @@ a multi-loci entity such as a multi-SNP haplotype.}
 strongest SNP in controls (if not available among all controls, among the
 control group with the largest sample size). If the associated locus is a
 haplotype the haplotype frequency will be extracted.}
-\item{genome_wide}{Whether this variant allele has been part of a genome-wide study or not.}
+\item{genome_wide}{Whether this variant allele has been part of a genome-wide
+study or not.}
 \item{limited_list}{Undocumented.}
 }}
 
-\item{\code{genes}}{A \code{\link[tibble]{tibble}} listing author reported genes. Columns:
+\item{\code{genes}}{A \code{\link[tibble]{tibble}} listing author reported genes.
+  Columns:
 \describe{
-\item{association_id}{GWAS Catalog association accession identifier, e.g., \code{"20250"}.}
+\item{association_id}{GWAS Catalog association accession identifier, e.g.,
+\code{"20250"}.}
 \item{locus_id}{A locus identifier referring to a single variant locus or to
 a multi-loci entity such as a multi-SNP haplotype.}
-\item{gene_name}{Gene symbol according to \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.}
-}}
+\item{gene_name}{Gene symbol according to
+\href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.} }}
 
-\item{\code{ensembl_ids}}{A \code{\link[tibble]{tibble}} listing Ensembl gene identifiers. Columns:
+\item{\code{ensembl_ids}}{A \code{\link[tibble]{tibble}} listing Ensembl gene
+  identifiers. Columns:
 \describe{
-\item{association_id}{GWAS Catalog association accession identifier, e.g., \code{"20250"}.}
+\item{association_id}{GWAS Catalog association accession identifier, e.g.,
+\code{"20250"}.}
 \item{locus_id}{A locus identifier referring to a single variant locus or to
 a multi-loci entity such as a multi-SNP haplotype.}
-\item{gene_name}{Gene symbol according to \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.}
+\item{gene_name}{Gene symbol according to
+\href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.}
 \item{entrez_id}{The Entrez identifier of a gene, see ref.
 \href{https://dx.doi.org/10.1093\%2Fnar\%2Fgkq1237}{10.1093/nar/gkq1237} for
 more information.}
 \item{ensembl_id}{The Ensembl identifier of an Ensembl gene, see Section
-\href{https://www.ensembl.org/info/genome/genebuild/genome_annotation.html}{Gene
-annotation in Ensembl} for more information.}
-}}
+\href{https://tinyurl.com/yxufd22b}{Gene
+annotation in Ensembl} for more information.} }}
 
-\item{\code{entrez_ids}}{A \code{\link[tibble]{tibble}} listing Entrez gene identifiers. Columns:
+\item{\code{entrez_ids}}{A \code{\link[tibble]{tibble}} listing Entrez gene
+  identifiers. Columns:
 \describe{
-\item{association_id}{GWAS Catalog association accession identifier, e.g., \code{"20250"}.}
+\item{association_id}{GWAS Catalog association accession identifier, e.g.,
+\code{"20250"}.}
 \item{locus_id}{A locus identifier referring to a single variant locus or to
 a multi-loci entity such as a multi-SNP haplotype.}
-\item{gene_name}{Gene symbol according to \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.}
+\item{gene_name}{Gene symbol according to
+\href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.}
 \item{entrez_id}{The Entrez identifier of a gene, see ref.
 \href{https://dx.doi.org/10.1093\%2Fnar\%2Fgkq1237}{10.1093/nar/gkq1237} for
 more information.}

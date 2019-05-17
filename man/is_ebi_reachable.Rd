@@ -28,3 +28,12 @@ reachable. This function attempts to connect to
 \code{FALSE} otherwise. Set \code{chatty = TRUE} for a step by step
 description of the connection attempt.
 }
+\examples{
+# Check if the GWAS Catalog Server is reachable
+is_ebi_reachable() # Returns TRUE or FALSE.
+
+# Check if the GWAS Catalog Server is reachable
+# and show exactly at what step is it failing (if that is the case)
+is_ebi_reachable(chatty = TRUE)
+
+}

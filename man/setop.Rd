@@ -31,5 +31,73 @@ An object of the same class as \code{x} and \code{y}, i.e.,
 \description{
 Performs set union, intersection, and (asymmetric!) difference on two objects
 of either class \linkS4class{studies}, \linkS4class{associations},
-\linkS4class{variants}, or \linkS4class{traits}.
+\linkS4class{variants}, or \linkS4class{traits}. Note that \code{union()}
+removes duplicated entities, whereas \code{\link[gwasrapidd]{bind}()} does
+not.
+}
+\examples{
+#
+# union()
+#
+# Combine studies and remove duplicates
+union(studies_ex01, studies_ex02)
+
+# Combine associations and remove duplicates
+union(associations_ex01, associations_ex02)
+
+# Combine variants and remove duplicates
+union(variants_ex01, variants_ex02)
+
+# Combine traits and remove duplicates
+union(traits_ex01, traits_ex02)
+
+#
+# intersect()
+#
+# Intersect common studies
+intersect(studies_ex01, studies_ex02)
+
+# Intersect common associations
+intersect(associations_ex01, associations_ex02)
+
+# Intersect common variants
+intersect(variants_ex01, variants_ex02)
+
+# Intersect common traits
+intersect(traits_ex01, traits_ex02)
+
+#
+# setdiff()
+#
+# Remove studies from ex01 that are also present in ex02
+setdiff(studies_ex01, studies_ex02)
+
+# Remove associations from ex01 that are also present in ex02
+setdiff(associations_ex01, associations_ex02)
+
+# Remove variants from ex01 that are also present in ex02
+setdiff(variants_ex01, variants_ex02)
+
+# Remove traits from ex01 that are also present in ex02
+setdiff(traits_ex01, traits_ex02)
+
+#
+# setequal()
+#
+# Compare two studies objects
+setequal(studies_ex01, studies_ex01)
+setequal(studies_ex01, studies_ex02)
+
+# Compare two associations objects
+setequal(associations_ex01, associations_ex01)
+setequal(associations_ex01, associations_ex02)
+
+# Compare two variants objects
+setequal(variants_ex01, variants_ex01)
+setequal(variants_ex01, variants_ex02)
+
+# Compare two traits objects
+setequal(traits_ex01, traits_ex01)
+setequal(traits_ex01, traits_ex02)
+
 }

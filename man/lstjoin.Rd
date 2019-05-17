@@ -27,6 +27,9 @@ plst_inner_join(list_of_lsts)
 
 \item{list_of_lsts}{A list of lists to be joined together.}
 }
+\value{
+A list.
+}
 \description{
 These functions join lists by matching elements by name. In the case of
 \code{lst_left_join} \code{lst_x} is used as reference for traversal and its

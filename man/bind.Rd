@@ -17,5 +17,21 @@ bind(x, ...)
 An object of the same class as \code{x}.
 }
 \description{
-Binds together GWAS Catalog objects of the same class.
+Binds together GWAS Catalog objects of the same class. Note that
+\code{bind()} preserves duplicates whereas \code{\link[gwasrapidd]{union}()}
+does not.
+}
+\examples{
+# Join two studies objects.
+bind(studies_ex01, studies_ex02)
+
+# Join two associations objects.
+bind(associations_ex01, associations_ex02)
+
+# Join two variants objects.
+bind(variants_ex01, variants_ex02)
+
+# Join two traits objects.
+bind(traits_ex01, traits_ex02)
+
 }

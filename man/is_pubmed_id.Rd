@@ -17,8 +17,7 @@ an \code{NA} is found (\code{convert_NA_to_FALSE = TRUE}).}
 A logical vector.
 }
 \description{
-Find which strings are valid PubMed IDs (returns
-\code{TRUE}). PubMed IDs are tested against the following regular
-expression: \code{^\\\\d+$}.
+Find which strings are valid PubMed IDs (returns \code{TRUE}). PubMed IDs are
+tested against the following regular expression: \code{^\\\\d+$}.
 }
 \keyword{internal}

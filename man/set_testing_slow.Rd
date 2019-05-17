@@ -6,12 +6,16 @@
 \usage{
 set_testing_slow()
 }
+\value{
+Returns \code{NULL}. This function should be used for its side
+  effect.
+}
 \description{
-This function sets an environment variable \code{TEST_FAST} to 'false' which is used
-to flag if a test should be skipped or not. If you place
+This function sets an environment variable \code{TEST_FAST} to 'false' which
+is used to flag if a test should be skipped or not. If you place
 \code{\link[gwasrapidd]{skip_if_testing_is_fast}} in a test then it will
 check if \code{TEST_FAST} is 'true', if it is, then it will skip the next
-expectations with a \code{test_that()} block.
-Please note that this function is to be used in gwasrapidd development.
+expectations with a \code{test_that()} block. Please note that this function
+is to be used in gwasrapidd development.
 }
 \keyword{internal}

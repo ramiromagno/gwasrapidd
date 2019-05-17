@@ -13,9 +13,9 @@ associations_drop_na(s4_associations)
 An object of class \linkS4class{associations}.
 }
 \description{
-This function takes an associations S4 object and removes any association identifiers
-that might have been NA. This ensures that there is always a non-NA
-\code{association_id} value in all tables. This is important as the \code{association_id}
-is the primary key.
+This function takes an associations S4 object and removes any association
+identifiers that might have been NA. This ensures that there is always a
+non-NA \code{association_id} value in all tables. This is important as the
+\code{association_id} is the primary key.
 }
 \keyword{internal}

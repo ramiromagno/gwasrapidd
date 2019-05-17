@@ -30,11 +30,13 @@ associations_tbl(association_id = character(), pvalue = double(),
 
 \item{snp_interaction}{A logical vector.}
 
-\item{snp_type}{A character vector indicating SNP novelty: 'novel' or 'known'.}
+\item{snp_type}{A character vector indicating SNP novelty: 'novel' or
+'known'.}
 
 \item{standard_error}{A numeric vector of standard errors.}
 
-\item{range}{A character vector of free text descriptions of confidence intervals.}
+\item{range}{A character vector of free text descriptions of confidence
+intervals.}
 
 \item{or_per_copy_number}{A numeric vector of odds ratios.}
 

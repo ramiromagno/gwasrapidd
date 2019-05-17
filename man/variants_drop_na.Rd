@@ -15,7 +15,7 @@ An object of class \linkS4class{variants}.
 \description{
 This function takes a variants S4 object and removes any variant identifiers
 that might have been NA. This ensures that there is always a non-NA
-\code{variant_id} value in all tables. This is important as the \code{variant_id}
-is the primary key.
+\code{variant_id} value in all tables. This is important as the
+\code{variant_id} is the primary key.
 }
 \keyword{internal}

@@ -15,7 +15,8 @@ loci_tbl(association_id = character(), locus_id = integer(),
 \item{haplotype_snp_count}{An integer vector indicating the number of
 variants in the haplotype.}
 
-\item{description}{A character vector of descriptions, one per locus identifier.}
+\item{description}{A character vector of descriptions, one per locus
+identifier.}
 }
 \value{
 A \code{\link[tibble]{tibble}} whose columns are the named arguments

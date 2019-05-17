@@ -16,7 +16,8 @@ identifiers.}
 \item{association_id}{A \code{character} vector of GWAS Catalog association
 identifiers.}
 
-\item{variant_id}{A \code{character} vector of GWAS Catalog variant identifiers.}
+\item{variant_id}{A \code{character} vector of GWAS Catalog variant
+identifiers.}
 
 \item{efo_id}{A character vector of \href{https://www.ebi.ac.uk/efo/}{EFO}
 identifiers.}
@@ -53,4 +54,18 @@ arguments are retrieved: this corresponds to the default option
 \code{set_operation} set to \code{'union'}. If you rather have only the
 associations that match simultaneously all criteria provided, then set
 \code{set_operation} to \code{'intersection'}.
+}
+\examples{
+# Get an association by study identifier
+get_associations(study_id = 'GCST001085')
+
+# Get an association by association identifier
+get_associations(association_id = '25389945')
+
+# Get associations by variant identifier
+get_associations(variant_id = 'rs3798440')
+
+# Get associations by EFO trait identifier
+get_associations(efo_id = 'EFO_0005537')
+
 }

@@ -67,3 +67,17 @@ arguments are retrieved: this corresponds to the default option
 studies that match simultaneously all criteria provided, then set
 \code{set_operation} to \code{'intersection'}.
 }
+\examples{
+# Get a study by its accession identifier
+get_studies(study_id = 'GCST001085')
+
+# Get a study by association identifier
+get_studies(association_id = '25389945')
+
+# Get studies by variant identifier
+get_studies(variant_id = 'rs3798440')
+
+# Get studies by EFO trait identifier
+get_studies(efo_id = 'EFO_0005537')
+
+}

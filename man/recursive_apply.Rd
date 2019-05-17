@@ -13,14 +13,14 @@ recursive_apply(x, fn)
 }
 \value{
 A list whose non-list elements have been replaced by the result of
-applying \code{fn}.
+  applying \code{fn}.
 }
 \description{
 Like \code{\link[base]{rapply}}, \code{recursive_apply} is a recursive
 version \code{\link[base]{lapply}} but contrary to
 \code{\link[base]{rapply}}, \code{recursive_apply} does not ignore
 \code{\link[base]{NULL}} values. Each element of the list which is not itself
-a list is replaced by the result of applying \code{fn}. If down the line there
-are data.frames, then their class is preserved.
+a list is replaced by the result of applying \code{fn}. If down the line
+there are data.frames, then their class is preserved.
 }
 \keyword{internal}

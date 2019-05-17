@@ -9,6 +9,10 @@ open_in_dbsnp(variant_id)
 \arguments{
 \item{variant_id}{A variant identifier, a character vector.}
 }
+\value{
+Returns \code{TRUE} if successful. Note however that this
+function is run for its side effect.
+}
 \description{
 This function launches the web browser and opens a tab for each SNP
 identifier.

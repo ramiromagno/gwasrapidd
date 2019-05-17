@@ -12,9 +12,11 @@ publications_tbl(study_id = character(), pubmed_id = integer(),
 \arguments{
 \item{study_id}{GWAS Catalog study accession identifier.}
 
-\item{pubmed_id}{\href{https://en.wikipedia.org/wiki/PubMed}{PubMed} identifier.}
+\item{pubmed_id}{\href{https://en.wikipedia.org/wiki/PubMed}{PubMed}
+identifier.}
 
-\item{publication_date}{Publication date (online date if available) formatted as \code{\link[lubridate]{ymd}}.}
+\item{publication_date}{Publication date (online date if available) formatted
+as \code{\link[lubridate]{ymd}}.}
 
 \item{publication}{Abbreviated journal name.}
 
@@ -22,7 +24,8 @@ publications_tbl(study_id = character(), pubmed_id = integer(),
 
 \item{author_fullname}{Last name and initials of first author.}
 
-\item{author_orcid}{Author's \href{https://en.wikipedia.org/wiki/ORCID}{ORCID iD} (Open Researcher and Contributor ID).}
+\item{author_orcid}{Author's \href{https://en.wikipedia.org/wiki/ORCID}{ORCID
+iD} (Open Researcher and Contributor ID).}
 }
 \value{
 A \code{\link[tibble]{tibble}} whose columns are the named arguments

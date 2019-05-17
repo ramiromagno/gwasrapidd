@@ -18,7 +18,8 @@ risk_alleles_tbl(association_id = character(), locus_id = integer(),
 
 \item{risk_allele}{A character vector of risk or effect allele names.}
 
-\item{risk_frequency}{A numeric vector of the frequency of risk or effect alleles.}
+\item{risk_frequency}{A numeric vector of the frequency of risk or effect
+alleles.}
 
 \item{genome_wide}{A logical vector.}
 

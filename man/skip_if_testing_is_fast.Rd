@@ -6,9 +6,14 @@
 \usage{
 skip_if_testing_is_fast()
 }
+\value{
+Returns \code{TRUE} if the environment variable \code{'TEST_FAST'} is
+  set to \code{'false'}, or does not return anything but triggers the side
+  effect of skipping the next test (with testthat).
+}
 \description{
 This function checks the value of \code{TEST_FAST}, if it is 'true' it skips
-the test otherwise it still runs the following expectations.
-Please note that this function is to be used in gwasrapidd development.
+the test otherwise it still runs the following expectations. Please note that
+this function is to be used in gwasrapidd development.
 }
 \keyword{internal}

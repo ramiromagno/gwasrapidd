@@ -9,6 +9,9 @@ tws(x)
 \arguments{
 \item{x}{A \code{\link[base]{character}} vector.}
 }
+\value{
+A character vector.
+}
 \description{
 This function removes leading and trailing white space from strings. Note:
 this function does no checking on input for performance reasons. So make sure

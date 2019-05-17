@@ -7,11 +7,14 @@
 traits(traits = traits_tbl())
 }
 \arguments{
-\item{efo_id}{A \code{character} vector of \href{https://www.ebi.ac.uk/efo/}{EFO} identifiers.}
+\item{efo_id}{A \code{character} vector of
+\href{https://www.ebi.ac.uk/efo/}{EFO} identifiers.}
 
-\item{trait}{A \code{character} vector of \href{https://www.ebi.ac.uk/efo/}{EFO} trait descriptions.}
+\item{trait}{A \code{character} vector of
+\href{https://www.ebi.ac.uk/efo/}{EFO} trait descriptions.}
 
-\item{uri}{A \code{character} vector of  \href{https://www.ebi.ac.uk/efo/}{EFO} URIs.}
+\item{uri}{A \code{character} vector of
+\href{https://www.ebi.ac.uk/efo/}{EFO} URIs.}
 }
 \value{
 An object of class \linkS4class{traits}.

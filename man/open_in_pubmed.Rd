@@ -10,6 +10,10 @@ open_in_pubmed(pubmed_id)
 \item{pubmed_id}{A PubMed identifier, either a character or an integer
 vector.}
 }
+\value{
+Returns \code{TRUE} if successful. Note however that this
+function is run for its side effect.
+}
 \description{
 This function launches the web browser and opens a tab for each PubMed
 citation.

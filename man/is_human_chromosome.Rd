@@ -4,7 +4,7 @@
 \alias{is_human_chromosome}
 \title{Is a string a human chromosome name?}
 \usage{
-is_human_chromosome(string, chromosomes = c(1:22, "X", "Y", "MT"),
+is_human_chromosome(string, chromosomes = c(seq_len(22), "X", "Y", "MT"),
   convert_NA_to_FALSE = TRUE)
 }
 \arguments{

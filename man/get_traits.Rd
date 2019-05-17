@@ -50,3 +50,14 @@ arguments are retrieved: this corresponds to the default option
 traits that match simultaneously all criteria provided, then set
 \code{set_operation} to \code{'intersection'}.
 }
+\examples{
+# Get traits by study identifier
+get_traits(study_id = 'GCST001085')
+
+# Get traits by association identifier
+get_traits(association_id = '25389945')
+
+# Get a trait by its EFO identifier
+get_traits(efo_id = 'EFO_0005537')
+
+}

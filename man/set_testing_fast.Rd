@@ -6,6 +6,10 @@
 \usage{
 set_testing_fast()
 }
+\value{
+Returns \code{NULL}. This function should be used for its side
+  effect.
+}
 \description{
 This function sets an environment variable \code{TEST_FAST} to 'true' which
 is used to flag if a test should be skipped or not. If you place

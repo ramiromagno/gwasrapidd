@@ -9,6 +9,9 @@ peel_off_embedded(obj)
 \arguments{
 \item{obj}{A JSON-list.}
 }
+\value{
+A JSON-list.
+}
 \description{
 This function removes an element named \code{_embedded} from the element
 \code{content} moving all of its contents one level up. If

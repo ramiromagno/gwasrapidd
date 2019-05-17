@@ -12,7 +12,8 @@ ancestries_tbl(study_id = character(), ancestry_id = integer(),
 
 \item{ancestry_id}{Ancestry identifier.}
 
-\item{type}{Type of cohort sample, either \code{"initial"} or \code{"replication"}.}
+\item{type}{Type of cohort sample, either \code{"initial"} or
+\code{"replication"}.}
 
 \item{number_of_individuals}{Number of individuals in the cohort sample.}
 }

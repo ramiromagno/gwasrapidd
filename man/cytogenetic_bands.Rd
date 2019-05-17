@@ -36,14 +36,13 @@ A dataset containing the GRCh38 human cytogenetic bands and their genomic
 coordinates.
 }
 \details{
-Genomic coordinates are for
-\href{http://genome.ucsc.edu/blog/wp-content/uploads/2016/12/newInterval.png}{fully
-closed} intervals.
+Genomic coordinates are for \href{https://tinyurl.com/y4dh923p}{fully closed}
+intervals.
 }
 \section{Cytogenetic Nomenclature}{
 
-Cytogenetic bands are numbered from the centromere outwards in both directions
-towards the telomeres on the shorter p arm and the longer q arm.
+Cytogenetic bands are numbered from the centromere outwards in both
+directions towards the telomeres on the shorter p arm and the longer q arm.
 
 The first number or letter represents the chromosome. Chromosomes 1 through
 22 (the autosomes) are designated by their chromosome number. The sex

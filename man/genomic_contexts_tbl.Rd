@@ -37,7 +37,7 @@ genomic_contexts_tbl(variant_id = character(), gene_name = character(),
 }
 \value{
 A \code{\link[tibble]{tibble}} whose columns are the named arguments
-to the function.
+  to the function.
 }
 \description{
 Creates a genomic contexts table.

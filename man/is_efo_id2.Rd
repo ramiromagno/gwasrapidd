@@ -17,8 +17,8 @@ an \code{NA} is found (\code{convert_NA_to_FALSE = TRUE}).}
 A logical vector.
 }
 \description{
-This function is more permissible than \code{\link[gwasrapidd]{is_efo_id}}. This function
-matches EFO trait IDs against the following regular expression:
+This function is more permissible than \code{\link[gwasrapidd]{is_efo_id}}.
+This function matches EFO trait IDs against the following regular expression:
 \code{^\\\\w+$}. This is very forgiving on the input, any sequence of word
 characters are ok. This is useful to match EFO identifiers that do not follow
 the regex \code{^EFO_\\\\d\{7\}$}, such as: \code{'GO_0097334'},
