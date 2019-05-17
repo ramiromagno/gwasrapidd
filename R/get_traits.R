@@ -367,16 +367,27 @@ get_traits_all <- function(verbose = FALSE, warnings = TRUE, page_size = 20L) {
 #' @param warnings A \code{logical} indicating whether to print warnings, if any.
 #'
 #' @return A \linkS4class{traits} object.
+#' @examples
+#' # Get traits by study identifier
+#' get_traits(study_id = 'GCST001085')
+#'
+#' # Get traits by association identifier
+#' get_traits(association_id = '25389945')
+#'
+#' # Get a trait by its EFO identifier
+#' get_traits(efo_id = 'EFO_0005537')
+#'
 #' @export
 get_traits <- function(study_id = NULL,
-                             association_id = NULL,
-                             efo_id = NULL,
-                             pubmed_id = NULL,
-                             efo_uri = NULL,
-                             efo_trait = NULL,
-                             set_operation = 'union',
-                             verbose = FALSE,
-                             warnings = TRUE) {
+                       association_id = NULL,
+                       efo_id = NULL,
+                       pubmed_id = NULL,
+                       efo_uri = NULL,
+                       efo_trait = NULL,
+                       set_operation = 'union',
+                       verbose = FALSE,
+                       warnings = TRUE) {
+
 
   if(!(rlang::is_scalar_character(set_operation) && set_operation %in% c('union', 'intersection')))
     stop("set_operation must be either 'union' or 'intersection'")
