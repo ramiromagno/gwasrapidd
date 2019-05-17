@@ -618,6 +618,19 @@ get_variants_all <- function(verbose = FALSE, warnings = TRUE, page_size = 20L) 
 #' @param warnings Whether to print warnings.
 #'
 #' @return A \linkS4class{variants} object.
+#' @examples
+#' # Get variants by study identifier
+#' get_variants(study_id = 'GCST001085')
+#'
+#' # Get variants by association identifier
+#' get_variants(association_id = '25389945')
+#'
+#' # Get a variant by its identifier
+#' get_variants(variant_id = 'rs3798440')
+#'
+#' # Get variants by EFO trait identifier
+#' get_variants(efo_id = 'EFO_0005537')
+#'
 #' @export
 get_variants <- function(study_id = NULL,
                          association_id = NULL,
