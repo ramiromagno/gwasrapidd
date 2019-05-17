@@ -17,7 +17,8 @@ predicate2 <- function(fn) {
   }
 }
 
-# This is a function factory for methods that are variadic endofunctions functions.
+# This is a function factory for methods that are variadic endofunctions
+# functions.
 p_endofunction <- function(fn, obj_class) {
   # https://stackoverflow.com/questions/14679852/define-s4-method-with-3-dots
   function(x, ...) {
@@ -32,7 +33,9 @@ p_endofunction <- function(fn, obj_class) {
 #'
 #' Performs set union, intersection, and (asymmetric!) difference on two objects
 #' of either class \linkS4class{studies}, \linkS4class{associations},
-#' \linkS4class{variants}, or \linkS4class{traits}.
+#' \linkS4class{variants}, or \linkS4class{traits}. Note that \code{union()}
+#' removes duplicated entities, whereas \code{\link[gwasrapidd]{bind}()} does
+#' not.
 #'
 #' @param x,y Objects of either class \linkS4class{studies},
 #'   \linkS4class{associations}, \linkS4class{variants}, or
@@ -47,21 +50,89 @@ NULL
 
 #' @rdname setop
 #' @importFrom dplyr union
+#' @examples
+#' #
+#' # union()
+#' #
+#' # Combine studies and remove duplicates
+#' union(studies_ex01, studies_ex02)
+#'
+#' # Combine associations and remove duplicates
+#' union(associations_ex01, associations_ex02)
+#'
+#' # Combine variants and remove duplicates
+#' union(variants_ex01, variants_ex02)
+#'
+#' # Combine traits and remove duplicates
+#' union(traits_ex01, traits_ex02)
+#'
 #' @export
 setGeneric('union', function(x, y) standardGeneric('union'))
 
 #' @rdname setop
 #' @importFrom dplyr intersect
+#' @examples
+#' #
+#' # intersect()
+#' #
+#' # Intersect common studies
+#' intersect(studies_ex01, studies_ex02)
+#'
+#' # Intersect common associations
+#' intersect(associations_ex01, associations_ex02)
+#'
+#' # Intersect common variants
+#' intersect(variants_ex01, variants_ex02)
+#'
+#' # Intersect common traits
+#' intersect(traits_ex01, traits_ex02)
+#'
 #' @export
 setGeneric('intersect', function(x, y) standardGeneric('intersect'))
 
 #' @rdname setop
 #' @importFrom dplyr setdiff
+#' @examples
+#' #
+#' # setdiff()
+#' #
+#' # Remove studies from ex01 that are also present in ex02
+#' setdiff(studies_ex01, studies_ex02)
+#'
+#' # Remove associations from ex01 that are also present in ex02
+#' setdiff(associations_ex01, associations_ex02)
+#'
+#' # Remove variants from ex01 that are also present in ex02
+#' setdiff(variants_ex01, variants_ex02)
+#'
+#' # Remove traits from ex01 that are also present in ex02
+#' setdiff(traits_ex01, traits_ex02)
+#'
 #' @export
 setGeneric('setdiff', function(x, y) standardGeneric('setdiff'))
 
 #' @rdname setop
 #' @importFrom dplyr setequal
+#' @examples
+#' #
+#' # setequal()
+#' #
+#' # Compare two studies objects
+#' setequal(studies_ex01, studies_ex01)
+#' setequal(studies_ex01, studies_ex02)
+#'
+#' # Compare two associations objects
+#' setequal(associations_ex01, associations_ex01)
+#' setequal(associations_ex01, associations_ex02)
+#'
+#' # Compare two variants objects
+#' setequal(variants_ex01, variants_ex01)
+#' setequal(variants_ex01, variants_ex02)
+#'
+#' # Compare two traits objects
+#' setequal(traits_ex01, traits_ex01)
+#' setequal(traits_ex01, traits_ex02)
+#'
 #' @export
 setGeneric('setequal', function(x, y) standardGeneric('setequal'))
 
@@ -148,7 +219,9 @@ setMethod("setequal",
 
 #' Bind GWAS Catalog objects
 #'
-#' Binds together GWAS Catalog objects of the same class.
+#' Binds together GWAS Catalog objects of the same class. Note that
+#' \code{bind()} preserves duplicates whereas \code{\link[gwasrapidd]{union}()}
+#' does not.
 #'
 #' @param x An object of class: \linkS4class{studies},
 #'   \linkS4class{associations}, \linkS4class{variants}, or
@@ -156,6 +229,19 @@ setMethod("setequal",
 #' @param ... Objects of the same class as \code{x}.
 #'
 #' @return An object of the same class as \code{x}.
+#' @examples
+#' # Join two studies objects.
+#' bind(studies_ex01, studies_ex02)
+#'
+#' # Join two associations objects.
+#' bind(associations_ex01, associations_ex02)
+#'
+#' # Join two variants objects.
+#' bind(variants_ex01, variants_ex02)
+#'
+#' # Join two traits objects.
+#' bind(traits_ex01, traits_ex02)
+#'
 #' @export
 setGeneric('bind', function(x, ...) standardGeneric('bind'))
 
@@ -189,6 +275,22 @@ setMethod("bind",
 #'   \linkS4class{associations}, \linkS4class{variants}, or
 #'   \linkS4class{traits}.
 #' @param id Identifier.
+#'
+#' @return Returns an object of class either \linkS4class{studies},
+#'   \linkS4class{associations}, \linkS4class{variants}, or
+#'   \linkS4class{traits}.
+#' @examples
+#' # Filter a studies object by identifier.
+#' filter_by_id(studies_ex01, 'GCST001585')
+#'
+#' # Filter a associations object by identifier.
+#' filter_by_id(associations_ex01, c('22509', '19537565'))
+#'
+#' # Filter a variants object by identifier.
+#' filter_by_id(variants_ex01, 'rs56261590')
+#'
+#' # Filter a traits object by identifier.
+#' filter_by_id(traits_ex01, 'EFO_0004884')
 #'
 #' @keywords internal
 setGeneric("filter_by_id", function(x, id) standardGeneric('filter_by_id'))
@@ -236,24 +338,6 @@ setMethod("filter_by_id",
             y <- list_to_s4(lst, "traits")
             return(y)
           })
-
-# #' Subsetting GWAS Catalog objects
-# #'
-# #' We can subset \linkS4class{studies},
-# #' \linkS4class{associations}, \linkS4class{variants}, or \linkS4class{traits},
-# #' by their respective identifiers or by position using the \code{`[`} operator.
-# #'
-# #' @usage x[i]
-# #'
-# #' @param x A \linkS4class{studies}, \linkS4class{associations},
-# #'   \linkS4class{variants}, or \linkS4class{traits} object.
-# #' @param i Position of the identifier or the name of the identifier itself.
-# #'
-# #' @return An object of the same class as \code{x}, i.e.,
-# #'   \linkS4class{studies}, \linkS4class{associations}, \linkS4class{variants},
-# #'   or \linkS4class{traits}.
-# #' @name `[`
-# NULL
 
 #' Subset a studies object
 #'
