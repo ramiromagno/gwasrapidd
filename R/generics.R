@@ -300,19 +300,31 @@ setGeneric("filter_by_id", function(x, id) standardGeneric('filter_by_id'))
 setMethod("filter_by_id",
           signature(x = "studies", id = "character"),
           definition = function(x, id) {
-            study_id <- rlang::expr(study_id)
-            lst <- purrr::map(s4_to_list(x), ~ dplyr::filter(.x, !!study_id %in% id))
+            # study_id <- rlang::expr(study_id)
+            # lst <- purrr::map(s4_to_list(x), ~ dplyr::filter(.x, !!study_id %in% id))
+            lst <- purrr::map(s4_to_list(x),
+                              ~ dplyr::inner_join(
+                                tibble::tibble(study_id = id),
+                                .x,
+                                by = 'study_id')
+                              )
             y <- list_to_s4(lst, "studies")
             return(y)
-          })
+})
 
 
 #' @keywords internal
 setMethod("filter_by_id",
           signature(x = "associations", id = "character"),
           definition = function(x, id) {
-            association_id <- rlang::expr(association_id)
-            lst <- purrr::map(s4_to_list(x), ~ dplyr::filter(.x, !!association_id %in% id))
+            # association_id <- rlang::expr(association_id)
+            # lst <- purrr::map(s4_to_list(x), ~ dplyr::filter(.x, !!association_id %in% id))
+            lst <- purrr::map(s4_to_list(x),
+                              ~ dplyr::inner_join(
+                                tibble::tibble(association_id = id),
+                                .x,
+                                by = 'association_id')
+            )
             y <- list_to_s4(lst, "associations")
             return(y)
           })
@@ -322,19 +334,31 @@ setMethod("filter_by_id",
 setMethod("filter_by_id",
           signature(x = "variants", id = "character"),
           definition = function(x, id) {
-            variant_id <- rlang::expr(variant_id)
-            lst <- purrr::map(s4_to_list(x), ~ dplyr::filter(.x, !!variant_id %in% id))
+            # variant_id <- rlang::expr(variant_id)
+            # lst <- purrr::map(s4_to_list(x), ~ dplyr::filter(.x, !!variant_id %in% id))
+            lst <- purrr::map(s4_to_list(x),
+                              ~ dplyr::inner_join(
+                                tibble::tibble(variant_id = id),
+                                .x,
+                                by = 'variant_id')
+            )
             y <- list_to_s4(lst, "variants")
             return(y)
-          })
+})
 
 
 #' @keywords internal
 setMethod("filter_by_id",
           signature(x = "traits", id = "character"),
           definition = function(x, id) {
-            efo_id <- rlang::expr(efo_id)
-            lst <- purrr::map(s4_to_list(x), ~ dplyr::filter(.x, !!efo_id %in% id))
+            # efo_id <- rlang::expr(efo_id)
+            # lst <- purrr::map(s4_to_list(x), ~ dplyr::filter(.x, !!efo_id %in% id))
+            lst <- purrr::map(s4_to_list(x),
+                              ~ dplyr::inner_join(
+                                tibble::tibble(efo_id = id),
+                                .x,
+                                by = 'efo_id')
+            )
             y <- list_to_s4(lst, "traits")
             return(y)
           })

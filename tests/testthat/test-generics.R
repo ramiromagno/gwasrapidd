@@ -146,6 +146,38 @@ with_mock_api({
 })
 
 #
+## filter_by_id: Filter GWAS Catalog S4 objects by identifier.
+#
+
+test_that("filter_by_id() studies", {
+  my_studies <- filter_by_id(studies_ex01, 'GCST001585')
+  expect_is(my_studies, 'studies')
+  expect_identical(my_studies@studies$study_id, 'GCST001585')
+  expect_identical(n(my_studies), 1L)
+})
+
+test_that("filter_by_id() associations", {
+  my_associations <- filter_by_id(associations_ex01, '19537565')
+  expect_is(my_associations, 'associations')
+  expect_identical(my_associations@associations$association_id, '19537565')
+  expect_identical(n(my_associations), 1L)
+})
+
+test_that("filter_by_id() variants", {
+  my_variants <- filter_by_id(variants_ex01, 'rs56261590')
+  expect_is(my_variants, 'variants')
+  expect_identical(my_variants@variants$variant_id, 'rs56261590')
+  expect_identical(n(my_variants), 1L)
+})
+
+test_that("filter_by_id() traits", {
+  my_traits <- filter_by_id(traits_ex01, 'EFO_0004884')
+  expect_is(my_traits, 'traits')
+  expect_identical(my_traits@traits$efo_id, 'EFO_0004884')
+  expect_identical(n(my_traits), 1L)
+})
+
+#
 ## `[`(): Subset operator for GWAS Catalog S4 objects.
 #
 
