@@ -55,27 +55,24 @@ a_obj_to_associations_tbl <- function(association_ids, obj) {
   # Later on recode_missing will convert NULL to NA appropriately.
   obj[cols[!rlang::has_name(obj, cols)]] <- list(NULL)
 
-  with(
-    obj,
-    associations_tbl(
-      association_id = recode_missing(association_ids),
-      pvalue = recode_missing(pvalue, type = 'dbl'),
-      pvalue_description = recode_missing(pvalueDescription),
-      pvalue_mantissa = recode_missing(pvalueMantissa, type = 'int'),
-      pvalue_exponent = recode_missing(pvalueExponent, type = 'int'),
-      multiple_snp_haplotype = recode_missing(multiSnpHaplotype, type = 'lgl'),
-      snp_interaction = recode_missing(snpInteraction, type = 'lgl'),
-      snp_type = recode_missing(snpType),
-      standard_error = recode_missing(standardError, type = 'dbl'),
-      range = recode_missing(range, from = c('nr', 'NR', 'NA', 'na', '[NR]')),
-      or_per_copy_number = recode_missing(orPerCopyNum, type = 'dbl'),
-      beta_number = recode_missing(betaNum, type = 'dbl'),
-      beta_unit = recode_missing(betaUnit),
-      beta_direction = recode_missing(betaDirection),
-      beta_description = recode_missing(description),
-      last_mapping_date = lubridate::ymd_hms(recode_missing(lastMappingDate)),
-      last_update_date = lubridate::ymd_hms(recode_missing(lastUpdateDate))
-    )
+  associations_tbl(
+    association_id = recode_missing(association_ids),
+    pvalue = recode_missing(obj$pvalue, type = 'dbl'),
+    pvalue_description = recode_missing(obj$pvalueDescription),
+    pvalue_mantissa = recode_missing(obj$pvalueMantissa, type = 'int'),
+    pvalue_exponent = recode_missing(obj$pvalueExponent, type = 'int'),
+    multiple_snp_haplotype = recode_missing(obj$multiSnpHaplotype, type = 'lgl'),
+    snp_interaction = recode_missing(obj$snpInteraction, type = 'lgl'),
+    snp_type = recode_missing(obj$snpType),
+    standard_error = recode_missing(obj$standardError, type = 'dbl'),
+    range = recode_missing(obj$range, from = c('nr', 'NR', 'NA', 'na', '[NR]')),
+    or_per_copy_number = recode_missing(obj$orPerCopyNum, type = 'dbl'),
+    beta_number = recode_missing(obj$betaNum, type = 'dbl'),
+    beta_unit = recode_missing(obj$betaUnit),
+    beta_direction = recode_missing(obj$betaDirection),
+    beta_description = recode_missing(obj$description),
+    last_mapping_date = lubridate::ymd_hms(recode_missing(obj$lastMappingDate)),
+    last_update_date = lubridate::ymd_hms(recode_missing(obj$lastUpdateDate))
   )
 }
 
