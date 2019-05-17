@@ -3,13 +3,12 @@
 #' A dataset containing the GRCh38 human cytogenetic bands and their genomic
 #' coordinates.
 #'
-#' Genomic coordinates are for
-#' \href{http://genome.ucsc.edu/blog/wp-content/uploads/2016/12/newInterval.png}{fully
-#' closed} intervals.
+#' Genomic coordinates are for \href{https://tinyurl.com/y4dh923p}{fully closed}
+#' intervals.
 #'
 #' @section Cytogenetic Nomenclature:
-#' Cytogenetic bands are numbered from the centromere outwards in both directions
-#' towards the telomeres on the shorter p arm and the longer q arm.
+#' Cytogenetic bands are numbered from the centromere outwards in both
+#' directions towards the telomeres on the shorter p arm and the longer q arm.
 #'
 #' The first number or letter represents the chromosome. Chromosomes 1 through
 #' 22 (the autosomes) are designated by their chromosome number. The sex
@@ -22,7 +21,6 @@
 #' similar way, eg. 21.1 to 21.2, if the bands are small or only appear at a
 #' higher resolution.
 #'
-
 #'
 #' @format A data frame with 862 rows and 7 variables:
 #' \describe{
@@ -47,3 +45,57 @@
 #' }
 #' @source \url{https://rest.ensembl.org/info/assembly/homo_sapiens?content-type=application/json&bands=1}
 "cytogenetic_bands"
+
+
+#' gwasrapidd entities' examples
+#'
+#' These are examples of GWAS Catalog entities shipped with gwasrapidd:
+#'
+#' @format
+#' \describe{
+#'   \item{studies_ex01}{An S4 \linkS4class{studies} object of 2 studies:
+#'   \code{'GCST001585'} and \code{'GCST003985'}.}
+#'   \item{studies_ex02}{An S4 \linkS4class{studies} object of 2 studies:
+#'   \code{'GCST001585'} and \code{'GCST006655'}.}
+#'   \item{associations_ex01}{An S4 \linkS4class{associations} object of 4
+#'   associations: \code{'22509'}, \code{'22505'}, \code{'19537565'} and
+#'   \code{'19537593'}.}
+#'   \item{associations_ex02}{An S4 \linkS4class{associations} object of 3
+#'   associations: \code{'19537593'}, \code{'31665940'} and \code{'34944736'}.}
+#'   \item{variants_ex01}{An S4 \linkS4class{variants} object of 3 variants:
+#'   \code{'rs146992477'}, \code{'rs56261590'} and \code{'rs4725504'}.}
+#'   \item{variants_ex02}{An S4 \linkS4class{variants} object of 4 variants:
+#'   \code{'rs56261590'}, \code{'rs4725504'}, \code{'rs11099757'} and
+#'   \code{'rs16871509'}.}
+#'   \item{traits_ex01}{An S4 \linkS4class{traits} object of 3 traits:
+#'   \code{'EFO_0004884'}, \code{'EFO_0004343'} and \code{'EFO_0005299'}.}
+#'   \item{traits_ex02}{An S4 \linkS4class{traits} object of 4 traits:
+#'   \code{'EFO_0007845'}, \code{'EFO_0004699'}, \code{'EFO_0004884'} and
+#'   \code{'EFO_0004875'}.}
+#' }
+#'
+#' @name gc_examples
+
+#' @rdname gc_examples
+"studies_ex01"
+
+#' @rdname gc_examples
+"studies_ex02"
+
+#' @rdname gc_examples
+"associations_ex01"
+
+#' @rdname gc_examples
+"associations_ex02"
+
+#' @rdname gc_examples
+"variants_ex01"
+
+#' @rdname gc_examples
+"variants_ex02"
+
+#' @rdname gc_examples
+"traits_ex01"
+
+#' @rdname gc_examples
+"traits_ex02"
