@@ -5,7 +5,8 @@
 #'
 #' @param pubmed_id A PubMed identifier, either a character or an integer
 #'   vector.
-#'
+#' @return Returns \code{TRUE} if successful. Note however that this
+#' function is run for its side effect.
 #' @export
 open_in_pubmed <- function(pubmed_id) {
   if (!(rlang::is_double(pubmed_id) || rlang::is_integer(pubmed_id) || rlang::is_character(pubmed_id) ))
