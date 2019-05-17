@@ -17,7 +17,7 @@ user_agent_id <- httr::user_agent("gwasrapidd: GWAS R API Data Download")
 #' @return A list four named elements:
 #' \describe{
 #' \item{url}{The URL endpoint.}
-#' \item{response_code}{\href{https://en.wikipedia.org/wiki/List_of_HTTP_status_codes}{HTTP
+#' \item{response_code}{\href{https://tinyurl.com/8yqvhwf}{HTTP
 #' status code}.}
 #' \item{status}{A string describing the status of the response obtained. It is
 #' "OK" if everything went OK or some other string describing the problem
@@ -44,14 +44,19 @@ gc_request <- function(resource_url = "/", base_url = gwas_rest_api_base_url,
   # Response object (a list of four elements):
   #   - url: the resource URL
   #   - response_code: response code
-  #   - status: short remark about what went wrong with the response, or OK if successful.
-  #   - response content: the content of the parsed JSON response, or NULL if not successful.
-  obj <- list(url = url, response_code = response_code, status = NA_character_, content = NULL)
+  #   - status: short remark about what went wrong with the response,
+  #     or OK if successful.
+  #   - response content: the content of the parsed JSON response, or NULL if
+  #     not successful.
+  obj <- list(url = url,
+              response_code = response_code,
+              status = NA_character_,
+              content = NULL)
 
   # If response is not 200, i.e. if request did not complete successfully then
   # return an empty response object (NULL) and warn about the response code.
   if (!identical(response_code, 200L)) {
-    wrg_msg <- glue::glue("The request for {url} failed: response code was {response_code}.")
+    wrg_msg <-glue::glue("The request for {url} failed: response code was {response_code}.")
     if(warnings) {
       warning(wrg_msg, immediate. = TRUE, call. = FALSE)
     }
@@ -76,7 +81,8 @@ gc_request <- function(resource_url = "/", base_url = gwas_rest_api_base_url,
 
   obj$status <- "OK"
   # missing_to_na job here is to map those nasty NULLs to NA
-  # For more about this problem: https://www.lively-web.org/R-libraries/RJSONIO/doc/missingValues.html
+  # For more about this problem:
+  # https://www.lively-web.org/R-libraries/RJSONIO/doc/missingValues.html
   obj$content <- missing_to_na(content)
   #obj$content <- content
   return(obj)
@@ -216,7 +222,7 @@ is_paginated <- function(content) 'page' %in% names(content)
 #' @return A list four named elements:
 #' \describe{
 #' \item{url}{The URL endpoint.}
-#' \item{response_code}{\href{https://en.wikipedia.org/wiki/List_of_HTTP_status_codes}{HTTP
+#' \item{response_code}{\href{https://tinyurl.com/8yqvhwf}{HTTP
 #' status code}.}
 #' \item{status}{A string describing the status of the response obtained. It is
 #' "OK" if everything went OK or some other string describing the problem
@@ -226,8 +232,12 @@ is_paginated <- function(content) 'page' %in% names(content)
 #' }
 #'
 #' @keywords internal
-gc_request_all <- function(resource_url = "/", base_url = gwas_rest_api_base_url,
-                           page_size = 20L, verbose = FALSE, warnings = TRUE, progress_bar = TRUE) {
+gc_request_all <- function(resource_url = "/",
+                           base_url = gwas_rest_api_base_url,
+                           page_size = 20L,
+                           verbose = FALSE,
+                           warnings = TRUE,
+                           progress_bar = TRUE) {
 
   # response object
   obj <- gc_request(resource_url = resource_url, base_url = base_url,
@@ -256,7 +266,8 @@ gc_request_all <- function(resource_url = "/", base_url = gwas_rest_api_base_url
   n_pages <- (pagination[["totalElements"]] - 1L) %/% page_size + 1L
 
   # This is a hack!
-  # For instance the URL: https://www.ebi.ac.uk/ols/api/ontologies/efo/descendants?id=EFO_0009285
+  # For instance the URL:
+  # https://www.ebi.ac.uk/ols/api/ontologies/efo/descendants?id=EFO_0009285
   # has a page object but lists:
   # $content$page$totalElements
   # [1] 0
@@ -311,8 +322,8 @@ gc_request_all <- function(resource_url = "/", base_url = gwas_rest_api_base_url
 
 #' Is the GWAS response wrapped in an '_embedded' object?
 #'
-#' Checks if the response is wrapped in an '_embedded' object by checking if
-#' an element named '_embedded' exists.
+#' Checks if the response is wrapped in an '_embedded' object by checking if an
+#' element named '_embedded' exists.
 #'
 #' @param obj The response object as return by \code{jsonlite::fromJSON}.
 #'
@@ -402,6 +413,7 @@ normalise_obj <- function(obj, resource_url) {
 #'
 #' @param obj A JSON-list.
 #'
+#' @return A JSON-list.
 #' @keywords internal
 peel_off_embedded <- function(obj) {
 
