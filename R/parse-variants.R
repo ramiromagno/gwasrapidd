@@ -48,21 +48,21 @@ v_obj_to_variants_tbl <- function(obj) {
     return(tbl)
   }
 
-  with(obj,
-       purrr::imap_dfr(rsId,
-                       ~ {
-                         loc <- obj_to_locations(locations[[.y]])
-                         variants_tbl(
-                           variant_id = recode_missing(tws(rsId[.y])),
-                           merged = recode_missing(tws(merged[.y]), type = 'int'),
-                           functional_class = recode_missing(tws(functionalClass[.y])),
-                           chromosome_name = recode_missing(tws(loc$chromosome_name)),
-                           chromosome_position = recode_missing(tws(loc$chromosome_position), type = 'int'),
-                           chromosome_region = recode_missing(tws(loc$chromosome_region)),
-                           last_update_date = lubridate::ymd_hms(recode_missing(tws(lastUpdateDate[.y])))
-                         )
-                       }) %>% dplyr::distinct()
-       )
+  purrr::imap_dfr(obj$rsId,
+                  ~ {
+                    loc <- obj_to_locations(obj$locations[[.y]])
+                    variants_tbl(
+                      variant_id = recode_missing(tws(obj$rsId[.y])),
+                      merged = recode_missing(tws(obj$merged[.y]), type = 'int'),
+                      functional_class = recode_missing(tws(obj$functionalClass[.y])),
+                      chromosome_name = recode_missing(tws(loc$chromosome_name)),
+                      chromosome_position = recode_missing(tws(loc$chromosome_position), type = 'int'),
+                      chromosome_region = recode_missing(tws(loc$chromosome_region)),
+                      last_update_date = lubridate::ymd_hms(recode_missing(tws(
+                        obj$lastUpdateDate[.y]
+                      )))
+                    )
+                  }) %>% dplyr::distinct()
 }
 
 #' @keywords internal
@@ -70,28 +70,28 @@ v_obj_to_genomic_contexts_tbl <- function(obj) {
 
   if(rlang::is_empty(obj)) return(genomic_contexts_tbl())
 
-  with(obj,
-       purrr::imap_dfr(rsId,
-                       ~ {
-                         if (rlang::is_empty(genomicContexts[[.y]])) {
-                           genomic_contexts_tbl()
-                         } else {
-                           gc <- genomicContexts[[.y]]
-                           genomic_contexts_tbl(
-                             variant_id = recode_missing(tws(rsId[.y])),
-                             gene_name = recode_missing(tws(gc$gene$geneName)),
-                             chromosome_name = recode_missing(tws(gc$location$chromosomeName)),
-                             chromosome_position = recode_missing(tws(gc$location$chromosomePosition), type = 'int'),
-                             distance = recode_missing(tws(gc$distance), type = 'int'),
-                             is_closest_gene = recode_missing(tws(gc$isClosestGene), type = 'lgl'),
-                             is_intergenic = recode_missing(tws(gc$isIntergenic), type = 'lgl'),
-                             is_upstream = recode_missing(tws(gc$isUpstream), type = 'lgl'),
-                             is_downstream = recode_missing(tws(gc$isDownstream), type = 'lgl'),
-                             source = recode_missing(tws(gc$source)),
-                             mapping_method = recode_missing(tws(gc$mappingMethod))
-                           )
-                         }
-                       }) %>% dplyr::distinct())
+
+  purrr::imap_dfr(obj$rsId,
+                  ~ {
+                    if (rlang::is_empty(obj$genomicContexts[[.y]])) {
+                      genomic_contexts_tbl()
+                    } else {
+                      gc <- obj$genomicContexts[[.y]]
+                      genomic_contexts_tbl(
+                        variant_id = recode_missing(tws(obj$rsId[.y])),
+                        gene_name = recode_missing(tws(gc$gene$geneName)),
+                        chromosome_name = recode_missing(tws(gc$location$chromosomeName)),
+                        chromosome_position = recode_missing(tws(gc$location$chromosomePosition), type = 'int'),
+                        distance = recode_missing(tws(gc$distance), type = 'int'),
+                        is_closest_gene = recode_missing(tws(gc$isClosestGene), type = 'lgl'),
+                        is_intergenic = recode_missing(tws(gc$isIntergenic), type = 'lgl'),
+                        is_upstream = recode_missing(tws(gc$isUpstream), type = 'lgl'),
+                        is_downstream = recode_missing(tws(gc$isDownstream), type = 'lgl'),
+                        source = recode_missing(tws(gc$source)),
+                        mapping_method = recode_missing(tws(gc$mappingMethod))
+                      )
+                    }
+                  }) %>% dplyr::distinct()
 }
 
 #' @keywords internal
@@ -116,17 +116,16 @@ v_obj_to_ensembl_ids_tbl <- function(obj) {
     return(tbl2)
   }
 
-  with(obj,
-  purrr::imap_dfr(genomicContexts, # over variants
+  purrr::imap_dfr(obj$genomicContexts, # over variants
                   ~ {
                     if (rlang::is_empty(.x)) {
                       v_ensembl_ids_tbl()
                     } else {
-                      obj_to_ensembl_id_tbl(variant_id = rsId[.y],
+                      obj_to_ensembl_id_tbl(variant_id = obj$rsId[.y],
                                             gene_obj = .x$gene)
                     }
                   }) %>% dplyr::distinct()
-  )
+
 
 }
 
@@ -152,15 +151,14 @@ v_obj_to_entrez_ids_tbl <- function(obj) {
     return(tbl2)
   }
 
-  with(obj,
-       purrr::imap_dfr(genomicContexts, # over variants
-                       ~ {
-                         if (rlang::is_empty(.x))
-                           return(v_entrez_ids_tbl())
-                         obj_to_entrez_id_tbl(variant_id = rsId[.y],
-                                              gene_obj = .x$gene)
-                       }) %>% dplyr::distinct()
-  )
+
+  purrr::imap_dfr(obj$genomicContexts, # over variants
+                  ~ {
+                    if (rlang::is_empty(.x))
+                      return(v_entrez_ids_tbl())
+                    obj_to_entrez_id_tbl(variant_id = obj$rsId[.y],
+                                         gene_obj = .x$gene)
+                  }) %>% dplyr::distinct()
 }
 
 #' Filter variants by standard human chromosomes.
@@ -177,7 +175,7 @@ v_obj_to_entrez_ids_tbl <- function(obj) {
 #'   autosomal chromosomes 1 thru 22 and, X, Y, and MT.
 #' @return An object of class \linkS4class{variants}.
 #' @keywords internal
-filter_variants_by_standard_chromosomes <- function(s4_variants, chromosomes = c(1:22, "X", "Y", "MT")) {
+filter_variants_by_standard_chromosomes <- function(s4_variants, chromosomes = c(seq_len(22), "X", "Y", "MT")) {
 
   not_valid_chr_name_lgl <- !is_human_chromosome(chromosomes)
   if (any(not_valid_chr_name_lgl))
