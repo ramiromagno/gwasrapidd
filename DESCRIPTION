@@ -1,7 +1,7 @@
 Package: gwasrapidd
 Type: Package
 Title: REST API Client for the NHGRI-EBI GWAS Catalog
-Version: 0.0.0.9015
+Version: 0.0.1
 Authors@R: c(
     person(given = "Ramiro", family = "Magno", email = "ramiro.magno@gmail.com",
     role = c("aut", "cre"), comment = c(ORCID = "0000-0001-5226-3441")),
@@ -14,7 +14,7 @@ Description: gwasrapidd: GWAS R API Data Download.
     gwasrapidd provides easy access to the NHGRI-EBI GWAS Catalog data by
     accessing the REST API https://www.ebi.ac.uk/gwas/docs/api.
 Depends:
-    R (>= 2.10)
+    R (>= 3.5)
 License: MIT + file LICENSE
 URL: https://github.com/ramiromagno/gwasrapidd
 BugReports: https://github.com/ramiromagno/gwasrapidd/issues
@@ -79,3 +79,4 @@ Collate:
     'utils-pipe.R'
     'utils.R'
 VignetteBuilder: knitr
+biocViews: ThirdPartyClient, BiomedicalInformatics, GenomeWideAssociation, SNP
