@@ -1,34 +1,27 @@
-#' Stop R execution without triggering an error
-#'
-#' This function stops execution quietly.
-#'
-#' @keywords internal
-stop_quietly <- function() {
-  # https://stackoverflow.com/questions/14469522/stop-an-r-program-without-error
-  opt <- options(show.error.messages = FALSE)
-  on.exit(options(opt))
-  stop()
-}
-
 #' Are you sure?
 #'
-#' This function asks you interactively for permission to continue or not.
-#' You can specify a custom message before the question and also different
-#' messages for a both a positive and negative answer.
+#' This function asks you interactively for permission to continue or not. You
+#' can specify a custom message before the question and also different messages
+#' for a both a positive and negative answer.
 #'
 #' @param before_question String with message to be printed before question.
-#' @param after_saying_no String with message to be printed after answering \code{'no'}.
-#' @param after_saying_yes String with message to be printed after answering \code{'yes'}.
+#' @param after_saying_no String with message to be printed after answering
+#'   \code{'no'}.
+#' @param after_saying_yes String with message to be printed after answering
+#'   \code{'yes'}.
 #' @param default_answer String with answer to question, if run in
 #'   non-interactive mode.
 #'
-#' @return A logical indicating if answer was \code{'yes'}/\code{'y'} (\code{TRUE}) or otherwise
-#'   (\code{FALSE}).
+#' @return A logical indicating if answer was \code{'yes'}/\code{'y'}
+#'   (\code{TRUE}) or otherwise (\code{FALSE}).
 #' @keywords internal
-sure <- function(before_question = NULL, after_saying_no = NULL, after_saying_yes = NULL, default_answer = NULL) {
+sure <- function(before_question = NULL,
+                 after_saying_no = NULL,
+                 after_saying_yes = NULL,
+                 default_answer = NULL) {
 
-  # If default_answer is set then assume that we are running in non-interactive mode.
-  # Return TRUE is default_answer == 'y' or FALSE otherwise.
+  # If default_answer is set then assume that we are running in non-interactive
+  # mode. Return TRUE is default_answer == 'y' or FALSE otherwise.
   if(!rlang::is_null(default_answer)) {
     ans <- tolower(default_answer)
     return(identical(ans, "y") || identical(ans, "yes"))
