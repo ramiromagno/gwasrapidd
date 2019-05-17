@@ -1,3 +1,6 @@
+## gwasrapidd 0.0.1
+- Updated gwasrapidd packaging to comply with Bioconductor `BiocCheck::BiocCheck()`.
+
 ## gwasrapidd 0.0.0.9015
 - Fixed typo in cheatsheet.
 
