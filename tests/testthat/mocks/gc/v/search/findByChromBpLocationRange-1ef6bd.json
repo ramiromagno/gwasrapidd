@@ -5,7 +5,7 @@
                 "rsId": "rs4911642",
                 "merged": 0,
                 "functionalClass": "intergenic_variant",
-                "lastUpdateDate": "2018-07-21T04:19:37.628+0000",
+                "lastUpdateDate": "2019-02-17T03:57:53.067+0000",
                 "locations": [
                     {
                         "chromosomeName": "22",
@@ -25,15 +25,15 @@
                         "isIntergenic": true,
                         "isUpstream": false,
                         "isDownstream": true,
-                        "distance": 98525,
+                        "distance": 84013,
                         "gene": {
-                            "geneName": "AP000533.1",
+                            "geneName": "AP000534.1",
                             "entrezGeneIds": [
 
                             ],
                             "ensemblGeneIds": [
                                 {
-                                    "ensemblGeneId": "ENSG00000213727"
+                                    "ensemblGeneId": "ENSG00000233408"
                                 }
                             ]
                         },
@@ -62,17 +62,17 @@
                         "isIntergenic": true,
                         "isUpstream": false,
                         "isDownstream": true,
-                        "distance": 60221,
+                        "distance": 54595,
                         "gene": {
-                            "geneName": "ARHGAP42P3",
+                            "geneName": "OR11H1",
                             "entrezGeneIds": [
                                 {
-                                    "entrezGeneId": "266698"
+                                    "entrezGeneId": "81061"
                                 }
                             ],
                             "ensemblGeneIds": [
                                 {
-                                    "ensemblGeneId": "ENSG00000235759"
+                                    "ensemblGeneId": "ENSG00000130538"
                                 }
                             ]
                         },
@@ -88,7 +88,7 @@
                                 }
                             }
                         },
-                        "source": "NCBI",
+                        "source": "Ensembl",
                         "mappingMethod": "Ensembl_pipeline",
                         "isClosestGene": false,
                         "_links": {
@@ -138,6 +138,121 @@
                     },
                     {
                         "isIntergenic": true,
+                        "isUpstream": true,
+                        "isDownstream": false,
+                        "distance": 123545,
+                        "gene": {
+                            "geneName": "BNIP3P2",
+                            "entrezGeneIds": [
+                                {
+                                    "entrezGeneId": "100421754"
+                                }
+                            ],
+                            "ensemblGeneIds": [
+                                {
+                                    "ensemblGeneId": "ENSG00000236097"
+                                }
+                            ]
+                        },
+                        "location": {
+                            "chromosomeName": "22",
+                            "chromosomePosition": 15473564,
+                            "region": {
+                                "name": "22q11.1"
+                            },
+                            "_links": {
+                                "snps": {
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4911642"
+                                }
+                            }
+                        },
+                        "source": "NCBI",
+                        "mappingMethod": "Ensembl_pipeline",
+                        "isClosestGene": true,
+                        "_links": {
+                            "snp": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4911642"
+                            }
+                        }
+                    },
+                    {
+                        "isIntergenic": true,
+                        "isUpstream": false,
+                        "isDownstream": true,
+                        "distance": 60221,
+                        "gene": {
+                            "geneName": "ARHGAP42P3",
+                            "entrezGeneIds": [
+                                {
+                                    "entrezGeneId": "266698"
+                                }
+                            ],
+                            "ensemblGeneIds": [
+                                {
+                                    "ensemblGeneId": "ENSG00000235759"
+                                }
+                            ]
+                        },
+                        "location": {
+                            "chromosomeName": "22",
+                            "chromosomePosition": 15473564,
+                            "region": {
+                                "name": "22q11.1"
+                            },
+                            "_links": {
+                                "snps": {
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4911642"
+                                }
+                            }
+                        },
+                        "source": "NCBI",
+                        "mappingMethod": "Ensembl_pipeline",
+                        "isClosestGene": false,
+                        "_links": {
+                            "snp": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4911642"
+                            }
+                        }
+                    },
+                    {
+                        "isIntergenic": true,
+                        "isUpstream": false,
+                        "isDownstream": true,
+                        "distance": 98525,
+                        "gene": {
+                            "geneName": "AP000533.1",
+                            "entrezGeneIds": [
+
+                            ],
+                            "ensemblGeneIds": [
+                                {
+                                    "ensemblGeneId": "ENSG00000213727"
+                                }
+                            ]
+                        },
+                        "location": {
+                            "chromosomeName": "22",
+                            "chromosomePosition": 15473564,
+                            "region": {
+                                "name": "22q11.1"
+                            },
+                            "_links": {
+                                "snps": {
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4911642"
+                                }
+                            }
+                        },
+                        "source": "Ensembl",
+                        "mappingMethod": "Ensembl_pipeline",
+                        "isClosestGene": false,
+                        "_links": {
+                            "snp": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4911642"
+                            }
+                        }
+                    },
+                    {
+                        "isIntergenic": true,
                         "isUpstream": false,
                         "isDownstream": true,
                         "distance": 84884,
@@ -177,18 +292,16 @@
                         "isIntergenic": true,
                         "isUpstream": false,
                         "isDownstream": true,
-                        "distance": 77340,
+                        "distance": 99469,
                         "gene": {
-                            "geneName": "ARHGAP42P3",
+                            "geneName": "LOC100422530",
                             "entrezGeneIds": [
                                 {
-                                    "entrezGeneId": "266698"
+                                    "entrezGeneId": "100422530"
                                 }
                             ],
                             "ensemblGeneIds": [
-                                {
-                                    "ensemblGeneId": "ENSG00000235759"
-                                }
+
                             ]
                         },
                         "location": {
@@ -203,7 +316,7 @@
                                 }
                             }
                         },
-                        "source": "Ensembl",
+                        "source": "NCBI",
                         "mappingMethod": "Ensembl_pipeline",
                         "isClosestGene": false,
                         "_links": {
@@ -292,128 +405,17 @@
                         "isIntergenic": true,
                         "isUpstream": false,
                         "isDownstream": true,
-                        "distance": 99469,
+                        "distance": 77340,
                         "gene": {
-                            "geneName": "LOC100422530",
+                            "geneName": "ARHGAP42P3",
                             "entrezGeneIds": [
                                 {
-                                    "entrezGeneId": "100422530"
-                                }
-                            ],
-                            "ensemblGeneIds": [
-
-                            ]
-                        },
-                        "location": {
-                            "chromosomeName": "22",
-                            "chromosomePosition": 15473564,
-                            "region": {
-                                "name": "22q11.1"
-                            },
-                            "_links": {
-                                "snps": {
-                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4911642"
-                                }
-                            }
-                        },
-                        "source": "NCBI",
-                        "mappingMethod": "Ensembl_pipeline",
-                        "isClosestGene": false,
-                        "_links": {
-                            "snp": {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4911642"
-                            }
-                        }
-                    },
-                    {
-                        "isIntergenic": true,
-                        "isUpstream": true,
-                        "isDownstream": false,
-                        "distance": 123521,
-                        "gene": {
-                            "geneName": "BNIP3P2",
-                            "entrezGeneIds": [
-                                {
-                                    "entrezGeneId": "100421754"
+                                    "entrezGeneId": "266698"
                                 }
                             ],
                             "ensemblGeneIds": [
                                 {
-                                    "ensemblGeneId": "ENSG00000236097"
-                                }
-                            ]
-                        },
-                        "location": {
-                            "chromosomeName": "22",
-                            "chromosomePosition": 15473564,
-                            "region": {
-                                "name": "22q11.1"
-                            },
-                            "_links": {
-                                "snps": {
-                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4911642"
-                                }
-                            }
-                        },
-                        "source": "Ensembl",
-                        "mappingMethod": "Ensembl_pipeline",
-                        "isClosestGene": true,
-                        "_links": {
-                            "snp": {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4911642"
-                            }
-                        }
-                    },
-                    {
-                        "isIntergenic": true,
-                        "isUpstream": false,
-                        "isDownstream": true,
-                        "distance": 98523,
-                        "gene": {
-                            "geneName": "LOC100132723",
-                            "entrezGeneIds": [
-                                {
-                                    "entrezGeneId": "100132723"
-                                }
-                            ],
-                            "ensemblGeneIds": [
-
-                            ]
-                        },
-                        "location": {
-                            "chromosomeName": "22",
-                            "chromosomePosition": 15473564,
-                            "region": {
-                                "name": "22q11.1"
-                            },
-                            "_links": {
-                                "snps": {
-                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4911642"
-                                }
-                            }
-                        },
-                        "source": "NCBI",
-                        "mappingMethod": "Ensembl_pipeline",
-                        "isClosestGene": false,
-                        "_links": {
-                            "snp": {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4911642"
-                            }
-                        }
-                    },
-                    {
-                        "isIntergenic": true,
-                        "isUpstream": false,
-                        "isDownstream": true,
-                        "distance": 84013,
-                        "gene": {
-                            "geneName": "AP000534.1",
-                            "entrezGeneIds": [
-
-                            ],
-                            "ensemblGeneIds": [
-                                {
-                                    "ensemblGeneId": "ENSG00000233408"
+                                    "ensemblGeneId": "ENSG00000235759"
                                 }
                             ]
                         },
@@ -432,45 +434,6 @@
                         "source": "Ensembl",
                         "mappingMethod": "Ensembl_pipeline",
                         "isClosestGene": false,
-                        "_links": {
-                            "snp": {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4911642"
-                            }
-                        }
-                    },
-                    {
-                        "isIntergenic": true,
-                        "isUpstream": true,
-                        "isDownstream": false,
-                        "distance": 123545,
-                        "gene": {
-                            "geneName": "BNIP3P2",
-                            "entrezGeneIds": [
-                                {
-                                    "entrezGeneId": "100421754"
-                                }
-                            ],
-                            "ensemblGeneIds": [
-                                {
-                                    "ensemblGeneId": "ENSG00000236097"
-                                }
-                            ]
-                        },
-                        "location": {
-                            "chromosomeName": "22",
-                            "chromosomePosition": 15473564,
-                            "region": {
-                                "name": "22q11.1"
-                            },
-                            "_links": {
-                                "snps": {
-                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4911642"
-                                }
-                            }
-                        },
-                        "source": "NCBI",
-                        "mappingMethod": "Ensembl_pipeline",
-                        "isClosestGene": true,
                         "_links": {
                             "snp": {
                                 "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4911642"
@@ -506,6 +469,80 @@
                             }
                         },
                         "source": "Ensembl",
+                        "mappingMethod": "Ensembl_pipeline",
+                        "isClosestGene": false,
+                        "_links": {
+                            "snp": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4911642"
+                            }
+                        }
+                    },
+                    {
+                        "isIntergenic": true,
+                        "isUpstream": false,
+                        "isDownstream": true,
+                        "distance": 67872,
+                        "gene": {
+                            "geneName": "AP000534.2",
+                            "entrezGeneIds": [
+
+                            ],
+                            "ensemblGeneIds": [
+                                {
+                                    "ensemblGeneId": "ENSG00000237299"
+                                }
+                            ]
+                        },
+                        "location": {
+                            "chromosomeName": "22",
+                            "chromosomePosition": 15473564,
+                            "region": {
+                                "name": "22q11.1"
+                            },
+                            "_links": {
+                                "snps": {
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4911642"
+                                }
+                            }
+                        },
+                        "source": "Ensembl",
+                        "mappingMethod": "Ensembl_pipeline",
+                        "isClosestGene": false,
+                        "_links": {
+                            "snp": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4911642"
+                            }
+                        }
+                    },
+                    {
+                        "isIntergenic": true,
+                        "isUpstream": false,
+                        "isDownstream": true,
+                        "distance": 98523,
+                        "gene": {
+                            "geneName": "LOC100132723",
+                            "entrezGeneIds": [
+                                {
+                                    "entrezGeneId": "100132723"
+                                }
+                            ],
+                            "ensemblGeneIds": [
+
+                            ]
+                        },
+                        "location": {
+                            "chromosomeName": "22",
+                            "chromosomePosition": 15473564,
+                            "region": {
+                                "name": "22q11.1"
+                            },
+                            "_links": {
+                                "snps": {
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4911642"
+                                }
+                            }
+                        },
+                        "source": "NCBI",
                         "mappingMethod": "Ensembl_pipeline",
                         "isClosestGene": false,
                         "_links": {
@@ -555,17 +592,19 @@
                     },
                     {
                         "isIntergenic": true,
-                        "isUpstream": false,
-                        "isDownstream": true,
-                        "distance": 67872,
+                        "isUpstream": true,
+                        "isDownstream": false,
+                        "distance": 123521,
                         "gene": {
-                            "geneName": "AP000534.2",
+                            "geneName": "BNIP3P2",
                             "entrezGeneIds": [
-
+                                {
+                                    "entrezGeneId": "100421754"
+                                }
                             ],
                             "ensemblGeneIds": [
                                 {
-                                    "ensemblGeneId": "ENSG00000237299"
+                                    "ensemblGeneId": "ENSG00000236097"
                                 }
                             ]
                         },
@@ -583,46 +622,7 @@
                         },
                         "source": "Ensembl",
                         "mappingMethod": "Ensembl_pipeline",
-                        "isClosestGene": false,
-                        "_links": {
-                            "snp": {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4911642"
-                            }
-                        }
-                    },
-                    {
-                        "isIntergenic": true,
-                        "isUpstream": false,
-                        "isDownstream": true,
-                        "distance": 54595,
-                        "gene": {
-                            "geneName": "OR11H1",
-                            "entrezGeneIds": [
-                                {
-                                    "entrezGeneId": "81061"
-                                }
-                            ],
-                            "ensemblGeneIds": [
-                                {
-                                    "ensemblGeneId": "ENSG00000130538"
-                                }
-                            ]
-                        },
-                        "location": {
-                            "chromosomeName": "22",
-                            "chromosomePosition": 15473564,
-                            "region": {
-                                "name": "22q11.1"
-                            },
-                            "_links": {
-                                "snps": {
-                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4911642"
-                                }
-                            }
-                        },
-                        "source": "Ensembl",
-                        "mappingMethod": "Ensembl_pipeline",
-                        "isClosestGene": false,
+                        "isClosestGene": true,
                         "_links": {
                             "snp": {
                                 "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4911642"
@@ -640,11 +640,11 @@
                     "associationsBySnpSummary": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4911642/associations?projection=associationBySnp"
                     },
-                    "associations": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4911642/associations"
-                    },
                     "currentSnp": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4911642/currentSnp"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4911642/associations"
                     },
                     "studies": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4911642/studies"

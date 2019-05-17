@@ -75,8 +75,7 @@ with_mock_api({
 #
 with_mock_api({
   test_that("get_variants: by efo id", {
-    skip_if_testing_is_fast()
-    my_variants <- get_variants(efo_id = 'EFO_0007990')
+    my_variants <- get_variants(efo_id = 'EFO_0005537')
     expect_is(my_variants, 'variants')
   })
 })
@@ -136,8 +135,7 @@ with_mock_api({
 #
 with_mock_api({
   test_that("get_variants: by efo_trait", {
-    skip_if_testing_is_fast()
-    my_variants <- get_variants(efo_trait = c("lung adenocarcinoma"))
+    my_variants <- get_variants(efo_trait = c('triple-negative breast cancer'))
     expect_is(my_variants, 'variants')
   })
 })
