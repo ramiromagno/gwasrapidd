@@ -16,6 +16,14 @@
 #' @return A logical value: \code{TRUE} if EBI server is reachable, \code{FALSE}
 #'   otherwise.
 #'
+#' @examples
+#' # Check if the GWAS Catalog Server is reachable
+#' is_ebi_reachable() # Returns TRUE or FALSE.
+#'
+#' # Check if the GWAS Catalog Server is reachable
+#' # and show exactly at what step is it failing (if that is the case)
+#' is_ebi_reachable(chatty = TRUE)
+#'
 #' @export
 is_ebi_reachable <-
   function(url = "https://www.ebi.ac.uk", port = 443L, chatty = FALSE) {
