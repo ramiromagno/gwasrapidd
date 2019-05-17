@@ -19,6 +19,8 @@
 #'
 #' @param lst_x,lst_y lists.
 #' @param list_of_lsts A list of lists to be joined together.
+#'
+#' @return A list.
 #' @name lstjoin
 NULL
 
