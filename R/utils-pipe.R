@@ -4,6 +4,7 @@
 #'
 #' @name %>%
 #' @rdname pipe
+#' @return The same as the rhs.
 #' @keywords internal
 #' @export
 #' @importFrom magrittr %>%
