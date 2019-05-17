@@ -14,7 +14,10 @@
 #'
 #' @return A \linkS4class{associations} object.
 #' @keywords internal
-get_associations_by_study_id <- function(study_id = NULL, verbose = FALSE, warnings = TRUE, page_size = 20L) {
+get_associations_by_study_id <- function(study_id = NULL,
+                                         verbose = FALSE,
+                                         warnings = TRUE,
+                                         page_size = 20L) {
 
   if(rlang::is_null(study_id))
     return(associations())
@@ -62,7 +65,10 @@ get_associations_by_study_id <- function(study_id = NULL, verbose = FALSE, warni
 #'
 #' @return A \linkS4class{associations} object.
 #' @keywords internal
-get_associations_by_association_id <- function(association_id = NULL, verbose = FALSE, warnings = TRUE, page_size = 20L) {
+get_associations_by_association_id <- function(association_id = NULL,
+                                               verbose = FALSE,
+                                               warnings = TRUE,
+                                               page_size = 20L) {
 
   if(rlang::is_null(association_id))
     return(associations())
@@ -110,7 +116,10 @@ get_associations_by_association_id <- function(association_id = NULL, verbose = 
 #'
 #' @return A \linkS4class{associations} object.
 #' @keywords internal
-get_associations_by_variant_id <- function(variant_id = NULL, verbose = FALSE, warnings = TRUE, page_size = 20L) {
+get_associations_by_variant_id <- function(variant_id = NULL,
+                                           verbose = FALSE,
+                                           warnings = TRUE,
+                                           page_size = 20L) {
 
   if(rlang::is_null(variant_id))
     return(associations())
@@ -160,7 +169,10 @@ get_associations_by_variant_id <- function(variant_id = NULL, verbose = FALSE, w
 #'
 #' @return A \linkS4class{associations} object.
 #' @keywords internal
-get_associations_by_efo_id <- function(efo_id = NULL, verbose = FALSE, warnings = TRUE, page_size = 20L) {
+get_associations_by_efo_id <- function(efo_id = NULL,
+                                       verbose = FALSE,
+                                       warnings = TRUE,
+                                       page_size = 20L) {
 
   if(rlang::is_null(efo_id))
     return(associations())
@@ -212,7 +224,10 @@ get_associations_by_efo_id <- function(efo_id = NULL, verbose = FALSE, warnings 
 #'
 #' @return A \linkS4class{associations} object.
 #' @keywords internal
-get_associations_by_pubmed_id <- function(pubmed_id = NULL, verbose = FALSE, warnings = TRUE, page_size = 20L) {
+get_associations_by_pubmed_id <- function(pubmed_id = NULL,
+                                          verbose = FALSE,
+                                          warnings = TRUE,
+                                          page_size = 20L) {
 
   if(rlang::is_null(pubmed_id))
     return(associations())
@@ -263,7 +278,10 @@ get_associations_by_pubmed_id <- function(pubmed_id = NULL, verbose = FALSE, war
 #'
 #' @return A \linkS4class{associations} object.
 #' @keywords internal
-get_associations_by_efo_trait <- function(efo_trait = NULL, verbose = FALSE, warnings = TRUE, page_size = 20L) {
+get_associations_by_efo_trait <- function(efo_trait = NULL,
+                                          verbose = FALSE,
+                                          warnings = TRUE,
+                                          page_size = 20L) {
 
   if(rlang::is_null(efo_trait))
     return(associations())
@@ -310,7 +328,9 @@ get_associations_by_efo_trait <- function(efo_trait = NULL, verbose = FALSE, war
 #'
 #' @return A \linkS4class{associations} object.
 #' @keywords internal
-get_associations_all <- function(verbose = FALSE, warnings = TRUE, page_size = 20L) {
+get_associations_all <- function(verbose = FALSE,
+                                 warnings = TRUE,
+                                 page_size = 20L) {
 
   resource_urls <- "/associations"
 
@@ -321,10 +341,12 @@ get_associations_all <- function(verbose = FALSE, warnings = TRUE, page_size = 2
     warnings = warnings,
     page_size = page_size)
 
-  # Only keep those responses that responded successfully, i.e. with status == "OK".
+  # Only keep those responses that responded successfully, i.e. with status ==
+  # "OK".
   responses_ok <- purrr::keep(responses, ~ all(.x$status == 'OK'))
 
-  # If none of the responses were successful then return an empty associations object.
+  # If none of the responses were successful then return an empty associations
+  # object.
   if(rlang::is_empty(responses_ok)) return(associations())
 
   obj <- plst_left_join(responses_ok)
@@ -349,7 +371,8 @@ get_associations_all <- function(verbose = FALSE, warnings = TRUE, page_size = 2
 #'   identifiers.
 #' @param association_id A \code{character} vector of GWAS Catalog association
 #'   identifiers.
-#' @param variant_id A \code{character} vector of GWAS Catalog variant identifiers.
+#' @param variant_id A \code{character} vector of GWAS Catalog variant
+#'   identifiers.
 #' @param efo_id A character vector of \href{https://www.ebi.ac.uk/efo/}{EFO}
 #'   identifiers.
 #' @param pubmed_id An \code{integer} vector of
@@ -369,6 +392,19 @@ get_associations_all <- function(verbose = FALSE, warnings = TRUE, page_size = 2
 #' @param warnings A \code{logical} indicating whether to print warnings, if any.
 #'
 #' @return A \linkS4class{associations} object.
+#' @examples
+#' # Get an association by study identifier
+#' get_associations(study_id = 'GCST001085')
+#'
+#' # Get an association by association identifier
+#' get_associations(association_id = '25389945')
+#'
+#' # Get associations by variant identifier
+#' get_associations(variant_id = 'rs3798440')
+#'
+#' # Get associations by EFO trait identifier
+#' get_associations(efo_id = 'EFO_0005537')
+#'
 #' @export
 get_associations <- function(study_id = NULL,
                         association_id = NULL,
