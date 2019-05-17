@@ -389,9 +389,10 @@ setMethod("[",
 setMethod("[",
           signature(x = "studies", i = "numeric", j = "missing", drop = "missing"),
           definition = function(x, i, j, ..., drop = FALSE) {
-            study_ids <- unique(x@studies$study_id)[i]
+            study_ids <- x@studies$study_id[i]
             filter_by_id(x, id = study_ids)
-          })
+            }
+          )
 
 #' @rdname subset-studies
 #' @export
@@ -399,7 +400,8 @@ setMethod("[",
           signature(x = "studies", i = "character", j = "missing", drop = "missing"),
           definition = function(x, i, j, ..., drop = FALSE) {
             filter_by_id(x, id = i)
-          })
+            }
+          )
 
 #' Subset an associations object
 #'
@@ -427,9 +429,10 @@ setMethod("[",
 setMethod("[",
           signature(x = "associations", i = "numeric", j = "missing", drop = "missing"),
           definition = function(x, i, j, ..., drop = FALSE) {
-            association_ids <- unique(x@associations$association_id)[i]
+            association_ids <- x@associations$association_id[i]
             filter_by_id(x, id = association_ids)
-          })
+            }
+          )
 
 #' @rdname subset-associations
 #' @export
@@ -437,7 +440,8 @@ setMethod("[",
           signature(x = "associations", i = "character", j = "missing", drop = "missing"),
           definition = function(x, i, j, ..., drop = FALSE) {
             filter_by_id(x, id = i)
-          })
+            }
+          )
 
 #' Subset a variants object
 #'
@@ -465,9 +469,10 @@ setMethod("[",
 setMethod("[",
           signature(x = "variants", i = "numeric", j = "missing", drop = "missing"),
           definition = function(x, i, j, ..., drop = FALSE) {
-            variant_ids <- unique(x@variants$variant_id)[i]
+            variant_ids <- x@variants$variant_id[i]
             filter_by_id(x, id = variant_ids)
-          })
+            }
+          )
 
 #' @rdname subset-variants
 #' @export
@@ -475,7 +480,8 @@ setMethod("[",
           signature(x = "variants", i = "character", j = "missing", drop = "missing"),
           definition = function(x, i, j, ..., drop = FALSE) {
             filter_by_id(x, id = i)
-          })
+            }
+          )
 
 #' Subset a traits object
 #'
@@ -502,9 +508,10 @@ setMethod("[",
 setMethod("[",
           signature(x = "traits", i = "numeric", j = "missing", drop = "missing"),
           definition = function(x, i, j, ..., drop = FALSE) {
-            efo_ids <- unique(x@traits$efo_id)[i]
+            efo_ids <- x@traits$efo_id[i]
             filter_by_id(x, id = efo_ids)
-          })
+            }
+          )
 
 #' @rdname subset-traits
 #' @export
