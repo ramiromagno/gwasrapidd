@@ -590,6 +590,19 @@ get_studies_all <- function(verbose = FALSE, warnings = TRUE, page_size = 20L) {
 #' @param warnings Whether to print warnings.
 #'
 #' @return A \linkS4class{studies} object.
+#' @examples
+#' # Get a study by its accession identifier
+#' get_studies(study_id = 'GCST001085')
+#'
+#' # Get a study by association identifier
+#' get_studies(association_id = '25389945')
+#'
+#' # Get studies by variant identifier
+#' get_studies(variant_id = 'rs3798440')
+#'
+#' # Get studies by EFO trait identifier
+#' get_studies(efo_id = 'EFO_0005537')
+#'
 #' @export
 get_studies <- function(study_id = NULL,
                         association_id = NULL,
