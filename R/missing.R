@@ -52,7 +52,10 @@ missing_to_na <- function(lst, na = NA_character_) {
 }
 
 #' @keywords internal
-recode_to_chr_na <- function(chr_vec, from = c('nr', 'NR', 'NA', 'na'), recode_empty_string = TRUE) {
+recode_to_chr_na <- function(chr_vec,
+                             from = c('nr', 'NR', 'NA', 'na'),
+                             recode_empty_string = TRUE) {
+
   if(!rlang::is_character(from))
     stop('from is expected to be a character!')
 
@@ -71,7 +74,10 @@ recode_to_chr_na <- function(chr_vec, from = c('nr', 'NR', 'NA', 'na'), recode_e
 }
 
 #' @keywords internal
-recode_missing <- function(x, type = 'chr', from = c('nr', 'NR', 'NA', 'na'), recode_empty_string = TRUE) {
+recode_missing <- function(x,
+                           type = 'chr',
+                           from = c('nr', 'NR', 'NA', 'na'),
+                           recode_empty_string = TRUE) {
 
   if(!(rlang::is_null(x) ||
        rlang::is_character(x) ||
