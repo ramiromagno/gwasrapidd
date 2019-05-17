@@ -39,11 +39,11 @@ capture_requests({
   get_variants(study_id = 'GCST001085')
   get_variants(association_id = '25389945')
   get_variants(variant_id = c('rs3798440', 'rs7329174'))
-  get_variants(efo_id = 'EFO_0007990')
+  get_variants(efo_id = 'EFO_0005537')
   get_variants(pubmed_id = '21626137')
   get_variants(genomic_range = list(chromosome = "22", start = 1L, end = "15473564"))
   get_variants(gene_name = 'BRCA1')
-  get_variants(efo_trait = c("lung adenocarcinoma"))
+  get_variants(efo_trait = c('triple-negative breast cancer'))
 }) %>% invisible()
 
 capture_requests({
