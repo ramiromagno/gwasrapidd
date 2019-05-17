@@ -279,19 +279,6 @@ setMethod("bind",
 #' @return Returns an object of class either \linkS4class{studies},
 #'   \linkS4class{associations}, \linkS4class{variants}, or
 #'   \linkS4class{traits}.
-#' @examples
-#' # Filter a studies object by identifier.
-#' filter_by_id(studies_ex01, 'GCST001585')
-#'
-#' # Filter a associations object by identifier.
-#' filter_by_id(associations_ex01, c('22509', '19537565'))
-#'
-#' # Filter a variants object by identifier.
-#' filter_by_id(variants_ex01, 'rs56261590')
-#'
-#' # Filter a traits object by identifier.
-#' filter_by_id(traits_ex01, 'EFO_0004884')
-#'
 #' @keywords internal
 setGeneric("filter_by_id", function(x, id) standardGeneric('filter_by_id'))
 
