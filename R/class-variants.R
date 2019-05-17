@@ -5,20 +5,21 @@ setOldClass(c("tbl_df", "tbl", "data.frame"))
 #' The variants object consists of four slots, each a table
 #' (\code{\link[tibble]{tibble}}), that combined form a relational database of a
 #' subset of GWAS Catalog variants Each variant is an observation (row) in the
-#' \code{variants} table --- main table. All tables have the column \code{variant_id} as
-#' primary key.
+#' \code{variants} table --- main table. All tables have the column
+#' \code{variant_id} as primary key.
 #'
 #' @slot variants A \code{\link[tibble]{tibble}} listing variants. Columns:
 #' \describe{
 #' \item{variant_id}{Variant identifier, e.g., \code{'rs1333048'}.}
-#' \item{merged}{Whether this SNP has been merged with another SNP in a newer genome build.}
+#' \item{merged}{Whether this SNP has been merged with another SNP in a newer
+#' genome build.}
 #' \item{functional_class}{Class according to Ensembl's predicted consequences
 #' that each variant allele may have on transcripts. See
-#' \href{https://www.ensembl.org/info/genome/variation/prediction/predicted_data.html}{Ensembl
+#' \href{https://tinyurl.com/y43h8pa6}{Ensembl
 #' Variation - Calculated variant consequences}.}
 #' \item{chromosome_name}{Chromosome name.}
 #' \item{chromosome_position}{Chromosome position.}
-#' \item{chromosome_region}{\href{https://ghr.nlm.nih.gov/primer/howgeneswork/genelocation}{Cytogenetic
+#' \item{chromosome_region}{\href{https://tinyurl.com/yc7qrhxe}{Cytogenetic
 #' location}.}
 #' \item{last_update_date}{Last time this variant was updated.}
 #' }
@@ -30,7 +31,8 @@ setOldClass(c("tbl_df", "tbl", "data.frame"))
 #' \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.}
 #' \item{chromosome_name}{Chromosome name.}
 #' \item{chromosome_position}{Chromosome position.}
-#' \item{distance}{Genomic distance between the variant and the gene (in base pairs).}
+#' \item{distance}{Genomic distance between the variant and the gene (in base
+#' pairs).}
 #' \item{is_closest_gene}{Whether this is the closest gene to this variant.}
 #' \item{is_intergenic}{Whether this variant is intergenic, i.e, if there is no
 #' gene up or downstream within 100kb.}
@@ -46,7 +48,7 @@ setOldClass(c("tbl_df", "tbl", "data.frame"))
 #' \item{gene_name}{Gene symbol according to
 #' \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.}
 #' \item{ensembl_id}{The Ensembl identifier of an Ensembl gene, see Section
-#' \href{https://www.ensembl.org/info/genome/genebuild/genome_annotation.html}{Gene
+#' \href{https://tinyurl.com/yxufd22b}{Gene
 #' annotation in Ensembl} for more information.}
 #' }
 #' @slot entrez_ids A \code{\link[tibble]{tibble}} listing gene Entrez
@@ -152,7 +154,7 @@ variants_tbl <- function(variant_id = character(),
 #' @param mapping_method A character vector of gene mapping methods.
 #'
 #' @return A \code{\link[tibble]{tibble}} whose columns are the named arguments
-#' to the function.
+#'   to the function.
 #' @keywords internal
 genomic_contexts_tbl <- function(variant_id = character(),
                                  gene_name = character(),
@@ -231,8 +233,8 @@ v_entrez_ids_tbl <- function(variant_id = character(),
 #'
 #' This function takes a variants S4 object and removes any variant identifiers
 #' that might have been NA. This ensures that there is always a non-NA
-#' \code{variant_id} value in all tables. This is important as the \code{variant_id}
-#' is the primary key.
+#' \code{variant_id} value in all tables. This is important as the
+#' \code{variant_id} is the primary key.
 #'
 #' @param s4_variants An object of class \linkS4class{variants}.
 #'
@@ -249,9 +251,14 @@ variants_drop_na <- function(s4_variants) {
 
   # Filter remaining tibbles with non-NA variant ids to ensure that the primary
   # key (variant_id) always exists and is not NA.
-  s4_variants@genomic_contexts <- dplyr::filter(s4_variants@genomic_contexts, !!variant_id %in% variant_ids)
-  s4_variants@ensembl_ids <- dplyr::filter(s4_variants@ensembl_ids, !!variant_id %in% variant_ids)
-  s4_variants@entrez_ids <- dplyr::filter(s4_variants@entrez_ids, !!variant_id %in% variant_ids)
+  s4_variants@genomic_contexts <- dplyr::filter(
+    s4_variants@genomic_contexts, !!variant_id %in% variant_ids)
+
+  s4_variants@ensembl_ids <- dplyr::filter(
+    s4_variants@ensembl_ids, !!variant_id %in% variant_ids)
+
+  s4_variants@entrez_ids <- dplyr::filter(
+    s4_variants@entrez_ids, !!variant_id %in% variant_ids)
 
   return(s4_variants)
 }

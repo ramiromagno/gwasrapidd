@@ -24,9 +24,12 @@ setClass(
 #'
 #' Constructor for the S4 \linkS4class{traits} object.
 #'
-#' @param efo_id A \code{character} vector of \href{https://www.ebi.ac.uk/efo/}{EFO} identifiers.
-#' @param trait A \code{character} vector of \href{https://www.ebi.ac.uk/efo/}{EFO} trait descriptions.
-#' @param uri A \code{character} vector of  \href{https://www.ebi.ac.uk/efo/}{EFO} URIs.
+#' @param efo_id A \code{character} vector of
+#'   \href{https://www.ebi.ac.uk/efo/}{EFO} identifiers.
+#' @param trait A \code{character} vector of
+#'   \href{https://www.ebi.ac.uk/efo/}{EFO} trait descriptions.
+#' @param uri A \code{character} vector of
+#'   \href{https://www.ebi.ac.uk/efo/}{EFO} URIs.
 #'
 #' @return An object of class \linkS4class{traits}.
 #' @keywords internal

@@ -5,18 +5,19 @@ setOldClass(c("tbl_df", "tbl", "data.frame"))
 #' The studies object consists of eight slots, each a table
 #' (\code{\link[tibble]{tibble}}), that combined form a relational database of a
 #' subset of GWAS Catalog studies. Each study is an observation (row) in the
-#' \code{studies} table --- main table. All tables have the column \code{study_id} as
-#' primary key.
+#' \code{studies} table --- main table. All tables have the column
+#' \code{study_id} as primary key.
 #'
 #' @slot studies
 #' \describe{
-#' \item{study_id}{GWAS Catalog study accession identifier, e.g., \code{"GCST002735"}.}
+#' \item{study_id}{GWAS Catalog study accession identifier, e.g.,
+#' \code{"GCST002735"}.}
 #' \item{reported_trait}{Phenotypic trait as reported by the authors of the
 #' study, e.g. \code{"Breast cancer"}.}
 #' \item{initial_sample_size}{Free text description of the initial cohort sample
 #' size.}
-#' \item{replication_sample_size}{Free text description of the replication cohort sample
-#' size.}
+#' \item{replication_sample_size}{Free text description of the replication
+#' cohort sample size.}
 #' \item{gxe}{Whether the study investigates a gene-environment interaction.}
 #' \item{gxg}{Whether the study investigates a gene-gene interaction.}
 #' \item{snp_count}{Number of variants passing quality control.}
@@ -33,31 +34,37 @@ setOldClass(c("tbl_df", "tbl", "data.frame"))
 #'   technologies employed in each study. Columns:
 #' \describe{
 #' \item{study_id}{GWAS Catalog study accession identifier.}
-#' \item{genotyping_technology}{Genotyping technology employed, e.g. \code{"Exome
-#' genotyping array"}, \code{"Exome-wide sequencing"}, \code{"Genome-wide
-#' genotyping array"}, \code{"Genome-wide sequencing"}, or \code{"Targeted
-#' genotyping array"}.}
+#' \item{genotyping_technology}{Genotyping technology employed, e.g.
+#' \code{"Exome genotyping array"}, \code{"Exome-wide sequencing"},
+#' \code{"Genome-wide genotyping array"}, \code{"Genome-wide sequencing"}, or
+#' \code{"Targeted genotyping array"}.}
 #' }
-#' @slot platforms A \code{\link[tibble]{tibble}} listing platforms used per study.
+#' @slot platforms A \code{\link[tibble]{tibble}} listing platforms used per
+#'   study.
 #' \describe{
 #' \item{study_id}{GWAS Catalog study accession identifier.}
 #' \item{manufacturer}{Platform manufacturer, e.g., \code{"Affymetrix"},
 #' \code{"Illumina"}, or \code{"Perlegen"}.}
 #' }
-#' @slot ancestries A \code{\link[tibble]{tibble}} listing ancestry of samples used in each study.
+#' @slot ancestries A \code{\link[tibble]{tibble}} listing ancestry of samples
+#'   used in each study.
 #' \describe{
 #' \item{study_id}{GWAS Catalog study accession identifier.}
 #' \item{ancestry_id}{Ancestry identifier.}
-#' \item{type}{Stage of the ancestry sample: either \code{'initial'} or \code{'replication'}.}
-#' \item{number_of_individuals}{Number of individuals comprising this ancestry sample.}
+#' \item{type}{Stage of the ancestry sample: either \code{'initial'} or
+#' \code{'replication'}.}
+#' \item{number_of_individuals}{Number of individuals comprising this ancestry
+#' sample.}
 #' }
-#' @slot ancestral_groups A \code{\link[tibble]{tibble}} listing ancestral groups used in each ancestry.
+#' @slot ancestral_groups A \code{\link[tibble]{tibble}} listing ancestral
+#'   groups used in each ancestry.
 #' \describe{
 #' \item{study_id}{GWAS Catalog study accession identifier.}
 #' \item{ancestry_id}{Ancestry identifier.}
 #' \item{ancestral_group}{Genetic ancentry groups present in the sample.}
 #' }
-#' @slot countries_of_origin A \code{\link[tibble]{tibble}} listing countries of origin of samples.
+#' @slot countries_of_origin A \code{\link[tibble]{tibble}} listing countries of
+#'   origin of samples.
 #' \describe{
 #' \item{study_id}{GWAS Catalog study accession identifier.}
 #' \item{ancestry_id}{Ancestry identifier.}
@@ -70,7 +77,8 @@ setOldClass(c("tbl_df", "tbl", "data.frame"))
 #' according to \href{https://unstats.un.org/unsd/methodology/m49/overview/}{The
 #' United Nations M49 Standard of Geographic Regions.}}
 #' }
-#' @slot countries_of_recruitment A \code{\link[tibble]{tibble}} listing countries of recruitment of samples.
+#' @slot countries_of_recruitment A \code{\link[tibble]{tibble}} listing
+#'   countries of recruitment of samples.
 #' \describe{
 #' \item{study_id}{GWAS Catalog study accession identifier.}
 #' \item{ancestry_id}{Ancestry identifier.}
@@ -83,15 +91,19 @@ setOldClass(c("tbl_df", "tbl", "data.frame"))
 #' according to \href{https://unstats.un.org/unsd/methodology/m49/overview/}{The
 #' United Nations M49 Standard of Geographic Regions.}}
 #' }
-#' @slot publications A \code{\link[tibble]{tibble}} listing publications associated with each study.
+#' @slot publications A \code{\link[tibble]{tibble}} listing publications
+#'   associated with each study.
 #' \describe{
 #' \item{study_id}{GWAS Catalog study accession identifier.}
-#' \item{pubmed_id}{\href{https://en.wikipedia.org/wiki/PubMed}{PubMed} identifier.}
-#' \item{publication_date}{Publication date (online date if available) formatted as \code{\link[lubridate]{ymd}}.}
+#' \item{pubmed_id}{\href{https://en.wikipedia.org/wiki/PubMed}{PubMed}
+#' identifier.}
+#' \item{publication_date}{Publication date (online date if available) formatted
+#' as \code{\link[lubridate]{ymd}}.}
 #' \item{publication}{Abbreviated journal name.}
 #' \item{title}{Publication title.}
 #' \item{author_fullname}{Last name and initials of first author.}
-#' \item{author_orcid}{Author's \href{https://en.wikipedia.org/wiki/ORCID}{ORCID iD} (Open Researcher and Contributor ID).}
+#' \item{author_orcid}{Author's \href{https://en.wikipedia.org/wiki/ORCID}{ORCID
+#' iD} (Open Researcher and Contributor ID).}
 #' }
 #' @export
 setClass(
@@ -152,11 +164,11 @@ studies <- function(studies = studies_tbl(),
 #'
 #' @param study_id GWAS Catalog study accession identifier.
 #' @param reported_trait Phenotypic trait as reported by the authors of the
-#' study.
+#'   study.
 #' @param initial_sample_size Free text description of the initial cohort sample
-#' size.
-#' @param replication_sample_size Free text description of the replication cohort sample
-#' size.
+#'   size.
+#' @param replication_sample_size Free text description of the replication
+#'   cohort sample size.
 #' @param gxe Whether the study investigates a gene-environment interaction.
 #' @param gxg Whether the study investigates a gene-gene interaction.
 #' @param snp_count Number of variants passing quality control.
@@ -165,9 +177,9 @@ studies <- function(studies = studies_tbl(),
 #' @param pooled Whether samples were pooled.
 #' @param study_design_comment Any other relevant study design information.
 #' @param full_pvalue_set Whether full summary statistics are available for this
-#' study.
+#'   study.
 #' @param user_requested Whether the addition of this study to the GWAS Catalog
-#' was requested by a user.
+#'   was requested by a user.
 #'
 #' @return A \code{\link[tibble]{tibble}} whose columns are the named arguments
 #'   to the function.
@@ -246,7 +258,8 @@ platforms_tbl <- function(study_id = character(),
 #'
 #' @param study_id GWAS Catalog study accession identifier.
 #' @param ancestry_id Ancestry identifier.
-#' @param type Type of cohort sample, either \code{"initial"} or \code{"replication"}.
+#' @param type Type of cohort sample, either \code{"initial"} or
+#'   \code{"replication"}.
 #' @param number_of_individuals Number of individuals in the cohort sample.
 #' @return A \code{\link[tibble]{tibble}} whose columns are the named arguments
 #'   to the function.
@@ -325,12 +338,15 @@ countries_tbl <- function(study_id = character(),
 #' Creates a publications table.
 #'
 #' @param study_id GWAS Catalog study accession identifier.
-#' @param pubmed_id \href{https://en.wikipedia.org/wiki/PubMed}{PubMed} identifier.
-#' @param publication_date Publication date (online date if available) formatted as \code{\link[lubridate]{ymd}}.
+#' @param pubmed_id \href{https://en.wikipedia.org/wiki/PubMed}{PubMed}
+#'   identifier.
+#' @param publication_date Publication date (online date if available) formatted
+#'   as \code{\link[lubridate]{ymd}}.
 #' @param publication Abbreviated journal name.
 #' @param title Publication title.
 #' @param author_fullname Last name and initials of first author.
-#' @param author_orcid Author's \href{https://en.wikipedia.org/wiki/ORCID}{ORCID iD} (Open Researcher and Contributor ID).
+#' @param author_orcid Author's \href{https://en.wikipedia.org/wiki/ORCID}{ORCID
+#'   iD} (Open Researcher and Contributor ID).
 #'
 #' @return A \code{\link[tibble]{tibble}} whose columns are the named arguments
 #'   to the function.
@@ -377,13 +393,26 @@ studies_drop_na <- function(s4_studies) {
 
   # Filter remaining tibbles with non-NA study ids to ensure that the primary
   # key (study_id) always exists and is not NA.
-  s4_studies@genotyping_techs <- dplyr::filter(s4_studies@genotyping_techs, !!study_id %in% study_ids)
-  s4_studies@platforms <- dplyr::filter(s4_studies@platforms, study_id %in% !!study_ids)
-  s4_studies@ancestries <- dplyr::filter(s4_studies@ancestries, study_id %in% !!study_ids)
-  s4_studies@ancestral_groups <- dplyr::filter(s4_studies@ancestral_groups, !!study_id %in% study_ids)
-  s4_studies@countries_of_origin <- dplyr::filter(s4_studies@countries_of_origin, !!study_id %in% study_ids)
-  s4_studies@countries_of_recruitment <- dplyr::filter(s4_studies@countries_of_recruitment, !!study_id %in% study_ids)
-  s4_studies@publications <- dplyr::filter(s4_studies@publications, !!study_id %in% study_ids)
+  s4_studies@genotyping_techs <- dplyr::filter(
+    s4_studies@genotyping_techs, !!study_id %in% study_ids)
+
+  s4_studies@platforms <- dplyr::filter(
+    s4_studies@platforms, study_id %in% !!study_ids)
+
+  s4_studies@ancestries <- dplyr::filter(
+    s4_studies@ancestries, study_id %in% !!study_ids)
+
+  s4_studies@ancestral_groups <- dplyr::filter(
+    s4_studies@ancestral_groups, !!study_id %in% study_ids)
+
+  s4_studies@countries_of_origin <- dplyr::filter(
+    s4_studies@countries_of_origin, !!study_id %in% study_ids)
+
+  s4_studies@countries_of_recruitment <- dplyr::filter(
+    s4_studies@countries_of_recruitment, !!study_id %in% study_ids)
+
+  s4_studies@publications <- dplyr::filter(
+    s4_studies@publications, !!study_id %in% study_ids)
 
   return(s4_studies)
 }
