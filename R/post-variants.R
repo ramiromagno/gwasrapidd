@@ -5,6 +5,8 @@
 #'
 #' @param variant_id A variant identifier, a character vector.
 #'
+#' @return Returns \code{TRUE} if successful. Note however that this
+#' function is run for its side effect.
 #' @export
 open_in_dbsnp <- function(variant_id) {
   if (!(rlang::is_character(variant_id) ))
@@ -25,6 +27,8 @@ open_in_dbsnp <- function(variant_id) {
 #'
 #' @param variant_id A variant identifier, a character vector.
 #'
+#' @return Returns \code{TRUE} if successful. Note however that this
+#' function is run for its side effect.
 #' @export
 open_in_gtex <- function(variant_id) {
   if (!(rlang::is_character(variant_id) ))
