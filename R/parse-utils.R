@@ -127,7 +127,9 @@ is_association_id <- function(str, convert_NA_to_FALSE = TRUE) {
 #'   an \code{NA} is found (\code{convert_NA_to_FALSE = TRUE}).
 #' @return A logical vector.
 #' @keywords internal
-is_human_chromosome <- function(string, chromosomes = c(1:22, "X", "Y", "MT"), convert_NA_to_FALSE = TRUE) {
+is_human_chromosome <- function(string,
+                                chromosomes = c(seq_len(22), "X", "Y", "MT"),
+                                convert_NA_to_FALSE = TRUE) {
 
   # Replace NA with "".
   if (convert_NA_to_FALSE) {
@@ -176,8 +178,8 @@ is_efo_id <- function(str, convert_NA_to_FALSE = TRUE) {
 
 #' Is a string an EFO trait ID in the broad sense?
 #'
-#' This function is more permissible than \code{\link[gwasrapidd]{is_efo_id}}. This function
-#' matches EFO trait IDs against the following regular expression:
+#' This function is more permissible than \code{\link[gwasrapidd]{is_efo_id}}.
+#' This function matches EFO trait IDs against the following regular expression:
 #' \code{^\\\\w+$}. This is very forgiving on the input, any sequence of word
 #' characters are ok. This is useful to match EFO identifiers that do not follow
 #' the regex \code{^EFO_\\\\d\{7\}$}, such as: \code{'GO_0097334'},
@@ -243,9 +245,8 @@ is_study_id <- function(str, convert_NA_to_FALSE = TRUE) {
 
 #' Is a string a PubMed ID?
 #'
-#' Find which strings are valid PubMed IDs (returns
-#' \code{TRUE}). PubMed IDs are tested against the following regular
-#' expression: \code{^\\\\d+$}.
+#' Find which strings are valid PubMed IDs (returns \code{TRUE}). PubMed IDs are
+#' tested against the following regular expression: \code{^\\\\d+$}.
 #'
 #' @param str A character vector of strings.
 #' @param convert_NA_to_FALSE Whether to treat \code{NA} as \code{NA}
@@ -340,6 +341,10 @@ is_empty_str <- function(str, convert_NA_to_FALSE = TRUE) {
 #' dataframe to convert cytogenetic band names to genomic coordinates.
 #'
 #' @param bands A \code{\link[base]{character}} vector of cytogenetic bands.
+#'
+#' @return A dataframe of genomic ranges. Columns are: chromosome, start and
+#'   end. Each row corresponds to a queried cytogenetic band (in the same order
+#'   as queried).
 #' @keywords internal
 cytogenetic_band_to_genomic_range <- function(bands) {
   if (!is.character(bands))
@@ -361,9 +366,12 @@ cytogenetic_band_to_genomic_range <- function(bands) {
   start <- rlang::expr(start)
   end <- rlang::expr(end)
 
-  # This alternative to dplyr::filter(cytogenetic_bands, cytogenetic_band %in% bands)
-  # preserves order of bands in final output.
-  genomic_ranges <- purrr::map_dfr(bands, ~ dplyr::filter(cytogenetic_bands, !!cytogenetic_band %in% .x)) %>%
+  # This alternative to dplyr::filter(cytogenetic_bands, cytogenetic_band %in%
+  # bands) preserves order of bands in final output.
+  genomic_ranges <-
+    purrr::map_dfr(
+      bands,
+      ~ dplyr::filter(cytogenetic_bands, !!cytogenetic_band %in% .x)) %>%
     dplyr::select(!!chromosome, !!start, !!end)
 
   return(genomic_ranges)
@@ -377,5 +385,6 @@ cytogenetic_band_to_genomic_range <- function(bands) {
 #'
 #'
 #' @param x A \code{\link[base]{character}} vector.
+#' @return A character vector.
 #' @keywords internal
 tws <- function (x) stringr::str_trim(x)
