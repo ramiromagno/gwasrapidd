@@ -41,7 +41,9 @@
   
 <meta property="og:title" content="Bind GWAS Catalog objects — bind" />
 
-<meta property="og:description" content="Binds together GWAS Catalog objects of the same class." />
+<meta property="og:description" content="Binds together GWAS Catalog objects of the same class. Note that
+bind() preserves duplicates whereas union()
+does not." />
 
 <meta property="og:image" content="https://rmagno.eu/gwasrapidd/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -74,7 +76,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gwasrapidd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9015</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
       </span>
     </div>
 
@@ -135,7 +137,9 @@
 
     <div class="ref-description">
     
-    <p>Binds together GWAS Catalog objects of the same class.</p>
+    <p>Binds together GWAS Catalog objects of the same class. Note that
+<code>bind()</code> preserves duplicates whereas <code><a href='setop.html'>union</a>()</code>
+does not.</p>
     
     </div>
 
@@ -161,6 +165,263 @@
     <p>An object of the same class as <code>x</code>.</p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='co'># Join two studies objects.</span>
+<span class='fu'>bind</span>(<span class='no'>studies_ex01</span>, <span class='no'>studies_ex02</span>)</div><div class='output co'>#&gt; An object of class "studies"
+#&gt; Slot "studies":
+#&gt; <span style='color: #949494;'># A tibble: 4 x 13</span><span>
+#&gt;   study_id reported_trait initial_sample_… replication_sam… gxe   gxg  
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>          </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> GCST001… Breast size    16,175 European… </span><span style='color: #BB0000;'>NA</span><span>               FALSE FALSE
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span> GCST003… Breast size    33,790 European… </span><span style='color: #BB0000;'>NA</span><span>               FALSE FALSE
+#&gt; </span><span style='color: #BCBCBC;'>3</span><span> GCST001… Breast size    16,175 European… </span><span style='color: #BB0000;'>NA</span><span>               FALSE FALSE
+#&gt; </span><span style='color: #BCBCBC;'>4</span><span> GCST006… Breast size    5,609 Japanese … </span><span style='color: #BB0000;'>NA</span><span>               FALSE FALSE
+#&gt; </span><span style='color: #949494;'># … with 7 more variables: snp_count </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span style='color: #949494;'>, qualifier </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>, imputed </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #949494;'>,
+#&gt; #   pooled </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #949494;'>, study_design_comment </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>, full_pvalue_set </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #949494;'>,
+#&gt; #   user_requested </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span>
+#&gt; 
+#&gt; Slot "genotyping_techs":
+#&gt; </span><span style='color: #949494;'># A tibble: 4 x 2</span><span>
+#&gt;   study_id   genotyping_technology       
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                       
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> GCST001585 Genome-wide genotyping array
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span> GCST003985 Genome-wide genotyping array
+#&gt; </span><span style='color: #BCBCBC;'>3</span><span> GCST001585 Genome-wide genotyping array
+#&gt; </span><span style='color: #BCBCBC;'>4</span><span> GCST006655 Genome-wide genotyping array
+#&gt; 
+#&gt; Slot "platforms":
+#&gt; </span><span style='color: #949494;'># A tibble: 4 x 2</span><span>
+#&gt;   study_id   manufacturer
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> GCST001585 Illumina    
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span> GCST003985 Illumina    
+#&gt; </span><span style='color: #BCBCBC;'>3</span><span> GCST001585 Illumina    
+#&gt; </span><span style='color: #BCBCBC;'>4</span><span> GCST006655 Affymetrix  
+#&gt; 
+#&gt; Slot "ancestries":
+#&gt; </span><span style='color: #949494;'># A tibble: 4 x 4</span><span>
+#&gt;   study_id   ancestry_id type    number_of_individuals
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                   </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> GCST001585           1 initial                 </span><span style='text-decoration: underline;'>16</span><span>175
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span> GCST003985           1 initial                 </span><span style='text-decoration: underline;'>33</span><span>790
+#&gt; </span><span style='color: #BCBCBC;'>3</span><span> GCST001585           1 initial                 </span><span style='text-decoration: underline;'>16</span><span>175
+#&gt; </span><span style='color: #BCBCBC;'>4</span><span> GCST006655           1 initial                  </span><span style='text-decoration: underline;'>5</span><span>609
+#&gt; 
+#&gt; Slot "ancestral_groups":
+#&gt; </span><span style='color: #949494;'># A tibble: 4 x 3</span><span>
+#&gt;   study_id   ancestry_id ancestral_group
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>          
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> GCST001585           1 European       
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span> GCST003985           1 European       
+#&gt; </span><span style='color: #BCBCBC;'>3</span><span> GCST001585           1 European       
+#&gt; </span><span style='color: #BCBCBC;'>4</span><span> GCST006655           1 East Asian     
+#&gt; 
+#&gt; Slot "countries_of_origin":
+#&gt; </span><span style='color: #949494;'># A tibble: 4 x 5</span><span>
+#&gt;   study_id   ancestry_id country_name major_area region
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> 
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> GCST001585           1 </span><span style='color: #BB0000;'>NA</span><span>           </span><span style='color: #BB0000;'>NA</span><span>         </span><span style='color: #BB0000;'>NA</span><span>    
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span> GCST003985           1 </span><span style='color: #BB0000;'>NA</span><span>           </span><span style='color: #BB0000;'>NA</span><span>         </span><span style='color: #BB0000;'>NA</span><span>    
+#&gt; </span><span style='color: #BCBCBC;'>3</span><span> GCST001585           1 </span><span style='color: #BB0000;'>NA</span><span>           </span><span style='color: #BB0000;'>NA</span><span>         </span><span style='color: #BB0000;'>NA</span><span>    
+#&gt; </span><span style='color: #BCBCBC;'>4</span><span> GCST006655           1 </span><span style='color: #BB0000;'>NA</span><span>           </span><span style='color: #BB0000;'>NA</span><span>         </span><span style='color: #BB0000;'>NA</span><span>    
+#&gt; 
+#&gt; Slot "countries_of_recruitment":
+#&gt; </span><span style='color: #949494;'># A tibble: 4 x 5</span><span>
+#&gt;   study_id   ancestry_id country_name major_area region
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> 
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> GCST001585           1 </span><span style='color: #BB0000;'>NA</span><span>           </span><span style='color: #BB0000;'>NA</span><span>         </span><span style='color: #BB0000;'>NA</span><span>    
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span> GCST003985           1 </span><span style='color: #BB0000;'>NA</span><span>           </span><span style='color: #BB0000;'>NA</span><span>         </span><span style='color: #BB0000;'>NA</span><span>    
+#&gt; </span><span style='color: #BCBCBC;'>3</span><span> GCST001585           1 </span><span style='color: #BB0000;'>NA</span><span>           </span><span style='color: #BB0000;'>NA</span><span>         </span><span style='color: #BB0000;'>NA</span><span>    
+#&gt; </span><span style='color: #BCBCBC;'>4</span><span> GCST006655           1 </span><span style='color: #BB0000;'>NA</span><span>           </span><span style='color: #BB0000;'>NA</span><span>         </span><span style='color: #BB0000;'>NA</span><span>    
+#&gt; 
+#&gt; Slot "publications":
+#&gt; </span><span style='color: #949494;'># A tibble: 4 x 7</span><span>
+#&gt;   study_id pubmed_id publication_date publication title author_fullname
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;date&gt;</span><span>           </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>          
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> GCST001…  22</span><span style='text-decoration: underline;'>747</span><span>683 2012-06-29       BMC Med Ge… Gene… Eriksson N     
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span> GCST003…  27</span><span style='text-decoration: underline;'>182</span><span>965 2016-05-15       Nat Genet   Dete… Pickrell JK    
+#&gt; </span><span style='color: #BCBCBC;'>3</span><span> GCST001…  22</span><span style='text-decoration: underline;'>747</span><span>683 2012-06-29       BMC Med Ge… Gene… Eriksson N     
+#&gt; </span><span style='color: #BCBCBC;'>4</span><span> GCST006…  29</span><span style='text-decoration: underline;'>855</span><span>537 2018-05-30       Sci Rep     Japa… Hirata T       
+#&gt; </span><span style='color: #949494;'># … with 1 more variable: author_orcid </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>
+#&gt; </div><div class='input'>
+<span class='co'># Join two associations objects.</span>
+<span class='fu'>bind</span>(<span class='no'>associations_ex01</span>, <span class='no'>associations_ex02</span>)</div><div class='output co'>#&gt; An object of class "associations"
+#&gt; Slot "associations":
+#&gt; </span><span style='color: #949494;'># A tibble: 7 x 17</span><span>
+#&gt;   association_id   pvalue pvalue_descript… pvalue_mantissa pvalue_exponent
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                      </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>           </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> 22509          3.00</span><span style='color: #949494;'>e</span><span style='color: #BB0000;'>- 9</span><span> </span><span style='color: #BB0000;'>NA</span><span>                             3              -</span><span style='color: #BB0000;'>9</span><span>
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span> 22505          7.00</span><span style='color: #949494;'>e</span><span style='color: #BB0000;'>- 6</span><span> </span><span style='color: #BB0000;'>NA</span><span>                             7              -</span><span style='color: #BB0000;'>6</span><span>
+#&gt; </span><span style='color: #BCBCBC;'>3</span><span> 19537565       7.00</span><span style='color: #949494;'>e</span><span style='color: #BB0000;'>-31</span><span> </span><span style='color: #BB0000;'>NA</span><span>                             7             -</span><span style='color: #BB0000;'>31</span><span>
+#&gt; </span><span style='color: #BCBCBC;'>4</span><span> 19537593       1.00</span><span style='color: #949494;'>e</span><span style='color: #BB0000;'>-11</span><span> </span><span style='color: #BB0000;'>NA</span><span>                             1             -</span><span style='color: #BB0000;'>11</span><span>
+#&gt; </span><span style='color: #BCBCBC;'>5</span><span> 19537593       1.00</span><span style='color: #949494;'>e</span><span style='color: #BB0000;'>-11</span><span> </span><span style='color: #BB0000;'>NA</span><span>                             1             -</span><span style='color: #BB0000;'>11</span><span>
+#&gt; </span><span style='color: #BCBCBC;'>6</span><span> 31665940       8.00</span><span style='color: #949494;'>e</span><span style='color: #BB0000;'>- 6</span><span> </span><span style='color: #BB0000;'>NA</span><span>                             8              -</span><span style='color: #BB0000;'>6</span><span>
+#&gt; </span><span style='color: #BCBCBC;'>7</span><span> 34944736       6.00</span><span style='color: #949494;'>e</span><span style='color: #BB0000;'>- 9</span><span> </span><span style='color: #BB0000;'>NA</span><span>                             6              -</span><span style='color: #BB0000;'>9</span><span>
+#&gt; </span><span style='color: #949494;'># … with 12 more variables: multiple_snp_haplotype </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #949494;'>,
+#&gt; #   snp_interaction </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #949494;'>, snp_type </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>, standard_error </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #949494;'>, range </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>,
+#&gt; #   or_per_copy_number </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #949494;'>, beta_number </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #949494;'>, beta_unit </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>,
+#&gt; #   beta_direction </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>, beta_description </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>, last_mapping_date </span><span style='color: #949494;font-style: italic;'>&lt;dttm&gt;</span><span style='color: #949494;'>,
+#&gt; #   last_update_date </span><span style='color: #949494;font-style: italic;'>&lt;dttm&gt;</span><span>
+#&gt; 
+#&gt; Slot "loci":
+#&gt; </span><span style='color: #949494;'># A tibble: 7 x 4</span><span>
+#&gt;   association_id locus_id haplotype_snp_count description   
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>               </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>         
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> 22509                 1                  </span><span style='color: #BB0000;'>NA</span><span> Single variant
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span> 22505                 1                  </span><span style='color: #BB0000;'>NA</span><span> Single variant
+#&gt; </span><span style='color: #BCBCBC;'>3</span><span> 19537565              1                  </span><span style='color: #BB0000;'>NA</span><span> Single variant
+#&gt; </span><span style='color: #BCBCBC;'>4</span><span> 19537593              1                  </span><span style='color: #BB0000;'>NA</span><span> Single variant
+#&gt; </span><span style='color: #BCBCBC;'>5</span><span> 19537593              1                  </span><span style='color: #BB0000;'>NA</span><span> Single variant
+#&gt; </span><span style='color: #BCBCBC;'>6</span><span> 31665940              1                  </span><span style='color: #BB0000;'>NA</span><span> Single variant
+#&gt; </span><span style='color: #BCBCBC;'>7</span><span> 34944736              1                  </span><span style='color: #BB0000;'>NA</span><span> Single variant
+#&gt; 
+#&gt; Slot "risk_alleles":
+#&gt; </span><span style='color: #949494;'># A tibble: 7 x 7</span><span>
+#&gt;   association_id locus_id variant_id risk_allele risk_frequency genome_wide
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span>      
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> 22509                 1 rs7089814  C                   </span><span style='color: #BB0000;'>NA</span><span>     </span><span style='color: #BB0000;'>NA</span><span>         
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span> 22505                 1 chr22:458… T                   </span><span style='color: #BB0000;'>NA</span><span>     </span><span style='color: #BB0000;'>NA</span><span>         
+#&gt; </span><span style='color: #BCBCBC;'>3</span><span> 19537565              1 rs10110651 </span><span style='color: #BB0000;'>NA</span><span>                  </span><span style='color: #BB0000;'>NA</span><span>     FALSE      
+#&gt; </span><span style='color: #BCBCBC;'>4</span><span> 19537593              1 rs9397437  </span><span style='color: #BB0000;'>NA</span><span>                  </span><span style='color: #BB0000;'>NA</span><span>     FALSE      
+#&gt; </span><span style='color: #BCBCBC;'>5</span><span> 19537593              1 rs9397437  </span><span style='color: #BB0000;'>NA</span><span>                  </span><span style='color: #BB0000;'>NA</span><span>     FALSE      
+#&gt; </span><span style='color: #BCBCBC;'>6</span><span> 31665940              1 rs985648   G                    0.248 FALSE      
+#&gt; </span><span style='color: #BCBCBC;'>7</span><span> 34944736              1 rs1469924… TTCTTTCTTTC          0.381 FALSE      
+#&gt; </span><span style='color: #949494;'># … with 1 more variable: limited_list </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span>
+#&gt; 
+#&gt; Slot "genes":
+#&gt; </span><span style='color: #949494;'># A tibble: 13 x 3</span><span>
+#&gt;    association_id locus_id gene_name   
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> 22509                 1 ADO         
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> 22509                 1 ZNF365      
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> 22509                 1 ALDH7A1P4   
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> 22505                 1 TBC1D22A    
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> 22505                 1 LOC100128818
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> 19537565              1 KCNU1       
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> 19537565              1 ZNF703      
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> 19537593              1 CCDC170     
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> 19537593              1 ESR1        
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> 19537593              1 CCDC170     
+#&gt; </span><span style='color: #BCBCBC;'>11</span><span> 19537593              1 ESR1        
+#&gt; </span><span style='color: #BCBCBC;'>12</span><span> 31665940              1 </span><span style='color: #BB0000;'>NA</span><span>          
+#&gt; </span><span style='color: #BCBCBC;'>13</span><span> 34944736              1 KCNU1       
+#&gt; 
+#&gt; Slot "ensembl_ids":
+#&gt; </span><span style='color: #949494;'># A tibble: 13 x 4</span><span>
+#&gt;    association_id locus_id gene_name    ensembl_id     
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>          
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> 22509                 1 ADO          ENSG00000181915
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> 22509                 1 ZNF365       ENSG00000138311
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> 22509                 1 ALDH7A1P4    ENSG00000234489
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> 22505                 1 TBC1D22A     ENSG00000054611
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> 22505                 1 LOC100128818 </span><span style='color: #BB0000;'>NA</span><span>             
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> 19537565              1 KCNU1        ENSG00000215262
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> 19537565              1 ZNF703       ENSG00000183779
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> 19537593              1 CCDC170      ENSG00000120262
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> 19537593              1 ESR1         ENSG00000091831
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> 19537593              1 CCDC170      ENSG00000120262
+#&gt; </span><span style='color: #BCBCBC;'>11</span><span> 19537593              1 ESR1         ENSG00000091831
+#&gt; </span><span style='color: #BCBCBC;'>12</span><span> 31665940              1 </span><span style='color: #BB0000;'>NA</span><span>           </span><span style='color: #BB0000;'>NA</span><span>             
+#&gt; </span><span style='color: #BCBCBC;'>13</span><span> 34944736              1 KCNU1        ENSG00000215262
+#&gt; 
+#&gt; Slot "entrez_ids":
+#&gt; </span><span style='color: #949494;'># A tibble: 13 x 4</span><span>
+#&gt;    association_id locus_id gene_name    entrez_id
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> 22509                 1 ADO          84890    
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> 22509                 1 ZNF365       22891    
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> 22509                 1 ALDH7A1P4    544      
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> 22505                 1 TBC1D22A     25771    
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> 22505                 1 LOC100128818 </span><span style='color: #BB0000;'>NA</span><span>       
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> 19537565              1 KCNU1        157855   
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> 19537565              1 ZNF703       80139    
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> 19537593              1 CCDC170      80129    
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> 19537593              1 ESR1         2099     
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> 19537593              1 CCDC170      80129    
+#&gt; </span><span style='color: #BCBCBC;'>11</span><span> 19537593              1 ESR1         2099     
+#&gt; </span><span style='color: #BCBCBC;'>12</span><span> 31665940              1 </span><span style='color: #BB0000;'>NA</span><span>           </span><span style='color: #BB0000;'>NA</span><span>       
+#&gt; </span><span style='color: #BCBCBC;'>13</span><span> 34944736              1 KCNU1        157855   
+#&gt; </div><div class='input'>
+<span class='co'># Join two variants objects.</span>
+<span class='fu'>bind</span>(<span class='no'>variants_ex01</span>, <span class='no'>variants_ex02</span>)</div><div class='output co'>#&gt; An object of class "variants"
+#&gt; Slot "variants":
+#&gt; </span><span style='color: #949494;'># A tibble: 7 x 7</span><span>
+#&gt;   variant_id merged functional_class chromosome_name chromosome_posi…
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                      </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> rs1469924…      0 regulatory_regi… 8                       36</span><span style='text-decoration: underline;'>984</span><span>538
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span> rs56261590      0 intron_variant   4                       73</span><span style='text-decoration: underline;'>189</span><span>781
+#&gt; </span><span style='color: #BCBCBC;'>3</span><span> rs4725504       0 intergenic_vari… 7                      153</span><span style='text-decoration: underline;'>608</span><span>338
+#&gt; </span><span style='color: #BCBCBC;'>4</span><span> rs56261590      0 intron_variant   4                       73</span><span style='text-decoration: underline;'>189</span><span>781
+#&gt; </span><span style='color: #BCBCBC;'>5</span><span> rs4725504       0 intergenic_vari… 7                      153</span><span style='text-decoration: underline;'>608</span><span>338
+#&gt; </span><span style='color: #BCBCBC;'>6</span><span> rs11099757      0 intron_variant   4                      150</span><span style='text-decoration: underline;'>143</span><span>216
+#&gt; </span><span style='color: #BCBCBC;'>7</span><span> rs16871509      0 intergenic_vari… 5                       71</span><span style='text-decoration: underline;'>726</span><span>395
+#&gt; </span><span style='color: #949494;'># … with 2 more variables: chromosome_region </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>, last_update_date </span><span style='color: #949494;font-style: italic;'>&lt;dttm&gt;</span><span>
+#&gt; 
+#&gt; Slot "genomic_contexts":
+#&gt; </span><span style='color: #949494;'># A tibble: 44 x 11</span><span>
+#&gt;    variant_id gene_name chromosome_name chromosome_posi… distance
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                      </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>    </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> rs1469924… RPL26P25  8                       36</span><span style='text-decoration: underline;'>984</span><span>538     </span><span style='text-decoration: underline;'>3</span><span>392
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> rs1469924… TPT1P8    8                       36</span><span style='text-decoration: underline;'>984</span><span>538    </span><span style='text-decoration: underline;'>95</span><span>008
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> rs1469924… LOC10537… 8                       36</span><span style='text-decoration: underline;'>984</span><span>538    </span><span style='text-decoration: underline;'>59</span><span>331
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> rs1469924… LOC10537… 8                       36</span><span style='text-decoration: underline;'>984</span><span>538    </span><span style='text-decoration: underline;'>81</span><span>555
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> rs1469924… LOC10537… 8                       36</span><span style='text-decoration: underline;'>984</span><span>538     </span><span style='text-decoration: underline;'>2</span><span>533
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> rs1469924… TPT1P8    8                       36</span><span style='text-decoration: underline;'>984</span><span>538    </span><span style='text-decoration: underline;'>95</span><span>231
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> rs1469924… AC092818… 8                       36</span><span style='text-decoration: underline;'>984</span><span>538    </span><span style='text-decoration: underline;'>82</span><span>903
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> rs1469924… KCNU1     8                       36</span><span style='text-decoration: underline;'>984</span><span>538    </span><span style='text-decoration: underline;'>48</span><span>413
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> rs1469924… AC090453… 8                       36</span><span style='text-decoration: underline;'>984</span><span>538     </span><span style='text-decoration: underline;'>3</span><span>439
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> rs1469924… KCNU1     8                       36</span><span style='text-decoration: underline;'>984</span><span>538    </span><span style='text-decoration: underline;'>48</span><span>410
+#&gt; </span><span style='color: #949494;'># … with 34 more rows, and 6 more variables: is_closest_gene </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #949494;'>,
+#&gt; #   is_intergenic </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #949494;'>, is_upstream </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #949494;'>, is_downstream </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #949494;'>, source </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>,
+#&gt; #   mapping_method </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>
+#&gt; 
+#&gt; Slot "ensembl_ids":
+#&gt; </span><span style='color: #949494;'># A tibble: 23 x 3</span><span>
+#&gt;    variant_id  gene_name  ensembl_id     
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>          
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> rs146992477 TPT1P8     ENSG00000219491
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> rs146992477 AC092818.1 ENSG00000254038
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> rs146992477 KCNU1      ENSG00000215262
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> rs146992477 AC090453.1 ENSG00000243503
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> rs56261590  ANKRD17    ENSG00000132466
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> rs56261590  AC053527.1 ENSG00000250220
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> rs56261590  HMGA1P2    ENSG00000248641
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> rs56261590  RF00334    ENSG00000251778
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> rs4725504   DPP6       ENSG00000130226
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> rs4725504   PAXBP1P1   ENSG00000233489
+#&gt; </span><span style='color: #949494;'># … with 13 more rows</span><span>
+#&gt; 
+#&gt; Slot "entrez_ids":
+#&gt; </span><span style='color: #949494;'># A tibble: 24 x 3</span><span>
+#&gt;    variant_id  gene_name    entrez_id
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> rs146992477 RPL26P25     100270966
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> rs146992477 TPT1P8       59347    
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> rs146992477 LOC105379375 105379375
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> rs146992477 LOC105379377 105379377
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> rs146992477 LOC105379376 105379376
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> rs146992477 KCNU1        157855   
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> rs56261590  LOC102724832 102724832
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> rs56261590  ANKRD17      26057    
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> rs56261590  HMGA1P2      171559   
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> rs4725504   DPP6         1804     
+#&gt; </span><span style='color: #949494;'># … with 14 more rows</span><span>
+#&gt; </div><div class='input'>
+<span class='co'># Join two traits objects.</span>
+<span class='fu'>bind</span>(<span class='no'>traits_ex01</span>, <span class='no'>traits_ex02</span>)</div><div class='output co'>#&gt; An object of class "traits"
+#&gt; Slot "traits":
+#&gt; </span><span style='color: #949494;'># A tibble: 7 x 3</span><span>
+#&gt;   efo_id      trait                      uri                                 
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                      </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                               
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> EFO_0004884 breast size                http://www.ebi.ac.uk/efo/EFO_0004884
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span> EFO_0004343 waist-hip ratio            http://www.ebi.ac.uk/efo/EFO_0004343
+#&gt; </span><span style='color: #BCBCBC;'>3</span><span> EFO_0005299 non-word reading           http://www.ebi.ac.uk/efo/EFO_0005299
+#&gt; </span><span style='color: #BCBCBC;'>4</span><span> EFO_0007845 lip morphology measurement http://www.ebi.ac.uk/efo/EFO_0007845
+#&gt; </span><span style='color: #BCBCBC;'>5</span><span> EFO_0004699 gambling                   http://www.ebi.ac.uk/efo/EFO_0004699
+#&gt; </span><span style='color: #BCBCBC;'>6</span><span> EFO_0004884 breast size                http://www.ebi.ac.uk/efo/EFO_0004884
+#&gt; </span><span style='color: #BCBCBC;'>7</span><span> EFO_0004875 mathematical ability       http://www.ebi.ac.uk/efo/EFO_0004875
+#&gt; </div><div class='input'>
+</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -168,7 +429,9 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

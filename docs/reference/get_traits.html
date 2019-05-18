@@ -80,7 +80,7 @@ set_operation to 'intersection'." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gwasrapidd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9015</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
       </span>
     </div>
 
@@ -212,6 +212,32 @@ verbose about the different queries or not.</p></td>
     <p>A <a href='traits-class.html'>traits</a> object.</p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='co'># Get traits by study identifier</span>
+<span class='fu'>get_traits</span>(<span class='kw'>study_id</span> <span class='kw'>=</span> <span class='st'>'GCST001085'</span>)</div><div class='output co'>#&gt; An object of class "traits"
+#&gt; Slot "traits":
+#&gt; <span style='color: #949494;'># A tibble: 1 x 3</span><span>
+#&gt;   efo_id      trait        uri                                 
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                               
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> EFO_0000537 hypertension http://www.ebi.ac.uk/efo/EFO_0000537
+#&gt; </div><div class='input'>
+<span class='co'># Get traits by association identifier</span>
+<span class='fu'>get_traits</span>(<span class='kw'>association_id</span> <span class='kw'>=</span> <span class='st'>'25389945'</span>)</div><div class='output co'>#&gt; An object of class "traits"
+#&gt; Slot "traits":
+#&gt; </span><span style='color: #949494;'># A tibble: 1 x 3</span><span>
+#&gt;   efo_id      trait               uri                                 
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>               </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                               
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> EFO_0003761 unipolar depression http://www.ebi.ac.uk/efo/EFO_0003761
+#&gt; </div><div class='input'>
+<span class='co'># Get a trait by its EFO identifier</span>
+<span class='fu'>get_traits</span>(<span class='kw'>efo_id</span> <span class='kw'>=</span> <span class='st'>'EFO_0005537'</span>)</div><div class='output co'>#&gt; An object of class "traits"
+#&gt; Slot "traits":
+#&gt; </span><span style='color: #949494;'># A tibble: 1 x 3</span><span>
+#&gt;   efo_id      trait                         uri                                 
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                         </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                               
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> EFO_0005537 triple-negative breast cancer http://www.ebi.ac.uk/efo/EFO_0005537
+#&gt; </div><div class='input'>
+</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -219,7 +245,9 @@ verbose about the different queries or not.</p></td>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

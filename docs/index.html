@@ -40,7 +40,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">gwasrapidd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9015</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
       </span>
     </div>
 
@@ -123,21 +123,21 @@
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(gwasrapidd)</a>
 <a class="sourceLine" id="cb2-2" data-line-number="2">studies &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_studies.html">get_studies</a></span>(<span class="dt">efo_trait =</span> <span class="st">'triple-negative breast cancer'</span>)</a>
 <a class="sourceLine" id="cb2-3" data-line-number="3">studies<span class="op">@</span>studies[<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>]</a>
-<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#&gt; # A tibble: 1 x 4</span></a>
-<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">#&gt;   study_id  reported_trait        initial_sample_size  replication_sample_…</span></a>
-<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#&gt;   &lt;chr&gt;     &lt;chr&gt;                 &lt;chr&gt;                &lt;chr&gt;               </span></a>
-<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt; 1 GCST0023… Breast cancer (estro… 1,529 European ance… 2,148 European ance…</span></a></code></pre></div>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">## # A tibble: 1 x 4</span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">##   study_id  reported_trait        initial_sample_size  replication_sample_…</span></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">##   &lt;chr&gt;     &lt;chr&gt;                 &lt;chr&gt;                &lt;chr&gt;               </span></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">## 1 GCST0023… Breast cancer (estro… 1,529 European ance… 2,148 European ance…</span></a></code></pre></div>
 <p>Find associated variants:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">variants &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_variants.html">get_variants</a></span>(<span class="dt">study_id =</span> <span class="st">'GCST002305'</span>)</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2">variants<span class="op">@</span>variants[<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">'variant_id'</span>, <span class="st">'functional_class'</span>)]</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">#&gt; # A tibble: 5 x 2</span></a>
-<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="co">#&gt;   variant_id functional_class   </span></a>
-<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">#&gt;   &lt;chr&gt;      &lt;chr&gt;              </span></a>
-<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">#&gt; 1 rs4245739  3_prime_UTR_variant</span></a>
-<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co">#&gt; 2 rs2363956  missense_variant   </span></a>
-<a class="sourceLine" id="cb3-8" data-line-number="8"><span class="co">#&gt; 3 rs10069690 intron_variant     </span></a>
-<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="co">#&gt; 4 rs3757318  intron_variant     </span></a>
-<a class="sourceLine" id="cb3-10" data-line-number="10"><span class="co">#&gt; 5 rs10771399 intergenic_variant</span></a></code></pre></div>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">## # A tibble: 5 x 2</span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="co">##   variant_id functional_class   </span></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">##   &lt;chr&gt;      &lt;chr&gt;              </span></a>
+<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">## 1 rs4245739  3_prime_UTR_variant</span></a>
+<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co">## 2 rs2363956  missense_variant   </span></a>
+<a class="sourceLine" id="cb3-8" data-line-number="8"><span class="co">## 3 rs10069690 intron_variant     </span></a>
+<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="co">## 4 rs3757318  intron_variant     </span></a>
+<a class="sourceLine" id="cb3-10" data-line-number="10"><span class="co">## 5 rs10771399 intergenic_variant</span></a></code></pre></div>
 </div>
 <div id="contributors" class="section level2">
 <h2 class="hasAnchor">
@@ -178,10 +178,11 @@
 <ul class="list-unstyled">
 <li><a href="https://travis-ci.org/ramiromagno/gwasrapidd"><img src="https://travis-ci.org/ramiromagno/gwasrapidd.svg?branch=master" alt="Travis build status"></a></li>
 <li><a href="https://ci.appveyor.com/project/ramiromagno/gwasrapidd"><img src="https://ci.appveyor.com/api/projects/status/github/ramiromagno/gwasrapidd?branch=master&amp;svg=true" alt="AppVeyor build status"></a></li>
+<li><a href="https://bioconductor.org/checkResults/release/bioc-LATEST/gwasrapidd"><img src="http://www.bioconductor.org/shields/build/release/bioc/gwasrapidd.svg" alt="BioC status"></a></li>
 <li><a href="https://codecov.io/gh/ramiromagno/gwasrapidd"><img src="https://codecov.io/gh/ramiromagno/gwasrapidd/branch/master/graph/badge.svg" alt="codecov"></a></li>
 <li><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a></li>
 <li><a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="lifecycle"></a></li>
-<li><a href="https://github.com/ramiromagno/gwasrapidd"><img src="https://img.shields.io/badge/devel%20version-0.0.0.9015-blue.svg"></a></li>
+<li><a href="https://github.com/ramiromagno/gwasrapidd"><img src="https://img.shields.io/badge/devel%20version-0.0.1-blue.svg"></a></li>
 </ul>
 </div>
 </div>

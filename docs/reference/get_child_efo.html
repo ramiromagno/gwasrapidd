@@ -74,7 +74,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gwasrapidd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9015</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
       </span>
     </div>
 
@@ -178,6 +178,16 @@ are retrieved.</p></td>
     <p>A named list whose values are character vectors of EFO identifiers.</p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'>get_child_efo</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>'EFO_0004884'</span>, <span class='st'>'EFO_0004343'</span>, <span class='st'>'EFO_0005299'</span>))</div><div class='output co'>#&gt; $EFO_0004884
+#&gt; [1] "EFO_0009393"
+#&gt; 
+#&gt; $EFO_0004343
+#&gt; [1] "EFO_0007788"
+#&gt; 
+#&gt; $EFO_0005299
+#&gt; character(0)
+#&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -185,7 +195,9 @@ are retrieved.</p></td>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

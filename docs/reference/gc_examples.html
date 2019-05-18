@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Browse dbSNP from SNP identifiers. — open_in_dbsnp • gwasrapidd</title>
+<title>gwasrapidd entities' examples — gc_examples • gwasrapidd</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -39,10 +39,9 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Browse dbSNP from SNP identifiers. — open_in_dbsnp" />
+<meta property="og:title" content="gwasrapidd entities' examples — gc_examples" />
 
-<meta property="og:description" content="This function launches the web browser and opens a tab for each SNP
-identifier." />
+<meta property="og:description" content="These are examples of GWAS Catalog entities shipped with gwasrapidd:" />
 
 <meta property="og:image" content="https://rmagno.eu/gwasrapidd/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -129,47 +128,65 @@ identifier." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Browse dbSNP from SNP identifiers.</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ramiromagno/gwasrapidd/blob/master/R/post-variants.R'><code>R/post-variants.R</code></a></small>
-    <div class="hidden name"><code>open_in_dbsnp.Rd</code></div>
+    <h1>gwasrapidd entities' examples</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ramiromagno/gwasrapidd/blob/master/R/data.R'><code>R/data.R</code></a></small>
+    <div class="hidden name"><code>gc_examples.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>This function launches the web browser and opens a tab for each SNP
-identifier.</p>
+    <p>These are examples of GWAS Catalog entities shipped with gwasrapidd:</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>open_in_dbsnp</span>(<span class='no'>variant_id</span>)</pre>
-    
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>variant_id</th>
-      <td><p>A variant identifier, a character vector.</p></td>
-    </tr>
-    </table>
-    
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+    <pre class="usage"><span class='no'>studies_ex01</span>
 
-    <p>Returns <code>TRUE</code> if successful. Note however that this
-function is run for its side effect.</p>
+<span class='no'>studies_ex02</span>
+
+<span class='no'>associations_ex01</span>
+
+<span class='no'>associations_ex02</span>
+
+<span class='no'>variants_ex01</span>
+
+<span class='no'>variants_ex02</span>
+
+<span class='no'>traits_ex01</span>
+
+<span class='no'>traits_ex02</span></pre>
+        
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+
+    <dl class='dl-horizontal'>
+  <dt>studies_ex01</dt><dd><p>An S4 <a href='studies-class.html'>studies</a> object of 2 studies:
+  <code>'GCST001585'</code> and <code>'GCST003985'</code>.</p></dd>
+  <dt>studies_ex02</dt><dd><p>An S4 <a href='studies-class.html'>studies</a> object of 2 studies:
+  <code>'GCST001585'</code> and <code>'GCST006655'</code>.</p></dd>
+  <dt>associations_ex01</dt><dd><p>An S4 <a href='associations-class.html'>associations</a> object of 4
+  associations: <code>'22509'</code>, <code>'22505'</code>, <code>'19537565'</code> and
+  <code>'19537593'</code>.</p></dd>
+  <dt>associations_ex02</dt><dd><p>An S4 <a href='associations-class.html'>associations</a> object of 3
+  associations: <code>'19537593'</code>, <code>'31665940'</code> and <code>'34944736'</code>.</p></dd>
+  <dt>variants_ex01</dt><dd><p>An S4 <a href='variants-class.html'>variants</a> object of 3 variants:
+  <code>'rs146992477'</code>, <code>'rs56261590'</code> and <code>'rs4725504'</code>.</p></dd>
+  <dt>variants_ex02</dt><dd><p>An S4 <a href='variants-class.html'>variants</a> object of 4 variants:
+  <code>'rs56261590'</code>, <code>'rs4725504'</code>, <code>'rs11099757'</code> and
+  <code>'rs16871509'</code>.</p></dd>
+  <dt>traits_ex01</dt><dd><p>An S4 <a href='traits-class.html'>traits</a> object of 3 traits:
+  <code>'EFO_0004884'</code>, <code>'EFO_0004343'</code> and <code>'EFO_0005299'</code>.</p></dd>
+  <dt>traits_ex02</dt><dd><p>An S4 <a href='traits-class.html'>traits</a> object of 4 traits:
+  <code>'EFO_0007845'</code>, <code>'EFO_0004699'</code>, <code>'EFO_0004884'</code> and
+  <code>'EFO_0004875'</code>.</p></dd>
+</dl>
     
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>open_in_dbsnp</span>(<span class='st'>'rs56261590'</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
       
-      <li><a href="#value">Value</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
+      <li><a href="#format">Format</a></li>
+          </ul>
 
   </div>
 </div>

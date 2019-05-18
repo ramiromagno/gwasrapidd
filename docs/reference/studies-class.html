@@ -44,8 +44,8 @@
 <meta property="og:description" content="The studies object consists of eight slots, each a table
 (tibble), that combined form a relational database of a
 subset of GWAS Catalog studies. Each study is an observation (row) in the
-studies table --- main table. All tables have the column study_id as
-primary key." />
+studies table --- main table. All tables have the column
+study_id as primary key." />
 
 <meta property="og:image" content="https://rmagno.eu/gwasrapidd/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -78,7 +78,7 @@ primary key." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gwasrapidd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9015</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
       </span>
     </div>
 
@@ -142,8 +142,8 @@ primary key." />
     <p>The studies object consists of eight slots, each a table
 (<code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code>), that combined form a relational database of a
 subset of GWAS Catalog studies. Each study is an observation (row) in the
-<code>studies</code> table --- main table. All tables have the column <code>study_id</code> as
-primary key.</p>
+<code>studies</code> table --- main table. All tables have the column
+<code>study_id</code> as primary key.</p>
     
     </div>
 
@@ -153,13 +153,14 @@ primary key.</p>
     
     <dl class='dl-horizontal'>
 <dt><code>studies</code></dt><dd><p><dl class='dl-horizontal'>
-<dt>study_id</dt><dd><p>GWAS Catalog study accession identifier, e.g., <code>"GCST002735"</code>.</p></dd>
+<dt>study_id</dt><dd><p>GWAS Catalog study accession identifier, e.g.,
+<code>"GCST002735"</code>.</p></dd>
 <dt>reported_trait</dt><dd><p>Phenotypic trait as reported by the authors of the
 study, e.g. <code>"Breast cancer"</code>.</p></dd>
 <dt>initial_sample_size</dt><dd><p>Free text description of the initial cohort sample
 size.</p></dd>
-<dt>replication_sample_size</dt><dd><p>Free text description of the replication cohort sample
-size.</p></dd>
+<dt>replication_sample_size</dt><dd><p>Free text description of the replication
+cohort sample size.</p></dd>
 <dt>gxe</dt><dd><p>Whether the study investigates a gene-environment interaction.</p></dd>
 <dt>gxg</dt><dd><p>Whether the study investigates a gene-gene interaction.</p></dd>
 <dt>snp_count</dt><dd><p>Number of variants passing quality control.</p></dd>
@@ -176,31 +177,37 @@ was requested by a user.</p></dd>
   technologies employed in each study. Columns:
 <dl class='dl-horizontal'>
 <dt>study_id</dt><dd><p>GWAS Catalog study accession identifier.</p></dd>
-<dt>genotyping_technology</dt><dd><p>Genotyping technology employed, e.g. <code>"Exome
-genotyping array"</code>, <code>"Exome-wide sequencing"</code>, <code>"Genome-wide
-genotyping array"</code>, <code>"Genome-wide sequencing"</code>, or <code>"Targeted
-genotyping array"</code>.</p></dd>
+<dt>genotyping_technology</dt><dd><p>Genotyping technology employed, e.g.
+<code>"Exome genotyping array"</code>, <code>"Exome-wide sequencing"</code>,
+<code>"Genome-wide genotyping array"</code>, <code>"Genome-wide sequencing"</code>, or
+<code>"Targeted genotyping array"</code>.</p></dd>
 </dl></p></dd>
-    <dt><code>platforms</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing platforms used per study.
+    <dt><code>platforms</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing platforms used per
+  study.
 <dl class='dl-horizontal'>
 <dt>study_id</dt><dd><p>GWAS Catalog study accession identifier.</p></dd>
 <dt>manufacturer</dt><dd><p>Platform manufacturer, e.g., <code>"Affymetrix"</code>,
 <code>"Illumina"</code>, or <code>"Perlegen"</code>.</p></dd>
 </dl></p></dd>
-    <dt><code>ancestries</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing ancestry of samples used in each study.
+    <dt><code>ancestries</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing ancestry of samples
+  used in each study.
 <dl class='dl-horizontal'>
 <dt>study_id</dt><dd><p>GWAS Catalog study accession identifier.</p></dd>
 <dt>ancestry_id</dt><dd><p>Ancestry identifier.</p></dd>
-<dt>type</dt><dd><p>Stage of the ancestry sample: either <code>'initial'</code> or <code>'replication'</code>.</p></dd>
-<dt>number_of_individuals</dt><dd><p>Number of individuals comprising this ancestry sample.</p></dd>
+<dt>type</dt><dd><p>Stage of the ancestry sample: either <code>'initial'</code> or
+<code>'replication'</code>.</p></dd>
+<dt>number_of_individuals</dt><dd><p>Number of individuals comprising this ancestry
+sample.</p></dd>
 </dl></p></dd>
-    <dt><code>ancestral_groups</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing ancestral groups used in each ancestry.
+    <dt><code>ancestral_groups</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing ancestral
+  groups used in each ancestry.
 <dl class='dl-horizontal'>
 <dt>study_id</dt><dd><p>GWAS Catalog study accession identifier.</p></dd>
 <dt>ancestry_id</dt><dd><p>Ancestry identifier.</p></dd>
 <dt>ancestral_group</dt><dd><p>Genetic ancentry groups present in the sample.</p></dd>
 </dl></p></dd>
-    <dt><code>countries_of_origin</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing countries of origin of samples.
+    <dt><code>countries_of_origin</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing countries of
+  origin of samples.
 <dl class='dl-horizontal'>
 <dt>study_id</dt><dd><p>GWAS Catalog study accession identifier.</p></dd>
 <dt>ancestry_id</dt><dd><p>Ancestry identifier.</p></dd>
@@ -213,7 +220,8 @@ Nations M49 Standard of Geographic Regions.</a></p></dd> <dt>region</dt><dd><p>S
 according to <a href='https://unstats.un.org/unsd/methodology/m49/overview/'>The
 United Nations M49 Standard of Geographic Regions.</a></p></dd>
 </dl></p></dd>
-    <dt><code>countries_of_recruitment</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing countries of recruitment of samples.
+    <dt><code>countries_of_recruitment</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing
+  countries of recruitment of samples.
 <dl class='dl-horizontal'>
 <dt>study_id</dt><dd><p>GWAS Catalog study accession identifier.</p></dd>
 <dt>ancestry_id</dt><dd><p>Ancestry identifier.</p></dd>
@@ -226,15 +234,19 @@ Nations M49 Standard of Geographic Regions.</a></p></dd> <dt>region</dt><dd><p>S
 according to <a href='https://unstats.un.org/unsd/methodology/m49/overview/'>The
 United Nations M49 Standard of Geographic Regions.</a></p></dd>
 </dl></p></dd>
-    <dt><code>publications</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing publications associated with each study.
+    <dt><code>publications</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing publications
+  associated with each study.
 <dl class='dl-horizontal'>
 <dt>study_id</dt><dd><p>GWAS Catalog study accession identifier.</p></dd>
-<dt>pubmed_id</dt><dd><p><a href='https://en.wikipedia.org/wiki/PubMed'>PubMed</a> identifier.</p></dd>
-<dt>publication_date</dt><dd><p>Publication date (online date if available) formatted as <code><a href='http://lubridate.tidyverse.org/reference/ymd.html'>ymd</a></code>.</p></dd>
+<dt>pubmed_id</dt><dd><p><a href='https://en.wikipedia.org/wiki/PubMed'>PubMed</a>
+identifier.</p></dd>
+<dt>publication_date</dt><dd><p>Publication date (online date if available) formatted
+as <code><a href='http://lubridate.tidyverse.org/reference/ymd.html'>ymd</a></code>.</p></dd>
 <dt>publication</dt><dd><p>Abbreviated journal name.</p></dd>
 <dt>title</dt><dd><p>Publication title.</p></dd>
 <dt>author_fullname</dt><dd><p>Last name and initials of first author.</p></dd>
-<dt>author_orcid</dt><dd><p>Author's <a href='https://en.wikipedia.org/wiki/ORCID'>ORCID iD</a> (Open Researcher and Contributor ID).</p></dd>
+<dt>author_orcid</dt><dd><p>Author's <a href='https://en.wikipedia.org/wiki/ORCID'>ORCID
+iD</a> (Open Researcher and Contributor ID).</p></dd>
 </dl></p></dd>
 </dl>
     

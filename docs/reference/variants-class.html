@@ -44,8 +44,8 @@
 <meta property="og:description" content="The variants object consists of four slots, each a table
 (tibble), that combined form a relational database of a
 subset of GWAS Catalog variants Each variant is an observation (row) in the
-variants table --- main table. All tables have the column variant_id as
-primary key." />
+variants table --- main table. All tables have the column
+variant_id as primary key." />
 
 <meta property="og:image" content="https://rmagno.eu/gwasrapidd/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -78,7 +78,7 @@ primary key." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gwasrapidd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9015</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
       </span>
     </div>
 
@@ -142,8 +142,8 @@ primary key." />
     <p>The variants object consists of four slots, each a table
 (<code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code>), that combined form a relational database of a
 subset of GWAS Catalog variants Each variant is an observation (row) in the
-<code>variants</code> table --- main table. All tables have the column <code>variant_id</code> as
-primary key.</p>
+<code>variants</code> table --- main table. All tables have the column
+<code>variant_id</code> as primary key.</p>
     
     </div>
 
@@ -155,14 +155,15 @@ primary key.</p>
 <dt><code>variants</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing variants. Columns:
 <dl class='dl-horizontal'>
 <dt>variant_id</dt><dd><p>Variant identifier, e.g., <code>'rs1333048'</code>.</p></dd>
-<dt>merged</dt><dd><p>Whether this SNP has been merged with another SNP in a newer genome build.</p></dd>
+<dt>merged</dt><dd><p>Whether this SNP has been merged with another SNP in a newer
+genome build.</p></dd>
 <dt>functional_class</dt><dd><p>Class according to Ensembl's predicted consequences
 that each variant allele may have on transcripts. See
-<a href='https://www.ensembl.org/info/genome/variation/prediction/predicted_data.html'>Ensembl
+<a href='https://tinyurl.com/y43h8pa6'>Ensembl
 Variation - Calculated variant consequences</a>.</p></dd>
 <dt>chromosome_name</dt><dd><p>Chromosome name.</p></dd>
 <dt>chromosome_position</dt><dd><p>Chromosome position.</p></dd>
-<dt>chromosome_region</dt><dd><p><a href='https://ghr.nlm.nih.gov/primer/howgeneswork/genelocation'>Cytogenetic
+<dt>chromosome_region</dt><dd><p><a href='https://tinyurl.com/yc7qrhxe'>Cytogenetic
 location</a>.</p></dd>
 <dt>last_update_date</dt><dd><p>Last time this variant was updated.</p></dd>
 </dl></p></dd>
@@ -174,7 +175,8 @@ location</a>.</p></dd>
 <a href='https://www.genenames.org/'>HUGO Gene Nomenclature (HGNC)</a>.</p></dd>
 <dt>chromosome_name</dt><dd><p>Chromosome name.</p></dd>
 <dt>chromosome_position</dt><dd><p>Chromosome position.</p></dd>
-<dt>distance</dt><dd><p>Genomic distance between the variant and the gene (in base pairs).</p></dd>
+<dt>distance</dt><dd><p>Genomic distance between the variant and the gene (in base
+pairs).</p></dd>
 <dt>is_closest_gene</dt><dd><p>Whether this is the closest gene to this variant.</p></dd>
 <dt>is_intergenic</dt><dd><p>Whether this variant is intergenic, i.e, if there is no
 gene up or downstream within 100kb.</p></dd>
@@ -190,7 +192,7 @@ gene up or downstream within 100kb.</p></dd>
 <dt>gene_name</dt><dd><p>Gene symbol according to
 <a href='https://www.genenames.org/'>HUGO Gene Nomenclature (HGNC)</a>.</p></dd>
 <dt>ensembl_id</dt><dd><p>The Ensembl identifier of an Ensembl gene, see Section
-<a href='https://www.ensembl.org/info/genome/genebuild/genome_annotation.html'>Gene
+<a href='https://tinyurl.com/yxufd22b'>Gene
 annotation in Ensembl</a> for more information.</p></dd>
 </dl></p></dd>
     <dt><code>entrez_ids</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing gene Entrez

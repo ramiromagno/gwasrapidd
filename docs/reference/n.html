@@ -74,7 +74,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gwasrapidd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9015</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
       </span>
     </div>
 
@@ -139,19 +139,19 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>n</span>(<span class='no'>x</span>)
+    <pre class="usage"><span class='fu'>n</span>(<span class='no'>x</span>, <span class='kw'>unique</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
 
 <span class='co'># S4 method for studies</span>
-<span class='fu'>n</span>(<span class='no'>x</span>)
+<span class='fu'>n</span>(<span class='no'>x</span>, <span class='kw'>unique</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
 
 <span class='co'># S4 method for associations</span>
-<span class='fu'>n</span>(<span class='no'>x</span>)
+<span class='fu'>n</span>(<span class='no'>x</span>, <span class='kw'>unique</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
 
 <span class='co'># S4 method for variants</span>
-<span class='fu'>n</span>(<span class='no'>x</span>)
+<span class='fu'>n</span>(<span class='no'>x</span>, <span class='kw'>unique</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
 
 <span class='co'># S4 method for traits</span>
-<span class='fu'>n</span>(<span class='no'>x</span>)</pre>
+<span class='fu'>n</span>(<span class='no'>x</span>, <span class='kw'>unique</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -162,6 +162,11 @@
 <a href='associations-class.html'>associations</a>, a <a href='variants-class.html'>variants</a>, or a
 <a href='traits-class.html'>traits</a> object.</p></td>
     </tr>
+    <tr>
+      <th>unique</th>
+      <td><p>Whether to count only unique entries (<code>TRUE</code>) or not
+(<code>FALSE</code>).</p></td>
+    </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
@@ -169,6 +174,16 @@
     <p>An integer scalar.</p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='co'># Determine number of studies in studies object</span>
+<span class='fu'>n</span>(<span class='no'>studies_ex01</span>)</div><div class='output co'>#&gt; [1] 2</div><div class='input'>
+<span class='co'># Determine number of associations in studies associations</span>
+<span class='fu'>n</span>(<span class='no'>associations_ex01</span>)</div><div class='output co'>#&gt; [1] 4</div><div class='input'>
+<span class='co'># Determine number of variants in variants object</span>
+<span class='fu'>n</span>(<span class='no'>variants_ex01</span>)</div><div class='output co'>#&gt; [1] 3</div><div class='input'>
+<span class='co'># Determine number of traits in studies traits</span>
+<span class='fu'>n</span>(<span class='no'>traits_ex01</span>)</div><div class='output co'>#&gt; [1] 3</div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -176,7 +191,9 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

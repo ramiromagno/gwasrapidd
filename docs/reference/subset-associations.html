@@ -75,7 +75,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gwasrapidd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9015</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
       </span>
     </div>
 
@@ -183,6 +183,170 @@
     <p>A <a href='associations-class.html'>associations</a> object.</p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='co'># Subset an associations object by identifier</span>
+<span class='no'>associations_ex01</span>[<span class='st'>'22505'</span>]</div><div class='output co'>#&gt; An object of class "associations"
+#&gt; Slot "associations":
+#&gt; <span style='color: #949494;'># A tibble: 1 x 17</span><span>
+#&gt;   association_id  pvalue pvalue_descript… pvalue_mantissa pvalue_exponent
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                      </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>           </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> 22505          7.00</span><span style='color: #949494;'>e</span><span style='color: #BB0000;'>-6</span><span> </span><span style='color: #BB0000;'>NA</span><span>                             7              -</span><span style='color: #BB0000;'>6</span><span>
+#&gt; </span><span style='color: #949494;'># … with 12 more variables: multiple_snp_haplotype </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #949494;'>,
+#&gt; #   snp_interaction </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #949494;'>, snp_type </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>, standard_error </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #949494;'>, range </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>,
+#&gt; #   or_per_copy_number </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #949494;'>, beta_number </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #949494;'>, beta_unit </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>,
+#&gt; #   beta_direction </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>, beta_description </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>, last_mapping_date </span><span style='color: #949494;font-style: italic;'>&lt;dttm&gt;</span><span style='color: #949494;'>,
+#&gt; #   last_update_date </span><span style='color: #949494;font-style: italic;'>&lt;dttm&gt;</span><span>
+#&gt; 
+#&gt; Slot "loci":
+#&gt; </span><span style='color: #949494;'># A tibble: 1 x 4</span><span>
+#&gt;   association_id locus_id haplotype_snp_count description   
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>               </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>         
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> 22505                 1                  </span><span style='color: #BB0000;'>NA</span><span> Single variant
+#&gt; 
+#&gt; Slot "risk_alleles":
+#&gt; </span><span style='color: #949494;'># A tibble: 1 x 7</span><span>
+#&gt;   association_id locus_id variant_id risk_allele risk_frequency genome_wide
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span>      
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> 22505                 1 chr22:458… T                       </span><span style='color: #BB0000;'>NA</span><span> </span><span style='color: #BB0000;'>NA</span><span>         
+#&gt; </span><span style='color: #949494;'># … with 1 more variable: limited_list </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span>
+#&gt; 
+#&gt; Slot "genes":
+#&gt; </span><span style='color: #949494;'># A tibble: 2 x 3</span><span>
+#&gt;   association_id locus_id gene_name   
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> 22505                 1 TBC1D22A    
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span> 22505                 1 LOC100128818
+#&gt; 
+#&gt; Slot "ensembl_ids":
+#&gt; </span><span style='color: #949494;'># A tibble: 2 x 4</span><span>
+#&gt;   association_id locus_id gene_name    ensembl_id     
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>          
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> 22505                 1 TBC1D22A     ENSG00000054611
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span> 22505                 1 LOC100128818 </span><span style='color: #BB0000;'>NA</span><span>             
+#&gt; 
+#&gt; Slot "entrez_ids":
+#&gt; </span><span style='color: #949494;'># A tibble: 2 x 4</span><span>
+#&gt;   association_id locus_id gene_name    entrez_id
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> 22505                 1 TBC1D22A     25771    
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span> 22505                 1 LOC100128818 </span><span style='color: #BB0000;'>NA</span><span>       
+#&gt; </div><div class='input'>
+<span class='co'># Or by its position in table associations</span>
+<span class='no'>associations_ex01</span>[<span class='fl'>2</span>]</div><div class='output co'>#&gt; An object of class "associations"
+#&gt; Slot "associations":
+#&gt; </span><span style='color: #949494;'># A tibble: 1 x 17</span><span>
+#&gt;   association_id  pvalue pvalue_descript… pvalue_mantissa pvalue_exponent
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                      </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>           </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> 22505          7.00</span><span style='color: #949494;'>e</span><span style='color: #BB0000;'>-6</span><span> </span><span style='color: #BB0000;'>NA</span><span>                             7              -</span><span style='color: #BB0000;'>6</span><span>
+#&gt; </span><span style='color: #949494;'># … with 12 more variables: multiple_snp_haplotype </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #949494;'>,
+#&gt; #   snp_interaction </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #949494;'>, snp_type </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>, standard_error </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #949494;'>, range </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>,
+#&gt; #   or_per_copy_number </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #949494;'>, beta_number </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #949494;'>, beta_unit </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>,
+#&gt; #   beta_direction </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>, beta_description </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>, last_mapping_date </span><span style='color: #949494;font-style: italic;'>&lt;dttm&gt;</span><span style='color: #949494;'>,
+#&gt; #   last_update_date </span><span style='color: #949494;font-style: italic;'>&lt;dttm&gt;</span><span>
+#&gt; 
+#&gt; Slot "loci":
+#&gt; </span><span style='color: #949494;'># A tibble: 1 x 4</span><span>
+#&gt;   association_id locus_id haplotype_snp_count description   
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>               </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>         
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> 22505                 1                  </span><span style='color: #BB0000;'>NA</span><span> Single variant
+#&gt; 
+#&gt; Slot "risk_alleles":
+#&gt; </span><span style='color: #949494;'># A tibble: 1 x 7</span><span>
+#&gt;   association_id locus_id variant_id risk_allele risk_frequency genome_wide
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span>      
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> 22505                 1 chr22:458… T                       </span><span style='color: #BB0000;'>NA</span><span> </span><span style='color: #BB0000;'>NA</span><span>         
+#&gt; </span><span style='color: #949494;'># … with 1 more variable: limited_list </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span>
+#&gt; 
+#&gt; Slot "genes":
+#&gt; </span><span style='color: #949494;'># A tibble: 2 x 3</span><span>
+#&gt;   association_id locus_id gene_name   
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> 22505                 1 TBC1D22A    
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span> 22505                 1 LOC100128818
+#&gt; 
+#&gt; Slot "ensembl_ids":
+#&gt; </span><span style='color: #949494;'># A tibble: 2 x 4</span><span>
+#&gt;   association_id locus_id gene_name    ensembl_id     
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>          
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> 22505                 1 TBC1D22A     ENSG00000054611
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span> 22505                 1 LOC100128818 </span><span style='color: #BB0000;'>NA</span><span>             
+#&gt; 
+#&gt; Slot "entrez_ids":
+#&gt; </span><span style='color: #949494;'># A tibble: 2 x 4</span><span>
+#&gt;   association_id locus_id gene_name    entrez_id
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> 22505                 1 TBC1D22A     25771    
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span> 22505                 1 LOC100128818 </span><span style='color: #BB0000;'>NA</span><span>       
+#&gt; </div><div class='input'>
+<span class='co'># Keep all associations except the second</span>
+<span class='no'>associations_ex01</span>[-<span class='fl'>2</span>]</div><div class='output co'>#&gt; An object of class "associations"
+#&gt; Slot "associations":
+#&gt; </span><span style='color: #949494;'># A tibble: 3 x 17</span><span>
+#&gt;   association_id   pvalue pvalue_descript… pvalue_mantissa pvalue_exponent
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                      </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>           </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> 22509          3.00</span><span style='color: #949494;'>e</span><span style='color: #BB0000;'>- 9</span><span> </span><span style='color: #BB0000;'>NA</span><span>                             3              -</span><span style='color: #BB0000;'>9</span><span>
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span> 19537565       7.00</span><span style='color: #949494;'>e</span><span style='color: #BB0000;'>-31</span><span> </span><span style='color: #BB0000;'>NA</span><span>                             7             -</span><span style='color: #BB0000;'>31</span><span>
+#&gt; </span><span style='color: #BCBCBC;'>3</span><span> 19537593       1.00</span><span style='color: #949494;'>e</span><span style='color: #BB0000;'>-11</span><span> </span><span style='color: #BB0000;'>NA</span><span>                             1             -</span><span style='color: #BB0000;'>11</span><span>
+#&gt; </span><span style='color: #949494;'># … with 12 more variables: multiple_snp_haplotype </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #949494;'>,
+#&gt; #   snp_interaction </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #949494;'>, snp_type </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>, standard_error </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #949494;'>, range </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>,
+#&gt; #   or_per_copy_number </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #949494;'>, beta_number </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #949494;'>, beta_unit </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>,
+#&gt; #   beta_direction </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>, beta_description </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>, last_mapping_date </span><span style='color: #949494;font-style: italic;'>&lt;dttm&gt;</span><span style='color: #949494;'>,
+#&gt; #   last_update_date </span><span style='color: #949494;font-style: italic;'>&lt;dttm&gt;</span><span>
+#&gt; 
+#&gt; Slot "loci":
+#&gt; </span><span style='color: #949494;'># A tibble: 3 x 4</span><span>
+#&gt;   association_id locus_id haplotype_snp_count description   
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>               </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>         
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> 22509                 1                  </span><span style='color: #BB0000;'>NA</span><span> Single variant
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span> 19537565              1                  </span><span style='color: #BB0000;'>NA</span><span> Single variant
+#&gt; </span><span style='color: #BCBCBC;'>3</span><span> 19537593              1                  </span><span style='color: #BB0000;'>NA</span><span> Single variant
+#&gt; 
+#&gt; Slot "risk_alleles":
+#&gt; </span><span style='color: #949494;'># A tibble: 3 x 7</span><span>
+#&gt;   association_id locus_id variant_id risk_allele risk_frequency genome_wide
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span>      
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> 22509                 1 rs7089814  C                       </span><span style='color: #BB0000;'>NA</span><span> </span><span style='color: #BB0000;'>NA</span><span>         
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span> 19537565              1 rs10110651 </span><span style='color: #BB0000;'>NA</span><span>                      </span><span style='color: #BB0000;'>NA</span><span> FALSE      
+#&gt; </span><span style='color: #BCBCBC;'>3</span><span> 19537593              1 rs9397437  </span><span style='color: #BB0000;'>NA</span><span>                      </span><span style='color: #BB0000;'>NA</span><span> FALSE      
+#&gt; </span><span style='color: #949494;'># … with 1 more variable: limited_list </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span>
+#&gt; 
+#&gt; Slot "genes":
+#&gt; </span><span style='color: #949494;'># A tibble: 7 x 3</span><span>
+#&gt;   association_id locus_id gene_name
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> 22509                 1 ADO      
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span> 22509                 1 ZNF365   
+#&gt; </span><span style='color: #BCBCBC;'>3</span><span> 22509                 1 ALDH7A1P4
+#&gt; </span><span style='color: #BCBCBC;'>4</span><span> 19537565              1 KCNU1    
+#&gt; </span><span style='color: #BCBCBC;'>5</span><span> 19537565              1 ZNF703   
+#&gt; </span><span style='color: #BCBCBC;'>6</span><span> 19537593              1 CCDC170  
+#&gt; </span><span style='color: #BCBCBC;'>7</span><span> 19537593              1 ESR1     
+#&gt; 
+#&gt; Slot "ensembl_ids":
+#&gt; </span><span style='color: #949494;'># A tibble: 7 x 4</span><span>
+#&gt;   association_id locus_id gene_name ensembl_id     
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>          
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> 22509                 1 ADO       ENSG00000181915
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span> 22509                 1 ZNF365    ENSG00000138311
+#&gt; </span><span style='color: #BCBCBC;'>3</span><span> 22509                 1 ALDH7A1P4 ENSG00000234489
+#&gt; </span><span style='color: #BCBCBC;'>4</span><span> 19537565              1 KCNU1     ENSG00000215262
+#&gt; </span><span style='color: #BCBCBC;'>5</span><span> 19537565              1 ZNF703    ENSG00000183779
+#&gt; </span><span style='color: #BCBCBC;'>6</span><span> 19537593              1 CCDC170   ENSG00000120262
+#&gt; </span><span style='color: #BCBCBC;'>7</span><span> 19537593              1 ESR1      ENSG00000091831
+#&gt; 
+#&gt; Slot "entrez_ids":
+#&gt; </span><span style='color: #949494;'># A tibble: 7 x 4</span><span>
+#&gt;   association_id locus_id gene_name entrez_id
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> 22509                 1 ADO       84890    
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span> 22509                 1 ZNF365    22891    
+#&gt; </span><span style='color: #BCBCBC;'>3</span><span> 22509                 1 ALDH7A1P4 544      
+#&gt; </span><span style='color: #BCBCBC;'>4</span><span> 19537565              1 KCNU1     157855   
+#&gt; </span><span style='color: #BCBCBC;'>5</span><span> 19537565              1 ZNF703    80139    
+#&gt; </span><span style='color: #BCBCBC;'>6</span><span> 19537593              1 CCDC170   80129    
+#&gt; </span><span style='color: #BCBCBC;'>7</span><span> 19537593              1 ESR1      2099     
+#&gt; </div><div class='input'>
+</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -190,7 +354,9 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

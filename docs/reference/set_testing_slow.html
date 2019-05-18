@@ -41,12 +41,12 @@
   
 <meta property="og:title" content="Setup the environment to still run slow tests — set_testing_slow" />
 
-<meta property="og:description" content="This function sets an environment variable TEST_FAST to 'false' which is used
-to flag if a test should be skipped or not. If you place
+<meta property="og:description" content="This function sets an environment variable TEST_FAST to 'false' which
+is used to flag if a test should be skipped or not. If you place
 skip_if_testing_is_fast in a test then it will
 check if TEST_FAST is 'true', if it is, then it will skip the next
-expectations with a test_that() block.
-Please note that this function is to be used in gwasrapidd development." />
+expectations with a test_that() block. Please note that this function
+is to be used in gwasrapidd development." />
 
 <meta property="og:image" content="https://rmagno.eu/gwasrapidd/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -79,7 +79,7 @@ Please note that this function is to be used in gwasrapidd development." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gwasrapidd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9015</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
       </span>
     </div>
 
@@ -140,23 +140,30 @@ Please note that this function is to be used in gwasrapidd development." />
 
     <div class="ref-description">
     
-    <p>This function sets an environment variable <code>TEST_FAST</code> to 'false' which is used
-to flag if a test should be skipped or not. If you place
+    <p>This function sets an environment variable <code>TEST_FAST</code> to 'false' which
+is used to flag if a test should be skipped or not. If you place
 <code><a href='skip_if_testing_is_fast.html'>skip_if_testing_is_fast</a></code> in a test then it will
 check if <code>TEST_FAST</code> is 'true', if it is, then it will skip the next
-expectations with a <code>test_that()</code> block.
-Please note that this function is to be used in gwasrapidd development.</p>
+expectations with a <code>test_that()</code> block. Please note that this function
+is to be used in gwasrapidd development.</p>
     
     </div>
 
     <pre class="usage"><span class='fu'>set_testing_slow</span>()</pre>
         
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Returns <code>NULL</code>. This function should be used for its side
+  effect.</p>
+    
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-                </ul>
+      
+      <li><a href="#value">Value</a></li>
+          </ul>
 
   </div>
 </div>
