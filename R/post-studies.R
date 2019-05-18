@@ -7,6 +7,9 @@
 #'   vector.
 #' @return Returns \code{TRUE} if successful. Note however that this
 #' function is run for its side effect.
+#' @examples
+#' open_in_pubmed(c('26301688', '30595370'))
+#'
 #' @export
 open_in_pubmed <- function(pubmed_id) {
   if (!(rlang::is_double(pubmed_id) || rlang::is_integer(pubmed_id) || rlang::is_character(pubmed_id) ))
