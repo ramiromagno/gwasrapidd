@@ -17,3 +17,6 @@ function is run for its side effect.
 This function launches the web browser and opens a tab for each SNP
 identifier on GTEx portal.
 }
+\examples{
+open_in_gtex('rs56261590')
+}

@@ -17,3 +17,6 @@ function is run for its side effect.
 This function launches the web browser and opens a tab for each SNP
 identifier.
 }
+\examples{
+open_in_dbsnp('rs56261590')
+}
