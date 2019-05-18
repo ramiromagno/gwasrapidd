@@ -30,3 +30,6 @@ A named list whose values are character vectors of EFO identifiers.
 \description{
 Get all child terms of this trait in the EFO hierarchy
 }
+\examples{
+get_child_efo(c('EFO_0004884', 'EFO_0004343', 'EFO_0005299'))
+}

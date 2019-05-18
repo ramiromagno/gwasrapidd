@@ -48,6 +48,8 @@ child_efo_ids <- function(efo_id, verbose = FALSE, warnings = TRUE, page_size = 
 #'   are retrieved.
 #'
 #' @return A named list whose values are character vectors of EFO identifiers.
+#' @examples
+#' get_child_efo(c('EFO_0004884', 'EFO_0004343', 'EFO_0005299'))
 #' @export
 get_child_efo <- function(efo_id,
                           verbose = FALSE,
