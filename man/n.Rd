@@ -33,3 +33,17 @@ An integer scalar.
 \description{
 This function returns the number of unique entities in a GWAS Catalog object.
 }
+\examples{
+# Determine number of studies in studies object
+n(studies_ex01)
+
+# Determine number of associations in studies associations
+n(associations_ex01)
+
+# Determine number of variants in variants object
+n(variants_ex01)
+
+# Determine number of traits in studies traits
+n(traits_ex01)
+
+}

@@ -565,6 +565,19 @@ setMethod("[",
 setGeneric('n', function(x, unique = FALSE) standardGeneric('n'))
 
 #' @rdname n
+#' @examples
+#' # Determine number of studies in studies object
+#' n(studies_ex01)
+#'
+#' # Determine number of associations in studies associations
+#' n(associations_ex01)
+#'
+#' # Determine number of variants in variants object
+#' n(variants_ex01)
+#'
+#' # Determine number of traits in studies traits
+#' n(traits_ex01)
+#'
 #' @export
 setMethod("n",
           signature(x = "studies"),
