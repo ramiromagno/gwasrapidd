@@ -362,6 +362,16 @@ setMethod("filter_by_id",
 #' @param drop Not used.
 #'
 #' @return A \linkS4class{studies} object.
+#' @examples
+#' # Subset a studies object by identifier
+#' studies_ex01['GCST001585']
+#'
+#' # Or by its position in table studies
+#' studies_ex01[1]
+#'
+#' # Keep all studies except the first
+#' studies_ex01[-1]
+#'
 #' @name subset-studies
 NULL
 
@@ -402,6 +412,16 @@ setMethod("[",
 #' @param drop Not used.
 #'
 #' @return A \linkS4class{associations} object.
+#' @examples
+#' # Subset an associations object by identifier
+#' associations_ex01['22505']
+#'
+#' # Or by its position in table associations
+#' associations_ex01[2]
+#'
+#' # Keep all associations except the second
+#' associations_ex01[-2]
+#'
 #' @name subset-associations
 NULL
 
@@ -442,6 +462,16 @@ setMethod("[",
 #' @param drop Not used.
 #'
 #' @return A \linkS4class{variants} object.
+#' @examples
+#' # Subset a variants object by identifier
+#' variants_ex01['rs4725504']
+#'
+#' # Or by its position in table variants
+#' variants_ex01[3]
+#'
+#' # Keep all variants except the third
+#' variants_ex01[-3]
+#'
 #' @name subset-variants
 NULL
 
@@ -481,6 +511,16 @@ setMethod("[",
 #' @param ... Additional arguments not used here.
 #' @param drop Not used.
 #' @return A \linkS4class{traits} object.
+#' @examples
+#' # Subset a traits object by identifier
+#' traits_ex01['EFO_0004884']
+#'
+#' # Or by its position in table traits
+#' traits_ex01[1]
+#'
+#' # Keep all traits except the second
+#' traits_ex01[-2]
+#'
 #' @name subset-traits
 NULL
 

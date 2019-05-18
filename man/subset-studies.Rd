@@ -33,3 +33,14 @@ A \linkS4class{studies} object.
 You can subset \linkS4class{studies} by identifier or by position using the
 \code{`[`} operator.
 }
+\examples{
+# Subset a studies object by identifier
+studies_ex01['GCST001585']
+
+# Or by its position in table studies
+studies_ex01[1]
+
+# Keep all studies except the first
+studies_ex01[-1]
+
+}

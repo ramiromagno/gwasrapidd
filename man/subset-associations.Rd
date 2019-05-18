@@ -35,3 +35,14 @@ A \linkS4class{associations} object.
 You can subset \linkS4class{associations} by identifier or by position using the
 \code{`[`} operator.
 }
+\examples{
+# Subset an associations object by identifier
+associations_ex01['22505']
+
+# Or by its position in table associations
+associations_ex01[2]
+
+# Keep all associations except the second
+associations_ex01[-2]
+
+}

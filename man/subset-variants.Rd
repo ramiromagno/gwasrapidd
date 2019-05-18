@@ -35,3 +35,14 @@ A \linkS4class{variants} object.
 You can subset \linkS4class{variants} by identifier or by position using the
 \code{`[`} operator.
 }
+\examples{
+# Subset a variants object by identifier
+variants_ex01['rs4725504']
+
+# Or by its position in table variants
+variants_ex01[3]
+
+# Keep all variants except the third
+variants_ex01[-3]
+
+}

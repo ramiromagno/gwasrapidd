@@ -33,3 +33,14 @@ A \linkS4class{traits} object.
 You can subset \linkS4class{traits} by identifier or by position using the
 \code{`[`} operator.
 }
+\examples{
+# Subset a traits object by identifier
+traits_ex01['EFO_0004884']
+
+# Or by its position in table traits
+traits_ex01[1]
+
+# Keep all traits except the second
+traits_ex01[-2]
+
+}
