@@ -30,3 +30,8 @@ successful, meaning that the variant does exist in the GWAS Catalog. If the
 response is 404 then the variant is not found in the Catalog database. Other
 errors are mapped to NA.
 }
+\examples{
+exists_variant('rs12345') # TRUE
+exists_variant('rs123456') # FALSE
+
+}

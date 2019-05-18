@@ -785,6 +785,11 @@ get_variants <- function(study_id = NULL,
 #'   exist in the Catalog, \code{FALSE} otherwise. \code{NA} codes other types
 #'   of errors. The names of the vector are the variant identifiers passed as
 #'   \code{variant_id}.
+#'
+#' @examples
+#' exists_variant('rs12345') # TRUE
+#' exists_variant('rs123456') # FALSE
+#'
 #' @export
 exists_variant <- function(variant_id = NULL, verbose = FALSE, page_size = 20L) {
 
