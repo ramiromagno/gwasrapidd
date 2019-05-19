@@ -161,8 +161,17 @@ test_that("metadata_lst: dbsnp_version ", {
 
 with_mock_api({
   test_that("get_metadata", {
-    lst0 <- list(ensembl_release_number = 95L, genome_build_version = "GRCh38.p12",
-                 dbsnp_version = 151L, usage_start_date = structure(1547301601.921, class = c("POSIXct",  "POSIXt"), tzone = "UTC"))
+    lst0 <-
+      list(
+        ensembl_release_number = 95L,
+        genome_build_version = "GRCh38.p12",
+        dbsnp_version = 151L,
+        usage_start_date = structure(
+          1547301601.921,
+          class = c("POSIXct",  "POSIXt"),
+          tzone = "UTC"
+        )
+      )
     expect_identical(get_metadata(), lst0)
   })
 })
