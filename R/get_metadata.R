@@ -16,8 +16,6 @@
 #' @return A list of 4 named elements as passed as arguments:
 #'   \code{ensembl_release_number}, \code{genome_build_version},
 #'   \code{dbsnp_version} and \code{usage_start_date}.
-#' @examples
-#' get_metadata()
 #' @keywords internal
 metadata_lst <- function(
   ensembl_release_number = NA_integer_,
@@ -80,7 +78,8 @@ metadata_lst <- function(
 #' \item \code{dbsnp_version}: \href{https://www.ncbi.nlm.nih.gov/projects/SNP/snp_summary.cgi}{dbSNP version}.
 #' \item \code{usage_start_date}: Date since this combination of resource versions has been in use.
 #' }
-#'
+#' @examples
+#' get_metadata()
 #' @export
 get_metadata <- function(verbose = FALSE, warnings = TRUE) {
   response <- gc_request("/metadata", verbose = verbose, warnings = warnings)
