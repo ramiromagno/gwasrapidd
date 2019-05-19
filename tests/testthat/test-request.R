@@ -216,26 +216,26 @@ with_mock_api({
   })
 })
 
-with_mock_api({
-  test_that("gc_request_all: url does not contains_question_mark", {
-    gc_request_all('/efoTraits')
-  })
-})
+# with_mock_api({
+#   test_that("gc_request_all: url does not contains_question_mark", {
+#     gc_request_all('/efoTraits')
+#   })
+# })
 
 # This test simulates is_ok having one or more FALSEs
 # is_ok <- purrr::map_lgl(objs, ~ identical(.x$status, "OK"))
-with_mock_api({
-  test_that("gc_request_all: one or more pages failed to return 200", {
-    with_mock(
-      `purrr::map_lgl` = function(...)
-        FALSE,
-      expect_error(
-        gc_request_all('/efoTraits'),
-        "Failed to get all pages of /efoTraits!"
-      )
-    )
-  })
-})
+# with_mock_api({
+#   test_that("gc_request_all: one or more pages failed to return 200", {
+#     with_mock(
+#       `purrr::map_lgl` = function(...)
+#         FALSE,
+#       expect_error(
+#         gc_request_all('/efoTraits'),
+#         "Failed to get all pages of /efoTraits!"
+#       )
+#     )
+#   })
+# })
 
 #
 # is_embedded()
@@ -327,7 +327,7 @@ test_that("peel_off_embedded", {
 # gc_get()
 #
 with_mock_api({
-  test_that("gc_get: studies", {
+  test_that("gc_get", {
     gc_get('/studies/GCST001085/')
     gc_get('/studies/GCST001085/associations')
     gc_get('/studies/GCST001085/snps')
@@ -340,16 +340,11 @@ with_mock_api({
     gc_get('/singleNucleotidePolymorphisms/rs3798440/associations')
     gc_get('/singleNucleotidePolymorphisms/rs3798440/')
     gc_get('/efoTraits/EFO_0000537/studies')
-    gc_get('/efoTraits/EFO_0000537/associations')
     gc_get('/efoTraits/EFO_0000537/')
     gc_get('/studies/search/findByPublicationIdPubmedId?pubmedId=21626137')
     gc_get('/associations/search/findByPubmedId?pubmedId=21626137')
     gc_get('/singleNucleotidePolymorphisms/search/findByPubmedId?pubmedId=21626137')
     gc_get('/efoTraits/search/findByPubmedId?pubmedId=21626137')
-    gc_get('/associations/search/findByRsIdAndAccessionId?rsId=rs16956936&accessionId=GCST000392')
-    gc_get('/singleNucleotidePolymorphisms/search/findByChromBpLocationRange?chrom=22&bpStart=1&bpEnd=15500000')
-    gc_get('/studies/search/findByEfoTrait?efoTrait=lung%20adenocarcinoma')
-    gc_get('/efoTraits/search/findByEfoTrait?trait=lung%20adenocarcinoma')
   })
 })
 
@@ -376,12 +371,28 @@ test_that("gc_get: studies by efo_uri", {
 })
 
 test_that("gc_get: studies", {
-  expect_error(gc_get(resource_url = c('/studies/GCST001085/', '/studies/GCST001085/')),
-               'resource_url must be a single string.')
+  expect_error(gc_get(
+    resource_url = c('/studies/GCST001085/', '/studies/GCST001085/')
+  ),
+  'resource_url must be a single string.')
 
-  expect_error(gc_get(resource_url = '/studies/GCST001085/',
-                      base_url = c('https://www.ebi.ac.uk/gwas/rest/api/', 'https://www.ebi.ac.uk/gwas/rest/api/')), 'base_url must be a single string.')
+  expect_error(
+    gc_get(
+      resource_url = '/studies/GCST001085/',
+      base_url = c(
+        'https://www.ebi.ac.uk/gwas/rest/api/',
+        'https://www.ebi.ac.uk/gwas/rest/api/'
+      )
+    ),
+    'base_url must be a single string.'
+  )
 
-  expect_error(gc_get('/studies/GCST001085/', page_size = -1L), "page_size must be an integer scalar between 1 and 1000!")
-  expect_error(gc_get('/studies/GCST001085/', page_size = 1001L), "page_size must be an integer scalar between 1 and 1000!")
+  expect_error(
+    gc_get('/studies/GCST001085/', page_size = -1L),
+    "page_size must be an integer scalar between 1 and 1000!"
+  )
+  expect_error(
+    gc_get('/studies/GCST001085/', page_size = 1001L),
+    "page_size must be an integer scalar between 1 and 1000!"
+  )
 })

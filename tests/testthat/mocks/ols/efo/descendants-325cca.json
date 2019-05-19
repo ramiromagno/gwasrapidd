@@ -11,7 +11,7 @@
                     "database_cross_reference": [
                         "MONDO:0006513",
                         "DOID:0060076",
-                        "DOID_0060078"
+                        "DOID:0060078"
                     ],
                     "exactMatch": [
                         "http://purl.obolibrary.org/obo/DOID_0060076"
@@ -56,14 +56,14 @@
                 ],
                 "obo_xref": [
                     {
-                        "database": null,
-                        "id": "DOID_0060078",
+                        "database": "MONDO",
+                        "id": "0006513",
                         "description": null,
                         "url": null
                     },
                     {
-                        "database": "MONDO",
-                        "id": "0006513",
+                        "database": "DOID",
+                        "id": "0060078",
                         "description": null,
                         "url": null
                     },
@@ -129,8 +129,7 @@
                 "annotation": {
                     "database_cross_reference": [
                         "MONDO:0006512",
-                        "DOID:0060075",
-                        "DOID_0060075"
+                        "DOID:0060075"
                     ],
                     "exactMatch": [
                         "http://purl.obolibrary.org/obo/DOID_0060075"
@@ -175,12 +174,6 @@
                     }
                 ],
                 "obo_xref": [
-                    {
-                        "database": null,
-                        "id": "DOID_0060075",
-                        "description": null,
-                        "url": null
-                    },
                     {
                         "database": "MONDO",
                         "id": "0006512",
@@ -308,15 +301,9 @@
                         "url": null
                     },
                     {
-                        "database": "DOID",
-                        "id": "5050",
+                        "database": "UMLS",
+                        "id": "C0007125",
                         "description": "MONDO:equivalentTo",
-                        "url": null
-                    },
-                    {
-                        "database": "DOID",
-                        "id": "5050",
-                        "description": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern",
                         "url": null
                     },
                     {
@@ -326,8 +313,14 @@
                         "url": null
                     },
                     {
-                        "database": "UMLS",
-                        "id": "C0007125",
+                        "database": "DOID",
+                        "id": "5050",
+                        "description": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern",
+                        "url": null
+                    },
+                    {
+                        "database": "DOID",
+                        "id": "5050",
                         "description": "MONDO:equivalentTo",
                         "url": null
                     }
@@ -335,22 +328,6 @@
                 "obo_synonym": [
                     {
                         "name": "Carcinoma, Ehrlich Tumor",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-
-                        ]
-                    },
-                    {
-                        "name": "Ehrlich's tumor",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-
-                        ]
-                    },
-                    {
-                        "name": "Ehrlich tumor carcinoma",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
@@ -374,6 +351,22 @@
                                 "description": null,
                                 "url": null
                             }
+                        ]
+                    },
+                    {
+                        "name": "Ehrlich's tumor",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+
+                        ]
+                    },
+                    {
+                        "name": "Ehrlich tumor carcinoma",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+
                         ]
                     }
                 ],
@@ -542,70 +535,10 @@
                 ],
                 "obo_xref": [
                     {
-                        "database": "ICD10",
-                        "id": "C50.4",
-                        "description": "Orphanet:227535",
-                        "url": null
-                    },
-                    {
-                        "database": "ICD10",
-                        "id": "C50.1",
-                        "description": "Orphanet:227535",
-                        "url": null
-                    },
-                    {
-                        "database": "ICD10",
-                        "id": "C50.2",
-                        "description": "Orphanet:227535",
-                        "url": null
-                    },
-                    {
-                        "database": "ICD10",
-                        "id": "C50.6",
-                        "description": "Orphanet:227535",
-                        "url": null
-                    },
-                    {
-                        "database": "ICD10",
-                        "id": "C50",
-                        "description": null,
-                        "url": null
-                    },
-                    {
-                        "database": "MONDO",
-                        "id": "0016419",
-                        "description": null,
-                        "url": null
-                    },
-                    {
                         "database": "OMIM",
                         "id": "114480",
                         "description": "Orphanet:227535",
                         "url": "http://omim.org/entry/114480"
-                    },
-                    {
-                        "database": "OMIM",
-                        "id": "604370",
-                        "description": null,
-                        "url": "http://omim.org/entry/604370"
-                    },
-                    {
-                        "database": "ICD10",
-                        "id": "C50.5",
-                        "description": "Orphanet:227535",
-                        "url": null
-                    },
-                    {
-                        "database": "OMIM",
-                        "id": "605365",
-                        "description": null,
-                        "url": "http://omim.org/entry/605365"
-                    },
-                    {
-                        "database": "SCTID",
-                        "id": "254843006",
-                        "description": "MONDO:kboom-pr-0.77/0.38/0.74",
-                        "url": null
                     },
                     {
                         "database": "NCIT",
@@ -614,8 +547,8 @@
                         "url": null
                     },
                     {
-                        "database": "UMLS",
-                        "id": "C0346153",
+                        "database": "ICD10",
+                        "id": "C50.4",
                         "description": "Orphanet:227535",
                         "url": null
                     },
@@ -626,9 +559,9 @@
                         "url": null
                     },
                     {
-                        "database": "ICD10",
-                        "id": "C50.8",
-                        "description": "Orphanet:227535",
+                        "database": "MONDO",
+                        "id": "0016419",
+                        "description": null,
                         "url": null
                     },
                     {
@@ -639,7 +572,37 @@
                     },
                     {
                         "database": "ICD10",
-                        "id": "C50.0",
+                        "id": "C50.1",
+                        "description": "Orphanet:227535",
+                        "url": null
+                    },
+                    {
+                        "database": "OMIM",
+                        "id": "604370",
+                        "description": null,
+                        "url": "http://omim.org/entry/604370"
+                    },
+                    {
+                        "database": "UMLS",
+                        "id": "C0346153",
+                        "description": "Orphanet:227535",
+                        "url": null
+                    },
+                    {
+                        "database": "OMIM",
+                        "id": "612555",
+                        "description": null,
+                        "url": "http://omim.org/entry/612555"
+                    },
+                    {
+                        "database": "OMIM",
+                        "id": "605365",
+                        "description": null,
+                        "url": "http://omim.org/entry/605365"
+                    },
+                    {
+                        "database": "ICD10",
+                        "id": "C50.8",
                         "description": "Orphanet:227535",
                         "url": null
                     },
@@ -650,21 +613,108 @@
                         "url": "http://omim.org/entry/613399"
                     },
                     {
-                        "database": "OMIM",
-                        "id": "612555",
+                        "database": "ICD10",
+                        "id": "C50",
                         "description": null,
-                        "url": "http://omim.org/entry/612555"
+                        "url": null
+                    },
+                    {
+                        "database": "ICD10",
+                        "id": "C50.5",
+                        "description": "Orphanet:227535",
+                        "url": null
+                    },
+                    {
+                        "database": "ICD10",
+                        "id": "C50.0",
+                        "description": "Orphanet:227535",
+                        "url": null
                     },
                     {
                         "database": "OMIM",
                         "id": "600048",
                         "description": null,
                         "url": "http://omim.org/entry/600048"
+                    },
+                    {
+                        "database": "ICD10",
+                        "id": "C50.6",
+                        "description": "Orphanet:227535",
+                        "url": null
+                    },
+                    {
+                        "database": "SCTID",
+                        "id": "254843006",
+                        "description": "MONDO:kboom-pr-0.77/0.38/0.74",
+                        "url": null
+                    },
+                    {
+                        "database": "ICD10",
+                        "id": "C50.2",
+                        "description": "Orphanet:227535",
+                        "url": null
                     }
                 ],
                 "obo_synonym": [
                     {
-                        "name": "familial cancer of breast",
+                        "name": "hereditary breast carcinoma",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+                            {
+                                "database": "MONDO",
+                                "id": "patterns/hereditary",
+                                "description": null,
+                                "url": null
+                            },
+                            {
+                                "database": "Orphanet",
+                                "id": "227535",
+                                "description": null,
+                                "url": null
+                            },
+                            {
+                                "database": "NCIT",
+                                "id": "C4503",
+                                "description": null,
+                                "url": null
+                            }
+                        ]
+                    },
+                    {
+                        "name": "familial breast cancer",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+                            {
+                                "database": "Orphanet",
+                                "id": "227535",
+                                "description": null,
+                                "url": null
+                            }
+                        ]
+                    },
+                    {
+                        "name": "familial breast carcinoma",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+                            {
+                                "database": "Orphanet",
+                                "id": "227535",
+                                "description": null,
+                                "url": null
+                            },
+                            {
+                                "database": "NCIT",
+                                "id": "C4503",
+                                "description": null,
+                                "url": null
+                            }
+                        ]
+                    },
+                    {
+                        "name": "hereditary breast cancer",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
@@ -690,89 +740,6 @@
                         ]
                     },
                     {
-                        "name": "hereditary breast cancer",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "NCIT",
-                                "id": "C4503",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
-                    {
-                        "name": "breast cancer, familial Male",
-                        "scope": "hasRelatedSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "OMIM",
-                                "id": "114480",
-                                "description": null,
-                                "url": "http://omim.org/entry/114480"
-                            }
-                        ]
-                    },
-                    {
-                        "name": "hereditary breast carcinoma",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "NCIT",
-                                "id": "C4503",
-                                "description": null,
-                                "url": null
-                            },
-                            {
-                                "database": "MONDO",
-                                "id": "patterns/hereditary",
-                                "description": null,
-                                "url": null
-                            },
-                            {
-                                "database": "Orphanet",
-                                "id": "227535",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
-                    {
-                        "name": "familial breast carcinoma",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "NCIT",
-                                "id": "C4503",
-                                "description": null,
-                                "url": null
-                            },
-                            {
-                                "database": "Orphanet",
-                                "id": "227535",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
-                    {
-                        "name": "familial breast cancer",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "Orphanet",
-                                "id": "227535",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
-                    {
                         "name": "breast cancer, familial",
                         "scope": "hasRelatedSynonym",
                         "type": null,
@@ -791,6 +758,32 @@
                         "type": null,
                         "xrefs": [
 
+                        ]
+                    },
+                    {
+                        "name": "breast cancer, familial Male",
+                        "scope": "hasRelatedSynonym",
+                        "type": null,
+                        "xrefs": [
+                            {
+                                "database": "OMIM",
+                                "id": "114480",
+                                "description": null,
+                                "url": "http://omim.org/entry/114480"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "familial cancer of breast",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+                            {
+                                "database": "NCIT",
+                                "id": "C4503",
+                                "description": null,
+                                "url": null
+                            }
                         ]
                     }
                 ],
@@ -924,15 +917,27 @@
                 ],
                 "obo_xref": [
                     {
-                        "database": "UMLS",
-                        "id": "C0677776",
+                        "database": "OMIM",
+                        "id": "604370",
+                        "description": null,
+                        "url": "http://omim.org/entry/604370"
+                    },
+                    {
+                        "database": "ICD10",
+                        "id": "C50",
                         "description": "Orphanet:145",
                         "url": null
                     },
                     {
-                        "database": "MONDO",
-                        "id": "0003582",
+                        "database": "OMIM",
+                        "id": "612555",
                         "description": null,
+                        "url": "http://omim.org/entry/612555"
+                    },
+                    {
+                        "database": "SCTID",
+                        "id": "718220008",
+                        "description": "MONDO:kboom-pr-1.00/0.92/29.66",
                         "url": null
                     },
                     {
@@ -942,32 +947,8 @@
                         "url": null
                     },
                     {
-                        "database": "DOID",
-                        "id": "5683",
-                        "description": "MONDO:equivalentTo",
-                        "url": null
-                    },
-                    {
-                        "database": "ICD10",
-                        "id": "C50",
-                        "description": "Orphanet:145",
-                        "url": null
-                    },
-                    {
-                        "database": "MESH",
-                        "id": "D061325",
-                        "description": "MONDO:ontobio",
-                        "url": null
-                    },
-                    {
-                        "database": "OMIM",
-                        "id": "614291",
-                        "description": null,
-                        "url": "http://omim.org/entry/614291"
-                    },
-                    {
-                        "database": "DC",
-                        "id": "0000638",
+                        "database": "GARD",
+                        "id": "0012352",
                         "description": "MONDO:equivalentTo",
                         "url": null
                     },
@@ -978,16 +959,40 @@
                         "url": null
                     },
                     {
+                        "database": "UMLS",
+                        "id": "C0677776",
+                        "description": "Orphanet:145",
+                        "url": null
+                    },
+                    {
+                        "database": "DOID",
+                        "id": "5683",
+                        "description": "MONDO:equivalentTo",
+                        "url": null
+                    },
+                    {
+                        "database": "MESH",
+                        "id": "D061325",
+                        "description": "MONDO:ontobio",
+                        "url": null
+                    },
+                    {
+                        "database": "DC",
+                        "id": "0000638",
+                        "description": "MONDO:equivalentTo",
+                        "url": null
+                    },
+                    {
                         "database": "GARD",
                         "id": "0012351",
                         "description": "MONDO:equivalentTo",
                         "url": null
                     },
                     {
-                        "database": "GARD",
-                        "id": "0012352",
-                        "description": "MONDO:equivalentTo",
-                        "url": null
+                        "database": "OMIM",
+                        "id": "614291",
+                        "description": null,
+                        "url": "http://omim.org/entry/614291"
                     },
                     {
                         "database": "ICD10",
@@ -996,22 +1001,10 @@
                         "url": null
                     },
                     {
-                        "database": "SCTID",
-                        "id": "718220008",
-                        "description": "MONDO:kboom-pr-1.00/0.92/29.66",
+                        "database": "MONDO",
+                        "id": "0003582",
+                        "description": null,
                         "url": null
-                    },
-                    {
-                        "database": "OMIM",
-                        "id": "604370",
-                        "description": null,
-                        "url": "http://omim.org/entry/604370"
-                    },
-                    {
-                        "database": "OMIM",
-                        "id": "612555",
-                        "description": null,
-                        "url": "http://omim.org/entry/612555"
                     },
                     {
                         "database": "OMIM",
@@ -1022,47 +1015,13 @@
                 ],
                 "obo_synonym": [
                     {
-                        "name": "BRCA1- and BRCA2-associated hereditary breast and ovarian cancer (HBOC)",
+                        "name": "familial breast and ovarian cancer syndrome",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
                             {
-                                "database": "DOID",
-                                "id": "5683",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
-                    {
-                        "name": "hereditary breast ovarian cancer syndrome",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-
-                        ]
-                    },
-                    {
-                        "name": "BRCA1- and BRCA2-associated hereditary breast and ovarian cancer",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "DOID",
-                                "id": "5683",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
-                    {
-                        "name": "breast-ovarian cancer, familial, susceptibility to",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "MONDO",
-                                "id": "0000163",
+                                "database": "NCIT",
+                                "id": "C8493",
                                 "description": null,
                                 "url": null
                             }
@@ -1076,6 +1035,19 @@
                             {
                                 "database": "NCIT",
                                 "id": "C8493",
+                                "description": null,
+                                "url": null
+                            }
+                        ]
+                    },
+                    {
+                        "name": "syndrome, HBOC",
+                        "scope": "hasRelatedSynonym",
+                        "type": null,
+                        "xrefs": [
+                            {
+                                "database": "MESH",
+                                "id": "D061325",
                                 "description": null,
                                 "url": null
                             }
@@ -1108,7 +1080,20 @@
                         ]
                     },
                     {
-                        "name": "syndrome, HBOC",
+                        "name": "hereditary breast ovarian cancer",
+                        "scope": "hasRelatedSynonym",
+                        "type": null,
+                        "xrefs": [
+                            {
+                                "database": "DOID",
+                                "id": "5683",
+                                "description": null,
+                                "url": null
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HBOC syndromes",
                         "scope": "hasRelatedSynonym",
                         "type": null,
                         "xrefs": [
@@ -1121,13 +1106,47 @@
                         ]
                     },
                     {
-                        "name": "hereditary breast and ovarian cancer",
+                        "name": "BRCA1- and BRCA2-associated hereditary breast and ovarian cancer (HBOC)",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
                             {
-                                "database": "NCIT",
-                                "id": "C8493",
+                                "database": "DOID",
+                                "id": "5683",
+                                "description": null,
+                                "url": null
+                            }
+                        ]
+                    },
+                    {
+                        "name": "syndromes, HBOC",
+                        "scope": "hasRelatedSynonym",
+                        "type": null,
+                        "xrefs": [
+                            {
+                                "database": "MESH",
+                                "id": "D061325",
+                                "description": null,
+                                "url": null
+                            }
+                        ]
+                    },
+                    {
+                        "name": "hereditary breast ovarian cancer syndrome",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+
+                        ]
+                    },
+                    {
+                        "name": "breast-ovarian cancer, familial, susceptibility to",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+                            {
+                                "database": "MONDO",
+                                "id": "0000163",
                                 "description": null,
                                 "url": null
                             }
@@ -1153,34 +1172,8 @@
                         ]
                     },
                     {
-                        "name": "syndromes, HBOC",
-                        "scope": "hasRelatedSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "MESH",
-                                "id": "D061325",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
-                    {
-                        "name": "familial breast and ovarian cancer syndrome",
+                        "name": "BRCA1- and BRCA2-associated hereditary breast and ovarian cancer",
                         "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "NCIT",
-                                "id": "C8493",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
-                    {
-                        "name": "hereditary breast ovarian cancer",
-                        "scope": "hasRelatedSynonym",
                         "type": null,
                         "xrefs": [
                             {
@@ -1192,13 +1185,13 @@
                         ]
                     },
                     {
-                        "name": "HBOC syndromes",
-                        "scope": "hasRelatedSynonym",
+                        "name": "hereditary breast and ovarian cancer",
+                        "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
                             {
-                                "database": "MESH",
-                                "id": "D061325",
+                                "database": "NCIT",
+                                "id": "C8493",
                                 "description": null,
                                 "url": null
                             }
@@ -1227,11 +1220,11 @@
                     "graph": {
                         "href": "https://www.ebi.ac.uk/ols/api/ontologies/efo/terms/http%253A%252F%252Fwww.orpha.net%252FORDO%252FOrphanet_145/graph"
                     },
-                    "has_disease_location": {
-                        "href": "https://www.ebi.ac.uk/ols/api/ontologies/efo/terms/http%253A%252F%252Fwww.orpha.net%252FORDO%252FOrphanet_145/http%253A%252F%252Fwww.ebi.ac.uk%252Fefo%252FEFO_0000784"
-                    },
                     "disease_has_feature": {
                         "href": "https://www.ebi.ac.uk/ols/api/ontologies/efo/terms/http%253A%252F%252Fwww.orpha.net%252FORDO%252FOrphanet_145/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FRO_0004029"
+                    },
+                    "has_disease_location": {
+                        "href": "https://www.ebi.ac.uk/ols/api/ontologies/efo/terms/http%253A%252F%252Fwww.orpha.net%252FORDO%252FOrphanet_145/http%253A%252F%252Fwww.ebi.ac.uk%252Fefo%252FEFO_0000784"
                     }
                 }
             },
@@ -1325,54 +1318,6 @@
                 ],
                 "obo_xref": [
                     {
-                        "database": "NCIT",
-                        "id": "C3862",
-                        "description": "exact-label-match",
-                        "url": null
-                    },
-                    {
-                        "database": "MONDO",
-                        "id": "0005628",
-                        "description": null,
-                        "url": null
-                    },
-                    {
-                        "database": "DOID",
-                        "id": "1614",
-                        "description": "MONDO:equivalentTo",
-                        "url": null
-                    },
-                    {
-                        "database": "UMLS",
-                        "id": "C0242787",
-                        "description": "MONDO:equivalentTo",
-                        "url": null
-                    },
-                    {
-                        "database": "SCTID",
-                        "id": "372095001",
-                        "description": "MONDO:kboom-pr-0.89/0.69/0.77",
-                        "url": null
-                    },
-                    {
-                        "database": "NCIt",
-                        "id": "C3862",
-                        "description": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern",
-                        "url": null
-                    },
-                    {
-                        "database": "MESH",
-                        "id": "D018567",
-                        "description": "MONDO:ontobio",
-                        "url": null
-                    },
-                    {
-                        "database": "ICD9",
-                        "id": "175.9",
-                        "description": "i2s",
-                        "url": null
-                    },
-                    {
                         "database": "UMLS",
                         "id": "C0242788",
                         "description": "MONDO:equivalentTo",
@@ -1389,11 +1334,67 @@
                         "id": "0009312",
                         "description": "shared-umls-xref",
                         "url": null
+                    },
+                    {
+                        "database": "MESH",
+                        "id": "D018567",
+                        "description": "MONDO:ontobio",
+                        "url": null
+                    },
+                    {
+                        "database": "SCTID",
+                        "id": "372095001",
+                        "description": "MONDO:kboom-pr-0.89/0.69/0.77",
+                        "url": null
+                    },
+                    {
+                        "database": "NCIt",
+                        "id": "C3862",
+                        "description": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern",
+                        "url": null
+                    },
+                    {
+                        "database": "UMLS",
+                        "id": "C0242787",
+                        "description": "MONDO:equivalentTo",
+                        "url": null
+                    },
+                    {
+                        "database": "MONDO",
+                        "id": "0005628",
+                        "description": null,
+                        "url": null
+                    },
+                    {
+                        "database": "NCIT",
+                        "id": "C3862",
+                        "description": "exact-label-match",
+                        "url": null
+                    },
+                    {
+                        "database": "DOID",
+                        "id": "1614",
+                        "description": "MONDO:equivalentTo",
+                        "url": null
+                    },
+                    {
+                        "database": "ICD9",
+                        "id": "175.9",
+                        "description": "i2s",
+                        "url": null
                     }
                 ],
                 "obo_synonym": [
                     {
-                        "name": "carcinoma of the Male breast",
+                        "name": "male breast carcinoma",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+
+                        ]
+                    },
+                    {
+                        "name": "carcinoma of Male breast",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
@@ -1406,7 +1407,7 @@
                         ]
                     },
                     {
-                        "name": "breast cancer in men",
+                        "name": "breast cancer, male",
                         "scope": "hasRelatedSynonym",
                         "type": null,
                         "xrefs": [
@@ -1419,7 +1420,7 @@
                         ]
                     },
                     {
-                        "name": "Male breast cancer",
+                        "name": "Male breast carcinoma",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
@@ -1445,19 +1446,6 @@
                         ]
                     },
                     {
-                        "name": "Male breast carcinoma",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "NCIT",
-                                "id": "C3862",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
-                    {
                         "name": "carcinoma of male breast",
                         "scope": "hasExactSynonym",
                         "type": null,
@@ -1471,7 +1459,20 @@
                         ]
                     },
                     {
-                        "name": "breast cancer, male",
+                        "name": "Male breast cancer",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+                            {
+                                "database": "NCIT",
+                                "id": "C3862",
+                                "description": null,
+                                "url": null
+                            }
+                        ]
+                    },
+                    {
+                        "name": "breast cancer in men",
                         "scope": "hasRelatedSynonym",
                         "type": null,
                         "xrefs": [
@@ -1484,13 +1485,13 @@
                         ]
                     },
                     {
-                        "name": "malignant neoplasm of male breast",
+                        "name": "carcinoma of the Male breast",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
                             {
-                                "database": "DOID",
-                                "id": "1614",
+                                "database": "NCIT",
+                                "id": "C3862",
                                 "description": null,
                                 "url": null
                             }
@@ -1523,21 +1524,13 @@
                         ]
                     },
                     {
-                        "name": "male breast carcinoma",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-
-                        ]
-                    },
-                    {
-                        "name": "carcinoma of Male breast",
+                        "name": "malignant neoplasm of male breast",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
                             {
-                                "database": "NCIT",
-                                "id": "C3862",
+                                "database": "DOID",
+                                "id": "1614",
                                 "description": null,
                                 "url": null
                             }

@@ -163,11 +163,11 @@ with_mock_api({
   test_that("get_metadata", {
     lst0 <-
       list(
-        ensembl_release_number = 95L,
+        ensembl_release_number = 96L,
         genome_build_version = "GRCh38.p12",
         dbsnp_version = 151L,
         usage_start_date = structure(
-          1547301601.921,
+          1554750002.157,
           class = c("POSIXct",  "POSIXt"),
           tzone = "UTC"
         )

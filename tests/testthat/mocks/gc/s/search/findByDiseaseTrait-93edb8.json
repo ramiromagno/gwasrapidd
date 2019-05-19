@@ -1,0 +1,159 @@
+{
+    "_embedded": {
+        "studies": [
+            {
+                "initialSampleSize": "390 European ancestry cases, 364 European ancestry controls",
+                "gxe": false,
+                "gxg": false,
+                "snpCount": 206586,
+                "qualifier": "up to",
+                "imputed": false,
+                "pooled": false,
+                "studyDesignComment": null,
+                "accessionId": "GCST004949",
+                "fullPvalueSet": false,
+                "userRequested": false,
+                "platforms": [
+                    {
+                        "manufacturer": "Perlegen"
+                    }
+                ],
+                "ancestries": [
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 754,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "European"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Europe",
+                                "region": "Northern Europe",
+                                "countryName": "U.K."
+                            }
+                        ]
+                    },
+                    {
+                        "type": "replication",
+                        "numberOfIndividuals": 23660,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "European"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Northern America",
+                                "region": null,
+                                "countryName": "U.S."
+                            },
+                            {
+                                "majorArea": "Oceania",
+                                "region": "Australia/New Zealand",
+                                "countryName": "Australia"
+                            },
+                            {
+                                "majorArea": "Oceania",
+                                "region": "Australia/New Zealand",
+                                "countryName": "New Zealand"
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Northern Europe",
+                                "countryName": "U.K."
+                            }
+                        ]
+                    }
+                ],
+                "diseaseTrait": {
+                    "trait": "Breast cancer"
+                },
+                "genotypingTechnologies": [
+                    {
+                        "genotypingTechnology": "Genome-wide genotyping array"
+                    }
+                ],
+                "replicationSampleSize": "11,645 European ancestry cases, 12,015 European ancestry controls",
+                "publicationInfo": {
+                    "pubmedId": "19330027",
+                    "publicationDate": "2009-04-30",
+                    "publication": "Nat Genet",
+                    "title": "Newly discovered breast cancer susceptibility loci on 3p24 and 17q23.2.",
+                    "author": {
+                        "fullname": "Ahmed S",
+                        "orcid": null
+                    },
+                    "_links": {
+                        "studies": [
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST004948{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST004949{?projection}",
+                                "templated": true
+                            }
+                        ]
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST004949"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST004949{?projection}",
+                        "templated": true
+                    },
+                    "associationsByStudySummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST004949/associations?projection=associationByStudy"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST004949/efoTraits"
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST004949/snps"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST004949/associations"
+                    }
+                }
+            }
+        ]
+    },
+    "_links": {
+        "first": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/search/findByDiseaseTrait?diseaseTrait=breast%20cancer&page=0&size=20"
+        },
+        "prev": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/search/findByDiseaseTrait?diseaseTrait=breast%20cancer&page=1&size=20"
+        },
+        "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/search/findByDiseaseTrait?diseaseTrait=breast%20cancer&page=2&size=20"
+        },
+        "last": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/search/findByDiseaseTrait?diseaseTrait=breast%20cancer&page=2&size=20"
+        }
+    },
+    "page": {
+        "size": 20,
+        "totalElements": 41,
+        "totalPages": 3,
+        "number": 2
+    }
+}

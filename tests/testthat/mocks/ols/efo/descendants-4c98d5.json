@@ -80,33 +80,21 @@
                 ],
                 "obo_xref": [
                     {
-                        "database": "ICD9",
-                        "id": "233.0",
-                        "description": "i2s",
+                        "database": "DOID",
+                        "id": "8791",
+                        "description": "MONDO:equivalentTo",
+                        "url": null
+                    },
+                    {
+                        "database": "ICD10",
+                        "id": "D05",
+                        "description": "DOID:8791",
                         "url": null
                     },
                     {
                         "database": "SCTID",
                         "id": "189336000",
                         "description": "MONDO:kboom-pr-1.00/0.92/29.66",
-                        "url": null
-                    },
-                    {
-                        "database": "ICD10",
-                        "id": "D05.9",
-                        "description": "DOID:8791",
-                        "url": null
-                    },
-                    {
-                        "database": "UMLS",
-                        "id": "C0154084",
-                        "description": "NCIT:C3641",
-                        "url": null
-                    },
-                    {
-                        "database": "DOID",
-                        "id": "8791",
-                        "description": "MONDO:equivalentTo",
                         "url": null
                     },
                     {
@@ -123,14 +111,26 @@
                     },
                     {
                         "database": "ICD10",
-                        "id": "D05",
+                        "id": "D05.9",
                         "description": "DOID:8791",
+                        "url": null
+                    },
+                    {
+                        "database": "UMLS",
+                        "id": "C0154084",
+                        "description": "NCIT:C3641",
+                        "url": null
+                    },
+                    {
+                        "database": "ICD9",
+                        "id": "233.0",
+                        "description": "i2s",
                         "url": null
                     }
                 ],
                 "obo_synonym": [
                     {
-                        "name": "carcinoma in situ of the breast",
+                        "name": "breast cancer stage 0",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
@@ -143,110 +143,7 @@
                         ]
                     },
                     {
-                        "name": "carcinoma in situ of breast",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "NCIT",
-                                "id": "C3641",
-                                "description": null,
-                                "url": null
-                            },
-                            {
-                                "database": "MONDO",
-                                "id": "patterns/carcinoma_in_situ",
-                                "description": null,
-                                "url": null
-                            },
-                            {
-                                "database": "DOID",
-                                "id": "8791",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
-                    {
-                        "name": "non-infiltrating carcinoma of the breast",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "NCIT",
-                                "id": "C3641",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
-                    {
-                        "name": "breast in situ carcinoma",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "MONDO",
-                                "id": "patterns/location",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
-                    {
-                        "name": "stage 0 carcinoma of breast",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "NCIT",
-                                "id": "C3641",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
-                    {
-                        "name": "non-infiltrating breast carcinoma",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "NCIT",
-                                "id": "C3641",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
-                    {
-                        "name": "stage 0 breast carcinoma in situ",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "NCIT",
-                                "id": "C3641",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
-                    {
-                        "name": "non-invasive carcinoma of the breast",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "NCIT",
-                                "id": "C3641",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
-                    {
-                        "name": "non-invasive carcinoma of breast",
+                        "name": "stage 0 breast cancer aJCC v6",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
@@ -272,7 +169,91 @@
                         ]
                     },
                     {
-                        "name": "stage 0 breast cancer",
+                        "name": "stage 0 breast cancer aJCC v7",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+                            {
+                                "database": "NCIT",
+                                "id": "C3641",
+                                "description": null,
+                                "url": null
+                            }
+                        ]
+                    },
+                    {
+                        "name": "stage 0 breast cancer aJCC v6 and v7",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+                            {
+                                "database": "NCIT",
+                                "id": "C3641",
+                                "description": null,
+                                "url": null
+                            }
+                        ]
+                    },
+                    {
+                        "name": "breast in situ carcinoma",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+                            {
+                                "database": "MONDO",
+                                "id": "patterns/location",
+                                "description": null,
+                                "url": null
+                            }
+                        ]
+                    },
+                    {
+                        "name": "non-infiltrating breast carcinoma",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+                            {
+                                "database": "NCIT",
+                                "id": "C3641",
+                                "description": null,
+                                "url": null
+                            }
+                        ]
+                    },
+                    {
+                        "name": "non-invasive carcinoma of breast",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+                            {
+                                "database": "NCIT",
+                                "id": "C3641",
+                                "description": null,
+                                "url": null
+                            }
+                        ]
+                    },
+                    {
+                        "name": "non-infiltrating carcinoma of breast",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+                            {
+                                "database": "NCIT",
+                                "id": "C3641",
+                                "description": null,
+                                "url": null
+                            },
+                            {
+                                "database": "DOID",
+                                "id": "8791",
+                                "description": null,
+                                "url": null
+                            }
+                        ]
+                    },
+                    {
+                        "name": "stage 0 carcinoma of breast",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
@@ -304,7 +285,45 @@
                         ]
                     },
                     {
-                        "name": "stage 0 breast cancer aJCC v6",
+                        "name": "in situ breast cancer",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+                            {
+                                "database": "NCIT",
+                                "id": "C3641",
+                                "description": null,
+                                "url": null
+                            }
+                        ]
+                    },
+                    {
+                        "name": "carcinoma in situ of breast",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+                            {
+                                "database": "MONDO",
+                                "id": "patterns/carcinoma_in_situ",
+                                "description": null,
+                                "url": null
+                            },
+                            {
+                                "database": "DOID",
+                                "id": "8791",
+                                "description": null,
+                                "url": null
+                            },
+                            {
+                                "database": "NCIT",
+                                "id": "C3641",
+                                "description": null,
+                                "url": null
+                            }
+                        ]
+                    },
+                    {
+                        "name": "stage 0 breast carcinoma in situ",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
@@ -330,59 +349,20 @@
                         ]
                     },
                     {
+                        "name": "carcinoma in situ of the breast",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+                            {
+                                "database": "NCIT",
+                                "id": "C3641",
+                                "description": null,
+                                "url": null
+                            }
+                        ]
+                    },
+                    {
                         "name": "stage 0 carcinoma of the breast",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "NCIT",
-                                "id": "C3641",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
-                    {
-                        "name": "breast cancer stage 0",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "NCIT",
-                                "id": "C3641",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
-                    {
-                        "name": "stage 0 breast cancer aJCC v6 and v7",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "NCIT",
-                                "id": "C3641",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
-                    {
-                        "name": "stage 0 breast cancer aJCC v7",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "NCIT",
-                                "id": "C3641",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
-                    {
-                        "name": "in situ breast cancer",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
@@ -408,7 +388,7 @@
                         ]
                     },
                     {
-                        "name": "non-infiltrating carcinoma of breast",
+                        "name": "non-infiltrating carcinoma of the breast",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
@@ -417,10 +397,30 @@
                                 "id": "C3641",
                                 "description": null,
                                 "url": null
-                            },
+                            }
+                        ]
+                    },
+                    {
+                        "name": "non-invasive carcinoma of the breast",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
                             {
-                                "database": "DOID",
-                                "id": "8791",
+                                "database": "NCIT",
+                                "id": "C3641",
+                                "description": null,
+                                "url": null
+                            }
+                        ]
+                    },
+                    {
+                        "name": "stage 0 breast cancer",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+                            {
+                                "database": "NCIT",
+                                "id": "C3641",
                                 "description": null,
                                 "url": null
                             }
@@ -517,15 +517,15 @@
                 ],
                 "obo_xref": [
                     {
-                        "database": "NCIT",
-                        "id": "C27939",
-                        "description": "MONDO:equivalentTo",
-                        "url": null
-                    },
-                    {
                         "database": "UMLS",
                         "id": "C0861352",
                         "description": "NCIT:C27939",
+                        "url": null
+                    },
+                    {
+                        "database": "NCIT",
+                        "id": "C27939",
+                        "description": "MONDO:equivalentTo",
                         "url": null
                     },
                     {
@@ -537,7 +537,7 @@
                 ],
                 "obo_synonym": [
                     {
-                        "name": "lobular intraepithelial neoplasia",
+                        "name": "LIN",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
@@ -546,17 +546,11 @@
                                 "id": "C27939",
                                 "description": null,
                                 "url": null
-                            },
-                            {
-                                "database": "DOID",
-                                "id": "3010",
-                                "description": null,
-                                "url": null
                             }
                         ]
                     },
                     {
-                        "name": "lobular neoplasia",
+                        "name": "LN",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
@@ -582,7 +576,7 @@
                         ]
                     },
                     {
-                        "name": "LN",
+                        "name": "lobular neoplasia",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
@@ -595,13 +589,19 @@
                         ]
                     },
                     {
-                        "name": "LIN",
+                        "name": "lobular intraepithelial neoplasia",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
                             {
                                 "database": "NCIT",
                                 "id": "C27939",
+                                "description": null,
+                                "url": null
+                            },
+                            {
+                                "database": "DOID",
+                                "id": "3010",
                                 "description": null,
                                 "url": null
                             }
@@ -693,10 +693,10 @@
                         "definition": "Lobular neoplasia characterized by lobular epithelial proliferation that does not completely fill the lobular unit of the breast.",
                         "oboXrefs": [
                             {
-                                "database": "NCIT",
-                                "id": "C4730",
+                                "database": null,
+                                "id": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern",
                                 "description": null,
-                                "url": null
+                                "url": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"
                             }
                         ]
                     },
@@ -704,19 +704,19 @@
                         "definition": "Lobular neoplasia characterized by lobular epithelial proliferation that does not completely fill the lobular unit of the breast.",
                         "oboXrefs": [
                             {
-                                "database": null,
-                                "id": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern",
+                                "database": "NCIT",
+                                "id": "C4730",
                                 "description": null,
-                                "url": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"
+                                "url": null
                             }
                         ]
                     }
                 ],
                 "obo_xref": [
                     {
-                        "database": "NCIt",
-                        "id": "C4730",
-                        "description": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern",
+                        "database": "ICD9",
+                        "id": "610.8",
+                        "description": "i2s",
                         "url": null
                     },
                     {
@@ -726,21 +726,21 @@
                         "url": null
                     },
                     {
-                        "database": "SCTID",
-                        "id": "450697004",
-                        "description": "MONDO:kboom-pr-0.77/0.38/0.73",
-                        "url": null
-                    },
-                    {
-                        "database": "ICD9",
-                        "id": "610.8",
-                        "description": "i2s",
+                        "database": "NCIt",
+                        "id": "C4730",
+                        "description": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern",
                         "url": null
                     },
                     {
                         "database": "NCIT",
                         "id": "C4730",
                         "description": "MONDO:kboom-pr-1.00/0.92/31.20",
+                        "url": null
+                    },
+                    {
+                        "database": "SCTID",
+                        "id": "450697004",
+                        "description": "MONDO:kboom-pr-0.77/0.38/0.73",
                         "url": null
                     }
                 ],
@@ -759,20 +759,7 @@
                         ]
                     },
                     {
-                        "name": "atypical lobular breast hyperplasia",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "NCIT",
-                                "id": "C4730",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
-                    {
-                        "name": "ALH",
+                        "name": "atypical lobular hyperplasia of breast",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
@@ -786,6 +773,19 @@
                     },
                     {
                         "name": "atypical breast lobular hyperplasia",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+                            {
+                                "database": "NCIT",
+                                "id": "C4730",
+                                "description": null,
+                                "url": null
+                            }
+                        ]
+                    },
+                    {
+                        "name": "ALH",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
@@ -815,20 +815,20 @@
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
-
-                        ]
-                    },
-                    {
-                        "name": "atypical lobular hyperplasia of breast",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
                             {
                                 "database": "NCIT",
                                 "id": "C4730",
                                 "description": null,
                                 "url": null
                             }
+                        ]
+                    },
+                    {
+                        "name": "atypical lobular breast hyperplasia",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+
                         ]
                     }
                 ],
@@ -918,15 +918,15 @@
                 ],
                 "obo_xref": [
                     {
-                        "database": "MONDO",
-                        "id": "0006176",
-                        "description": null,
+                        "database": "NCIt",
+                        "id": "C3680",
+                        "description": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern",
                         "url": null
                     },
                     {
-                        "database": "ICDO",
-                        "id": "8201/3",
-                        "description": "NCIT:C3680",
+                        "database": "MONDO",
+                        "id": "0006176",
+                        "description": null,
                         "url": null
                     },
                     {
@@ -936,27 +936,19 @@
                         "url": null
                     },
                     {
-                        "database": "NCIt",
-                        "id": "C3680",
-                        "description": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern",
-                        "url": null
-                    },
-                    {
                         "database": "NCIT",
                         "id": "C3680",
                         "description": "exact-label-match",
                         "url": null
+                    },
+                    {
+                        "database": "ICDO",
+                        "id": "8201/3",
+                        "description": "NCIT:C3680",
+                        "url": null
                     }
                 ],
                 "obo_synonym": [
-                    {
-                        "name": "cribriform carcinoma",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-
-                        ]
-                    },
                     {
                         "name": "cribriform carcinoma",
                         "scope": "hasExactSynonym",
@@ -968,6 +960,14 @@
                                 "description": null,
                                 "url": null
                             }
+                        ]
+                    },
+                    {
+                        "name": "cribriform carcinoma",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+
                         ]
                     }
                 ],
@@ -1076,15 +1076,9 @@
                         "url": null
                     },
                     {
-                        "database": "NCIt",
+                        "database": "NCIT",
                         "id": "C9245",
-                        "description": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern",
-                        "url": null
-                    },
-                    {
-                        "database": "SCTID",
-                        "id": "713609000",
-                        "description": "MONDO:kboom-pr-0.78/0.38/0.81",
+                        "description": "exact-label-match",
                         "url": null
                     },
                     {
@@ -1094,9 +1088,9 @@
                         "url": null
                     },
                     {
-                        "database": "NCIT",
+                        "database": "NCIt",
                         "id": "C9245",
-                        "description": "exact-label-match",
+                        "description": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern",
                         "url": null
                     },
                     {
@@ -1104,24 +1098,17 @@
                         "id": "0006256",
                         "description": null,
                         "url": null
+                    },
+                    {
+                        "database": "SCTID",
+                        "id": "713609000",
+                        "description": "MONDO:kboom-pr-0.78/0.38/0.81",
+                        "url": null
                     }
                 ],
                 "obo_synonym": [
                     {
-                        "name": "infiltrating breast carcinoma",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "NCIT",
-                                "id": "C9245",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
-                    {
-                        "name": "invasive carcinoma of the breast",
+                        "name": "infiltrating carcinoma of breast",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
@@ -1147,20 +1134,20 @@
                         ]
                     },
                     {
-                        "name": "BRCA",
-                        "scope": "hasRelatedSynonym",
+                        "name": "infiltrating carcinoma of the breast",
+                        "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
                             {
-                                "database": "ONCOTREE",
-                                "id": "BRCA",
+                                "database": "NCIT",
+                                "id": "C9245",
                                 "description": null,
                                 "url": null
                             }
                         ]
                     },
                     {
-                        "name": "infiltrating carcinoma of the breast",
+                        "name": "invasive carcinoma of the breast",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
@@ -1186,28 +1173,7 @@
                         ]
                     },
                     {
-                        "name": "invasive breast carcinoma",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-
-                        ]
-                    },
-                    {
-                        "name": "infiltrating carcinoma of breast",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "NCIT",
-                                "id": "C9245",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
-                    {
-                        "name": "invasive breast cancer",
+                        "name": "infiltrating breast carcinoma",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
@@ -1234,6 +1200,40 @@
                     },
                     {
                         "name": "invasive breast carcinoma",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+                            {
+                                "database": "NCIT",
+                                "id": "C9245",
+                                "description": null,
+                                "url": null
+                            }
+                        ]
+                    },
+                    {
+                        "name": "invasive breast carcinoma",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+
+                        ]
+                    },
+                    {
+                        "name": "BRCA",
+                        "scope": "hasRelatedSynonym",
+                        "type": null,
+                        "xrefs": [
+                            {
+                                "database": "ONCOTREE",
+                                "id": "BRCA",
+                                "description": null,
+                                "url": null
+                            }
+                        ]
+                    },
+                    {
+                        "name": "invasive breast cancer",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
@@ -1375,8 +1375,32 @@
                 ],
                 "obo_xref": [
                     {
-                        "database": "SCTID",
-                        "id": "763479005",
+                        "database": "Orphanet",
+                        "id": "213531",
+                        "description": "MONDO:equivalentTo",
+                        "url": null
+                    },
+                    {
+                        "database": "ICD10",
+                        "id": "C50.2",
+                        "description": "Orphanet:213531",
+                        "url": null
+                    },
+                    {
+                        "database": "ICD10",
+                        "id": "C50.1",
+                        "description": "Orphanet:213531",
+                        "url": null
+                    },
+                    {
+                        "database": "NCIt",
+                        "id": "C5164",
+                        "description": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern",
+                        "url": null
+                    },
+                    {
+                        "database": "ONCOTREE",
+                        "id": "MBC",
                         "description": "MONDO:equivalentTo",
                         "url": null
                     },
@@ -1387,15 +1411,9 @@
                         "url": null
                     },
                     {
-                        "database": "UMLS",
-                        "id": "C1334708",
-                        "description": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern",
-                        "url": null
-                    },
-                    {
-                        "database": "ICD10",
-                        "id": "C50.1",
-                        "description": "Orphanet:213531",
+                        "database": "NCIT",
+                        "id": "C5164",
+                        "description": "exact-label-match",
                         "url": null
                     },
                     {
@@ -1405,15 +1423,15 @@
                         "url": null
                     },
                     {
-                        "database": "Orphanet",
-                        "id": "213531",
-                        "description": "MONDO:equivalentTo",
+                        "database": "UMLS",
+                        "id": "C1334708",
+                        "description": "Orphanet:213531",
                         "url": null
                     },
                     {
-                        "database": "NCIt",
-                        "id": "C5164",
-                        "description": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern",
+                        "database": "ICD10",
+                        "id": "C50.6",
+                        "description": "Orphanet:213531",
                         "url": null
                     },
                     {
@@ -1429,50 +1447,20 @@
                         "url": null
                     },
                     {
-                        "database": "NCIT",
-                        "id": "C5164",
-                        "description": "exact-label-match",
-                        "url": null
-                    },
-                    {
-                        "database": "UMLS",
-                        "id": "C1334708",
-                        "description": "Orphanet:213531",
-                        "url": null
-                    },
-                    {
-                        "database": "GARD",
-                        "id": "0010804",
-                        "description": "Orphanet-shared",
-                        "url": null
-                    },
-                    {
-                        "database": "ICD10",
-                        "id": "C50.2",
-                        "description": "Orphanet:213531",
-                        "url": null
-                    },
-                    {
-                        "database": "DOID",
-                        "id": "4680",
-                        "description": "MONDO:equivalentTo",
-                        "url": null
-                    },
-                    {
-                        "database": "ICD10",
-                        "id": "C50.6",
-                        "description": "Orphanet:213531",
-                        "url": null
-                    },
-                    {
                         "database": "ICD10",
                         "id": "C50.4",
                         "description": "Orphanet:213531",
                         "url": null
                     },
                     {
-                        "database": "ONCOTREE",
-                        "id": "MBC",
+                        "database": "UMLS",
+                        "id": "C1334708",
+                        "description": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern",
+                        "url": null
+                    },
+                    {
+                        "database": "SCTID",
+                        "id": "763479005",
                         "description": "MONDO:equivalentTo",
                         "url": null
                     },
@@ -1483,45 +1471,25 @@
                         "url": null
                     },
                     {
+                        "database": "GARD",
+                        "id": "0010804",
+                        "description": "Orphanet-shared",
+                        "url": null
+                    },
+                    {
                         "database": "DOID",
                         "id": "4680",
                         "description": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern",
                         "url": null
+                    },
+                    {
+                        "database": "DOID",
+                        "id": "4680",
+                        "description": "MONDO:equivalentTo",
+                        "url": null
                     }
                 ],
                 "obo_synonym": [
-                    {
-                        "name": "metaplastic carcinoma of breast",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "DOID",
-                                "id": "4680",
-                                "description": null,
-                                "url": null
-                            },
-                            {
-                                "database": "NCIT",
-                                "id": "C5164",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
-                    {
-                        "name": "breast metaplastic carcinoma",
-                        "scope": "hasRelatedSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "DOID",
-                                "id": "4680",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
                     {
                         "name": "metaplastic breast carcinoma",
                         "scope": "hasExactSynonym",
@@ -1530,19 +1498,6 @@
                             {
                                 "database": "NCIT",
                                 "id": "C5164",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
-                    {
-                        "name": "metaplastic breast cancer",
-                        "scope": "hasRelatedSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "GARD",
-                                "id": "0010804",
                                 "description": null,
                                 "url": null
                             }
@@ -1568,11 +1523,16 @@
                         ]
                     },
                     {
-                        "name": "metaplastic breast carcinoma",
-                        "scope": "hasExactSynonym",
+                        "name": "metaplastic breast cancer",
+                        "scope": "hasRelatedSynonym",
                         "type": null,
                         "xrefs": [
-
+                            {
+                                "database": "GARD",
+                                "id": "0010804",
+                                "description": null,
+                                "url": null
+                            }
                         ]
                     },
                     {
@@ -1581,6 +1541,46 @@
                         "type": null,
                         "xrefs": [
 
+                        ]
+                    },
+                    {
+                        "name": "metaplastic breast carcinoma",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+
+                        ]
+                    },
+                    {
+                        "name": "breast metaplastic carcinoma",
+                        "scope": "hasRelatedSynonym",
+                        "type": null,
+                        "xrefs": [
+                            {
+                                "database": "DOID",
+                                "id": "4680",
+                                "description": null,
+                                "url": null
+                            }
+                        ]
+                    },
+                    {
+                        "name": "metaplastic carcinoma of breast",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+                            {
+                                "database": "NCIT",
+                                "id": "C5164",
+                                "description": null,
+                                "url": null
+                            },
+                            {
+                                "database": "DOID",
+                                "id": "4680",
+                                "description": null,
+                                "url": null
+                            }
                         ]
                     }
                 ],
@@ -1679,17 +1679,6 @@
                 "in_subset": null,
                 "obo_definition_citation": [
                     {
-                        "definition": "A rare carcinoma that arises from the breast parenchyma and is entirely composed of squamous cells",
-                        "oboXrefs": [
-                            {
-                                "database": null,
-                                "id": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern",
-                                "description": null,
-                                "url": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"
-                            }
-                        ]
-                    },
-                    {
                         "definition": "A rare carcinoma that arises from the breast parenchyma and is entirely composed of squamous cells.",
                         "oboXrefs": [
                             {
@@ -1699,31 +1688,30 @@
                                 "url": null
                             }
                         ]
+                    },
+                    {
+                        "definition": "A rare carcinoma that arises from the breast parenchyma and is entirely composed of squamous cells",
+                        "oboXrefs": [
+                            {
+                                "database": null,
+                                "id": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern",
+                                "description": null,
+                                "url": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"
+                            }
+                        ]
                     }
                 ],
                 "obo_xref": [
                     {
-                        "database": "NCIT",
-                        "id": "C5177",
-                        "description": "exact-label-match",
-                        "url": null
-                    },
-                    {
-                        "database": "ONCOTREE",
-                        "id": "MSCC",
-                        "description": "MONDO:equivalentTo",
-                        "url": null
-                    },
-                    {
-                        "database": "DOID",
-                        "id": "5514",
-                        "description": "MONDO:equivalentTo",
-                        "url": null
-                    },
-                    {
-                        "database": "DOID",
-                        "id": "5514",
+                        "database": "UMLS",
+                        "id": "C1336079",
                         "description": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern",
+                        "url": null
+                    },
+                    {
+                        "database": "UMLS",
+                        "id": "C1336079",
+                        "description": "NCIT:C5177",
                         "url": null
                     },
                     {
@@ -1733,9 +1721,9 @@
                         "url": null
                     },
                     {
-                        "database": "UMLS",
-                        "id": "C1336079",
-                        "description": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern",
+                        "database": "DOID",
+                        "id": "5514",
+                        "description": "MONDO:equivalentTo",
                         "url": null
                     },
                     {
@@ -1745,47 +1733,27 @@
                         "url": null
                     },
                     {
-                        "database": "UMLS",
-                        "id": "C1336079",
-                        "description": "NCIT:C5177",
+                        "database": "DOID",
+                        "id": "5514",
+                        "description": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern",
+                        "url": null
+                    },
+                    {
+                        "database": "ONCOTREE",
+                        "id": "MSCC",
+                        "description": "MONDO:equivalentTo",
+                        "url": null
+                    },
+                    {
+                        "database": "NCIT",
+                        "id": "C5177",
+                        "description": "exact-label-match",
                         "url": null
                     }
                 ],
                 "obo_synonym": [
                     {
-                        "name": "squamous cell carcinoma of breast",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "NCIT",
-                                "id": "C5177",
-                                "description": null,
-                                "url": null
-                            },
-                            {
-                                "database": "DOID",
-                                "id": "5514",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
-                    {
-                        "name": "primary squamous cell breast carcinoma",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "NCIT",
-                                "id": "C5177",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
-                    {
-                        "name": "primary squamous cell breast carcinoma",
+                        "name": "squamous cell breast carcinoma",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
@@ -1793,19 +1761,13 @@
                         ]
                     },
                     {
-                        "name": "primary squamous cell carcinoma of the breast",
+                        "name": "scc of breast",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
                             {
                                 "database": "NCIT",
                                 "id": "C5177",
-                                "description": null,
-                                "url": null
-                            },
-                            {
-                                "database": "NCIT",
-                                "id": "C5179",
                                 "description": null,
                                 "url": null
                             },
@@ -1818,13 +1780,53 @@
                         ]
                     },
                     {
-                        "name": "breast primary squamous cell carcinoma",
+                        "name": "squamous breast carcinoma",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+                            {
+                                "database": "NCIT",
+                                "id": "C5177",
+                                "description": null,
+                                "url": null
+                            }
+                        ]
+                    },
+                    {
+                        "name": "squamous breast carcinoma",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+
+                        ]
+                    },
+                    {
+                        "name": "squamous cell carcinoma of breast",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
                             {
                                 "database": "DOID",
                                 "id": "5514",
+                                "description": null,
+                                "url": null
+                            },
+                            {
+                                "database": "NCIT",
+                                "id": "C5177",
+                                "description": null,
+                                "url": null
+                            }
+                        ]
+                    },
+                    {
+                        "name": "squamous cell breast carcinoma",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+                            {
+                                "database": "NCIT",
+                                "id": "C5177",
                                 "description": null,
                                 "url": null
                             }
@@ -1836,14 +1838,14 @@
                         "type": null,
                         "xrefs": [
                             {
-                                "database": "NCIT",
-                                "id": "C5177",
+                                "database": "DOID",
+                                "id": "5514",
                                 "description": null,
                                 "url": null
                             },
                             {
-                                "database": "DOID",
-                                "id": "5514",
+                                "database": "NCIT",
+                                "id": "C5177",
                                 "description": null,
                                 "url": null
                             }
@@ -1857,6 +1859,32 @@
                             {
                                 "database": "MONDO",
                                 "id": "patterns/location",
+                                "description": null,
+                                "url": null
+                            }
+                        ]
+                    },
+                    {
+                        "name": "scc of the breast",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+                            {
+                                "database": "NCIT",
+                                "id": "C5177",
+                                "description": null,
+                                "url": null
+                            }
+                        ]
+                    },
+                    {
+                        "name": "breast primary squamous cell carcinoma",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+                            {
+                                "database": "DOID",
+                                "id": "5514",
                                 "description": null,
                                 "url": null
                             }
@@ -1889,33 +1917,7 @@
                         ]
                     },
                     {
-                        "name": "squamous cell breast carcinoma",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "NCIT",
-                                "id": "C5177",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
-                    {
-                        "name": "squamous breast carcinoma",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "NCIT",
-                                "id": "C5177",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
-                    {
-                        "name": "squamous breast carcinoma",
+                        "name": "primary squamous cell breast carcinoma",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
@@ -1923,16 +1925,23 @@
                         ]
                     },
                     {
-                        "name": "scc of breast",
+                        "name": "squamous carcinoma of breast",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
                             {
-                                "database": "DOID",
-                                "id": "5514",
+                                "database": "NCIT",
+                                "id": "C5177",
                                 "description": null,
                                 "url": null
-                            },
+                            }
+                        ]
+                    },
+                    {
+                        "name": "primary squamous cell breast carcinoma",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
                             {
                                 "database": "NCIT",
                                 "id": "C5177",
@@ -1955,31 +1964,22 @@
                         ]
                     },
                     {
-                        "name": "squamous carcinoma of breast",
+                        "name": "primary squamous cell carcinoma of the breast",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
                             {
                                 "database": "NCIT",
-                                "id": "C5177",
+                                "id": "C5179",
                                 "description": null,
                                 "url": null
-                            }
-                        ]
-                    },
-                    {
-                        "name": "squamous cell breast carcinoma",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-
-                        ]
-                    },
-                    {
-                        "name": "scc of the breast",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
+                            },
+                            {
+                                "database": "DOID",
+                                "id": "5514",
+                                "description": null,
+                                "url": null
+                            },
                             {
                                 "database": "NCIT",
                                 "id": "C5177",
@@ -2207,17 +2207,6 @@
                 "in_subset": null,
                 "obo_definition_citation": [
                     {
-                        "definition": "A header term that includes the following breast carcinoma subtypes determined by gene expression profiling: luminal A breast carcinoma, luminal B breast carcinoma, HER2 positive breast carcinoma, basal-like breast carcinoma, triple-negative breast carcinoma, and normal breast-like subtype of breast carcinoma.",
-                        "oboXrefs": [
-                            {
-                                "database": "NCIT",
-                                "id": "C53553",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
-                    {
                         "definition": "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=C53553&ns=NCI_Thesaurus",
                         "oboXrefs": [
                             {
@@ -2227,15 +2216,20 @@
                                 "url": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"
                             }
                         ]
+                    },
+                    {
+                        "definition": "A header term that includes the following breast carcinoma subtypes determined by gene expression profiling: luminal A breast carcinoma, luminal B breast carcinoma, HER2 positive breast carcinoma, basal-like breast carcinoma, triple-negative breast carcinoma, and normal breast-like subtype of breast carcinoma.",
+                        "oboXrefs": [
+                            {
+                                "database": "NCIT",
+                                "id": "C53553",
+                                "description": null,
+                                "url": null
+                            }
+                        ]
                     }
                 ],
                 "obo_xref": [
-                    {
-                        "database": "MONDO",
-                        "id": "0006116",
-                        "description": null,
-                        "url": null
-                    },
                     {
                         "database": "NCIT",
                         "id": "C53553",
@@ -2243,9 +2237,9 @@
                         "url": null
                     },
                     {
-                        "database": "UMLS",
-                        "id": "C3642344",
-                        "description": "NCIT:C53553",
+                        "database": "MONDO",
+                        "id": "0006116",
+                        "description": null,
                         "url": null
                     },
                     {
@@ -2253,9 +2247,23 @@
                         "id": "C53553",
                         "description": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern",
                         "url": null
+                    },
+                    {
+                        "database": "UMLS",
+                        "id": "C3642344",
+                        "description": "NCIT:C53553",
+                        "url": null
                     }
                 ],
                 "obo_synonym": [
+                    {
+                        "name": "breast carcinoma by gene expression profile",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+
+                        ]
+                    },
                     {
                         "name": "breast carcinoma by gene expression profile",
                         "scope": "hasExactSynonym",
@@ -2267,14 +2275,6 @@
                                 "description": null,
                                 "url": null
                             }
-                        ]
-                    },
-                    {
-                        "name": "breast carcinoma by gene expression profile",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-
                         ]
                     }
                 ],
@@ -2382,9 +2382,9 @@
                         "url": null
                     },
                     {
-                        "database": "UMLS",
-                        "id": "C3642471",
-                        "description": "NCIT:C53557",
+                        "database": "MONDO",
+                        "id": "0006324",
+                        "description": null,
                         "url": null
                     },
                     {
@@ -2394,15 +2394,23 @@
                         "url": null
                     },
                     {
-                        "database": "MONDO",
-                        "id": "0006324",
-                        "description": null,
+                        "database": "UMLS",
+                        "id": "C3642471",
+                        "description": "NCIT:C53557",
                         "url": null
                     }
                 ],
                 "obo_synonym": [
                     {
-                        "name": "Normal breast-Like subtype of breast cancer",
+                        "name": "normal breast-like subtype of breast carcinoma",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+
+                        ]
+                    },
+                    {
+                        "name": "normal breast-like subtype of breast carcinoma",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
@@ -2415,15 +2423,7 @@
                         ]
                     },
                     {
-                        "name": "normal breast-like subtype of breast carcinoma",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-
-                        ]
-                    },
-                    {
-                        "name": "normal breast-like subtype of breast carcinoma",
+                        "name": "Normal breast-Like subtype of breast cancer",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
@@ -2516,16 +2516,16 @@
                 ],
                 "obo_xref": [
                     {
-                        "database": "DOID",
-                        "id": "0060078",
-                        "description": "MONDO:equivalentTo",
-                        "url": null
-                    },
-                    {
                         "database": null,
                         "id": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/progesterone-receptor-negative",
                         "description": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern",
                         "url": "https://www.cancer.gov/publications/dictionaries/cancer-terms/def/progesterone-receptor-negative"
+                    },
+                    {
+                        "database": "DOID",
+                        "id": "0060078",
+                        "description": "MONDO:equivalentTo",
+                        "url": null
                     }
                 ],
                 "obo_synonym": [
@@ -2641,20 +2641,8 @@
                 ],
                 "obo_xref": [
                     {
-                        "database": "DOID",
-                        "id": "0060081",
-                        "description": "MONDO:equivalentTo",
-                        "url": null
-                    },
-                    {
-                        "database": "UMLS",
-                        "id": "C3539878",
-                        "description": "NCIT:C71732",
-                        "url": null
-                    },
-                    {
-                        "database": "SCTID",
-                        "id": "706970001",
+                        "database": "NCIT",
+                        "id": "C71732",
                         "description": "MONDO:equivalentTo",
                         "url": null
                     },
@@ -2662,6 +2650,12 @@
                         "database": "SNOMEDCT",
                         "id": "706970001",
                         "description": null,
+                        "url": null
+                    },
+                    {
+                        "database": "SCTID",
+                        "id": "706970001",
+                        "description": "MONDO:equivalentTo",
                         "url": null
                     },
                     {
@@ -2677,34 +2671,19 @@
                         "url": null
                     },
                     {
-                        "database": "NCIT",
-                        "id": "C71732",
+                        "database": "UMLS",
+                        "id": "C3539878",
+                        "description": "NCIT:C71732",
+                        "url": null
+                    },
+                    {
+                        "database": "DOID",
+                        "id": "0060081",
                         "description": "MONDO:equivalentTo",
                         "url": null
                     }
                 ],
                 "obo_synonym": [
-                    {
-                        "name": "triple-negative breast carcinoma",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-
-                        ]
-                    },
-                    {
-                        "name": "triple-negative breast cancer",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "NCIT",
-                                "id": "C71732",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
                     {
                         "name": "triple-receptor negative breast cancer",
                         "scope": "hasExactSynonym",
@@ -2720,6 +2699,27 @@
                     },
                     {
                         "name": "triple-negative breast carcinoma",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+                            {
+                                "database": "NCIT",
+                                "id": "C71732",
+                                "description": null,
+                                "url": null
+                            }
+                        ]
+                    },
+                    {
+                        "name": "triple-negative breast carcinoma",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+
+                        ]
+                    },
+                    {
+                        "name": "triple-negative breast cancer",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
@@ -2817,10 +2817,10 @@
                         "definition": "A biologic subset of breast carcinoma defined by high expression of HER2, GRB7, and TRAP100, and by lack of expression of estrogen receptor (ER).",
                         "oboXrefs": [
                             {
-                                "database": "NCIT",
-                                "id": "C53556",
+                                "database": null,
+                                "id": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern",
                                 "description": null,
-                                "url": null
+                                "url": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"
                             }
                         ]
                     },
@@ -2828,10 +2828,10 @@
                         "definition": "A biologic subset of breast carcinoma defined by high expression of HER2, GRB7, and TRAP100, and by lack of expression of estrogen receptor (ER).",
                         "oboXrefs": [
                             {
-                                "database": null,
-                                "id": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern",
+                                "database": "NCIT",
+                                "id": "C53556",
                                 "description": null,
-                                "url": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"
+                                "url": null
                             }
                         ]
                     }
@@ -2844,15 +2844,15 @@
                         "url": null
                     },
                     {
-                        "database": "NCIT",
+                        "database": "NCIt",
                         "id": "C53556",
-                        "description": "exact-label-match",
+                        "description": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern",
                         "url": null
                     },
                     {
-                        "database": "UMLS",
-                        "id": "C1960398",
-                        "description": "NCIT:C53556",
+                        "database": "NCIT",
+                        "id": "C53556",
+                        "description": "exact-label-match",
                         "url": null
                     },
                     {
@@ -2868,49 +2868,15 @@
                         "url": null
                     },
                     {
-                        "database": "NCIt",
-                        "id": "C53556",
-                        "description": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern",
+                        "database": "UMLS",
+                        "id": "C1960398",
+                        "description": "NCIT:C53556",
                         "url": null
                     }
                 ],
                 "obo_synonym": [
                     {
-                        "name": "HER2 positive breast carcinoma",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-
-                        ]
-                    },
-                    {
-                        "name": "HER2 positive breast carcinoma",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "NCIT",
-                                "id": "C53556",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
-                    {
-                        "name": "HER2 Overexpressing subtype of breast carcinoma",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "NCIT",
-                                "id": "C53556",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
-                    {
-                        "name": "HER2 Positive breast cancer",
+                        "name": "HER2 Overexpressing breast carcinoma",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
@@ -2936,6 +2902,32 @@
                         ]
                     },
                     {
+                        "name": "HER2 Overexpressing subtype of breast carcinoma",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+                            {
+                                "database": "NCIT",
+                                "id": "C53556",
+                                "description": null,
+                                "url": null
+                            }
+                        ]
+                    },
+                    {
+                        "name": "HER2 positive breast carcinoma",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+                            {
+                                "database": "NCIT",
+                                "id": "C53556",
+                                "description": null,
+                                "url": null
+                            }
+                        ]
+                    },
+                    {
                         "name": "ERBB2 Overexpressing subtype of breast carcinoma",
                         "scope": "hasExactSynonym",
                         "type": null,
@@ -2949,7 +2941,7 @@
                         ]
                     },
                     {
-                        "name": "HER2 Overexpressing breast carcinoma",
+                        "name": "HER2 Positive breast cancer",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
@@ -2959,6 +2951,14 @@
                                 "description": null,
                                 "url": null
                             }
+                        ]
+                    },
+                    {
+                        "name": "HER2 positive breast carcinoma",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+
                         ]
                     }
                 ],
@@ -3050,6 +3050,12 @@
                 ],
                 "obo_xref": [
                     {
+                        "database": "MONDO",
+                        "id": "0004990",
+                        "description": null,
+                        "url": null
+                    },
+                    {
                         "database": "DOID",
                         "id": "0060548",
                         "description": "MONDO:equivalentTo",
@@ -3066,15 +3072,22 @@
                         "id": "C53555",
                         "description": null,
                         "url": null
-                    },
-                    {
-                        "database": "MONDO",
-                        "id": "0004990",
-                        "description": null,
-                        "url": null
                     }
                 ],
                 "obo_synonym": [
+                    {
+                        "name": "breast tumor luminal",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+                            {
+                                "database": "DOID",
+                                "id": "0060548",
+                                "description": null,
+                                "url": null
+                            }
+                        ]
+                    },
                     {
                         "name": "breast tumor luminal A or B",
                         "scope": "hasExactSynonym",
@@ -3099,19 +3112,6 @@
                     {
                         "name": "luminal breast carcinoma",
                         "scope": "hasRelatedSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "DOID",
-                                "id": "0060548",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
-                    {
-                        "name": "breast tumor luminal",
-                        "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
                             {
@@ -3264,10 +3264,10 @@
                         "definition": "An extranodal marginal zone B-cell lymphoma of mucosa associated lymphoid tissue that arises from the breast as a primary tumor.",
                         "oboXrefs": [
                             {
-                                "database": "NCIT",
-                                "id": "C35688",
+                                "database": null,
+                                "id": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern",
                                 "description": null,
-                                "url": null
+                                "url": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"
                             }
                         ]
                     },
@@ -3275,21 +3275,15 @@
                         "definition": "An extranodal marginal zone B-cell lymphoma of mucosa associated lymphoid tissue that arises from the breast as a primary tumor.",
                         "oboXrefs": [
                             {
-                                "database": null,
-                                "id": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern",
+                                "database": "NCIT",
+                                "id": "C35688",
                                 "description": null,
-                                "url": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"
+                                "url": null
                             }
                         ]
                     }
                 ],
                 "obo_xref": [
-                    {
-                        "database": "NCIT",
-                        "id": "C35688",
-                        "description": "exact-label-match",
-                        "url": null
-                    },
                     {
                         "database": "UMLS",
                         "id": "C1332633",
@@ -3297,9 +3291,9 @@
                         "url": null
                     },
                     {
-                        "database": "NCIt",
+                        "database": "NCIT",
                         "id": "C35688",
-                        "description": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern",
+                        "description": "exact-label-match",
                         "url": null
                     },
                     {
@@ -3307,22 +3301,15 @@
                         "id": "0006119",
                         "description": null,
                         "url": null
+                    },
+                    {
+                        "database": "NCIt",
+                        "id": "C35688",
+                        "description": "http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern",
+                        "url": null
                     }
                 ],
                 "obo_synonym": [
-                    {
-                        "name": "breast MALT lymphoma",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-                            {
-                                "database": "NCIT",
-                                "id": "C35688",
-                                "description": null,
-                                "url": null
-                            }
-                        ]
-                    },
                     {
                         "name": "breast mucosa-associated lymphoid tissue lymphoma",
                         "scope": "hasExactSynonym",
@@ -3342,6 +3329,19 @@
                         "type": null,
                         "xrefs": [
 
+                        ]
+                    },
+                    {
+                        "name": "breast MALT lymphoma",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+                            {
+                                "database": "NCIT",
+                                "id": "C35688",
+                                "description": null,
+                                "url": null
+                            }
                         ]
                     }
                 ],
@@ -3567,6 +3567,22 @@
                 "obo_xref": null,
                 "obo_synonym": [
                     {
+                        "name": "BRCA1/BRCA2 negative high risk breast cancer",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+
+                        ]
+                    },
+                    {
+                        "name": "non-BRCA familial breast cancer",
+                        "scope": "hasExactSynonym",
+                        "type": null,
+                        "xrefs": [
+
+                        ]
+                    },
+                    {
                         "name": "BRCA1/BRCA2 negative familial breast cancer",
                         "scope": "hasExactSynonym",
                         "type": null,
@@ -3583,23 +3599,7 @@
                         ]
                     },
                     {
-                        "name": "BRCA1/BRCA2 negative high risk breast cancer",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-
-                        ]
-                    },
-                    {
                         "name": "BRCA1/2 negative familial breast cancer",
-                        "scope": "hasExactSynonym",
-                        "type": null,
-                        "xrefs": [
-
-                        ]
-                    },
-                    {
-                        "name": "non-BRCA familial breast cancer",
                         "scope": "hasExactSynonym",
                         "type": null,
                         "xrefs": [
