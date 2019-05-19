@@ -7,13 +7,11 @@
 status](https://travis-ci.org/ramiromagno/gwasrapidd.svg?branch=master)](https://travis-ci.org/ramiromagno/gwasrapidd)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/ramiromagno/gwasrapidd?branch=master&svg=true)](https://ci.appveyor.com/project/ramiromagno/gwasrapidd)
-[![BioC
-status](http://www.bioconductor.org/shields/build/release/bioc/gwasrapidd.svg)](https://bioconductor.org/checkResults/release/bioc-LATEST/gwasrapidd)
 [![codecov](https://codecov.io/gh/ramiromagno/gwasrapidd/branch/master/graph/badge.svg)](https://codecov.io/gh/ramiromagno/gwasrapidd)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![](https://img.shields.io/badge/devel%20version-0.99.1-blue.svg)](https://github.com/ramiromagno/gwasrapidd)
+[![](https://img.shields.io/badge/devel%20version-0.99.2-blue.svg)](https://github.com/ramiromagno/gwasrapidd)
 
 The goal of gwasrapidd is to provide programmatic access to the
 [NHGRI-EBI Catalog](https://www.ebi.ac.uk/gwas) of published genome-wide
