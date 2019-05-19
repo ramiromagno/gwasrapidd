@@ -28,4 +28,7 @@ A list of 4 named elements as passed as arguments:
 \description{
 Creates a list to hold GWAS Catalog metadata.
 }
+\examples{
+get_metadata()
+}
 \keyword{internal}

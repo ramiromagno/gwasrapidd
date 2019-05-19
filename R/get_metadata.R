@@ -16,6 +16,8 @@
 #' @return A list of 4 named elements as passed as arguments:
 #'   \code{ensembl_release_number}, \code{genome_build_version},
 #'   \code{dbsnp_version} and \code{usage_start_date}.
+#' @examples
+#' get_metadata()
 #' @keywords internal
 metadata_lst <- function(
   ensembl_release_number = NA_integer_,
