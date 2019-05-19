@@ -5,7 +5,34 @@ sudo: false
 cache: packages
 
 r:
-- release
+  - release
+  - bioc-devel
+  - bioc-release
+
+# Strict checks in place
+warnings_are_errors: true
+
+branches:
+  only:
+    - master
+
+# Run binary install of testthat
+r_binary_packages:
+  - testthat
+
+r_packages:
+  - knitr
+  - rmarkdown
+  - remotes
+  - utils
+
+bioc_packages:
+  - BiocVersion
+  - BiocStyle
+
+# Test code coverage
+r_github_packages:
+  - jimhester/covr
 
 # Only report coverage for the release version
 after_success:
