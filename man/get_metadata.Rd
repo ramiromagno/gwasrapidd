@@ -29,3 +29,6 @@ version} and
 version}.In addition, the date since this combination of resource versions
 has been in use is also returned.
 }
+\examples{
+get_metadata()
+}
