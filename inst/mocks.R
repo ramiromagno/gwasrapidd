@@ -8,149 +8,103 @@ options(httptest.verbose=TRUE)
 #
 # Mock API fixtures for requests in test-get_metadata.R
 #
-capture_requests({
-  gwasrapidd::get_metadata()
-}) %>% invisible()
+capture_requests({gwasrapidd::get_metadata()})
 
 #
-# Mock API fixtures for requests in test-get_traits.R
+# Mock API fixtures for requests of studies
 #
-capture_requests({
-  gwasrapidd::get_traits()
-  gwasrapidd::get_traits(study_id = c('GCST001085', 'GCST000392'))
-  gwasrapidd::get_traits(association_id = c('25389945', '24299710'))
-  gwasrapidd::get_traits(efo_id = c('EFO_0000537', 'EFO_0000305'))
-  gwasrapidd::get_traits(pubmed_id = c('21626137', '25890600'))
-  gwasrapidd::get_traits(efo_uri = c('http://www.ebi.ac.uk/efo/EFO_0004761', 'http://www.ebi.ac.uk/efo/EFO_0000305'))
-  gwasrapidd::get_traits(efo_trait = c("lung adenocarcinoma", "uric acid measurement"))
-}) %>% invisible()
-
-#
-# Mock API fixtures for requests in test-post-traits.R
-#
-capture_requests({
-  get_child_efo(efo_id = c('EFO_0004761', 'EFO_0000305'))
-}) %>% invisible()
-
-#
-# Mock API fixtures for requests in test-get_variants.R
-#
-capture_requests({
-  get_variants(study_id = 'GCST001085')
-  get_variants(association_id = '25389945')
-  get_variants(variant_id = c('rs3798440', 'rs7329174'))
-  get_variants(efo_id = 'EFO_0005537')
-  get_variants(pubmed_id = '21626137')
-  get_variants(genomic_range = list(chromosome = "22", start = 1L, end = "15473564"))
-  get_variants(gene_name = 'BRCA1')
-  get_variants(efo_trait = c('triple-negative breast cancer'))
-}) %>% invisible()
-
-capture_requests({
-  get_variants(cytogenetic_band = '1p36.33')
-  get_variants(cytogenetic_band = '22q11.1')
-}) %>% invisible()
+capture_requests({gwasrapidd::get_studies('GCST001085')})
+capture_requests({gwasrapidd::get_studies('GCST000392')})
+capture_requests({gwasrapidd::get_studies(association_id = '25389945')})
+capture_requests({gwasrapidd::get_studies(association_id = '24299710')})
+capture_requests({gwasrapidd::get_studies(variant_id = 'rs3798440')})
+capture_requests({gwasrapidd::get_studies(variant_id = 'rs7329174')})
+capture_requests({gwasrapidd::get_studies(efo_id = 'EFO_0000537')})
+capture_requests({gwasrapidd::get_studies(efo_id = 'EFO_0000305')})
+capture_requests({gwasrapidd::get_studies(pubmed_id = '21626137')})
+capture_requests({gwasrapidd::get_studies(pubmed_id = '25890600')})
+capture_requests({gwasrapidd::get_studies(efo_uri = 'http://www.ebi.ac.uk/efo/EFO_0004761')})
+capture_requests({gwasrapidd::get_studies(efo_trait = 'lung adenocarcinoma')})
+capture_requests({gwasrapidd::get_studies(efo_trait = 'uric acid measurement')})
+capture_requests({gwasrapidd::get_studies(reported_trait = 'breast cancer')})
+capture_requests({gwasrapidd::get_studies(reported_trait = 'lung adenocarcinoma')})
 
 #
-# Mock API fixtures for requests in test-get_studies.R
+# Mock API fixtures for requests of associations
 #
-capture_requests({
-  get_studies(interactive = FALSE)
-}) %>% invisible()
-
-capture_requests({
-  get_studies(user_requested = TRUE)
-  get_studies(user_requested = FALSE)
-}) %>% invisible()
-
-capture_requests({
-  get_studies(full_pvalue_set = TRUE)
-  get_studies(full_pvalue_set = FALSE)
-}) %>% invisible()
-
-capture_requests({
-  get_studies(study_id = c('GCST001085', 'GCST000392'))
-  get_studies(association_id = c('25389945', '24299710'))
-  get_studies(variant_id = c('rs3798440', 'rs7329174'))
-  get_studies(efo_id = c('EFO_0000537', 'EFO_0000305'))
-  get_studies(pubmed_id = c('21626137', '25890600'))
-  get_studies(efo_uri = c('http://www.ebi.ac.uk/efo/EFO_0004761', 'http://www.ebi.ac.uk/efo/EFO_0000305'))
-  get_studies(efo_trait = c("lung adenocarcinoma", "uric acid measurement"))
-  get_studies(reported_trait = c("breast cancer", 'lung adenocarcinoma'))
-}) %>% invisible()
+capture_requests({gwasrapidd::get_associations(association_id = '25389945')})
+capture_requests({gwasrapidd::get_associations(association_id = '24300113')})
+capture_requests({gwasrapidd::get_associations(study_id = 'GCST001085')})
+capture_requests({gwasrapidd::get_associations(variant_id = 'rs3798440')})
+capture_requests({gwasrapidd::get_associations(variant_id = 'rs7329174')})
+capture_requests({gwasrapidd::get_associations(pubmed_id = '21626137')})
 
 #
-# Mock API fixtures for requests in test-request.R
+# Mock API fixtures for requests of variants
 #
-capture_requests({
-  gwasrapidd:::gc_request(base_url = "https://httpbin.org", resource_url = "/html", warnings = FALSE)
-  gwasrapidd:::gc_request_all('/studies/GCST000854')
-  gwasrapidd:::gc_request_all(resource_url = '/ontologies/efo/descendants?id=EFO_0009285', base_url = 'https://www.ebi.ac.uk/ols/api')
-  gwasrapidd:::gc_request_all('/studies/GCST000854')
-  gwasrapidd:::gc_request_all('/associations/24299710/')
-  gwasrapidd:::gc_get('/associations/24299710/snps')
-  gwasrapidd:::gc_get('/studies/GCST001085/associations')
-}) %>% invisible()
-
-capture_requests({
-  base_url <- '/efoTraits/search/findByEfoUri?uri='
-  uri <- 'http://www.ebi.ac.uk/efo/EFO_0004761'
-  uri_encoded <- URLencode(uri, reserved = TRUE)
-  url <- paste0(base_url, uri_encoded)
-  gwasrapidd:::gc_get(url)
-}) %>% invisible()
-
-capture_requests({
-  base_url <- '/studies/search/findByEfoUri?uri='
-  uri <- 'http://www.ebi.ac.uk/efo/EFO_0004761'
-  uri_encoded <- URLencode(uri, reserved = TRUE)
-  url <- paste0(base_url, uri_encoded)
-  gwasrapidd:::gc_get(url)
-}) %>% invisible()
-
-capture_requests({
-  gwasrapidd:::gc_get('/singleNucleotidePolymorphisms/rs3798440/associations')
-  gwasrapidd:::gc_get('/singleNucleotidePolymorphisms/rs3798440/')
-  gwasrapidd:::gc_get('/efoTraits/EFO_0000537/studies')
-  gwasrapidd:::gc_get('/efoTraits/EFO_0000537/associations')
-  gwasrapidd:::gc_get('/efoTraits/EFO_0000537/')
-  gwasrapidd:::gc_get('/studies/search/findByPublicationIdPubmedId?pubmedId=21626137')
-  gwasrapidd:::gc_get('/associations/search/findByPubmedId?pubmedId=21626137')
-  gwasrapidd:::gc_get('/singleNucleotidePolymorphisms/search/findByPubmedId?pubmedId=21626137')
-  gwasrapidd:::gc_get('/efoTraits/search/findByPubmedId?pubmedId=21626137')
-  gwasrapidd:::gc_get('/associations/search/findByRsIdAndAccessionId?rsId=rs16956936&accessionId=GCST000392')
-  gwasrapidd:::gc_get('/singleNucleotidePolymorphisms/search/findByChromBpLocationRange?chrom=22&bpStart=1&bpEnd=15500000')
-  gwasrapidd:::gc_get('/studies/search/findByEfoTrait?efoTrait=lung%20adenocarcinoma')
-  gwasrapidd:::gc_get('/efoTraits/search/findByEfoTrait?trait=lung%20adenocarcinoma')
-}) %>% invisible()
-
-#
-# Mock API fixtures for requests in test-get_associations.R
-#
-capture_requests({
-  gwasrapidd::get_associations(study_id = 'GCST001085')
-  gwasrapidd::get_associations(association_id = '25389945')
-  gwasrapidd::get_associations(association_id = '24300113')
-  gwasrapidd::get_associations(variant_id = c('rs3798440', 'rs7329174'))
-  gwasrapidd::get_associations(efo_id = 'EFO_0007990')
-  gwasrapidd::get_associations(pubmed_id = '21626137')
-  gwasrapidd::get_associations(efo_trait = c("lung adenocarcinoma"))
-}) %>% invisible()
-
-#
-# Mock API fixtures for requests in test-parse-variants.R
-#
-
+capture_requests({gwasrapidd::get_variants(variant_id = 'rs3798440')})
+capture_requests({gwasrapidd::get_variants(variant_id = 'rs7329174')})
+capture_requests({gwasrapidd::get_variants(variant_id = 'rs10910092')})
+capture_requests({gwasrapidd::get_variants(variant_id = 'rs570398477')})
+capture_requests({gwasrapidd::get_variants(study_id = 'GCST001085')})
+capture_requests({gwasrapidd::get_variants(association_id = '25389945')})
+capture_requests({gwasrapidd::get_variants(efo_id = 'EFO_0005537')})
+capture_requests({gwasrapidd::get_variants(pubmed_id = '21626137')})
+capture_requests({gwasrapidd::get_variants(
+  genomic_range = list(chromosome = "22", start = 1L, end = "15473564"))
+  })
+capture_requests({gwasrapidd::get_variants(cytogenetic_band = '3p21.32')})
+capture_requests({gwasrapidd::get_variants(gene_name = 'TOPAZ1')})
 # Mitochondrial genome variants
 capture_requests({
   gwasrapidd::get_variants(variant_id = 'rs147903261')
   gwasrapidd::get_variants(variant_id = 'rs267606894')
-}) %>% invisible()
-
+})
 # Variants that also map to scaffolds other than the normal chromosomes
 # rs10910092: maps to chr 1 and to CHR_HSCHR1_1_CTG3.
 # rs570398477: maps to chr 2 and to CHR_HSCHR2_4_CTG1.
 capture_requests({
   gwasrapidd::get_variants(variant_id = 'rs10910092')
   gwasrapidd::get_variants(variant_id = 'rs570398477')
-}) %>% invisible()
+})
+
+#
+# Mock API fixtures for requests of traits
+#
+capture_requests({gwasrapidd::get_traits(efo_id = 'EFO_0000537')})
+capture_requests({gwasrapidd::get_traits(efo_id = 'EFO_0000305')})
+capture_requests({gwasrapidd::get_traits(study_id = 'GCST001085')})
+capture_requests({gwasrapidd::get_traits(association_id = '25389945')})
+capture_requests({gwasrapidd::get_traits(pubmed_id = '25890600')})
+capture_requests({gwasrapidd::get_traits(efo_uri = 'http://www.ebi.ac.uk/efo/EFO_0004761')})
+capture_requests({gwasrapidd::get_traits(efo_trait = 'lung adenocarcinoma')})
+
+#
+# Mock API fixtures for requests in test-request.R
+#
+
+capture_requests({
+  gwasrapidd:::gc_request(
+    base_url = "https://httpbin.org",
+    resource_url = "/html",
+    warnings = FALSE)
+})
+capture_requests({gwasrapidd:::gc_request_all('/studies/GCST000854')})
+capture_requests({gc_request_all('/studies/GCSTXXXXXX')})
+capture_requests({
+  gwasrapidd:::gc_request_all(
+    resource_url = '/ontologies/efo/descendants?id=EFO_0009285',
+    base_url = 'https://www.ebi.ac.uk/ols/api')
+})
+capture_requests({gwasrapidd:::gc_request_all('/associations/24299710/')})
+capture_requests({gwasrapidd:::gc_get('/associations/24299710/snps')})
+capture_requests({gc_get('/associations/24299710/efoTraits')})
+capture_requests({gc_get('/efoTraits/search/findByPubmedId?pubmedId=21626137')})
+
+#
+# Mock API fixtures for requests in test-post-traits.R
+#
+capture_requests({get_child_efo(efo_id = c('EFO_0004761', 'EFO_0000305'))})
+
+
+
