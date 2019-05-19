@@ -140,8 +140,12 @@ v_obj_to_entrez_ids_tbl <- function(obj) {
 
     tbl <-
       tibble::as_tibble(gene_obj[c("geneName", "entrezGeneIds")]) %>%
-      tidyr::unnest() %>% # This is no typo.
       tidyr::unnest()
+
+    # Hack, need to come back to this again
+    # Test with these SNPs: 'rs147903261' and 'rs267606894'.
+    if(!identical(nrow(tbl), 0L))
+      tbl <- tidyr::unnest(tbl)
 
     tbl2 <- v_entrez_ids_tbl(
       variant_id = recode_missing(tws(variant_id)),
