@@ -4,29 +4,29 @@ context("test-get_studies")
 ## get_studies, all studies
 #
 
-with_mock_api({
-  test_that("get_studies: get all studies non-interactively", {
-    skip_if_testing_is_fast()
-    my_studies <- get_studies(interactive = FALSE)
-    expect_is(my_studies, 'studies')
-  })
-})
-
-with_mock_api({
-  test_that("get_studies: get all studies interactively (yes answer)", {
-    skip_if_testing_is_fast()
-    with_mock(readline = function(...) 'y', my_studies <- get_studies(interactive = TRUE))
-    expect_is(my_studies, 'studies')
-  })
-})
-
-with_mock_api({
-  test_that("get_studies: get all studies interactively (no answer)", {
-    skip_if_testing_is_fast()
-    with_mock(readline = function(...) 'n', my_studies <- get_studies(interactive = TRUE))
-    expect_identical(my_studies, studies()) # returns empty studies object
-  })
-})
+# with_mock_api({
+#   test_that("get_studies: get all studies non-interactively", {
+#     skip_if_testing_is_fast()
+#     my_studies <- get_studies(interactive = FALSE)
+#     expect_is(my_studies, 'studies')
+#   })
+# })
+#
+# with_mock_api({
+#   test_that("get_studies: get all studies interactively (yes answer)", {
+#     skip_if_testing_is_fast()
+#     with_mock(readline = function(...) 'y', my_studies <- get_studies(interactive = TRUE))
+#     expect_is(my_studies, 'studies')
+#   })
+# })
+#
+# with_mock_api({
+#   test_that("get_studies: get all studies interactively (no answer)", {
+#     skip_if_testing_is_fast()
+#     with_mock(readline = function(...) 'n', my_studies <- get_studies(interactive = TRUE))
+#     expect_identical(my_studies, studies()) # returns empty studies object
+#   })
+# })
 
 #
 ## get_studies, exceptions
@@ -115,28 +115,28 @@ with_mock_api({
 #
 ## get_studies, by user_requested
 #
-with_mock_api({
-  test_that("get_studies: by user_requested", {
-    skip_if_testing_is_fast()
-    my_studies1 <- get_studies(user_requested = TRUE)
-    expect_is(my_studies1, 'studies')
-    my_studies2 <- get_studies(user_requested = FALSE)
-    expect_is(my_studies2, 'studies')
-  })
-})
+# with_mock_api({
+#   test_that("get_studies: by user_requested", {
+#     skip_if_testing_is_fast()
+#     my_studies1 <- get_studies(user_requested = TRUE)
+#     expect_is(my_studies1, 'studies')
+#     my_studies2 <- get_studies(user_requested = FALSE)
+#     expect_is(my_studies2, 'studies')
+#   })
+# })
 
 #
 ## get_studies, by full_pvalue_set
 #
-with_mock_api({
-  test_that("get_studies: by full_pvalue_set", {
-    skip_if_testing_is_fast()
-    my_studies1 <- get_studies(full_pvalue_set = TRUE)
-    expect_is(my_studies1, 'studies')
-    my_studies2 <- get_studies(full_pvalue_set = FALSE)
-    expect_is(my_studies2, 'studies')
-  })
-})
+# with_mock_api({
+#   test_that("get_studies: by full_pvalue_set", {
+#     skip_if_testing_is_fast()
+#     my_studies1 <- get_studies(full_pvalue_set = TRUE)
+#     expect_is(my_studies1, 'studies')
+#     my_studies2 <- get_studies(full_pvalue_set = FALSE)
+#     expect_is(my_studies2, 'studies')
+#   })
+# })
 
 #
 ## get_studies, by efo_uri

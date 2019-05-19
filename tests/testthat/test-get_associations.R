@@ -48,13 +48,13 @@ with_mock_api({
 #
 ## get_associations, by efo id
 #
-with_mock_api({
-  test_that("get_associations: by efo id", {
-    skip_if_testing_is_fast()
-    my_associations <- get_associations(efo_id = 'EFO_0007990')
-    expect_is(my_associations, 'associations')
-  })
-})
+# with_mock_api({
+#   test_that("get_associations: by efo id", {
+#     skip_if_testing_is_fast()
+#     my_associations <- get_associations(efo_id = 'EFO_0007990')
+#     expect_is(my_associations, 'associations')
+#   })
+# })
 
 #
 ## get_associations, by pubmed id
@@ -69,13 +69,13 @@ with_mock_api({
 #
 ## get_associations, by efo_trait
 #
-with_mock_api({
-  test_that("get_associations: by efo_trait", {
-    skip_if_testing_is_fast()
-    my_associations <- get_associations(efo_trait = c("lung adenocarcinoma"))
-    expect_is(my_associations, 'associations')
-  })
-})
+# with_mock_api({
+#   test_that("get_associations: by efo_trait", {
+#     skip_if_testing_is_fast()
+#     my_associations <- get_associations(efo_trait = c("lung adenocarcinoma"))
+#     expect_is(my_associations, 'associations')
+#   })
+# })
 
 #
 ## exceptions
