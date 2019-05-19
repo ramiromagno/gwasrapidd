@@ -3,13 +3,12 @@
 \name{\%>\%}
 \alias{\%>\%}
 \title{Pipe operator}
-\usage{
-lhs \%>\% rhs
-}
 \value{
 The same as the rhs.
 }
 \description{
 See \code{magrittr::\link[magrittr]{\%>\%}} for details.
 }
-\keyword{internal}
+\examples{
+c(1,2,3) \%>\% mean()
+}

@@ -5,8 +5,8 @@
 #' @name %>%
 #' @rdname pipe
 #' @return The same as the rhs.
-#' @keywords internal
+#' @examples
+#' c(1,2,3) %>% mean()
 #' @export
 #' @importFrom magrittr %>%
-#' @usage lhs \%>\% rhs
 NULL

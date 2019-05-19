@@ -108,8 +108,8 @@
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>You can install the current, experimental version of gwasrapidd with:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># install.packages("remotes")</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">remotes<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/remotes/topics/install_github">install_github</a></span>(<span class="st">"ramiromagno/gwasrapidd"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># install.packages("remotes")</span></a>
+<a class="sourceLine" id="cb1-2" title="2">remotes<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/remotes/topics/install_github">install_github</a></span>(<span class="st">"ramiromagno/gwasrapidd"</span>)</a></code></pre></div>
 </div>
 <div id="cheatsheet" class="section level2">
 <h2 class="hasAnchor">
@@ -120,29 +120,29 @@
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
 <p>Get the study related to triple-negative breast cancer:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(gwasrapidd)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2">studies &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_studies.html">get_studies</a></span>(<span class="dt">efo_trait =</span> <span class="st">'triple-negative breast cancer'</span>)</a>
-<a class="sourceLine" id="cb2-3" data-line-number="3">studies<span class="op">@</span>studies[<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>]</a>
-<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">## # A tibble: 1 x 4</span></a>
-<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="co">##   study_id  reported_trait        initial_sample_size  replication_sample_…</span></a>
-<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">##   &lt;chr&gt;     &lt;chr&gt;                 &lt;chr&gt;                &lt;chr&gt;               </span></a>
-<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">## 1 GCST0023… Breast cancer (estro… 1,529 European ance… 2,148 European ance…</span></a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(gwasrapidd)</a>
+<a class="sourceLine" id="cb2-2" title="2">studies &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_studies.html">get_studies</a></span>(<span class="dt">efo_trait =</span> <span class="st">'triple-negative breast cancer'</span>)</a>
+<a class="sourceLine" id="cb2-3" title="3">studies<span class="op">@</span>studies[<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>]</a>
+<a class="sourceLine" id="cb2-4" title="4"><span class="co">## # A tibble: 1 x 4</span></a>
+<a class="sourceLine" id="cb2-5" title="5"><span class="co">##   study_id  reported_trait        initial_sample_size  replication_sample_…</span></a>
+<a class="sourceLine" id="cb2-6" title="6"><span class="co">##   &lt;chr&gt;     &lt;chr&gt;                 &lt;chr&gt;                &lt;chr&gt;               </span></a>
+<a class="sourceLine" id="cb2-7" title="7"><span class="co">## 1 GCST0023… Breast cancer (estro… 1,529 European ance… 2,148 European ance…</span></a></code></pre></div>
 <p>Find associated variants:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">variants &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_variants.html">get_variants</a></span>(<span class="dt">study_id =</span> <span class="st">'GCST002305'</span>)</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2">variants<span class="op">@</span>variants[<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">'variant_id'</span>, <span class="st">'functional_class'</span>)]</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">## # A tibble: 5 x 2</span></a>
-<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="co">##   variant_id functional_class   </span></a>
-<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">##   &lt;chr&gt;      &lt;chr&gt;              </span></a>
-<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">## 1 rs4245739  3_prime_UTR_variant</span></a>
-<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co">## 2 rs2363956  missense_variant   </span></a>
-<a class="sourceLine" id="cb3-8" data-line-number="8"><span class="co">## 3 rs10069690 intron_variant     </span></a>
-<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="co">## 4 rs3757318  intron_variant     </span></a>
-<a class="sourceLine" id="cb3-10" data-line-number="10"><span class="co">## 5 rs10771399 intergenic_variant</span></a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">variants &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_variants.html">get_variants</a></span>(<span class="dt">study_id =</span> <span class="st">'GCST002305'</span>)</a>
+<a class="sourceLine" id="cb3-2" title="2">variants<span class="op">@</span>variants[<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">'variant_id'</span>, <span class="st">'functional_class'</span>)]</a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="co">## # A tibble: 5 x 2</span></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="co">##   variant_id functional_class   </span></a>
+<a class="sourceLine" id="cb3-5" title="5"><span class="co">##   &lt;chr&gt;      &lt;chr&gt;              </span></a>
+<a class="sourceLine" id="cb3-6" title="6"><span class="co">## 1 rs4245739  3_prime_UTR_variant</span></a>
+<a class="sourceLine" id="cb3-7" title="7"><span class="co">## 2 rs2363956  missense_variant   </span></a>
+<a class="sourceLine" id="cb3-8" title="8"><span class="co">## 3 rs10069690 intron_variant     </span></a>
+<a class="sourceLine" id="cb3-9" title="9"><span class="co">## 4 rs3757318  intron_variant     </span></a>
+<a class="sourceLine" id="cb3-10" title="10"><span class="co">## 5 rs10771399 intergenic_variant</span></a></code></pre></div>
 </div>
 <div id="contributors" class="section level2">
 <h2 class="hasAnchor">
 <a href="#contributors" class="anchor"></a>Contributors</h2>
-<p>Please note that the ‘gwasrapidd’ project is released with a <a href="CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+<p>Please note that the gwasrapidd project is released with a <a href="CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 </div>
   </div>

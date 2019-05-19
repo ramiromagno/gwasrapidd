@@ -18,7 +18,7 @@
   \item{stain}{\href{https://en.wikipedia.org/wiki/Giemsa_stain}{Giemsa
   stain} results: Giemsa negative, \code{'gneg'}; Giemsa positive, of
   increasing intensities, \code{'gpos25'}, \code{'gpos50'}, \code{'gpos75'},
-  and \code{'gpos100'}; centromeric region, \code{'acen'}; heterochomatin,
+  and \code{'gpos100'}; centromeric region, \code{'acen'}; heterochromatin,
   either pericentric or telomeric, \code{'gvar'}; and short arm of
   acrocentric chromosomes 13, 14, 15, 21, and 22 are coded as
   \code{'stalk'}.}
@@ -50,9 +50,9 @@ chromosomes are designated by X or Y. The next letter represents the arm of
 the chromosome: p or q.
 
 The numbers cannot be read in the normal decimal numeric system e.g. 36, but
-rather 3-6 (region 3 band 6). Counting starts at the centromer as region 1
+rather 3-6 (region 3 band 6). Counting starts at the centromere as region 1
 (or 1-0), to 11 (1-1) to 21 (2-1) to 22 (2-2) etc. Subbands are added in a
-similar way, eg. 21.1 to 21.2, if the bands are small or only appear at a
+similar way, e.g. 21.1 to 21.2, if the bands are small or only appear at a
 higher resolution.
 }
 

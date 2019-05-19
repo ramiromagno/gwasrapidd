@@ -1,5 +1,5 @@
 ## gwasrapidd 0.0.1
-- Updated gwasrapidd packaging to comply with Bioconductor `BiocCheck::BiocCheck()`.
+- Updated gwasrapidd packaging to comply with Bioconductor guidelines (`BiocCheck::BiocCheck()`).
 
 ## gwasrapidd 0.0.0.9015
 - Fixed typo in cheatsheet.
@@ -16,7 +16,7 @@
 
 ## gwasrapidd 0.0.0.9011
 - `get_variants()` now accepts a new parameter: `std_chromosomes_only`. This allows to select whether  variants mapped to scaffolds other than the standard chromosomes are returned. By default, now, `get_variants()` only returns variants mapped to chromosomes 1 thru 22, X, Y, or MT. This behaviour is now in line with results returned by the Web UI.
-- Fixed bug with `multiple_snp_haplotype` and `snp_interaction`. NA values in columns multiple_snp_haplotype and snp_interaction of associations tibble in associations S4 object were being mapped to character type instead of logical. This is now fixed.
+- Fixed bug with `multiple_snp_haplotype` and `snp_interaction`. NA values in columns `multiple_snp_haplotype` and `snp_interaction` of associations tibble in associations S4 object were being mapped to character type instead of logical. This is now fixed.
 - Constructors for GWAS Catalog S4 objects ensure no NAs are in primary keys.
 - Increased test coverage.
 
@@ -24,7 +24,7 @@
 
 - Changed type of column `association_id` in the S4 class `associations` from
 `integer()` to `character()`. This saves us from unnecessary coercions from 
-integer to character when searching by association identifers.
+integer to character when searching by association identifiers.
 - The cheatsheet is also changed to reflect this update.
 
 ## gwasrapidd 0.0.0.9009

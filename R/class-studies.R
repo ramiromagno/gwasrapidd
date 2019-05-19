@@ -61,7 +61,7 @@ setOldClass(c("tbl_df", "tbl", "data.frame"))
 #' \describe{
 #' \item{study_id}{GWAS Catalog study accession identifier.}
 #' \item{ancestry_id}{Ancestry identifier.}
-#' \item{ancestral_group}{Genetic ancentry groups present in the sample.}
+#' \item{ancestral_group}{Genetic ancestry groups present in the sample.}
 #' }
 #' @slot countries_of_origin A \code{\link[tibble]{tibble}} listing countries of
 #'   origin of samples.
