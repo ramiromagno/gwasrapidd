@@ -14,7 +14,7 @@ Returns \code{TRUE} if successful. Note however that this
 function is run for its side effect.
 }
 \description{
-This function launches the web browser and opens a tab for each SNP
+This function launches the web browser at dbSNP and opens a tab for each SNP
 identifier.
 }
 \examples{

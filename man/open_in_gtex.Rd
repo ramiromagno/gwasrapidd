@@ -14,8 +14,8 @@ Returns \code{TRUE} if successful. Note however that this
 function is run for its side effect.
 }
 \description{
-This function launches the web browser and opens a tab for each SNP
-identifier on GTEx portal.
+This function launches the web browser at the GTEx Portal and opens a tab for
+each SNP identifier.
 }
 \examples{
 open_in_gtex('rs56261590')

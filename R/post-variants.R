@@ -1,6 +1,6 @@
 #' Browse dbSNP from SNP identifiers.
 #'
-#' This function launches the web browser and opens a tab for each SNP
+#' This function launches the web browser at dbSNP and opens a tab for each SNP
 #' identifier.
 #'
 #' @param variant_id A variant identifier, a character vector.
@@ -24,8 +24,8 @@ open_in_dbsnp <- function(variant_id) {
 
 #' Browse GTEx from SNP identifiers.
 #'
-#' This function launches the web browser and opens a tab for each SNP
-#' identifier on GTEx portal.
+#' This function launches the web browser at the GTEx Portal and opens a tab for
+#' each SNP identifier.
 #'
 #' @param variant_id A variant identifier, a character vector.
 #'

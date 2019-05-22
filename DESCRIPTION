@@ -1,7 +1,7 @@
 Package: gwasrapidd
 Type: Package
 Title: REST API Client for the NHGRI-EBI GWAS Catalog
-Version: 0.99.3
+Version: 0.99.4
 Authors@R: c(
     person(given = "Ramiro", family = "Magno", email = "ramiro.magno@gmail.com",
     role = c("aut", "cre"), comment = c(ORCID = "0000-0001-5226-3441")),
@@ -48,6 +48,7 @@ Suggests:
     knitr,
     rmarkdown
 Collate:
+    'browser.R'
     'class-associations.R'
     'class-studies.R'
     'class-traits.R'

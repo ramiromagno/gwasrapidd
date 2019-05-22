@@ -1,3 +1,6 @@
+## gwasrapidd 0.99.4
+- Added function `open_in_gwas_catalog()`.
+
 ## gwasrapidd 0.0.1
 - Updated gwasrapidd packaging to comply with Bioconductor guidelines (`BiocCheck::BiocCheck()`).
 

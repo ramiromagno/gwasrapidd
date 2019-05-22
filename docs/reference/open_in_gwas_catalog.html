@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Number of GWAS Catalog entities — n • gwasrapidd</title>
+<title>Browse GWAS Catalog entities from the GWAS Web Graphical User Interface — open_in_gwas_catalog • gwasrapidd</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -39,9 +39,10 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-<meta property="og:title" content="Number of GWAS Catalog entities — n" />
+<meta property="og:title" content="Browse GWAS Catalog entities from the GWAS Web Graphical User Interface — open_in_gwas_catalog" />
 
-<meta property="og:description" content="This function returns the number of unique entities in a GWAS Catalog object." />
+<meta property="og:description" content="This function launches the web browser and opens a tab for each identifier on
+the GWAS web graphical user interface: https://www.ebi.ac.uk/gwas." />
 
 <meta property="og:image" content="https://rmagno.eu/gwasrapidd/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -128,62 +129,67 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Number of GWAS Catalog entities</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ramiromagno/gwasrapidd/blob/master/R/generics.R'><code>R/generics.R</code></a></small>
-    <div class="hidden name"><code>n.Rd</code></div>
+    <h1>Browse GWAS Catalog entities from the GWAS Web Graphical User Interface</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ramiromagno/gwasrapidd/blob/master/R/browser.R'><code>R/browser.R</code></a></small>
+    <div class="hidden name"><code>open_in_gwas_catalog.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>This function returns the number of unique entities in a GWAS Catalog object.</p>
+    <p>This function launches the web browser and opens a tab for each identifier on
+the GWAS web graphical user interface: <a href='https://www.ebi.ac.uk/gwas'>https://www.ebi.ac.uk/gwas</a>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>n</span>(<span class='no'>x</span>, <span class='kw'>unique</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
-
-<span class='co'># S4 method for studies</span>
-<span class='fu'>n</span>(<span class='no'>x</span>, <span class='kw'>unique</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
-
-<span class='co'># S4 method for associations</span>
-<span class='fu'>n</span>(<span class='no'>x</span>, <span class='kw'>unique</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
-
-<span class='co'># S4 method for variants</span>
-<span class='fu'>n</span>(<span class='no'>x</span>, <span class='kw'>unique</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
-
-<span class='co'># S4 method for traits</span>
-<span class='fu'>n</span>(<span class='no'>x</span>, <span class='kw'>unique</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>open_in_gwas_catalog</span>(<span class='no'>identifier</span>, <span class='kw'>gwas_catalog_entity</span> <span class='kw'>=</span> <span class='st'>"study"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>x</th>
-      <td><p>A <a href='studies-class.html'>studies</a>, an
-<a href='associations-class.html'>associations</a>, a <a href='variants-class.html'>variants</a>, or a
-<a href='traits-class.html'>traits</a> object.</p></td>
+      <th>identifier</th>
+      <td><p>A vector of identifiers. The identifiers can be: study
+accession identifiers, variant identifiers, EFO trait identifiers, gene
+symbol names, cytogenetic regions, or PubMed identifiers.</p></td>
     </tr>
     <tr>
-      <th>unique</th>
-      <td><p>Whether to count only unique entries (<code>TRUE</code>) or not
-(<code>FALSE</code>).</p></td>
+      <th>gwas_catalog_entity</th>
+      <td><p>Either <code>'study'</code> (default), <code>'variant'</code>,
+<code>'trait'</code>, <code>'gene'</code>, <code>'region'</code> or <code>'publication'</code>, a
+scalar character. This argument indicates the type of the identifiers
+passed in <code>identifier</code>.</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>An integer scalar.</p>
+    <p>Returns <code>TRUE</code> if successful, or <code>FALSE</code> otherwise. But
+  note that this function is run for its side effect.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># Determine number of studies in studies object</span>
-<span class='fu'>n</span>(<span class='no'>studies_ex01</span>)</div><div class='output co'>#&gt; [1] 2</div><div class='input'>
-<span class='co'># Determine number of associations in studies associations</span>
-<span class='fu'>n</span>(<span class='no'>associations_ex01</span>)</div><div class='output co'>#&gt; [1] 4</div><div class='input'>
-<span class='co'># Determine number of variants in variants object</span>
-<span class='fu'>n</span>(<span class='no'>variants_ex01</span>)</div><div class='output co'>#&gt; [1] 3</div><div class='input'>
-<span class='co'># Determine number of traits in studies traits</span>
-<span class='fu'>n</span>(<span class='no'>traits_ex01</span>)</div><div class='output co'>#&gt; [1] 3</div><div class='input'>
-</div></pre>
+    <pre class="examples"><div class='input'><span class='co'># Open studies in GWAS Web Graphical User Interface</span>
+<span class='fu'>open_in_gwas_catalog</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>'GCST000016'</span>, <span class='st'>'GCST001115'</span>))
+
+<span class='co'># Open variants</span>
+<span class='fu'>open_in_gwas_catalog</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>'rs146992477'</span>, <span class='st'>'rs56261590'</span>),
+  <span class='kw'>gwas_catalog_entity</span> <span class='kw'>=</span> <span class='st'>'variant'</span>)
+
+<span class='co'># Open EFO traits</span>
+<span class='fu'>open_in_gwas_catalog</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>'EFO_0004884'</span>, <span class='st'>'EFO_0004343'</span>),
+  <span class='kw'>gwas_catalog_entity</span> <span class='kw'>=</span> <span class='st'>'trait'</span>)
+
+<span class='co'># Open genes</span>
+<span class='fu'>open_in_gwas_catalog</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>'DPP6'</span>, <span class='st'>'MCCC2'</span>),
+  <span class='kw'>gwas_catalog_entity</span> <span class='kw'>=</span> <span class='st'>'gene'</span>)
+
+<span class='co'># Open cytogenetic regions</span>
+<span class='fu'>open_in_gwas_catalog</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>'2q37.1'</span>, <span class='st'>'1p36.11'</span>),
+  <span class='kw'>gwas_catalog_entity</span> <span class='kw'>=</span> <span class='st'>'region'</span>)
+
+<span class='co'># Open publications</span>
+<span class='fu'>open_in_gwas_catalog</span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>'25533513'</span>, <span class='st'>'24376627'</span>),
+  <span class='kw'>gwas_catalog_entity</span> <span class='kw'>=</span> <span class='st'>'publication'</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
