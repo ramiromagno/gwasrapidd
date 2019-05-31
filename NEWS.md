@@ -1,3 +1,6 @@
+## gwasrapidd 0.99.5
+- Just a version bump to troubleshoot bioc build on Windows: [https://github.com/Bioconductor/Contributions/issues/1124#issuecomment-497415961](https://github.com/Bioconductor/Contributions/issues/1124#issuecomment-497415961).
+
 ## gwasrapidd 0.99.4
 - Added function `open_in_gwas_catalog()`.
 
