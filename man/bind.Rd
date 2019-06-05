@@ -18,8 +18,8 @@ An object of the same class as \code{x}.
 }
 \description{
 Binds together GWAS Catalog objects of the same class. Note that
-\code{bind()} preserves duplicates whereas \code{\link[gwasrapidd]{union}()}
-does not.
+\code{bind()} preserves duplicates whereas
+\code{\link[gwasrapidd:setop]{union}} does not.
 }
 \examples{
 # Join two studies objects.

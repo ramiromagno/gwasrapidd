@@ -220,8 +220,8 @@ setMethod("setequal",
 #' Bind GWAS Catalog objects
 #'
 #' Binds together GWAS Catalog objects of the same class. Note that
-#' \code{bind()} preserves duplicates whereas \code{\link[gwasrapidd]{union}()}
-#' does not.
+#' \code{bind()} preserves duplicates whereas
+#' \code{\link[gwasrapidd:setop]{union}} does not.
 #'
 #' @param x An object of class: \linkS4class{studies},
 #'   \linkS4class{associations}, \linkS4class{variants}, or
