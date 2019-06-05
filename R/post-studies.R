@@ -12,7 +12,9 @@
 #'
 #' @export
 open_in_pubmed <- function(pubmed_id) {
-  if (!(rlang::is_double(pubmed_id) || rlang::is_integer(pubmed_id) || rlang::is_character(pubmed_id) ))
+  if (!(rlang::is_double(pubmed_id) ||
+        rlang::is_integer(pubmed_id) ||
+        rlang::is_character(pubmed_id) ))
     stop("pubmed_id must be a vector of numbers.")
 
   if (rlang::is_double(pubmed_id) || rlang::is_integer(pubmed_id))
@@ -22,14 +24,19 @@ open_in_pubmed <- function(pubmed_id) {
 
   if (any(!is_pubmed_id(pubmed_id2)))
     stop("These are not valid PubMed IDs: ",
-         concatenate::cc_and(pubmed_id[!is_pubmed_id(pubmed_id2)], oxford = TRUE),
+         concatenate::cc_and(pubmed_id[!is_pubmed_id(pubmed_id2)],
+                             oxford = TRUE),
          ".")
 
+  if (interactive()) {
   urls <-
     glue::glue("https://www.ncbi.nlm.nih.gov/pubmed/{pubmed_id2}")
 
   purrr::walk(urls, utils::browseURL)
 
   return(invisible(TRUE))
+  } else {
+    return(invisible(TRUE))
+  }
 }
 

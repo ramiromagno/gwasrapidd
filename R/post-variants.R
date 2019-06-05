@@ -11,15 +11,20 @@
 #' open_in_dbsnp('rs56261590')
 #' @export
 open_in_dbsnp <- function(variant_id) {
+
   if (!(rlang::is_character(variant_id) ))
     stop("variant_id must be a character vector.")
 
-  urls <-
-    glue::glue("https://www.ncbi.nlm.nih.gov/snp/{variant_id}")
+  if (interactive()) {
+    urls <-
+      glue::glue("https://www.ncbi.nlm.nih.gov/snp/{variant_id}")
 
-  purrr::walk(urls, utils::browseURL)
+    purrr::walk(urls, utils::browseURL)
 
-  return(invisible(TRUE))
+    return(invisible(TRUE))
+  } else {
+    return(invisible(TRUE))
+  }
 }
 
 #' Browse GTEx from SNP identifiers.
@@ -38,10 +43,14 @@ open_in_gtex <- function(variant_id) {
   if (!(rlang::is_character(variant_id) ))
     stop("variant_id must be a character vector.")
 
-  urls <-
-    glue::glue("https://gtexportal.org/home/snp/{variant_id}")
+  if (interactive()) {
+    urls <-
+      glue::glue("https://gtexportal.org/home/snp/{variant_id}")
 
-  purrr::walk(urls, utils::browseURL)
+    purrr::walk(urls, utils::browseURL)
 
-  return(invisible(TRUE))
+    return(invisible(TRUE))
+  } else {
+    return(invisible(TRUE))
+  }
 }

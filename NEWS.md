@@ -1,3 +1,6 @@
+## gwasrapidd 0.99.6
+- Addressing issue: [https://github.com/Bioconductor/Contributions/issues/1124#issuecomment-499046949](https://github.com/Bioconductor/Contributions/issues/1124#issuecomment-499046949)
+
 ## gwasrapidd 0.99.5
 - Just a version bump to troubleshoot bioc build on Windows: [https://github.com/Bioconductor/Contributions/issues/1124#issuecomment-497415961](https://github.com/Bioconductor/Contributions/issues/1124#issuecomment-497415961).
 

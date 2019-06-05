@@ -59,23 +59,27 @@ open_in_gwas_catalog <- function(identifier, gwas_catalog_entity = 'study') {
     stop('gwas_catalog_entity must be either ',
          concatenate::cc_or(valid_entities))
 
-  msg <- 'You are about to open {length(identifier)} pages in your browser.'
-  question <- glue::glue(msg)
-  if (length(identifier) > 3L)
-    if (!sure(before_question = question)) return(invisible(FALSE))
+  if (interactive()) {
+    msg <- 'You are about to open {length(identifier)} pages in your browser.'
+    question <- glue::glue(msg)
+    if (length(identifier) > 3L)
+      if (!sure(before_question = question)) return(invisible(FALSE))
 
-  url_basename <- "https://www.ebi.ac.uk/gwas"
-  entity2url <- c(
-    study = "{url_basename}/studies/{identifier}",
-    variant = "{url_basename}/variants/{identifier}",
-    trait = "{url_basename}/efotraits/{identifier}",
-    gene = "{url_basename}/genes/{identifier}",
-    region = "{url_basename}/regions/{identifier}",
-    publication = "{url_basename}/publications/{identifier}"
-  )
+    url_basename <- "https://www.ebi.ac.uk/gwas"
+    entity2url <- c(
+      study = "{url_basename}/studies/{identifier}",
+      variant = "{url_basename}/variants/{identifier}",
+      trait = "{url_basename}/efotraits/{identifier}",
+      gene = "{url_basename}/genes/{identifier}",
+      region = "{url_basename}/regions/{identifier}",
+      publication = "{url_basename}/publications/{identifier}"
+    )
 
-  urls <- glue::glue(entity2url[gwas_catalog_entity])
-  purrr::walk(urls, utils::browseURL)
+    urls <- glue::glue(entity2url[gwas_catalog_entity])
+    purrr::walk(urls, utils::browseURL)
 
-  return(invisible(TRUE))
+    return(invisible(TRUE))
+  } else {
+    return(invisible(TRUE))
+  }
 }
