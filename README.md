@@ -11,7 +11,7 @@ status](https://ci.appveyor.com/api/projects/status/github/ramiromagno/gwasrapid
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![](https://img.shields.io/badge/devel%20version-0.99.6-blue.svg)](https://github.com/ramiromagno/gwasrapidd)
+[![](https://img.shields.io/badge/devel%20version-0.99.7-blue.svg)](https://github.com/ramiromagno/gwasrapidd)
 
 The goal of gwasrapidd is to provide programmatic access to the
 [NHGRI-EBI Catalog](https://www.ebi.ac.uk/gwas) of published genome-wide

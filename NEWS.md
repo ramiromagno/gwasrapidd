@@ -1,3 +1,6 @@
+## gwasrapidd 0.99.7
+- Addressing remaining warnings in Windows build, namely those related to broken doc links: [https://github.com/Bioconductor/Contributions/issues/1124#issuecomment-499088435](https://github.com/Bioconductor/Contributions/issues/1124#issuecomment-499088435)
+
 ## gwasrapidd 0.99.6
 - Addressing issue: [https://github.com/Bioconductor/Contributions/issues/1124#issuecomment-499046949](https://github.com/Bioconductor/Contributions/issues/1124#issuecomment-499046949)
 
