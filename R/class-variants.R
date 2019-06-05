@@ -109,8 +109,8 @@ variants <- function(variants = variants_tbl(),
 #' @param chromosome_name A character vector of chromosome names.
 #' @param chromosome_position An integer vector of chromosome positions.
 #' @param chromosome_region A character vector of cytogenetic regions.
-#' @param last_update_date A \code{\link[base]{POSIXct}} object indicating the
-#' last time the variants have been updated.
+#' @param last_update_date A \code{\link[base:DateTimeClasses]{POSIXct}} object
+#'   indicating the last time the variants have been updated.
 #'
 #' @return A \code{\link[tibble]{tibble}} whose columns are the named arguments
 #' to the function.

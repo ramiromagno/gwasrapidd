@@ -48,11 +48,11 @@ intervals.}
 
 \item{beta_description}{A character vector of beta descriptions.}
 
-\item{last_mapping_date}{A \code{\link[base]{POSIXct}} object indicating
-last time this association was mapped to Ensembl.}
+\item{last_mapping_date}{A \code{\link[base:DateTimeClasses]{POSIXct}}
+object indicating last time this association was mapped to Ensembl.}
 
-\item{last_update_date}{A \code{\link[base]{POSIXct}} object indicating the
-last time the associations have been updated.}
+\item{last_update_date}{A \code{\link[base:DateTimeClasses]{POSIXct}} object
+indicating the last time the associations have been updated.}
 }
 \value{
 A \code{\link[tibble]{tibble}} whose columns are the named arguments

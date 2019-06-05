@@ -24,8 +24,8 @@ another SNP in a newer genome build.}
 
 \item{chromosome_region}{A character vector of cytogenetic regions.}
 
-\item{last_update_date}{A \code{\link[base]{POSIXct}} object indicating the
-last time the variants have been updated.}
+\item{last_update_date}{A \code{\link[base:DateTimeClasses]{POSIXct}} object
+indicating the last time the variants have been updated.}
 }
 \value{
 A \code{\link[tibble]{tibble}} whose columns are the named arguments

@@ -177,10 +177,10 @@ associations <- function(associations = associations_tbl(),
 #' @param beta_unit A character vector of beta coefficient units.
 #' @param beta_direction A character vector of beta coefficient directions.
 #' @param beta_description A character vector of beta descriptions.
-#' @param last_mapping_date  A \code{\link[base]{POSIXct}} object indicating
-#'   last time this association was mapped to Ensembl.
-#' @param last_update_date A \code{\link[base]{POSIXct}} object indicating the
-#' last time the associations have been updated.
+#' @param last_mapping_date  A \code{\link[base:DateTimeClasses]{POSIXct}}
+#'   object indicating last time this association was mapped to Ensembl.
+#' @param last_update_date A \code{\link[base:DateTimeClasses]{POSIXct}} object
+#'   indicating the last time the associations have been updated.
 #'
 #' @return A \code{\link[tibble]{tibble}} whose columns are the named arguments
 #'   to the function.
