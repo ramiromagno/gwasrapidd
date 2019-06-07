@@ -566,23 +566,23 @@ setGeneric('n', function(x, unique = FALSE) standardGeneric('n'))
 
 #' @rdname n
 #' @examples
-#' # Determine number of studies in studies object
+#' # Determine number of studies
 #' n(studies_ex01)
 #'
-#' # Determine number of associations in studies associations
+#' # Determine number of associations
 #' n(associations_ex01)
 #'
-#' # Determine number of variants in variants object
+#' # Determine number of variants
 #' n(variants_ex01)
 #'
-#' # Determine number of traits in studies traits
+#' # Determine number of traits
 #' n(traits_ex01)
 #'
 #' @export
 setMethod("n",
           signature(x = "studies"),
           definition = function(x, unique = FALSE) {
-            if(unique) n <- dplyr::n_distinct(x@studies$study_id)
+            if (unique) n <- dplyr::n_distinct(x@studies$study_id)
             else n <- nrow(x@studies)
             return(n)
             }
@@ -593,7 +593,7 @@ setMethod("n",
 setMethod("n",
           signature(x = "associations"),
           definition = function(x, unique = FALSE) {
-            if(unique) n <- dplyr::n_distinct(x@associations$association_id)
+            if (unique) n <- dplyr::n_distinct(x@associations$association_id)
             else n <- nrow(x@associations)
             return(n)
             }
@@ -604,7 +604,7 @@ setMethod("n",
 setMethod("n",
           signature(x = "variants"),
           definition = function(x, unique = FALSE) {
-            if(unique) n <- dplyr::n_distinct(x@variants$variant_id)
+            if (unique) n <- dplyr::n_distinct(x@variants$variant_id)
             else n <- nrow(x@variants)
             return(n)
             }
@@ -615,7 +615,7 @@ setMethod("n",
 setMethod("n",
           signature(x = "traits"),
           definition = function(x, unique = FALSE) {
-            if(unique) n <- dplyr::n_distinct(x@traits$efo_id)
+            if (unique) n <- dplyr::n_distinct(x@traits$efo_id)
             else n <- nrow(x@traits)
             return(n)
             }
