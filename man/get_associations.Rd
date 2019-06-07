@@ -44,7 +44,7 @@ verbose about the different queries or not.}
 \item{warnings}{A \code{logical} indicating whether to print warnings, if any.}
 }
 \value{
-A \linkS4class{associations} object.
+An \linkS4class{associations} object.
 }
 \description{
 Retrieves associations via the NHGRI-EBI GWAS Catalog REST API. The REST

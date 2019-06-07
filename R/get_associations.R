@@ -391,7 +391,7 @@ get_associations_all <- function(verbose = FALSE,
 #'   verbose about the different queries or not.
 #' @param warnings A \code{logical} indicating whether to print warnings, if any.
 #'
-#' @return A \linkS4class{associations} object.
+#' @return An \linkS4class{associations} object.
 #' @examples
 #' # Get an association by study identifier
 #' get_associations(study_id = 'GCST001085')
