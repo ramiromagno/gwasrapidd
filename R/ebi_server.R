@@ -2,13 +2,12 @@
 #'
 #' Check if the EBI server where the GWAS Catalog REST API server is running is
 #' reachable. This function attempts to connect to
-#' \href{www.ebi.ac.uk}{www.ebi.ac.uk}, returning \code{TRUE} on success, and
-#' \code{FALSE} otherwise. Set \code{chatty = TRUE} for a step by step
-#' description of the connection attempt.
+#' \href{https://www.ebi.ac.uk}{https://www.ebi.ac.uk}, returning \code{TRUE} on
+#' success, and \code{FALSE} otherwise. Set \code{chatty = TRUE} for a step by
+#' step description of the connection attempt.
 #'
 #' @param url NHGRI-EBI GWAS Catalog server URL. Default is
-#'   \code{"https://www.ebi.ac.uk"}. You should not need to change this
-#'   parameter.
+#'   \url{https://www.ebi.ac.uk}. You should not need to change this parameter.
 #' @param port Network port on which to ping the server. You should not need to
 #'   change this parameter.
 #' @param chatty Whether to be verbose (\code{TRUE}) or not (\code{FALSE}).

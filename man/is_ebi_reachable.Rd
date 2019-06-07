@@ -9,8 +9,7 @@ is_ebi_reachable(url = "https://www.ebi.ac.uk", port = 443L,
 }
 \arguments{
 \item{url}{NHGRI-EBI GWAS Catalog server URL. Default is
-\code{"https://www.ebi.ac.uk"}. You should not need to change this
-parameter.}
+\url{https://www.ebi.ac.uk}. You should not need to change this parameter.}
 
 \item{port}{Network port on which to ping the server. You should not need to
 change this parameter.}
@@ -24,9 +23,9 @@ A logical value: \code{TRUE} if EBI server is reachable, \code{FALSE}
 \description{
 Check if the EBI server where the GWAS Catalog REST API server is running is
 reachable. This function attempts to connect to
-\href{www.ebi.ac.uk}{www.ebi.ac.uk}, returning \code{TRUE} on success, and
-\code{FALSE} otherwise. Set \code{chatty = TRUE} for a step by step
-description of the connection attempt.
+\href{https://www.ebi.ac.uk}{https://www.ebi.ac.uk}, returning \code{TRUE} on
+success, and \code{FALSE} otherwise. Set \code{chatty = TRUE} for a step by
+step description of the connection attempt.
 }
 \examples{
 # Check if the GWAS Catalog Server is reachable
