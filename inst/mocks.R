@@ -3,7 +3,7 @@ library(httptest)
 # Where to save the mocks
 .mockPaths(NULL)
 .mockPaths("tests/testthat/mocks")
-options(httptest.verbose=TRUE)
+options(httptest.verbose = TRUE)
 
 #
 # Mock API fixtures for requests in test-get_metadata.R
@@ -13,31 +13,31 @@ capture_requests({gwasrapidd::get_metadata()})
 #
 # Mock API fixtures for requests of studies
 #
-capture_requests({gwasrapidd::get_studies('GCST001085')})
+capture_requests({gwasrapidd::get_studies('GCST002420')})
 capture_requests({gwasrapidd::get_studies('GCST000392')})
-capture_requests({gwasrapidd::get_studies(association_id = '25389945')})
+capture_requests({gwasrapidd::get_studies(association_id = '15608')})
 capture_requests({gwasrapidd::get_studies(association_id = '24299710')})
 capture_requests({gwasrapidd::get_studies(variant_id = 'rs3798440')})
 capture_requests({gwasrapidd::get_studies(variant_id = 'rs7329174')})
-capture_requests({gwasrapidd::get_studies(efo_id = 'EFO_0000537')})
-capture_requests({gwasrapidd::get_studies(efo_id = 'EFO_0000305')})
-capture_requests({gwasrapidd::get_studies(pubmed_id = '21626137')})
-capture_requests({gwasrapidd::get_studies(pubmed_id = '25890600')})
-capture_requests({gwasrapidd::get_studies(efo_uri = 'http://www.ebi.ac.uk/efo/EFO_0004761')})
-capture_requests({gwasrapidd::get_studies(efo_trait = 'lung adenocarcinoma')})
-capture_requests({gwasrapidd::get_studies(efo_trait = 'uric acid measurement')})
-capture_requests({gwasrapidd::get_studies(reported_trait = 'breast cancer')})
-capture_requests({gwasrapidd::get_studies(reported_trait = 'lung adenocarcinoma')})
+capture_requests({gwasrapidd::get_studies(efo_id = 'EFO_0005924')})
+capture_requests({gwasrapidd::get_studies(efo_id = 'EFO_0004291')})
+capture_requests({gwasrapidd::get_studies(pubmed_id = '24882193')})
+capture_requests({gwasrapidd::get_studies(pubmed_id = '22780124')})
+capture_requests({gwasrapidd::get_studies(efo_uri = 'http://www.ebi.ac.uk/efo/EFO_0005924')})
+capture_requests({gwasrapidd::get_studies(efo_trait = 'binge eating')})
+capture_requests({gwasrapidd::get_studies(efo_trait = 'braces')})
+capture_requests({gwasrapidd::get_studies(reported_trait = 'Common traits (Other)')})
+capture_requests({gwasrapidd::get_studies(reported_trait = 'Binge eating behaviour in bipolar disorder')})
 
 #
 # Mock API fixtures for requests of associations
 #
-capture_requests({gwasrapidd::get_associations(association_id = '25389945')})
+capture_requests({gwasrapidd::get_associations(association_id = '15608')})
 capture_requests({gwasrapidd::get_associations(association_id = '24300113')})
-capture_requests({gwasrapidd::get_associations(study_id = 'GCST001085')})
+capture_requests({gwasrapidd::get_associations(study_id = 'GCST002420')})
 capture_requests({gwasrapidd::get_associations(variant_id = 'rs3798440')})
 capture_requests({gwasrapidd::get_associations(variant_id = 'rs7329174')})
-capture_requests({gwasrapidd::get_associations(pubmed_id = '21626137')})
+capture_requests({gwasrapidd::get_associations(pubmed_id = '24882193')})
 
 #
 # Mock API fixtures for requests of variants
@@ -46,15 +46,17 @@ capture_requests({gwasrapidd::get_variants(variant_id = 'rs3798440')})
 capture_requests({gwasrapidd::get_variants(variant_id = 'rs7329174')})
 capture_requests({gwasrapidd::get_variants(variant_id = 'rs10910092')})
 capture_requests({gwasrapidd::get_variants(variant_id = 'rs570398477')})
-capture_requests({gwasrapidd::get_variants(study_id = 'GCST001085')})
-capture_requests({gwasrapidd::get_variants(association_id = '25389945')})
-capture_requests({gwasrapidd::get_variants(efo_id = 'EFO_0005537')})
-capture_requests({gwasrapidd::get_variants(pubmed_id = '21626137')})
+capture_requests({gwasrapidd::get_variants(study_id = 'GCST002420')})
+capture_requests({gwasrapidd::get_variants(association_id = '15608')})
+capture_requests({gwasrapidd::get_variants(efo_id = 'EFO_0004291')})
+capture_requests({gwasrapidd::get_variants(pubmed_id = '24882193')})
 capture_requests({gwasrapidd::get_variants(
   genomic_range = list(chromosome = "22", start = 1L, end = "15473564"))
-  })
+})
 capture_requests({gwasrapidd::get_variants(cytogenetic_band = '3p21.32')})
-capture_requests({gwasrapidd::get_variants(gene_name = 'TOPAZ1')})
+capture_requests({gwasrapidd::get_variants(gene_name = 'AGKP1')})
+capture_requests({gwasrapidd::get_variants(efo_trait = 'braces')})
+
 # Mitochondrial genome variants
 capture_requests({
   gwasrapidd::get_variants(variant_id = 'rs147903261')
@@ -71,13 +73,13 @@ capture_requests({
 #
 # Mock API fixtures for requests of traits
 #
-capture_requests({gwasrapidd::get_traits(efo_id = 'EFO_0000537')})
-capture_requests({gwasrapidd::get_traits(efo_id = 'EFO_0000305')})
-capture_requests({gwasrapidd::get_traits(study_id = 'GCST001085')})
-capture_requests({gwasrapidd::get_traits(association_id = '25389945')})
-capture_requests({gwasrapidd::get_traits(pubmed_id = '25890600')})
-capture_requests({gwasrapidd::get_traits(efo_uri = 'http://www.ebi.ac.uk/efo/EFO_0004761')})
-capture_requests({gwasrapidd::get_traits(efo_trait = 'lung adenocarcinoma')})
+capture_requests({gwasrapidd::get_traits(efo_id = 'EFO_0005924')})
+capture_requests({gwasrapidd::get_traits(efo_id = 'EFO_0004291')})
+capture_requests({gwasrapidd::get_traits(study_id = 'GCST002420')})
+capture_requests({gwasrapidd::get_traits(association_id = '15608')})
+capture_requests({gwasrapidd::get_traits(pubmed_id = '22780124')})
+capture_requests({gwasrapidd::get_traits(efo_uri = 'http://www.ebi.ac.uk/efo/EFO_0005924')})
+capture_requests({gwasrapidd::get_traits(efo_trait = 'braces')})
 
 #
 # Mock API fixtures for requests in test-request.R
@@ -98,13 +100,10 @@ capture_requests({
 })
 capture_requests({gwasrapidd:::gc_request_all('/associations/24299710/')})
 capture_requests({gwasrapidd:::gc_get('/associations/24299710/snps')})
-capture_requests({gc_get('/associations/24299710/efoTraits')})
-capture_requests({gc_get('/efoTraits/search/findByPubmedId?pubmedId=21626137')})
+capture_requests({gwasrapidd:::gc_get('/associations/24299710/efoTraits')})
+capture_requests({gwasrapidd:::gc_get('/efoTraits/search/findByPubmedId?pubmedId=24882193')})
 
 #
 # Mock API fixtures for requests in test-post-traits.R
 #
-capture_requests({get_child_efo(efo_id = c('EFO_0004761', 'EFO_0000305'))})
-
-
-
+capture_requests({get_child_efo(efo_id = c('EFO_0005924', 'EFO_0005106'))})
