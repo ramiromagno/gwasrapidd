@@ -1,0 +1,102 @@
+{
+    "_embedded": {
+        "studies": [
+            {
+                "initialSampleSize": "1,312 European ancestry twins from 894 families",
+                "gxe": false,
+                "gxg": false,
+                "snpCount": 2373249,
+                "qualifier": null,
+                "imputed": true,
+                "pooled": false,
+                "studyDesignComment": null,
+                "accessionId": "GCST001601",
+                "fullPvalueSet": false,
+                "userRequested": false,
+                "platforms": [
+                    {
+                        "manufacturer": "Illumina"
+                    }
+                ],
+                "ancestries": [
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 1312,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "European"
+                            }
+                        ],
+                        "countryOfOrigin": [
+
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Oceania",
+                                "region": "Australia/New Zealand",
+                                "countryName": "Australia"
+                            }
+                        ]
+                    }
+                ],
+                "diseaseTrait": {
+                    "trait": "Gambling"
+                },
+                "genotypingTechnologies": [
+                    {
+                        "genotypingTechnology": "Genome-wide genotyping array"
+                    }
+                ],
+                "replicationSampleSize": "NA",
+                "publicationInfo": {
+                    "pubmedId": "22780124",
+                    "publicationDate": "2012-07-10",
+                    "publication": "Addict Biol",
+                    "title": "Genome-wide association study of a quantitative disordered gambling trait.",
+                    "author": {
+                        "fullname": "Lind PA",
+                        "orcid": "0000-0002-3887-2598"
+                    },
+                    "_links": {
+                        "studies": {
+                            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001601{?projection}",
+                            "templated": true
+                        }
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001601"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001601{?projection}",
+                        "templated": true
+                    },
+                    "associationsByStudySummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001601/associations?projection=associationByStudy"
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001601/snps"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001601/efoTraits"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001601/associations"
+                    }
+                }
+            }
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/search/findByPublicationIdPubmedId?pubmedId=22780124"
+        }
+    },
+    "page": {
+        "size": 20,
+        "totalElements": 1,
+        "totalPages": 1,
+        "number": 0
+    }
+}

@@ -26,8 +26,8 @@ test_that("get_traits: exceptions", {
 #
 
 with_mock_api({
-  test_that("get_traits: GCST001085", {
-    my_trait <- get_traits(study_id = 'GCST001085')
+  test_that("get_traits: GCST002420", {
+    my_trait <- get_traits(study_id = 'GCST002420')
     expect_is(my_trait, 'traits')
   })
 })
@@ -38,7 +38,7 @@ with_mock_api({
 #
 with_mock_api({
   test_that("get_traits: by association id", {
-    my_traits <- get_traits(association_id = '25389945')
+    my_traits <- get_traits(association_id = '15608')
     expect_is(my_traits, 'traits')
   })
 })
@@ -48,7 +48,7 @@ with_mock_api({
 #
 with_mock_api({
   test_that("get_traits: by efo id", {
-    my_traits <- get_traits(efo_id = c('EFO_0000537', 'EFO_0000305'))
+    my_traits <- get_traits(efo_id = c('EFO_0000537', 'EFO_0004291'))
     expect_is(my_traits, 'traits')
   })
 })

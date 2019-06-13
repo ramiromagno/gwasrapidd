@@ -35,8 +35,8 @@ test_that("n(): studies that are NA", {
 })
 
 with_mock_api({
-  test_that("n(): 2 studies: GCST001085, GCST000392", {
-    study_ids <- c('GCST001085', 'GCST000392')
+  test_that("n(): 2 studies: GCST002420, GCST000392", {
+    study_ids <- c('GCST002420', 'GCST000392')
     my_studies <- get_studies(study_id = study_ids)
     expect_is(my_studies, 'studies')
     expect_identical(n(my_studies), 2L)
@@ -77,8 +77,8 @@ test_that("n(): associations that are NA", {
 })
 
 with_mock_api({
-  test_that("n(): 1 association: '25389945'", {
-    my_association <- get_associations(association_id = '25389945')
+  test_that("n(): 1 association: '15608'", {
+    my_association <- get_associations(association_id = '15608')
     expect_is(my_association, 'associations')
     expect_identical(n(my_association), 1L)
   })
@@ -138,7 +138,7 @@ test_that("n(): traits that are NA", {
 
 with_mock_api({
   test_that("n(): 2 traits: ", {
-    trait_ids <- c('EFO_0000537', 'EFO_0000305')
+    trait_ids <- c('EFO_0005924', 'EFO_0004291')
     my_traits <- get_traits(efo_id = trait_ids)
     expect_is(my_traits, 'traits')
     expect_identical(n(my_traits), 2L)
@@ -213,12 +213,12 @@ test_that("filter_by_id() traits", {
 ### studies
 with_mock_api({
   test_that("subsetting studies with `[`", {
-    study_ids <- c('GCST001085', 'GCST000392')
+    study_ids <- c('GCST002420', 'GCST000392')
     my_studies <- get_studies(study_id = study_ids)
     expect_is(my_studies, 'studies')
     expect_identical(my_studies, my_studies[])
-    expect_identical(my_studies['GCST001085']@studies$study_id, 'GCST001085')
-    expect_identical(my_studies['GCST001085'], my_studies[1])
+    expect_identical(my_studies['GCST002420']@studies$study_id, 'GCST002420')
+    expect_identical(my_studies['GCST002420'], my_studies[1])
     expect_identical(my_studies['GCST000392']@studies$study_id, 'GCST000392')
     expect_identical(my_studies['GCST000392'], my_studies[2])
   })
@@ -227,12 +227,12 @@ with_mock_api({
 ### associations
 with_mock_api({
   test_that("subsetting associations with `[`", {
-    association_ids <- c('25389945', '24300113')
+    association_ids <- c('15608', '24300113')
     my_associations <- get_associations(association_id = association_ids)
     expect_is(my_associations, 'associations')
     expect_identical(my_associations, my_associations[])
-    expect_identical(my_associations['25389945']@associations$association_id, '25389945')
-    expect_identical(my_associations['25389945'], my_associations[1])
+    expect_identical(my_associations['15608']@associations$association_id, '15608')
+    expect_identical(my_associations['15608'], my_associations[1])
     expect_identical(my_associations['24300113']@associations$association_id, '24300113')
     expect_identical(my_associations['24300113'], my_associations[2])
   })
@@ -254,14 +254,14 @@ with_mock_api({
 ### traits
 with_mock_api({
   test_that("subsetting traits with `[`", {
-    trait_ids <- c('EFO_0000537', 'EFO_0000305')
+    trait_ids <- c('EFO_0005924', 'EFO_0004291')
     my_traits <- get_traits(efo_id = trait_ids)
     expect_is(my_traits, 'traits')
     expect_identical(my_traits, my_traits[])
-    expect_identical(my_traits['EFO_0000537']@traits$efo_id, 'EFO_0000537')
-    expect_identical(my_traits['EFO_0000537'], my_traits[1])
-    expect_identical(my_traits['EFO_0000305']@traits$efo_id, 'EFO_0000305')
-    expect_identical(my_traits['EFO_0000305'], my_traits[2])
+    expect_identical(my_traits['EFO_0005924']@traits$efo_id, 'EFO_0005924')
+    expect_identical(my_traits['EFO_0005924'], my_traits[1])
+    expect_identical(my_traits['EFO_0004291']@traits$efo_id, 'EFO_0004291')
+    expect_identical(my_traits['EFO_0004291'], my_traits[2])
   })
 })
 
@@ -270,9 +270,9 @@ with_mock_api({
 #
 with_mock_api({
   test_that("set operations on S4 studies", {
-    s1 <- get_studies(study_id = 'GCST001085')
+    s1 <- get_studies(study_id = 'GCST002420')
     s2 <- get_studies(study_id = 'GCST000392')
-    s3 <- get_studies(study_id = c('GCST001085', 'GCST000392'))
+    s3 <- get_studies(study_id = c('GCST002420', 'GCST000392'))
     expect_is(s1, 'studies')
     expect_is(s2, 'studies')
     expect_is(s3, 'studies')
@@ -298,9 +298,9 @@ with_mock_api({
 #
 with_mock_api({
   test_that("set operations on S4 associations", {
-    a1 <- get_associations(association_id = '25389945')
+    a1 <- get_associations(association_id = '15608')
     a2 <- get_associations(association_id = '24300113')
-    a3 <- get_associations(association_id = c('25389945', '24300113'))
+    a3 <- get_associations(association_id = c('15608', '24300113'))
     expect_is(a1, 'associations')
     expect_is(a2, 'associations')
     expect_is(a3, 'associations')
@@ -354,9 +354,9 @@ with_mock_api({
 #
 with_mock_api({
   test_that("set operations on S4 traits", {
-    t1 <- get_traits(efo_id = 'EFO_0000537')
-    t2 <- get_traits(efo_id = 'EFO_0000305')
-    t3 <- get_traits(efo_id = c('EFO_0000537', 'EFO_0000305'))
+    t1 <- get_traits(efo_id = 'EFO_0005924')
+    t2 <- get_traits(efo_id = 'EFO_0004291')
+    t3 <- get_traits(efo_id = c('EFO_0005924', 'EFO_0004291'))
     expect_is(t1, 'traits')
     expect_is(t2, 'traits')
     expect_is(t3, 'traits')
@@ -382,9 +382,9 @@ with_mock_api({
 #
 with_mock_api({
   test_that("bind S4 studies", {
-    s1 <- get_studies(study_id = 'GCST001085')
+    s1 <- get_studies(study_id = 'GCST002420')
     s2 <- get_studies(study_id = 'GCST000392')
-    s3 <- get_studies(study_id = c('GCST001085', 'GCST000392'))
+    s3 <- get_studies(study_id = c('GCST002420', 'GCST000392'))
     expect_is(s1, 'studies')
     expect_is(s2, 'studies')
     expect_is(s3, 'studies')
@@ -398,9 +398,9 @@ with_mock_api({
 #
 with_mock_api({
   test_that("bind S4 associations", {
-    a1 <- get_associations(association_id = '25389945')
+    a1 <- get_associations(association_id = '15608')
     a2 <- get_associations(association_id = '24300113')
-    a3 <- get_associations(association_id = c('25389945', '24300113'))
+    a3 <- get_associations(association_id = c('15608', '24300113'))
     expect_is(a1, 'associations')
     expect_is(a2, 'associations')
     expect_is(a3, 'associations')
@@ -430,9 +430,9 @@ with_mock_api({
 #
 with_mock_api({
   test_that("bind S4 traits", {
-    t1 <- get_traits(efo_id = 'EFO_0000537')
-    t2 <- get_traits(efo_id = 'EFO_0000305')
-    t3 <- get_traits(efo_id = c('EFO_0000537', 'EFO_0000305'))
+    t1 <- get_traits(efo_id = 'EFO_0005924')
+    t2 <- get_traits(efo_id = 'EFO_0004291')
+    t3 <- get_traits(efo_id = c('EFO_0005924', 'EFO_0004291'))
     expect_is(t1, 'traits')
     expect_is(t2, 'traits')
     expect_is(t3, 'traits')

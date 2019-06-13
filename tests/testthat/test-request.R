@@ -166,7 +166,7 @@ test_that("is_paginated", {
 
 with_mock_api({
   test_that("gc_request_all: typical paginated case", {
-    my_studies <- gc_request_all('/studies/search/findByPublicationIdPubmedId?pubmedId=21626137')
+    my_studies <- gc_request_all('/studies/search/findByPublicationIdPubmedId?pubmedId=24882193')
     expect_identical(names(my_studies), c('url', 'response_code', 'status', 'content'))
     expect_identical(my_studies$response_code, 200L)
     expect_identical(my_studies$status, "OK")
@@ -175,7 +175,7 @@ with_mock_api({
 
 with_mock_api({
   test_that("gc_request_all: progress bar == FALSE", {
-    my_studies <- gc_request_all('/studies/search/findByPublicationIdPubmedId?pubmedId=21626137', progress_bar = FALSE)
+    my_studies <- gc_request_all('/studies/search/findByPublicationIdPubmedId?pubmedId=24882193', progress_bar = FALSE)
     expect_identical(names(my_studies), c('url', 'response_code', 'status', 'content'))
     expect_identical(my_studies$response_code, 200L)
     expect_identical(my_studies$status, "OK")
@@ -193,7 +193,7 @@ with_mock_api({
 
 with_mock_api({
   test_that("gc_request_all: 404 response", {
-    expect_warning(my_studies <- gc_request_all('/studies/GCSTXXXXXX'))
+    my_studies <- expect_warning(gc_request_all('/studies/GCSTXXXXXX'))
     expect_identical(names(my_studies), c('url', 'response_code', 'status', 'content'))
     expect_identical(my_studies$response_code, 404L)
   })
@@ -202,7 +202,7 @@ with_mock_api({
 with_mock_api({
   test_that("gc_request_all: page_size out of bounds", {
     expect_error(
-      my_studies <- gc_request_all('/studies/search/findByPublicationIdPubmedId?pubmedId=21626137', page_size = 1001L),
+      gc_request_all('/studies/search/findByPublicationIdPubmedId?pubmedId=24882193', page_size = 1001L),
       "page_size must be an integer scalar between 1 and 1000!")
   })
 })
@@ -210,7 +210,7 @@ with_mock_api({
 with_mock_api({
   test_that("gc_request_all: has page obj but number of elements is zero", {
       lst <- gc_request_all(
-        resource_url = '/ontologies/efo/descendants?id=EFO_0009285',
+        resource_url = '/ontologies/efo/descendants?id=EFO_0005924',
         base_url = 'https://www.ebi.ac.uk/ols/api')
   expect_identical(names(lst), c('url', 'response_code', 'status', 'content'))
   })
@@ -250,7 +250,7 @@ test_that("is_embedded", {
 #
 with_mock_api({
   test_that("normalise_obj: object contains `_embedded`", {
-    url_study <- '/studies/search/findByPublicationIdPubmedId?pubmedId=21626137'
+    url_study <- '/studies/search/findByPublicationIdPubmedId?pubmedId=24882193'
     obj_study <- gc_request_all(url_study) # This returns an `_embedded` object
     obj <- normalise_obj(obj_study, resource_url = url_study)
     expect_identical(obj, obj_study)
@@ -328,10 +328,10 @@ test_that("peel_off_embedded", {
 #
 with_mock_api({
   test_that("gc_get", {
-    gc_get('/studies/GCST001085/')
-    gc_get('/studies/GCST001085/associations')
-    gc_get('/studies/GCST001085/snps')
-    gc_get('/studies/GCST001085/efoTraits')
+    gc_get('/studies/GCST002420/')
+    gc_get('/studies/GCST002420/associations')
+    gc_get('/studies/GCST002420/snps')
+    gc_get('/studies/GCST002420/efoTraits')
     gc_get('/associations/24299710/study')
     gc_get('/associations/24299710/')
     gc_get('/associations/24299710/snps')
@@ -341,10 +341,10 @@ with_mock_api({
     gc_get('/singleNucleotidePolymorphisms/rs3798440/')
     gc_get('/efoTraits/EFO_0000537/studies')
     gc_get('/efoTraits/EFO_0000537/')
-    gc_get('/studies/search/findByPublicationIdPubmedId?pubmedId=21626137')
-    gc_get('/associations/search/findByPubmedId?pubmedId=21626137')
-    gc_get('/singleNucleotidePolymorphisms/search/findByPubmedId?pubmedId=21626137')
-    gc_get('/efoTraits/search/findByPubmedId?pubmedId=21626137')
+    gc_get('/studies/search/findByPublicationIdPubmedId?pubmedId=24882193')
+    gc_get('/associations/search/findByPubmedId?pubmedId=24882193')
+    gc_get('/singleNucleotidePolymorphisms/search/findByPubmedId?pubmedId=24882193')
+    gc_get('/efoTraits/search/findByPubmedId?pubmedId=24882193')
   })
 })
 
@@ -372,13 +372,13 @@ test_that("gc_get: studies by efo_uri", {
 
 test_that("gc_get: studies", {
   expect_error(gc_get(
-    resource_url = c('/studies/GCST001085/', '/studies/GCST001085/')
+    resource_url = c('/studies/GCST002420/', '/studies/GCST002420/')
   ),
   'resource_url must be a single string.')
 
   expect_error(
     gc_get(
-      resource_url = '/studies/GCST001085/',
+      resource_url = '/studies/GCST002420/',
       base_url = c(
         'https://www.ebi.ac.uk/gwas/rest/api/',
         'https://www.ebi.ac.uk/gwas/rest/api/'
@@ -388,11 +388,11 @@ test_that("gc_get: studies", {
   )
 
   expect_error(
-    gc_get('/studies/GCST001085/', page_size = -1L),
+    gc_get('/studies/GCST002420/', page_size = -1L),
     "page_size must be an integer scalar between 1 and 1000!"
   )
   expect_error(
-    gc_get('/studies/GCST001085/', page_size = 1001L),
+    gc_get('/studies/GCST002420/', page_size = 1001L),
     "page_size must be an integer scalar between 1 and 1000!"
   )
 })

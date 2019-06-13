@@ -1,0 +1,73 @@
+{
+    "riskFrequency": "NR",
+    "pvalueDescription": "(braces)",
+    "pvalueMantissa": 4,
+    "pvalueExponent": -7,
+    "multiSnpHaplotype": false,
+    "snpInteraction": false,
+    "snpType": "novel",
+    "standardError": null,
+    "range": null,
+    "description": null,
+    "orPerCopyNum": null,
+    "betaNum": null,
+    "betaUnit": null,
+    "betaDirection": null,
+    "loci": [
+        {
+            "haplotypeSnpCount": null,
+            "description": "Single variant",
+            "strongestRiskAlleles": [
+                {
+                    "riskAlleleName": "rs1535480-?",
+                    "riskFrequency": null,
+                    "genomeWide": null,
+                    "limitedList": null,
+                    "_links": {
+                        "snp": {
+                            "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs1535480"
+                        }
+                    }
+                }
+            ],
+            "authorReportedGenes": [
+                {
+                    "geneName": "NR",
+                    "entrezGeneIds": [
+
+                    ],
+                    "ensemblGeneIds": [
+
+                    ]
+                }
+            ],
+            "_links": {
+                "association": {
+                    "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/15608{?projection}",
+                    "templated": true
+                }
+            }
+        }
+    ],
+    "lastMappingDate": "2019-02-17T21:37:27.000+0000",
+    "lastUpdateDate": "2019-02-17T21:37:27.000+0000",
+    "pvalue": 4.0E-7,
+    "_links": {
+        "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/15608"
+        },
+        "association": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/15608{?projection}",
+            "templated": true
+        },
+        "snps": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/15608/snps"
+        },
+        "efoTraits": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/15608/efoTraits"
+        },
+        "study": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/15608/study"
+        }
+    }
+}

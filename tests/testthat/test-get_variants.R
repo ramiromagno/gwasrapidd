@@ -21,8 +21,8 @@ test_that("get_variants: exceptions", {
 #
 
 with_mock_api({
-  test_that("get_variants: GCST001085", {
-    my_variants <- get_variants(study_id = 'GCST001085')
+  test_that("get_variants: GCST002420", {
+    my_variants <- get_variants(study_id = 'GCST002420')
     expect_is(my_variants, 'variants')
   })
 })
@@ -33,7 +33,7 @@ with_mock_api({
 #
 with_mock_api({
   test_that("get_variants: by association id", {
-    my_variants <- get_variants(association_id = '25389945')
+    my_variants <- get_variants(association_id = '15608')
     expect_is(my_variants, 'variants')
   })
 })
@@ -75,7 +75,7 @@ with_mock_api({
 #
 with_mock_api({
   test_that("get_variants: by efo id", {
-    my_variants <- get_variants(efo_id = 'EFO_0005537')
+    my_variants <- get_variants(efo_id = 'EFO_0004291')
     expect_is(my_variants, 'variants')
   })
 })
@@ -85,7 +85,7 @@ with_mock_api({
 #
 with_mock_api({
   test_that("get_variants: by pubmed id", {
-    my_variants <- get_variants(pubmed_id = '21626137')
+    my_variants <- get_variants(pubmed_id = '24882193')
     expect_is(my_variants, 'variants')
   })
 })
@@ -116,7 +116,7 @@ with_mock_api({
 #
 with_mock_api({
   test_that("get_variants: by gene name", {
-    my_variants <- get_variants(gene_name = 'TOPAZ1')
+    my_variants <- get_variants(gene_name = 'AGKP1')
     expect_is(my_variants, 'variants')
   })
 })
@@ -126,7 +126,7 @@ with_mock_api({
 #
 with_mock_api({
   test_that("get_variants: by efo_trait", {
-    my_variants <- get_variants(efo_trait = c('triple-negative breast cancer'))
+    my_variants <- get_variants(efo_trait = 'braces')
     expect_is(my_variants, 'variants')
   })
 })
@@ -162,7 +162,7 @@ test_that("get_variants_by_study_id: study_id is NULL", {
 test_that("get_variants_by_study_id: status code is not 200", {
   bad_response <- list(response_code = 404L, status = 'Not OK', url = NA, content = NA)
   with_mock(`gwasrapidd:::gc_get` = function(...) bad_response,
-            expect_identical(get_variants_by_study_id(study_id = 'GCST001085'), variants()))
+            expect_identical(get_variants_by_study_id(study_id = 'GCST002420'), variants()))
 })
 
 test_that("get_variants_by_association_id: association_id is NULL", {
@@ -171,7 +171,7 @@ test_that("get_variants_by_association_id: association_id is NULL", {
 test_that("get_variants_by_association_id: status code is not 200", {
   bad_response <- list(response_code = 404L, status = 'Not OK', url = NA, content = NA)
   with_mock(`gwasrapidd:::gc_get` = function(...) bad_response,
-            expect_identical(get_variants(association_id = c('25389945', '24299710')), variants()))
+            expect_identical(get_variants(association_id = c('15608', '24299710')), variants()))
 })
 
 test_that("get_variants_by_variant_id: variant_id is NULL", {

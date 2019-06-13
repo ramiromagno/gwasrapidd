@@ -19,8 +19,8 @@ test_that("get_associations: exceptions", {
 #
 
 with_mock_api({
-  test_that("get_associations: GCST001085", {
-    my_associations <- get_associations(study_id = 'GCST001085')
+  test_that("get_associations: GCST002420", {
+    my_associations <- get_associations(study_id = 'GCST002420')
     expect_is(my_associations, 'associations')
   })
 })
@@ -30,7 +30,7 @@ with_mock_api({
 #
 with_mock_api({
   test_that("get_associations: by association id", {
-    my_associations <- get_associations(association_id = '25389945')
+    my_associations <- get_associations(association_id = '15608')
     expect_is(my_associations, 'associations')
   })
 })
@@ -87,7 +87,7 @@ test_that("get_associations_by_study_id: study_id is NULL", {
 test_that("get_associations_by_study_id: status code is not 200", {
   bad_response <- list(response_code = 404L, status = 'Not OK', url = NA, content = NA)
   with_mock(`gwasrapidd:::gc_get` = function(...) bad_response,
-            expect_identical(get_associations_by_study_id(study_id = 'GCST001085'), associations()))
+            expect_identical(get_associations_by_study_id(study_id = 'GCST002420'), associations()))
 })
 
 test_that("get_associations_by_association_id: association_id is NULL", {
@@ -96,7 +96,7 @@ test_that("get_associations_by_association_id: association_id is NULL", {
 test_that("get_associations_by_association_id: status code is not 200", {
   bad_response <- list(response_code = 404L, status = 'Not OK', url = NA, content = NA)
   with_mock(`gwasrapidd:::gc_get` = function(...) bad_response,
-            expect_identical(get_associations(association_id = c('25389945', '24299710')), associations()))
+            expect_identical(get_associations(association_id = c('15608', '24299710')), associations()))
 })
 
 test_that("get_associations_by_variant_id: variant_id is NULL", {
