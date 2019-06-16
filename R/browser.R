@@ -38,26 +38,25 @@
 #'   gwas_catalog_entity = 'publication')
 #'
 #' @export
-open_in_gwas_catalog <- function(identifier, gwas_catalog_entity = 'study') {
+open_in_gwas_catalog <- function(identifier,
+                                 gwas_catalog_entity = c(
+                                   'study',
+                                   'variant',
+                                   'trait',
+                                   'gene',
+                                   'region',
+                                   'publication')
+                                 ) {
+
   if (!(rlang::is_character(identifier)))
-    stop("identifier must be a character vector.")
+    stop("`identifier` must be a character vector.")
 
   if (any(rlang::are_na(identifier)))
-    stop("The following positions of identifier are NAs: ",
+    stop("The following positions of `identifier` are NAs: ",
          concatenate::cc_and(which(rlang::are_na(identifier)), oxford = TRUE),
          ".")
 
-  if (!rlang::is_scalar_character(gwas_catalog_entity))
-    stop("gwas_catalog_entity must be a single string.")
-
-  if (rlang::is_na(gwas_catalog_entity))
-    stop("gwas_catalog_entity cannot be NA.")
-
-  valid_entities <- c('study', 'variant', 'trait', 'gene', 'region',
-                      'publication')
-  if (!(gwas_catalog_entity %in% valid_entities))
-    stop('gwas_catalog_entity must be either ',
-         concatenate::cc_or(valid_entities))
+  gwas_catalog_entity <- rlang::arg_match(gwas_catalog_entity)
 
   if (interactive()) {
     msg <- 'You are about to open {length(identifier)} pages in your browser.'
