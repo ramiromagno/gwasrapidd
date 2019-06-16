@@ -4,6 +4,9 @@
 #' can specify a custom message before the question and also different messages
 #' for a both a positive and negative answer.
 #'
+#' If you run this function in non-interactive mode, you should pass an
+#' automatic answer to \code{default_answer}: \code{'yes'} or \code{'no'}.
+#'
 #' @param before_question String with message to be printed before question.
 #' @param after_saying_no String with message to be printed after answering
 #'   \code{'no'}.
@@ -22,7 +25,7 @@ sure <- function(before_question = NULL,
 
   # If default_answer is set then assume that we are running in non-interactive
   # mode. Return TRUE is default_answer == 'y' or FALSE otherwise.
-  if(!rlang::is_null(default_answer)) {
+  if (!rlang::is_null(default_answer)) {
     ans <- tolower(default_answer)
     return(identical(ans, "y") || identical(ans, "yes"))
   }
