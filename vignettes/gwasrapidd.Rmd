@@ -51,13 +51,14 @@ knitr::include_graphics("../man/figures/get_fns.png")
 
 You can use a combination of several search criteria with each retrieval function as shown in Figure 2. For example, if you want to get studies using either one of these two criteria: *study accession identifier* and *variant identifier*, you could run the following code:
 
-```{r eval=FALSE}
+```{r}
+library(gwasrapidd)
 my_studies <- get_studies(study_id = 'GCST000858', variant_id = 'rs12752552')
 ```
 
 This command returns all studies that match either `'GCST000858'` or `'rs12752552'`. This is equivalent to running `get_studies` separately on each criteria, and combining the results afterwards:
 
-```{r eval=FALSE}
+```{r}
 s1 <- get_studies(study_id = 'GCST000858')
 s2 <- get_studies(variant_id = 'rs12752552')
 my_studies <- union(s1, s2)
@@ -94,15 +95,15 @@ n(my_studies)
 my_studies@studies$study_id
 ```
 
-Apparently only one (`r my_studies@studies$study_id`). Let's see the associated publication title:
+Apparently only `r n(my_studies)` studies: `r my_studies@studies$study_id`. Let's see the associated publication titles:
 
 ```{r}
 my_studies@publications$title
 ```
 
-Sounds interesting... To quickly browse to the PubMed entry for this publication:
+If you want to further inspect these publications, you can quickly browse the respective PubMed entries:
 
-```{r eval=FALSE}
+```{r}
 # This launches your web browser at https://www.ncbi.nlm.nih.gov/pubmed/26301688
 open_in_pubmed(my_studies@publications$pubmed_id) 
 ```
@@ -111,9 +112,9 @@ Now if we want to know the variants previously associated with autoimmune diseas
 
 So let's start by getting the associations by `study_id`:
 
-```{r cache=TRUE}
+```{r}
 # You could have also used get_associations(efo_trait = 'autoimmune disease')
-my_associations <- get_associations(study_id = "GCST003097")
+my_associations <- get_associations(study_id = my_studies@studies$study_id)
 ```
 
 Seemingly, there are `r n(my_associations)` associations.
@@ -127,8 +128,11 @@ However, not all variants meet the level of significance, as required by @Light2
 ```{r}
 # Get association ids for which pvalue is less than 1e-6.
 dplyr::filter(my_associations@associations, pvalue < 1e-6) %>% # Filter by p-value
+  tidyr::drop_na(pvalue) %>%
   dplyr::pull(association_id) -> association_ids # Extract column association_id
 ```
+
+Here we subset the `my_associations` object by a vector of association identifiers (`association_ids`) into a smaller object, `my_associations2`:
 
 ```{r}
 # Extract associations by association id
