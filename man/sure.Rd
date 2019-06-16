@@ -28,4 +28,8 @@ This function asks you interactively for permission to continue or not. You
 can specify a custom message before the question and also different messages
 for a both a positive and negative answer.
 }
+\details{
+If you run this function in non-interactive mode, you should pass an
+automatic answer to \code{default_answer}: \code{'yes'} or \code{'no'}.
+}
 \keyword{internal}
