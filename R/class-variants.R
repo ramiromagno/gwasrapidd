@@ -124,13 +124,13 @@ variants_tbl <- function(variant_id = character(),
                          last_update_date = lubridate::ymd_hms()) {
 
   tbl <- tibble::tibble(
-    variant_id = variant_id,
-    merged = merged,
-    functional_class = functional_class,
-    chromosome_name = chromosome_name,
-    chromosome_position = chromosome_position,
-    chromosome_region = chromosome_region,
-    last_update_date = last_update_date
+    variant_id = empty_to_na(variant_id),
+    merged = empty_to_na(merged),
+    functional_class = empty_to_na(functional_class),
+    chromosome_name = empty_to_na(chromosome_name),
+    chromosome_position = empty_to_na(chromosome_position),
+    chromosome_region = empty_to_na(chromosome_region),
+    last_update_date = empty_to_na(last_update_date)
   )
 
   return(tbl)
