@@ -5,8 +5,9 @@ sudo: false
 cache: packages
 
 r:
+  - oldrel
   - release
-  - bioc-release
+  - devel
 
 # Strict checks in place
 warnings_are_errors: false
@@ -24,10 +25,6 @@ r_packages:
   - rmarkdown
   - remotes
   - utils
-
-bioc_packages:
-  - BiocVersion
-  - BiocStyle
 
 # Test code coverage
 r_github_packages:
