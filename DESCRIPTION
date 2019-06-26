@@ -40,13 +40,15 @@ Imports:
     methods,
     lubridate,
     plyr,
-    testthat
+    testthat,
+    utils,
+    rmarkdown,
+    remotes,
+    knitr
 Suggests:
     httptest,
     spelling,
-    covr,
-    knitr,
-    rmarkdown
+    covr
 Collate:
     'browser.R'
     'class-associations.R'
