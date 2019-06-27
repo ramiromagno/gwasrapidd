@@ -84,7 +84,7 @@ library(gwasrapidd)
 
 Then query the GWAS Catalog by EFO trait:
 
-```{r cache=TRUE}
+```{r}
 my_studies <- get_studies(efo_trait = 'autoimmune disease')
 ```
 
