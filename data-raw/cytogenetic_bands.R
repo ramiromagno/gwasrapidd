@@ -31,7 +31,7 @@ library(lubridate)
 ensembl_json <- httr::GET(url = 'https://rest.ensembl.org/info/assembly/homo_sapiens?content-type=application/json&bands=1')
 response_code <- httr::status_code(ensembl_json)
 
-if(!identical(response_code, 200L))
+if (!identical(response_code, 200L))
   stop('Could not get cytogenetic band information from Ensembl.')
 
 content_type <- httr::http_type(ensembl_json)
@@ -60,10 +60,10 @@ cytogenetic_bands <-
 # command level.
 
 readr::write_csv(cytogenetic_bands, "data-raw/cytogenetic_bands.csv")
-usethis::use_data(cytogenetic_bands, compress = "xz", overwrite = TRUE)
+usethis::use_data(cytogenetic_bands, compress = "xz", overwrite = TRUE, version = 2)
 # Having this dataset also exported to R/sysdata.rda so that I can use it inside
 # my functions without having R CMD check triggering a Note.
 # More about this here:
 #  - https://stackoverflow.com/questions/48105239/using-datasets-in-an-r-package
 #  - https://support.bioconductor.org/p/24756/
-usethis::use_data(cytogenetic_bands, internal = TRUE, compress = "xz", overwrite = TRUE)
+usethis::use_data(cytogenetic_bands, internal = TRUE, compress = "xz", overwrite = TRUE, version = 2)
