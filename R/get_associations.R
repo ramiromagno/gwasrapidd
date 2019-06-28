@@ -367,6 +367,10 @@ get_associations_all <- function(verbose = FALSE,
 #' associations that match simultaneously all criteria provided, then set
 #' \code{set_operation} to \code{'intersection'}.
 #'
+#' Please note that all search criteria are vectorised, thus allowing for batch
+#' mode search, e.g., one can search by multiple variant identifiers at once by
+#' passing a vector of identifiers to \code{variant_id}.
+#'
 #' @param study_id A \code{character} vector of GWAS Catalog study accession
 #'   identifiers.
 #' @param association_id A \code{character} vector of GWAS Catalog association

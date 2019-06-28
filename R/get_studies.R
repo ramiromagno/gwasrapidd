@@ -558,6 +558,10 @@ get_studies_all <- function(verbose = FALSE, warnings = TRUE, page_size = 20L) {
 #' studies that match simultaneously all criteria provided, then set
 #' \code{set_operation} to \code{'intersection'}.
 #'
+#' Please note that all search criteria are vectorised, thus allowing for batch
+#' mode search, e.g., one can search by multiple variant identifiers at once by
+#' passing a vector of identifiers to \code{variant_id}.
+#'
 #' @param study_id A character vector of GWAS Catalog study accession
 #'   identifiers.
 #' @param association_id A character vector of GWAS Catalog association

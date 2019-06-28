@@ -67,6 +67,11 @@ arguments are retrieved: this corresponds to the default option
 studies that match simultaneously all criteria provided, then set
 \code{set_operation} to \code{'intersection'}.
 }
+\details{
+Please note that all search criteria are vectorised, thus allowing for batch
+mode search, e.g., one can search by multiple variant identifiers at once by
+passing a vector of identifiers to \code{variant_id}.
+}
 \examples{
 # Get a study by its accession identifier
 get_studies(study_id = 'GCST001085')
