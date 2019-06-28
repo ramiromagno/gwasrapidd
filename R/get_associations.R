@@ -316,7 +316,7 @@ get_associations_by_efo_trait <- function(efo_trait = NULL,
 
 #' Get all GWAS Catalog associations
 #'
-#' Gets all associations. Beware this can take several minutes!
+#' Gets all associations. Beware this can take a few hours!
 #'
 #' @param verbose A \code{logical} indicating whether the function should be
 #'   verbose about the different queries or not.
@@ -466,15 +466,15 @@ get_associations <- function(study_id = NULL,
 
   # If no criteria have been passed, i.e. all are NULL then got fetch all
   # associations.
-  if(rlang::is_empty(list_of_associations)) {
-    msg1 <- "You are about to download all associations from the GWAS Catalog.\nThis might take several minutes."
+  if (rlang::is_empty(list_of_associations)) {
+    msg1 <- "You are about to download all associations from the GWAS Catalog.\nThis might take a few hours."
     msg2 <- 'Returning an empty associations object!'
     msg3 <- 'OK! Getting all associations then. This is going to take a while...'
-    if(interactive)
+    if (interactive)
       default_answer = NULL  # i.e., use interactive mode.
     else
       default_answer = 'y'
-    if(sure(before_question = msg1, after_saying_no = msg2, after_saying_yes = msg3, default_answer = default_answer))
+    if (sure(before_question = msg1, after_saying_no = msg2, after_saying_yes = msg3, default_answer = default_answer))
       return(get_associations_all(verbose = verbose, warnings = warnings))
     else
       return(associations())

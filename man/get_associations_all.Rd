@@ -22,6 +22,6 @@ value to be used in the JSON requests, can be between \code{1} and
 A \linkS4class{associations} object.
 }
 \description{
-Gets all associations. Beware this can take several minutes!
+Gets all associations. Beware this can take a few hours!
 }
 \keyword{internal}
