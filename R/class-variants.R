@@ -58,7 +58,7 @@ setOldClass(c("tbl_df", "tbl", "data.frame"))
 #' \item{gene_name}{Gene symbol according to
 #' \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.}
 #' \item{entrez_id}{The Entrez identifier of a gene, see ref.
-#' \href{https://dx.doi.org/10.1093\%2Fnar\%2Fgkq1237}{10.1093/nar/gkq1237} for
+#' \href{https://doi.org/10.1093\%2Fnar\%2Fgkq1237}{10.1093/nar/gkq1237} for
 #' more information.}
 #' }
 #' @export
