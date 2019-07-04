@@ -43,7 +43,38 @@ library(gwasrapidd)
 get_metadata()
 ```
 
-## 3 | What is the difference between a trait and a reported trait?
+## 3 | How to perform batch search with gwasrapidd?
+
+The four main retrieval functions `get_studies()`, `get_associations()`, `get_variants()`, and `get_traits()` allow to search by multiple values for the same search criterion. You only need to pass a vector of queries to each search criterion parameter. Here are some simple examples.
+
+Get studies by study identifiers (GCST002420 or GCST000392):
+
+```{r}
+library(gwasrapidd)
+get_studies(study_id = c('GCST002420', 'GCST000392'))
+```
+
+Get associations by variant identifiers (rs3798440 or rs7329174):
+
+```{r}
+get_associations(variant_id = c('rs3798440', 'rs7329174'))
+```
+
+Get associations by traits (braces or binge eating or gambling):
+
+```{r}
+get_associations(efo_trait = c('braces', 'binge eating', 'gambling'))
+```
+
+Get traits by PubMed identifiers (24882193 or 22780124):
+
+```{r}
+get_traits(pubmed_id = c('24882193', '22780124'))
+```
+
+The only search parameters that are not vectorised are `user_requested` and `full_pvalue_set` from `get_studies()`. These parameters are not vectorised because they take boolean values (`TRUE` or `FALSE`) and thus only one of the values is sensical to be used as a query at a given time.
+
+## 4 | What is the difference between a trait and a reported trait?
 
 There are two levels of trait description in the GWAS Catalog: (EFO) trait and reported trait.
 
@@ -68,7 +99,7 @@ study <- get_studies(study_id = 'GCST000206')
 study@studies$reported_trait
 ```
 
-## 4 | Genomic coordinates of genomic contexts seem to be wrong?
+## 5 | Genomic coordinates of genomic contexts seem to be wrong?
 
 The REST API response for variants contains an element named *genomic contexts*. This element is mapped onto the table `genomic_contexts` of a [variants](https://rmagno.eu/gwasrapidd/reference/variants-class.html) S4 object.
 
@@ -76,7 +107,7 @@ Now, there is indeed a server-side bug with the column `chromosome_position` of 
 
 The GWAS Catalog team is aware of this bug, and they plan to fix it, eventually. For the time being, just do not rely on `chromosome_position` of the `genomic_contexts` table.
 
-## 5 | How to search for variants within a certain genomic region?
+## 6 | How to search for variants within a certain genomic region?
 
 ### Single genomic range
 
@@ -153,7 +184,7 @@ my_variants@variants[c('variant_id',
                        'chromosome_region')]
 ```
 
-## 6 | Genomic range for an entire chromosome?
+## 7 | Genomic range for an entire chromosome?
 
 You can get the total length of a chromosome by using the provided dataset: `cytogenetic_bands`. Here is an example for chromosome 15:
 
@@ -167,7 +198,7 @@ dplyr::filter(cytogenetic_bands, chromosome == '15') %>%
                    )
 ```
 
-## 7 | How to keep track of which queries generated which results?
+## 8 | How to keep track of which queries generated which results?
 
 Currently, there is not an implemented solution in gwasrapidd. For example, if you search for variants by EFO identifier (`efo_id`):
 
@@ -203,7 +234,7 @@ And for `'EFO_0004762'`:
 my_variants[['EFO_0004762']]@variants$variant_id
 ```
 
-## 8 | How to combine results from multiple queries?
+## 9 | How to combine results from multiple queries?
 
 The four main retrieval functions `get_studies()`, `get_associations()`, `get_variants()` and `get_traits()` all allow you to search multiple criteria at once. You can then combine results in an OR or AND fashion using the parameter `set_operation`.
 
@@ -221,7 +252,9 @@ my_variants_OR@variants[c('variant_id',
                        'chromosome_region')]
 ```
 
-Or use `set_operation = 'intersection'` to combine results in an AND fashion:
+The code above retrieves variants whose associated `efo_trait` is equal to `'triple-negative breast cancer'` or variants that are associated with gene `'MDM4'`.
+
+Alternatively, we may use `set_operation = 'intersection'` to combine results in an AND fashion:
 
 ```{r}
 my_variants_AND <- get_variants(
@@ -235,6 +268,57 @@ my_variants_AND@variants[c('variant_id',
                        'chromosome_region')]
 ```
 
+With `set_operation = 'intersection'`, as in the code above, we get variants whose associated `efo_trait` is equal to `'triple-negative breast cancer'` and that are associated with gene `'MDM4'`, i.e., only variants meeting both conditions simultaneously are retrieved.
+
+Please note that almost all search criteria to be used with the retrieval functions are vectorised, meaning that you can use multiple values with the same search criterion. In these cases results are always combined in an OR fashion.
+
+In the following example, we will be using the gene name as the only search criterion. If we pass a vector of gene names then we get all variants that are associated with EITHER (OR) genes.
+
+```{r}
+my_variants <- get_variants(gene_name = c('RNU6-367P', 'TOPAZ1'))
+
+my_variants@variants[c('variant_id',
+                       'chromosome_name',
+                       'chromosome_position',
+                       'chromosome_region')]
+```
+
+In this case we retrieved `r n(my_variants)` variants. Please note that the `set_operation` parameter does not affect this result. The `set_operation` only controls the function behaviour when combining results from different criteria, e.g., when using `efo_trait` and `gene_name`.
+
+To retrieve variants that are concomitantly associated with genes RNU6-367P and TOPAZ1, the user needs to place these queries separately and then intersect them --- using the `intersect()` function, i.e., combining in an AND fashion. Here we start by retrieving variants associated with gene RNU6-367P:
+
+```{r}
+my_variants1 <- get_variants(gene_name = 'RNU6-367P')
+
+my_variants1@variants[c('variant_id',
+                       'chromosome_name',
+                       'chromosome_position',
+                       'chromosome_region')]
+```
+
+There are `r n(my_variants1)` variants associated with gene RNU6-367P. Now, for gene TOPAZ1:
+
+```{r}
+my_variants2 <- get_variants(gene_name = 'TOPAZ1')
+
+my_variants2@variants[c('variant_id',
+                       'chromosome_name',
+                       'chromosome_position',
+                       'chromosome_region')]
+```
+
+There are `r n(my_variants2)` variants associated with gene TOPAZ1. To find those variants simultaneously associated with both genes, you can intersect the two [variants](https://rmagno.eu/gwasrapidd/reference/variants-class.html) objects using `intersect()`:
+
+
+```{r}
+variants_intersect <- intersect(my_variants1, my_variants2)
+variants_intersect@variants[c('variant_id',
+                       'chromosome_name',
+                       'chromosome_position',
+                       'chromosome_region')]
+```
+
+Apparently only `r n(variants_intersect)` variant(s) is related to both genes RNU6-367P and TOPAZ1.
 
 
 <!--
