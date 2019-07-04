@@ -7,7 +7,7 @@
 \description{
 The variants object consists of four slots, each a table
 (\code{\link[tibble]{tibble}}), that combined form a relational database of a
-subset of GWAS Catalog variants Each variant is an observation (row) in the
+subset of GWAS Catalog variants. Each variant is an observation (row) in the
 \code{variants} table --- main table. All tables have the column
 \code{variant_id} as primary key.
 }
