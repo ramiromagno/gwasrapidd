@@ -66,10 +66,17 @@ v_obj_to_variants_tbl <- function(obj) {
 }
 
 #' @keywords internal
+is_mapped_gene <- function(is_closest_gene, is_intergenic, source) {
+  is_mapped_gene1 <- !is_intergenic & source == 'Ensembl'
+  is_mapped_gene2 <- is_intergenic & source == 'Ensembl' & is_closest_gene
+  if (any(is_mapped_gene1)) return(is_mapped_gene1)
+  else return(is_mapped_gene2)
+}
+
+#' @keywords internal
 v_obj_to_genomic_contexts_tbl <- function(obj) {
 
-  if(rlang::is_empty(obj)) return(genomic_contexts_tbl())
-
+  if (rlang::is_empty(obj)) return(genomic_contexts_tbl())
 
   purrr::imap_dfr(obj$rsId,
                   ~ {
@@ -77,17 +84,23 @@ v_obj_to_genomic_contexts_tbl <- function(obj) {
                       genomic_contexts_tbl()
                     } else {
                       gc <- obj$genomicContexts[[.y]]
+
+                      is_closest_gene = recode_missing(tws(gc$isClosestGene), type = 'lgl')
+                      is_intergenic = recode_missing(tws(gc$isIntergenic), type = 'lgl')
+                      source = recode_missing(tws(gc$source))
+
                       genomic_contexts_tbl(
                         variant_id = recode_missing(tws(obj$rsId[.y])),
                         gene_name = recode_missing(tws(gc$gene$geneName)),
                         chromosome_name = recode_missing(tws(gc$location$chromosomeName)),
                         chromosome_position = recode_missing(tws(gc$location$chromosomePosition), type = 'int'),
                         distance = recode_missing(tws(gc$distance), type = 'int'),
-                        is_closest_gene = recode_missing(tws(gc$isClosestGene), type = 'lgl'),
-                        is_intergenic = recode_missing(tws(gc$isIntergenic), type = 'lgl'),
+                        is_mapped_gene = is_mapped_gene(is_closest_gene, is_intergenic, source),
+                        is_closest_gene = is_closest_gene,
+                        is_intergenic = is_intergenic,
                         is_upstream = recode_missing(tws(gc$isUpstream), type = 'lgl'),
                         is_downstream = recode_missing(tws(gc$isDownstream), type = 'lgl'),
-                        source = recode_missing(tws(gc$source)),
+                        source = source,
                         mapping_method = recode_missing(tws(gc$mappingMethod))
                       )
                     }

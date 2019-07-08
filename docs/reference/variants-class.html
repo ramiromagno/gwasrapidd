@@ -78,7 +78,7 @@ variant_id as primary key." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gwasrapidd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.8</span>
       </span>
     </div>
 
@@ -177,6 +177,10 @@ location</a>.</p></dd>
 <dt>chromosome_position</dt><dd><p>Chromosome position.</p></dd>
 <dt>distance</dt><dd><p>Genomic distance between the variant and the gene (in base
 pairs).</p></dd>
+<dt>is_mapped_gene</dt><dd><p>Whether this is a mapped gene to this variant. A mapped
+gene is either an overlapping gene with the variant or the two closest genes
+upstream and downstream of the variant. Moreover, only genes whose mapping
+source is 'Ensembl' are considered.</p></dd>
 <dt>is_closest_gene</dt><dd><p>Whether this is the closest gene to this variant.</p></dd>
 <dt>is_intergenic</dt><dd><p>Whether this variant is intergenic, i.e, if there is no
 gene up or downstream within 100kb.</p></dd>

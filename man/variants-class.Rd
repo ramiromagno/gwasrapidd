@@ -40,6 +40,10 @@ location}.}
 \item{chromosome_position}{Chromosome position.}
 \item{distance}{Genomic distance between the variant and the gene (in base
 pairs).}
+\item{is_mapped_gene}{Whether this is a mapped gene to this variant. A mapped
+gene is either an overlapping gene with the variant or the two closest genes
+upstream and downstream of the variant. Moreover, only genes whose mapping
+source is 'Ensembl' are considered.}
 \item{is_closest_gene}{Whether this is the closest gene to this variant.}
 \item{is_intergenic}{Whether this variant is intergenic, i.e, if there is no
 gene up or downstream within 100kb.}

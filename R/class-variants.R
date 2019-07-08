@@ -33,6 +33,10 @@ setOldClass(c("tbl_df", "tbl", "data.frame"))
 #' \item{chromosome_position}{Chromosome position.}
 #' \item{distance}{Genomic distance between the variant and the gene (in base
 #' pairs).}
+#' \item{is_mapped_gene}{Whether this is a mapped gene to this variant. A mapped
+#' gene is either an overlapping gene with the variant or the two closest genes
+#' upstream and downstream of the variant. Moreover, only genes whose mapping
+#' source is 'Ensembl' are considered.}
 #' \item{is_closest_gene}{Whether this is the closest gene to this variant.}
 #' \item{is_intergenic}{Whether this variant is intergenic, i.e, if there is no
 #' gene up or downstream within 100kb.}
@@ -161,6 +165,7 @@ genomic_contexts_tbl <- function(variant_id = character(),
                                  chromosome_name = character(),
                                  chromosome_position = integer(),
                                  distance = integer(),
+                                 is_mapped_gene = logical(),
                                  is_closest_gene = logical(),
                                  is_intergenic = logical(),
                                  is_upstream = logical(),
@@ -174,6 +179,7 @@ genomic_contexts_tbl <- function(variant_id = character(),
     chromosome_name = chromosome_name,
     chromosome_position = chromosome_position,
     distance = distance,
+    is_mapped_gene = is_mapped_gene,
     is_closest_gene = is_closest_gene,
     is_intergenic = is_intergenic,
     is_upstream = is_upstream,
