@@ -67,3 +67,13 @@ variants@variants[c('variant_id', 'functional_class')]
 Please note that the gwasrapidd project is released with a [Contributor
 Code of Conduct](.github/CODE_OF_CONDUCT.md). By contributing to this
 project, you agree to abide by its terms.
+
+## Similar projects
+
+  - Bioconductor R package *gwascat* by Vincent J Carey:
+    <https://www.bioconductor.org/packages/release/bioc/html/gwascat.html>
+  - Web application *PhenoScanner V2* by Mihir A. Kamat, James R.
+    Staley, and others: <http://www.phenoscanner.medschl.cam.ac.uk/>
+  - Web application *GWEHS: Genome-Wide Effect sizes and Heritability
+    Screener* by Eugenio López-Cortegano and Armando Caballero:
+    <http://gwehs.uvigo.es/>
