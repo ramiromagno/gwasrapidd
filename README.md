@@ -29,7 +29,7 @@ You can install the current version of gwasrapidd with:
 remotes::install_github("ramiromagno/gwasrapidd")
 ```
 
-## Cheatsheet
+## Cheatsheetor this publication from within R:
 
 <a href="https://github.com/rstudio/cheatsheets/blob/master/gwasrapidd.pdf"><img src="https://raw.githubusercontent.com/rstudio/cheatsheets/master/pngs/gwasrapidd.png" width="420" height="300"/></a>
 
