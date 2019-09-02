@@ -10,7 +10,7 @@ status](https://ci.appveyor.com/api/projects/status/github/ramiromagno/gwasrapid
 [![codecov](https://codecov.io/gh/ramiromagno/gwasrapidd/branch/master/graph/badge.svg)](https://codecov.io/gh/ramiromagno/gwasrapidd)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![](https://img.shields.io/badge/devel%20version-0.99.8-blue.svg)](https://github.com/ramiromagno/gwasrapidd)
 
 The goal of gwasrapidd is to provide programmatic access to the
@@ -22,7 +22,7 @@ Get started by reading the
 
 ## Installation
 
-You can install the current, experimental version of gwasrapidd with:
+You can install the current version of gwasrapidd with:
 
 ``` r
 # install.packages("remotes")
