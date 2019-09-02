@@ -106,3 +106,15 @@ project, you agree to abide by its terms.
   - Web application *GWEHS: Genome-Wide Effect sizes and Heritability
     Screener* by Eugenio López-Cortegano and Armando Caballero:
     <http://gwehs.uvigo.es/>
+
+## Acknowledgements
+
+This work would have not been possible without the precious help from
+the [GWAS Catalog
+team](http://www.ensembl.info/2018/06/28/ten-years-of-the-gwas-catalog-past-present-and-future/),
+particularly [Daniel
+Suveges](https://www.ebi.ac.uk/about/people/daniel-suveges).
+
+We also thank [Hadley](http://hadley.nz/)’s team for all the brilliant
+software that has influenced so profoundly the development of this
+package.
