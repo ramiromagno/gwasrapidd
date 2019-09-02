@@ -107,13 +107,13 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>You can install the current, experimental version of gwasrapidd with:</p>
+<p>You can install the current version of gwasrapidd with:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># install.packages("remotes")</span></a>
 <a class="sourceLine" id="cb1-2" data-line-number="2">remotes<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/remotes/topics/install_github">install_github</a></span>(<span class="st">"ramiromagno/gwasrapidd"</span>)</a></code></pre></div>
 </div>
-<div id="cheatsheet" class="section level2">
+<div id="cheatsheetor-this-publication-from-within-r" class="section level2">
 <h2 class="hasAnchor">
-<a href="#cheatsheet" class="anchor"></a>Cheatsheet</h2>
+<a href="#cheatsheetor-this-publication-from-within-r" class="anchor"></a>Cheatsheetor this publication from within R:</h2>
 <p><a href="https://github.com/rstudio/cheatsheets/blob/master/gwasrapidd.pdf"><img src="https://raw.githubusercontent.com/rstudio/cheatsheets/master/pngs/gwasrapidd.png" width="420" height="300"></a></p>
 </div>
 <div id="example" class="section level2">
@@ -139,6 +139,31 @@
 <a class="sourceLine" id="cb3-9" data-line-number="9">## 4 rs3757318  intron_variant     </a>
 <a class="sourceLine" id="cb3-10" data-line-number="10">## 5 rs10771399 intergenic_variant</a></code></pre></div>
 </div>
+<div id="citing-this-work" class="section level2">
+<h2 class="hasAnchor">
+<a href="#citing-this-work" class="anchor"></a>Citing this work</h2>
+<p>gwasrapidd was published in Bioinformatics in 2019: <a href="https://doi.org/10.1093/bioinformatics/btz605" class="uri">https://doi.org/10.1093/bioinformatics/btz605</a>.</p>
+<p>To generate a citation for this publication from within R:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/citation">citation</a></span>(<span class="st">'gwasrapidd'</span>)</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">## </a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">## To cite gwasrapidd in publications use:</a>
+<a class="sourceLine" id="cb4-4" data-line-number="4">## </a>
+<a class="sourceLine" id="cb4-5" data-line-number="5">##   Ramiro Magno, Ana-Teresa Maia, gwasrapidd: an R package to</a>
+<a class="sourceLine" id="cb4-6" data-line-number="6">##   query, download and wrangle GWAS Catalog data, Bioinformatics,</a>
+<a class="sourceLine" id="cb4-7" data-line-number="7">##   btz605, 2 August 2019, Pages 1-2,</a>
+<a class="sourceLine" id="cb4-8" data-line-number="8">##   https://doi.org/10.1093/bioinformatics/btz605</a>
+<a class="sourceLine" id="cb4-9" data-line-number="9">## </a>
+<a class="sourceLine" id="cb4-10" data-line-number="10">## A BibTeX entry for LaTeX users is</a>
+<a class="sourceLine" id="cb4-11" data-line-number="11">## </a>
+<a class="sourceLine" id="cb4-12" data-line-number="12">##   @Article{,</a>
+<a class="sourceLine" id="cb4-13" data-line-number="13">##     title = {gwasrapidd: an R package to query, download and wrangle GWAS Catalog data},</a>
+<a class="sourceLine" id="cb4-14" data-line-number="14">##     author = {Ramiro Magno and Ana-Teresa Maia},</a>
+<a class="sourceLine" id="cb4-15" data-line-number="15">##     journal = {Bioinformatics},</a>
+<a class="sourceLine" id="cb4-16" data-line-number="16">##     year = {2019},</a>
+<a class="sourceLine" id="cb4-17" data-line-number="17">##     pages = {1--2},</a>
+<a class="sourceLine" id="cb4-18" data-line-number="18">##     url = {https://doi.org/10.1093/bioinformatics/btz605},</a>
+<a class="sourceLine" id="cb4-19" data-line-number="19">##   }</a></code></pre></div>
+</div>
 <div id="contributors" class="section level2">
 <h2 class="hasAnchor">
 <a href="#contributors" class="anchor"></a>Contributors</h2>
@@ -155,6 +180,12 @@
 <li>Web application <em>GWEHS: Genome-Wide Effect sizes and Heritability Screener</em> by Eugenio López-Cortegano and Armando Caballero: <a href="http://gwehs.uvigo.es/" class="uri">http://gwehs.uvigo.es/</a>
 </li>
 </ul>
+</div>
+<div id="acknowledgements" class="section level2">
+<h2 class="hasAnchor">
+<a href="#acknowledgements" class="anchor"></a>Acknowledgements</h2>
+<p>This work would have not been possible without the precious help from the <a href="http://www.ensembl.info/2018/06/28/ten-years-of-the-gwas-catalog-past-present-and-future/">GWAS Catalog team</a>, particularly <a href="https://www.ebi.ac.uk/about/people/daniel-suveges">Daniel Suveges</a>.</p>
+<p>We also thank <a href="http://hadley.nz/">Hadley</a>’s team for all the brilliant software that has influenced so profoundly the development of this package.</p>
 </div>
 </div>
   </div>
@@ -191,6 +222,7 @@
 </ul>
 </div>
 
+
       <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
@@ -198,7 +230,7 @@
 <li><a href="https://ci.appveyor.com/project/ramiromagno/gwasrapidd"><img src="https://ci.appveyor.com/api/projects/status/github/ramiromagno/gwasrapidd?branch=master&amp;svg=true" alt="AppVeyor build status"></a></li>
 <li><a href="https://codecov.io/gh/ramiromagno/gwasrapidd"><img src="https://codecov.io/gh/ramiromagno/gwasrapidd/branch/master/graph/badge.svg" alt="codecov"></a></li>
 <li><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a></li>
-<li><a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="lifecycle"></a></li>
+<li><a href="https://www.tidyverse.org/lifecycle/#maturing"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="lifecycle"></a></li>
 <li><a href="https://github.com/ramiromagno/gwasrapidd"><img src="https://img.shields.io/badge/devel%20version-0.99.8-blue.svg"></a></li>
 </ul>
 </div>
