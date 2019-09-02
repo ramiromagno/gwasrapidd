@@ -62,6 +62,35 @@ variants@variants[c('variant_id', 'functional_class')]
 ## 5 rs10771399 intergenic_variant
 ```
 
+## Citing this work
+
+gwasrapidd was published in Bioinformatics in 2019:
+<https://doi.org/10.1093/bioinformatics/btz605>.
+
+To generate a citation for this publication from within R:
+
+``` r
+citation('gwasrapidd')
+## 
+## To cite gwasrapidd in publications use:
+## 
+##   Ramiro Magno, Ana-Teresa Maia, gwasrapidd: an R package to
+##   query, download and wrangle GWAS Catalog data, Bioinformatics,
+##   btz605, 2 August 2019, Pages 1-2,
+##   https://doi.org/10.1093/bioinformatics/btz605
+## 
+## A BibTeX entry for LaTeX users is
+## 
+##   @Article{,
+##     title = {gwasrapidd: an R package to query, download and wrangle GWAS Catalog data},
+##     author = {Ramiro Magno and Ana-Teresa Maia},
+##     journal = {Bioinformatics},
+##     year = {2019},
+##     pages = {1--2},
+##     url = {https://doi.org/10.1093/bioinformatics/btz605},
+##   }
+```
+
 ## Contributors
 
 Please note that the gwasrapidd project is released with a [Contributor

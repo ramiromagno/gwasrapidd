@@ -56,6 +56,16 @@ variants <- get_variants(study_id = 'GCST002305')
 variants@variants[c('variant_id', 'functional_class')]
 ```
 
+## Citing this work
+
+gwasrapidd was published in Bioinformatics in 2019: https://doi.org/10.1093/bioinformatics/btz605.
+
+To generate a citation for this publication from within R:
+
+```{r citation}
+citation('gwasrapidd')
+```
+
 ## Contributors
 
 Please note that the gwasrapidd project is released with a [Contributor Code of Conduct](.github/CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
