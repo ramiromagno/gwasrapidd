@@ -3,6 +3,8 @@
 
 # gwasrapidd <img src="man/figures/logo.svg" align="right" height=140/>
 
+[![](https://img.shields.io/badge/doi-10.1093/bioinformatics/btz605-blue.svg)](https://doi.org/10.1093/bioinformatics/btz605)
+[![](https://img.shields.io/badge/Altmetric-38-yellow.svg)](https://www.altmetric.com/details/64505748)
 [![Travis build
 status](https://travis-ci.org/ramiromagno/gwasrapidd.svg?branch=master)](https://travis-ci.org/ramiromagno/gwasrapidd)
 [![AppVeyor build
