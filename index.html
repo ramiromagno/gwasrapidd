@@ -13,8 +13,9 @@
 <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="apple-touch-icon-76x76.png">
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><link href="extra.css" rel="stylesheet">
 <meta property="og:title" content="REST API Client for the NHGRI-EBI GWAS Catalog">
 <meta property="og:description" content="gwasrapidd: GWAS R API Data Download.
@@ -28,7 +29,7 @@
 <![endif]-->
 </head>
 <body>
-    <div class="container template-article">
+    <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -48,7 +49,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -77,7 +78,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/ramiromagno/gwasrapidd">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -90,13 +91,9 @@
 <!--/.navbar -->
 
       
-      </header><div class="row">
-  <div class="col-md-9 contents">
-    
 
-    
-    
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+      </header><div class="row">
+  <div class="contents col-md-9">
 <div id="gwasrapidd" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#gwasrapidd" class="anchor"></a>gwasrapidd <img src="reference/figures/logo.svg" align="right" height="140/">
@@ -109,7 +106,7 @@
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>You can install the current version of gwasrapidd with:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># install.packages("remotes")</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">remotes<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/remotes/topics/install_github">install_github</a></span>(<span class="st">"ramiromagno/gwasrapidd"</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb1-2" data-line-number="2">remotes<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/remotes/man/install_github.html">install_github</a></span>(<span class="st">"ramiromagno/gwasrapidd"</span>)</a></code></pre></div>
 </div>
 <div id="cheatsheet" class="section level2">
 <h2 class="hasAnchor">
@@ -120,7 +117,7 @@
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
 <p>Get the study related to triple-negative breast cancer:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(gwasrapidd)</a>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(gwasrapidd)</a>
 <a class="sourceLine" id="cb2-2" data-line-number="2">studies &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_studies.html">get_studies</a></span>(<span class="dt">efo_trait =</span> <span class="st">'triple-negative breast cancer'</span>)</a>
 <a class="sourceLine" id="cb2-3" data-line-number="3">studies<span class="op">@</span>studies[<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>]</a>
 <a class="sourceLine" id="cb2-4" data-line-number="4">## # A tibble: 1 x 4</a>
@@ -129,7 +126,7 @@
 <a class="sourceLine" id="cb2-7" data-line-number="7">## 1 GCST0023… Breast cancer (estro… 1,529 European ance… 2,148 European ance…</a></code></pre></div>
 <p>Find associated variants:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">variants &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_variants.html">get_variants</a></span>(<span class="dt">study_id =</span> <span class="st">'GCST002305'</span>)</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2">variants<span class="op">@</span>variants[<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">'variant_id'</span>, <span class="st">'functional_class'</span>)]</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">variants<span class="op">@</span>variants[<span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'variant_id'</span>, <span class="st">'functional_class'</span>)]</a>
 <a class="sourceLine" id="cb3-3" data-line-number="3">## # A tibble: 5 x 2</a>
 <a class="sourceLine" id="cb3-4" data-line-number="4">##   variant_id functional_class   </a>
 <a class="sourceLine" id="cb3-5" data-line-number="5">##   &lt;chr&gt;      &lt;chr&gt;              </a>
@@ -144,7 +141,7 @@
 <a href="#citing-this-work" class="anchor"></a>Citing this work</h2>
 <p>gwasrapidd was published in Bioinformatics in 2019: <a href="https://doi.org/10.1093/bioinformatics/btz605" class="uri">https://doi.org/10.1093/bioinformatics/btz605</a>.</p>
 <p>To generate a citation for this publication from within R:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/citation">citation</a></span>(<span class="st">'gwasrapidd'</span>)</a>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/utils/citation.html">citation</a></span>(<span class="st">'gwasrapidd'</span>)</a>
 <a class="sourceLine" id="cb4-2" data-line-number="2">## </a>
 <a class="sourceLine" id="cb4-3" data-line-number="3">## To cite gwasrapidd in publications use:</a>
 <a class="sourceLine" id="cb4-4" data-line-number="4">## </a>
@@ -207,6 +204,13 @@
 <li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
+<div class="community">
+<h2>Community</h2>
+<ul class="list-unstyled">
+<li><a href="CONTRIBUTING.html">Contributing guide</a></li>
+<li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
+</ul>
+</div>
 <div class="citation">
 <h2>Citation</h2>
 <ul class="list-unstyled">
@@ -216,16 +220,17 @@
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
-<li>Ramiro Magno <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0001-5226-3441" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID" height="16"></a> </li>
-<li>Ana-Teresa Maia <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-0454-9207" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID" height="16"></a> </li>
+<li>Ramiro Magno <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0001-5226-3441" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID"></a> </li>
+<li>Ana-Teresa Maia <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-0454-9207" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID"></a> </li>
 <li>Centre for Biomedical Research, University of Algarve <br><small class="roles"> Copyright holder, funder </small>  </li>
 </ul>
 </div>
 
-
-      <div class="dev-status">
+  <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
+<li><a href="https://doi.org/10.1093/bioinformatics/btz605"><img src="https://img.shields.io/badge/doi-10.1093/bioinformatics/btz605-blue.svg"></a></li>
+<li><a href="https://www.altmetric.com/details/64505748"><img src="https://img.shields.io/badge/Altmetric-38-yellow.svg"></a></li>
 <li><a href="https://travis-ci.org/ramiromagno/gwasrapidd"><img src="https://travis-ci.org/ramiromagno/gwasrapidd.svg?branch=master" alt="Travis build status"></a></li>
 <li><a href="https://ci.appveyor.com/project/ramiromagno/gwasrapidd"><img src="https://ci.appveyor.com/api/projects/status/github/ramiromagno/gwasrapidd?branch=master&amp;svg=true" alt="AppVeyor build status"></a></li>
 <li><a href="https://codecov.io/gh/ramiromagno/gwasrapidd"><img src="https://codecov.io/gh/ramiromagno/gwasrapidd/branch/master/graph/badge.svg" alt="codecov"></a></li>
@@ -235,7 +240,6 @@
 </ul>
 </div>
 </div>
-
 </div>
 
 
@@ -244,12 +248,14 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
 </div>
+
       </footer>
 </div>
 
   
+
 
   </body>
 </html>

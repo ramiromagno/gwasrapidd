@@ -25,13 +25,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -66,6 +68,7 @@ set_operation to 'intersection'." />
 <![endif]-->
 
 
+
   </head>
 
   <body>
@@ -90,7 +93,7 @@ set_operation to 'intersection'." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -119,7 +122,7 @@ set_operation to 'intersection'." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/ramiromagno/gwasrapidd">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -130,6 +133,7 @@ set_operation to 'intersection'." />
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -189,7 +193,8 @@ identifiers.</p></td>
       <td><p>A named list of three vectors:</p><dl class='dl-horizontal'>
 <dt>chromosome</dt><dd><p>A character vector of chromosome names of the
 form 1--22, X or Y.</p></dd> <dt>start</dt><dd><p>A numeric vector of start positions,
-starting at 1.</p></dd> <dt>end</dt><dd><p>A numeric vector of end positions.</p></dd> </dl><p>The three vectors need to be of the same length so that <code>chromosome</code>
+starting at 1.</p></dd> <dt>end</dt><dd><p>A numeric vector of end positions.</p></dd> 
+</dl><p>The three vectors need to be of the same length so that <code>chromosome</code>
 names, <code>start</code> and <code>end</code> positions can be matched by position.</p></td>
     </tr>
     <tr>
@@ -253,7 +258,79 @@ passing a vector of identifiers to <code>variant_id</code>.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Get variants by study identifier</span>
-<span class='fu'>get_variants</span>(<span class='kw'>study_id</span> <span class='kw'>=</span> <span class='st'>'GCST001085'</span>)</div><div class='output co'>#&gt; An object of class "variants"
+<span class='fu'>get_variants</span>(<span class='kw'>study_id</span> <span class='kw'>=</span> <span class='st'>'GCST001085'</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; An object of class "variants"
 #&gt; Slot "variants":
 #&gt; # A tibble: 18 x 7
 #&gt;    variant_id merged functional_class chromosome_name chromosome_posi…
@@ -297,7 +374,7 @@ passing a vector of identifiers to <code>variant_id</code>.</p>
 #&gt; #   mapping_method &lt;chr&gt;
 #&gt; 
 #&gt; Slot "ensembl_ids":
-#&gt; # A tibble: 80 x 3
+#&gt; # A tibble: 86 x 3
 #&gt;    variant_id gene_name  ensembl_id     
 #&gt;    &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          
 #&gt;  1 rs10496288 AC138623.1 ENSG00000223977
@@ -309,8 +386,8 @@ passing a vector of identifiers to <code>variant_id</code>.</p>
 #&gt;  7 rs7827545  ZFAT       ENSG00000066827
 #&gt;  8 rs7827545  RF02211    ENSG00000276140
 #&gt;  9 rs10785581 AC079950.1 ENSG00000257657
-#&gt; 10 rs10785581 RF00026    ENSG00000283290
-#&gt; # … with 70 more rows
+#&gt; 10 rs10785581 RF00026    ENSG00000263896
+#&gt; # … with 76 more rows
 #&gt; 
 #&gt; Slot "entrez_ids":
 #&gt; # A tibble: 64 x 3
@@ -329,7 +406,115 @@ passing a vector of identifiers to <code>variant_id</code>.</p>
 #&gt; # … with 54 more rows
 #&gt; </div><div class='input'>
 <span class='co'># Get variants by association identifier</span>
-<span class='fu'>get_variants</span>(<span class='kw'>association_id</span> <span class='kw'>=</span> <span class='st'>'25389945'</span>)</div><div class='output co'>#&gt; An object of class "variants"
+<span class='fu'>get_variants</span>(<span class='kw'>association_id</span> <span class='kw'>=</span> <span class='st'>'25389945'</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; An object of class "variants"
 #&gt; Slot "variants":
 #&gt; # A tibble: 27 x 7
 #&gt;    variant_id merged functional_class chromosome_name chromosome_posi…
@@ -374,7 +559,7 @@ passing a vector of identifiers to <code>variant_id</code>.</p>
 #&gt;  3 rs9486815  OSTM1      ENSG00000081087
 #&gt;  4 rs9486815  Z98200.1   ENSG00000271734
 #&gt;  5 rs9486815  SNX3       ENSG00000112335
-#&gt;  6 rs9486815  RF00019    ENSG00000207326
+#&gt;  6 rs9486815  RF00019    ENSG00000238797
 #&gt;  7 rs9486815  AL078596.1 ENSG00000279398
 #&gt;  8 rs4245535  OSTM1      ENSG00000081087
 #&gt;  9 rs4245535  AL078596.1 ENSG00000279398
@@ -398,7 +583,11 @@ passing a vector of identifiers to <code>variant_id</code>.</p>
 #&gt; # … with 143 more rows
 #&gt; </div><div class='input'>
 <span class='co'># Get a variant by its identifier</span>
-<span class='fu'>get_variants</span>(<span class='kw'>variant_id</span> <span class='kw'>=</span> <span class='st'>'rs3798440'</span>)</div><div class='output co'>#&gt; An object of class "variants"
+<span class='fu'>get_variants</span>(<span class='kw'>variant_id</span> <span class='kw'>=</span> <span class='st'>'rs3798440'</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; An object of class "variants"
 #&gt; Slot "variants":
 #&gt; # A tibble: 1 x 7
 #&gt;   variant_id merged functional_class chromosome_name chromosome_posi…
@@ -430,7 +619,7 @@ passing a vector of identifiers to <code>variant_id</code>.</p>
 #&gt; 2 rs3798440  MYO6      ENSG00000196586
 #&gt; 3 rs3798440  RNA5SP209 ENSG00000223169
 #&gt; 4 rs3798440  RNU6-155P ENSG00000252156
-#&gt; 5 rs3798440  RF00019   ENSG00000207326
+#&gt; 5 rs3798440  RF00019   ENSG00000238797
 #&gt; 
 #&gt; Slot "entrez_ids":
 #&gt; # A tibble: 4 x 3
@@ -442,7 +631,27 @@ passing a vector of identifiers to <code>variant_id</code>.</p>
 #&gt; 4 rs3798440  RNU6-155P 106481224
 #&gt; </div><div class='input'>
 <span class='co'># Get variants by EFO trait identifier</span>
-<span class='fu'>get_variants</span>(<span class='kw'>efo_id</span> <span class='kw'>=</span> <span class='st'>'EFO_0005537'</span>)</div><div class='output co'>#&gt; An object of class "variants"
+<span class='fu'>get_variants</span>(<span class='kw'>efo_id</span> <span class='kw'>=</span> <span class='st'>'EFO_0005537'</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(ensemblGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
+#&gt; <span class='warning'>Please use `cols = c(entrezGeneIds)`</span></div><div class='output co'>#&gt; An object of class "variants"
 #&gt; Slot "variants":
 #&gt; # A tibble: 5 x 7
 #&gt;   variant_id merged functional_class chromosome_name chromosome_posi…
@@ -473,7 +682,7 @@ passing a vector of identifiers to <code>variant_id</code>.</p>
 #&gt; #   mapping_method &lt;chr&gt;
 #&gt; 
 #&gt; Slot "ensembl_ids":
-#&gt; # A tibble: 46 x 3
+#&gt; # A tibble: 43 x 3
 #&gt;    variant_id gene_name  ensembl_id     
 #&gt;    &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          
 #&gt;  1 rs4245739  AL512306.1 ENSG00000236779
@@ -483,10 +692,10 @@ passing a vector of identifiers to <code>variant_id</code>.</p>
 #&gt;  5 rs4245739  MDM4       ENSG00000198625
 #&gt;  6 rs4245739  RNA5SP74   ENSG00000200408
 #&gt;  7 rs4245739  LRRN2      ENSG00000170382
-#&gt;  8 rs10069690 CLPTM1L    ENSG00000049656
-#&gt;  9 rs10069690 CLPTM1L    ENSG00000274811
-#&gt; 10 rs10069690 TERT       ENSG00000164362
-#&gt; # … with 36 more rows
+#&gt;  8 rs10069690 TERT       ENSG00000164362
+#&gt;  9 rs10069690 MIR4457    ENSG00000263670
+#&gt; 10 rs10069690 CLPTM1L    ENSG00000049656
+#&gt; # … with 33 more rows
 #&gt; 
 #&gt; Slot "entrez_ids":
 #&gt; # A tibble: 39 x 3
@@ -500,8 +709,8 @@ passing a vector of identifiers to <code>variant_id</code>.</p>
 #&gt;  6 rs4245739  RNA5SP74     100873308
 #&gt;  7 rs4245739  TRK-TTT3-2   100189425
 #&gt;  8 rs4245739  LRRN2        10446    
-#&gt;  9 rs10069690 CLPTM1L      81037    
-#&gt; 10 rs10069690 TERT         7015     
+#&gt;  9 rs10069690 TERT         7015     
+#&gt; 10 rs10069690 MIR4457      100616235
 #&gt; # … with 29 more rows
 #&gt; </div><div class='input'>
 </div></pre>
@@ -518,19 +727,23 @@ passing a vector of identifiers to <code>variant_id</code>.</p>
   </div>
 </div>
 
+
       <footer>
       <div class="copyright">
   <p>Developed by Ramiro Magno, Ana-Teresa Maia, Centre for Biomedical Research, University of Algarve.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

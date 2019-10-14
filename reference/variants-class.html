@@ -25,13 +25,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -64,6 +66,7 @@ variant_id as primary key." />
 <![endif]-->
 
 
+
   </head>
 
   <body>
@@ -88,7 +91,7 @@ variant_id as primary key." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -117,7 +120,7 @@ variant_id as primary key." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/ramiromagno/gwasrapidd">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -128,6 +131,7 @@ variant_id as primary key." />
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -151,7 +155,8 @@ subset of GWAS Catalog variants. Each variant is an observation (row) in the
     <h2 class="hasAnchor" id="slots"><a class="anchor" href="#slots"></a>Slots</h2>
 
     
-    <dl class='dl-horizontal'>
+
+<dl class='dl-horizontal'>
 <dt><code>variants</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing variants. Columns:
 <dl class='dl-horizontal'>
 <dt>variant_id</dt><dd><p>Variant identifier, e.g., <code>'rs1333048'</code>.</p></dd>
@@ -165,9 +170,9 @@ Variation - Calculated variant consequences</a>.</p></dd>
 <dt>chromosome_position</dt><dd><p>Chromosome position.</p></dd>
 <dt>chromosome_region</dt><dd><p><a href='https://tinyurl.com/yc7qrhxe'>Cytogenetic
 location</a>.</p></dd>
-<dt>last_update_date</dt><dd><p>Last time this variant was updated.</p></dd>
-</dl></p></dd>
-    <dt><code>genomic_contexts</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing genomic
+<dt>last_update_date</dt><dd><p>Last time this variant was updated.</p></dd></dl></p></dd>
+
+<dt><code>genomic_contexts</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing genomic
   contexts associated with each variant. Columns:
 <dl class='dl-horizontal'>
 <dt>variant_id</dt><dd><p>Variant identifier.</p></dd>
@@ -187,9 +192,9 @@ gene up or downstream within 100kb.</p></dd>
 <dt>is_upstream</dt><dd><p>Whether this variant is upstream of this gene.</p></dd>
 <dt>is_downstream</dt><dd><p>Whether this variant is downstream of this gene.</p></dd>
 <dt>source</dt><dd><p>Gene mapping source, either <code>Ensembl</code> or <code>NCBI</code>.</p></dd>
-<dt>mapping_method</dt><dd><p>Gene mapping method.</p></dd>
-</dl></p></dd>
-    <dt><code>ensembl_ids</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing gene Ensembl
+<dt>mapping_method</dt><dd><p>Gene mapping method.</p></dd></dl></p></dd>
+
+<dt><code>ensembl_ids</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing gene Ensembl
   identifiers associated with each genomic context. Columns:
 <dl class='dl-horizontal'>
 <dt>variant_id</dt><dd><p>Variant identifier.</p></dd>
@@ -197,9 +202,9 @@ gene up or downstream within 100kb.</p></dd>
 <a href='https://www.genenames.org/'>HUGO Gene Nomenclature (HGNC)</a>.</p></dd>
 <dt>ensembl_id</dt><dd><p>The Ensembl identifier of an Ensembl gene, see Section
 <a href='https://tinyurl.com/yxufd22b'>Gene
-annotation in Ensembl</a> for more information.</p></dd>
-</dl></p></dd>
-    <dt><code>entrez_ids</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing gene Entrez
+annotation in Ensembl</a> for more information.</p></dd></dl></p></dd>
+
+<dt><code>entrez_ids</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing gene Entrez
   identifiers associated with each genomic context. Columns:
 <dl class='dl-horizontal'>
 <dt>variant_id</dt><dd><p>Variant identifier.</p></dd>
@@ -207,8 +212,8 @@ annotation in Ensembl</a> for more information.</p></dd>
 <a href='https://www.genenames.org/'>HUGO Gene Nomenclature (HGNC)</a>.</p></dd>
 <dt>entrez_id</dt><dd><p>The Entrez identifier of a gene, see ref.
 <a href='https://doi.org/10.1093%2Fnar%2Fgkq1237'>10.1093/nar/gkq1237</a> for
-more information.</p></dd>
-</dl></p></dd>
+more information.</p></dd></dl></p></dd>
+
 </dl>
 
   </div>
@@ -221,19 +226,23 @@ more information.</p></dd>
   </div>
 </div>
 
+
       <footer>
       <div class="copyright">
   <p>Developed by Ramiro Magno, Ana-Teresa Maia, Centre for Biomedical Research, University of Algarve.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 
