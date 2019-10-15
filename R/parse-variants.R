@@ -12,7 +12,7 @@ v_obj_to_variants <- function(obj) {
 
   # If the object is empty return the variants S4 object as is, i.e., with its
   # tables empty.
-  if(rlang::is_empty(v_obj)) return(v)
+  if (rlang::is_empty(v_obj)) return(v)
 
   v@variants <- v_obj_to_variants_tbl(v_obj)
   v@genomic_contexts <- v_obj_to_genomic_contexts_tbl(v_obj)
@@ -25,7 +25,7 @@ v_obj_to_variants <- function(obj) {
 #' @keywords internal
 v_obj_to_variants_tbl <- function(obj) {
 
-  if(rlang::is_empty(obj)) return(variants_tbl())
+  if (rlang::is_empty(obj)) return(variants_tbl())
 
   cols <- c("variant_id",
             "merged",
@@ -110,7 +110,7 @@ v_obj_to_genomic_contexts_tbl <- function(obj) {
 #' @keywords internal
 v_obj_to_ensembl_ids_tbl <- function(obj) {
 
-  if(rlang::is_empty(obj)) return(v_ensembl_ids_tbl())
+  if (rlang::is_empty(obj)) return(v_ensembl_ids_tbl())
 
   obj_to_ensembl_id_tbl <- function(variant_id, gene_obj) {
     if (rlang::is_empty(gene_obj))
@@ -118,8 +118,8 @@ v_obj_to_ensembl_ids_tbl <- function(obj) {
 
     tbl <-
       tibble::as_tibble(gene_obj[c("geneName", "ensemblGeneIds")]) %>%
-      tidyr::unnest() %>% # This is no typo.
-      tidyr::unnest()
+      unnest(cols = "ensemblGeneIds") %>% # This is no typo.
+      unnest(cols = "ensemblGeneIds")
 
     tbl2 <- v_ensembl_ids_tbl(
       variant_id = recode_missing(tws(variant_id)),
@@ -145,7 +145,7 @@ v_obj_to_ensembl_ids_tbl <- function(obj) {
 #' @keywords internal
 v_obj_to_entrez_ids_tbl <- function(obj) {
 
-  if(rlang::is_empty(obj)) return(v_entrez_ids_tbl())
+  if (rlang::is_empty(obj)) return(v_entrez_ids_tbl())
 
   obj_to_entrez_id_tbl <- function(variant_id, gene_obj) {
     if (rlang::is_empty(gene_obj))
@@ -153,12 +153,12 @@ v_obj_to_entrez_ids_tbl <- function(obj) {
 
     tbl <-
       tibble::as_tibble(gene_obj[c("geneName", "entrezGeneIds")]) %>%
-      tidyr::unnest()
+      unnest(cols = "entrezGeneIds")
 
     # Hack, need to come back to this again
     # Test with these SNPs: 'rs147903261' and 'rs267606894'.
-    if(!identical(nrow(tbl), 0L))
-      tbl <- tidyr::unnest(tbl)
+    if (!identical(nrow(tbl), 0L))
+      tbl <- tidyr::unnest(tbl, cols = 'entrezGeneIds')
 
     tbl2 <- v_entrez_ids_tbl(
       variant_id = recode_missing(tws(variant_id)),

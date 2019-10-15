@@ -61,3 +61,19 @@ empty_to_na <- function(x) {
     return(x)
   }
 }
+
+unnest <- function(...) {
+  tidyr_version <- as.character(utils::packageVersion('tidyr'))
+  if (identical(utils::compareVersion(tidyr_version, '1.0.0'), -1L)) {
+    legacy <- TRUE
+  } else {
+    legacy <- FALSE
+  }
+
+  if (legacy) {
+    return(tidyr::unnest_legacy(...))
+  }
+  else {
+    return(tidyr::unnest(...))
+  }
+}
