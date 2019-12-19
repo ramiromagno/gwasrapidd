@@ -92,8 +92,13 @@ v_obj_to_genomic_contexts_tbl <- function(obj) {
                       genomic_contexts_tbl(
                         variant_id = recode_missing(tws(obj$rsId[.y])),
                         gene_name = recode_missing(tws(gc$gene$geneName)),
-                        chromosome_name = recode_missing(tws(gc$location$chromosomeName)),
-                        chromosome_position = recode_missing(tws(gc$location$chromosomePosition), type = 'int'),
+                        # Temporary hack, waiting for confirmation from GWAS Catalog team on whether this
+                        # two variables have indeed been dropped.
+                        # https://github.com/ramiromagno/gwasrapidd/issues/5
+                        chromosome_name = recode_missing(tws(purrr::pluck(gc, 'location', 'chromosomeName', .default = NA_character_))),
+                        chromosome_position = recode_missing(tws(purrr::pluck(gc, 'location', 'chromosomePosition', .default = NA_character_)), type = 'int'),
+                        # chromosome_name = recode_missing(tws(gc$location$chromosomeName)),
+                        # chromosome_position = recode_missing(tws(gc$location$chromosomePosition), type = 'int'),
                         distance = recode_missing(tws(gc$distance), type = 'int'),
                         is_mapped_gene = is_mapped_gene(is_closest_gene, is_intergenic, source),
                         is_closest_gene = is_closest_gene,
