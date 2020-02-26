@@ -4,8 +4,10 @@
 \alias{open_in_gwas_catalog}
 \title{Browse GWAS Catalog entities from the GWAS Web Graphical User Interface}
 \usage{
-open_in_gwas_catalog(identifier, gwas_catalog_entity = c("study",
-  "variant", "trait", "gene", "region", "publication"))
+open_in_gwas_catalog(
+  identifier,
+  gwas_catalog_entity = c("study", "variant", "trait", "gene", "region", "publication")
+)
 }
 \arguments{
 \item{identifier}{A vector of identifiers. The identifiers can be: study

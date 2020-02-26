@@ -4,8 +4,10 @@
 \alias{filter_variants_by_standard_chromosomes}
 \title{Filter variants by standard human chromosomes.}
 \usage{
-filter_variants_by_standard_chromosomes(s4_variants,
-  chromosomes = c(seq_len(22), "X", "Y", "MT"))
+filter_variants_by_standard_chromosomes(
+  s4_variants,
+  chromosomes = c(seq_len(22), "X", "Y", "MT")
+)
 }
 \arguments{
 \item{s4_variants}{An object of class \linkS4class{variants}.}

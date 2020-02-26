@@ -4,13 +4,21 @@
 \alias{studies_tbl}
 \title{Creates a studies table.}
 \usage{
-studies_tbl(study_id = character(), reported_trait = character(),
+studies_tbl(
+  study_id = character(),
+  reported_trait = character(),
   initial_sample_size = character(),
-  replication_sample_size = character(), gxe = logical(),
-  gxg = logical(), snp_count = integer(), qualifier = character(),
-  imputed = logical(), pooled = logical(),
-  study_design_comment = character(), full_pvalue_set = logical(),
-  user_requested = logical())
+  replication_sample_size = character(),
+  gxe = logical(),
+  gxg = logical(),
+  snp_count = integer(),
+  qualifier = character(),
+  imputed = logical(),
+  pooled = logical(),
+  study_design_comment = character(),
+  full_pvalue_set = logical(),
+  user_requested = logical()
+)
 }
 \arguments{
 \item{study_id}{GWAS Catalog study accession identifier.}

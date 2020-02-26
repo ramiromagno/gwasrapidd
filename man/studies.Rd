@@ -4,13 +4,16 @@
 \alias{studies}
 \title{Constructor for the S4 studies object.}
 \usage{
-studies(studies = studies_tbl(),
+studies(
+  studies = studies_tbl(),
   genotyping_techs = genotyping_techs_tbl(),
-  platforms = platforms_tbl(), ancestries = ancestries_tbl(),
+  platforms = platforms_tbl(),
+  ancestries = ancestries_tbl(),
   ancestral_groups = ancestral_groups_tbl(),
   countries_of_origin = countries_tbl(),
   countries_of_recruitment = countries_tbl(),
-  publications = publications_tbl())
+  publications = publications_tbl()
+)
 }
 \arguments{
 \item{studies}{A \code{\link{studies_tbl}} tibble.}

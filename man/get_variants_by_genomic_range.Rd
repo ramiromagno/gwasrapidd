@@ -4,8 +4,14 @@
 \alias{get_variants_by_genomic_range}
 \title{Get GWAS Catalog variants by genomic range}
 \usage{
-get_variants_by_genomic_range(chromosome = NULL, start = NULL,
-  end = NULL, verbose = FALSE, warnings = TRUE, page_size = 20L)
+get_variants_by_genomic_range(
+  chromosome = NULL,
+  start = NULL,
+  end = NULL,
+  verbose = FALSE,
+  warnings = TRUE,
+  page_size = 20L
+)
 }
 \arguments{
 \item{chromosome}{A character vector of human chromosome names: autosomal

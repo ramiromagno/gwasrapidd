@@ -6,7 +6,7 @@
 \alias{gwasrapidd-package}
 \title{gwasrapidd: REST API Client for the NHGRI-EBI GWAS Catalog}
 \description{
-\if{html}{\figure{logo.png}{options: align='right'}}
+\if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 
 gwasrapidd: GWAS R API Data Download.
     gwasrapidd provides easy access to the NHGRI-EBI GWAS Catalog data by
@@ -21,11 +21,11 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Ramiro Magno \email{ramiro.magno@gmail.com} (0000-0001-5226-3441)
+\strong{Maintainer}: Ramiro Magno \email{ramiro.magno@gmail.com} (\href{https://orcid.org/0000-0001-5226-3441}{ORCID})
 
 Authors:
 \itemize{
-  \item Ana-Teresa Maia \email{maia.anateresa@gmail.com} (0000-0002-0454-9207)
+  \item Ana-Teresa Maia \email{maia.anateresa@gmail.com} (\href{https://orcid.org/0000-0002-0454-9207}{ORCID})
 }
 
 Other contributors:

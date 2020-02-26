@@ -4,9 +4,12 @@
 \alias{metadata_lst}
 \title{Generate a list to hold GWAS metadata}
 \usage{
-metadata_lst(ensembl_release_number = NA_integer_,
-  genome_build_version = NA_character_, dbsnp_version = NA_integer_,
-  usage_start_date = lubridate::ymd_hms())
+metadata_lst(
+  ensembl_release_number = NA_integer_,
+  genome_build_version = NA_character_,
+  dbsnp_version = NA_integer_,
+  usage_start_date = lubridate::ymd_hms()
+)
 }
 \arguments{
 \item{ensembl_release_number}{\href{https://www.ensembl.org/info/docs/api/versions.html}{Ensembl release

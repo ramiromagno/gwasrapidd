@@ -4,10 +4,15 @@
 \alias{publications_tbl}
 \title{Creates a publications table.}
 \usage{
-publications_tbl(study_id = character(), pubmed_id = integer(),
-  publication_date = lubridate::ymd(), publication = character(),
-  title = character(), author_fullname = character(),
-  author_orcid = character())
+publications_tbl(
+  study_id = character(),
+  pubmed_id = integer(),
+  publication_date = lubridate::ymd(),
+  publication = character(),
+  title = character(),
+  author_fullname = character(),
+  author_orcid = character()
+)
 }
 \arguments{
 \item{study_id}{GWAS Catalog study accession identifier.}

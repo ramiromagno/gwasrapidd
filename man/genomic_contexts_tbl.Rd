@@ -4,12 +4,20 @@
 \alias{genomic_contexts_tbl}
 \title{Creates a genomic contexts table.}
 \usage{
-genomic_contexts_tbl(variant_id = character(), gene_name = character(),
-  chromosome_name = character(), chromosome_position = integer(),
-  distance = integer(), is_mapped_gene = logical(),
-  is_closest_gene = logical(), is_intergenic = logical(),
-  is_upstream = logical(), is_downstream = logical(),
-  source = character(), mapping_method = character())
+genomic_contexts_tbl(
+  variant_id = character(),
+  gene_name = character(),
+  chromosome_name = character(),
+  chromosome_position = integer(),
+  distance = integer(),
+  is_mapped_gene = logical(),
+  is_closest_gene = logical(),
+  is_intergenic = logical(),
+  is_upstream = logical(),
+  is_downstream = logical(),
+  source = character(),
+  mapping_method = character()
+)
 }
 \arguments{
 \item{variant_id}{A character vector of variant identifiers.}

@@ -4,8 +4,11 @@
 \alias{v_entrez_ids_tbl}
 \title{Creates a gene Entrez identifiers table.}
 \usage{
-v_entrez_ids_tbl(variant_id = character(), gene_name = character(),
-  entrez_id = character())
+v_entrez_ids_tbl(
+  variant_id = character(),
+  gene_name = character(),
+  entrez_id = character()
+)
 }
 \arguments{
 \item{variant_id}{A character vector of variant identifiers.}

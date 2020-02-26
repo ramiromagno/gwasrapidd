@@ -4,8 +4,12 @@
 \alias{ancestries_tbl}
 \title{Creates an ancestries table.}
 \usage{
-ancestries_tbl(study_id = character(), ancestry_id = integer(),
-  type = character(), number_of_individuals = integer())
+ancestries_tbl(
+  study_id = character(),
+  ancestry_id = integer(),
+  type = character(),
+  number_of_individuals = integer()
+)
 }
 \arguments{
 \item{study_id}{GWAS Catalog study accession identifier.}

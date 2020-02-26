@@ -4,8 +4,12 @@
 \alias{get_studies_by_efo_id}
 \title{Get GWAS Catalog studies by EFO identifier}
 \usage{
-get_studies_by_efo_id(efo_id = NULL, verbose = FALSE,
-  warnings = TRUE, page_size = 20L)
+get_studies_by_efo_id(
+  efo_id = NULL,
+  verbose = FALSE,
+  warnings = TRUE,
+  page_size = 20L
+)
 }
 \arguments{
 \item{efo_id}{A character vector of \href{https://www.ebi.ac.uk/efo/}{EFO}

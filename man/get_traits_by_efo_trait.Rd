@@ -4,8 +4,12 @@
 \alias{get_traits_by_efo_trait}
 \title{Get GWAS Catalog traits by EFO traits}
 \usage{
-get_traits_by_efo_trait(efo_trait = NULL, verbose = FALSE,
-  warnings = TRUE, page_size = 20L)
+get_traits_by_efo_trait(
+  efo_trait = NULL,
+  verbose = FALSE,
+  warnings = TRUE,
+  page_size = 20L
+)
 }
 \arguments{
 \item{efo_trait}{A \code{character} vector of

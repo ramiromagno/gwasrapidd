@@ -4,8 +4,13 @@
 \alias{gc_get}
 \title{Get a GWAS Catalog resource}
 \usage{
-gc_get(resource_url, base_url = gwas_rest_api_base_url,
-  verbose = FALSE, warnings = TRUE, page_size = 20L)
+gc_get(
+  resource_url,
+  base_url = gwas_rest_api_base_url,
+  verbose = FALSE,
+  warnings = TRUE,
+  page_size = 20L
+)
 }
 \arguments{
 \item{resource_url}{Endpoint URL. The endpoint is internally appended to the

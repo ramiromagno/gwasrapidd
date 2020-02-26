@@ -4,8 +4,12 @@
 \alias{get_variants_by_gene_name}
 \title{Get GWAS Catalog variants by gene name.}
 \usage{
-get_variants_by_gene_name(gene_name = NULL, verbose = FALSE,
-  warnings = TRUE, page_size = 20L)
+get_variants_by_gene_name(
+  gene_name = NULL,
+  verbose = FALSE,
+  warnings = TRUE,
+  page_size = 20L
+)
 }
 \arguments{
 \item{gene_name}{A \code{character} vector of gene names.}

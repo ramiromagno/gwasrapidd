@@ -4,9 +4,17 @@
 \alias{get_traits}
 \title{Get GWAS Catalog EFO traits}
 \usage{
-get_traits(study_id = NULL, association_id = NULL, efo_id = NULL,
-  pubmed_id = NULL, efo_uri = NULL, efo_trait = NULL,
-  set_operation = "union", verbose = FALSE, warnings = TRUE)
+get_traits(
+  study_id = NULL,
+  association_id = NULL,
+  efo_id = NULL,
+  pubmed_id = NULL,
+  efo_uri = NULL,
+  efo_trait = NULL,
+  set_operation = "union",
+  verbose = FALSE,
+  warnings = TRUE
+)
 }
 \arguments{
 \item{study_id}{A \code{character} vector of GWAS Catalog study accession

@@ -4,8 +4,12 @@
 \alias{get_associations_by_association_id}
 \title{Get GWAS Catalog associations by their association identifiers}
 \usage{
-get_associations_by_association_id(association_id = NULL,
-  verbose = FALSE, warnings = TRUE, page_size = 20L)
+get_associations_by_association_id(
+  association_id = NULL,
+  verbose = FALSE,
+  warnings = TRUE,
+  page_size = 20L
+)
 }
 \arguments{
 \item{association_id}{A \code{character} vector of GWAS Catalog association

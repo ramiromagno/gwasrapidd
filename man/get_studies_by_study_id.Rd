@@ -4,8 +4,12 @@
 \alias{get_studies_by_study_id}
 \title{Get GWAS Catalog studies by study identifiers}
 \usage{
-get_studies_by_study_id(study_id = NULL, verbose = FALSE,
-  warnings = TRUE, page_size = 20L)
+get_studies_by_study_id(
+  study_id = NULL,
+  verbose = FALSE,
+  warnings = TRUE,
+  page_size = 20L
+)
 }
 \arguments{
 \item{study_id}{A character vector of GWAS Catalog study accession

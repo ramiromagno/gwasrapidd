@@ -4,9 +4,12 @@
 \alias{variants}
 \title{Constructor for the S4 variants object.}
 \usage{
-variants(variants = variants_tbl(),
+variants(
+  variants = variants_tbl(),
   genomic_contexts = genomic_contexts_tbl(),
-  ensembl_ids = v_ensembl_ids_tbl(), entrez_ids = v_entrez_ids_tbl())
+  ensembl_ids = v_ensembl_ids_tbl(),
+  entrez_ids = v_entrez_ids_tbl()
+)
 }
 \arguments{
 \item{variants}{A \code{\link{variants_tbl}} tibble.}

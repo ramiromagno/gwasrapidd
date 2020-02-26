@@ -4,8 +4,12 @@
 \alias{get_studies_by_variant_id}
 \title{Get GWAS Catalog studies by variant identifiers}
 \usage{
-get_studies_by_variant_id(variant_id = NULL, verbose = FALSE,
-  warnings = TRUE, page_size = 20L)
+get_studies_by_variant_id(
+  variant_id = NULL,
+  verbose = FALSE,
+  warnings = TRUE,
+  page_size = 20L
+)
 }
 \arguments{
 \item{variant_id}{A character vector of GWAS Catalog variant identifiers.}

@@ -4,8 +4,13 @@
 \alias{gc_request}
 \title{Request a GWAS Catalog REST API endpoint}
 \usage{
-gc_request(resource_url = "/", base_url = gwas_rest_api_base_url,
-  verbose = FALSE, warnings = TRUE, flatten = FALSE)
+gc_request(
+  resource_url = "/",
+  base_url = gwas_rest_api_base_url,
+  verbose = FALSE,
+  warnings = TRUE,
+  flatten = FALSE
+)
 }
 \arguments{
 \item{resource_url}{Endpoint URL. The endpoint is internally appended to the

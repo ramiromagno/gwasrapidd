@@ -4,8 +4,11 @@
 \alias{reported_genes_tbl}
 \title{Creates an authors' reported genes table.}
 \usage{
-reported_genes_tbl(association_id = character(), locus_id = integer(),
-  gene_name = character())
+reported_genes_tbl(
+  association_id = character(),
+  locus_id = integer(),
+  gene_name = character()
+)
 }
 \arguments{
 \item{association_id}{A character vector of association identifiers.}

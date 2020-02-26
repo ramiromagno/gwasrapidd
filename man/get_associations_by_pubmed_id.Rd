@@ -4,8 +4,12 @@
 \alias{get_associations_by_pubmed_id}
 \title{Get GWAS Catalog associations by PubMed identifiers}
 \usage{
-get_associations_by_pubmed_id(pubmed_id = NULL, verbose = FALSE,
-  warnings = TRUE, page_size = 20L)
+get_associations_by_pubmed_id(
+  pubmed_id = NULL,
+  verbose = FALSE,
+  warnings = TRUE,
+  page_size = 20L
+)
 }
 \arguments{
 \item{pubmed_id}{An \code{integer} vector of

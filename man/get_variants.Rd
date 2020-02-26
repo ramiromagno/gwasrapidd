@@ -4,12 +4,23 @@
 \alias{get_variants}
 \title{Get GWAS Catalog variants}
 \usage{
-get_variants(study_id = NULL, association_id = NULL,
-  variant_id = NULL, efo_id = NULL, pubmed_id = NULL,
-  genomic_range = NULL, cytogenetic_band = NULL, gene_name = NULL,
-  efo_trait = NULL, reported_trait = NULL, set_operation = "union",
-  interactive = TRUE, std_chromosomes_only = TRUE, verbose = FALSE,
-  warnings = TRUE)
+get_variants(
+  study_id = NULL,
+  association_id = NULL,
+  variant_id = NULL,
+  efo_id = NULL,
+  pubmed_id = NULL,
+  genomic_range = NULL,
+  cytogenetic_band = NULL,
+  gene_name = NULL,
+  efo_trait = NULL,
+  reported_trait = NULL,
+  set_operation = "union",
+  interactive = TRUE,
+  std_chromosomes_only = TRUE,
+  verbose = FALSE,
+  warnings = TRUE
+)
 }
 \arguments{
 \item{study_id}{A character vector of GWAS Catalog study accession

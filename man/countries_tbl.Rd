@@ -4,9 +4,13 @@
 \alias{countries_tbl}
 \title{Creates a countries table.}
 \usage{
-countries_tbl(study_id = character(), ancestry_id = integer(),
-  country_name = character(), major_area = character(),
-  region = character())
+countries_tbl(
+  study_id = character(),
+  ancestry_id = integer(),
+  country_name = character(),
+  major_area = character(),
+  region = character()
+)
 }
 \arguments{
 \item{study_id}{GWAS Catalog study accession identifier.}

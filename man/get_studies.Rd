@@ -4,11 +4,22 @@
 \alias{get_studies}
 \title{Get GWAS Catalog studies}
 \usage{
-get_studies(study_id = NULL, association_id = NULL,
-  variant_id = NULL, efo_id = NULL, pubmed_id = NULL,
-  user_requested = NULL, full_pvalue_set = NULL, efo_uri = NULL,
-  efo_trait = NULL, reported_trait = NULL, set_operation = "union",
-  interactive = TRUE, verbose = FALSE, warnings = TRUE)
+get_studies(
+  study_id = NULL,
+  association_id = NULL,
+  variant_id = NULL,
+  efo_id = NULL,
+  pubmed_id = NULL,
+  user_requested = NULL,
+  full_pvalue_set = NULL,
+  efo_uri = NULL,
+  efo_trait = NULL,
+  reported_trait = NULL,
+  set_operation = "union",
+  interactive = TRUE,
+  verbose = FALSE,
+  warnings = TRUE
+)
 }
 \arguments{
 \item{study_id}{A character vector of GWAS Catalog study accession

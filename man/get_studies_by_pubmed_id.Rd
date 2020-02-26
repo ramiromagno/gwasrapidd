@@ -4,8 +4,12 @@
 \alias{get_studies_by_pubmed_id}
 \title{Get GWAS Catalog studies by PubMed identifiers}
 \usage{
-get_studies_by_pubmed_id(pubmed_id = NULL, verbose = FALSE,
-  warnings = TRUE, page_size = 20L)
+get_studies_by_pubmed_id(
+  pubmed_id = NULL,
+  verbose = FALSE,
+  warnings = TRUE,
+  page_size = 20L
+)
 }
 \arguments{
 \item{pubmed_id}{An integer vector of

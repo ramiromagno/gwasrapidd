@@ -4,10 +4,15 @@
 \alias{variants_tbl}
 \title{Creates a variants table.}
 \usage{
-variants_tbl(variant_id = character(), merged = integer(),
-  functional_class = character(), chromosome_name = character(),
-  chromosome_position = integer(), chromosome_region = character(),
-  last_update_date = lubridate::ymd_hms())
+variants_tbl(
+  variant_id = character(),
+  merged = integer(),
+  functional_class = character(),
+  chromosome_name = character(),
+  chromosome_position = integer(),
+  chromosome_region = character(),
+  last_update_date = lubridate::ymd_hms()
+)
 }
 \arguments{
 \item{variant_id}{A character vector of variant identifiers.}

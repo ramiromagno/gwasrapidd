@@ -4,8 +4,12 @@
 \alias{get_variants_by_cytogenetic_band}
 \title{Get GWAS Catalog variants by cytogenetic band.}
 \usage{
-get_variants_by_cytogenetic_band(cytogenetic_band = NULL,
-  verbose = FALSE, warnings = TRUE, page_size = 20L)
+get_variants_by_cytogenetic_band(
+  cytogenetic_band = NULL,
+  verbose = FALSE,
+  warnings = TRUE,
+  page_size = 20L
+)
 }
 \arguments{
 \item{cytogenetic_band}{A \code{character} vector of cytogenetic bands of the

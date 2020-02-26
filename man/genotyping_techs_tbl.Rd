@@ -4,8 +4,10 @@
 \alias{genotyping_techs_tbl}
 \title{Creates a genotyping technologies table.}
 \usage{
-genotyping_techs_tbl(study_id = character(),
-  genotyping_technology = character())
+genotyping_techs_tbl(
+  study_id = character(),
+  genotyping_technology = character()
+)
 }
 \arguments{
 \item{study_id}{GWAS Catalog study accession identifier.}

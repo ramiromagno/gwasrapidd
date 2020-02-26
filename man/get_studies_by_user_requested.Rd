@@ -4,8 +4,12 @@
 \alias{get_studies_by_user_requested}
 \title{Get GWAS Catalog studies that have been requested by users or not}
 \usage{
-get_studies_by_user_requested(user_requested = NULL, verbose = FALSE,
-  warnings = TRUE, page_size = 20L)
+get_studies_by_user_requested(
+  user_requested = NULL,
+  verbose = FALSE,
+  warnings = TRUE,
+  page_size = 20L
+)
 }
 \arguments{
 \item{user_requested}{A \code{logical} (scalar!) indicating to retrieve

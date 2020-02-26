@@ -4,9 +4,14 @@
 \alias{associations}
 \title{Constructor for the S4 associations object.}
 \usage{
-associations(associations = associations_tbl(), loci = loci_tbl(),
-  risk_alleles = risk_alleles_tbl(), genes = reported_genes_tbl(),
-  ensembl_ids = ensembl_ids_tbl(), entrez_ids = entrez_ids_tbl())
+associations(
+  associations = associations_tbl(),
+  loci = loci_tbl(),
+  risk_alleles = risk_alleles_tbl(),
+  genes = reported_genes_tbl(),
+  ensembl_ids = ensembl_ids_tbl(),
+  entrez_ids = entrez_ids_tbl()
+)
 }
 \arguments{
 \item{associations}{An \code{\link{associations_tbl}} tibble.}

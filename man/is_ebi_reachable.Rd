@@ -4,8 +4,7 @@
 \alias{is_ebi_reachable}
 \title{Is the GWAS Catalog REST API server reachable?}
 \usage{
-is_ebi_reachable(url = "https://www.ebi.ac.uk", port = 443L,
-  chatty = FALSE)
+is_ebi_reachable(url = "https://www.ebi.ac.uk", port = 443L, chatty = FALSE)
 }
 \arguments{
 \item{url}{NHGRI-EBI GWAS Catalog server URL. Default is

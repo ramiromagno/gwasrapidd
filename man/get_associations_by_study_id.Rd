@@ -4,8 +4,12 @@
 \alias{get_associations_by_study_id}
 \title{Get GWAS Catalog associations by study identifiers}
 \usage{
-get_associations_by_study_id(study_id = NULL, verbose = FALSE,
-  warnings = TRUE, page_size = 20L)
+get_associations_by_study_id(
+  study_id = NULL,
+  verbose = FALSE,
+  warnings = TRUE,
+  page_size = 20L
+)
 }
 \arguments{
 \item{study_id}{A \code{character} vector of GWAS Catalog study accession

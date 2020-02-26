@@ -4,8 +4,13 @@
 \alias{child_efo_ids}
 \title{Get all child terms of this trait in the EFO hierarchy}
 \usage{
-child_efo_ids(efo_id, verbose = FALSE, warnings = TRUE,
-  page_size = 20L, progress_bar = TRUE)
+child_efo_ids(
+  efo_id,
+  verbose = FALSE,
+  warnings = TRUE,
+  page_size = 20L,
+  progress_bar = TRUE
+)
 }
 \arguments{
 \item{efo_id}{A \href{https://www.ebi.ac.uk/efo/}{EFO} identifier.}

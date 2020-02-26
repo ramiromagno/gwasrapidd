@@ -4,8 +4,11 @@
 \alias{ancestral_groups_tbl}
 \title{Creates an ancestral groups table.}
 \usage{
-ancestral_groups_tbl(study_id = character(), ancestry_id = integer(),
-  ancestral_group = character())
+ancestral_groups_tbl(
+  study_id = character(),
+  ancestry_id = integer(),
+  ancestral_group = character()
+)
 }
 \arguments{
 \item{study_id}{GWAS Catalog study accession identifier.}

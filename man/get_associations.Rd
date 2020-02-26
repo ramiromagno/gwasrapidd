@@ -4,10 +4,18 @@
 \alias{get_associations}
 \title{Get GWAS Catalog associations}
 \usage{
-get_associations(study_id = NULL, association_id = NULL,
-  variant_id = NULL, efo_id = NULL, pubmed_id = NULL,
-  efo_trait = NULL, set_operation = "union", interactive = TRUE,
-  verbose = FALSE, warnings = TRUE)
+get_associations(
+  study_id = NULL,
+  association_id = NULL,
+  variant_id = NULL,
+  efo_id = NULL,
+  pubmed_id = NULL,
+  efo_trait = NULL,
+  set_operation = "union",
+  interactive = TRUE,
+  verbose = FALSE,
+  warnings = TRUE
+)
 }
 \arguments{
 \item{study_id}{A \code{character} vector of GWAS Catalog study accession

@@ -4,8 +4,12 @@
 \alias{get_studies_by_efo_uri}
 \title{Get GWAS Catalog studies by EFO URIs}
 \usage{
-get_studies_by_efo_uri(efo_uri = NULL, verbose = FALSE,
-  warnings = TRUE, page_size = 20L)
+get_studies_by_efo_uri(
+  efo_uri = NULL,
+  verbose = FALSE,
+  warnings = TRUE,
+  page_size = 20L
+)
 }
 \arguments{
 \item{efo_uri}{A character vector of

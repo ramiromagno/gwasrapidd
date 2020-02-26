@@ -4,8 +4,11 @@
 \alias{is_human_chromosome}
 \title{Is a string a human chromosome name?}
 \usage{
-is_human_chromosome(string, chromosomes = c(seq_len(22), "X", "Y", "MT"),
-  convert_NA_to_FALSE = TRUE)
+is_human_chromosome(
+  string,
+  chromosomes = c(seq_len(22), "X", "Y", "MT"),
+  convert_NA_to_FALSE = TRUE
+)
 }
 \arguments{
 \item{string}{A character vector of strings.}

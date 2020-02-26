@@ -4,8 +4,13 @@
 \alias{get_child_efo}
 \title{Get all child terms of this trait in the EFO hierarchy}
 \usage{
-get_child_efo(efo_id, verbose = FALSE, warnings = TRUE,
-  page_size = 20L, progress_bar = TRUE)
+get_child_efo(
+  efo_id,
+  verbose = FALSE,
+  warnings = TRUE,
+  page_size = 20L,
+  progress_bar = TRUE
+)
 }
 \arguments{
 \item{efo_id}{A character vector of \href{https://www.ebi.ac.uk/efo/}{EFO}

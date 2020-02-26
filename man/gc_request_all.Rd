@@ -4,9 +4,14 @@
 \alias{gc_request_all}
 \title{Request a paginated GWAS Catalog REST API endpoint}
 \usage{
-gc_request_all(resource_url = "/", base_url = gwas_rest_api_base_url,
-  page_size = 20L, verbose = FALSE, warnings = TRUE,
-  progress_bar = TRUE)
+gc_request_all(
+  resource_url = "/",
+  base_url = gwas_rest_api_base_url,
+  page_size = 20L,
+  verbose = FALSE,
+  warnings = TRUE,
+  progress_bar = TRUE
+)
 }
 \arguments{
 \item{resource_url}{Endpoint URL. The endpoint is internally appended to the

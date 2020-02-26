@@ -4,8 +4,12 @@
 \alias{get_studies_by_full_pvalue_set}
 \title{Get GWAS Catalog studies by full summary statistics criterion}
 \usage{
-get_studies_by_full_pvalue_set(full_pvalue_set = NULL, verbose = FALSE,
-  warnings = TRUE, page_size = 20L)
+get_studies_by_full_pvalue_set(
+  full_pvalue_set = NULL,
+  verbose = FALSE,
+  warnings = TRUE,
+  page_size = 20L
+)
 }
 \arguments{
 \item{full_pvalue_set}{A \code{logical} (scalar!) indicating to retrieve

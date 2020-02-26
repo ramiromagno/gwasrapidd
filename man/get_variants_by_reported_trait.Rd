@@ -4,8 +4,12 @@
 \alias{get_variants_by_reported_trait}
 \title{Get GWAS Catalog variants by reported traits}
 \usage{
-get_variants_by_reported_trait(reported_trait = NULL, verbose = FALSE,
-  warnings = TRUE, page_size = 20L)
+get_variants_by_reported_trait(
+  reported_trait = NULL,
+  verbose = FALSE,
+  warnings = TRUE,
+  page_size = 20L
+)
 }
 \arguments{
 \item{reported_trait}{A character vector of phenotypic traits as

@@ -4,8 +4,12 @@
 \alias{ensembl_ids_tbl}
 \title{Creates an Ensembl gene identifiers' table.}
 \usage{
-ensembl_ids_tbl(association_id = character(), locus_id = integer(),
-  gene_name = character(), ensembl_id = character())
+ensembl_ids_tbl(
+  association_id = character(),
+  locus_id = integer(),
+  gene_name = character(),
+  ensembl_id = character()
+)
 }
 \arguments{
 \item{association_id}{A character vector of association identifiers.}

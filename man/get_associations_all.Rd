@@ -4,8 +4,7 @@
 \alias{get_associations_all}
 \title{Get all GWAS Catalog associations}
 \usage{
-get_associations_all(verbose = FALSE, warnings = TRUE,
-  page_size = 20L)
+get_associations_all(verbose = FALSE, warnings = TRUE, page_size = 20L)
 }
 \arguments{
 \item{verbose}{A \code{logical} indicating whether the function should be

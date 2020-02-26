@@ -4,8 +4,12 @@
 \alias{sure}
 \title{Are you sure?}
 \usage{
-sure(before_question = NULL, after_saying_no = NULL,
-  after_saying_yes = NULL, default_answer = NULL)
+sure(
+  before_question = NULL,
+  after_saying_no = NULL,
+  after_saying_yes = NULL,
+  default_answer = NULL
+)
 }
 \arguments{
 \item{before_question}{String with message to be printed before question.}
