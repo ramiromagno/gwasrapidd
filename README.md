@@ -47,8 +47,6 @@ have any further questions\!\!
 
 </blockquote>
 
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
 For more updates please follow GWAS Catalog’s tweet account:
 <https://twitter.com/GWASCatalog>.
 
