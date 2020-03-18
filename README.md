@@ -22,6 +22,36 @@ association studies.
 Get started by reading the
 [documentation](https://rmagno.eu/gwasrapidd/articles/gwasrapidd.html).
 
+## Notice
+
+The GWAS Catalog REST API is down during the period of 18–27th of March,
+2020. So during this period you will not be able to use gwasrapidd. Here
+is the GWAS Catalog team tweet:
+
+<blockquote class="twitter-tweet">
+
+<p lang="en" dir="ltr">
+
+The
+<a href="https://twitter.com/hashtag/GWAS?src=hash&amp;ref_src=twsrc%5Etfw">\#GWAS</a>
+Catalog REST API is down until 27th March
+due<a href="https://twitter.com/emblebi?ref_src=twsrc%5Etfw">@emblebi</a>
+data centre migration. Please contact us (<gwas-info@ebi.ac.uk>) if you
+have any further questions\!\!
+
+</p>
+
+— GWAS Catalog (@GWASCatalog)
+<a href="https://twitter.com/GWASCatalog/status/1240259696935788545?ref_src=twsrc%5Etfw">March
+18, 2020</a>
+
+</blockquote>
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+For more updates please follow GWAS Catalog’s tweet account:
+<https://twitter.com/GWASCatalog>.
+
 ## Installation
 
 You can install the current version of gwasrapidd with:
@@ -42,26 +72,31 @@ Get the study related to triple-negative breast cancer:
 ``` r
 library(gwasrapidd)
 studies <- get_studies(efo_trait = 'triple-negative breast cancer')
+## Warning: The request for https://www.ebi.ac.uk/gwas/rest/api/studies/search/
+## findByEfoTrait?efoTrait=triple-negative%20breast%20cancer failed: response code
+## was 404.
+## Warning in gc_request_all(resource_url = resource_url, base_url = base_url, :
+## The request for https://www.ebi.ac.uk/gwas/rest/api/studies/search/
+## findByEfoTrait?efoTrait=triple-negative%20breast%20cancer failed: response code
+## was 404.
 studies@studies[1:4]
-## # A tibble: 1 x 4
-##   study_id  reported_trait        initial_sample_size  replication_sample_…
-##   <chr>     <chr>                 <chr>                <chr>               
-## 1 GCST0023… Breast cancer (estro… 1,529 European ance… 2,148 European ance…
+## # A tibble: 0 x 4
+## # … with 4 variables: study_id <chr>, reported_trait <chr>,
+## #   initial_sample_size <chr>, replication_sample_size <chr>
 ```
 
 Find associated variants:
 
 ``` r
 variants <- get_variants(study_id = 'GCST002305')
+## Warning: The request for https://www.ebi.ac.uk/gwas/rest/api/studies/GCST002305/
+## snps failed: response code was 404.
+## Warning in gc_request_all(resource_url = resource_url, base_url = base_url, :
+## The request for https://www.ebi.ac.uk/gwas/rest/api/studies/GCST002305/snps
+## failed: response code was 404.
 variants@variants[c('variant_id', 'functional_class')]
-## # A tibble: 5 x 2
-##   variant_id functional_class   
-##   <chr>      <chr>              
-## 1 rs4245739  3_prime_UTR_variant
-## 2 rs2363956  missense_variant   
-## 3 rs10069690 intron_variant     
-## 4 rs3757318  intron_variant     
-## 5 rs10771399 intergenic_variant
+## # A tibble: 0 x 2
+## # … with 2 variables: variant_id <chr>, functional_class <chr>
 ```
 
 ## Citing this work
@@ -76,10 +111,9 @@ citation('gwasrapidd')
 ## 
 ## To cite gwasrapidd in publications use:
 ## 
-##   Ramiro Magno, Ana-Teresa Maia, gwasrapidd: an R package to
-##   query, download and wrangle GWAS Catalog data, Bioinformatics,
-##   btz605, 2 August 2019, Pages 1-2,
-##   https://doi.org/10.1093/bioinformatics/btz605
+##   Ramiro Magno, Ana-Teresa Maia, gwasrapidd: an R package to query,
+##   download and wrangle GWAS Catalog data, Bioinformatics, btz605, 2
+##   August 2019, Pages 1-2, https://doi.org/10.1093/bioinformatics/btz605
 ## 
 ## A BibTeX entry for LaTeX users is
 ## 
