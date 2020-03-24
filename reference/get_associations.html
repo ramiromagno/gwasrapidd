@@ -154,10 +154,18 @@ associations that match simultaneously all criteria provided, then set
 <code>set_operation</code> to <code>'intersection'</code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_associations</span>(<span class='kw'>study_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>association_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>variant_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>efo_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>pubmed_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>efo_trait</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>set_operation</span> <span class='kw'>=</span> <span class='st'>"union"</span>, <span class='kw'>interactive</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>warnings</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>get_associations</span>(
+  <span class='kw'>study_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>association_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>variant_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>efo_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>pubmed_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>efo_trait</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>set_operation</span> <span class='kw'>=</span> <span class='st'>"union"</span>,
+  <span class='kw'>interactive</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>warnings</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -473,10 +481,10 @@ passing a vector of identifiers to <code>variant_id</code>.</p>
 #&gt;   association_id  pvalue pvalue_descript… pvalue_mantissa pvalue_exponent
 #&gt;   &lt;chr&gt;            &lt;dbl&gt; &lt;chr&gt;                      &lt;int&gt;           &lt;int&gt;
 #&gt; 1 38403          4.00e-6 &lt;NA&gt;                           4              -6
-#&gt; 2 38405          9.00e-6 &lt;NA&gt;                           9              -6
-#&gt; 3 38406          2.00e-8 &lt;NA&gt;                           2              -8
-#&gt; 4 38404          1.00e-7 &lt;NA&gt;                           1              -7
-#&gt; 5 38407          2.00e-8 &lt;NA&gt;                           2              -8
+#&gt; 2 38407          2.00e-8 &lt;NA&gt;                           2              -8
+#&gt; 3 38404          1.00e-7 &lt;NA&gt;                           1              -7
+#&gt; 4 38406          2.00e-8 &lt;NA&gt;                           2              -8
+#&gt; 5 38405          9.00e-6 &lt;NA&gt;                           9              -6
 #&gt; # … with 12 more variables: multiple_snp_haplotype &lt;lgl&gt;,
 #&gt; #   snp_interaction &lt;lgl&gt;, snp_type &lt;chr&gt;, standard_error &lt;dbl&gt;, range &lt;chr&gt;,
 #&gt; #   or_per_copy_number &lt;dbl&gt;, beta_number &lt;dbl&gt;, beta_unit &lt;chr&gt;,
@@ -488,20 +496,20 @@ passing a vector of identifiers to <code>variant_id</code>.</p>
 #&gt;   association_id locus_id haplotype_snp_count description   
 #&gt;   &lt;chr&gt;             &lt;int&gt;               &lt;int&gt; &lt;chr&gt;         
 #&gt; 1 38403                 1                  NA Single variant
-#&gt; 2 38405                 1                  NA Single variant
-#&gt; 3 38406                 1                  NA Single variant
-#&gt; 4 38404                 1                  NA Single variant
-#&gt; 5 38407                 1                  NA Single variant
+#&gt; 2 38407                 1                  NA Single variant
+#&gt; 3 38404                 1                  NA Single variant
+#&gt; 4 38406                 1                  NA Single variant
+#&gt; 5 38405                 1                  NA Single variant
 #&gt; 
 #&gt; Slot "risk_alleles":
 #&gt; # A tibble: 5 x 7
 #&gt;   association_id locus_id variant_id risk_allele risk_frequency genome_wide
 #&gt;   &lt;chr&gt;             &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;                &lt;dbl&gt; &lt;lgl&gt;      
 #&gt; 1 38403                 1 rs4245739  C                       NA NA         
-#&gt; 2 38405                 1 rs3757318  A                       NA NA         
-#&gt; 3 38406                 1 rs2363956  C                       NA NA         
-#&gt; 4 38404                 1 rs10069690 A                       NA NA         
-#&gt; 5 38407                 1 rs10771399 G                       NA NA         
+#&gt; 2 38407                 1 rs10771399 G                       NA NA         
+#&gt; 3 38404                 1 rs10069690 A                       NA NA         
+#&gt; 4 38406                 1 rs2363956  C                       NA NA         
+#&gt; 5 38405                 1 rs3757318  A                       NA NA         
 #&gt; # … with 1 more variable: limited_list &lt;lgl&gt;
 #&gt; 
 #&gt; Slot "genes":
@@ -509,30 +517,30 @@ passing a vector of identifiers to <code>variant_id</code>.</p>
 #&gt;   association_id locus_id gene_name 
 #&gt;   &lt;chr&gt;             &lt;int&gt; &lt;chr&gt;     
 #&gt; 1 38403                 1 MDM4      
-#&gt; 2 38405                 1 ESR1      
-#&gt; 3 38406                 1 intergenic
-#&gt; 4 38404                 1 TERT      
-#&gt; 5 38407                 1 PTHLH     
+#&gt; 2 38407                 1 PTHLH     
+#&gt; 3 38404                 1 TERT      
+#&gt; 4 38406                 1 intergenic
+#&gt; 5 38405                 1 ESR1      
 #&gt; 
 #&gt; Slot "ensembl_ids":
 #&gt; # A tibble: 5 x 4
 #&gt;   association_id locus_id gene_name  ensembl_id     
 #&gt;   &lt;chr&gt;             &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;          
 #&gt; 1 38403                 1 MDM4       ENSG00000198625
-#&gt; 2 38405                 1 ESR1       ENSG00000091831
-#&gt; 3 38406                 1 intergenic &lt;NA&gt;           
-#&gt; 4 38404                 1 TERT       ENSG00000164362
-#&gt; 5 38407                 1 PTHLH      ENSG00000087494
+#&gt; 2 38407                 1 PTHLH      ENSG00000087494
+#&gt; 3 38404                 1 TERT       ENSG00000164362
+#&gt; 4 38406                 1 intergenic &lt;NA&gt;           
+#&gt; 5 38405                 1 ESR1       ENSG00000091831
 #&gt; 
 #&gt; Slot "entrez_ids":
 #&gt; # A tibble: 5 x 4
 #&gt;   association_id locus_id gene_name  entrez_id
 #&gt;   &lt;chr&gt;             &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;    
 #&gt; 1 38403                 1 MDM4       4194     
-#&gt; 2 38405                 1 ESR1       2099     
-#&gt; 3 38406                 1 intergenic &lt;NA&gt;     
-#&gt; 4 38404                 1 TERT       7015     
-#&gt; 5 38407                 1 PTHLH      5744     
+#&gt; 2 38407                 1 PTHLH      5744     
+#&gt; 3 38404                 1 TERT       7015     
+#&gt; 4 38406                 1 intergenic &lt;NA&gt;     
+#&gt; 5 38405                 1 ESR1       2099     
 #&gt; </div><div class='input'>
 </div></pre>
   </div>

@@ -144,9 +144,14 @@ pages." />
 pages.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>gc_request_all</span>(<span class='kw'>resource_url</span> <span class='kw'>=</span> <span class='st'>"/"</span>, <span class='kw'>base_url</span> <span class='kw'>=</span> <span class='no'>gwas_rest_api_base_url</span>,
-  <span class='kw'>page_size</span> <span class='kw'>=</span> <span class='fl'>20L</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>warnings</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>progress_bar</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>gc_request_all</span>(
+  <span class='kw'>resource_url</span> <span class='kw'>=</span> <span class='st'>"/"</span>,
+  <span class='kw'>base_url</span> <span class='kw'>=</span> <span class='no'>gwas_rest_api_base_url</span>,
+  <span class='kw'>page_size</span> <span class='kw'>=</span> <span class='fl'>20L</span>,
+  <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>warnings</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>progress_bar</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -190,7 +195,7 @@ status code</a>.</p></dd>
 "OK" if everything went OK or some other string describing the problem
 otherwise.</p></dd>
 <dt>content</dt><dd><p>The parsed JSON as a nested list, as returned by
-<code><a href='https://rdrr.io/pkg/jsonlite/man/fromJSON.html'>jsonlite::fromJSON</a></code>.</p></dd>
+<code><a href='https://jeroen.cran.dev/jsonlite/reference/fromJSON.html'>jsonlite::fromJSON</a></code>.</p></dd>
 
 </dl>
 

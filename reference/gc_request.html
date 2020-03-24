@@ -142,8 +142,13 @@
     <p>Performs a GET request on the specified <code>resource_url</code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>gc_request</span>(<span class='kw'>resource_url</span> <span class='kw'>=</span> <span class='st'>"/"</span>, <span class='kw'>base_url</span> <span class='kw'>=</span> <span class='no'>gwas_rest_api_base_url</span>,
-  <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>warnings</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>flatten</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>gc_request</span>(
+  <span class='kw'>resource_url</span> <span class='kw'>=</span> <span class='st'>"/"</span>,
+  <span class='kw'>base_url</span> <span class='kw'>=</span> <span class='no'>gwas_rest_api_base_url</span>,
+  <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>warnings</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>flatten</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -169,7 +174,7 @@ default value).</p></td>
     <tr>
       <th>flatten</th>
       <td><p>Whether to flatten out the list returned by
-<code><a href='https://rdrr.io/pkg/jsonlite/man/fromJSON.html'>jsonlite::fromJSON</a></code>.</p></td>
+<code><a href='https://jeroen.cran.dev/jsonlite/reference/fromJSON.html'>jsonlite::fromJSON</a></code>.</p></td>
     </tr>
     </table>
 
@@ -183,7 +188,7 @@ status code</a>.</p></dd>
 "OK" if everything went OK or some other string describing the problem
 otherwise.</p></dd>
 <dt>content</dt><dd><p>The parsed JSON as a nested list, as returned by
-<code><a href='https://rdrr.io/pkg/jsonlite/man/fromJSON.html'>jsonlite::fromJSON</a></code>.</p></dd>
+<code><a href='https://jeroen.cran.dev/jsonlite/reference/fromJSON.html'>jsonlite::fromJSON</a></code>.</p></dd>
 
 </dl>
 

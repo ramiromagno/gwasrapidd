@@ -154,12 +154,23 @@ variants that match simultaneously all criteria provided, then set
 <code>set_operation</code> to <code>'intersection'</code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_variants</span>(<span class='kw'>study_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>association_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>variant_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>efo_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>pubmed_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>genomic_range</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>cytogenetic_band</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>gene_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>efo_trait</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>reported_trait</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>set_operation</span> <span class='kw'>=</span> <span class='st'>"union"</span>,
-  <span class='kw'>interactive</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>std_chromosomes_only</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>warnings</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>get_variants</span>(
+  <span class='kw'>study_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>association_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>variant_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>efo_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>pubmed_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>genomic_range</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>cytogenetic_band</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>gene_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>efo_trait</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>reported_trait</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>set_operation</span> <span class='kw'>=</span> <span class='st'>"union"</span>,
+  <span class='kw'>interactive</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>std_chromosomes_only</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>warnings</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -284,54 +295,54 @@ passing a vector of identifiers to <code>variant_id</code>.</p>
 #&gt; # … with 2 more variables: chromosome_region &lt;chr&gt;, last_update_date &lt;dttm&gt;
 #&gt; 
 #&gt; Slot "genomic_contexts":
-#&gt; # A tibble: 142 x 12
+#&gt; # A tibble: 148 x 12
 #&gt;    variant_id gene_name chromosome_name chromosome_posi… distance is_mapped_gene
 #&gt;    &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt;                      &lt;int&gt;    &lt;int&gt; &lt;lgl&gt;         
-#&gt;  1 rs10496288 LOC11226… 2                       83065441   148019 FALSE         
-#&gt;  2 rs10496288 AC138623… 2                       83065441   153449 TRUE          
+#&gt;  1 rs10496288 LOC10537… 2                       83065441   127905 FALSE         
+#&gt;  2 rs10496288 LOC11226… 2                       83065441   148019 FALSE         
 #&gt;  3 rs10496288 AC098817… 2                       83065441   198933 TRUE          
-#&gt;  4 rs10496288 LOC10537… 2                       83065441   127905 FALSE         
-#&gt;  5 rs7827545  ZFAT-AS1  8                      134554324    43747 FALSE         
-#&gt;  6 rs7827545  RF02213   8                      134554324    45933 FALSE         
-#&gt;  7 rs7827545  AC105180… 8                      134554324   233877 FALSE         
-#&gt;  8 rs7827545  LOC10041… 8                      134554324   606901 FALSE         
-#&gt;  9 rs7827545  RF02212   8                      134554324    43994 FALSE         
-#&gt; 10 rs7827545  ZFAT-AS1  8                      134554324    43747 FALSE         
-#&gt; # … with 132 more rows, and 6 more variables: is_closest_gene &lt;lgl&gt;,
+#&gt;  4 rs10496288 AC138623… 2                       83065441   153449 TRUE          
+#&gt;  5 rs7827545  ZFAT      8                      134554324        0 TRUE          
+#&gt;  6 rs7827545  AC015599… 8                      134554324    43994 FALSE         
+#&gt;  7 rs7827545  ZFAT      8                      134554324        0 FALSE         
+#&gt;  8 rs7827545  AC015599… 8                      134554324    43747 FALSE         
+#&gt;  9 rs7827545  LOC10041… 8                      134554324   606901 FALSE         
+#&gt; 10 rs7827545  AC105180… 8                      134554324   163837 FALSE         
+#&gt; # … with 138 more rows, and 6 more variables: is_closest_gene &lt;lgl&gt;,
 #&gt; #   is_intergenic &lt;lgl&gt;, is_upstream &lt;lgl&gt;, is_downstream &lt;lgl&gt;, source &lt;chr&gt;,
 #&gt; #   mapping_method &lt;chr&gt;
 #&gt; 
 #&gt; Slot "ensembl_ids":
-#&gt; # A tibble: 80 x 3
+#&gt; # A tibble: 102 x 3
 #&gt;    variant_id gene_name  ensembl_id     
 #&gt;    &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          
-#&gt;  1 rs10496288 AC138623.1 ENSG00000223977
-#&gt;  2 rs10496288 AC098817.1 ENSG00000286211
-#&gt;  3 rs7827545  ZFAT-AS1   ENSG00000248492
-#&gt;  4 rs7827545  RF02213    ENSG00000278454
-#&gt;  5 rs7827545  AC105180.1 ENSG00000253627
-#&gt;  6 rs7827545  RF02212    ENSG00000277732
-#&gt;  7 rs7827545  ZFAT       ENSG00000066827
-#&gt;  8 rs7827545  RF02211    ENSG00000276140
-#&gt;  9 rs10785581 AC079950.1 ENSG00000257657
-#&gt; 10 rs10785581 RF00026    ENSG00000283564
-#&gt; # … with 70 more rows
+#&gt;  1 rs10496288 AC098817.1 ENSG00000286211
+#&gt;  2 rs10496288 AC138623.1 ENSG00000223977
+#&gt;  3 rs7827545  ZFAT       ENSG00000066827
+#&gt;  4 rs7827545  AC015599.2 ENSG00000277732
+#&gt;  5 rs7827545  AC015599.1 ENSG00000276140
+#&gt;  6 rs7827545  AC105180.2 ENSG00000288067
+#&gt;  7 rs7827545  ZFAT-AS1   ENSG00000248492
+#&gt;  8 rs7827545  AC015599.3 ENSG00000278454
+#&gt;  9 rs10785581 AC063924.1 ENSG00000257368
+#&gt; 10 rs10785581 ANO6       ENSG00000177119
+#&gt; # … with 92 more rows
 #&gt; 
 #&gt; Slot "entrez_ids":
-#&gt; # A tibble: 64 x 3
+#&gt; # A tibble: 65 x 3
 #&gt;    variant_id gene_name    entrez_id
 #&gt;    &lt;chr&gt;      &lt;chr&gt;        &lt;chr&gt;    
-#&gt;  1 rs10496288 LOC112268410 112268410
-#&gt;  2 rs10496288 LOC105374832 105374832
-#&gt;  3 rs7827545  ZFAT-AS1     594840   
+#&gt;  1 rs10496288 LOC105374832 105374832
+#&gt;  2 rs10496288 LOC112268410 112268410
+#&gt;  3 rs7827545  ZFAT         57623    
 #&gt;  4 rs7827545  LOC100419617 100419617
-#&gt;  5 rs7827545  ZFAT         57623    
-#&gt;  6 rs10785581 LOC105369743 105369743
+#&gt;  5 rs7827545  ZFAT-AS1     594840   
+#&gt;  6 rs10785581 LOC105369744 105369744
 #&gt;  7 rs10785581 ANO6         196527   
 #&gt;  8 rs10785581 LOC100128248 100128248
-#&gt;  9 rs10785581 LOC105369744 105369744
-#&gt; 10 rs200759   LOC107985394 107985394
-#&gt; # … with 54 more rows
+#&gt;  9 rs10785581 LOC105369743 105369743
+#&gt; 10 rs200759   MACROD2      140733   
+#&gt; # … with 55 more rows
 #&gt; </div><div class='input'>
 <span class='co'># Get variants by association identifier</span>
 <span class='fu'>get_variants</span>(<span class='kw'>association_id</span> <span class='kw'>=</span> <span class='st'>'25389945'</span>)</div><div class='output co'>#&gt; An object of class "variants"
@@ -353,54 +364,54 @@ passing a vector of identifiers to <code>variant_id</code>.</p>
 #&gt; #   last_update_date &lt;dttm&gt;
 #&gt; 
 #&gt; Slot "genomic_contexts":
-#&gt; # A tibble: 386 x 12
+#&gt; # A tibble: 387 x 12
 #&gt;    variant_id gene_name chromosome_name chromosome_posi… distance is_mapped_gene
 #&gt;    &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt;                      &lt;int&gt;    &lt;int&gt; &lt;lgl&gt;         
-#&gt;  1 rs9486815  OSTM1-AS1 6                      108126842        0 FALSE         
-#&gt;  2 rs9486815  NR2E1     6                      108126842    39216 FALSE         
-#&gt;  3 rs9486815  OSTM1     6                      108126842    52101 FALSE         
-#&gt;  4 rs9486815  Z98200.1  6                      108126842    96124 FALSE         
-#&gt;  5 rs9486815  SNX3      6                      108126842    84380 FALSE         
-#&gt;  6 rs9486815  RF00019   6                      108126842    65912 FALSE         
-#&gt;  7 rs9486815  LOC10537… 6                      108126842    86455 FALSE         
-#&gt;  8 rs9486815  AL078596… 6                      108126842    52029 FALSE         
-#&gt;  9 rs9486815  OSTM1     6                      108126842        0 TRUE          
-#&gt; 10 rs9486815  SNX3      6                      108126842    84375 FALSE         
-#&gt; # … with 376 more rows, and 6 more variables: is_closest_gene &lt;lgl&gt;,
+#&gt;  1 rs9486815  NR2E1     6                      108126842    39216 FALSE         
+#&gt;  2 rs9486815  OSTM1     6                      108126842    52101 FALSE         
+#&gt;  3 rs9486815  LOC10537… 6                      108126842    86455 FALSE         
+#&gt;  4 rs9486815  AL078596… 6                      108126842    52029 FALSE         
+#&gt;  5 rs9486815  OSTM1     6                      108126842        0 TRUE          
+#&gt;  6 rs9486815  OSTM1-AS1 6                      108126842        0 FALSE         
+#&gt;  7 rs9486815  Y_RNA     6                      108126842    65912 FALSE         
+#&gt;  8 rs9486815  SNX3      6                      108126842    84380 FALSE         
+#&gt;  9 rs9486815  NR2E1     6                      108126842    39180 FALSE         
+#&gt; 10 rs9486815  SNX3      6                      108126842    84380 FALSE         
+#&gt; # … with 377 more rows, and 6 more variables: is_closest_gene &lt;lgl&gt;,
 #&gt; #   is_intergenic &lt;lgl&gt;, is_upstream &lt;lgl&gt;, is_downstream &lt;lgl&gt;, source &lt;chr&gt;,
 #&gt; #   mapping_method &lt;chr&gt;
 #&gt; 
 #&gt; Slot "ensembl_ids":
-#&gt; # A tibble: 233 x 3
+#&gt; # A tibble: 450 x 3
 #&gt;    variant_id gene_name  ensembl_id     
 #&gt;    &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          
-#&gt;  1 rs9486815  OSTM1-AS1  ENSG00000225174
-#&gt;  2 rs9486815  NR2E1      ENSG00000112333
-#&gt;  3 rs9486815  OSTM1      ENSG00000081087
-#&gt;  4 rs9486815  Z98200.1   ENSG00000271734
-#&gt;  5 rs9486815  SNX3       ENSG00000112335
-#&gt;  6 rs9486815  RF00019    ENSG00000200298
-#&gt;  7 rs9486815  AL078596.1 ENSG00000279398
-#&gt;  8 rs4245535  OSTM1      ENSG00000081087
-#&gt;  9 rs4245535  AL078596.1 ENSG00000279398
-#&gt; 10 rs4245535  NR2E1      ENSG00000112333
-#&gt; # … with 223 more rows
+#&gt;  1 rs9486815  NR2E1      ENSG00000112333
+#&gt;  2 rs9486815  OSTM1      ENSG00000081087
+#&gt;  3 rs9486815  AL078596.1 ENSG00000279398
+#&gt;  4 rs9486815  OSTM1-AS1  ENSG00000225174
+#&gt;  5 rs9486815  Y_RNA      ENSG00000266747
+#&gt;  6 rs9486815  Y_RNA      ENSG00000264846
+#&gt;  7 rs9486815  Y_RNA      ENSG00000266250
+#&gt;  8 rs9486815  Y_RNA      ENSG00000199332
+#&gt;  9 rs9486815  Y_RNA      ENSG00000265509
+#&gt; 10 rs9486815  Y_RNA      ENSG00000264692
+#&gt; # … with 440 more rows
 #&gt; 
 #&gt; Slot "entrez_ids":
-#&gt; # A tibble: 153 x 3
+#&gt; # A tibble: 154 x 3
 #&gt;    variant_id gene_name    entrez_id
 #&gt;    &lt;chr&gt;      &lt;chr&gt;        &lt;chr&gt;    
-#&gt;  1 rs9486815  OSTM1-AS1    100287366
-#&gt;  2 rs9486815  NR2E1        7101     
-#&gt;  3 rs9486815  OSTM1        28962    
-#&gt;  4 rs9486815  SNX3         8724     
-#&gt;  5 rs9486815  LOC105377929 105377929
-#&gt;  6 rs4245535  OSTM1        28962    
-#&gt;  7 rs4245535  NR2E1        7101     
-#&gt;  8 rs4245535  SNX3         8724     
-#&gt;  9 rs4245535  LOC105377929 105377929
+#&gt;  1 rs9486815  NR2E1        7101     
+#&gt;  2 rs9486815  OSTM1        28962    
+#&gt;  3 rs9486815  LOC105377929 105377929
+#&gt;  4 rs9486815  OSTM1-AS1    100287366
+#&gt;  5 rs9486815  SNX3         8724     
+#&gt;  6 rs4245535  SNX3         8724     
+#&gt;  7 rs4245535  LOC105377929 105377929
+#&gt;  8 rs4245535  NR2E1        7101     
+#&gt;  9 rs4245535  OSTM1        28962    
 #&gt; 10 rs4245535  OSTM1-AS1    100287366
-#&gt; # … with 143 more rows
+#&gt; # … with 144 more rows
 #&gt; </div><div class='input'>
 <span class='co'># Get a variant by its identifier</span>
 <span class='fu'>get_variants</span>(<span class='kw'>variant_id</span> <span class='kw'>=</span> <span class='st'>'rs3798440'</span>)</div><div class='output co'>#&gt; An object of class "variants"
@@ -415,36 +426,44 @@ passing a vector of identifiers to <code>variant_id</code>.</p>
 #&gt; # A tibble: 9 x 12
 #&gt;   variant_id gene_name chromosome_name chromosome_posi… distance is_mapped_gene
 #&gt;   &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt;                      &lt;int&gt;    &lt;int&gt; &lt;lgl&gt;         
-#&gt; 1 rs3798440  IMPG1     6                       75846902    74212 FALSE         
-#&gt; 2 rs3798440  MYO6      6                       75846902        0 TRUE          
-#&gt; 3 rs3798440  RNA5SP209 6                       75846902    18337 FALSE         
-#&gt; 4 rs3798440  RNU6-155P 6                       75846902    78744 FALSE         
-#&gt; 5 rs3798440  RNA5SP209 6                       75846902    18337 FALSE         
-#&gt; 6 rs3798440  RF00019   6                       75846902    81611 FALSE         
-#&gt; 7 rs3798440  MYO6      6                       75846902        0 FALSE         
-#&gt; 8 rs3798440  RNU6-155P 6                       75846902    78744 FALSE         
-#&gt; 9 rs3798440  IMPG1     6                       75846902    74212 FALSE         
+#&gt; 1 rs3798440  RNA5SP209 6                       75846902    18337 FALSE         
+#&gt; 2 rs3798440  RNU6-155P 6                       75846902    78744 FALSE         
+#&gt; 3 rs3798440  MYO6      6                       75846902        0 FALSE         
+#&gt; 4 rs3798440  IMPG1     6                       75846902    74212 FALSE         
+#&gt; 5 rs3798440  MYO6      6                       75846902        0 TRUE          
+#&gt; 6 rs3798440  RNA5SP209 6                       75846902    18337 FALSE         
+#&gt; 7 rs3798440  IMPG1     6                       75846902    74212 FALSE         
+#&gt; 8 rs3798440  Y_RNA     6                       75846902    81611 FALSE         
+#&gt; 9 rs3798440  RNU6-155P 6                       75846902    78744 FALSE         
 #&gt; # … with 6 more variables: is_closest_gene &lt;lgl&gt;, is_intergenic &lt;lgl&gt;,
 #&gt; #   is_upstream &lt;lgl&gt;, is_downstream &lt;lgl&gt;, source &lt;chr&gt;, mapping_method &lt;chr&gt;
 #&gt; 
 #&gt; Slot "ensembl_ids":
-#&gt; # A tibble: 5 x 3
-#&gt;   variant_id gene_name ensembl_id     
-#&gt;   &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt;          
-#&gt; 1 rs3798440  IMPG1     ENSG00000112706
-#&gt; 2 rs3798440  MYO6      ENSG00000196586
-#&gt; 3 rs3798440  RNA5SP209 ENSG00000223169
-#&gt; 4 rs3798440  RNU6-155P ENSG00000252156
-#&gt; 5 rs3798440  RF00019   ENSG00000200298
+#&gt; # A tibble: 13 x 3
+#&gt;    variant_id gene_name ensembl_id     
+#&gt;    &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt;          
+#&gt;  1 rs3798440  RNA5SP209 ENSG00000223169
+#&gt;  2 rs3798440  RNU6-155P ENSG00000252156
+#&gt;  3 rs3798440  MYO6      ENSG00000196586
+#&gt;  4 rs3798440  IMPG1     ENSG00000112706
+#&gt;  5 rs3798440  Y_RNA     ENSG00000266747
+#&gt;  6 rs3798440  Y_RNA     ENSG00000264846
+#&gt;  7 rs3798440  Y_RNA     ENSG00000266250
+#&gt;  8 rs3798440  Y_RNA     ENSG00000199332
+#&gt;  9 rs3798440  Y_RNA     ENSG00000265509
+#&gt; 10 rs3798440  Y_RNA     ENSG00000264692
+#&gt; 11 rs3798440  Y_RNA     ENSG00000201680
+#&gt; 12 rs3798440  Y_RNA     ENSG00000265896
+#&gt; 13 rs3798440  Y_RNA     ENSG00000265852
 #&gt; 
 #&gt; Slot "entrez_ids":
 #&gt; # A tibble: 4 x 3
 #&gt;   variant_id gene_name entrez_id
 #&gt;   &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt;    
-#&gt; 1 rs3798440  IMPG1     3617     
-#&gt; 2 rs3798440  MYO6      4646     
-#&gt; 3 rs3798440  RNA5SP209 100873469
-#&gt; 4 rs3798440  RNU6-155P 106481224
+#&gt; 1 rs3798440  RNA5SP209 100873469
+#&gt; 2 rs3798440  RNU6-155P 106481224
+#&gt; 3 rs3798440  MYO6      4646     
+#&gt; 4 rs3798440  IMPG1     3617     
 #&gt; </div><div class='input'>
 <span class='co'># Get variants by EFO trait identifier</span>
 <span class='fu'>get_variants</span>(<span class='kw'>efo_id</span> <span class='kw'>=</span> <span class='st'>'EFO_0005537'</span>)</div><div class='output co'>#&gt; An object of class "variants"
@@ -452,62 +471,62 @@ passing a vector of identifiers to <code>variant_id</code>.</p>
 #&gt; # A tibble: 5 x 7
 #&gt;   variant_id merged functional_class chromosome_name chromosome_posi…
 #&gt;   &lt;chr&gt;       &lt;int&gt; &lt;chr&gt;            &lt;chr&gt;                      &lt;int&gt;
-#&gt; 1 rs4245739       0 3_prime_UTR_var… 1                      204549714
-#&gt; 2 rs10069690      0 intron_variant   5                        1279675
-#&gt; 3 rs3757318       0 intron_variant   6                      151592978
+#&gt; 1 rs10771399      0 intergenic_vari… 12                      28002147
+#&gt; 2 rs3757318       0 intron_variant   6                      151592978
+#&gt; 3 rs10069690      0 intron_variant   5                        1279675
 #&gt; 4 rs2363956       0 missense_variant 19                      17283315
-#&gt; 5 rs10771399      0 intergenic_vari… 12                      28002147
+#&gt; 5 rs4245739       0 3_prime_UTR_var… 1                      204549714
 #&gt; # … with 2 more variables: chromosome_region &lt;chr&gt;, last_update_date &lt;dttm&gt;
 #&gt; 
 #&gt; Slot "genomic_contexts":
-#&gt; # A tibble: 85 x 12
+#&gt; # A tibble: 83 x 12
 #&gt;    variant_id gene_name chromosome_name chromosome_posi… distance is_mapped_gene
 #&gt;    &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt;                      &lt;int&gt;    &lt;int&gt; &lt;lgl&gt;         
-#&gt;  1 rs4245739  LOC10029… 1                      204549714    20007 FALSE         
-#&gt;  2 rs4245739  AL512306… 1                      204549714    20022 FALSE         
-#&gt;  3 rs4245739  PIK3C2B   1                      204549714    54899 FALSE         
-#&gt;  4 rs4245739  AL512306… 1                      204549714    53321 FALSE         
-#&gt;  5 rs4245739  TRK-TTT3… 1                      204549714    43115 FALSE         
-#&gt;  6 rs4245739  AL512306… 1                      204549714    77061 FALSE         
-#&gt;  7 rs4245739  PIK3C2B   1                      204549714    54990 FALSE         
-#&gt;  8 rs4245739  MDM4      1                      204549714        0 TRUE          
-#&gt;  9 rs4245739  LOC10537… 1                      204549714     9872 FALSE         
-#&gt; 10 rs4245739  RNA5SP74  1                      204549714    12699 FALSE         
-#&gt; # … with 75 more rows, and 6 more variables: is_closest_gene &lt;lgl&gt;,
+#&gt;  1 rs10771399 AC008011… 12                      28002147    66398 FALSE         
+#&gt;  2 rs10771399 CCDC91    12                      28002147   131102 TRUE          
+#&gt;  3 rs10771399 PTHLH     12                      28002147    29414 TRUE          
+#&gt;  4 rs10771399 PTHLH     12                      28002147    29283 FALSE         
+#&gt;  5 rs10771399 LOC10536… 12                      28002147    59494 FALSE         
+#&gt;  6 rs10771399 AC008011… 12                      28002147    32334 FALSE         
+#&gt;  7 rs10771399 PTHLH     CHR_HSCHR12_1_…         28002147    29414 TRUE          
+#&gt;  8 rs10771399 CCDC91    CHR_HSCHR12_1_…         28002147   137161 TRUE          
+#&gt;  9 rs10771399 AC008011… CHR_HSCHR12_1_…         28002147    32334 FALSE         
+#&gt; 10 rs10771399 AC008011… CHR_HSCHR12_1_…         28002147    66398 FALSE         
+#&gt; # … with 73 more rows, and 6 more variables: is_closest_gene &lt;lgl&gt;,
 #&gt; #   is_intergenic &lt;lgl&gt;, is_upstream &lt;lgl&gt;, is_downstream &lt;lgl&gt;, source &lt;chr&gt;,
 #&gt; #   mapping_method &lt;chr&gt;
 #&gt; 
 #&gt; Slot "ensembl_ids":
-#&gt; # A tibble: 43 x 3
+#&gt; # A tibble: 42 x 3
 #&gt;    variant_id gene_name  ensembl_id     
 #&gt;    &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          
-#&gt;  1 rs4245739  AL512306.1 ENSG00000236779
-#&gt;  2 rs4245739  PIK3C2B    ENSG00000133056
-#&gt;  3 rs4245739  AL512306.3 ENSG00000240710
-#&gt;  4 rs4245739  AL512306.2 ENSG00000240219
-#&gt;  5 rs4245739  MDM4       ENSG00000198625
-#&gt;  6 rs4245739  RNA5SP74   ENSG00000200408
-#&gt;  7 rs4245739  LRRN2      ENSG00000170382
-#&gt;  8 rs10069690 TERT       ENSG00000164362
-#&gt;  9 rs10069690 MIR4457    ENSG00000263670
-#&gt; 10 rs10069690 CLPTM1L    ENSG00000049656
-#&gt; # … with 33 more rows
+#&gt;  1 rs10771399 AC008011.1 ENSG00000256378
+#&gt;  2 rs10771399 CCDC91     ENSG00000123106
+#&gt;  3 rs10771399 PTHLH      ENSG00000087494
+#&gt;  4 rs10771399 AC008011.2 ENSG00000257042
+#&gt;  5 rs3757318  CCDC170    ENSG00000120262
+#&gt;  6 rs3757318  ARMT1      ENSG00000146476
+#&gt;  7 rs3757318  ESR1       ENSG00000091831
+#&gt;  8 rs3757318  RNU6-813P  ENSG00000207422
+#&gt;  9 rs10069690 TERT       ENSG00000164362
+#&gt; 10 rs10069690 LINC01511  ENSG00000250584
+#&gt; # … with 32 more rows
 #&gt; 
 #&gt; Slot "entrez_ids":
-#&gt; # A tibble: 39 x 3
+#&gt; # A tibble: 37 x 3
 #&gt;    variant_id gene_name    entrez_id
 #&gt;    &lt;chr&gt;      &lt;chr&gt;        &lt;chr&gt;    
-#&gt;  1 rs4245739  LOC100291628 100291628
-#&gt;  2 rs4245739  PIK3C2B      5287     
-#&gt;  3 rs4245739  TRK-TTT3-1   100189122
-#&gt;  4 rs4245739  MDM4         4194     
-#&gt;  5 rs4245739  LOC105371692 105371692
-#&gt;  6 rs4245739  RNA5SP74     100873308
-#&gt;  7 rs4245739  TRK-TTT3-2   100189425
-#&gt;  8 rs4245739  LRRN2        10446    
-#&gt;  9 rs10069690 TERT         7015     
-#&gt; 10 rs10069690 MIR4457      100616235
-#&gt; # … with 29 more rows
+#&gt;  1 rs10771399 CCDC91       55297    
+#&gt;  2 rs10771399 PTHLH        5744     
+#&gt;  3 rs10771399 LOC105369710 105369710
+#&gt;  4 rs10771399 LOC107984462 107984462
+#&gt;  5 rs3757318  CCDC170      80129    
+#&gt;  6 rs3757318  LOC107986528 107986528
+#&gt;  7 rs3757318  ARMT1        79624    
+#&gt;  8 rs3757318  ESR1         2099     
+#&gt;  9 rs3757318  RNU6-813P    106481438
+#&gt; 10 rs10069690 TERT         7015     
+#&gt; # … with 27 more rows
 #&gt; </div><div class='input'>
 </div></pre>
   </div>
