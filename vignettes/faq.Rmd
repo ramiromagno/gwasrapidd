@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 
 ## 1 | How to be sure that I can establish a connection to the GWAS Catalog server?
 
-You can check that gwasrapidd is able to connect to [https://www.ebi.ac.uk](https://www.ebi.ac.uk) my making a connection attempt with the function `is_ebi_reachable()`:
+You can check that gwasrapidd is able to connect to [https://www.ebi.ac.uk](https://www.ebi.ac.uk) by making a connection attempt with the function `is_ebi_reachable()`:
 
 ```{r eval=FALSE}
 library(gwasrapidd)
@@ -318,7 +318,7 @@ variants_intersect@variants[c('variant_id',
                        'chromosome_region')]
 ```
 
-Apparently only `r n(variants_intersect)` variant(s) is related to both genes RNU6-367P and TOPAZ1.
+Apparently only `r n(variants_intersect)` variant(s) are related to both genes RNU6-367P and TOPAZ1.
 
 
 <!--
