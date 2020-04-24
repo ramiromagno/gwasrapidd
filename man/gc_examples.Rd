@@ -12,7 +12,8 @@
 \alias{traits_ex01}
 \alias{traits_ex02}
 \title{gwasrapidd entities' examples}
-\format{\describe{
+\format{
+\describe{
   \item{studies_ex01}{An S4 \linkS4class{studies} object of 2 studies:
   \code{'GCST001585'} and \code{'GCST003985'}.}
   \item{studies_ex02}{An S4 \linkS4class{studies} object of 2 studies:
@@ -32,7 +33,22 @@
   \item{traits_ex02}{An S4 \linkS4class{traits} object of 4 traits:
   \code{'EFO_0007845'}, \code{'EFO_0004699'}, \code{'EFO_0004884'} and
   \code{'EFO_0004875'}.}
-}}
+}
+
+An object of class \code{studies} of length 1.
+
+An object of class \code{associations} of length 1.
+
+An object of class \code{associations} of length 1.
+
+An object of class \code{variants} of length 1.
+
+An object of class \code{variants} of length 1.
+
+An object of class \code{traits} of length 1.
+
+An object of class \code{traits} of length 1.
+}
 \usage{
 studies_ex01
 

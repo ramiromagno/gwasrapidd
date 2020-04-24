@@ -4,7 +4,8 @@
 \name{cytogenetic_bands}
 \alias{cytogenetic_bands}
 \title{GRCh38 human cytogenetic bands.}
-\format{A data frame with 862 rows and 7 variables:
+\format{
+A data frame with 862 rows and 7 variables:
 \describe{
   \item{cytogenetic_band}{Cytogenetic band name. See \emph{Cytogenetic
   Nomenclature} below.}
@@ -24,7 +25,8 @@
   \code{'stalk'}.}
   \item{last_download_date}{Time stamp of last time this dataset was
   downloaded from Ensembl.}
-}}
+}
+}
 \source{
 \url{https://rest.ensembl.org/info/assembly/homo_sapiens?content-type=application/json&bands=1}
 }
