@@ -65,6 +65,9 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
+      <a href="../articles/bmi_variants.html">Variants associated with Body Mass Index (BMI)</a>
+    </li>
+    <li>
       <a href="../articles/faq.html">Frequently asked questions</a>
     </li>
   </ul>
@@ -152,13 +155,14 @@ Figure 2 | gwasrapidd arguments for retrieval functions. Colors indicate the cri
 <div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="no">my_studies</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_studies.html">get_studies</a></span>(<span class="kw">efo_trait</span> <span class="kw">=</span> <span class="st">'autoimmune disease'</span>)</pre></body></html></div>
 <p>We can now check how many GWAS studies we got back:</p>
 <div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="fu"><a href="../reference/n.html">n</a></span>(<span class="no">my_studies</span>)
-<span class="co">#&gt; [1] 2</span>
+<span class="co">#&gt; [1] 3</span>
 <span class="no">my_studies</span>@<span class="kw">studies</span>$<span class="no">study_id</span>
-<span class="co">#&gt; [1] "GCST003097" "GCST007071"</span></pre></body></html></div>
-<p>Apparently only 2 studies: GCST003097, GCST007071. Let’s see the associated publication titles:</p>
+<span class="co">#&gt; [1] "GCST003097" "GCST007071" "GCST009873"</span></pre></body></html></div>
+<p>Apparently only 3 studies: GCST003097, GCST007071, GCST009873. Let’s see the associated publication titles:</p>
 <div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="no">my_studies</span>@<span class="kw">publications</span>$<span class="no">title</span>
-<span class="co">#&gt; [1] "Meta-analysis of shared genetic architecture across ten pediatric autoimmune diseases."</span>
-<span class="co">#&gt; [2] "Leveraging Polygenic Functional Enrichment to Improve GWAS Power."</span></pre></body></html></div>
+<span class="co">#&gt; [1] "Meta-analysis of shared genetic architecture across ten pediatric autoimmune diseases."                                     </span>
+<span class="co">#&gt; [2] "Leveraging Polygenic Functional Enrichment to Improve GWAS Power."                                                          </span>
+<span class="co">#&gt; [3] "Meta-analysis of Immunochip data of four autoimmune diseases reveals novel single-disease and cross-phenotype associations."</span></pre></body></html></div>
 <p>If you want to further inspect these publications, you can quickly browse the respective PubMed entries:</p>
 <div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="co"># This launches your web browser at https://www.ncbi.nlm.nih.gov/pubmed/26301688</span>
 <span class="fu"><a href="../reference/open_in_pubmed.html">open_in_pubmed</a></span>(<span class="no">my_studies</span>@<span class="kw">publications</span>$<span class="no">pubmed_id</span>)</pre></body></html></div>
@@ -166,9 +170,9 @@ Figure 2 | gwasrapidd arguments for retrieval functions. Colors indicate the cri
 <p>So let’s start by getting the associations by <code>study_id</code>:</p>
 <div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="co"># You could have also used get_associations(efo_trait = 'autoimmune disease')</span>
 <span class="no">my_associations</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_associations.html">get_associations</a></span>(<span class="kw">study_id</span> <span class="kw">=</span> <span class="no">my_studies</span>@<span class="kw">studies</span>$<span class="no">study_id</span>)</pre></body></html></div>
-<p>Seemingly, there are 131 associations.</p>
+<p>Seemingly, there are 169 associations.</p>
 <div class="sourceCode" id="cb9"><html><body><pre class="r"><span class="fu"><a href="../reference/n.html">n</a></span>(<span class="no">my_associations</span>)
-<span class="co">#&gt; [1] 131</span></pre></body></html></div>
+<span class="co">#&gt; [1] 169</span></pre></body></html></div>
 <p>However, not all variants meet the level of significance, as required by <span class="citation">Light et al. (2014)</span>:</p>
 <div class="sourceCode" id="cb10"><html><body><pre class="r"><span class="co"># Get association ids for which pvalue is less than 1e-6.</span>
 <span class="kw pkg">dplyr</span><span class="kw ns">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(<span class="no">my_associations</span>@<span class="kw">associations</span>, <span class="no">pvalue</span> <span class="kw">&lt;</span> <span class="fl">1e-6</span>) <span class="kw">%&gt;%</span> <span class="co"># Filter by p-value</span>
@@ -178,11 +182,11 @@ Figure 2 | gwasrapidd arguments for retrieval functions. Colors indicate the cri
 <div class="sourceCode" id="cb11"><html><body><pre class="r"><span class="co"># Extract associations by association id</span>
 <span class="no">my_associations2</span> <span class="kw">&lt;-</span> <span class="no">my_associations</span>[<span class="no">association_ids</span>]
 <span class="fu"><a href="../reference/n.html">n</a></span>(<span class="no">my_associations2</span>)
-<span class="co">#&gt; [1] 129</span></pre></body></html></div>
-<p>Of the 131 associations found in GWAS Catalog, 129 meet the p-value threshold of <span class="math inline">\(1\times 10^{-6}\)</span>. Here are the variants, and their respective risk allele and risk frequency:</p>
+<span class="co">#&gt; [1] 167</span></pre></body></html></div>
+<p>Of the 169 associations found in GWAS Catalog, 167 meet the p-value threshold of <span class="math inline">\(1\times 10^{-6}\)</span>. Here are the variants, and their respective risk allele and risk frequency:</p>
 <div class="sourceCode" id="cb12"><html><body><pre class="r"><span class="no">my_associations2</span>@<span class="kw">risk_alleles</span>[<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'variant_id'</span>, <span class="st">'risk_allele'</span>, <span class="st">'risk_frequency'</span>)] <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="kw">n</span> <span class="kw">=</span> <span class="fl">Inf</span>)
-<span class="co">#&gt; # A tibble: 129 x 3</span>
+<span class="co">#&gt; # A tibble: 167 x 3</span>
 <span class="co">#&gt;     variant_id  risk_allele risk_frequency</span>
 <span class="co">#&gt;     &lt;chr&gt;       &lt;chr&gt;                &lt;dbl&gt;</span>
 <span class="co">#&gt;   1 rs11580078  G                    0.43 </span>
@@ -313,7 +317,45 @@ Figure 2 | gwasrapidd arguments for retrieval functions. Colors indicate the cri
 <span class="co">#&gt; 126 rs3765209   &lt;NA&gt;                NA    </span>
 <span class="co">#&gt; 127 rs12482947  &lt;NA&gt;                NA    </span>
 <span class="co">#&gt; 128 rs5754100   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 129 rs229541    &lt;NA&gt;                NA</span></pre></body></html></div>
+<span class="co">#&gt; 129 rs229541    &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 130 rs6664969   A                   NA    </span>
+<span class="co">#&gt; 131 rs1748041   C                   NA    </span>
+<span class="co">#&gt; 132 rs2476601   A                   NA    </span>
+<span class="co">#&gt; 133 rs1217403   C                   NA    </span>
+<span class="co">#&gt; 134 rs10912267  A                   NA    </span>
+<span class="co">#&gt; 135 rs13415465  G                   NA    </span>
+<span class="co">#&gt; 136 rs12619531  G                   NA    </span>
+<span class="co">#&gt; 137 rs10931468  A                   NA    </span>
+<span class="co">#&gt; 138 rs6749371   T                   NA    </span>
+<span class="co">#&gt; 139 rs7574865   T                   NA    </span>
+<span class="co">#&gt; 140 rs7426056   A                   NA    </span>
+<span class="co">#&gt; 141 rs3087243   A                   NA    </span>
+<span class="co">#&gt; 142 rs35677470  A                   NA    </span>
+<span class="co">#&gt; 143 rs17753641  G                   NA    </span>
+<span class="co">#&gt; 144 rs16878091  A                   NA    </span>
+<span class="co">#&gt; 145 rs1422673   T                   NA    </span>
+<span class="co">#&gt; 146 rs72928038  A                   NA    </span>
+<span class="co">#&gt; 147 rs11757201  C                   NA    </span>
+<span class="co">#&gt; 148 rs58721818  T                   NA    </span>
+<span class="co">#&gt; 149 rs212407    G                   NA    </span>
+<span class="co">#&gt; 150 rs60600003  G                   NA    </span>
+<span class="co">#&gt; 151 rs7780389   T                   NA    </span>
+<span class="co">#&gt; 152 rs4731532   A                   NA    </span>
+<span class="co">#&gt; 153 rs2812378   G                   NA    </span>
+<span class="co">#&gt; 154 rs3118470   C                   NA    </span>
+<span class="co">#&gt; 155 rs72776098  A                   NA    </span>
+<span class="co">#&gt; 156 rs947474    G                   NA    </span>
+<span class="co">#&gt; 157 rs3802604   G                   NA    </span>
+<span class="co">#&gt; 158 rs1250568   C                   NA    </span>
+<span class="co">#&gt; 159 rs10892299  T                   NA    </span>
+<span class="co">#&gt; 160 rs11171739  C                   NA    </span>
+<span class="co">#&gt; 161 rs8043085   T                   NA    </span>
+<span class="co">#&gt; 162 rs34593439  A                   NA    </span>
+<span class="co">#&gt; 163 rs1054609   C                   NA    </span>
+<span class="co">#&gt; 164 rs2542148   C                   NA    </span>
+<span class="co">#&gt; 165 rs74956615  A                   NA    </span>
+<span class="co">#&gt; 166 rs1893592   C                   NA    </span>
+<span class="co">#&gt; 167 rs66534072  G                   NA</span></pre></body></html></div>
 </div>
 <div id="references" class="section level2 unnumbered">
 <h2 class="hasAnchor">

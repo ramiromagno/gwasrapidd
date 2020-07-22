@@ -114,6 +114,9 @@ set_operation to 'intersection'." />
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
+      <a href="../articles/bmi_variants.html">Variants associated with Body Mass Index (BMI)</a>
+    </li>
+    <li>
       <a href="../articles/faq.html">Frequently asked questions</a>
     </li>
   </ul>
@@ -480,14 +483,17 @@ passing a vector of identifiers to <code>variant_id</code>.</p>
 <span class='co'># Get associations by EFO trait identifier</span>
 <span class='fu'>get_associations</span>(<span class='kw'>efo_id</span> <span class='kw'>=</span> <span class='st'>'EFO_0005537'</span>)</div><div class='output co'>#&gt; An object of class "associations"
 #&gt; Slot "associations":
-#&gt; # A tibble: 5 x 17
-#&gt;   association_id  pvalue pvalue_descript… pvalue_mantissa pvalue_exponent
-#&gt;   &lt;chr&gt;            &lt;dbl&gt; &lt;chr&gt;                      &lt;int&gt;           &lt;int&gt;
-#&gt; 1 38403          4.00e-6 &lt;NA&gt;                           4              -6
-#&gt; 2 38407          2.00e-8 &lt;NA&gt;                           2              -8
-#&gt; 3 38404          1.00e-7 &lt;NA&gt;                           1              -7
-#&gt; 4 38406          2.00e-8 &lt;NA&gt;                           2              -8
-#&gt; 5 38405          9.00e-6 &lt;NA&gt;                           9              -6
+#&gt; # A tibble: 8 x 17
+#&gt;   association_id   pvalue pvalue_descript… pvalue_mantissa pvalue_exponent
+#&gt;   &lt;chr&gt;             &lt;dbl&gt; &lt;chr&gt;                      &lt;int&gt;           &lt;int&gt;
+#&gt; 1 38403          4.00e- 6 &lt;NA&gt;                           4              -6
+#&gt; 2 38407          2.00e- 8 &lt;NA&gt;                           2              -8
+#&gt; 3 38404          1.00e- 7 &lt;NA&gt;                           1              -7
+#&gt; 4 38406          2.00e- 8 &lt;NA&gt;                           2              -8
+#&gt; 5 38405          9.00e- 6 &lt;NA&gt;                           9              -6
+#&gt; 6 61957837       9.00e-13 &lt;NA&gt;                           9             -13
+#&gt; 7 61957842       3.00e- 8 &lt;NA&gt;                           3              -8
+#&gt; 8 61957846       1.00e- 8 &lt;NA&gt;                           1              -8
 #&gt; # … with 12 more variables: multiple_snp_haplotype &lt;lgl&gt;,
 #&gt; #   snp_interaction &lt;lgl&gt;, snp_type &lt;chr&gt;, standard_error &lt;dbl&gt;, range &lt;chr&gt;,
 #&gt; #   or_per_copy_number &lt;dbl&gt;, beta_number &lt;dbl&gt;, beta_unit &lt;chr&gt;,
@@ -495,7 +501,7 @@ passing a vector of identifiers to <code>variant_id</code>.</p>
 #&gt; #   last_update_date &lt;dttm&gt;
 #&gt; 
 #&gt; Slot "loci":
-#&gt; # A tibble: 5 x 4
+#&gt; # A tibble: 8 x 4
 #&gt;   association_id locus_id haplotype_snp_count description   
 #&gt;   &lt;chr&gt;             &lt;int&gt;               &lt;int&gt; &lt;chr&gt;         
 #&gt; 1 38403                 1                  NA Single variant
@@ -503,20 +509,26 @@ passing a vector of identifiers to <code>variant_id</code>.</p>
 #&gt; 3 38404                 1                  NA Single variant
 #&gt; 4 38406                 1                  NA Single variant
 #&gt; 5 38405                 1                  NA Single variant
+#&gt; 6 61957837              1                  NA Single variant
+#&gt; 7 61957842              1                  NA Single variant
+#&gt; 8 61957846              1                  NA Single variant
 #&gt; 
 #&gt; Slot "risk_alleles":
-#&gt; # A tibble: 5 x 7
+#&gt; # A tibble: 8 x 7
 #&gt;   association_id locus_id variant_id risk_allele risk_frequency genome_wide
 #&gt;   &lt;chr&gt;             &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;                &lt;dbl&gt; &lt;lgl&gt;      
-#&gt; 1 38403                 1 rs4245739  C                       NA NA         
-#&gt; 2 38407                 1 rs10771399 G                       NA NA         
-#&gt; 3 38404                 1 rs10069690 A                       NA NA         
-#&gt; 4 38406                 1 rs2363956  C                       NA NA         
-#&gt; 5 38405                 1 rs3757318  A                       NA NA         
+#&gt; 1 38403                 1 rs4245739  C                    NA    NA         
+#&gt; 2 38407                 1 rs10771399 G                    NA    NA         
+#&gt; 3 38404                 1 rs10069690 A                    NA    NA         
+#&gt; 4 38406                 1 rs2363956  C                    NA    NA         
+#&gt; 5 38405                 1 rs3757318  A                    NA    NA         
+#&gt; 6 61957837              1 rs17215231 C                     0.92 FALSE      
+#&gt; 7 61957842              1 rs2464195  G                     0.63 FALSE      
+#&gt; 8 61957846              1 rs78378222 T                     0.99 FALSE      
 #&gt; # … with 1 more variable: limited_list &lt;lgl&gt;
 #&gt; 
 #&gt; Slot "genes":
-#&gt; # A tibble: 5 x 3
+#&gt; # A tibble: 8 x 3
 #&gt;   association_id locus_id gene_name 
 #&gt;   &lt;chr&gt;             &lt;int&gt; &lt;chr&gt;     
 #&gt; 1 38403                 1 MDM4      
@@ -524,9 +536,12 @@ passing a vector of identifiers to <code>variant_id</code>.</p>
 #&gt; 3 38404                 1 TERT      
 #&gt; 4 38406                 1 intergenic
 #&gt; 5 38405                 1 ESR1      
+#&gt; 6 61957837              1 &lt;NA&gt;      
+#&gt; 7 61957842              1 &lt;NA&gt;      
+#&gt; 8 61957846              1 &lt;NA&gt;      
 #&gt; 
 #&gt; Slot "ensembl_ids":
-#&gt; # A tibble: 5 x 4
+#&gt; # A tibble: 8 x 4
 #&gt;   association_id locus_id gene_name  ensembl_id     
 #&gt;   &lt;chr&gt;             &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;          
 #&gt; 1 38403                 1 MDM4       ENSG00000198625
@@ -534,9 +549,12 @@ passing a vector of identifiers to <code>variant_id</code>.</p>
 #&gt; 3 38404                 1 TERT       ENSG00000164362
 #&gt; 4 38406                 1 intergenic &lt;NA&gt;           
 #&gt; 5 38405                 1 ESR1       ENSG00000091831
+#&gt; 6 61957837              1 &lt;NA&gt;       &lt;NA&gt;           
+#&gt; 7 61957842              1 &lt;NA&gt;       &lt;NA&gt;           
+#&gt; 8 61957846              1 &lt;NA&gt;       &lt;NA&gt;           
 #&gt; 
 #&gt; Slot "entrez_ids":
-#&gt; # A tibble: 5 x 4
+#&gt; # A tibble: 8 x 4
 #&gt;   association_id locus_id gene_name  entrez_id
 #&gt;   &lt;chr&gt;             &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;    
 #&gt; 1 38403                 1 MDM4       4194     
@@ -544,6 +562,9 @@ passing a vector of identifiers to <code>variant_id</code>.</p>
 #&gt; 3 38404                 1 TERT       7015     
 #&gt; 4 38406                 1 intergenic &lt;NA&gt;     
 #&gt; 5 38405                 1 ESR1       2099     
+#&gt; 6 61957837              1 &lt;NA&gt;       &lt;NA&gt;     
+#&gt; 7 61957842              1 &lt;NA&gt;       &lt;NA&gt;     
+#&gt; 8 61957846              1 &lt;NA&gt;       &lt;NA&gt;     
 #&gt; </div><div class='input'>
 </div></pre>
   </div>

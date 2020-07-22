@@ -114,6 +114,9 @@ set_operation to 'intersection'." />
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
+      <a href="../articles/bmi_variants.html">Variants associated with Body Mass Index (BMI)</a>
+    </li>
+    <li>
       <a href="../articles/faq.html">Frequently asked questions</a>
     </li>
   </ul>
@@ -430,47 +433,53 @@ passing a vector of identifiers to <code>variant_id</code>.</p>
 <span class='co'># Get studies by EFO trait identifier</span>
 <span class='fu'>get_studies</span>(<span class='kw'>efo_id</span> <span class='kw'>=</span> <span class='st'>'EFO_0005537'</span>)</div><div class='output co'>#&gt; An object of class "studies"
 #&gt; Slot "studies":
-#&gt; # A tibble: 1 x 13
+#&gt; # A tibble: 2 x 13
 #&gt;   study_id reported_trait initial_sample_… replication_sam… gxe   gxg  
 #&gt;   &lt;chr&gt;    &lt;chr&gt;          &lt;chr&gt;            &lt;chr&gt;            &lt;lgl&gt; &lt;lgl&gt;
 #&gt; 1 GCST002… Breast cancer… 1,529 European … 2,148 European … FALSE FALSE
+#&gt; 2 GCST010… Breast cancer… 8,602 European … &lt;NA&gt;             FALSE FALSE
 #&gt; # … with 7 more variables: snp_count &lt;int&gt;, qualifier &lt;chr&gt;, imputed &lt;lgl&gt;,
 #&gt; #   pooled &lt;lgl&gt;, study_design_comment &lt;chr&gt;, full_pvalue_set &lt;lgl&gt;,
 #&gt; #   user_requested &lt;lgl&gt;
 #&gt; 
 #&gt; Slot "genotyping_techs":
-#&gt; # A tibble: 1 x 2
+#&gt; # A tibble: 2 x 2
 #&gt;   study_id   genotyping_technology       
 #&gt;   &lt;chr&gt;      &lt;chr&gt;                       
 #&gt; 1 GCST002305 Genome-wide genotyping array
+#&gt; 2 GCST010100 Genome-wide genotyping array
 #&gt; 
 #&gt; Slot "platforms":
-#&gt; # A tibble: 1 x 2
+#&gt; # A tibble: 2 x 2
 #&gt;   study_id   manufacturer
 #&gt;   &lt;chr&gt;      &lt;chr&gt;       
 #&gt; 1 GCST002305 Illumina    
+#&gt; 2 GCST010100 Illumina    
 #&gt; 
 #&gt; Slot "ancestries":
-#&gt; # A tibble: 2 x 4
+#&gt; # A tibble: 3 x 4
 #&gt;   study_id   ancestry_id type        number_of_individuals
 #&gt;   &lt;chr&gt;            &lt;int&gt; &lt;chr&gt;                       &lt;int&gt;
 #&gt; 1 GCST002305           1 replication                  3457
 #&gt; 2 GCST002305           2 initial                      4928
+#&gt; 3 GCST010100           1 initial                    118987
 #&gt; 
 #&gt; Slot "ancestral_groups":
-#&gt; # A tibble: 2 x 3
+#&gt; # A tibble: 3 x 3
 #&gt;   study_id   ancestry_id ancestral_group
 #&gt;   &lt;chr&gt;            &lt;int&gt; &lt;chr&gt;          
 #&gt; 1 GCST002305           1 European       
 #&gt; 2 GCST002305           2 European       
+#&gt; 3 GCST010100           1 European       
 #&gt; 
 #&gt; Slot "countries_of_origin":
-#&gt; # A tibble: 0 x 5
-#&gt; # … with 5 variables: study_id &lt;chr&gt;, ancestry_id &lt;int&gt;, country_name &lt;chr&gt;,
-#&gt; #   major_area &lt;chr&gt;, region &lt;chr&gt;
+#&gt; # A tibble: 1 x 5
+#&gt;   study_id   ancestry_id country_name major_area region
+#&gt;   &lt;chr&gt;            &lt;int&gt; &lt;chr&gt;        &lt;chr&gt;      &lt;chr&gt; 
+#&gt; 1 GCST010100           1 &lt;NA&gt;         &lt;NA&gt;       &lt;NA&gt;  
 #&gt; 
 #&gt; Slot "countries_of_recruitment":
-#&gt; # A tibble: 10 x 5
+#&gt; # A tibble: 36 x 5
 #&gt;    study_id   ancestry_id country_name major_area       region               
 #&gt;    &lt;chr&gt;            &lt;int&gt; &lt;chr&gt;        &lt;chr&gt;            &lt;chr&gt;                
 #&gt;  1 GCST002305           1 U.S.         Northern America &lt;NA&gt;                 
@@ -483,12 +492,14 @@ passing a vector of identifiers to <code>variant_id</code>.</p>
 #&gt;  8 GCST002305           2 Australia    Oceania          Australia/New Zealand
 #&gt;  9 GCST002305           2 Germany      Europe           Western Europe       
 #&gt; 10 GCST002305           2 U.K.         Europe           Northern Europe      
+#&gt; # … with 26 more rows
 #&gt; 
 #&gt; Slot "publications":
-#&gt; # A tibble: 1 x 7
+#&gt; # A tibble: 2 x 7
 #&gt;   study_id pubmed_id publication_date publication title author_fullname
 #&gt;   &lt;chr&gt;        &lt;int&gt; &lt;date&gt;           &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;          
 #&gt; 1 GCST002…  24325915 2013-12-09       Carcinogen… Geno… Purrington KS  
+#&gt; 2 GCST010…  32424353 2020-05-17       Nat Genet   Geno… Zhang H        
 #&gt; # … with 1 more variable: author_orcid &lt;chr&gt;
 #&gt; </div><div class='input'>
 </div></pre>
