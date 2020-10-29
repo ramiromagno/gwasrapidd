@@ -285,13 +285,15 @@ gc_request_all <- function(resource_url = "/",
 
   # Progress bar
   if(progress_bar) {
-    pb <- dplyr::progress_estimated(n_pages, min_time = 2L)
+    pb <- progress::progress_bar$new(total = n_pages,
+                                     show_after = 2,
+                                     format = "  downloading [:bar] :percent eta: :eta")
     gc_request2 <- function(resource_url = "/",
                               base_url = base_url,
                               verbose = FALSE,
                               warnings = TRUE,
                               flatten = FALSE) {
-      pb$tick()$print() # One tick in the progress bar
+      pb$tick()
       gc_request(resource_url = resource_url,
                  base_url = base_url,
                  verbose = verbose,
