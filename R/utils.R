@@ -48,8 +48,8 @@ empty_to_na <- function(x) {
       return(lubridate::ymd_hms(NA_real_))
 
     return(
-      rlang::switch_type(
-        x,
+      switch(
+        typeof(x),
         character = rlang::na_chr,
         integer = rlang::na_int,
         double = rlang::na_dbl,
