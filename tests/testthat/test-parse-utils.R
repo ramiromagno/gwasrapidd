@@ -115,6 +115,7 @@ test_that("is_efo_id2", {
 #
 test_that("is_study_id", {
   expect_true(is_study_id("GCST123456"))
+  expect_true(is_study_id("GCST90002423"))
   expect_identical(is_study_id(c("GCST123456", "GCST000042", "000042")), c(TRUE, TRUE, FALSE))
   expect_identical(is_study_id(c("GCST123456", "GCST", NA_character_)), c(TRUE, FALSE, FALSE))
   expect_identical(is_study_id(c("GCST123456", "GCST", NA_character_), convert_NA_to_FALSE = FALSE), c(TRUE, FALSE, NA))

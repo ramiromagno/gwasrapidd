@@ -215,7 +215,7 @@ is_efo_id2 <- function(str, convert_NA_to_FALSE = TRUE) {
 #'
 #' Find which strings are valid GWAS Catalog study accession IDs (returns
 #' \code{TRUE}). Study accession IDs are tested against the following regular
-#' expression: \code{^GCST\\\\d\{6\}$}.
+#' expression: \code{^GCST\\\\d+$}.
 #'
 #' @param str A character vector of strings.
 #' @param convert_NA_to_FALSE Whether to treat \code{NA} as \code{NA}
@@ -238,7 +238,7 @@ is_study_id <- function(str, convert_NA_to_FALSE = TRUE) {
     str2 <- str
   }
 
-  is_accession <- stringr::str_detect(str2, "^GCST\\d{6}$")
+  is_accession <- stringr::str_detect(str2, "^GCST\\d+$")
 
   return(is_accession)
 }
