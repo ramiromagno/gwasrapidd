@@ -19,6 +19,6 @@ A logical vector.
 \description{
 Find which strings are valid GWAS Catalog study accession IDs (returns
 \code{TRUE}). Study accession IDs are tested against the following regular
-expression: \code{^GCST\\\\d\{6\}$}.
+expression: \code{^GCST\\\\d+$}.
 }
 \keyword{internal}
