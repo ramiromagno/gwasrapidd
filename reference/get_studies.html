@@ -88,7 +88,7 @@ set_operation to 'intersection'." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gwasrapidd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.9</span>
       </span>
     </div>
 
@@ -160,22 +160,22 @@ studies that match simultaneously all criteria provided, then set
 <code>set_operation</code> to <code>'intersection'</code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_studies</span>(
-  <span class='kw'>study_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>association_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>variant_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>efo_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>pubmed_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>user_requested</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>full_pvalue_set</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>efo_uri</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>efo_trait</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>reported_trait</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>set_operation</span> <span class='kw'>=</span> <span class='st'>"union"</span>,
-  <span class='kw'>interactive</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>warnings</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
-)</pre>
+    <pre class="usage"><span class='fu'>get_studies</span><span class='op'>(</span>
+  study_id <span class='op'>=</span> <span class='cn'>NULL</span>,
+  association_id <span class='op'>=</span> <span class='cn'>NULL</span>,
+  variant_id <span class='op'>=</span> <span class='cn'>NULL</span>,
+  efo_id <span class='op'>=</span> <span class='cn'>NULL</span>,
+  pubmed_id <span class='op'>=</span> <span class='cn'>NULL</span>,
+  user_requested <span class='op'>=</span> <span class='cn'>NULL</span>,
+  full_pvalue_set <span class='op'>=</span> <span class='cn'>NULL</span>,
+  efo_uri <span class='op'>=</span> <span class='cn'>NULL</span>,
+  efo_trait <span class='op'>=</span> <span class='cn'>NULL</span>,
+  reported_trait <span class='op'>=</span> <span class='cn'>NULL</span>,
+  set_operation <span class='op'>=</span> <span class='st'>"union"</span>,
+  interactive <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  verbose <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  warnings <span class='op'>=</span> <span class='cn'>TRUE</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -265,244 +265,248 @@ passing a vector of identifiers to <code>variant_id</code>.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Get a study by its accession identifier</span>
-<span class='fu'>get_studies</span>(<span class='kw'>study_id</span> <span class='kw'>=</span> <span class='st'>'GCST001085'</span>)</div><div class='output co'>#&gt; An object of class "studies"
+<span class='fu'>get_studies</span><span class='op'>(</span>study_id <span class='op'>=</span> <span class='st'>'GCST001085'</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; An object of class "studies"
 #&gt; Slot "studies":
-#&gt; # A tibble: 1 x 13
+#&gt; <span style='color: #555555;'># A tibble: 1 x 13</span><span>
 #&gt;   study_id reported_trait initial_sample_… replication_sam… gxe   gxg  
-#&gt;   &lt;chr&gt;    &lt;chr&gt;          &lt;chr&gt;            &lt;chr&gt;            &lt;lgl&gt; &lt;lgl&gt;
-#&gt; 1 GCST001… Hypertension … ~2,000 European… &lt;NA&gt;             FALSE TRUE 
-#&gt; # … with 7 more variables: snp_count &lt;int&gt;, qualifier &lt;chr&gt;, imputed &lt;lgl&gt;,
-#&gt; #   pooled &lt;lgl&gt;, study_design_comment &lt;chr&gt;, full_pvalue_set &lt;lgl&gt;,
-#&gt; #   user_requested &lt;lgl&gt;
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>          </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span>
+#&gt; </span><span style='color: #555555;'>1</span><span> GCST001… Hypertension … ~2,000 European… </span><span style='color: #BB0000;'>NA</span><span>               FALSE TRUE 
+#&gt; </span><span style='color: #555555;'># … with 7 more variables: snp_count </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>, qualifier </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, imputed </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>,</span><span>
+#&gt; </span><span style='color: #555555;'>#   pooled </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, study_design_comment </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, full_pvalue_set </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>,</span><span>
+#&gt; </span><span style='color: #555555;'>#   user_requested </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span>
 #&gt; 
 #&gt; Slot "genotyping_techs":
-#&gt; # A tibble: 1 x 2
+#&gt; </span><span style='color: #555555;'># A tibble: 1 x 2</span><span>
 #&gt;   study_id   genotyping_technology       
-#&gt;   &lt;chr&gt;      &lt;chr&gt;                       
-#&gt; 1 GCST001085 Genome-wide genotyping array
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                       
+#&gt; </span><span style='color: #555555;'>1</span><span> GCST001085 Genome-wide genotyping array
 #&gt; 
 #&gt; Slot "platforms":
-#&gt; # A tibble: 1 x 2
+#&gt; </span><span style='color: #555555;'># A tibble: 1 x 2</span><span>
 #&gt;   study_id   manufacturer
-#&gt;   &lt;chr&gt;      &lt;chr&gt;       
-#&gt; 1 GCST001085 Affymetrix  
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       
+#&gt; </span><span style='color: #555555;'>1</span><span> GCST001085 Affymetrix  
 #&gt; 
 #&gt; Slot "ancestries":
-#&gt; # A tibble: 1 x 4
+#&gt; </span><span style='color: #555555;'># A tibble: 1 x 4</span><span>
 #&gt;   study_id   ancestry_id type    number_of_individuals
-#&gt;   &lt;chr&gt;            &lt;int&gt; &lt;chr&gt;                   &lt;int&gt;
-#&gt; 1 GCST001085           1 initial                  5000
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>
+#&gt; </span><span style='color: #555555;'>1</span><span> GCST001085           1 initial                  </span><span style='text-decoration: underline;'>5</span><span>000
 #&gt; 
 #&gt; Slot "ancestral_groups":
-#&gt; # A tibble: 1 x 3
+#&gt; </span><span style='color: #555555;'># A tibble: 1 x 3</span><span>
 #&gt;   study_id   ancestry_id ancestral_group
-#&gt;   &lt;chr&gt;            &lt;int&gt; &lt;chr&gt;          
-#&gt; 1 GCST001085           1 European       
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>          
+#&gt; </span><span style='color: #555555;'>1</span><span> GCST001085           1 European       
 #&gt; 
 #&gt; Slot "countries_of_origin":
-#&gt; # A tibble: 1 x 5
+#&gt; </span><span style='color: #555555;'># A tibble: 1 x 5</span><span>
 #&gt;   study_id   ancestry_id country_name major_area region
-#&gt;   &lt;chr&gt;            &lt;int&gt; &lt;chr&gt;        &lt;chr&gt;      &lt;chr&gt; 
-#&gt; 1 GCST001085           1 &lt;NA&gt;         &lt;NA&gt;       &lt;NA&gt;  
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> 
+#&gt; </span><span style='color: #555555;'>1</span><span> GCST001085           1 </span><span style='color: #BB0000;'>NA</span><span>           </span><span style='color: #BB0000;'>NA</span><span>         </span><span style='color: #BB0000;'>NA</span><span>    
 #&gt; 
 #&gt; Slot "countries_of_recruitment":
-#&gt; # A tibble: 1 x 5
+#&gt; </span><span style='color: #555555;'># A tibble: 1 x 5</span><span>
 #&gt;   study_id   ancestry_id country_name major_area region
-#&gt;   &lt;chr&gt;            &lt;int&gt; &lt;chr&gt;        &lt;chr&gt;      &lt;chr&gt; 
-#&gt; 1 GCST001085           1 &lt;NA&gt;         &lt;NA&gt;       &lt;NA&gt;  
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> 
+#&gt; </span><span style='color: #555555;'>1</span><span> GCST001085           1 </span><span style='color: #BB0000;'>NA</span><span>           </span><span style='color: #BB0000;'>NA</span><span>         </span><span style='color: #BB0000;'>NA</span><span>    
 #&gt; 
 #&gt; Slot "publications":
-#&gt; # A tibble: 1 x 7
+#&gt; </span><span style='color: #555555;'># A tibble: 1 x 7</span><span>
 #&gt;   study_id pubmed_id publication_date publication title author_fullname
-#&gt;   &lt;chr&gt;        &lt;int&gt; &lt;date&gt;           &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;          
-#&gt; 1 GCST001…  21626137 2011-05-27       Hum Genet   Two-… Slavin TP      
-#&gt; # … with 1 more variable: author_orcid &lt;chr&gt;
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>           </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>          
+#&gt; </span><span style='color: #555555;'>1</span><span> GCST001…  21</span><span style='text-decoration: underline;'>626</span><span>137 2011-05-27       Hum Genet   Two-… Slavin TP      
+#&gt; </span><span style='color: #555555;'># … with 1 more variable: author_orcid </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>
 #&gt; </div><div class='input'>
 <span class='co'># Get a study by association identifier</span>
-<span class='fu'>get_studies</span>(<span class='kw'>association_id</span> <span class='kw'>=</span> <span class='st'>'25389945'</span>)</div><div class='output co'>#&gt; An object of class "studies"
+<span class='fu'>get_studies</span><span class='op'>(</span>association_id <span class='op'>=</span> <span class='st'>'25389945'</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; An object of class "studies"
 #&gt; Slot "studies":
-#&gt; # A tibble: 1 x 13
+#&gt; </span><span style='color: #555555;'># A tibble: 1 x 13</span><span>
 #&gt;   study_id reported_trait initial_sample_… replication_sam… gxe   gxg  
-#&gt;   &lt;chr&gt;    &lt;chr&gt;          &lt;chr&gt;            &lt;chr&gt;            &lt;lgl&gt; &lt;lgl&gt;
-#&gt; 1 GCST005… Major depress… 2,605 European … 8,508 European … FALSE FALSE
-#&gt; # … with 7 more variables: snp_count &lt;int&gt;, qualifier &lt;chr&gt;, imputed &lt;lgl&gt;,
-#&gt; #   pooled &lt;lgl&gt;, study_design_comment &lt;chr&gt;, full_pvalue_set &lt;lgl&gt;,
-#&gt; #   user_requested &lt;lgl&gt;
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>          </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span>
+#&gt; </span><span style='color: #555555;'>1</span><span> GCST005… Major depress… 2,605 European … 8,508 European … FALSE FALSE
+#&gt; </span><span style='color: #555555;'># … with 7 more variables: snp_count </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>, qualifier </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, imputed </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>,</span><span>
+#&gt; </span><span style='color: #555555;'>#   pooled </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, study_design_comment </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, full_pvalue_set </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>,</span><span>
+#&gt; </span><span style='color: #555555;'>#   user_requested </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span>
 #&gt; 
 #&gt; Slot "genotyping_techs":
-#&gt; # A tibble: 1 x 2
+#&gt; </span><span style='color: #555555;'># A tibble: 1 x 2</span><span>
 #&gt;   study_id   genotyping_technology       
-#&gt;   &lt;chr&gt;      &lt;chr&gt;                       
-#&gt; 1 GCST005108 Genome-wide genotyping array
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                       
+#&gt; </span><span style='color: #555555;'>1</span><span> GCST005108 Genome-wide genotyping array
 #&gt; 
 #&gt; Slot "platforms":
-#&gt; # A tibble: 1 x 2
+#&gt; </span><span style='color: #555555;'># A tibble: 1 x 2</span><span>
 #&gt;   study_id   manufacturer
-#&gt;   &lt;chr&gt;      &lt;chr&gt;       
-#&gt; 1 GCST005108 Illumina    
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       
+#&gt; </span><span style='color: #555555;'>1</span><span> GCST005108 Illumina    
 #&gt; 
 #&gt; Slot "ancestries":
-#&gt; # A tibble: 2 x 4
+#&gt; </span><span style='color: #555555;'># A tibble: 2 x 4</span><span>
 #&gt;   study_id   ancestry_id type        number_of_individuals
-#&gt;   &lt;chr&gt;            &lt;int&gt; &lt;chr&gt;                       &lt;int&gt;
-#&gt; 1 GCST005108           1 replication                 25035
-#&gt; 2 GCST005108           2 initial                     18773
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                       </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>
+#&gt; </span><span style='color: #555555;'>1</span><span> GCST005108           1 replication                 </span><span style='text-decoration: underline;'>25</span><span>035
+#&gt; </span><span style='color: #555555;'>2</span><span> GCST005108           2 initial                     </span><span style='text-decoration: underline;'>18</span><span>773
 #&gt; 
 #&gt; Slot "ancestral_groups":
-#&gt; # A tibble: 2 x 3
+#&gt; </span><span style='color: #555555;'># A tibble: 2 x 3</span><span>
 #&gt;   study_id   ancestry_id ancestral_group
-#&gt;   &lt;chr&gt;            &lt;int&gt; &lt;chr&gt;          
-#&gt; 1 GCST005108           1 European       
-#&gt; 2 GCST005108           2 European       
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>          
+#&gt; </span><span style='color: #555555;'>1</span><span> GCST005108           1 European       
+#&gt; </span><span style='color: #555555;'>2</span><span> GCST005108           2 European       
 #&gt; 
 #&gt; Slot "countries_of_origin":
-#&gt; # A tibble: 2 x 5
+#&gt; </span><span style='color: #555555;'># A tibble: 2 x 5</span><span>
 #&gt;   study_id   ancestry_id country_name major_area region
-#&gt;   &lt;chr&gt;            &lt;int&gt; &lt;chr&gt;        &lt;chr&gt;      &lt;chr&gt; 
-#&gt; 1 GCST005108           1 &lt;NA&gt;         &lt;NA&gt;       &lt;NA&gt;  
-#&gt; 2 GCST005108           2 &lt;NA&gt;         &lt;NA&gt;       &lt;NA&gt;  
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> 
+#&gt; </span><span style='color: #555555;'>1</span><span> GCST005108           1 </span><span style='color: #BB0000;'>NA</span><span>           </span><span style='color: #BB0000;'>NA</span><span>         </span><span style='color: #BB0000;'>NA</span><span>    
+#&gt; </span><span style='color: #555555;'>2</span><span> GCST005108           2 </span><span style='color: #BB0000;'>NA</span><span>           </span><span style='color: #BB0000;'>NA</span><span>         </span><span style='color: #BB0000;'>NA</span><span>    
 #&gt; 
 #&gt; Slot "countries_of_recruitment":
-#&gt; # A tibble: 2 x 5
+#&gt; </span><span style='color: #555555;'># A tibble: 2 x 5</span><span>
 #&gt;   study_id   ancestry_id country_name major_area region         
-#&gt;   &lt;chr&gt;            &lt;int&gt; &lt;chr&gt;        &lt;chr&gt;      &lt;chr&gt;          
-#&gt; 1 GCST005108           1 U.K.         Europe     Northern Europe
-#&gt; 2 GCST005108           2 U.K.         Europe     Northern Europe
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>          
+#&gt; </span><span style='color: #555555;'>1</span><span> GCST005108           1 U.K.         Europe     Northern Europe
+#&gt; </span><span style='color: #555555;'>2</span><span> GCST005108           2 U.K.         Europe     Northern Europe
 #&gt; 
 #&gt; Slot "publications":
-#&gt; # A tibble: 1 x 7
+#&gt; </span><span style='color: #555555;'># A tibble: 1 x 7</span><span>
 #&gt;   study_id pubmed_id publication_date publication title author_fullname
-#&gt;   &lt;chr&gt;        &lt;int&gt; &lt;date&gt;           &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;          
-#&gt; 1 GCST005…  29187746 2017-11-30       Transl Psy… Geno… Howard DM      
-#&gt; # … with 1 more variable: author_orcid &lt;chr&gt;
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>           </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>          
+#&gt; </span><span style='color: #555555;'>1</span><span> GCST005…  29</span><span style='text-decoration: underline;'>187</span><span>746 2017-11-30       Transl Psy… Geno… Howard DM      
+#&gt; </span><span style='color: #555555;'># … with 1 more variable: author_orcid </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>
 #&gt; </div><div class='input'>
 <span class='co'># Get studies by variant identifier</span>
-<span class='fu'>get_studies</span>(<span class='kw'>variant_id</span> <span class='kw'>=</span> <span class='st'>'rs3798440'</span>)</div><div class='output co'>#&gt; An object of class "studies"
+<span class='fu'>get_studies</span><span class='op'>(</span>variant_id <span class='op'>=</span> <span class='st'>'rs3798440'</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; An object of class "studies"
 #&gt; Slot "studies":
-#&gt; # A tibble: 1 x 13
+#&gt; </span><span style='color: #555555;'># A tibble: 1 x 13</span><span>
 #&gt;   study_id reported_trait initial_sample_… replication_sam… gxe   gxg  
-#&gt;   &lt;chr&gt;    &lt;chr&gt;          &lt;chr&gt;            &lt;chr&gt;            &lt;lgl&gt; &lt;lgl&gt;
-#&gt; 1 GCST001… Hypertension … ~2,000 European… &lt;NA&gt;             FALSE TRUE 
-#&gt; # … with 7 more variables: snp_count &lt;int&gt;, qualifier &lt;chr&gt;, imputed &lt;lgl&gt;,
-#&gt; #   pooled &lt;lgl&gt;, study_design_comment &lt;chr&gt;, full_pvalue_set &lt;lgl&gt;,
-#&gt; #   user_requested &lt;lgl&gt;
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>          </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span>
+#&gt; </span><span style='color: #555555;'>1</span><span> GCST001… Hypertension … ~2,000 European… </span><span style='color: #BB0000;'>NA</span><span>               FALSE TRUE 
+#&gt; </span><span style='color: #555555;'># … with 7 more variables: snp_count </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>, qualifier </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, imputed </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>,</span><span>
+#&gt; </span><span style='color: #555555;'>#   pooled </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, study_design_comment </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, full_pvalue_set </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>,</span><span>
+#&gt; </span><span style='color: #555555;'>#   user_requested </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span>
 #&gt; 
 #&gt; Slot "genotyping_techs":
-#&gt; # A tibble: 1 x 2
+#&gt; </span><span style='color: #555555;'># A tibble: 1 x 2</span><span>
 #&gt;   study_id   genotyping_technology       
-#&gt;   &lt;chr&gt;      &lt;chr&gt;                       
-#&gt; 1 GCST001085 Genome-wide genotyping array
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                       
+#&gt; </span><span style='color: #555555;'>1</span><span> GCST001085 Genome-wide genotyping array
 #&gt; 
 #&gt; Slot "platforms":
-#&gt; # A tibble: 1 x 2
+#&gt; </span><span style='color: #555555;'># A tibble: 1 x 2</span><span>
 #&gt;   study_id   manufacturer
-#&gt;   &lt;chr&gt;      &lt;chr&gt;       
-#&gt; 1 GCST001085 Affymetrix  
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       
+#&gt; </span><span style='color: #555555;'>1</span><span> GCST001085 Affymetrix  
 #&gt; 
 #&gt; Slot "ancestries":
-#&gt; # A tibble: 1 x 4
+#&gt; </span><span style='color: #555555;'># A tibble: 1 x 4</span><span>
 #&gt;   study_id   ancestry_id type    number_of_individuals
-#&gt;   &lt;chr&gt;            &lt;int&gt; &lt;chr&gt;                   &lt;int&gt;
-#&gt; 1 GCST001085           1 initial                  5000
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>
+#&gt; </span><span style='color: #555555;'>1</span><span> GCST001085           1 initial                  </span><span style='text-decoration: underline;'>5</span><span>000
 #&gt; 
 #&gt; Slot "ancestral_groups":
-#&gt; # A tibble: 1 x 3
+#&gt; </span><span style='color: #555555;'># A tibble: 1 x 3</span><span>
 #&gt;   study_id   ancestry_id ancestral_group
-#&gt;   &lt;chr&gt;            &lt;int&gt; &lt;chr&gt;          
-#&gt; 1 GCST001085           1 European       
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>          
+#&gt; </span><span style='color: #555555;'>1</span><span> GCST001085           1 European       
 #&gt; 
 #&gt; Slot "countries_of_origin":
-#&gt; # A tibble: 1 x 5
+#&gt; </span><span style='color: #555555;'># A tibble: 1 x 5</span><span>
 #&gt;   study_id   ancestry_id country_name major_area region
-#&gt;   &lt;chr&gt;            &lt;int&gt; &lt;chr&gt;        &lt;chr&gt;      &lt;chr&gt; 
-#&gt; 1 GCST001085           1 &lt;NA&gt;         &lt;NA&gt;       &lt;NA&gt;  
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> 
+#&gt; </span><span style='color: #555555;'>1</span><span> GCST001085           1 </span><span style='color: #BB0000;'>NA</span><span>           </span><span style='color: #BB0000;'>NA</span><span>         </span><span style='color: #BB0000;'>NA</span><span>    
 #&gt; 
 #&gt; Slot "countries_of_recruitment":
-#&gt; # A tibble: 1 x 5
+#&gt; </span><span style='color: #555555;'># A tibble: 1 x 5</span><span>
 #&gt;   study_id   ancestry_id country_name major_area region
-#&gt;   &lt;chr&gt;            &lt;int&gt; &lt;chr&gt;        &lt;chr&gt;      &lt;chr&gt; 
-#&gt; 1 GCST001085           1 &lt;NA&gt;         &lt;NA&gt;       &lt;NA&gt;  
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> 
+#&gt; </span><span style='color: #555555;'>1</span><span> GCST001085           1 </span><span style='color: #BB0000;'>NA</span><span>           </span><span style='color: #BB0000;'>NA</span><span>         </span><span style='color: #BB0000;'>NA</span><span>    
 #&gt; 
 #&gt; Slot "publications":
-#&gt; # A tibble: 1 x 7
+#&gt; </span><span style='color: #555555;'># A tibble: 1 x 7</span><span>
 #&gt;   study_id pubmed_id publication_date publication title author_fullname
-#&gt;   &lt;chr&gt;        &lt;int&gt; &lt;date&gt;           &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;          
-#&gt; 1 GCST001…  21626137 2011-05-27       Hum Genet   Two-… Slavin TP      
-#&gt; # … with 1 more variable: author_orcid &lt;chr&gt;
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>           </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>          
+#&gt; </span><span style='color: #555555;'>1</span><span> GCST001…  21</span><span style='text-decoration: underline;'>626</span><span>137 2011-05-27       Hum Genet   Two-… Slavin TP      
+#&gt; </span><span style='color: #555555;'># … with 1 more variable: author_orcid </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>
 #&gt; </div><div class='input'>
 <span class='co'># Get studies by EFO trait identifier</span>
-<span class='fu'>get_studies</span>(<span class='kw'>efo_id</span> <span class='kw'>=</span> <span class='st'>'EFO_0005537'</span>)</div><div class='output co'>#&gt; An object of class "studies"
+<span class='fu'>get_studies</span><span class='op'>(</span>efo_id <span class='op'>=</span> <span class='st'>'EFO_0005537'</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; An object of class "studies"
 #&gt; Slot "studies":
-#&gt; # A tibble: 2 x 13
+#&gt; </span><span style='color: #555555;'># A tibble: 2 x 13</span><span>
 #&gt;   study_id reported_trait initial_sample_… replication_sam… gxe   gxg  
-#&gt;   &lt;chr&gt;    &lt;chr&gt;          &lt;chr&gt;            &lt;chr&gt;            &lt;lgl&gt; &lt;lgl&gt;
-#&gt; 1 GCST002… Breast cancer… 1,529 European … 2,148 European … FALSE FALSE
-#&gt; 2 GCST010… Breast cancer… 8,602 European … &lt;NA&gt;             FALSE FALSE
-#&gt; # … with 7 more variables: snp_count &lt;int&gt;, qualifier &lt;chr&gt;, imputed &lt;lgl&gt;,
-#&gt; #   pooled &lt;lgl&gt;, study_design_comment &lt;chr&gt;, full_pvalue_set &lt;lgl&gt;,
-#&gt; #   user_requested &lt;lgl&gt;
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>          </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span>
+#&gt; </span><span style='color: #555555;'>1</span><span> GCST002… Breast cancer… 1,529 European … 2,148 European … FALSE FALSE
+#&gt; </span><span style='color: #555555;'>2</span><span> GCST010… Breast cancer… 8,602 European … </span><span style='color: #BB0000;'>NA</span><span>               FALSE FALSE
+#&gt; </span><span style='color: #555555;'># … with 7 more variables: snp_count </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>, qualifier </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, imputed </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>,</span><span>
+#&gt; </span><span style='color: #555555;'>#   pooled </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, study_design_comment </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, full_pvalue_set </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>,</span><span>
+#&gt; </span><span style='color: #555555;'>#   user_requested </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span>
 #&gt; 
 #&gt; Slot "genotyping_techs":
-#&gt; # A tibble: 2 x 2
+#&gt; </span><span style='color: #555555;'># A tibble: 2 x 2</span><span>
 #&gt;   study_id   genotyping_technology       
-#&gt;   &lt;chr&gt;      &lt;chr&gt;                       
-#&gt; 1 GCST002305 Genome-wide genotyping array
-#&gt; 2 GCST010100 Genome-wide genotyping array
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                       
+#&gt; </span><span style='color: #555555;'>1</span><span> GCST002305 Genome-wide genotyping array
+#&gt; </span><span style='color: #555555;'>2</span><span> GCST010100 Genome-wide genotyping array
 #&gt; 
 #&gt; Slot "platforms":
-#&gt; # A tibble: 2 x 2
+#&gt; </span><span style='color: #555555;'># A tibble: 2 x 2</span><span>
 #&gt;   study_id   manufacturer
-#&gt;   &lt;chr&gt;      &lt;chr&gt;       
-#&gt; 1 GCST002305 Illumina    
-#&gt; 2 GCST010100 Illumina    
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       
+#&gt; </span><span style='color: #555555;'>1</span><span> GCST002305 Illumina    
+#&gt; </span><span style='color: #555555;'>2</span><span> GCST010100 Illumina    
 #&gt; 
 #&gt; Slot "ancestries":
-#&gt; # A tibble: 3 x 4
+#&gt; </span><span style='color: #555555;'># A tibble: 3 x 4</span><span>
 #&gt;   study_id   ancestry_id type        number_of_individuals
-#&gt;   &lt;chr&gt;            &lt;int&gt; &lt;chr&gt;                       &lt;int&gt;
-#&gt; 1 GCST002305           1 replication                  3457
-#&gt; 2 GCST002305           2 initial                      4928
-#&gt; 3 GCST010100           1 initial                    118987
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                       </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>
+#&gt; </span><span style='color: #555555;'>1</span><span> GCST002305           1 replication                  </span><span style='text-decoration: underline;'>3</span><span>457
+#&gt; </span><span style='color: #555555;'>2</span><span> GCST002305           2 initial                      </span><span style='text-decoration: underline;'>4</span><span>928
+#&gt; </span><span style='color: #555555;'>3</span><span> GCST010100           1 initial                    </span><span style='text-decoration: underline;'>118</span><span>987
 #&gt; 
 #&gt; Slot "ancestral_groups":
-#&gt; # A tibble: 3 x 3
+#&gt; </span><span style='color: #555555;'># A tibble: 3 x 3</span><span>
 #&gt;   study_id   ancestry_id ancestral_group
-#&gt;   &lt;chr&gt;            &lt;int&gt; &lt;chr&gt;          
-#&gt; 1 GCST002305           1 European       
-#&gt; 2 GCST002305           2 European       
-#&gt; 3 GCST010100           1 European       
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>          
+#&gt; </span><span style='color: #555555;'>1</span><span> GCST002305           1 European       
+#&gt; </span><span style='color: #555555;'>2</span><span> GCST002305           2 European       
+#&gt; </span><span style='color: #555555;'>3</span><span> GCST010100           1 European       
 #&gt; 
 #&gt; Slot "countries_of_origin":
-#&gt; # A tibble: 1 x 5
+#&gt; </span><span style='color: #555555;'># A tibble: 1 x 5</span><span>
 #&gt;   study_id   ancestry_id country_name major_area region
-#&gt;   &lt;chr&gt;            &lt;int&gt; &lt;chr&gt;        &lt;chr&gt;      &lt;chr&gt; 
-#&gt; 1 GCST010100           1 &lt;NA&gt;         &lt;NA&gt;       &lt;NA&gt;  
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> 
+#&gt; </span><span style='color: #555555;'>1</span><span> GCST010100           1 </span><span style='color: #BB0000;'>NA</span><span>           </span><span style='color: #BB0000;'>NA</span><span>         </span><span style='color: #BB0000;'>NA</span><span>    
 #&gt; 
 #&gt; Slot "countries_of_recruitment":
-#&gt; # A tibble: 36 x 5
+#&gt; </span><span style='color: #555555;'># A tibble: 36 x 5</span><span>
 #&gt;    study_id   ancestry_id country_name major_area       region               
-#&gt;    &lt;chr&gt;            &lt;int&gt; &lt;chr&gt;        &lt;chr&gt;            &lt;chr&gt;                
-#&gt;  1 GCST002305           1 U.S.         Northern America &lt;NA&gt;                 
-#&gt;  2 GCST002305           1 Greece       Europe           Southern Europe      
-#&gt;  3 GCST002305           1 Germany      Europe           Western Europe       
-#&gt;  4 GCST002305           1 U.K.         Europe           Northern Europe      
-#&gt;  5 GCST002305           1 Norway       Europe           Northern Europe      
-#&gt;  6 GCST002305           2 Finland      Europe           Northern Europe      
-#&gt;  7 GCST002305           2 U.S.         Northern America &lt;NA&gt;                 
-#&gt;  8 GCST002305           2 Australia    Oceania          Australia/New Zealand
-#&gt;  9 GCST002305           2 Germany      Europe           Western Europe       
-#&gt; 10 GCST002305           2 U.K.         Europe           Northern Europe      
-#&gt; # … with 26 more rows
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                
+#&gt; </span><span style='color: #555555;'> 1</span><span> GCST002305           1 U.S.         Northern America </span><span style='color: #BB0000;'>NA</span><span>                   
+#&gt; </span><span style='color: #555555;'> 2</span><span> GCST002305           1 Greece       Europe           Southern Europe      
+#&gt; </span><span style='color: #555555;'> 3</span><span> GCST002305           1 Germany      Europe           Western Europe       
+#&gt; </span><span style='color: #555555;'> 4</span><span> GCST002305           1 U.K.         Europe           Northern Europe      
+#&gt; </span><span style='color: #555555;'> 5</span><span> GCST002305           1 Norway       Europe           Northern Europe      
+#&gt; </span><span style='color: #555555;'> 6</span><span> GCST002305           2 Finland      Europe           Northern Europe      
+#&gt; </span><span style='color: #555555;'> 7</span><span> GCST002305           2 U.S.         Northern America </span><span style='color: #BB0000;'>NA</span><span>                   
+#&gt; </span><span style='color: #555555;'> 8</span><span> GCST002305           2 Australia    Oceania          Australia/New Zealand
+#&gt; </span><span style='color: #555555;'> 9</span><span> GCST002305           2 Germany      Europe           Western Europe       
+#&gt; </span><span style='color: #555555;'>10</span><span> GCST002305           2 U.K.         Europe           Northern Europe      
+#&gt; </span><span style='color: #555555;'># … with 26 more rows</span><span>
 #&gt; 
 #&gt; Slot "publications":
-#&gt; # A tibble: 2 x 7
+#&gt; </span><span style='color: #555555;'># A tibble: 2 x 7</span><span>
 #&gt;   study_id pubmed_id publication_date publication title author_fullname
-#&gt;   &lt;chr&gt;        &lt;int&gt; &lt;date&gt;           &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;          
-#&gt; 1 GCST002…  24325915 2013-12-09       Carcinogen… Geno… Purrington KS  
-#&gt; 2 GCST010…  32424353 2020-05-17       Nat Genet   Geno… Zhang H        
-#&gt; # … with 1 more variable: author_orcid &lt;chr&gt;
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;date&gt;</span><span>           </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>          
+#&gt; </span><span style='color: #555555;'>1</span><span> GCST002…  24</span><span style='text-decoration: underline;'>325</span><span>915 2013-12-09       Carcinogen… Geno… Purrington KS  
+#&gt; </span><span style='color: #555555;'>2</span><span> GCST010…  32</span><span style='text-decoration: underline;'>424</span><span>353 2020-05-17       Nat Genet   Geno… Zhang H        
+#&gt; </span><span style='color: #555555;'># … with 1 more variable: author_orcid </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>
 #&gt; </div><div class='input'>
-</div></pre>
+</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -518,7 +522,7 @@ passing a vector of identifiers to <code>variant_id</code>.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

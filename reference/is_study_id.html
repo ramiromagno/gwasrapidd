@@ -51,7 +51,7 @@
 <meta property="og:title" content="Is a string a GWAS Catalog study accession ID? — is_study_id" />
 <meta property="og:description" content="Find which strings are valid GWAS Catalog study accession IDs (returns
 TRUE). Study accession IDs are tested against the following regular
-expression: ^GCST\\d{6}$." />
+expression: ^GCST\\d+$." />
 <meta property="og:image" content="https://rmagno.eu/gwasrapidd/logo.svg" />
 
 
@@ -84,7 +84,7 @@ expression: ^GCST\\d{6}$." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gwasrapidd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.9</span>
       </span>
     </div>
 
@@ -149,10 +149,10 @@ expression: ^GCST\\d{6}$." />
     <div class="ref-description">
     <p>Find which strings are valid GWAS Catalog study accession IDs (returns
 <code>TRUE</code>). Study accession IDs are tested against the following regular
-expression: <code>^GCST\\d{6}$</code>.</p>
+expression: <code>^GCST\\d+$</code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>is_study_id</span>(<span class='no'>str</span>, <span class='kw'>convert_NA_to_FALSE</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>is_study_id</span><span class='op'>(</span><span class='va'>str</span>, convert_NA_to_FALSE <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -188,7 +188,7 @@ an <code>NA</code> is found (<code>convert_NA_to_FALSE = TRUE</code>).</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

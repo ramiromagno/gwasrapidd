@@ -83,7 +83,7 @@ the GWAS web graphical user interface: https://www.ebi.ac.uk/gwas." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gwasrapidd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.9</span>
       </span>
     </div>
 
@@ -150,10 +150,10 @@ the GWAS web graphical user interface: https://www.ebi.ac.uk/gwas." />
 the GWAS web graphical user interface: <a href='https://www.ebi.ac.uk/gwas'>https://www.ebi.ac.uk/gwas</a>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>open_in_gwas_catalog</span>(
-  <span class='no'>identifier</span>,
-  <span class='kw'>gwas_catalog_entity</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"study"</span>, <span class='st'>"variant"</span>, <span class='st'>"trait"</span>, <span class='st'>"gene"</span>, <span class='st'>"region"</span>, <span class='st'>"publication"</span>)
-)</pre>
+    <pre class="usage"><span class='fu'>open_in_gwas_catalog</span><span class='op'>(</span>
+  <span class='va'>identifier</span>,
+  gwas_catalog_entity <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"study"</span>, <span class='st'>"variant"</span>, <span class='st'>"trait"</span>, <span class='st'>"gene"</span>, <span class='st'>"region"</span>, <span class='st'>"publication"</span><span class='op'>)</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -180,27 +180,29 @@ passed in <code>identifier</code>.</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Open studies in GWAS Web Graphical User Interface</span>
-<span class='fu'>open_in_gwas_catalog</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>'GCST000016'</span>, <span class='st'>'GCST001115'</span>))
+<span class='fu'>open_in_gwas_catalog</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'GCST000016'</span>, <span class='st'>'GCST001115'</span><span class='op'>)</span><span class='op'>)</span>
 
 <span class='co'># Open variants</span>
-<span class='fu'>open_in_gwas_catalog</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>'rs146992477'</span>, <span class='st'>'rs56261590'</span>),
-  <span class='kw'>gwas_catalog_entity</span> <span class='kw'>=</span> <span class='st'>'variant'</span>)
+<span class='fu'>open_in_gwas_catalog</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'rs146992477'</span>, <span class='st'>'rs56261590'</span><span class='op'>)</span>,
+  gwas_catalog_entity <span class='op'>=</span> <span class='st'>'variant'</span><span class='op'>)</span>
 
 <span class='co'># Open EFO traits</span>
-<span class='fu'>open_in_gwas_catalog</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>'EFO_0004884'</span>, <span class='st'>'EFO_0004343'</span>),
-  <span class='kw'>gwas_catalog_entity</span> <span class='kw'>=</span> <span class='st'>'trait'</span>)
+<span class='fu'>open_in_gwas_catalog</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'EFO_0004884'</span>, <span class='st'>'EFO_0004343'</span><span class='op'>)</span>,
+  gwas_catalog_entity <span class='op'>=</span> <span class='st'>'trait'</span><span class='op'>)</span>
 
 <span class='co'># Open genes</span>
-<span class='fu'>open_in_gwas_catalog</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>'DPP6'</span>, <span class='st'>'MCCC2'</span>),
-  <span class='kw'>gwas_catalog_entity</span> <span class='kw'>=</span> <span class='st'>'gene'</span>)
+<span class='fu'>open_in_gwas_catalog</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'DPP6'</span>, <span class='st'>'MCCC2'</span><span class='op'>)</span>,
+  gwas_catalog_entity <span class='op'>=</span> <span class='st'>'gene'</span><span class='op'>)</span>
 
 <span class='co'># Open cytogenetic regions</span>
-<span class='fu'>open_in_gwas_catalog</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>'2q37.1'</span>, <span class='st'>'1p36.11'</span>),
-  <span class='kw'>gwas_catalog_entity</span> <span class='kw'>=</span> <span class='st'>'region'</span>)
+<span class='fu'>open_in_gwas_catalog</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'2q37.1'</span>, <span class='st'>'1p36.11'</span><span class='op'>)</span>,
+  gwas_catalog_entity <span class='op'>=</span> <span class='st'>'region'</span><span class='op'>)</span>
 
 <span class='co'># Open publications</span>
-<span class='fu'>open_in_gwas_catalog</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>'25533513'</span>, <span class='st'>'24376627'</span>),
-  <span class='kw'>gwas_catalog_entity</span> <span class='kw'>=</span> <span class='st'>'publication'</span>)</div></pre>
+<span class='fu'>open_in_gwas_catalog</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>'25533513'</span>, <span class='st'>'24376627'</span><span class='op'>)</span>,
+  gwas_catalog_entity <span class='op'>=</span> <span class='st'>'publication'</span><span class='op'>)</span>
+
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -216,7 +218,7 @@ passed in <code>identifier</code>.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

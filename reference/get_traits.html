@@ -88,7 +88,7 @@ set_operation to 'intersection'." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gwasrapidd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.9</span>
       </span>
     </div>
 
@@ -160,17 +160,17 @@ traits that match simultaneously all criteria provided, then set
 <code>set_operation</code> to <code>'intersection'</code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_traits</span>(
-  <span class='kw'>study_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>association_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>efo_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>pubmed_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>efo_uri</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>efo_trait</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>set_operation</span> <span class='kw'>=</span> <span class='st'>"union"</span>,
-  <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>warnings</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
-)</pre>
+    <pre class="usage"><span class='fu'>get_traits</span><span class='op'>(</span>
+  study_id <span class='op'>=</span> <span class='cn'>NULL</span>,
+  association_id <span class='op'>=</span> <span class='cn'>NULL</span>,
+  efo_id <span class='op'>=</span> <span class='cn'>NULL</span>,
+  pubmed_id <span class='op'>=</span> <span class='cn'>NULL</span>,
+  efo_uri <span class='op'>=</span> <span class='cn'>NULL</span>,
+  efo_trait <span class='op'>=</span> <span class='cn'>NULL</span>,
+  set_operation <span class='op'>=</span> <span class='st'>"union"</span>,
+  verbose <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  warnings <span class='op'>=</span> <span class='cn'>TRUE</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -235,30 +235,33 @@ passing a vector of identifiers to <code>efo_id</code>.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Get traits by study identifier</span>
-<span class='fu'>get_traits</span>(<span class='kw'>study_id</span> <span class='kw'>=</span> <span class='st'>'GCST001085'</span>)</div><div class='output co'>#&gt; An object of class "traits"
+<span class='fu'>get_traits</span><span class='op'>(</span>study_id <span class='op'>=</span> <span class='st'>'GCST001085'</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; An object of class "traits"
 #&gt; Slot "traits":
-#&gt; # A tibble: 1 x 3
+#&gt; <span style='color: #555555;'># A tibble: 1 x 3</span><span>
 #&gt;   efo_id      trait        uri                                 
-#&gt;   &lt;chr&gt;       &lt;chr&gt;        &lt;chr&gt;                               
-#&gt; 1 EFO_0000537 hypertension http://www.ebi.ac.uk/efo/EFO_0000537
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                               
+#&gt; </span><span style='color: #555555;'>1</span><span> EFO_0000537 hypertension http://www.ebi.ac.uk/efo/EFO_0000537
 #&gt; </div><div class='input'>
 <span class='co'># Get traits by association identifier</span>
-<span class='fu'>get_traits</span>(<span class='kw'>association_id</span> <span class='kw'>=</span> <span class='st'>'25389945'</span>)</div><div class='output co'>#&gt; An object of class "traits"
+<span class='fu'>get_traits</span><span class='op'>(</span>association_id <span class='op'>=</span> <span class='st'>'25389945'</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; An object of class "traits"
 #&gt; Slot "traits":
-#&gt; # A tibble: 1 x 3
+#&gt; </span><span style='color: #555555;'># A tibble: 1 x 3</span><span>
 #&gt;   efo_id      trait               uri                                 
-#&gt;   &lt;chr&gt;       &lt;chr&gt;               &lt;chr&gt;                               
-#&gt; 1 EFO_0003761 unipolar depression http://www.ebi.ac.uk/efo/EFO_0003761
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>               </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                               
+#&gt; </span><span style='color: #555555;'>1</span><span> EFO_0003761 unipolar depression http://www.ebi.ac.uk/efo/EFO_0003761
 #&gt; </div><div class='input'>
 <span class='co'># Get a trait by its EFO identifier</span>
-<span class='fu'>get_traits</span>(<span class='kw'>efo_id</span> <span class='kw'>=</span> <span class='st'>'EFO_0005537'</span>)</div><div class='output co'>#&gt; An object of class "traits"
+<span class='fu'>get_traits</span><span class='op'>(</span>efo_id <span class='op'>=</span> <span class='st'>'EFO_0005537'</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; An object of class "traits"
 #&gt; Slot "traits":
-#&gt; # A tibble: 1 x 3
+#&gt; </span><span style='color: #555555;'># A tibble: 1 x 3</span><span>
 #&gt;   efo_id      trait                         uri                                 
-#&gt;   &lt;chr&gt;       &lt;chr&gt;                         &lt;chr&gt;                               
-#&gt; 1 EFO_0005537 triple-negative breast cancer http://www.ebi.ac.uk/efo/EFO_0005537
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                         </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                               
+#&gt; </span><span style='color: #555555;'>1</span><span> EFO_0005537 triple-negative breast cancer http://www.ebi.ac.uk/efo/EFO_0005537
 #&gt; </div><div class='input'>
-</div></pre>
+</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -274,7 +277,7 @@ passing a vector of identifiers to <code>efo_id</code>.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

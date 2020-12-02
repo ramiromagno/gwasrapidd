@@ -86,7 +86,7 @@ study_id as primary key." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gwasrapidd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.9</span>
       </span>
     </div>
 
@@ -162,8 +162,8 @@ subset of GWAS Catalog studies. Each study is an observation (row) in the
 
     
 
-<dl'>
-<dt><code>studies</code></dt><dd><p><dl'>
+<dl>
+<dt><code>studies</code></dt><dd><p><dl>
 <dt>study_id</dt><dd><p>GWAS Catalog study accession identifier, e.g.,
 <code>"GCST002735"</code>.</p></dd>
 <dt>reported_trait</dt><dd><p>Phenotypic trait as reported by the authors of the
@@ -186,7 +186,7 @@ was requested by a user.</p></dd></dl></p></dd>
 
 <dt><code>genotyping_techs</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing genotyping
   technologies employed in each study. Columns:
-<dl'>
+<dl>
 <dt>study_id</dt><dd><p>GWAS Catalog study accession identifier.</p></dd>
 <dt>genotyping_technology</dt><dd><p>Genotyping technology employed, e.g.
 <code>"Exome genotyping array"</code>, <code>"Exome-wide sequencing"</code>,
@@ -195,14 +195,14 @@ was requested by a user.</p></dd></dl></p></dd>
 
 <dt><code>platforms</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing platforms used per
   study.
-<dl'>
+<dl>
 <dt>study_id</dt><dd><p>GWAS Catalog study accession identifier.</p></dd>
 <dt>manufacturer</dt><dd><p>Platform manufacturer, e.g., <code>"Affymetrix"</code>,
 <code>"Illumina"</code>, or <code>"Perlegen"</code>.</p></dd></dl></p></dd>
 
 <dt><code>ancestries</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing ancestry of samples
   used in each study.
-<dl'>
+<dl>
 <dt>study_id</dt><dd><p>GWAS Catalog study accession identifier.</p></dd>
 <dt>ancestry_id</dt><dd><p>Ancestry identifier.</p></dd>
 <dt>type</dt><dd><p>Stage of the ancestry sample: either <code>'initial'</code> or
@@ -212,14 +212,14 @@ sample.</p></dd></dl></p></dd>
 
 <dt><code>ancestral_groups</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing ancestral
   groups used in each ancestry.
-<dl'>
+<dl>
 <dt>study_id</dt><dd><p>GWAS Catalog study accession identifier.</p></dd>
 <dt>ancestry_id</dt><dd><p>Ancestry identifier.</p></dd>
 <dt>ancestral_group</dt><dd><p>Genetic ancestry groups present in the sample.</p></dd></dl></p></dd>
 
 <dt><code>countries_of_origin</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing countries of
   origin of samples.
-<dl'>
+<dl>
 <dt>study_id</dt><dd><p>GWAS Catalog study accession identifier.</p></dd>
 <dt>ancestry_id</dt><dd><p>Ancestry identifier.</p></dd>
 <dt>country_name</dt><dd><p>Country name, according to
@@ -233,7 +233,7 @@ United Nations M49 Standard of Geographic Regions.</a></p></dd></dl></p></dd>
 
 <dt><code>countries_of_recruitment</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing
   countries of recruitment of samples.
-<dl'>
+<dl>
 <dt>study_id</dt><dd><p>GWAS Catalog study accession identifier.</p></dd>
 <dt>ancestry_id</dt><dd><p>Ancestry identifier.</p></dd>
 <dt>country_name</dt><dd><p>Country name, according to
@@ -247,7 +247,7 @@ United Nations M49 Standard of Geographic Regions.</a></p></dd></dl></p></dd>
 
 <dt><code>publications</code></dt><dd><p>A <code><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></code> listing publications
   associated with each study.
-<dl'>
+<dl>
 <dt>study_id</dt><dd><p>GWAS Catalog study accession identifier.</p></dd>
 <dt>pubmed_id</dt><dd><p><a href='https://en.wikipedia.org/wiki/PubMed'>PubMed</a>
 identifier.</p></dd>
@@ -276,7 +276,7 @@ iD</a> (Open Researcher and Contributor ID).</p></dd></dl></p></dd>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

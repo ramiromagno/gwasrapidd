@@ -88,7 +88,7 @@ set_operation to 'intersection'." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gwasrapidd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.9</span>
       </span>
     </div>
 
@@ -160,23 +160,23 @@ variants that match simultaneously all criteria provided, then set
 <code>set_operation</code> to <code>'intersection'</code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_variants</span>(
-  <span class='kw'>study_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>association_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>variant_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>efo_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>pubmed_id</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>genomic_range</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>cytogenetic_band</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>gene_name</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>efo_trait</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>reported_trait</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>set_operation</span> <span class='kw'>=</span> <span class='st'>"union"</span>,
-  <span class='kw'>interactive</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>std_chromosomes_only</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>warnings</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
-)</pre>
+    <pre class="usage"><span class='fu'>get_variants</span><span class='op'>(</span>
+  study_id <span class='op'>=</span> <span class='cn'>NULL</span>,
+  association_id <span class='op'>=</span> <span class='cn'>NULL</span>,
+  variant_id <span class='op'>=</span> <span class='cn'>NULL</span>,
+  efo_id <span class='op'>=</span> <span class='cn'>NULL</span>,
+  pubmed_id <span class='op'>=</span> <span class='cn'>NULL</span>,
+  genomic_range <span class='op'>=</span> <span class='cn'>NULL</span>,
+  cytogenetic_band <span class='op'>=</span> <span class='cn'>NULL</span>,
+  gene_name <span class='op'>=</span> <span class='cn'>NULL</span>,
+  efo_trait <span class='op'>=</span> <span class='cn'>NULL</span>,
+  reported_trait <span class='op'>=</span> <span class='cn'>NULL</span>,
+  set_operation <span class='op'>=</span> <span class='st'>"union"</span>,
+  interactive <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  std_chromosomes_only <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  verbose <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  warnings <span class='op'>=</span> <span class='cn'>TRUE</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -207,7 +207,7 @@ identifiers.</p></td>
     </tr>
     <tr>
       <th>genomic_range</th>
-      <td><p>A named list of three vectors:</p><dl'>
+      <td><p>A named list of three vectors:</p><dl>
 <dt>chromosome</dt><dd><p>A character vector of chromosome names of the
 form 1--22, X or Y.</p></dd> <dt>start</dt><dd><p>A numeric vector of start positions,
 starting at 1.</p></dd> <dt>end</dt><dd><p>A numeric vector of end positions.</p></dd> 
@@ -275,261 +275,265 @@ passing a vector of identifiers to <code>variant_id</code>.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Get variants by study identifier</span>
-<span class='fu'>get_variants</span>(<span class='kw'>study_id</span> <span class='kw'>=</span> <span class='st'>'GCST001085'</span>)</div><div class='output co'>#&gt; An object of class "variants"
+<span class='fu'>get_variants</span><span class='op'>(</span>study_id <span class='op'>=</span> <span class='st'>'GCST001085'</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; An object of class "variants"
 #&gt; Slot "variants":
-#&gt; # A tibble: 18 x 7
+#&gt; <span style='color: #555555;'># A tibble: 18 x 7</span><span>
 #&gt;    variant_id merged functional_class chromosome_name chromosome_posi…
-#&gt;    &lt;chr&gt;       &lt;int&gt; &lt;chr&gt;            &lt;chr&gt;                      &lt;int&gt;
-#&gt;  1 rs10496288      0 intergenic_vari… 2                       83065441
-#&gt;  2 rs7827545       0 intron_variant   8                      134554324
-#&gt;  3 rs10785581      0 intron_variant   12                      45537190
-#&gt;  4 rs200759        0 intron_variant   20                      15625776
-#&gt;  5 rs7960483       0 intron_variant   12                      45531972
-#&gt;  6 rs1372662       0 intron_variant   8                      134554803
-#&gt;  7 rs10496289      0 intergenic_vari… 2                       83066256
-#&gt;  8 rs6452524       0 intron_variant   5                       83137962
-#&gt;  9 rs200752        0 intron_variant   20                      15618886
-#&gt; 10 rs3798440       0 intron_variant   6                       75846902
-#&gt; 11 rs7735940       0 regulatory_regi… 5                       36423829
-#&gt; 12 rs9350602       0 intron_variant   6                       75850781
-#&gt; 13 rs10188442      0 intron_variant   2                      132431666
-#&gt; 14 rs12522034      0 intergenic_vari… 5                       36425491
-#&gt; 15 rs13420028      0 intron_variant   2                      132430533
-#&gt; 16 rs2469997       0 intergenic_vari… 8                      119341027
-#&gt; 17 rs6887846       0 intron_variant   5                       83140542
-#&gt; 18 rs6469823       1 intergenic_vari… 8                      119341744
-#&gt; # … with 2 more variables: chromosome_region &lt;chr&gt;, last_update_date &lt;dttm&gt;
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                      </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>
+#&gt; </span><span style='color: #555555;'> 1</span><span> rs10496288      0 intergenic_vari… 2                       83</span><span style='text-decoration: underline;'>065</span><span>441
+#&gt; </span><span style='color: #555555;'> 2</span><span> rs7827545       0 intron_variant   8                      134</span><span style='text-decoration: underline;'>554</span><span>324
+#&gt; </span><span style='color: #555555;'> 3</span><span> rs10785581      0 intron_variant   12                      45</span><span style='text-decoration: underline;'>537</span><span>190
+#&gt; </span><span style='color: #555555;'> 4</span><span> rs200759        0 intron_variant   20                      15</span><span style='text-decoration: underline;'>625</span><span>776
+#&gt; </span><span style='color: #555555;'> 5</span><span> rs7960483       0 intron_variant   12                      45</span><span style='text-decoration: underline;'>531</span><span>972
+#&gt; </span><span style='color: #555555;'> 6</span><span> rs1372662       0 intron_variant   8                      134</span><span style='text-decoration: underline;'>554</span><span>803
+#&gt; </span><span style='color: #555555;'> 7</span><span> rs10496289      0 intergenic_vari… 2                       83</span><span style='text-decoration: underline;'>066</span><span>256
+#&gt; </span><span style='color: #555555;'> 8</span><span> rs6452524       0 intron_variant   5                       83</span><span style='text-decoration: underline;'>137</span><span>962
+#&gt; </span><span style='color: #555555;'> 9</span><span> rs200752        0 intron_variant   20                      15</span><span style='text-decoration: underline;'>618</span><span>886
+#&gt; </span><span style='color: #555555;'>10</span><span> rs3798440       0 intron_variant   6                       75</span><span style='text-decoration: underline;'>846</span><span>902
+#&gt; </span><span style='color: #555555;'>11</span><span> rs7735940       0 regulatory_regi… 5                       36</span><span style='text-decoration: underline;'>423</span><span>829
+#&gt; </span><span style='color: #555555;'>12</span><span> rs9350602       0 intron_variant   6                       75</span><span style='text-decoration: underline;'>850</span><span>781
+#&gt; </span><span style='color: #555555;'>13</span><span> rs10188442      0 intron_variant   2                      132</span><span style='text-decoration: underline;'>431</span><span>666
+#&gt; </span><span style='color: #555555;'>14</span><span> rs12522034      0 intergenic_vari… 5                       36</span><span style='text-decoration: underline;'>425</span><span>491
+#&gt; </span><span style='color: #555555;'>15</span><span> rs13420028      0 intron_variant   2                      132</span><span style='text-decoration: underline;'>430</span><span>533
+#&gt; </span><span style='color: #555555;'>16</span><span> rs2469997       0 intergenic_vari… 8                      119</span><span style='text-decoration: underline;'>341</span><span>027
+#&gt; </span><span style='color: #555555;'>17</span><span> rs6887846       0 intron_variant   5                       83</span><span style='text-decoration: underline;'>140</span><span>542
+#&gt; </span><span style='color: #555555;'>18</span><span> rs6469823       1 intergenic_vari… 8                      119</span><span style='text-decoration: underline;'>341</span><span>744
+#&gt; </span><span style='color: #555555;'># … with 2 more variables: chromosome_region </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, last_update_date </span><span style='color: #555555;font-style: italic;'>&lt;dttm&gt;</span><span>
 #&gt; 
 #&gt; Slot "genomic_contexts":
-#&gt; # A tibble: 148 x 12
+#&gt; </span><span style='color: #555555;'># A tibble: 148 x 12</span><span>
 #&gt;    variant_id gene_name chromosome_name chromosome_posi… distance is_mapped_gene
-#&gt;    &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt;                      &lt;int&gt;    &lt;int&gt; &lt;lgl&gt;         
-#&gt;  1 rs10496288 AC138623… 2                       83065441   153449 TRUE          
-#&gt;  2 rs10496288 LOC10537… 2                       83065441   127905 FALSE         
-#&gt;  3 rs10496288 AC098817… 2                       83065441   198933 TRUE          
-#&gt;  4 rs10496288 LOC11226… 2                       83065441   148019 FALSE         
-#&gt;  5 rs7827545  AC015599… 8                      134554324    43747 FALSE         
-#&gt;  6 rs7827545  AC015599… 8                      134554324    43994 FALSE         
-#&gt;  7 rs7827545  LOC10041… 8                      134554324   606901 FALSE         
-#&gt;  8 rs7827545  AC105180… 8                      134554324   163837 FALSE         
-#&gt;  9 rs7827545  ZFAT      8                      134554324        0 TRUE          
-#&gt; 10 rs7827545  ZFAT-AS1  8                      134554324    43747 FALSE         
-#&gt; # … with 138 more rows, and 6 more variables: is_closest_gene &lt;lgl&gt;,
-#&gt; #   is_intergenic &lt;lgl&gt;, is_upstream &lt;lgl&gt;, is_downstream &lt;lgl&gt;, source &lt;chr&gt;,
-#&gt; #   mapping_method &lt;chr&gt;
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                      </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span>         
+#&gt; </span><span style='color: #555555;'> 1</span><span> rs10496288 AC138623… 2                       83</span><span style='text-decoration: underline;'>065</span><span>441   </span><span style='text-decoration: underline;'>153</span><span>449 TRUE          
+#&gt; </span><span style='color: #555555;'> 2</span><span> rs10496288 LOC10537… 2                       83</span><span style='text-decoration: underline;'>065</span><span>441   </span><span style='text-decoration: underline;'>127</span><span>905 FALSE         
+#&gt; </span><span style='color: #555555;'> 3</span><span> rs10496288 AC098817… 2                       83</span><span style='text-decoration: underline;'>065</span><span>441   </span><span style='text-decoration: underline;'>198</span><span>933 TRUE          
+#&gt; </span><span style='color: #555555;'> 4</span><span> rs10496288 LOC11226… 2                       83</span><span style='text-decoration: underline;'>065</span><span>441   </span><span style='text-decoration: underline;'>148</span><span>019 FALSE         
+#&gt; </span><span style='color: #555555;'> 5</span><span> rs7827545  AC015599… 8                      134</span><span style='text-decoration: underline;'>554</span><span>324    </span><span style='text-decoration: underline;'>43</span><span>747 FALSE         
+#&gt; </span><span style='color: #555555;'> 6</span><span> rs7827545  AC015599… 8                      134</span><span style='text-decoration: underline;'>554</span><span>324    </span><span style='text-decoration: underline;'>43</span><span>994 FALSE         
+#&gt; </span><span style='color: #555555;'> 7</span><span> rs7827545  LOC10041… 8                      134</span><span style='text-decoration: underline;'>554</span><span>324   </span><span style='text-decoration: underline;'>606</span><span>901 FALSE         
+#&gt; </span><span style='color: #555555;'> 8</span><span> rs7827545  AC105180… 8                      134</span><span style='text-decoration: underline;'>554</span><span>324   </span><span style='text-decoration: underline;'>163</span><span>837 FALSE         
+#&gt; </span><span style='color: #555555;'> 9</span><span> rs7827545  ZFAT      8                      134</span><span style='text-decoration: underline;'>554</span><span>324        0 TRUE          
+#&gt; </span><span style='color: #555555;'>10</span><span> rs7827545  ZFAT-AS1  8                      134</span><span style='text-decoration: underline;'>554</span><span>324    </span><span style='text-decoration: underline;'>43</span><span>747 FALSE         
+#&gt; </span><span style='color: #555555;'># … with 138 more rows, and 6 more variables: is_closest_gene </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>,</span><span>
+#&gt; </span><span style='color: #555555;'>#   is_intergenic </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, is_upstream </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, is_downstream </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, source </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,</span><span>
+#&gt; </span><span style='color: #555555;'>#   mapping_method </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>
 #&gt; 
 #&gt; Slot "ensembl_ids":
-#&gt; # A tibble: 86 x 3
+#&gt; </span><span style='color: #555555;'># A tibble: 86 x 3</span><span>
 #&gt;    variant_id gene_name  ensembl_id     
-#&gt;    &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          
-#&gt;  1 rs10496288 AC138623.1 ENSG00000223977
-#&gt;  2 rs10496288 AC098817.1 ENSG00000286211
-#&gt;  3 rs7827545  AC015599.1 ENSG00000276140
-#&gt;  4 rs7827545  AC015599.2 ENSG00000277732
-#&gt;  5 rs7827545  AC105180.2 ENSG00000288067
-#&gt;  6 rs7827545  ZFAT       ENSG00000066827
-#&gt;  7 rs7827545  ZFAT-AS1   ENSG00000248492
-#&gt;  8 rs7827545  AC015599.3 ENSG00000278454
-#&gt;  9 rs10785581 AC079950.2 ENSG00000283545
-#&gt; 10 rs10785581 ANO6       ENSG00000177119
-#&gt; # … with 76 more rows
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>          
+#&gt; </span><span style='color: #555555;'> 1</span><span> rs10496288 AC138623.1 ENSG00000223977
+#&gt; </span><span style='color: #555555;'> 2</span><span> rs10496288 AC098817.1 ENSG00000286211
+#&gt; </span><span style='color: #555555;'> 3</span><span> rs7827545  AC015599.1 ENSG00000276140
+#&gt; </span><span style='color: #555555;'> 4</span><span> rs7827545  AC015599.2 ENSG00000277732
+#&gt; </span><span style='color: #555555;'> 5</span><span> rs7827545  AC105180.2 ENSG00000288067
+#&gt; </span><span style='color: #555555;'> 6</span><span> rs7827545  ZFAT       ENSG00000066827
+#&gt; </span><span style='color: #555555;'> 7</span><span> rs7827545  ZFAT-AS1   ENSG00000248492
+#&gt; </span><span style='color: #555555;'> 8</span><span> rs7827545  AC015599.3 ENSG00000278454
+#&gt; </span><span style='color: #555555;'> 9</span><span> rs10785581 AC079950.2 ENSG00000283545
+#&gt; </span><span style='color: #555555;'>10</span><span> rs10785581 ANO6       ENSG00000177119
+#&gt; </span><span style='color: #555555;'># … with 76 more rows</span><span>
 #&gt; 
 #&gt; Slot "entrez_ids":
-#&gt; # A tibble: 65 x 3
+#&gt; </span><span style='color: #555555;'># A tibble: 65 x 3</span><span>
 #&gt;    variant_id gene_name    entrez_id
-#&gt;    &lt;chr&gt;      &lt;chr&gt;        &lt;chr&gt;    
-#&gt;  1 rs10496288 LOC105374832 105374832
-#&gt;  2 rs10496288 LOC112268410 112268410
-#&gt;  3 rs7827545  LOC100419617 100419617
-#&gt;  4 rs7827545  ZFAT         57623    
-#&gt;  5 rs7827545  ZFAT-AS1     594840   
-#&gt;  6 rs10785581 LOC105369744 105369744
-#&gt;  7 rs10785581 ANO6         196527   
-#&gt;  8 rs10785581 LOC100128248 100128248
-#&gt;  9 rs10785581 LOC105369743 105369743
-#&gt; 10 rs200759   MACROD2      140733   
-#&gt; # … with 55 more rows
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>    
+#&gt; </span><span style='color: #555555;'> 1</span><span> rs10496288 LOC105374832 105374832
+#&gt; </span><span style='color: #555555;'> 2</span><span> rs10496288 LOC112268410 112268410
+#&gt; </span><span style='color: #555555;'> 3</span><span> rs7827545  LOC100419617 100419617
+#&gt; </span><span style='color: #555555;'> 4</span><span> rs7827545  ZFAT         57623    
+#&gt; </span><span style='color: #555555;'> 5</span><span> rs7827545  ZFAT-AS1     594840   
+#&gt; </span><span style='color: #555555;'> 6</span><span> rs10785581 LOC105369744 105369744
+#&gt; </span><span style='color: #555555;'> 7</span><span> rs10785581 ANO6         196527   
+#&gt; </span><span style='color: #555555;'> 8</span><span> rs10785581 LOC100128248 100128248
+#&gt; </span><span style='color: #555555;'> 9</span><span> rs10785581 LOC105369743 105369743
+#&gt; </span><span style='color: #555555;'>10</span><span> rs200759   MACROD2      140733   
+#&gt; </span><span style='color: #555555;'># … with 55 more rows</span><span>
 #&gt; </div><div class='input'>
 <span class='co'># Get variants by association identifier</span>
-<span class='fu'>get_variants</span>(<span class='kw'>association_id</span> <span class='kw'>=</span> <span class='st'>'25389945'</span>)</div><div class='output co'>#&gt; An object of class "variants"
+<span class='fu'>get_variants</span><span class='op'>(</span>association_id <span class='op'>=</span> <span class='st'>'25389945'</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; An object of class "variants"
 #&gt; Slot "variants":
-#&gt; # A tibble: 27 x 7
+#&gt; </span><span style='color: #555555;'># A tibble: 27 x 7</span><span>
 #&gt;    variant_id merged functional_class chromosome_name chromosome_posi…
-#&gt;    &lt;chr&gt;       &lt;int&gt; &lt;chr&gt;            &lt;chr&gt;                      &lt;int&gt;
-#&gt;  1 rs9486815       0 intron_variant   6                      108126842
-#&gt;  2 rs4245535       0 intron_variant   6                      108128008
-#&gt;  3 rs17069173      0 intergenic_vari… 6                      108017063
-#&gt;  4 rs9374021       0 intron_variant   6                      108106220
-#&gt;  5 rs9374007       0 intergenic_vari… 6                      108037124
-#&gt;  6 rs9386694       0 intergenic_vari… 6                      108025473
-#&gt;  7 rs9374002       0 non_coding_tran… 6                      108030386
-#&gt;  8 rs218289        0 intron_variant   6                      108133233
-#&gt;  9 rs1064346       0 3_prime_UTR_var… 6                      108043747
-#&gt; 10 rs9374013       0 intron_variant   6                      108060143
-#&gt; # … with 17 more rows, and 2 more variables: chromosome_region &lt;chr&gt;,
-#&gt; #   last_update_date &lt;dttm&gt;
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                      </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>
+#&gt; </span><span style='color: #555555;'> 1</span><span> rs9486815       0 intron_variant   6                      108</span><span style='text-decoration: underline;'>126</span><span>842
+#&gt; </span><span style='color: #555555;'> 2</span><span> rs4245535       0 intron_variant   6                      108</span><span style='text-decoration: underline;'>128</span><span>008
+#&gt; </span><span style='color: #555555;'> 3</span><span> rs17069173      0 intergenic_vari… 6                      108</span><span style='text-decoration: underline;'>017</span><span>063
+#&gt; </span><span style='color: #555555;'> 4</span><span> rs9374021       0 intron_variant   6                      108</span><span style='text-decoration: underline;'>106</span><span>220
+#&gt; </span><span style='color: #555555;'> 5</span><span> rs9374007       0 intergenic_vari… 6                      108</span><span style='text-decoration: underline;'>037</span><span>124
+#&gt; </span><span style='color: #555555;'> 6</span><span> rs9386694       0 intergenic_vari… 6                      108</span><span style='text-decoration: underline;'>025</span><span>473
+#&gt; </span><span style='color: #555555;'> 7</span><span> rs9374002       0 non_coding_tran… 6                      108</span><span style='text-decoration: underline;'>030</span><span>386
+#&gt; </span><span style='color: #555555;'> 8</span><span> rs218289        0 intron_variant   6                      108</span><span style='text-decoration: underline;'>133</span><span>233
+#&gt; </span><span style='color: #555555;'> 9</span><span> rs1064346       0 3_prime_UTR_var… 6                      108</span><span style='text-decoration: underline;'>043</span><span>747
+#&gt; </span><span style='color: #555555;'>10</span><span> rs9374013       0 intron_variant   6                      108</span><span style='text-decoration: underline;'>060</span><span>143
+#&gt; </span><span style='color: #555555;'># … with 17 more rows, and 2 more variables: chromosome_region </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,</span><span>
+#&gt; </span><span style='color: #555555;'>#   last_update_date </span><span style='color: #555555;font-style: italic;'>&lt;dttm&gt;</span><span>
 #&gt; 
 #&gt; Slot "genomic_contexts":
-#&gt; # A tibble: 388 x 12
+#&gt; </span><span style='color: #555555;'># A tibble: 388 x 12</span><span>
 #&gt;    variant_id gene_name chromosome_name chromosome_posi… distance is_mapped_gene
-#&gt;    &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt;                      &lt;int&gt;    &lt;int&gt; &lt;lgl&gt;         
-#&gt;  1 rs9486815  NR2E1     6                      108126842    39180 FALSE         
-#&gt;  2 rs9486815  OSTM1     6                      108126842        0 TRUE          
-#&gt;  3 rs9486815  OSTM1-AS1 6                      108126842        0 FALSE         
-#&gt;  4 rs9486815  Z98200.2  6                      108126842    96124 FALSE         
-#&gt;  5 rs9486815  SNX3      6                      108126842    84380 FALSE         
-#&gt;  6 rs9486815  OSTM1-AS1 6                      108126842        0 TRUE          
-#&gt;  7 rs9486815  NR2E1     6                      108126842    39180 FALSE         
-#&gt;  8 rs9486815  OSTM1     6                      108126842    52101 FALSE         
-#&gt;  9 rs9486815  SNX3      6                      108126842    84380 FALSE         
-#&gt; 10 rs9486815  AL078596… 6                      108126842    52029 FALSE         
-#&gt; # … with 378 more rows, and 6 more variables: is_closest_gene &lt;lgl&gt;,
-#&gt; #   is_intergenic &lt;lgl&gt;, is_upstream &lt;lgl&gt;, is_downstream &lt;lgl&gt;, source &lt;chr&gt;,
-#&gt; #   mapping_method &lt;chr&gt;
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                      </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span>         
+#&gt; </span><span style='color: #555555;'> 1</span><span> rs9486815  NR2E1     6                      108</span><span style='text-decoration: underline;'>126</span><span>842    </span><span style='text-decoration: underline;'>39</span><span>180 FALSE         
+#&gt; </span><span style='color: #555555;'> 2</span><span> rs9486815  OSTM1     6                      108</span><span style='text-decoration: underline;'>126</span><span>842        0 TRUE          
+#&gt; </span><span style='color: #555555;'> 3</span><span> rs9486815  OSTM1-AS1 6                      108</span><span style='text-decoration: underline;'>126</span><span>842        0 FALSE         
+#&gt; </span><span style='color: #555555;'> 4</span><span> rs9486815  Z98200.2  6                      108</span><span style='text-decoration: underline;'>126</span><span>842    </span><span style='text-decoration: underline;'>96</span><span>124 FALSE         
+#&gt; </span><span style='color: #555555;'> 5</span><span> rs9486815  SNX3      6                      108</span><span style='text-decoration: underline;'>126</span><span>842    </span><span style='text-decoration: underline;'>84</span><span>380 FALSE         
+#&gt; </span><span style='color: #555555;'> 6</span><span> rs9486815  OSTM1-AS1 6                      108</span><span style='text-decoration: underline;'>126</span><span>842        0 TRUE          
+#&gt; </span><span style='color: #555555;'> 7</span><span> rs9486815  NR2E1     6                      108</span><span style='text-decoration: underline;'>126</span><span>842    </span><span style='text-decoration: underline;'>39</span><span>180 FALSE         
+#&gt; </span><span style='color: #555555;'> 8</span><span> rs9486815  OSTM1     6                      108</span><span style='text-decoration: underline;'>126</span><span>842    </span><span style='text-decoration: underline;'>52</span><span>101 FALSE         
+#&gt; </span><span style='color: #555555;'> 9</span><span> rs9486815  SNX3      6                      108</span><span style='text-decoration: underline;'>126</span><span>842    </span><span style='text-decoration: underline;'>84</span><span>380 FALSE         
+#&gt; </span><span style='color: #555555;'>10</span><span> rs9486815  AL078596… 6                      108</span><span style='text-decoration: underline;'>126</span><span>842    </span><span style='text-decoration: underline;'>52</span><span>029 FALSE         
+#&gt; </span><span style='color: #555555;'># … with 378 more rows, and 6 more variables: is_closest_gene </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>,</span><span>
+#&gt; </span><span style='color: #555555;'>#   is_intergenic </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, is_upstream </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, is_downstream </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, source </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,</span><span>
+#&gt; </span><span style='color: #555555;'>#   mapping_method </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>
 #&gt; 
 #&gt; Slot "ensembl_ids":
-#&gt; # A tibble: 234 x 3
+#&gt; </span><span style='color: #555555;'># A tibble: 234 x 3</span><span>
 #&gt;    variant_id gene_name  ensembl_id     
-#&gt;    &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          
-#&gt;  1 rs9486815  NR2E1      ENSG00000112333
-#&gt;  2 rs9486815  OSTM1      ENSG00000081087
-#&gt;  3 rs9486815  OSTM1-AS1  ENSG00000225174
-#&gt;  4 rs9486815  Z98200.2   ENSG00000271734
-#&gt;  5 rs9486815  SNX3       ENSG00000112335
-#&gt;  6 rs9486815  AL078596.1 ENSG00000279398
-#&gt;  7 rs9486815  Z98200.1   ENSG00000238490
-#&gt;  8 rs4245535  OSTM1-AS1  ENSG00000225174
-#&gt;  9 rs4245535  AL078596.1 ENSG00000279398
-#&gt; 10 rs4245535  NR2E1      ENSG00000112333
-#&gt; # … with 224 more rows
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>          
+#&gt; </span><span style='color: #555555;'> 1</span><span> rs9486815  NR2E1      ENSG00000112333
+#&gt; </span><span style='color: #555555;'> 2</span><span> rs9486815  OSTM1      ENSG00000081087
+#&gt; </span><span style='color: #555555;'> 3</span><span> rs9486815  OSTM1-AS1  ENSG00000225174
+#&gt; </span><span style='color: #555555;'> 4</span><span> rs9486815  Z98200.2   ENSG00000271734
+#&gt; </span><span style='color: #555555;'> 5</span><span> rs9486815  SNX3       ENSG00000112335
+#&gt; </span><span style='color: #555555;'> 6</span><span> rs9486815  AL078596.1 ENSG00000279398
+#&gt; </span><span style='color: #555555;'> 7</span><span> rs9486815  Z98200.1   ENSG00000238490
+#&gt; </span><span style='color: #555555;'> 8</span><span> rs4245535  OSTM1-AS1  ENSG00000225174
+#&gt; </span><span style='color: #555555;'> 9</span><span> rs4245535  AL078596.1 ENSG00000279398
+#&gt; </span><span style='color: #555555;'>10</span><span> rs4245535  NR2E1      ENSG00000112333
+#&gt; </span><span style='color: #555555;'># … with 224 more rows</span><span>
 #&gt; 
 #&gt; Slot "entrez_ids":
-#&gt; # A tibble: 154 x 3
+#&gt; </span><span style='color: #555555;'># A tibble: 154 x 3</span><span>
 #&gt;    variant_id gene_name    entrez_id
-#&gt;    &lt;chr&gt;      &lt;chr&gt;        &lt;chr&gt;    
-#&gt;  1 rs9486815  NR2E1        7101     
-#&gt;  2 rs9486815  OSTM1        28962    
-#&gt;  3 rs9486815  OSTM1-AS1    100287366
-#&gt;  4 rs9486815  SNX3         8724     
-#&gt;  5 rs9486815  LOC105377929 105377929
-#&gt;  6 rs4245535  OSTM1-AS1    100287366
-#&gt;  7 rs4245535  LOC105377929 105377929
-#&gt;  8 rs4245535  NR2E1        7101     
-#&gt;  9 rs4245535  SNX3         8724     
-#&gt; 10 rs4245535  OSTM1        28962    
-#&gt; # … with 144 more rows
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>    
+#&gt; </span><span style='color: #555555;'> 1</span><span> rs9486815  NR2E1        7101     
+#&gt; </span><span style='color: #555555;'> 2</span><span> rs9486815  OSTM1        28962    
+#&gt; </span><span style='color: #555555;'> 3</span><span> rs9486815  OSTM1-AS1    100287366
+#&gt; </span><span style='color: #555555;'> 4</span><span> rs9486815  SNX3         8724     
+#&gt; </span><span style='color: #555555;'> 5</span><span> rs9486815  LOC105377929 105377929
+#&gt; </span><span style='color: #555555;'> 6</span><span> rs4245535  OSTM1-AS1    100287366
+#&gt; </span><span style='color: #555555;'> 7</span><span> rs4245535  LOC105377929 105377929
+#&gt; </span><span style='color: #555555;'> 8</span><span> rs4245535  NR2E1        7101     
+#&gt; </span><span style='color: #555555;'> 9</span><span> rs4245535  SNX3         8724     
+#&gt; </span><span style='color: #555555;'>10</span><span> rs4245535  OSTM1        28962    
+#&gt; </span><span style='color: #555555;'># … with 144 more rows</span><span>
 #&gt; </div><div class='input'>
 <span class='co'># Get a variant by its identifier</span>
-<span class='fu'>get_variants</span>(<span class='kw'>variant_id</span> <span class='kw'>=</span> <span class='st'>'rs3798440'</span>)</div><div class='output co'>#&gt; An object of class "variants"
+<span class='fu'>get_variants</span><span class='op'>(</span>variant_id <span class='op'>=</span> <span class='st'>'rs3798440'</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; An object of class "variants"
 #&gt; Slot "variants":
-#&gt; # A tibble: 1 x 7
+#&gt; </span><span style='color: #555555;'># A tibble: 1 x 7</span><span>
 #&gt;   variant_id merged functional_class chromosome_name chromosome_posi…
-#&gt;   &lt;chr&gt;       &lt;int&gt; &lt;chr&gt;            &lt;chr&gt;                      &lt;int&gt;
-#&gt; 1 rs3798440       0 intron_variant   6                       75846902
-#&gt; # … with 2 more variables: chromosome_region &lt;chr&gt;, last_update_date &lt;dttm&gt;
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                      </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>
+#&gt; </span><span style='color: #555555;'>1</span><span> rs3798440       0 intron_variant   6                       75</span><span style='text-decoration: underline;'>846</span><span>902
+#&gt; </span><span style='color: #555555;'># … with 2 more variables: chromosome_region </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, last_update_date </span><span style='color: #555555;font-style: italic;'>&lt;dttm&gt;</span><span>
 #&gt; 
 #&gt; Slot "genomic_contexts":
-#&gt; # A tibble: 9 x 12
+#&gt; </span><span style='color: #555555;'># A tibble: 9 x 12</span><span>
 #&gt;   variant_id gene_name chromosome_name chromosome_posi… distance is_mapped_gene
-#&gt;   &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt;                      &lt;int&gt;    &lt;int&gt; &lt;lgl&gt;         
-#&gt; 1 rs3798440  RNA5SP209 6                       75846902    18337 FALSE         
-#&gt; 2 rs3798440  RNU6-155P 6                       75846902    78744 FALSE         
-#&gt; 3 rs3798440  AL392166… 6                       75846902    81611 FALSE         
-#&gt; 4 rs3798440  IMPG1     6                       75846902    74212 FALSE         
-#&gt; 5 rs3798440  RNU6-155P 6                       75846902    78744 FALSE         
-#&gt; 6 rs3798440  RNA5SP209 6                       75846902    18337 FALSE         
-#&gt; 7 rs3798440  MYO6      6                       75846902        0 FALSE         
-#&gt; 8 rs3798440  IMPG1     6                       75846902    74212 FALSE         
-#&gt; 9 rs3798440  MYO6      6                       75846902        0 TRUE          
-#&gt; # … with 6 more variables: is_closest_gene &lt;lgl&gt;, is_intergenic &lt;lgl&gt;,
-#&gt; #   is_upstream &lt;lgl&gt;, is_downstream &lt;lgl&gt;, source &lt;chr&gt;, mapping_method &lt;chr&gt;
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                      </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span>         
+#&gt; </span><span style='color: #555555;'>1</span><span> rs3798440  RNA5SP209 6                       75</span><span style='text-decoration: underline;'>846</span><span>902    </span><span style='text-decoration: underline;'>18</span><span>337 FALSE         
+#&gt; </span><span style='color: #555555;'>2</span><span> rs3798440  RNU6-155P 6                       75</span><span style='text-decoration: underline;'>846</span><span>902    </span><span style='text-decoration: underline;'>78</span><span>744 FALSE         
+#&gt; </span><span style='color: #555555;'>3</span><span> rs3798440  AL392166… 6                       75</span><span style='text-decoration: underline;'>846</span><span>902    </span><span style='text-decoration: underline;'>81</span><span>611 FALSE         
+#&gt; </span><span style='color: #555555;'>4</span><span> rs3798440  IMPG1     6                       75</span><span style='text-decoration: underline;'>846</span><span>902    </span><span style='text-decoration: underline;'>74</span><span>212 FALSE         
+#&gt; </span><span style='color: #555555;'>5</span><span> rs3798440  RNU6-155P 6                       75</span><span style='text-decoration: underline;'>846</span><span>902    </span><span style='text-decoration: underline;'>78</span><span>744 FALSE         
+#&gt; </span><span style='color: #555555;'>6</span><span> rs3798440  RNA5SP209 6                       75</span><span style='text-decoration: underline;'>846</span><span>902    </span><span style='text-decoration: underline;'>18</span><span>337 FALSE         
+#&gt; </span><span style='color: #555555;'>7</span><span> rs3798440  MYO6      6                       75</span><span style='text-decoration: underline;'>846</span><span>902        0 FALSE         
+#&gt; </span><span style='color: #555555;'>8</span><span> rs3798440  IMPG1     6                       75</span><span style='text-decoration: underline;'>846</span><span>902    </span><span style='text-decoration: underline;'>74</span><span>212 FALSE         
+#&gt; </span><span style='color: #555555;'>9</span><span> rs3798440  MYO6      6                       75</span><span style='text-decoration: underline;'>846</span><span>902        0 TRUE          
+#&gt; </span><span style='color: #555555;'># … with 6 more variables: is_closest_gene </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, is_intergenic </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>,</span><span>
+#&gt; </span><span style='color: #555555;'>#   is_upstream </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, is_downstream </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, source </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, mapping_method </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>
 #&gt; 
 #&gt; Slot "ensembl_ids":
-#&gt; # A tibble: 5 x 3
+#&gt; </span><span style='color: #555555;'># A tibble: 5 x 3</span><span>
 #&gt;   variant_id gene_name  ensembl_id     
-#&gt;   &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          
-#&gt; 1 rs3798440  RNA5SP209  ENSG00000223169
-#&gt; 2 rs3798440  RNU6-155P  ENSG00000252156
-#&gt; 3 rs3798440  AL392166.1 ENSG00000200040
-#&gt; 4 rs3798440  IMPG1      ENSG00000112706
-#&gt; 5 rs3798440  MYO6       ENSG00000196586
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>          
+#&gt; </span><span style='color: #555555;'>1</span><span> rs3798440  RNA5SP209  ENSG00000223169
+#&gt; </span><span style='color: #555555;'>2</span><span> rs3798440  RNU6-155P  ENSG00000252156
+#&gt; </span><span style='color: #555555;'>3</span><span> rs3798440  AL392166.1 ENSG00000200040
+#&gt; </span><span style='color: #555555;'>4</span><span> rs3798440  IMPG1      ENSG00000112706
+#&gt; </span><span style='color: #555555;'>5</span><span> rs3798440  MYO6       ENSG00000196586
 #&gt; 
 #&gt; Slot "entrez_ids":
-#&gt; # A tibble: 4 x 3
+#&gt; </span><span style='color: #555555;'># A tibble: 4 x 3</span><span>
 #&gt;   variant_id gene_name entrez_id
-#&gt;   &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt;    
-#&gt; 1 rs3798440  RNA5SP209 100873469
-#&gt; 2 rs3798440  RNU6-155P 106481224
-#&gt; 3 rs3798440  IMPG1     3617     
-#&gt; 4 rs3798440  MYO6      4646     
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>    
+#&gt; </span><span style='color: #555555;'>1</span><span> rs3798440  RNA5SP209 100873469
+#&gt; </span><span style='color: #555555;'>2</span><span> rs3798440  RNU6-155P 106481224
+#&gt; </span><span style='color: #555555;'>3</span><span> rs3798440  IMPG1     3617     
+#&gt; </span><span style='color: #555555;'>4</span><span> rs3798440  MYO6      4646     
 #&gt; </div><div class='input'>
 <span class='co'># Get variants by EFO trait identifier</span>
-<span class='fu'>get_variants</span>(<span class='kw'>efo_id</span> <span class='kw'>=</span> <span class='st'>'EFO_0005537'</span>)</div><div class='output co'>#&gt; An object of class "variants"
+<span class='fu'>get_variants</span><span class='op'>(</span>efo_id <span class='op'>=</span> <span class='st'>'EFO_0005537'</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; An object of class "variants"
 #&gt; Slot "variants":
-#&gt; # A tibble: 8 x 7
+#&gt; </span><span style='color: #555555;'># A tibble: 8 x 7</span><span>
 #&gt;   variant_id merged functional_class chromosome_name chromosome_posi…
-#&gt;   &lt;chr&gt;       &lt;int&gt; &lt;chr&gt;            &lt;chr&gt;                      &lt;int&gt;
-#&gt; 1 rs2464195       0 missense_variant 12                     120997672
-#&gt; 2 rs17215231      0 5_prime_UTR_var… 6                       33272092
-#&gt; 3 rs10069690      0 intron_variant   5                        1279675
-#&gt; 4 rs2363956       0 missense_variant 19                      17283315
-#&gt; 5 rs4245739       0 3_prime_UTR_var… 1                      204549714
-#&gt; 6 rs10771399      0 intergenic_vari… 12                      28002147
-#&gt; 7 rs3757318       0 intron_variant   6                      151592978
-#&gt; 8 rs78378222      0 3_prime_UTR_var… 17                       7668434
-#&gt; # … with 2 more variables: chromosome_region &lt;chr&gt;, last_update_date &lt;dttm&gt;
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                      </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>
+#&gt; </span><span style='color: #555555;'>1</span><span> rs2464195       0 missense_variant 12                     120</span><span style='text-decoration: underline;'>997</span><span>672
+#&gt; </span><span style='color: #555555;'>2</span><span> rs17215231      0 5_prime_UTR_var… 6                       33</span><span style='text-decoration: underline;'>272</span><span>092
+#&gt; </span><span style='color: #555555;'>3</span><span> rs10069690      0 intron_variant   5                        1</span><span style='text-decoration: underline;'>279</span><span>675
+#&gt; </span><span style='color: #555555;'>4</span><span> rs2363956       0 missense_variant 19                      17</span><span style='text-decoration: underline;'>283</span><span>315
+#&gt; </span><span style='color: #555555;'>5</span><span> rs4245739       0 3_prime_UTR_var… 1                      204</span><span style='text-decoration: underline;'>549</span><span>714
+#&gt; </span><span style='color: #555555;'>6</span><span> rs10771399      0 intergenic_vari… 12                      28</span><span style='text-decoration: underline;'>002</span><span>147
+#&gt; </span><span style='color: #555555;'>7</span><span> rs3757318       0 intron_variant   6                      151</span><span style='text-decoration: underline;'>592</span><span>978
+#&gt; </span><span style='color: #555555;'>8</span><span> rs78378222      0 3_prime_UTR_var… 17                       7</span><span style='text-decoration: underline;'>668</span><span>434
+#&gt; </span><span style='color: #555555;'># … with 2 more variables: chromosome_region </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, last_update_date </span><span style='color: #555555;font-style: italic;'>&lt;dttm&gt;</span><span>
 #&gt; 
 #&gt; Slot "genomic_contexts":
-#&gt; # A tibble: 384 x 12
+#&gt; </span><span style='color: #555555;'># A tibble: 384 x 12</span><span>
 #&gt;    variant_id gene_name chromosome_name chromosome_posi… distance is_mapped_gene
-#&gt;    &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt;                      &lt;int&gt;    &lt;int&gt; &lt;lgl&gt;         
-#&gt;  1 rs2464195  HNF1A-AS1 12                     120997672    25380 FALSE         
-#&gt;  2 rs2464195  CLIC1P1   12                     120997672    82349 FALSE         
-#&gt;  3 rs2464195  SPPL3     12                     120997672    93314 FALSE         
-#&gt;  4 rs2464195  AC069214… 12                     120997672    89735 FALSE         
-#&gt;  5 rs2464195  LOC10537… 12                     120997672    71187 FALSE         
-#&gt;  6 rs2464195  OASL      12                     120997672    21439 FALSE         
-#&gt;  7 rs2464195  OASL2P    12                     120997672    56060 FALSE         
-#&gt;  8 rs2464195  HNF1A-AS1 12                     120997672    16707 FALSE         
-#&gt;  9 rs2464195  XLOC_009… 12                     120997672    89598 FALSE         
-#&gt; 10 rs2464195  SPPL3     12                     120997672    93314 FALSE         
-#&gt; # … with 374 more rows, and 6 more variables: is_closest_gene &lt;lgl&gt;,
-#&gt; #   is_intergenic &lt;lgl&gt;, is_upstream &lt;lgl&gt;, is_downstream &lt;lgl&gt;, source &lt;chr&gt;,
-#&gt; #   mapping_method &lt;chr&gt;
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                      </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span>         
+#&gt; </span><span style='color: #555555;'> 1</span><span> rs2464195  HNF1A-AS1 12                     120</span><span style='text-decoration: underline;'>997</span><span>672    </span><span style='text-decoration: underline;'>25</span><span>380 FALSE         
+#&gt; </span><span style='color: #555555;'> 2</span><span> rs2464195  CLIC1P1   12                     120</span><span style='text-decoration: underline;'>997</span><span>672    </span><span style='text-decoration: underline;'>82</span><span>349 FALSE         
+#&gt; </span><span style='color: #555555;'> 3</span><span> rs2464195  SPPL3     12                     120</span><span style='text-decoration: underline;'>997</span><span>672    </span><span style='text-decoration: underline;'>93</span><span>314 FALSE         
+#&gt; </span><span style='color: #555555;'> 4</span><span> rs2464195  AC069214… 12                     120</span><span style='text-decoration: underline;'>997</span><span>672    </span><span style='text-decoration: underline;'>89</span><span>735 FALSE         
+#&gt; </span><span style='color: #555555;'> 5</span><span> rs2464195  LOC10537… 12                     120</span><span style='text-decoration: underline;'>997</span><span>672    </span><span style='text-decoration: underline;'>71</span><span>187 FALSE         
+#&gt; </span><span style='color: #555555;'> 6</span><span> rs2464195  OASL      12                     120</span><span style='text-decoration: underline;'>997</span><span>672    </span><span style='text-decoration: underline;'>21</span><span>439 FALSE         
+#&gt; </span><span style='color: #555555;'> 7</span><span> rs2464195  OASL2P    12                     120</span><span style='text-decoration: underline;'>997</span><span>672    </span><span style='text-decoration: underline;'>56</span><span>060 FALSE         
+#&gt; </span><span style='color: #555555;'> 8</span><span> rs2464195  HNF1A-AS1 12                     120</span><span style='text-decoration: underline;'>997</span><span>672    </span><span style='text-decoration: underline;'>16</span><span>707 FALSE         
+#&gt; </span><span style='color: #555555;'> 9</span><span> rs2464195  XLOC_009… 12                     120</span><span style='text-decoration: underline;'>997</span><span>672    </span><span style='text-decoration: underline;'>89</span><span>598 FALSE         
+#&gt; </span><span style='color: #555555;'>10</span><span> rs2464195  SPPL3     12                     120</span><span style='text-decoration: underline;'>997</span><span>672    </span><span style='text-decoration: underline;'>93</span><span>314 FALSE         
+#&gt; </span><span style='color: #555555;'># … with 374 more rows, and 6 more variables: is_closest_gene </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>,</span><span>
+#&gt; </span><span style='color: #555555;'>#   is_intergenic </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, is_upstream </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, is_downstream </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, source </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,</span><span>
+#&gt; </span><span style='color: #555555;'>#   mapping_method </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>
 #&gt; 
 #&gt; Slot "ensembl_ids":
-#&gt; # A tibble: 188 x 3
+#&gt; </span><span style='color: #555555;'># A tibble: 174 x 3</span><span>
 #&gt;    variant_id gene_name  ensembl_id     
-#&gt;    &lt;chr&gt;      &lt;chr&gt;      &lt;chr&gt;          
-#&gt;  1 rs2464195  HNF1A-AS1  ENSG00000241388
-#&gt;  2 rs2464195  CLIC1P1    ENSG00000231313
-#&gt;  3 rs2464195  SPPL3      ENSG00000157837
-#&gt;  4 rs2464195  AC069214.1 ENSG00000286493
-#&gt;  5 rs2464195  OASL       ENSG00000135114
-#&gt;  6 rs2464195  OASL2P     ENSG00000283542
-#&gt;  7 rs2464195  HNF1A      ENSG00000135100
-#&gt;  8 rs2464195  AC079602.4 ENSG00000279001
-#&gt;  9 rs2464195  AC079602.3 ENSG00000256963
-#&gt; 10 rs2464195  C12orf43   ENSG00000157895
-#&gt; # … with 178 more rows
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>          
+#&gt; </span><span style='color: #555555;'> 1</span><span> rs2464195  HNF1A-AS1  ENSG00000241388
+#&gt; </span><span style='color: #555555;'> 2</span><span> rs2464195  CLIC1P1    ENSG00000231313
+#&gt; </span><span style='color: #555555;'> 3</span><span> rs2464195  SPPL3      ENSG00000157837
+#&gt; </span><span style='color: #555555;'> 4</span><span> rs2464195  AC069214.1 ENSG00000286493
+#&gt; </span><span style='color: #555555;'> 5</span><span> rs2464195  OASL       ENSG00000135114
+#&gt; </span><span style='color: #555555;'> 6</span><span> rs2464195  OASL2P     ENSG00000283542
+#&gt; </span><span style='color: #555555;'> 7</span><span> rs2464195  HNF1A      ENSG00000135100
+#&gt; </span><span style='color: #555555;'> 8</span><span> rs2464195  AC079602.4 ENSG00000279001
+#&gt; </span><span style='color: #555555;'> 9</span><span> rs2464195  AC079602.3 ENSG00000256963
+#&gt; </span><span style='color: #555555;'>10</span><span> rs2464195  C12orf43   ENSG00000157895
+#&gt; </span><span style='color: #555555;'># … with 164 more rows</span><span>
 #&gt; 
 #&gt; Slot "entrez_ids":
-#&gt; # A tibble: 91 x 3
+#&gt; </span><span style='color: #555555;'># A tibble: 91 x 3</span><span>
 #&gt;    variant_id gene_name    entrez_id
-#&gt;    &lt;chr&gt;      &lt;chr&gt;        &lt;chr&gt;    
-#&gt;  1 rs2464195  HNF1A-AS1    283460   
-#&gt;  2 rs2464195  CLIC1P1      390363   
-#&gt;  3 rs2464195  SPPL3        121665   
-#&gt;  4 rs2464195  LOC105378258 105378258
-#&gt;  5 rs2464195  OASL         8638     
-#&gt;  6 rs2464195  OASL2P       111216278
-#&gt;  7 rs2464195  XLOC_009911  105500240
-#&gt;  8 rs2464195  HNF1A        6927     
-#&gt;  9 rs2464195  C12orf43     64897    
-#&gt; 10 rs2464195  RPL12P33     643550   
-#&gt; # … with 81 more rows
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>    
+#&gt; </span><span style='color: #555555;'> 1</span><span> rs2464195  HNF1A-AS1    283460   
+#&gt; </span><span style='color: #555555;'> 2</span><span> rs2464195  CLIC1P1      390363   
+#&gt; </span><span style='color: #555555;'> 3</span><span> rs2464195  SPPL3        121665   
+#&gt; </span><span style='color: #555555;'> 4</span><span> rs2464195  LOC105378258 105378258
+#&gt; </span><span style='color: #555555;'> 5</span><span> rs2464195  OASL         8638     
+#&gt; </span><span style='color: #555555;'> 6</span><span> rs2464195  OASL2P       111216278
+#&gt; </span><span style='color: #555555;'> 7</span><span> rs2464195  XLOC_009911  105500240
+#&gt; </span><span style='color: #555555;'> 8</span><span> rs2464195  HNF1A        6927     
+#&gt; </span><span style='color: #555555;'> 9</span><span> rs2464195  C12orf43     64897    
+#&gt; </span><span style='color: #555555;'>10</span><span> rs2464195  RPL12P33     643550   
+#&gt; </span><span style='color: #555555;'># … with 81 more rows</span><span>
 #&gt; </div><div class='input'>
-</div></pre>
+</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -545,7 +549,7 @@ passing a vector of identifiers to <code>variant_id</code>.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

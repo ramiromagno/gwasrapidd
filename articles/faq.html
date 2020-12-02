@@ -39,7 +39,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gwasrapidd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.9</span>
       </span>
     </div>
 
@@ -93,7 +93,8 @@
 
       
 
-      </header><div class="row">
+      </header><script src="faq_files/accessible-code-block-0.0.1/empty-anchor.js"></script><link href="faq_files/anchor-sections-1.0/anchor-sections.css" rel="stylesheet">
+<script src="faq_files/anchor-sections-1.0/anchor-sections.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Frequently asked questions</h1>
@@ -109,21 +110,24 @@
 <div id="how-to-be-sure-that-i-can-establish-a-connection-to-the-gwas-catalog-server" class="section level2">
 <h2 class="hasAnchor">
 <a href="#how-to-be-sure-that-i-can-establish-a-connection-to-the-gwas-catalog-server" class="anchor"></a>1 | How to be sure that I can establish a connection to the GWAS Catalog server?</h2>
-<p>You can check that gwasrapidd is able to connect to <a href="https://www.ebi.ac.uk" class="uri">https://www.ebi.ac.uk</a> by making a connection attempt with the function <code><a href="../reference/is_ebi_reachable.html">is_ebi_reachable()</a></code>:</p>
-<div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">gwasrapidd</span>)
-<span class="fu"><a href="../reference/is_ebi_reachable.html">is_ebi_reachable</a></span>()</pre></body></html></div>
+<p>You can check that gwasrapidd is able to connect to <a href="https://www.ebi.ac.uk">https://www.ebi.ac.uk</a> by making a connection attempt with the function <code><a href="../reference/is_ebi_reachable.html">is_ebi_reachable()</a></code>:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ramiromagno/gwasrapidd">gwasrapidd</a></span><span class="op">)</span>
+<span class="fu"><a href="../reference/is_ebi_reachable.html">is_ebi_reachable</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <p>Returns <code>TRUE</code> if the connection is possible, or <code>FALSE</code> otherwise. If the connection is not possible, use the parameter <code>chatty = TRUE</code> to learn at what point the connection is failing.</p>
-<div class="sourceCode" id="cb2"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">gwasrapidd</span>)
-<span class="fu"><a href="../reference/is_ebi_reachable.html">is_ebi_reachable</a></span>(<span class="kw">chatty</span> <span class="kw">=</span> <span class="fl">TRUE</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ramiromagno/gwasrapidd">gwasrapidd</a></span><span class="op">)</span>
+<span class="fu"><a href="../reference/is_ebi_reachable.html">is_ebi_reachable</a></span><span class="op">(</span>chatty <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="what-resources-is-the-gwas-catalog-database-currently-mapped-against" class="section level2">
 <h2 class="hasAnchor">
 <a href="#what-resources-is-the-gwas-catalog-database-currently-mapped-against" class="anchor"></a>2 | What resources is the GWAS Catalog database currently mapped against?</h2>
 <p>The GWAS Catalog is mapped against <a href="https://www.ensembl.org">Ensembl</a>, <a href="https://www.ncbi.nlm.nih.gov/snp/">dbSNP</a> and a specific <a href="https://www.ncbi.nlm.nih.gov/grc/human">assembly version</a> of the human genome. You can get this info with <code><a href="../reference/get_metadata.html">get_metadata()</a></code>:</p>
-<div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">gwasrapidd</span>)
-<span class="fu"><a href="../reference/get_metadata.html">get_metadata</a></span>()
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ramiromagno/gwasrapidd">gwasrapidd</a></span><span class="op">)</span>
+<span class="fu"><a href="../reference/get_metadata.html">get_metadata</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; $ensembl_release_number</span>
-<span class="co">#&gt; [1] 100</span>
+<span class="co">#&gt; [1] 101</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $genome_build_version</span>
 <span class="co">#&gt; [1] "GRCh38.p13"</span>
@@ -132,15 +136,16 @@
 <span class="co">#&gt; [1] 153</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $usage_start_date</span>
-<span class="co">#&gt; [1] "2020-05-07 19:00:02 UTC"</span></pre></body></html></div>
+<span class="co">#&gt; [1] "2020-09-11 13:00:00 UTC"</span></code></pre></div>
 </div>
 <div id="how-to-perform-batch-search-with-gwasrapidd" class="section level2">
 <h2 class="hasAnchor">
 <a href="#how-to-perform-batch-search-with-gwasrapidd" class="anchor"></a>3 | How to perform batch search with gwasrapidd?</h2>
 <p>The four main retrieval functions <code><a href="../reference/get_studies.html">get_studies()</a></code>, <code><a href="../reference/get_associations.html">get_associations()</a></code>, <code><a href="../reference/get_variants.html">get_variants()</a></code>, and <code><a href="../reference/get_traits.html">get_traits()</a></code> allow to search by multiple values for the same search criterion. You only need to pass a vector of queries to each search criterion parameter. Here are some simple examples.</p>
 <p>Get studies by study identifiers (GCST002420 or GCST000392):</p>
-<div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">gwasrapidd</span>)
-<span class="fu"><a href="../reference/get_studies.html">get_studies</a></span>(<span class="kw">study_id</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'GCST002420'</span>, <span class="st">'GCST000392'</span>))
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ramiromagno/gwasrapidd">gwasrapidd</a></span><span class="op">)</span>
+<span class="fu"><a href="../reference/get_studies.html">get_studies</a></span><span class="op">(</span>study_id <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'GCST002420'</span>, <span class="st">'GCST000392'</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; An object of class "studies"</span>
 <span class="co">#&gt; Slot "studies":</span>
 <span class="co">#&gt; # A tibble: 2 x 13</span>
@@ -208,19 +213,20 @@
 <span class="co">#&gt;   &lt;chr&gt;        &lt;int&gt; &lt;date&gt;           &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;          </span>
 <span class="co">#&gt; 1 GCST002…  24882193 2014-04-18       J Affect D… Bipo… Winham SJ      </span>
 <span class="co">#&gt; 2 GCST000…  19430480 2009-05-09       Nat Genet   Geno… Barrett JC     </span>
-<span class="co">#&gt; # … with 1 more variable: author_orcid &lt;chr&gt;</span></pre></body></html></div>
+<span class="co">#&gt; # … with 1 more variable: author_orcid &lt;chr&gt;</span></code></pre></div>
 <p>Get associations by variant identifiers (rs3798440 or rs7329174):</p>
-<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="fu"><a href="../reference/get_associations.html">get_associations</a></span>(<span class="kw">variant_id</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'rs3798440'</span>, <span class="st">'rs7329174'</span>))
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/get_associations.html">get_associations</a></span><span class="op">(</span>variant_id <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'rs3798440'</span>, <span class="st">'rs7329174'</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; An object of class "associations"</span>
 <span class="co">#&gt; Slot "associations":</span>
 <span class="co">#&gt; # A tibble: 5 x 17</span>
 <span class="co">#&gt;   association_id   pvalue pvalue_descript… pvalue_mantissa pvalue_exponent</span>
 <span class="co">#&gt;   &lt;chr&gt;             &lt;dbl&gt; &lt;chr&gt;                      &lt;int&gt;           &lt;int&gt;</span>
 <span class="co">#&gt; 1 24299710       3.00e-10 &lt;NA&gt;                           3             -10</span>
-<span class="co">#&gt; 2 17433639       3.00e- 6 (Chinese)                      3              -6</span>
-<span class="co">#&gt; 3 16617          1.00e- 8 &lt;NA&gt;                           1              -8</span>
-<span class="co">#&gt; 4 26451          8.00e- 9 &lt;NA&gt;                           8              -9</span>
-<span class="co">#&gt; 5 26394          6.00e- 6 &lt;NA&gt;                           6              -6</span>
+<span class="co">#&gt; 2 16617          1.00e- 8 &lt;NA&gt;                           1              -8</span>
+<span class="co">#&gt; 3 26451          8.00e- 9 &lt;NA&gt;                           8              -9</span>
+<span class="co">#&gt; 4 26394          6.00e- 6 &lt;NA&gt;                           6              -6</span>
+<span class="co">#&gt; 5 17433639       3.00e- 6 (Chinese)                      3              -6</span>
 <span class="co">#&gt; # … with 12 more variables: multiple_snp_haplotype &lt;lgl&gt;,</span>
 <span class="co">#&gt; #   snp_interaction &lt;lgl&gt;, snp_type &lt;chr&gt;, standard_error &lt;dbl&gt;, range &lt;chr&gt;,</span>
 <span class="co">#&gt; #   or_per_copy_number &lt;dbl&gt;, beta_number &lt;dbl&gt;, beta_unit &lt;chr&gt;,</span>
@@ -233,10 +239,10 @@
 <span class="co">#&gt;   &lt;chr&gt;             &lt;int&gt;               &lt;int&gt; &lt;chr&gt;                </span>
 <span class="co">#&gt; 1 24299710              1                  NA SNP x SNP interaction</span>
 <span class="co">#&gt; 2 24299710              2                  NA SNP x SNP interaction</span>
-<span class="co">#&gt; 3 17433639              1                  NA Single variant       </span>
-<span class="co">#&gt; 4 16617                 1                  NA Single variant       </span>
-<span class="co">#&gt; 5 26451                 1                  NA Single variant       </span>
-<span class="co">#&gt; 6 26394                 1                  NA Single variant       </span>
+<span class="co">#&gt; 3 16617                 1                  NA Single variant       </span>
+<span class="co">#&gt; 4 26451                 1                  NA Single variant       </span>
+<span class="co">#&gt; 5 26394                 1                  NA Single variant       </span>
+<span class="co">#&gt; 6 17433639              1                  NA Single variant       </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Slot "risk_alleles":</span>
 <span class="co">#&gt; # A tibble: 6 x 7</span>
@@ -244,10 +250,10 @@
 <span class="co">#&gt;   &lt;chr&gt;             &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;                &lt;dbl&gt; &lt;lgl&gt;      </span>
 <span class="co">#&gt; 1 24299710              1 rs3798440  A                   NA     TRUE       </span>
 <span class="co">#&gt; 2 24299710              2 rs9350602  C                   NA     TRUE       </span>
-<span class="co">#&gt; 3 17433639              1 rs7329174  &lt;NA&gt;                 0.211 FALSE      </span>
-<span class="co">#&gt; 4 16617                 1 rs7329174  G                   NA     NA         </span>
-<span class="co">#&gt; 5 26451                 1 rs7329174  G                   NA     NA         </span>
-<span class="co">#&gt; 6 26394                 1 rs7329174  G                   NA     NA         </span>
+<span class="co">#&gt; 3 16617                 1 rs7329174  G                   NA     NA         </span>
+<span class="co">#&gt; 4 26451                 1 rs7329174  G                   NA     NA         </span>
+<span class="co">#&gt; 5 26394                 1 rs7329174  G                   NA     NA         </span>
+<span class="co">#&gt; 6 17433639              1 rs7329174  &lt;NA&gt;                 0.211 FALSE      </span>
 <span class="co">#&gt; # … with 1 more variable: limited_list &lt;lgl&gt;</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Slot "genes":</span>
@@ -256,13 +262,13 @@
 <span class="co">#&gt;   &lt;chr&gt;             &lt;int&gt; &lt;chr&gt;       </span>
 <span class="co">#&gt; 1 24299710              1 MYO6        </span>
 <span class="co">#&gt; 2 24299710              2 MYO6        </span>
-<span class="co">#&gt; 3 17433639              1 ELF1        </span>
-<span class="co">#&gt; 4 16617                 1 ELF1        </span>
-<span class="co">#&gt; 5 26451                 1 WBP4        </span>
-<span class="co">#&gt; 6 26451                 1 ELF1        </span>
-<span class="co">#&gt; 7 26451                 1 microRNA2276</span>
-<span class="co">#&gt; 8 26451                 1 SLC25A15    </span>
-<span class="co">#&gt; 9 26394                 1 ELF1        </span>
+<span class="co">#&gt; 3 16617                 1 ELF1        </span>
+<span class="co">#&gt; 4 26451                 1 WBP4        </span>
+<span class="co">#&gt; 5 26451                 1 ELF1        </span>
+<span class="co">#&gt; 6 26451                 1 microRNA2276</span>
+<span class="co">#&gt; 7 26451                 1 SLC25A15    </span>
+<span class="co">#&gt; 8 26394                 1 ELF1        </span>
+<span class="co">#&gt; 9 17433639              1 ELF1        </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Slot "ensembl_ids":</span>
 <span class="co">#&gt; # A tibble: 9 x 4</span>
@@ -270,13 +276,13 @@
 <span class="co">#&gt;   &lt;chr&gt;             &lt;int&gt; &lt;chr&gt;        &lt;chr&gt;          </span>
 <span class="co">#&gt; 1 24299710              1 MYO6         ENSG00000196586</span>
 <span class="co">#&gt; 2 24299710              2 MYO6         ENSG00000196586</span>
-<span class="co">#&gt; 3 17433639              1 ELF1         ENSG00000120690</span>
-<span class="co">#&gt; 4 16617                 1 ELF1         ENSG00000120690</span>
-<span class="co">#&gt; 5 26451                 1 WBP4         ENSG00000120688</span>
-<span class="co">#&gt; 6 26451                 1 ELF1         ENSG00000120690</span>
-<span class="co">#&gt; 7 26451                 1 microRNA2276 &lt;NA&gt;           </span>
-<span class="co">#&gt; 8 26451                 1 SLC25A15     ENSG00000102743</span>
-<span class="co">#&gt; 9 26394                 1 ELF1         ENSG00000120690</span>
+<span class="co">#&gt; 3 16617                 1 ELF1         ENSG00000120690</span>
+<span class="co">#&gt; 4 26451                 1 WBP4         ENSG00000120688</span>
+<span class="co">#&gt; 5 26451                 1 ELF1         ENSG00000120690</span>
+<span class="co">#&gt; 6 26451                 1 microRNA2276 &lt;NA&gt;           </span>
+<span class="co">#&gt; 7 26451                 1 SLC25A15     ENSG00000102743</span>
+<span class="co">#&gt; 8 26394                 1 ELF1         ENSG00000120690</span>
+<span class="co">#&gt; 9 17433639              1 ELF1         ENSG00000120690</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Slot "entrez_ids":</span>
 <span class="co">#&gt; # A tibble: 9 x 4</span>
@@ -284,15 +290,16 @@
 <span class="co">#&gt;   &lt;chr&gt;             &lt;int&gt; &lt;chr&gt;        &lt;chr&gt;    </span>
 <span class="co">#&gt; 1 24299710              1 MYO6         4646     </span>
 <span class="co">#&gt; 2 24299710              2 MYO6         4646     </span>
-<span class="co">#&gt; 3 17433639              1 ELF1         1997     </span>
-<span class="co">#&gt; 4 16617                 1 ELF1         1997     </span>
-<span class="co">#&gt; 5 26451                 1 WBP4         11193    </span>
-<span class="co">#&gt; 6 26451                 1 ELF1         1997     </span>
-<span class="co">#&gt; 7 26451                 1 microRNA2276 &lt;NA&gt;     </span>
-<span class="co">#&gt; 8 26451                 1 SLC25A15     10166    </span>
-<span class="co">#&gt; 9 26394                 1 ELF1         1997</span></pre></body></html></div>
+<span class="co">#&gt; 3 16617                 1 ELF1         1997     </span>
+<span class="co">#&gt; 4 26451                 1 WBP4         11193    </span>
+<span class="co">#&gt; 5 26451                 1 ELF1         1997     </span>
+<span class="co">#&gt; 6 26451                 1 microRNA2276 &lt;NA&gt;     </span>
+<span class="co">#&gt; 7 26451                 1 SLC25A15     10166    </span>
+<span class="co">#&gt; 8 26394                 1 ELF1         1997     </span>
+<span class="co">#&gt; 9 17433639              1 ELF1         1997</span></code></pre></div>
 <p>Get associations by traits (braces or binge eating or gambling):</p>
-<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="fu"><a href="../reference/get_associations.html">get_associations</a></span>(<span class="kw">efo_trait</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'braces'</span>, <span class="st">'binge eating'</span>, <span class="st">'gambling'</span>))
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/get_associations.html">get_associations</a></span><span class="op">(</span>efo_trait <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'braces'</span>, <span class="st">'binge eating'</span>, <span class="st">'gambling'</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; An object of class "associations"</span>
 <span class="co">#&gt; Slot "associations":</span>
 <span class="co">#&gt; # A tibble: 14 x 17</span>
@@ -416,9 +423,10 @@
 <span class="co">#&gt; 12 27460858              1 intergenic   &lt;NA&gt;     </span>
 <span class="co">#&gt; 13 27460864              1 SLC25A26     115286   </span>
 <span class="co">#&gt; 14 27460870              1 intergenic   &lt;NA&gt;     </span>
-<span class="co">#&gt; 15 27460851              1 RP11-250B2.3 &lt;NA&gt;</span></pre></body></html></div>
+<span class="co">#&gt; 15 27460851              1 RP11-250B2.3 &lt;NA&gt;</span></code></pre></div>
 <p>Get traits by PubMed identifiers (24882193 or 22780124):</p>
-<div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="fu"><a href="../reference/get_traits.html">get_traits</a></span>(<span class="kw">pubmed_id</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'24882193'</span>, <span class="st">'22780124'</span>))
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="../reference/get_traits.html">get_traits</a></span><span class="op">(</span>pubmed_id <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'24882193'</span>, <span class="st">'22780124'</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; An object of class "traits"</span>
 <span class="co">#&gt; Slot "traits":</span>
 <span class="co">#&gt; # A tibble: 3 x 3</span>
@@ -426,7 +434,7 @@
 <span class="co">#&gt;   &lt;chr&gt;       &lt;chr&gt;              &lt;chr&gt;                               </span>
 <span class="co">#&gt; 1 EFO_0005924 binge eating       http://www.ebi.ac.uk/efo/EFO_0005924</span>
 <span class="co">#&gt; 2 EFO_0000289 bipolar disorder   http://www.ebi.ac.uk/efo/EFO_0000289</span>
-<span class="co">#&gt; 3 EFO_0004699 gambling behaviour http://www.ebi.ac.uk/efo/EFO_0004699</span></pre></body></html></div>
+<span class="co">#&gt; 3 EFO_0004699 gambling behaviour http://www.ebi.ac.uk/efo/EFO_0004699</span></code></pre></div>
 <p>The only search parameters that are not vectorised are <code>user_requested</code> and <code>full_pvalue_set</code> from <code><a href="../reference/get_studies.html">get_studies()</a></code>. These parameters are not vectorised because they take boolean values (<code>TRUE</code> or <code>FALSE</code>) and thus only one of the values is sensical to be used as a query at a given time.</p>
 </div>
 <div id="what-is-the-difference-between-a-trait-and-a-reported-trait" class="section level2">
@@ -435,16 +443,18 @@
 <p>There are two levels of trait description in the GWAS Catalog: (EFO) trait and reported trait.</p>
 <p>Studies are assigned one or more terms from the <a href="https://www.ebi.ac.uk/efo/">Experimental Factor Ontology (EFO)</a>, i.e., an EFO trait, or simply trait, that best represents the phenotype under investigation.</p>
 <p>In addition, each study is also assigned a free text reported trait. This is written by the GWAS Catalog curators and reflects the author language, and where necessary, it includes more specific and detailed description of the experimental design, e.g., interaction studies or studies with a background trait.</p>
-<p>As an example take the study with accession identifier <code>GCST000206</code> by EM Behrens et al. (2008). We can get the EFO trait with <code><a href="../reference/get_traits.html">get_traits()</a></code> and the reported trait with <code><a href="../reference/get_studies.html">get_studies()</a></code>:</p>
+<p>As an example take the study with accession identifier <code>GCST000206</code> by EM Behrens et al. (2008). We can get the EFO trait with <code><a href="../reference/get_traits.html">get_traits()</a></code> and the reported trait with <code><a href="../reference/get_studies.html">get_studies()</a></code>:</p>
 <p>The (EFO) trait for the Behrens study is <code>chronic childhood arthritis</code>:</p>
-<div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">gwasrapidd</span>)
-<span class="no">efo_trait</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_traits.html">get_traits</a></span>(<span class="kw">study_id</span> <span class="kw">=</span> <span class="st">'GCST000206'</span>)
-<span class="no">efo_trait</span>@<span class="kw">traits</span>$<span class="no">trait</span>
-<span class="co">#&gt; [1] "juvenile idiopathic arthritis"</span></pre></body></html></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ramiromagno/gwasrapidd">gwasrapidd</a></span><span class="op">)</span>
+<span class="va">efo_trait</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_traits.html">get_traits</a></span><span class="op">(</span>study_id <span class="op">=</span> <span class="st">'GCST000206'</span><span class="op">)</span>
+<span class="va">efo_trait</span><span class="op">@</span><span class="va">traits</span><span class="op">$</span><span class="va">trait</span>
+<span class="co">#&gt; [1] "juvenile idiopathic arthritis"</span></code></pre></div>
 <p>whereas the reported trait is <code>Arthritis (juvenile idiopathic)</code>:</p>
-<div class="sourceCode" id="cb9"><html><body><pre class="r"><span class="no">study</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_studies.html">get_studies</a></span>(<span class="kw">study_id</span> <span class="kw">=</span> <span class="st">'GCST000206'</span>)
-<span class="no">study</span>@<span class="kw">studies</span>$<span class="no">reported_trait</span>
-<span class="co">#&gt; [1] "Arthritis (juvenile idiopathic)"</span></pre></body></html></div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">study</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_studies.html">get_studies</a></span><span class="op">(</span>study_id <span class="op">=</span> <span class="st">'GCST000206'</span><span class="op">)</span>
+<span class="va">study</span><span class="op">@</span><span class="va">studies</span><span class="op">$</span><span class="va">reported_trait</span>
+<span class="co">#&gt; [1] "Arthritis (juvenile idiopathic)"</span></code></pre></div>
 </div>
 <div id="genomic-coordinates-of-genomic-contexts-seem-to-be-wrong" class="section level2">
 <h2 class="hasAnchor">
@@ -461,62 +471,70 @@
 <a href="#single-genomic-range" class="anchor"></a>Single genomic range</h3>
 <p>For this you may use the function <code><a href="../reference/get_variants.html">get_variants()</a></code> with parameter <code>genomic_range</code>.</p>
 <p>For example, to search for variants in chromosome Y in the interval 14692000–14695000, you start by defining a list of 3 elements: <code>chromosome</code>, <code>start</code> and <code>end</code> that specify your genomic range:</p>
-<div class="sourceCode" id="cb10"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">gwasrapidd</span>)
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ramiromagno/gwasrapidd">gwasrapidd</a></span><span class="op">)</span>
 <span class="co"># 'chromosome' names are case sensitive, and should be uppercase.</span>
 <span class="co"># 'start' and 'end' positions should be integer vectors.</span>
-<span class="no">my_genomic_range</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(
-  <span class="kw">chromosome</span> <span class="kw">=</span> <span class="st">'Y'</span>,
-  <span class="kw">start</span> <span class="kw">=</span> <span class="fl">14692000L</span>,
-  <span class="kw">end</span> <span class="kw">=</span> <span class="fl">14695000L</span>)</pre></body></html></div>
+<span class="va">my_genomic_range</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>
+  chromosome <span class="op">=</span> <span class="st">'Y'</span>,
+  start <span class="op">=</span> <span class="fl">14692000L</span>,
+  end <span class="op">=</span> <span class="fl">14695000L</span><span class="op">)</span></code></pre></div>
 <p>Now you can use <code>my_genomic_range</code> to retrieve the variants:</p>
-<div class="sourceCode" id="cb11"><html><body><pre class="r"><span class="no">chr_Y_variants</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_variants.html">get_variants</a></span>(<span class="kw">genomic_range</span> <span class="kw">=</span> <span class="no">my_genomic_range</span>)
-<span class="no">chr_Y_variants</span>@<span class="kw">variants</span>[<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'variant_id'</span>, <span class="st">'functional_class'</span>)]
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">chr_Y_variants</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_variants.html">get_variants</a></span><span class="op">(</span>genomic_range <span class="op">=</span> <span class="va">my_genomic_range</span><span class="op">)</span>
+<span class="va">chr_Y_variants</span><span class="op">@</span><span class="va">variants</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'variant_id'</span>, <span class="st">'functional_class'</span><span class="op">)</span><span class="op">]</span>
 <span class="co">#&gt; # A tibble: 1 x 2</span>
 <span class="co">#&gt;   variant_id functional_class</span>
 <span class="co">#&gt;   &lt;chr&gt;      &lt;chr&gt;           </span>
-<span class="co">#&gt; 1 rs2115848  intron_variant</span></pre></body></html></div>
+<span class="co">#&gt; 1 rs2115848  intron_variant</span></code></pre></div>
 </div>
 <div id="multiple-genomic-ranges" class="section level3">
 <h3 class="hasAnchor">
 <a href="#multiple-genomic-ranges" class="anchor"></a>Multiple genomic ranges</h3>
 <p>To search in multiple regions, construct your genomic range list with those locations just like in the previous example. For example, let’s search now for variants in chromosome X and Y, both in range 13000000–15000000:</p>
-<div class="sourceCode" id="cb12"><html><body><pre class="r"><span class="no">my_genomic_range</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(
-  <span class="kw">chromosome</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'X'</span>, <span class="st">'Y'</span>),
-  <span class="kw">start</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">13000000L</span>, <span class="fl">13000000L</span>),
-  <span class="kw">end</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">15000000L</span>, <span class="fl">15000000L</span>))
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">my_genomic_range</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>
+  chromosome <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'X'</span>, <span class="st">'Y'</span><span class="op">)</span>,
+  start <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">13000000L</span>, <span class="fl">13000000L</span><span class="op">)</span>,
+  end <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">15000000L</span>, <span class="fl">15000000L</span><span class="op">)</span><span class="op">)</span>
 
-<span class="no">chr_XY_variants</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_variants.html">get_variants</a></span>(<span class="kw">genomic_range</span> <span class="kw">=</span> <span class="no">my_genomic_range</span>)
-<span class="no">chr_XY_variants</span>@<span class="kw">variants</span>[<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'variant_id'</span>,
+<span class="va">chr_XY_variants</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_variants.html">get_variants</a></span><span class="op">(</span>genomic_range <span class="op">=</span> <span class="va">my_genomic_range</span><span class="op">)</span>
+<span class="va">chr_XY_variants</span><span class="op">@</span><span class="va">variants</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'variant_id'</span>,
                            <span class="st">'chromosome_name'</span>,
-                           <span class="st">'chromosome_position'</span>)]
-<span class="co">#&gt; # A tibble: 9 x 3</span>
-<span class="co">#&gt;   variant_id  chromosome_name chromosome_position</span>
-<span class="co">#&gt;   &lt;chr&gt;       &lt;chr&gt;                         &lt;int&gt;</span>
-<span class="co">#&gt; 1 rs73633565  X                          13459192</span>
-<span class="co">#&gt; 2 rs5980075   X                          14932409</span>
-<span class="co">#&gt; 3 rs142204301 X                          13358691</span>
-<span class="co">#&gt; 4 rs6528024   X                          13912803</span>
-<span class="co">#&gt; 5 rs850637    X                          13005622</span>
-<span class="co">#&gt; 6 rs5978649   X                          13596999</span>
-<span class="co">#&gt; 7 rs138331350 X                          14841981</span>
-<span class="co">#&gt; 8 rs749624882 X                          14929148</span>
-<span class="co">#&gt; 9 rs2115848   Y                          14692972</span></pre></body></html></div>
+                           <span class="st">'chromosome_position'</span><span class="op">)</span><span class="op">]</span>
+<span class="co">#&gt; # A tibble: 10 x 3</span>
+<span class="co">#&gt;    variant_id  chromosome_name chromosome_position</span>
+<span class="co">#&gt;    &lt;chr&gt;       &lt;chr&gt;                         &lt;int&gt;</span>
+<span class="co">#&gt;  1 rs73633565  X                          13459192</span>
+<span class="co">#&gt;  2 rs5980075   X                          14932409</span>
+<span class="co">#&gt;  3 rs142204301 X                          13358691</span>
+<span class="co">#&gt;  4 rs6528024   X                          13912803</span>
+<span class="co">#&gt;  5 rs850637    X                          13005622</span>
+<span class="co">#&gt;  6 rs5978649   X                          13596999</span>
+<span class="co">#&gt;  7 rs138331350 X                          14841981</span>
+<span class="co">#&gt;  8 rs749624882 X                          14929148</span>
+<span class="co">#&gt;  9 rs2032658   Y                          13470103</span>
+<span class="co">#&gt; 10 rs2115848   Y                          14692972</span></code></pre></div>
 </div>
 <div id="searching-variants-by-cytogenetic-regions" class="section level3">
 <h3 class="hasAnchor">
 <a href="#searching-variants-by-cytogenetic-regions" class="anchor"></a>Searching variants by cytogenetic regions</h3>
 <p>To search for variants within a cytogenetic band you can use the parameter <code>cytogenetic_band</code> of <code><a href="../reference/get_variants.html">get_variants()</a></code>. Here is an example, again for chromosome Y, using the cytogenetic band <code>'Yq11.221'</code> as query:</p>
-<div class="sourceCode" id="cb13"><html><body><pre class="r"><span class="no">my_variants</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_variants.html">get_variants</a></span>(<span class="kw">cytogenetic_band</span> <span class="kw">=</span> <span class="st">'Yq11.221'</span>)
-<span class="no">my_variants</span>@<span class="kw">variants</span>[<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'variant_id'</span>,
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">my_variants</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_variants.html">get_variants</a></span><span class="op">(</span>cytogenetic_band <span class="op">=</span> <span class="st">'Yq11.221'</span><span class="op">)</span>
+<span class="va">my_variants</span><span class="op">@</span><span class="va">variants</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'variant_id'</span>,
                        <span class="st">'chromosome_name'</span>,
-                       <span class="st">'chromosome_position'</span>)]
-<span class="co">#&gt; # A tibble: 1 x 3</span>
+                       <span class="st">'chromosome_position'</span><span class="op">)</span><span class="op">]</span>
+<span class="co">#&gt; # A tibble: 3 x 3</span>
 <span class="co">#&gt;   variant_id chromosome_name chromosome_position</span>
 <span class="co">#&gt;   &lt;chr&gt;      &lt;chr&gt;                         &lt;int&gt;</span>
-<span class="co">#&gt; 1 rs2115848  Y                          14692972</span></pre></body></html></div>
+<span class="co">#&gt; 1 rs2115848  Y                          14692972</span>
+<span class="co">#&gt; 2 rs2032658  Y                          13470103</span>
+<span class="co">#&gt; 3 rs2032624  Y                          12914512</span></code></pre></div>
 <p>How to know what are the cytogenetic bands for querying? We provide a dataset (dataframe) named <code>cytogenetic_bands</code> that you can use:</p>
-<div class="sourceCode" id="cb14"><html><body><pre class="r"><span class="co"># ?cytogenetic_bands for more details.</span>
-<span class="no">cytogenetic_bands</span>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># ?cytogenetic_bands for more details.</span>
+<span class="va">cytogenetic_bands</span>
 <span class="co">#&gt; # A tibble: 862 x 8</span>
 <span class="co">#&gt;    cytogenetic_band chromosome  start    end length assembly stain</span>
 <span class="co">#&gt;    &lt;chr&gt;            &lt;chr&gt;       &lt;int&gt;  &lt;int&gt;  &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;</span>
@@ -530,50 +548,54 @@
 <span class="co">#&gt;  8 1p36.12          1          2.01e7 2.36e7 3.50e6 GRCh38   gpos…</span>
 <span class="co">#&gt;  9 1p36.11          1          2.36e7 2.76e7 4.00e6 GRCh38   gneg </span>
 <span class="co">#&gt; 10 1p35.3           1          2.76e7 2.99e7 2.30e6 GRCh38   gpos…</span>
-<span class="co">#&gt; # … with 852 more rows, and 1 more variable: last_download_date &lt;chr&gt;</span></pre></body></html></div>
+<span class="co">#&gt; # … with 852 more rows, and 1 more variable: last_download_date &lt;chr&gt;</span></code></pre></div>
 <p>Let’s say you want to search for all variants in the shorter arm (p) of chromosome 21, you can take advantage of the <code>cytogenetic_bands</code> to get all the corresponding cytogenetic band names:</p>
-<div class="sourceCode" id="cb15"><html><body><pre class="r"><span class="co"># Install package dplyr if you do not have it.</span>
-<span class="no">chr21_p_bands</span> <span class="kw">&lt;-</span> <span class="kw pkg">dplyr</span><span class="kw ns">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(<span class="no">cytogenetic_bands</span>, <span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span>(<span class="st">'^21p'</span>, <span class="no">cytogenetic_band</span>)) <span class="kw">%&gt;%</span>
-  <span class="kw pkg">dplyr</span><span class="kw ns">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span>(<span class="no">cytogenetic_band</span>)
-<span class="no">chr21_p_bands</span>
-<span class="co">#&gt; [1] "21p13"   "21p12"   "21p11.2" "21p11.1"</span></pre></body></html></div>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Install package dplyr if you do not have it.</span>
+<span class="va">chr21_p_bands</span> <span class="op">&lt;-</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">cytogenetic_bands</span>, <span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">'^21p'</span>, <span class="va">cytogenetic_band</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="va">cytogenetic_band</span><span class="op">)</span>
+<span class="va">chr21_p_bands</span>
+<span class="co">#&gt; [1] "21p13"   "21p12"   "21p11.2" "21p11.1"</span></code></pre></div>
 <p>Now search by <code>cytogenetic_band</code>:</p>
-<div class="sourceCode" id="cb16"><html><body><pre class="r"><span class="no">my_variants</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_variants.html">get_variants</a></span>(<span class="kw">cytogenetic_band</span> <span class="kw">=</span> <span class="no">chr21_p_bands</span>)
-<span class="no">my_variants</span>@<span class="kw">variants</span>[<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'variant_id'</span>,
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">my_variants</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_variants.html">get_variants</a></span><span class="op">(</span>cytogenetic_band <span class="op">=</span> <span class="va">chr21_p_bands</span><span class="op">)</span>
+<span class="va">my_variants</span><span class="op">@</span><span class="va">variants</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'variant_id'</span>,
                        <span class="st">'chromosome_name'</span>,
                        <span class="st">'chromosome_position'</span>,
-                       <span class="st">'chromosome_region'</span>)]
+                       <span class="st">'chromosome_region'</span><span class="op">)</span><span class="op">]</span>
 <span class="co">#&gt; # A tibble: 2 x 4</span>
 <span class="co">#&gt;   variant_id chromosome_name chromosome_position chromosome_region</span>
 <span class="co">#&gt;   &lt;chr&gt;      &lt;chr&gt;                         &lt;int&gt; &lt;chr&gt;            </span>
 <span class="co">#&gt; 1 rs240444   21                         10510446 21p11.2          </span>
-<span class="co">#&gt; 2 rs10439884 21                         10540506 21p11.2</span></pre></body></html></div>
+<span class="co">#&gt; 2 rs10439884 21                         10540506 21p11.2</span></code></pre></div>
 </div>
 </div>
 <div id="genomic-range-for-an-entire-chromosome" class="section level2">
 <h2 class="hasAnchor">
 <a href="#genomic-range-for-an-entire-chromosome" class="anchor"></a>7 | Genomic range for an entire chromosome?</h2>
 <p>You can get the total length of a chromosome by using the provided dataset: <code>cytogenetic_bands</code>. Here is an example for chromosome 15:</p>
-<div class="sourceCode" id="cb17"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">gwasrapidd</span>)
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ramiromagno/gwasrapidd">gwasrapidd</a></span><span class="op">)</span>
 <span class="co"># Install dplyr first.</span>
-<span class="kw pkg">dplyr</span><span class="kw ns">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(<span class="no">cytogenetic_bands</span>, <span class="no">chromosome</span> <span class="kw">==</span> <span class="st">'15'</span>) <span class="kw">%&gt;%</span>
-  <span class="kw pkg">dplyr</span><span class="kw ns">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span>(<span class="kw">chromosome</span> <span class="kw">=</span> <span class="kw pkg">dplyr</span><span class="kw ns">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/nth.html">first</a></span>(<span class="no">chromosome</span>),
-                   <span class="kw">start</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span>(<span class="no">start</span>),
-                   <span class="kw">end</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="no">end</span>)
-                   )
+<span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">cytogenetic_bands</span>, <span class="va">chromosome</span> <span class="op">==</span> <span class="st">'15'</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>chromosome <span class="op">=</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/nth.html">first</a></span><span class="op">(</span><span class="va">chromosome</span><span class="op">)</span>,
+                   start <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">start</span><span class="op">)</span>,
+                   end <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">end</span><span class="op">)</span>
+                   <span class="op">)</span>
 <span class="co">#&gt; # A tibble: 1 x 3</span>
 <span class="co">#&gt;   chromosome start       end</span>
 <span class="co">#&gt;   &lt;chr&gt;      &lt;int&gt;     &lt;int&gt;</span>
-<span class="co">#&gt; 1 15             1 101991189</span></pre></body></html></div>
+<span class="co">#&gt; 1 15             1 101991189</span></code></pre></div>
 </div>
 <div id="how-to-keep-track-of-which-queries-generated-which-results" class="section level2">
 <h2 class="hasAnchor">
 <a href="#how-to-keep-track-of-which-queries-generated-which-results" class="anchor"></a>8 | How to keep track of which queries generated which results?</h2>
 <p>Currently, there is not an implemented solution in gwasrapidd. For example, if you search for variants by EFO identifier (<code>efo_id</code>):</p>
-<div class="sourceCode" id="cb18"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">gwasrapidd</span>)
-<span class="no">my_efo_ids</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'EFO_0005543'</span>, <span class="st">'EFO_0004762'</span>)
-<span class="no">my_variants</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_variants.html">get_variants</a></span>(<span class="kw">efo_id</span> <span class="kw">=</span> <span class="no">my_efo_ids</span>)
-<span class="no">my_variants</span>@<span class="kw">variants</span>$<span class="no">variant_id</span>
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ramiromagno/gwasrapidd">gwasrapidd</a></span><span class="op">)</span>
+<span class="va">my_efo_ids</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'EFO_0005543'</span>, <span class="st">'EFO_0004762'</span><span class="op">)</span>
+<span class="va">my_variants</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_variants.html">get_variants</a></span><span class="op">(</span>efo_id <span class="op">=</span> <span class="va">my_efo_ids</span><span class="op">)</span>
+<span class="va">my_variants</span><span class="op">@</span><span class="va">variants</span><span class="op">$</span><span class="va">variant_id</span>
 <span class="co">#&gt;  [1] "rs11706832"  "rs498872"    "rs10842893"  "rs7572263"   "rs11599775" </span>
 <span class="co">#&gt;  [6] "rs2736100"   "rs12803321"  "rs77633900"  "rs3751667"   "rs7107785"  </span>
 <span class="co">#&gt; [11] "rs10069690"  "rs12752552"  "rs648044"    "rs11598018"  "rs10131032" </span>
@@ -593,25 +615,28 @@
 <span class="co">#&gt; [81] "rs10761731"  "rs7030781"   "rs180936035" "rs550057"    "rs9332599"  </span>
 <span class="co">#&gt; [86] "rs75455100"  "rs143479231" "rs7767396"   "rs191332118" "rs186066666"</span>
 <span class="co">#&gt; [91] "rs11392719"  "rs6993770"   "rs144820908" "rs61829244"  "rs6722871"  </span>
-<span class="co">#&gt; [96] "rs10738760"</span></pre></body></html></div>
+<span class="co">#&gt; [96] "rs10738760"</span></code></pre></div>
 <p>So it is not immediately obvious which variants resulted from the query <code>'EFO_0005543'</code> or <code>'EFO_0004762'</code>.</p>
 <p>A possible workaround is to make multiple independent queries and save your results in a list whose names are the respective queries:</p>
-<div class="sourceCode" id="cb19"><html><body><pre class="r"><span class="co"># Install purrr first.</span>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Install purrr first.</span>
 <span class="co"># Add names to my_efo_ids</span>
-<span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span>(<span class="no">my_efo_ids</span>) <span class="kw">&lt;-</span> <span class="no">my_efo_ids</span>
-<span class="no">my_variants</span> <span class="kw">&lt;-</span> <span class="kw pkg">purrr</span><span class="kw ns">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span>(<span class="no">my_efo_ids</span>, ~ <span class="fu"><a href="../reference/get_variants.html">get_variants</a></span>(<span class="kw">efo_id</span> <span class="kw">=</span> <span class="no">.x</span>))</pre></body></html></div>
+<span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">my_efo_ids</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">my_efo_ids</span>
+<span class="va">my_variants</span> <span class="op">&lt;-</span> <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="va">my_efo_ids</span>, <span class="op">~</span> <span class="fu"><a href="../reference/get_variants.html">get_variants</a></span><span class="op">(</span>efo_id <span class="op">=</span> <span class="va">.x</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p>Now you can see which variants are associated with each EFO identifier.</p>
 <p>For <code>'EFO_0005543'</code> we got the following variants:</p>
-<div class="sourceCode" id="cb20"><html><body><pre class="r"><span class="no">my_variants</span><span class="kw">[[</span><span class="st">'EFO_0005543'</span>]]@<span class="kw">variants</span>$<span class="no">variant_id</span>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">my_variants</span><span class="op">[[</span><span class="st">'EFO_0005543'</span><span class="op">]</span><span class="op">]</span><span class="op">@</span><span class="va">variants</span><span class="op">$</span><span class="va">variant_id</span>
 <span class="co">#&gt;  [1] "rs11706832" "rs498872"   "rs10842893" "rs7572263"  "rs11599775"</span>
 <span class="co">#&gt;  [6] "rs2736100"  "rs12803321" "rs77633900" "rs3751667"  "rs7107785" </span>
 <span class="co">#&gt; [11] "rs10069690" "rs12752552" "rs648044"   "rs11598018" "rs10131032"</span>
 <span class="co">#&gt; [16] "rs4252707"  "rs4774756"  "rs9841110"  "rs6010620"  "rs634537"  </span>
 <span class="co">#&gt; [21] "rs78378222" "rs11233250" "rs75061358" "rs55705857" "rs10852606"</span>
 <span class="co">#&gt; [26] "rs2297440"  "rs1275600"  "rs12076373" "rs3772190"  "rs2235573" </span>
-<span class="co">#&gt; [31] "rs11979158"</span></pre></body></html></div>
+<span class="co">#&gt; [31] "rs11979158"</span></code></pre></div>
 <p>And for <code>'EFO_0004762'</code>:</p>
-<div class="sourceCode" id="cb21"><html><body><pre class="r"><span class="no">my_variants</span><span class="kw">[[</span><span class="st">'EFO_0004762'</span>]]@<span class="kw">variants</span>$<span class="no">variant_id</span>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">my_variants</span><span class="op">[[</span><span class="st">'EFO_0004762'</span><span class="op">]</span><span class="op">]</span><span class="op">@</span><span class="va">variants</span><span class="op">$</span><span class="va">variant_id</span>
 <span class="co">#&gt;  [1] "rs78355601"  "rs10411345"  "rs144085478" "rs12214617"  "rs181216459"</span>
 <span class="co">#&gt;  [6] "rs118086804" "rs12456390"  "rs4714729"   "rs12199215"  "rs2639990"  </span>
 <span class="co">#&gt; [11] "rs9472155"   "rs144160960" "rs34528081"  "rs4082730"   "rs7763358"  </span>
@@ -624,136 +649,146 @@
 <span class="co">#&gt; [46] "rs2304058"   "rs73418461"  "rs10761750"  "rs8045833"   "rs10761731" </span>
 <span class="co">#&gt; [51] "rs7030781"   "rs180936035" "rs550057"    "rs9332599"   "rs75455100" </span>
 <span class="co">#&gt; [56] "rs143479231" "rs7767396"   "rs191332118" "rs186066666" "rs11392719" </span>
-<span class="co">#&gt; [61] "rs6993770"   "rs144820908" "rs61829244"  "rs6722871"   "rs10738760"</span></pre></body></html></div>
+<span class="co">#&gt; [61] "rs6993770"   "rs144820908" "rs61829244"  "rs6722871"   "rs10738760"</span></code></pre></div>
 </div>
 <div id="how-to-combine-results-from-multiple-queries" class="section level2">
 <h2 class="hasAnchor">
 <a href="#how-to-combine-results-from-multiple-queries" class="anchor"></a>9 | How to combine results from multiple queries?</h2>
 <p>The four main retrieval functions <code><a href="../reference/get_studies.html">get_studies()</a></code>, <code><a href="../reference/get_associations.html">get_associations()</a></code>, <code><a href="../reference/get_variants.html">get_variants()</a></code> and <code><a href="../reference/get_traits.html">get_traits()</a></code> all allow you to search multiple criteria at once. You can then combine results in an OR or AND fashion using the parameter <code>set_operation</code>.</p>
 <p>Use <code>set_operation = 'union'</code> to combine results in an OR fashion:</p>
-<div class="sourceCode" id="cb22"><html><body><pre class="r"><span class="no">my_variants_OR</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_variants.html">get_variants</a></span>(
-  <span class="kw">efo_trait</span> <span class="kw">=</span> <span class="st">'triple-negative breast cancer'</span>,
-  <span class="kw">gene_name</span> <span class="kw">=</span> <span class="st">'MDM4'</span>,
-  <span class="kw">set_operation</span> <span class="kw">=</span> <span class="st">'union'</span>)
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">my_variants_OR</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_variants.html">get_variants</a></span><span class="op">(</span>
+  efo_trait <span class="op">=</span> <span class="st">'triple-negative breast cancer'</span>,
+  gene_name <span class="op">=</span> <span class="st">'MDM4'</span>,
+  set_operation <span class="op">=</span> <span class="st">'union'</span><span class="op">)</span>
 
-<span class="no">my_variants_OR</span>@<span class="kw">variants</span>[<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'variant_id'</span>,
+<span class="va">my_variants_OR</span><span class="op">@</span><span class="va">variants</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'variant_id'</span>,
                        <span class="st">'chromosome_name'</span>,
                        <span class="st">'chromosome_position'</span>,
-                       <span class="st">'chromosome_region'</span>)]
-<span class="co">#&gt; # A tibble: 34 x 4</span>
+                       <span class="st">'chromosome_region'</span><span class="op">)</span><span class="op">]</span>
+<span class="co">#&gt; # A tibble: 37 x 4</span>
 <span class="co">#&gt;    variant_id  chromosome_name chromosome_position chromosome_region</span>
 <span class="co">#&gt;    &lt;chr&gt;       &lt;chr&gt;                         &lt;int&gt; &lt;chr&gt;            </span>
 <span class="co">#&gt;  1 rs201297151 1                         204505454 1q32.1           </span>
 <span class="co">#&gt;  2 rs2290854   1                         204546897 1q32.1           </span>
 <span class="co">#&gt;  3 rs11584700  1                         204607855 1q32.1           </span>
 <span class="co">#&gt;  4 rs3747631   1                         204618441 1q32.1           </span>
-<span class="co">#&gt;  5 rs4951089   1                         204641770 1q32.1           </span>
-<span class="co">#&gt;  6 rs3789045   1                         204617684 1q32.1           </span>
+<span class="co">#&gt;  5 rs3789045   1                         204617684 1q32.1           </span>
+<span class="co">#&gt;  6 rs12041243  1                         204521342 1q32.1           </span>
 <span class="co">#&gt;  7 rs12756329  1                         204561374 1q32.1           </span>
 <span class="co">#&gt;  8 rs16854023  1                         204582702 1q32.1           </span>
 <span class="co">#&gt;  9 rs3747636   1                         204434531 1q32.1           </span>
 <span class="co">#&gt; 10 rs4245739   1                         204549714 1q32.1           </span>
-<span class="co">#&gt; # … with 24 more rows</span></pre></body></html></div>
+<span class="co">#&gt; # … with 27 more rows</span></code></pre></div>
 <p>The code above retrieves variants whose associated <code>efo_trait</code> is equal to <code>'triple-negative breast cancer'</code> or variants that are associated with gene <code>'MDM4'</code>.</p>
 <p>Alternatively, we may use <code>set_operation = 'intersection'</code> to combine results in an AND fashion:</p>
-<div class="sourceCode" id="cb23"><html><body><pre class="r"><span class="no">my_variants_AND</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_variants.html">get_variants</a></span>(
-  <span class="kw">efo_trait</span> <span class="kw">=</span> <span class="st">'triple-negative breast cancer'</span>,
-  <span class="kw">gene_name</span> <span class="kw">=</span> <span class="st">'MDM4'</span>,
-  <span class="kw">set_operation</span> <span class="kw">=</span> <span class="st">'intersection'</span>)
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">my_variants_AND</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_variants.html">get_variants</a></span><span class="op">(</span>
+  efo_trait <span class="op">=</span> <span class="st">'triple-negative breast cancer'</span>,
+  gene_name <span class="op">=</span> <span class="st">'MDM4'</span>,
+  set_operation <span class="op">=</span> <span class="st">'intersection'</span><span class="op">)</span>
 
-<span class="no">my_variants_AND</span>@<span class="kw">variants</span>[<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'variant_id'</span>,
+<span class="va">my_variants_AND</span><span class="op">@</span><span class="va">variants</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'variant_id'</span>,
                        <span class="st">'chromosome_name'</span>,
                        <span class="st">'chromosome_position'</span>,
-                       <span class="st">'chromosome_region'</span>)]
+                       <span class="st">'chromosome_region'</span><span class="op">)</span><span class="op">]</span>
 <span class="co">#&gt; # A tibble: 1 x 4</span>
 <span class="co">#&gt;   variant_id chromosome_name chromosome_position chromosome_region</span>
 <span class="co">#&gt;   &lt;chr&gt;      &lt;chr&gt;                         &lt;int&gt; &lt;chr&gt;            </span>
-<span class="co">#&gt; 1 rs4245739  1                         204549714 1q32.1</span></pre></body></html></div>
+<span class="co">#&gt; 1 rs4245739  1                         204549714 1q32.1</span></code></pre></div>
 <p>With <code>set_operation = 'intersection'</code>, as in the code above, we get variants whose associated <code>efo_trait</code> is equal to <code>'triple-negative breast cancer'</code> and that are associated with gene <code>'MDM4'</code>, i.e., only variants meeting both conditions simultaneously are retrieved.</p>
 <p>Please note that almost all search criteria to be used with the retrieval functions are vectorised, meaning that you can use multiple values with the same search criterion. In these cases results are always combined in an OR fashion.</p>
 <p>In the following example, we will be using the gene name as the only search criterion. If we pass a vector of gene names then we get all variants that are associated with EITHER (OR) genes.</p>
-<div class="sourceCode" id="cb24"><html><body><pre class="r"><span class="no">my_variants</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_variants.html">get_variants</a></span>(<span class="kw">gene_name</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'RNU6-367P'</span>, <span class="st">'TOPAZ1'</span>))
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">my_variants</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_variants.html">get_variants</a></span><span class="op">(</span>gene_name <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'RNU6-367P'</span>, <span class="st">'TOPAZ1'</span><span class="op">)</span><span class="op">)</span>
 
-<span class="no">my_variants</span>@<span class="kw">variants</span>[<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'variant_id'</span>,
+<span class="va">my_variants</span><span class="op">@</span><span class="va">variants</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'variant_id'</span>,
                        <span class="st">'chromosome_name'</span>,
                        <span class="st">'chromosome_position'</span>,
-                       <span class="st">'chromosome_region'</span>)]
-<span class="co">#&gt; # A tibble: 19 x 4</span>
+                       <span class="st">'chromosome_region'</span><span class="op">)</span><span class="op">]</span>
+<span class="co">#&gt; # A tibble: 20 x 4</span>
 <span class="co">#&gt;    variant_id  chromosome_name chromosome_position chromosome_region</span>
 <span class="co">#&gt;    &lt;chr&gt;       &lt;chr&gt;                         &lt;int&gt; &lt;chr&gt;            </span>
 <span class="co">#&gt;  1 rs75619216  3                          43912969 3p21.33          </span>
 <span class="co">#&gt;  2 rs137933720 3                          43908879 3p21.33          </span>
 <span class="co">#&gt;  3 rs6765212   3                          43889992 3p21.33          </span>
 <span class="co">#&gt;  4 rs1388479   3                          43968652 3p21.33          </span>
-<span class="co">#&gt;  5 rs7637852   3                          44000285 3p21.33          </span>
-<span class="co">#&gt;  6 rs7619427   3                          44035549 3p21.33          </span>
-<span class="co">#&gt;  7 rs115881877 3                          43891240 3p21.33          </span>
+<span class="co">#&gt;  5 rs7619427   3                          44035549 3p21.33          </span>
+<span class="co">#&gt;  6 rs115881877 3                          43891240 3p21.33          </span>
+<span class="co">#&gt;  7 rs79644353  3                          44135707 3p21.32          </span>
 <span class="co">#&gt;  8 rs7625896   3                          44021069 3p21.33          </span>
 <span class="co">#&gt;  9 rs11718455  3                          44015406 3p21.33          </span>
-<span class="co">#&gt; 10 rs1554654   3                          44002852 3p21.33          </span>
-<span class="co">#&gt; 11 rs113706999 3                          44117664 3p21.32          </span>
-<span class="co">#&gt; 12 rs142242702 3                          44122660 3p21.32          </span>
-<span class="co">#&gt; 13 rs184952719 3                          44285656 3p21.31          </span>
-<span class="co">#&gt; 14 rs13323323  3                          44291832 3p21.31          </span>
-<span class="co">#&gt; 15 rs12054057  3                          44423043 3p21.31          </span>
-<span class="co">#&gt; 16 rs13076052  3                          44415081 3p21.31          </span>
-<span class="co">#&gt; 17 rs4682718   3                          44184840 3p21.32          </span>
-<span class="co">#&gt; 18 rs141512860 3                          44281584 3p21.31          </span>
-<span class="co">#&gt; 19 rs4682973   3                          44383347 3p21.31</span></pre></body></html></div>
-<p>In this case we retrieved 19 variants. Please note that the <code>set_operation</code> parameter does not affect this result. The <code>set_operation</code> only controls the function behaviour when combining results from different criteria, e.g., when using <code>efo_trait</code> and <code>gene_name</code>.</p>
+<span class="co">#&gt; 10 rs7637852   3                          44000285 3p21.33          </span>
+<span class="co">#&gt; 11 rs1554654   3                          44002852 3p21.33          </span>
+<span class="co">#&gt; 12 rs113706999 3                          44117664 3p21.32          </span>
+<span class="co">#&gt; 13 rs142242702 3                          44122660 3p21.32          </span>
+<span class="co">#&gt; 14 rs9869821   3                          44351644 3p21.31          </span>
+<span class="co">#&gt; 15 rs184952719 3                          44285656 3p21.31          </span>
+<span class="co">#&gt; 16 rs11707506  3                          44183181 3p21.32          </span>
+<span class="co">#&gt; 17 rs13323323  3                          44291832 3p21.31          </span>
+<span class="co">#&gt; 18 rs12054057  3                          44423043 3p21.31          </span>
+<span class="co">#&gt; 19 rs13076052  3                          44415081 3p21.31          </span>
+<span class="co">#&gt; 20 rs4682718   3                          44184840 3p21.32</span></code></pre></div>
+<p>In this case we retrieved 20 variants. Please note that the <code>set_operation</code> parameter does not affect this result. The <code>set_operation</code> only controls the function behaviour when combining results from different criteria, e.g., when using <code>efo_trait</code> and <code>gene_name</code>.</p>
 <p>To retrieve variants that are concomitantly associated with genes RNU6-367P and TOPAZ1, the user needs to place these queries separately and then intersect them — using the <code><a href="../reference/setop.html">intersect()</a></code> function, i.e., combining in an AND fashion. Here we start by retrieving variants associated with gene RNU6-367P:</p>
-<div class="sourceCode" id="cb25"><html><body><pre class="r"><span class="no">my_variants1</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_variants.html">get_variants</a></span>(<span class="kw">gene_name</span> <span class="kw">=</span> <span class="st">'RNU6-367P'</span>)
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">my_variants1</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_variants.html">get_variants</a></span><span class="op">(</span>gene_name <span class="op">=</span> <span class="st">'RNU6-367P'</span><span class="op">)</span>
 
-<span class="no">my_variants1</span>@<span class="kw">variants</span>[<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'variant_id'</span>,
+<span class="va">my_variants1</span><span class="op">@</span><span class="va">variants</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'variant_id'</span>,
                        <span class="st">'chromosome_name'</span>,
                        <span class="st">'chromosome_position'</span>,
-                       <span class="st">'chromosome_region'</span>)]
-<span class="co">#&gt; # A tibble: 12 x 4</span>
+                       <span class="st">'chromosome_region'</span><span class="op">)</span><span class="op">]</span>
+<span class="co">#&gt; # A tibble: 13 x 4</span>
 <span class="co">#&gt;    variant_id  chromosome_name chromosome_position chromosome_region</span>
 <span class="co">#&gt;    &lt;chr&gt;       &lt;chr&gt;                         &lt;int&gt; &lt;chr&gt;            </span>
 <span class="co">#&gt;  1 rs75619216  3                          43912969 3p21.33          </span>
 <span class="co">#&gt;  2 rs137933720 3                          43908879 3p21.33          </span>
 <span class="co">#&gt;  3 rs6765212   3                          43889992 3p21.33          </span>
 <span class="co">#&gt;  4 rs1388479   3                          43968652 3p21.33          </span>
-<span class="co">#&gt;  5 rs7637852   3                          44000285 3p21.33          </span>
-<span class="co">#&gt;  6 rs7619427   3                          44035549 3p21.33          </span>
-<span class="co">#&gt;  7 rs115881877 3                          43891240 3p21.33          </span>
+<span class="co">#&gt;  5 rs7619427   3                          44035549 3p21.33          </span>
+<span class="co">#&gt;  6 rs115881877 3                          43891240 3p21.33          </span>
+<span class="co">#&gt;  7 rs79644353  3                          44135707 3p21.32          </span>
 <span class="co">#&gt;  8 rs7625896   3                          44021069 3p21.33          </span>
 <span class="co">#&gt;  9 rs11718455  3                          44015406 3p21.33          </span>
-<span class="co">#&gt; 10 rs1554654   3                          44002852 3p21.33          </span>
-<span class="co">#&gt; 11 rs113706999 3                          44117664 3p21.32          </span>
-<span class="co">#&gt; 12 rs142242702 3                          44122660 3p21.32</span></pre></body></html></div>
-<p>There are 12 variants associated with gene RNU6-367P. Now, for gene TOPAZ1:</p>
-<div class="sourceCode" id="cb26"><html><body><pre class="r"><span class="no">my_variants2</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_variants.html">get_variants</a></span>(<span class="kw">gene_name</span> <span class="kw">=</span> <span class="st">'TOPAZ1'</span>)
+<span class="co">#&gt; 10 rs7637852   3                          44000285 3p21.33          </span>
+<span class="co">#&gt; 11 rs1554654   3                          44002852 3p21.33          </span>
+<span class="co">#&gt; 12 rs113706999 3                          44117664 3p21.32          </span>
+<span class="co">#&gt; 13 rs142242702 3                          44122660 3p21.32</span></code></pre></div>
+<p>There are 13 variants associated with gene RNU6-367P. Now, for gene TOPAZ1:</p>
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">my_variants2</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_variants.html">get_variants</a></span><span class="op">(</span>gene_name <span class="op">=</span> <span class="st">'TOPAZ1'</span><span class="op">)</span>
 
-<span class="no">my_variants2</span>@<span class="kw">variants</span>[<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'variant_id'</span>,
+<span class="va">my_variants2</span><span class="op">@</span><span class="va">variants</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'variant_id'</span>,
                        <span class="st">'chromosome_name'</span>,
                        <span class="st">'chromosome_position'</span>,
-                       <span class="st">'chromosome_region'</span>)]
-<span class="co">#&gt; # A tibble: 9 x 4</span>
-<span class="co">#&gt;   variant_id  chromosome_name chromosome_position chromosome_region</span>
-<span class="co">#&gt;   &lt;chr&gt;       &lt;chr&gt;                         &lt;int&gt; &lt;chr&gt;            </span>
-<span class="co">#&gt; 1 rs184952719 3                          44285656 3p21.31          </span>
-<span class="co">#&gt; 2 rs13323323  3                          44291832 3p21.31          </span>
-<span class="co">#&gt; 3 rs12054057  3                          44423043 3p21.31          </span>
-<span class="co">#&gt; 4 rs13076052  3                          44415081 3p21.31          </span>
-<span class="co">#&gt; 5 rs4682718   3                          44184840 3p21.32          </span>
-<span class="co">#&gt; 6 rs113706999 3                          44117664 3p21.32          </span>
-<span class="co">#&gt; 7 rs142242702 3                          44122660 3p21.32          </span>
-<span class="co">#&gt; 8 rs141512860 3                          44281584 3p21.31          </span>
-<span class="co">#&gt; 9 rs4682973   3                          44383347 3p21.31</span></pre></body></html></div>
-<p>There are 9 variants associated with gene TOPAZ1. To find those variants simultaneously associated with both genes, you can intersect the two <a href="https://rmagno.eu/gwasrapidd/reference/variants-class.html">variants</a> objects using <code><a href="../reference/setop.html">intersect()</a></code>:</p>
-<div class="sourceCode" id="cb27"><html><body><pre class="r"><span class="no">variants_intersect</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/setop.html">intersect</a></span>(<span class="no">my_variants1</span>, <span class="no">my_variants2</span>)
-<span class="no">variants_intersect</span>@<span class="kw">variants</span>[<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">'variant_id'</span>,
+                       <span class="st">'chromosome_region'</span><span class="op">)</span><span class="op">]</span>
+<span class="co">#&gt; # A tibble: 10 x 4</span>
+<span class="co">#&gt;    variant_id  chromosome_name chromosome_position chromosome_region</span>
+<span class="co">#&gt;    &lt;chr&gt;       &lt;chr&gt;                         &lt;int&gt; &lt;chr&gt;            </span>
+<span class="co">#&gt;  1 rs9869821   3                          44351644 3p21.31          </span>
+<span class="co">#&gt;  2 rs184952719 3                          44285656 3p21.31          </span>
+<span class="co">#&gt;  3 rs11707506  3                          44183181 3p21.32          </span>
+<span class="co">#&gt;  4 rs13323323  3                          44291832 3p21.31          </span>
+<span class="co">#&gt;  5 rs79644353  3                          44135707 3p21.32          </span>
+<span class="co">#&gt;  6 rs12054057  3                          44423043 3p21.31          </span>
+<span class="co">#&gt;  7 rs13076052  3                          44415081 3p21.31          </span>
+<span class="co">#&gt;  8 rs4682718   3                          44184840 3p21.32          </span>
+<span class="co">#&gt;  9 rs113706999 3                          44117664 3p21.32          </span>
+<span class="co">#&gt; 10 rs142242702 3                          44122660 3p21.32</span></code></pre></div>
+<p>There are 10 variants associated with gene TOPAZ1. To find those variants simultaneously associated with both genes, you can intersect the two <a href="https://rmagno.eu/gwasrapidd/reference/variants-class.html">variants</a> objects using <code><a href="../reference/setop.html">intersect()</a></code>:</p>
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">variants_intersect</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/setop.html">intersect</a></span><span class="op">(</span><span class="va">my_variants1</span>, <span class="va">my_variants2</span><span class="op">)</span>
+<span class="va">variants_intersect</span><span class="op">@</span><span class="va">variants</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'variant_id'</span>,
                        <span class="st">'chromosome_name'</span>,
                        <span class="st">'chromosome_position'</span>,
-                       <span class="st">'chromosome_region'</span>)]
-<span class="co">#&gt; # A tibble: 2 x 4</span>
+                       <span class="st">'chromosome_region'</span><span class="op">)</span><span class="op">]</span>
+<span class="co">#&gt; # A tibble: 3 x 4</span>
 <span class="co">#&gt;   variant_id  chromosome_name chromosome_position chromosome_region</span>
 <span class="co">#&gt;   &lt;chr&gt;       &lt;chr&gt;                         &lt;int&gt; &lt;chr&gt;            </span>
-<span class="co">#&gt; 1 rs113706999 3                          44117664 3p21.32          </span>
-<span class="co">#&gt; 2 rs142242702 3                          44122660 3p21.32</span></pre></body></html></div>
-<p>Apparently only 2 variant(s) are related to both genes RNU6-367P and TOPAZ1.</p>
+<span class="co">#&gt; 1 rs79644353  3                          44135707 3p21.32          </span>
+<span class="co">#&gt; 2 rs113706999 3                          44117664 3p21.32          </span>
+<span class="co">#&gt; 3 rs142242702 3                          44122660 3p21.32</span></code></pre></div>
+<p>Apparently only 3 variant(s) are related to both genes RNU6-367P and TOPAZ1.</p>
 <!--
 ## 9 | How to exclude results for specific queries?
 
@@ -807,7 +842,7 @@ We find 7 studies using `'EFO_0005543'` only, and 7 studies if we include also t
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

@@ -83,7 +83,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gwasrapidd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.9</span>
       </span>
     </div>
 
@@ -190,137 +190,140 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Subset a variants object by identifier</span>
-<span class='no'>variants_ex01</span>[<span class='st'>'rs4725504'</span>]</div><div class='output co'>#&gt; An object of class "variants"
+<span class='va'>variants_ex01</span><span class='op'>[</span><span class='st'>'rs4725504'</span><span class='op'>]</span>
+</div><div class='output co'>#&gt; An object of class "variants"
 #&gt; Slot "variants":
-#&gt; # A tibble: 1 x 7
+#&gt; <span style='color: #555555;'># A tibble: 1 x 7</span><span>
 #&gt;   variant_id merged functional_class chromosome_name chromosome_posi…
-#&gt;   &lt;chr&gt;       &lt;int&gt; &lt;chr&gt;            &lt;chr&gt;                      &lt;int&gt;
-#&gt; 1 rs4725504       0 intergenic_vari… 7                      153608338
-#&gt; # … with 2 more variables: chromosome_region &lt;chr&gt;, last_update_date &lt;dttm&gt;
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                      </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>
+#&gt; </span><span style='color: #555555;'>1</span><span> rs4725504       0 intergenic_vari… 7                      153</span><span style='text-decoration: underline;'>608</span><span>338
+#&gt; </span><span style='color: #555555;'># … with 2 more variables: chromosome_region </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, last_update_date </span><span style='color: #555555;font-style: italic;'>&lt;dttm&gt;</span><span>
 #&gt; 
 #&gt; Slot "genomic_contexts":
-#&gt; # A tibble: 4 x 11
+#&gt; </span><span style='color: #555555;'># A tibble: 4 x 11</span><span>
 #&gt;   variant_id gene_name chromosome_name chromosome_posi… distance is_closest_gene
-#&gt;   &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt;                      &lt;int&gt;    &lt;int&gt; &lt;lgl&gt;          
-#&gt; 1 rs4725504  DPP6      7                      153608338   278759 TRUE           
-#&gt; 2 rs4725504  DPP6      7                      153608338   139795 TRUE           
-#&gt; 3 rs4725504  PAXBP1P1  7                      153608338   158463 TRUE           
-#&gt; 4 rs4725504  LOC10798… 7                      153608338    84107 TRUE           
-#&gt; # … with 5 more variables: is_intergenic &lt;lgl&gt;, is_upstream &lt;lgl&gt;,
-#&gt; #   is_downstream &lt;lgl&gt;, source &lt;chr&gt;, mapping_method &lt;chr&gt;
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                      </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span>          
+#&gt; </span><span style='color: #555555;'>1</span><span> rs4725504  DPP6      7                      153</span><span style='text-decoration: underline;'>608</span><span>338   </span><span style='text-decoration: underline;'>278</span><span>759 TRUE           
+#&gt; </span><span style='color: #555555;'>2</span><span> rs4725504  DPP6      7                      153</span><span style='text-decoration: underline;'>608</span><span>338   </span><span style='text-decoration: underline;'>139</span><span>795 TRUE           
+#&gt; </span><span style='color: #555555;'>3</span><span> rs4725504  PAXBP1P1  7                      153</span><span style='text-decoration: underline;'>608</span><span>338   </span><span style='text-decoration: underline;'>158</span><span>463 TRUE           
+#&gt; </span><span style='color: #555555;'>4</span><span> rs4725504  LOC10798… 7                      153</span><span style='text-decoration: underline;'>608</span><span>338    </span><span style='text-decoration: underline;'>84</span><span>107 TRUE           
+#&gt; </span><span style='color: #555555;'># … with 5 more variables: is_intergenic </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, is_upstream </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>,</span><span>
+#&gt; </span><span style='color: #555555;'>#   is_downstream </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, source </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, mapping_method </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>
 #&gt; 
 #&gt; Slot "ensembl_ids":
-#&gt; # A tibble: 2 x 3
+#&gt; </span><span style='color: #555555;'># A tibble: 2 x 3</span><span>
 #&gt;   variant_id gene_name ensembl_id     
-#&gt;   &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt;          
-#&gt; 1 rs4725504  DPP6      ENSG00000130226
-#&gt; 2 rs4725504  PAXBP1P1  ENSG00000233489
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>          
+#&gt; </span><span style='color: #555555;'>1</span><span> rs4725504  DPP6      ENSG00000130226
+#&gt; </span><span style='color: #555555;'>2</span><span> rs4725504  PAXBP1P1  ENSG00000233489
 #&gt; 
 #&gt; Slot "entrez_ids":
-#&gt; # A tibble: 3 x 3
+#&gt; </span><span style='color: #555555;'># A tibble: 3 x 3</span><span>
 #&gt;   variant_id gene_name    entrez_id
-#&gt;   &lt;chr&gt;      &lt;chr&gt;        &lt;chr&gt;    
-#&gt; 1 rs4725504  DPP6         1804     
-#&gt; 2 rs4725504  PAXBP1P1     106481704
-#&gt; 3 rs4725504  LOC107986750 107986750
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>    
+#&gt; </span><span style='color: #555555;'>1</span><span> rs4725504  DPP6         1804     
+#&gt; </span><span style='color: #555555;'>2</span><span> rs4725504  PAXBP1P1     106481704
+#&gt; </span><span style='color: #555555;'>3</span><span> rs4725504  LOC107986750 107986750
 #&gt; </div><div class='input'>
 <span class='co'># Or by its position in table variants</span>
-<span class='no'>variants_ex01</span>[<span class='fl'>3</span>]</div><div class='output co'>#&gt; An object of class "variants"
+<span class='va'>variants_ex01</span><span class='op'>[</span><span class='fl'>3</span><span class='op'>]</span>
+</div><div class='output co'>#&gt; An object of class "variants"
 #&gt; Slot "variants":
-#&gt; # A tibble: 1 x 7
+#&gt; </span><span style='color: #555555;'># A tibble: 1 x 7</span><span>
 #&gt;   variant_id merged functional_class chromosome_name chromosome_posi…
-#&gt;   &lt;chr&gt;       &lt;int&gt; &lt;chr&gt;            &lt;chr&gt;                      &lt;int&gt;
-#&gt; 1 rs4725504       0 intergenic_vari… 7                      153608338
-#&gt; # … with 2 more variables: chromosome_region &lt;chr&gt;, last_update_date &lt;dttm&gt;
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                      </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>
+#&gt; </span><span style='color: #555555;'>1</span><span> rs4725504       0 intergenic_vari… 7                      153</span><span style='text-decoration: underline;'>608</span><span>338
+#&gt; </span><span style='color: #555555;'># … with 2 more variables: chromosome_region </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, last_update_date </span><span style='color: #555555;font-style: italic;'>&lt;dttm&gt;</span><span>
 #&gt; 
 #&gt; Slot "genomic_contexts":
-#&gt; # A tibble: 4 x 11
+#&gt; </span><span style='color: #555555;'># A tibble: 4 x 11</span><span>
 #&gt;   variant_id gene_name chromosome_name chromosome_posi… distance is_closest_gene
-#&gt;   &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt;                      &lt;int&gt;    &lt;int&gt; &lt;lgl&gt;          
-#&gt; 1 rs4725504  DPP6      7                      153608338   278759 TRUE           
-#&gt; 2 rs4725504  DPP6      7                      153608338   139795 TRUE           
-#&gt; 3 rs4725504  PAXBP1P1  7                      153608338   158463 TRUE           
-#&gt; 4 rs4725504  LOC10798… 7                      153608338    84107 TRUE           
-#&gt; # … with 5 more variables: is_intergenic &lt;lgl&gt;, is_upstream &lt;lgl&gt;,
-#&gt; #   is_downstream &lt;lgl&gt;, source &lt;chr&gt;, mapping_method &lt;chr&gt;
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                      </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span>          
+#&gt; </span><span style='color: #555555;'>1</span><span> rs4725504  DPP6      7                      153</span><span style='text-decoration: underline;'>608</span><span>338   </span><span style='text-decoration: underline;'>278</span><span>759 TRUE           
+#&gt; </span><span style='color: #555555;'>2</span><span> rs4725504  DPP6      7                      153</span><span style='text-decoration: underline;'>608</span><span>338   </span><span style='text-decoration: underline;'>139</span><span>795 TRUE           
+#&gt; </span><span style='color: #555555;'>3</span><span> rs4725504  PAXBP1P1  7                      153</span><span style='text-decoration: underline;'>608</span><span>338   </span><span style='text-decoration: underline;'>158</span><span>463 TRUE           
+#&gt; </span><span style='color: #555555;'>4</span><span> rs4725504  LOC10798… 7                      153</span><span style='text-decoration: underline;'>608</span><span>338    </span><span style='text-decoration: underline;'>84</span><span>107 TRUE           
+#&gt; </span><span style='color: #555555;'># … with 5 more variables: is_intergenic </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, is_upstream </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>,</span><span>
+#&gt; </span><span style='color: #555555;'>#   is_downstream </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, source </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, mapping_method </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>
 #&gt; 
 #&gt; Slot "ensembl_ids":
-#&gt; # A tibble: 2 x 3
+#&gt; </span><span style='color: #555555;'># A tibble: 2 x 3</span><span>
 #&gt;   variant_id gene_name ensembl_id     
-#&gt;   &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt;          
-#&gt; 1 rs4725504  DPP6      ENSG00000130226
-#&gt; 2 rs4725504  PAXBP1P1  ENSG00000233489
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>          
+#&gt; </span><span style='color: #555555;'>1</span><span> rs4725504  DPP6      ENSG00000130226
+#&gt; </span><span style='color: #555555;'>2</span><span> rs4725504  PAXBP1P1  ENSG00000233489
 #&gt; 
 #&gt; Slot "entrez_ids":
-#&gt; # A tibble: 3 x 3
+#&gt; </span><span style='color: #555555;'># A tibble: 3 x 3</span><span>
 #&gt;   variant_id gene_name    entrez_id
-#&gt;   &lt;chr&gt;      &lt;chr&gt;        &lt;chr&gt;    
-#&gt; 1 rs4725504  DPP6         1804     
-#&gt; 2 rs4725504  PAXBP1P1     106481704
-#&gt; 3 rs4725504  LOC107986750 107986750
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>    
+#&gt; </span><span style='color: #555555;'>1</span><span> rs4725504  DPP6         1804     
+#&gt; </span><span style='color: #555555;'>2</span><span> rs4725504  PAXBP1P1     106481704
+#&gt; </span><span style='color: #555555;'>3</span><span> rs4725504  LOC107986750 107986750
 #&gt; </div><div class='input'>
 <span class='co'># Keep all variants except the third</span>
-<span class='no'>variants_ex01</span>[-<span class='fl'>3</span>]</div><div class='output co'>#&gt; An object of class "variants"
+<span class='va'>variants_ex01</span><span class='op'>[</span><span class='op'>-</span><span class='fl'>3</span><span class='op'>]</span>
+</div><div class='output co'>#&gt; An object of class "variants"
 #&gt; Slot "variants":
-#&gt; # A tibble: 2 x 7
+#&gt; </span><span style='color: #555555;'># A tibble: 2 x 7</span><span>
 #&gt;   variant_id merged functional_class chromosome_name chromosome_posi…
-#&gt;   &lt;chr&gt;       &lt;int&gt; &lt;chr&gt;            &lt;chr&gt;                      &lt;int&gt;
-#&gt; 1 rs1469924…      0 regulatory_regi… 8                       36984538
-#&gt; 2 rs56261590      0 intron_variant   4                       73189781
-#&gt; # … with 2 more variables: chromosome_region &lt;chr&gt;, last_update_date &lt;dttm&gt;
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                      </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>
+#&gt; </span><span style='color: #555555;'>1</span><span> rs1469924…      0 regulatory_regi… 8                       36</span><span style='text-decoration: underline;'>984</span><span>538
+#&gt; </span><span style='color: #555555;'>2</span><span> rs56261590      0 intron_variant   4                       73</span><span style='text-decoration: underline;'>189</span><span>781
+#&gt; </span><span style='color: #555555;'># … with 2 more variables: chromosome_region </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, last_update_date </span><span style='color: #555555;font-style: italic;'>&lt;dttm&gt;</span><span>
 #&gt; 
 #&gt; Slot "genomic_contexts":
-#&gt; # A tibble: 17 x 11
+#&gt; </span><span style='color: #555555;'># A tibble: 17 x 11</span><span>
 #&gt;    variant_id gene_name chromosome_name chromosome_posi… distance
-#&gt;    &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt;                      &lt;int&gt;    &lt;int&gt;
-#&gt;  1 rs1469924… LOC10537… 8                       36984538    81555
-#&gt;  2 rs1469924… KCNU1     8                       36984538    48413
-#&gt;  3 rs1469924… LOC10537… 8                       36984538     2533
-#&gt;  4 rs1469924… TPT1P8    8                       36984538    95231
-#&gt;  5 rs1469924… RPL26P25  8                       36984538     3392
-#&gt;  6 rs1469924… KCNU1     8                       36984538    48413
-#&gt;  7 rs1469924… AC090453… 8                       36984538     3439
-#&gt;  8 rs1469924… TPT1P8    8                       36984538    95008
-#&gt;  9 rs1469924… AC092818… 8                       36984538    82903
-#&gt; 10 rs1469924… LOC10537… 8                       36984538    59331
-#&gt; 11 rs56261590 ANKRD17   4                       73189781        0
-#&gt; 12 rs56261590 ANKRD17   4                       73189781        0
-#&gt; 13 rs56261590 HMGA1P2   4                       73189781    90636
-#&gt; 14 rs56261590 HMGA1P2   4                       73189781    89275
-#&gt; 15 rs56261590 LOC10272… 4                       73189781    69394
-#&gt; 16 rs56261590 AC053527… 4                       73189781    69428
-#&gt; 17 rs56261590 RF00334   4                       73189781    74179
-#&gt; # … with 6 more variables: is_closest_gene &lt;lgl&gt;, is_intergenic &lt;lgl&gt;,
-#&gt; #   is_upstream &lt;lgl&gt;, is_downstream &lt;lgl&gt;, source &lt;chr&gt;, mapping_method &lt;chr&gt;
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                      </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>
+#&gt; </span><span style='color: #555555;'> 1</span><span> rs1469924… LOC10537… 8                       36</span><span style='text-decoration: underline;'>984</span><span>538    </span><span style='text-decoration: underline;'>81</span><span>555
+#&gt; </span><span style='color: #555555;'> 2</span><span> rs1469924… KCNU1     8                       36</span><span style='text-decoration: underline;'>984</span><span>538    </span><span style='text-decoration: underline;'>48</span><span>413
+#&gt; </span><span style='color: #555555;'> 3</span><span> rs1469924… LOC10537… 8                       36</span><span style='text-decoration: underline;'>984</span><span>538     </span><span style='text-decoration: underline;'>2</span><span>533
+#&gt; </span><span style='color: #555555;'> 4</span><span> rs1469924… TPT1P8    8                       36</span><span style='text-decoration: underline;'>984</span><span>538    </span><span style='text-decoration: underline;'>95</span><span>231
+#&gt; </span><span style='color: #555555;'> 5</span><span> rs1469924… RPL26P25  8                       36</span><span style='text-decoration: underline;'>984</span><span>538     </span><span style='text-decoration: underline;'>3</span><span>392
+#&gt; </span><span style='color: #555555;'> 6</span><span> rs1469924… KCNU1     8                       36</span><span style='text-decoration: underline;'>984</span><span>538    </span><span style='text-decoration: underline;'>48</span><span>413
+#&gt; </span><span style='color: #555555;'> 7</span><span> rs1469924… AC090453… 8                       36</span><span style='text-decoration: underline;'>984</span><span>538     </span><span style='text-decoration: underline;'>3</span><span>439
+#&gt; </span><span style='color: #555555;'> 8</span><span> rs1469924… TPT1P8    8                       36</span><span style='text-decoration: underline;'>984</span><span>538    </span><span style='text-decoration: underline;'>95</span><span>008
+#&gt; </span><span style='color: #555555;'> 9</span><span> rs1469924… AC092818… 8                       36</span><span style='text-decoration: underline;'>984</span><span>538    </span><span style='text-decoration: underline;'>82</span><span>903
+#&gt; </span><span style='color: #555555;'>10</span><span> rs1469924… LOC10537… 8                       36</span><span style='text-decoration: underline;'>984</span><span>538    </span><span style='text-decoration: underline;'>59</span><span>331
+#&gt; </span><span style='color: #555555;'>11</span><span> rs56261590 ANKRD17   4                       73</span><span style='text-decoration: underline;'>189</span><span>781        0
+#&gt; </span><span style='color: #555555;'>12</span><span> rs56261590 ANKRD17   4                       73</span><span style='text-decoration: underline;'>189</span><span>781        0
+#&gt; </span><span style='color: #555555;'>13</span><span> rs56261590 HMGA1P2   4                       73</span><span style='text-decoration: underline;'>189</span><span>781    </span><span style='text-decoration: underline;'>90</span><span>636
+#&gt; </span><span style='color: #555555;'>14</span><span> rs56261590 HMGA1P2   4                       73</span><span style='text-decoration: underline;'>189</span><span>781    </span><span style='text-decoration: underline;'>89</span><span>275
+#&gt; </span><span style='color: #555555;'>15</span><span> rs56261590 LOC10272… 4                       73</span><span style='text-decoration: underline;'>189</span><span>781    </span><span style='text-decoration: underline;'>69</span><span>394
+#&gt; </span><span style='color: #555555;'>16</span><span> rs56261590 AC053527… 4                       73</span><span style='text-decoration: underline;'>189</span><span>781    </span><span style='text-decoration: underline;'>69</span><span>428
+#&gt; </span><span style='color: #555555;'>17</span><span> rs56261590 RF00334   4                       73</span><span style='text-decoration: underline;'>189</span><span>781    </span><span style='text-decoration: underline;'>74</span><span>179
+#&gt; </span><span style='color: #555555;'># … with 6 more variables: is_closest_gene </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, is_intergenic </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>,</span><span>
+#&gt; </span><span style='color: #555555;'>#   is_upstream </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, is_downstream </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, source </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, mapping_method </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>
 #&gt; 
 #&gt; Slot "ensembl_ids":
-#&gt; # A tibble: 8 x 3
+#&gt; </span><span style='color: #555555;'># A tibble: 8 x 3</span><span>
 #&gt;   variant_id  gene_name  ensembl_id     
-#&gt;   &lt;chr&gt;       &lt;chr&gt;      &lt;chr&gt;          
-#&gt; 1 rs146992477 KCNU1      ENSG00000215262
-#&gt; 2 rs146992477 TPT1P8     ENSG00000219491
-#&gt; 3 rs146992477 AC090453.1 ENSG00000243503
-#&gt; 4 rs146992477 AC092818.1 ENSG00000254038
-#&gt; 5 rs56261590  ANKRD17    ENSG00000132466
-#&gt; 6 rs56261590  HMGA1P2    ENSG00000248641
-#&gt; 7 rs56261590  AC053527.1 ENSG00000250220
-#&gt; 8 rs56261590  RF00334    ENSG00000221093
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>          
+#&gt; </span><span style='color: #555555;'>1</span><span> rs146992477 KCNU1      ENSG00000215262
+#&gt; </span><span style='color: #555555;'>2</span><span> rs146992477 TPT1P8     ENSG00000219491
+#&gt; </span><span style='color: #555555;'>3</span><span> rs146992477 AC090453.1 ENSG00000243503
+#&gt; </span><span style='color: #555555;'>4</span><span> rs146992477 AC092818.1 ENSG00000254038
+#&gt; </span><span style='color: #555555;'>5</span><span> rs56261590  ANKRD17    ENSG00000132466
+#&gt; </span><span style='color: #555555;'>6</span><span> rs56261590  HMGA1P2    ENSG00000248641
+#&gt; </span><span style='color: #555555;'>7</span><span> rs56261590  AC053527.1 ENSG00000250220
+#&gt; </span><span style='color: #555555;'>8</span><span> rs56261590  RF00334    ENSG00000221093
 #&gt; 
 #&gt; Slot "entrez_ids":
-#&gt; # A tibble: 9 x 3
+#&gt; </span><span style='color: #555555;'># A tibble: 9 x 3</span><span>
 #&gt;   variant_id  gene_name    entrez_id
-#&gt;   &lt;chr&gt;       &lt;chr&gt;        &lt;chr&gt;    
-#&gt; 1 rs146992477 LOC105379377 105379377
-#&gt; 2 rs146992477 KCNU1        157855   
-#&gt; 3 rs146992477 LOC105379376 105379376
-#&gt; 4 rs146992477 TPT1P8       59347    
-#&gt; 5 rs146992477 RPL26P25     100270966
-#&gt; 6 rs146992477 LOC105379375 105379375
-#&gt; 7 rs56261590  ANKRD17      26057    
-#&gt; 8 rs56261590  HMGA1P2      171559   
-#&gt; 9 rs56261590  LOC102724832 102724832
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>    
+#&gt; </span><span style='color: #555555;'>1</span><span> rs146992477 LOC105379377 105379377
+#&gt; </span><span style='color: #555555;'>2</span><span> rs146992477 KCNU1        157855   
+#&gt; </span><span style='color: #555555;'>3</span><span> rs146992477 LOC105379376 105379376
+#&gt; </span><span style='color: #555555;'>4</span><span> rs146992477 TPT1P8       59347    
+#&gt; </span><span style='color: #555555;'>5</span><span> rs146992477 RPL26P25     100270966
+#&gt; </span><span style='color: #555555;'>6</span><span> rs146992477 LOC105379375 105379375
+#&gt; </span><span style='color: #555555;'>7</span><span> rs56261590  ANKRD17      26057    
+#&gt; </span><span style='color: #555555;'>8</span><span> rs56261590  HMGA1P2      171559   
+#&gt; </span><span style='color: #555555;'>9</span><span> rs56261590  LOC102724832 102724832
 #&gt; </div><div class='input'>
-</div></pre>
+</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -336,7 +339,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
