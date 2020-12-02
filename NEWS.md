@@ -1,3 +1,6 @@
+## gwasrapidd 0.99.9
+- gwasrapidd depends now on tidyr (> 0.8.99)
+
 ## gwasrapidd 0.99.8
 - `genomic_contexts` of object `variants` includes now the column `is_mapped_gene`.
 

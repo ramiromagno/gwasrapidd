@@ -123,8 +123,8 @@ v_obj_to_ensembl_ids_tbl <- function(obj) {
 
     tbl <-
       tibble::as_tibble(gene_obj[c("geneName", "ensemblGeneIds")]) %>%
-      unnest(cols = "ensemblGeneIds") %>% # This is no typo.
-      unnest(cols = "ensemblGeneIds")
+      tidyr::unnest(cols = "ensemblGeneIds") %>% # This is no typo.
+      tidyr::unnest(cols = "ensemblGeneIds")
 
     tbl2 <- v_ensembl_ids_tbl(
       variant_id = recode_missing(tws(variant_id)),
@@ -158,7 +158,7 @@ v_obj_to_entrez_ids_tbl <- function(obj) {
 
     tbl <-
       tibble::as_tibble(gene_obj[c("geneName", "entrezGeneIds")]) %>%
-      unnest(cols = "entrezGeneIds")
+      tidyr::unnest(cols = "entrezGeneIds")
 
     # Hack, need to come back to this again
     # Test with these SNPs: 'rs147903261' and 'rs267606894'.

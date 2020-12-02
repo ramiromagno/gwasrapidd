@@ -1,7 +1,7 @@
 Package: gwasrapidd
 Type: Package
 Title: REST API Client for the NHGRI-EBI GWAS Catalog
-Version: 0.99.8
+Version: 0.99.9
 Authors@R: c(
     person(given = "Ramiro", family = "Magno", email = "ramiro.magno@gmail.com",
     role = c("aut", "cre"), comment = c(ORCID = "0000-0001-5226-3441")),
@@ -34,7 +34,7 @@ Imports:
     purrr,
     tibble,
     glue,
-    tidyr,
+    tidyr (> 0.8.99),
     assertthat,
     rlang,
     methods,
