@@ -1,16 +1,16 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-gwasrapidd <img src="man/figures/logo.svg" align="right" height=140/>
-=====================================================================
+# gwasrapidd <img src="man/figures/logo.svg" align="right" height=140/>
 
 [![](https://img.shields.io/badge/doi-10.1093/bioinformatics/btz605-blue.svg)](https://doi.org/10.1093/bioinformatics/btz605)
 [![](https://img.shields.io/badge/Altmetric-38-yellow.svg)](https://www.altmetric.com/details/64505748)
-[![Travis build
-status](https://travis-ci.org/ramiromagno/gwasrapidd.svg?branch=master)](https://travis-ci.org/ramiromagno/gwasrapidd)
-[![AppVeyor build
-status](https://ci.appveyor.com/api/projects/status/github/ramiromagno/gwasrapidd?branch=master&svg=true)](https://ci.appveyor.com/project/ramiromagno/gwasrapidd)
-[![codecov](https://codecov.io/gh/ramiromagno/gwasrapidd/branch/master/graph/badge.svg)](https://codecov.io/gh/ramiromagno/gwasrapidd)
+[![R build
+status](https://github.com/ramiromagno/gwasrapidd/workflows/R-CMD-check/badge.svg)](https://github.com/ramiromagno/gwasrapidd/actions)
+[![Codecov test
+coverage](https://codecov.io/gh/ramiromagno/gwasrapidd/branch/master/graph/badge.svg)](https://codecov.io/gh/ramiromagno/gwasrapidd?branch=master)
+[![CRAN
+version](http://www.r-pkg.org/badges/version/covr)](https://cran.r-project.org/package=covr)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
@@ -23,21 +23,18 @@ association studies.
 Get started by reading the
 [documentation](https://rmagno.eu/gwasrapidd/articles/gwasrapidd.html).
 
-Installation
-------------
+## Installation
 
 You can install the current version of gwasrapidd with:
 
     # install.packages("remotes")
     remotes::install_github("ramiromagno/gwasrapidd")
 
-Cheatsheet
-----------
+## Cheatsheet
 
 <a href="https://github.com/rstudio/cheatsheets/blob/master/gwasrapidd.pdf"><img src="https://raw.githubusercontent.com/rstudio/cheatsheets/master/pngs/gwasrapidd.png" width="420" height="300"/></a>
 
-Example
--------
+## Example
 
 Get studies related to triple-negative breast cancer:
 
@@ -63,8 +60,7 @@ Find associated variants with study GCST002305:
     ## 4 rs3757318  intron_variant     
     ## 5 rs10771399 intergenic_variant
 
-Citing this work
-----------------
+## Citing this work
 
 gwasrapidd was published in Bioinformatics in 2019:
 <a href="https://doi.org/10.1093/bioinformatics/btz605" class="uri">https://doi.org/10.1093/bioinformatics/btz605</a>.
@@ -90,15 +86,13 @@ To generate a citation for this publication from within R:
     ##     url = {https://doi.org/10.1093/bioinformatics/btz605},
     ##   }
 
-Contributors
-------------
+## Contributors
 
 Please note that the gwasrapidd project is released with a [Contributor
 Code of Conduct](.github/CODE_OF_CONDUCT.md). By contributing to this
 project, you agree to abide by its terms.
 
-Similar projects
-----------------
+## Similar projects
 
 -   Bioconductor R package *gwascat* by Vincent J Carey:
     <https://www.bioconductor.org/packages/release/bioc/html/gwascat.html>
@@ -108,8 +102,7 @@ Similar projects
     Screener* by Eugenio López-Cortegano and Armando Caballero:
     <http://gwehs.uvigo.es/>
 
-Acknowledgements
-----------------
+## Acknowledgements
 
 This work would have not been possible without the precious help from
 the [GWAS Catalog
