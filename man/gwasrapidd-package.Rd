@@ -8,9 +8,9 @@
 \description{
 \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 
-gwasrapidd: GWAS R API Data Download.
-    gwasrapidd provides easy access to the NHGRI-EBI GWAS Catalog data by
-    accessing the REST API https://www.ebi.ac.uk/gwas/docs/api.
+GWAS R API Data Download.
+    This package provides easy access to the NHGRI-EBI GWAS Catalog data by
+    accessing the REST API <https://www.ebi.ac.uk/gwas/docs/api/>.
 }
 \seealso{
 Useful links:
