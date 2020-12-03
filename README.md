@@ -9,8 +9,6 @@
 status](https://github.com/ramiromagno/gwasrapidd/workflows/R-CMD-check/badge.svg)](https://github.com/ramiromagno/gwasrapidd/actions)
 [![Codecov test
 coverage](https://codecov.io/gh/ramiromagno/gwasrapidd/branch/master/graph/badge.svg)](https://codecov.io/gh/ramiromagno/gwasrapidd?branch=master)
-[![CRAN
-version](http://www.r-pkg.org/badges/version/covr)](https://cran.r-project.org/package=covr)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
