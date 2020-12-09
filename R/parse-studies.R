@@ -56,7 +56,10 @@ obj_to_studies <- function(obj) {
   # studies table
   s@studies <- studies_tbl(
     study_id = recode_missing(tws(obj$content$studies$accessionId)),
-    reported_trait = recode_missing(tws(obj$content$studies$diseaseTrait$trait)),
+    # reported_trait = recode_missing(tws(obj$content$studies$diseaseTrait$trait)),
+    reported_trait = tws(
+      purrr::pluck(obj, 'content', 'studies', 'diseaseTrait', 'trait', .default = NA_character_)
+    ),
     initial_sample_size = recode_missing(tws(obj$content$studies$initialSampleSize)),
     replication_sample_size = recode_missing(tws(obj$content$studies$replicationSampleSize)),
     gxe = recode_missing(tws(obj$content$studies$gxe), type = 'lgl'),
