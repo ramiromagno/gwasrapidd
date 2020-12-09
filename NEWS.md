@@ -1,3 +1,6 @@
+## gwasrapidd 0.99.10
+- Fixed issue #13
+
 ## gwasrapidd 0.99.9
 - gwasrapidd depends now on tidyr (> 0.8.99)
 
