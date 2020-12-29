@@ -68,7 +68,8 @@ A dataframe of two identifiers (three if \code{keep_association_id}
 }
 \description{
 Use these functions to map between identifiers of studies, associations,
-variants or traits.
+variants or traits. Each \code{association_id} maps to just one
+\code{study_id}; all other mappings are one-to-many.
 }
 \examples{
 \dontrun{study_to_association(c('GCST001084', 'GCST001085'))}

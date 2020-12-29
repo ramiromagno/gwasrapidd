@@ -1,7 +1,8 @@
 #' Identifier mapping
 #'
 #' Use these functions to map between identifiers of studies, associations,
-#' variants or traits.
+#' variants or traits. Each \code{association_id} maps to just one
+#' \code{study_id}; all other mappings are one-to-many.
 #'
 #' @param study_id,association_id,variant_id,efo_id A character vector of
 #'   accession identifiers for either studies (\code{study_id}), associations
