@@ -1,0 +1,112 @@
+{
+    "_embedded": {
+        "studies": [
+            {
+                "initialSampleSize": "9,126 European ancestry individuals",
+                "gxe": false,
+                "gxg": false,
+                "snpCount": 535076,
+                "qualifier": null,
+                "imputed": false,
+                "pooled": false,
+                "studyDesignComment": null,
+                "accessionId": "GCST000706",
+                "fullPvalueSet": false,
+                "userRequested": false,
+                "platforms": [
+                    {
+                        "manufacturer": "Illumina"
+                    }
+                ],
+                "ancestries": [
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 9126,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "European"
+                            }
+                        ],
+                        "countryOfOrigin": [
+
+                        ],
+                        "countryOfRecruitment": [
+
+                        ]
+                    }
+                ],
+                "diseaseTrait": {
+                    "trait": "Common traits (Other)"
+                },
+                "genotypingTechnologies": [
+                    {
+                        "genotypingTechnology": "Genome-wide genotyping array"
+                    }
+                ],
+                "replicationSampleSize": "NA",
+                "publicationInfo": {
+                    "pubmedId": "20585627",
+                    "publicationDate": "2010-06-23",
+                    "publication": "PLoS Genet",
+                    "title": "Web-based, participant-driven studies yield novel genetic associations for common traits.",
+                    "author": {
+                        "fullname": "Eriksson N",
+                        "orcid": null
+                    },
+                    "_links": {
+                        "studies": [
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000707{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000708{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000706{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000710{?projection}",
+                                "templated": true
+                            }
+                        ]
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000706"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000706{?projection}",
+                        "templated": true
+                    },
+                    "associationsByStudySummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000706/associations?projection=associationByStudy"
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000706/snps"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000706/efoTraits"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000706/associations"
+                    }
+                }
+            }
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/search/findByDiseaseTrait?diseaseTrait=Common%20traits%20%28Other%29&page=0&size=20"
+        }
+    },
+    "page": {
+        "size": 20,
+        "totalElements": 1,
+        "totalPages": 1,
+        "number": 0
+    }
+}
