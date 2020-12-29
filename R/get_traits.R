@@ -275,7 +275,7 @@ get_traits_by_efo_trait <- function(efo_trait = NULL, verbose = FALSE, warnings 
     assertthat::noNA(efo_trait))
 
   resource_urls <- sprintf("%s%s", "/efoTraits/search/findByEfoTrait?trait=",
-                           urltools::url_encode(tolower(efo_trait)))
+                           urltools::url_encode(efo_trait))
 
   responses <- purrr::map(
     resource_urls,

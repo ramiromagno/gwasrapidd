@@ -292,7 +292,7 @@ get_associations_by_efo_trait <- function(efo_trait = NULL,
     assertthat::noNA(efo_trait))
 
   resource_urls <- sprintf("/%s%s", "associations/search/findByEfoTrait?efoTrait=",
-                           urltools::url_encode(tolower(efo_trait)))
+                           urltools::url_encode(efo_trait))
 
   responses <- purrr::map(
     resource_urls,

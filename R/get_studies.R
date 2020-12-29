@@ -438,7 +438,7 @@ get_studies_by_efo_trait <- function(efo_trait = NULL, verbose = FALSE, warnings
                           assertthat::noNA(efo_trait))
 
   resource_urls <- sprintf("/%s%s", "studies/search/findByEfoTrait?efoTrait=",
-                           urltools::url_encode(tolower(efo_trait)))
+                           urltools::url_encode(efo_trait))
 
   responses <- purrr::map(
     resource_urls,
@@ -488,7 +488,7 @@ get_studies_by_reported_trait <- function(reported_trait = NULL, verbose = FALSE
                           assertthat::noNA(reported_trait))
 
   resource_urls <- sprintf("/%s%s", "studies/search/findByDiseaseTrait?diseaseTrait=",
-                           urltools::url_encode(tolower(reported_trait)))
+                           urltools::url_encode(reported_trait))
 
   responses <- purrr::map(
     resource_urls,

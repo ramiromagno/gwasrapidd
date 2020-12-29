@@ -12,8 +12,8 @@ get_variants_by_reported_trait(
 )
 }
 \arguments{
-\item{reported_trait}{A character vector of phenotypic traits as
-reported by the original authors' the study.}
+\item{reported_trait}{A character vector of phenotypic traits as reported by
+the original authors' the study. Note: this parameter is case sensitive.}
 
 \item{verbose}{Whether the function should be verbose about the different
 queries or not.}
@@ -31,10 +31,5 @@ A \linkS4class{variants} object.
 \description{
 Gets variants that match the reported traits, as reported by the original
 authors' of the study.
-}
-\details{
-Note: Right now there is a server-side bug and queries by
-\code{reported_trait} are currently case sensitive but this should not be the
-case.
 }
 \keyword{internal}

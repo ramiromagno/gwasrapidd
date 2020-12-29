@@ -456,7 +456,7 @@ get_variants_by_efo_trait <- function(efo_trait = NULL, verbose = FALSE, warning
     assertthat::noNA(efo_trait))
 
   resource_urls <- sprintf("%s%s", "/singleNucleotidePolymorphisms/search/findByEfoTrait?efoTrait=",
-                           urltools::url_encode(tolower(efo_trait)))
+                           urltools::url_encode(efo_trait))
 
   responses <- purrr::map(
     resource_urls,
@@ -483,12 +483,8 @@ get_variants_by_efo_trait <- function(efo_trait = NULL, verbose = FALSE, warning
 #' Gets variants that match the reported traits, as reported by the original
 #' authors' of the study.
 #'
-#' Note: Right now there is a server-side bug and queries by
-#' \code{reported_trait} are currently case sensitive but this should not be the
-#' case.
-#'
-#' @param reported_trait A character vector of phenotypic traits as
-#'   reported by the original authors' the study.
+#' @param reported_trait A character vector of phenotypic traits as reported by
+#'   the original authors' the study. Note: this parameter is case sensitive.
 #' @param verbose Whether the function should be verbose about the different
 #'   queries or not.
 #' @param warnings Whether to print warnings.
@@ -510,7 +506,7 @@ get_variants_by_reported_trait <- function(reported_trait = NULL, verbose = FALS
     assertthat::noNA(reported_trait))
 
   resource_urls <- sprintf("%s%s", "/singleNucleotidePolymorphisms/search/findByDiseaseTrait?diseaseTrait=",
-                           urltools::url_encode(tolower(reported_trait)))
+                           urltools::url_encode(reported_trait))
 
   responses <- purrr::map(
     resource_urls,
