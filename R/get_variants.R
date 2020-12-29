@@ -178,7 +178,8 @@ get_variants_by_efo_id <- function(efo_id = NULL, verbose = FALSE, warnings = TR
     warnings = warnings,
     page_size = page_size)
 
-  trait_descriptions <- traits@traits$trait
+  # trait_descriptions <- traits@traits$trait
+  trait_descriptions <- purrr::pluck(traits, 'traits', 'trait', .default = NULL)
 
   my_variants <- get_variants_by_efo_trait(
     efo_trait = trait_descriptions,
