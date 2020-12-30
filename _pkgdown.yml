@@ -34,6 +34,23 @@ reference:
   - 'intersect'
   - 'setdiff'
   - 'setequal'
+- title: "Accession identifier mapping"
+  desc: >
+    Translate accession identifiers between studies,
+    associations, variants and traits.
+  contents:
+  - 'study_to_association'
+  - 'study_to_variant'
+  - 'study_to_trait'
+  - 'association_to_study'
+  - 'association_to_variant'
+  - 'association_to_trait'
+  - 'variant_to_study'
+  - 'variant_to_association'
+  - 'variant_to_trait'
+  - 'trait_to_study'
+  - 'trait_to_association'
+  - 'trait_to_variant'
 - title: "Get data outside of GWAS Catalog"
   desc: "Functions to provide easy access to other web resources."
   contents:
@@ -59,3 +76,4 @@ reference:
   desc: "Other functions"
   contents:
   - "`%>%`"
+
