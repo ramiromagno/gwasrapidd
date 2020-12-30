@@ -14,7 +14,7 @@
 \alias{trait_to_study}
 \alias{trait_to_association}
 \alias{trait_to_variant}
-\title{Identifier mapping}
+\title{GWAS accession identifier mapping}
 \usage{
 study_to_association(study_id, verbose = FALSE, warnings = TRUE)
 
@@ -63,38 +63,58 @@ in the final output (default is \code{FALSE}).}
 }
 \value{
 A dataframe of two identifiers (three if \code{keep_association_id}
-  is \code{TRUE}). First column is the \emph{from} identifier and the second
-  column is the \emph{to} identifier.
+  is \code{TRUE} and if \code{variant_to_trait()} used). First column is the
+  \emph{from} identifier and the second column is the \emph{to} identifier.
 }
 \description{
 Use these functions to map between identifiers of studies, associations,
 variants or traits. Each \code{association_id} maps to just one
-\code{study_id}; all other mappings are one-to-many.
+\code{study_id}; all other mappings are one-to-many. Moreover, in the case of
+the mapping of variant identifiers to trait identifiers (\code{efo_id}) the
+mapping is first performed from variant id to association id, and only then
+to trait identifier. All other mappings are direct in the sense that the Gwas
+Catalog REST API provides the endpoints that make those direct queries
+possible.
 }
 \examples{
-\dontrun{study_to_association(c('GCST001084', 'GCST001085'))}
+# Map GWAS study identifiers to association identifiers
+study_to_association(c('GCST001084', 'GCST001085'))
 
-\dontrun{study_to_variant(c('GCST001084', 'GCST001085'))}
+# Map GWAS study identifiers to variant identifiers
+study_to_variant(c('GCST001084', 'GCST001085'))
 
-\dontrun{study_to_trait(c('GCST001084', 'GCST001085'))}
+# Map GWAS study identifiers to EFO trait identifiers
+study_to_trait(c('GCST001084', 'GCST001085'))
 
-\dontrun{association_to_study(c('24300097', '24299759'))}
+# Map GWAS association identifiers to study identifiers
+association_to_study(c('24300097', '24299759'))
 
-\dontrun{association_to_variant(c('24300097', '24299759'))}
+# Map GWAS association identifiers to variant identifiers
+association_to_variant(c('24300097', '24299759'))
 
-\dontrun{association_to_trait(c('24300097', '24299759'))}
+# Map GWAS association identifiers to EFO trait identifiers
+association_to_trait(c('24300097', '24299759'))
 
-\dontrun{variant_to_study(c('rs7904579', 'rs138331350'))}
+# Map GWAS variant identifiers to study identifiers
+variant_to_study(c('rs7904579', 'rs138331350'))
 
-\dontrun{variant_to_association(c('rs7904579', 'rs138331350'))}
+# Map GWAS variant identifiers to association identifiers
+variant_to_association(c('rs7904579', 'rs138331350'))
 
-\dontrun{variant_to_trait(c('rs7904579', 'rs138331350'))}
-\dontrun{variant_to_trait(c('rs7904579', 'rs138331350'), keep_association_id = TRUE)}
+# Map GWAS variant identifiers to EFO trait identifiers
+variant_to_trait(c('rs7904579', 'rs138331350'))
 
-\dontrun{trait_to_study(c('EFO_0005108', 'EFO_0005109'))}
+# Map GWAS variant identifiers to EFO trait identifiers
+# but keep the intermediate association identifier
+variant_to_trait(c('rs7904579', 'rs138331350'), keep_association_id = TRUE)
 
-\dontrun{trait_to_association(c('EFO_0005108', 'EFO_0005109'))}
+# Map EFO trait identifiers to study identifiers
+trait_to_study(c('EFO_0005108', 'EFO_0005109'))
 
-\dontrun{trait_to_variant('EFO_0005229')}
+# Map EFO trait identifiers to association identifiers
+trait_to_association(c('EFO_0005108', 'EFO_0005109'))
+
+# Map EFO trait identifiers to variant identifiers
+trait_to_variant('EFO_0005229')
 
 }
