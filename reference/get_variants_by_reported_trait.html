@@ -83,7 +83,7 @@ authors' of the study." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gwasrapidd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.10</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.11</span>
       </span>
     </div>
 
@@ -91,7 +91,7 @@ authors' of the study." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -123,7 +123,7 @@ authors' of the study." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/ramiromagno/gwasrapidd/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -162,8 +162,8 @@ authors' of the study.</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>reported_trait</th>
-      <td><p>A character vector of phenotypic traits as
-reported by the original authors' the study.</p></td>
+      <td><p>A character vector of phenotypic traits as reported by
+the original authors' the study. Note: this parameter is case sensitive.</p></td>
     </tr>
     <tr>
       <th>verbose</th>
@@ -186,11 +186,6 @@ value to be used in the JSON requests, can be between <code>1</code> and
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A <a href='variants-class.html'>variants</a> object.</p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>Note: Right now there is a server-side bug and queries by
-<code>reported_trait</code> are currently case sensitive but this should not be the
-case.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
