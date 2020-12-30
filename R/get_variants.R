@@ -788,8 +788,9 @@ get_variants <- function(study_id = NULL,
 #'   \code{variant_id}.
 #'
 #' @examples
-#' exists_variant('rs12345') # TRUE
-#' exists_variant('rs123456') # FALSE
+#' exists_variant('rs12345')
+#'
+#' exists_variant('rs11235813')
 #'
 #' @export
 exists_variant <- function(variant_id = NULL, verbose = FALSE, page_size = 20L) {
