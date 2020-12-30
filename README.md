@@ -12,7 +12,7 @@ coverage](https://codecov.io/gh/ramiromagno/gwasrapidd/branch/master/graph/badge
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![](https://img.shields.io/badge/devel%20version-0.99.10-blue.svg)](https://github.com/ramiromagno/gwasrapidd)
+[![](https://img.shields.io/badge/devel%20version-0.99.11-blue.svg)](https://github.com/ramiromagno/gwasrapidd)
 
 The goal of gwasrapidd is to provide programmatic access to the
 [NHGRI-EBI Catalog](https://www.ebi.ac.uk/gwas) of published genome-wide

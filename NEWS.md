@@ -1,8 +1,12 @@
+## gwasrapidd 0.99.11
+- Fixed issues #8, #14, #16 and #17.
+- Added identifier mapping functions: `study_to_association()`, `study_to_variant()`, `study_to_trait()`, `association_to_study()`, `association_to_variant()`, `association_to_trait()`, `variant_to_study()`, `variant_to_association()`, `variant_to_trait()`, `trait_to_study()`, `trait_to_association()`, and `trait_to_variant()`.
+
 ## gwasrapidd 0.99.10
-- Fixed issue #13
+- Fixed issue #13.
 
 ## gwasrapidd 0.99.9
-- gwasrapidd depends now on tidyr (> 0.8.99)
+- gwasrapidd depends now on tidyr (> 0.8.99).
 
 ## gwasrapidd 0.99.8
 - `genomic_contexts` of object `variants` includes now the column `is_mapped_gene`.
