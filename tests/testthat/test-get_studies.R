@@ -141,11 +141,18 @@ with_mock_api({
 #
 ## get_studies, by efo_uri
 #
+
 with_mock_api({
-  test_that("get_studies: by efo_uri", {
-    my_studies <- get_studies(efo_uri = c('http://www.ebi.ac.uk/efo/EFO_0005924', 'http://www.ebi.ac.uk/efo/EFO_0004291'))
-    expect_is(my_studies, 'studies')
-  })
+test_that("get_studies: by efo_uri", {
+  my_studies <-
+    get_studies(
+      efo_uri = c(
+        'http://www.ebi.ac.uk/efo/EFO_0005924',
+        'http://www.ebi.ac.uk/efo/EFO_0004291'
+      )
+    )
+  expect_is(my_studies, 'studies')
+})
 })
 
 #
