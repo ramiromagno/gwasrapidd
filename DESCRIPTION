@@ -8,7 +8,8 @@ Authors@R: c(
     person(given = "Ana-Teresa", family = "Maia",
     email = "maia.anateresa@gmail.com", role = "aut", 
     comment = c(ORCID = "0000-0002-0454-9207")),
-    person("Centre for Biomedical Research, University of Algarve", role = c("cph", "fnd"))
+    person("CINTESIS",
+    role = c("cph", "fnd"))
     )
 Description: 'GWAS' R 'API' Data Download.
     This package provides easy access to the 'NHGRI'-'EBI' 'GWAS' Catalog data by
@@ -46,7 +47,9 @@ Imports:
 Suggests:
     httptest,
     spelling,
-    covr
+    covr,
+    knitr,
+    rmarkdown
 Collate:
     'browser.R'
     'class-associations.R'
