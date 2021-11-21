@@ -160,15 +160,21 @@ Figure 2 | gwasrapidd arguments for retrieval functions. Colors indicate the cri
 <p>We can now check how many GWAS studies we got back:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/n.html">n</a></span><span class="op">(</span><span class="va">my_studies</span><span class="op">)</span>
-<span class="co">#&gt; [1] 3</span>
+<span class="co">#&gt; [1] 8</span>
 <span class="va">my_studies</span><span class="op">@</span><span class="va">studies</span><span class="op">$</span><span class="va">study_id</span>
-<span class="co">#&gt; [1] "GCST003097" "GCST007071" "GCST009873"</span></code></pre></div>
-<p>Apparently only 3 studies: GCST003097, GCST007071, GCST009873. Let’s see the associated publication titles:</p>
+<span class="co">#&gt; [1] "GCST003097"   "GCST011008"   "GCST007071"   "GCST009873"   "GCST011005"  </span>
+<span class="co">#&gt; [6] "GCST011009"   "GCST90029015" "GCST90029016"</span></code></pre></div>
+<p>Apparently only 8 studies: GCST003097, GCST011008, GCST007071, GCST009873, GCST011005, GCST011009, GCST90029015, GCST90029016. Let’s see the associated publication titles:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">my_studies</span><span class="op">@</span><span class="va">publications</span><span class="op">$</span><span class="va">title</span>
-<span class="co">#&gt; [1] "Meta-analysis of shared genetic architecture across ten pediatric autoimmune diseases."                                     </span>
-<span class="co">#&gt; [2] "Leveraging Polygenic Functional Enrichment to Improve GWAS Power."                                                          </span>
-<span class="co">#&gt; [3] "Meta-analysis of Immunochip data of four autoimmune diseases reveals novel single-disease and cross-phenotype associations."</span></code></pre></div>
+<span class="co">#&gt; [1] "Meta-analysis of shared genetic architecture across ten pediatric autoimmune diseases."                                                            </span>
+<span class="co">#&gt; [2] "Genetic factors underlying the bidirectional relationship between autoimmune and mental disorders - findings from a Danish population-based study."</span>
+<span class="co">#&gt; [3] "Leveraging Polygenic Functional Enrichment to Improve GWAS Power."                                                                                 </span>
+<span class="co">#&gt; [4] "Meta-analysis of Immunochip data of four autoimmune diseases reveals novel single-disease and cross-phenotype associations."                       </span>
+<span class="co">#&gt; [5] "Genetic factors underlying the bidirectional relationship between autoimmune and mental disorders - findings from a Danish population-based study."</span>
+<span class="co">#&gt; [6] "Genetic factors underlying the bidirectional relationship between autoimmune and mental disorders - findings from a Danish population-based study."</span>
+<span class="co">#&gt; [7] "Mixed-model association for biobank-scale datasets."                                                                                               </span>
+<span class="co">#&gt; [8] "Mixed-model association for biobank-scale datasets."</span></code></pre></div>
 <p>If you want to further inspect these publications, you can quickly browse the respective PubMed entries:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># This launches your web browser at https://www.ncbi.nlm.nih.gov/pubmed/26301688</span>
@@ -178,33 +184,33 @@ Figure 2 | gwasrapidd arguments for retrieval functions. Colors indicate the cri
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># You could have also used get_associations(efo_trait = 'autoimmune disease')</span>
 <span class="va">my_associations</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_associations.html">get_associations</a></span><span class="op">(</span>study_id <span class="op">=</span> <span class="va">my_studies</span><span class="op">@</span><span class="va">studies</span><span class="op">$</span><span class="va">study_id</span><span class="op">)</span></code></pre></div>
-<p>Seemingly, there are 169 associations.</p>
+<p>Seemingly, there are 182 associations.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/n.html">n</a></span><span class="op">(</span><span class="va">my_associations</span><span class="op">)</span>
-<span class="co">#&gt; [1] 169</span></code></pre></div>
+<span class="co">#&gt; [1] 182</span></code></pre></div>
 <p>However, not all variants meet the level of significance, as required by <span class="citation">Light et al. (2014)</span>:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Get association ids for which pvalue is less than 1e-6.</span>
-<span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">my_associations</span><span class="op">@</span><span class="va">associations</span>, <span class="va">pvalue</span> <span class="op">&lt;</span> <span class="fl">1e-6</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="co"># Filter by p-value</span>
-  <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">pvalue</span><span class="op">)</span> <span class="op">%&gt;%</span>
+<span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">my_associations</span><span class="op">@</span><span class="va">associations</span>, <span class="va">pvalue</span> <span class="op">&lt;</span> <span class="fl">1e-6</span><span class="op">)</span> <span class="op"><a href="../reference/%&gt;%.html">%&gt;%</a></span> <span class="co"># Filter by p-value</span>
+  <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">pvalue</span><span class="op">)</span> <span class="op"><a href="../reference/%&gt;%.html">%&gt;%</a></span>
   <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="va">association_id</span><span class="op">)</span> <span class="op">-&gt;</span> <span class="va">association_ids</span> <span class="co"># Extract column association_id</span></code></pre></div>
 <p>Here we subset the <code>my_associations</code> object by a vector of association identifiers (<code>association_ids</code>) into a smaller object, <code>my_associations2</code>:</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Extract associations by association id</span>
 <span class="va">my_associations2</span> <span class="op">&lt;-</span> <span class="va">my_associations</span><span class="op">[</span><span class="va">association_ids</span><span class="op">]</span>
 <span class="fu"><a href="../reference/n.html">n</a></span><span class="op">(</span><span class="va">my_associations2</span><span class="op">)</span>
-<span class="co">#&gt; [1] 167</span></code></pre></div>
-<p>Of the 169 associations found in GWAS Catalog, 167 meet the p-value threshold of <span class="math inline">\(1\times 10^{-6}\)</span>. Here are the variants, and their respective risk allele and risk frequency:</p>
+<span class="co">#&gt; [1] 180</span></code></pre></div>
+<p>Of the 182 associations found in GWAS Catalog, 180 meet the p-value threshold of <span class="math inline">\(1\times 10^{-6}\)</span>. Here are the variants, and their respective risk allele and risk frequency:</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">my_associations2</span><span class="op">@</span><span class="va">risk_alleles</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'variant_id'</span>, <span class="st">'risk_allele'</span>, <span class="st">'risk_frequency'</span><span class="op">)</span><span class="op">]</span> <span class="op">%&gt;%</span>
+<code class="sourceCode R"><span class="va">my_associations2</span><span class="op">@</span><span class="va">risk_alleles</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'variant_id'</span>, <span class="st">'risk_allele'</span>, <span class="st">'risk_frequency'</span><span class="op">)</span><span class="op">]</span> <span class="op"><a href="../reference/%&gt;%.html">%&gt;%</a></span>
   <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span>n <span class="op">=</span> <span class="cn">Inf</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 167 x 3</span>
+<span class="co">#&gt; # A tibble: 180 × 3</span>
 <span class="co">#&gt;     variant_id  risk_allele risk_frequency</span>
 <span class="co">#&gt;     &lt;chr&gt;       &lt;chr&gt;                &lt;dbl&gt;</span>
 <span class="co">#&gt;   1 rs11580078  G                    0.43 </span>
 <span class="co">#&gt;   2 rs6679677   A                    0.09 </span>
 <span class="co">#&gt;   3 rs34884278  C                    0.3  </span>
-<span class="co">#&gt;   4 rs6689858   C                    0.290</span>
+<span class="co">#&gt;   4 rs6689858   C                    0.29 </span>
 <span class="co">#&gt;   5 rs2075184   T                    0.23 </span>
 <span class="co">#&gt;   6 rs36001488  C                    0.48 </span>
 <span class="co">#&gt;   7 rs4676410   A                    0.19 </span>
@@ -215,12 +221,12 @@ Figure 2 | gwasrapidd arguments for retrieval functions. Colors indicate the cri
 <span class="co">#&gt;  12 rs4869313   T                    0.42 </span>
 <span class="co">#&gt;  13 rs11741255  A                    0.42 </span>
 <span class="co">#&gt;  14 rs755374    T                    0.32 </span>
-<span class="co">#&gt;  15 rs36051895  T                    0.290</span>
+<span class="co">#&gt;  15 rs36051895  T                    0.29 </span>
 <span class="co">#&gt;  16 rs4246905   T                    0.28 </span>
 <span class="co">#&gt;  17 rs11145763  C                    0.4  </span>
 <span class="co">#&gt;  18 rs706778    T                    0.41 </span>
 <span class="co">#&gt;  19 rs10822050  C                    0.39 </span>
-<span class="co">#&gt;  20 rs1250563   C                    0.290</span>
+<span class="co">#&gt;  20 rs1250563   C                    0.29 </span>
 <span class="co">#&gt;  21 rs1332099   T                    0.46 </span>
 <span class="co">#&gt;  22 rs17885785  T                    0.2  </span>
 <span class="co">#&gt;  23 rs17466626  G                    0.02 </span>
@@ -245,129 +251,142 @@ Figure 2 | gwasrapidd arguments for retrieval functions. Colors indicate the cri
 <span class="co">#&gt;  42 rs77150043  T                    0.23 </span>
 <span class="co">#&gt;  43 rs2807264   C                    0.21 </span>
 <span class="co">#&gt;  44 rs12863738  T                    0.17 </span>
-<span class="co">#&gt;  45 rs10797431  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  46 rs72920202  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  47 rs10494079  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  48 rs2476601   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  49 rs1800601   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  50 rs11675342  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  51 rs1534430   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  52 rs67927699  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  53 rs5865      &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  54 rs2075302   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  55 rs142647938 &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  56 rs10202630  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  57 rs7568275   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  58 rs3087243   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  59 rs145268310 &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  60 rs1921445   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  61 rs28583049  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  62 rs1530687   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  63 rs57791671  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  64 rs114558062 &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  65 rs2030519   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  66 rs10937560  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  67 rs56817615  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  68 rs7441808   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  69 rs9683415   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  70 rs6840978   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  71 rs7655915   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  72 rs391851    &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  73 rs114378220 &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  74 rs11746555  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  75 rs1549922   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  76 rs9392504   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  77 rs72928038  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  78 rs761357    &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  79 rs11757201  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  80 rs6914622   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  81 rs9356551   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  82 rs60600003  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  83 rs221781    &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  84 rs3807307   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  85 rs1032129   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  86 rs11785816  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  87 rs865488    &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  88 rs7005834   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  89 rs970987    &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  90 rs1443438   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  91 rs13299616  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  92 rs10986284  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  93 rs706778    &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  94 rs2181622   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  95 rs71508903  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  96 rs10748781  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  97 rs7088058   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  98 rs1199047   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  99 rs4409785   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 100 rs773107    &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 101 rs4761587   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 102 rs1320344   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 103 rs7310615   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 104 rs191252491 &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 105 rs9507287   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 106 rs76428106  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 107 rs2093816   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 108 rs9591325   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 109 rs55984493  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 110 rs11622435  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 111 rs10444776  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 112 rs11073337  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 113 rs8061370   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 114 rs78534766  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 115 rs11117433  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 116 rs35776863  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 117 rs13380830  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 118 rs73316435  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 119 rs1893217   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 120 rs1790588   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 121 rs10425559  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 122 rs34536443  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 123 rs11086102  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 124 rs12980063  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 125 rs240753    &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 126 rs3765209   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 127 rs12482947  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 128 rs5754100   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 129 rs229541    &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 130 rs6664969   A                   NA    </span>
-<span class="co">#&gt; 131 rs1748041   C                   NA    </span>
-<span class="co">#&gt; 132 rs2476601   A                   NA    </span>
-<span class="co">#&gt; 133 rs1217403   C                   NA    </span>
-<span class="co">#&gt; 134 rs10912267  A                   NA    </span>
-<span class="co">#&gt; 135 rs13415465  G                   NA    </span>
-<span class="co">#&gt; 136 rs12619531  G                   NA    </span>
-<span class="co">#&gt; 137 rs10931468  A                   NA    </span>
-<span class="co">#&gt; 138 rs6749371   T                   NA    </span>
-<span class="co">#&gt; 139 rs7574865   T                   NA    </span>
-<span class="co">#&gt; 140 rs7426056   A                   NA    </span>
-<span class="co">#&gt; 141 rs3087243   A                   NA    </span>
-<span class="co">#&gt; 142 rs35677470  A                   NA    </span>
-<span class="co">#&gt; 143 rs17753641  G                   NA    </span>
-<span class="co">#&gt; 144 rs16878091  A                   NA    </span>
-<span class="co">#&gt; 145 rs1422673   T                   NA    </span>
-<span class="co">#&gt; 146 rs72928038  A                   NA    </span>
-<span class="co">#&gt; 147 rs11757201  C                   NA    </span>
-<span class="co">#&gt; 148 rs58721818  T                   NA    </span>
-<span class="co">#&gt; 149 rs212407    G                   NA    </span>
-<span class="co">#&gt; 150 rs60600003  G                   NA    </span>
-<span class="co">#&gt; 151 rs7780389   T                   NA    </span>
-<span class="co">#&gt; 152 rs4731532   A                   NA    </span>
-<span class="co">#&gt; 153 rs2812378   G                   NA    </span>
-<span class="co">#&gt; 154 rs3118470   C                   NA    </span>
-<span class="co">#&gt; 155 rs72776098  A                   NA    </span>
-<span class="co">#&gt; 156 rs947474    G                   NA    </span>
-<span class="co">#&gt; 157 rs3802604   G                   NA    </span>
-<span class="co">#&gt; 158 rs1250568   C                   NA    </span>
-<span class="co">#&gt; 159 rs10892299  T                   NA    </span>
-<span class="co">#&gt; 160 rs11171739  C                   NA    </span>
-<span class="co">#&gt; 161 rs8043085   T                   NA    </span>
-<span class="co">#&gt; 162 rs34593439  A                   NA    </span>
-<span class="co">#&gt; 163 rs1054609   C                   NA    </span>
-<span class="co">#&gt; 164 rs2542148   C                   NA    </span>
-<span class="co">#&gt; 165 rs74956615  A                   NA    </span>
-<span class="co">#&gt; 166 rs1893592   C                   NA    </span>
-<span class="co">#&gt; 167 rs66534072  G                   NA</span></code></pre></div>
+<span class="co">#&gt;  45 rs556990455 T                    0.016</span>
+<span class="co">#&gt;  46 rs4713462   A                    0.29 </span>
+<span class="co">#&gt;  47 rs1046080   C                    0.26 </span>
+<span class="co">#&gt;  48 rs115884658 A                    0.047</span>
+<span class="co">#&gt;  49 rs3132940   T                    0.15 </span>
+<span class="co">#&gt;  50 rs114355928 T                    0.018</span>
+<span class="co">#&gt;  51 rs1064173   A                    0.25 </span>
+<span class="co">#&gt;  52 rs3104394   G                    0.16 </span>
+<span class="co">#&gt;  53 rs3957147   T                    0.21 </span>
+<span class="co">#&gt;  54 rs2071538   A                    0.24 </span>
+<span class="co">#&gt;  55 rs194679    T                    0.047</span>
+<span class="co">#&gt;  56 rs381218    T                    0.29 </span>
+<span class="co">#&gt;  57 rs10797431  &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  58 rs72920202  &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  59 rs10494079  &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  60 rs2476601   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  61 rs1800601   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  62 rs11675342  &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  63 rs1534430   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  64 rs67927699  &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  65 rs5865      &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  66 rs2075302   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  67 rs142647938 &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  68 rs10202630  &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  69 rs7568275   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  70 rs3087243   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  71 rs145268310 &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  72 rs1921445   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  73 rs28583049  &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  74 rs1530687   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  75 rs57791671  &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  76 rs114558062 &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  77 rs2030519   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  78 rs10937560  &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  79 rs56817615  &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  80 rs7441808   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  81 rs9683415   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  82 rs6840978   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  83 rs7655915   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  84 rs391851    &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  85 rs114378220 &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  86 rs11746555  &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  87 rs1549922   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  88 rs9392504   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  89 rs72928038  &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  90 rs761357    &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  91 rs11757201  &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  92 rs6914622   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  93 rs9356551   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  94 rs60600003  &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  95 rs221781    &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  96 rs3807307   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  97 rs1032129   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  98 rs11785816  &lt;NA&gt;                NA    </span>
+<span class="co">#&gt;  99 rs865488    &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 100 rs7005834   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 101 rs970987    &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 102 rs1443438   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 103 rs13299616  &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 104 rs10986284  &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 105 rs706778    &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 106 rs2181622   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 107 rs71508903  &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 108 rs10748781  &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 109 rs7088058   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 110 rs1199047   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 111 rs4409785   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 112 rs773107    &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 113 rs4761587   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 114 rs1320344   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 115 rs7310615   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 116 rs191252491 &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 117 rs9507287   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 118 rs76428106  &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 119 rs2093816   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 120 rs9591325   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 121 rs55984493  &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 122 rs11622435  &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 123 rs10444776  &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 124 rs11073337  &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 125 rs8061370   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 126 rs78534766  &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 127 rs11117433  &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 128 rs35776863  &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 129 rs13380830  &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 130 rs73316435  &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 131 rs1893217   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 132 rs1790588   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 133 rs10425559  &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 134 rs34536443  &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 135 rs11086102  &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 136 rs12980063  &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 137 rs240753    &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 138 rs3765209   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 139 rs12482947  &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 140 rs5754100   &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 141 rs229541    &lt;NA&gt;                NA    </span>
+<span class="co">#&gt; 142 rs6664969   A                   NA    </span>
+<span class="co">#&gt; 143 rs1748041   C                   NA    </span>
+<span class="co">#&gt; 144 rs2476601   A                   NA    </span>
+<span class="co">#&gt; 145 rs1217403   C                   NA    </span>
+<span class="co">#&gt; 146 rs10912267  A                   NA    </span>
+<span class="co">#&gt; 147 rs13415465  G                   NA    </span>
+<span class="co">#&gt; 148 rs12619531  G                   NA    </span>
+<span class="co">#&gt; 149 rs10931468  A                   NA    </span>
+<span class="co">#&gt; 150 rs6749371   T                   NA    </span>
+<span class="co">#&gt; 151 rs7574865   T                   NA    </span>
+<span class="co">#&gt; 152 rs7426056   A                   NA    </span>
+<span class="co">#&gt; 153 rs3087243   A                   NA    </span>
+<span class="co">#&gt; 154 rs35677470  A                   NA    </span>
+<span class="co">#&gt; 155 rs17753641  G                   NA    </span>
+<span class="co">#&gt; 156 rs16878091  A                   NA    </span>
+<span class="co">#&gt; 157 rs1422673   T                   NA    </span>
+<span class="co">#&gt; 158 rs72928038  A                   NA    </span>
+<span class="co">#&gt; 159 rs11757201  C                   NA    </span>
+<span class="co">#&gt; 160 rs58721818  T                   NA    </span>
+<span class="co">#&gt; 161 rs212407    G                   NA    </span>
+<span class="co">#&gt; 162 rs60600003  G                   NA    </span>
+<span class="co">#&gt; 163 rs7780389   T                   NA    </span>
+<span class="co">#&gt; 164 rs4731532   A                   NA    </span>
+<span class="co">#&gt; 165 rs2812378   G                   NA    </span>
+<span class="co">#&gt; 166 rs3118470   C                   NA    </span>
+<span class="co">#&gt; 167 rs72776098  A                   NA    </span>
+<span class="co">#&gt; 168 rs947474    G                   NA    </span>
+<span class="co">#&gt; 169 rs3802604   G                   NA    </span>
+<span class="co">#&gt; 170 rs1250568   C                   NA    </span>
+<span class="co">#&gt; 171 rs10892299  T                   NA    </span>
+<span class="co">#&gt; 172 rs11171739  C                   NA    </span>
+<span class="co">#&gt; 173 rs8043085   T                   NA    </span>
+<span class="co">#&gt; 174 rs34593439  A                   NA    </span>
+<span class="co">#&gt; 175 rs1054609   C                   NA    </span>
+<span class="co">#&gt; 176 rs2542148   C                   NA    </span>
+<span class="co">#&gt; 177 rs74956615  A                   NA    </span>
+<span class="co">#&gt; 178 rs1893592   C                   NA    </span>
+<span class="co">#&gt; 179 rs66534072  G                   NA    </span>
+<span class="co">#&gt; 180 rs189071385 &lt;NA&gt;                NA</span></code></pre></div>
 </div>
 <div id="references" class="section level2 unnumbered">
 <h2 class="hasAnchor">
@@ -391,7 +410,7 @@ Figure 2 | gwasrapidd arguments for retrieval functions. Colors indicate the cri
 
 
       <footer><div class="copyright">
-  <p>Developed by <a href="https://rmagno.eu/">Ramiro Magno</a>, Ana-Teresa Maia, Centre for Biomedical Research, University of Algarve.</p>
+  <p>Developed by <a href="https://rmagno.eu/">Ramiro Magno</a>, Ana-Teresa Maia, <a href="https://cintesis.eu/"><img src="data:image/png;base64,%20iVBORw0KGgoAAAANSUhEUgAAAcMAAACKCAMAAADheNH8AAADAFBMVEUkUKMnUqQmUqQnU6T+/v79%20/f4mUaT///8lUaP+/v8mU6cnU6cnU6b8/f4lUaQlUKMnVKcmUqP9/f/b4vCTqdJMcro1YLK2xeC/%20zOSesdYmVKwmUqbBzuX8/P6TqdN/mctMcbY6Yq4lUaUmUaMmUqUnU6UnUqUoU6V/msz7+/0kUKT3%20+Pz5+v0mVKpFa7IkUabN2OqWrNQlUqeLo8/5+/34+vwlU6n8/P0nVawlVKvw8/n09vsmVa0mU6bA%20zeUmU6ikt9knVKi2xOFjgr33+fzt8fhykMjy9fqitdnE0OcpVanv8vn9/v8oU6bi6PPDz+YlU6oy%20W6n19/uywt9Ye7wlU6hRdrzd5PGouttFbLRTdrcpVKZdfrxwjcN7lsoxXK0vWao4YrPz9vrP2esr%20V6suWq4vWqw2X6y+y+RLcLXy9frW3u5tisNyj8XJ1OkwW6txj8fK1ekwXLA4Ya1NcrfM1urq7vaZ%20rtUrVqfV3e0zXKslUKVUeLs3YbGbsNYmVKkqVqro7fWJoc7U3O2rvNxmhsOPpdAuW7Dk6fRpiMFK%20cLifs9g6Y7ElUqg7Y67G0uctWKu1xOCEncxQdbpWeby3xuHf5fFoiMU0Xq0+aLYqVaba4fB9mMqm%20uNonVKrR2uy6yONegL+uvt37/P7a4e/u8vi0w+Dn7PXg5/M2X68tWKhCaLB0kcigtNlHb7q5x+Jg%20gsJ6lMd3k8Zkg75nhcBBabWXrNTp7vZJbrSsvd0rV6mBm84pVahbfb2wwN9Vd7h2k8m8yuM/Zq9H%20bbQlUqRbfr49ZrKUqtMyXrKHn82xwd8zX7DI0+iGn884Ya/S2+zl6/QsWK1XebopVquBm8uMpNA8%20ZK+RqNJ1kcZGbbdef71Qc7ZPdLljhMBDa7dRdbfX3+7r7/c+Z7Rhgb1BaLNkhMNJb7d/mcokUqlX%20er2Los5ggb/Y4O9ujMZvjMOUq9T+//81YLMlUqUsWrBafLonVatNcbU8ZrXs8Pd4lcrf5vJNdLwn%20VKtYfsUnV7EnUqSAzipdAAAdjUlEQVR42uyce1BU1xnA7+7ec885LHsvLMYIG6zuLpAgBN0iuiBB%2007UojaAog69RwKj1SVEBdTRaX/X9bCNpVDA1ATVGYwUfQdNMqGgkaqyj0WRibEcz07RVZzoNQ6cz%203RXuY3fv3d3L3oubmf1m+AN2z3fu9/3Od853vnMuBAzLj12IsAvCDMMSZhiWMMOwhBmGGYYlzDAs%20YYZhCTMMMwxLmGFYwgzDEgxD0uDxB8Nr0l/GJIm71w1+/DgEffYa8Pjd6PMpAzXf4PEtA6keQ5cF%20Mzb8+1bpk0UzZ85ctOhS6dWjP7u90OH8RLRXx/2GhipHd5yVcr9hY1Zo8XPiAPNa794q7b3oN07j%20L/VeuX3yhxfqnZ/ES7RwVDU0nB7gR60RwtxdJ89sf3LpqU8vPbn68h9bBw5xDgCsPEOShLUnPyg3%20RZkZRBNPBSEKmfQtOxtvNOU7v+A+Bie+Nb05kmEim6e/9UujrJ72bHW2JGhnwzbBuH+w+Tl58t/R%20gtb/C7DR5o+wxPAd2drvSos+kUKINR6ZI7OtKzcvOC4yTEEba375D7G+jB29qbE5MpuiaNSl1UKZ%20sk3nGif0Ku4MGuUYYnh6zR2rSet88i4bCM4UixZF0Xe+rHVHHhtlYRiEnD9Ru9yeZfRIP11t13S2%20RJF9+Ik7vUQrU3KaBEp7RwfWKKmf6CPhivXn9MjTeNfvWmTNKf9zU6Enw4Io1Gm+Rd8qaWl6r0l6%20q5bydimFGH3kNwtGK8kQd0wrcQEkxAURSGte48Ewgv0w6nk3hq37fM8SuL+mq6GAIVlPS3UuJeZ9%20QoYBtqZmG0QeqWNvHm2Rst4Fcts8T4Yv6NmvR/SSMDR9+NUI5Etr8g/KMcRlG1ZbJW3o6jNnXYAM%20p83aSMpmCL41yWWI5neH4dIUb19PNCcyvtvb22UzxPnnc3z7FJlvKMbQ2FZCEciPE1BqLQ6IIbk+%204Yb8OAQD9bIZnuoGQzTFc1aEWV/mID/Wo7gyuQzBwBrKn9bsXkAhhimXD/jrzdXhckdgcYj3aFoq%20H/cEw02KMHQc9Gs9ovsDmQzjF+q1/h6JaYnBijAEcI/FP0EC6abhAOfSixqiVHYc4rfNchnSC7oz%20lx7xmEvJ7xnvlAO5pzdozKB4eQwNp/OktPJ/1q5UZm8BHI0JjEcyRul0yGyz2dLMSKPTdY5SlFEA%20A2M4uIRiomLjZTKE7Qmyc5rLSuQ0f4/izXc6WIcyhtrTkhFtixuaatbqngKm8rx2gf7isJRGArWW%20JLN9WBFNmdMyhsUVUS6fOtNE4mNFGIIBW4XZqFN1tNl+5O7tz9qWLVt2beHx/bunjhs71mkZ5TGV%20SjNsd+UHQzPlMiRrEikvQYJs3EtGHMMiDMW+KZCkOR6Jx1KBrxmNffLEmF9nFjoGD8jKPN1Q+cYE%20k92sQcg7YHwzBF/xXnXmn0VLP6rIH1nmSHcU5rZfP7Rr2mK7TWNxZonxisThX61uCKkD5y8UOzDo%208g4JAE6vr3jUb5VpEA6MIa5Pdg4xzXy5DOGo23095bKN7UJzr6+3dIgxtCxu7etLXnV/mIe0AP4X%20fTcCTqcrtwbk3GWjbphyLhtlMSTXphGcWiZiyY5Co7BEQmLD9YIXl6867FAiDh3PJQhD3pp3820A%20Sa/tPwkaYqtggAw3Ohc2hDLWkjIZkthTQIyd7SLpJvD62G1QcQyjl3grkmoEyeJmhivLZN8rFql/%20kZDcuC5XXhymn+HyGUTRsX8QKYpB7Kg4q0StDdykBIsBbX1QLFXDFbFNgiFZ5Xp+pP2PQyZDEUNj%204riM6id+ynk8w36BFpRd2eNXvLNb7jokMn0xhT4ZFtu5gh1D1wEYqE+7wRCPThVEITX9mN/6XSDr%20Ye456mlJ4AIOfYaZcQQXhotHyrDeJ0P8iOKDe4scrfIZZpZQAoQ1tbKOkSQZGsqfMrTMLgx9htfM%20DNuD7bi8Ix5fDI9quOVp3ACoJkPyc41gPX+9g4SKMIQXtZ1T85qQZ2j8qY7zwNJCpRji+iL2I0bz%20HlCTIfj2ALcYIiKuWB5CH7W2rzsZoqh8EOpxOIdjmDQNKMawMpWb3uLaoZoMyX/y6zmRMUP2kakk%20wxPRXTnSg1CPw8FHuMUkeTxUbC6ts3GOzShUkyGYt5rhFsPED4coxhC+r+1KyfIKjKHNcO42LmBs%20lcox3E9zjk0aomoc/pyvghA18tVLM9zAHlnTk0I7Dsn2sRzDjLWKMSSrOa3UOKAmw7LpXE9MZJ1R%20QYafZbCZdWQsDm2G/MJlq1COYROf7U9RMw5BNfcMiN4MlYzD3FuIDcRF6SHN8N0Mztv0flKxuZSP%20Q9pepmYcPuSLsvrnjUoyhK+wazpK2DQklNfDLP7ugG6FQTGG68ysVktRsYoMs55WUzo3AY1Q0TiE%208HxXyo4I+8ZQZjhkNr9DTr2GlWL4ChfeSHfXoBpDY3U214/5psIMccewrhIW0hwNZYb4e36PH71C%20KYZgmZ2/S5ZxTb04fJmfSiOWAYXjMH5NEnubMq1PCDMEEzV8+pG8W6l6adYUwVnQrHygFsNLXDfa%20RqD0XAqztjEsxJpMMnTrNNfHCg6AE3aTpCIM8SnB0KC2yq2ABcpwbpSF6+UkVJwhqLN27T5R9iMc%20ugwH76QFZ2/m9YWKMIQFNsG5OnX4AglUYGh8z4ok7o0qwhDCOyxDZmcHDlmG4B2r8BZDy/KJ6Uow%20LCtnhGpN82MwVpwh3sTdQEKr1mLlGeJ/7OQ2ifNDNw4hPEy73SbKmTQ+C5PBMsTv6N0gWvNePBSv%20NEMwm+KKNL/PUiMOyVPsCEcRO3DIMozflUcg4Z2+6Jya6nwcJEPoKHW7XIoYXerBHWVYUYYOvtir%20/RSqwRA6ytlA1O4BPclwSbqEiC9KU91vCCNEWVPvDSw0BsUQ5jYz7lqRpmjWhnaAlWOYO4xTr9kL%20VGEIe0WwgZi3Jb7nGDo3CeKS1ire8gMd8nybhUq2f1cIDUEwjB+vZzzvCFOasdsrIFCK4f04/rLx%2051gdhi89ZNMaj+uZ6jJEUhL9vvgkW/aNxutKNoHGvH7mE1+3lvzdESZjbZTX2KBpqvfJd2Vg9MWw%20fht3dkhXqzOXQtCHO79InN+DcSgl0SfEGZK5B01e78wgZKGtW9d0nyHEdSMob62IsJ5bMQMaFWB4%20iLsLRJjOqsQQ4vkaNjVd/YtnzzBRspg2YJRN4/3umtPhkYe/SyG7yRCCNz8WeXfN9R5w828LAvw3%20Br4YVvLJmK1ONYbF7LEA0n760rOPw6+lE9aOX/3Fyoj4G5lqmgq7yRDClLP9xd7LRQydd2JesAzJ%20V3iGRX3UYgjxI1OnBYiIaCOfNUPNHumxT+KBe5utSCxqIuZU4m4yhDh90MURiBKhSEWsyQ2OIX6V%201+v5PpOCDMnMK+y1DGp62TOPwwm+5i8AYxYc1iORhVFrqhbZ9QfE0CXDlzRbaZGF0by5A/wIGEJc%20YGIPoYgt+FnnpXt9b/4xTDnWaE0kvP2tP5XefYYYxpy6Eolor9xXc64SBMPwOOoRhjB+NlvKQkXX%20yZ5hSOnEJWmfX5uMsGrqF4mUxfO/Y0Sewd1m6HpdwzCxxJRAeFE0twXx7hr5gmA9/ERFhtCxmj2E%20SvwT7hGG1OKmQaLyqDYguxzraop0HhCJMZODYOj6tqH+b3Yt5fmPU5qvB/E+fm0yp870OzUZ4n8l%20sOcXB9pwz9RLgRGIiTHAOipwzLhhT3IvlRFRw0EwDF1S9UaJza2a4Nzzlwaxt3gzjd/jD1eT4f/Z%20O/OgKK40gE/3vO73How9jCRW4oirc4AVQBGG4ahFJGAmukGUgJiaDSpWrWI0ilfQUnBdY8RbY9wV%20o/FC1FiJiNemwDPqGlcTIlqaRFclGnXd7MaYrDH5Y3uE6X4DzEzPFZit/v5ABrt7+n2//t7R7ztg%209Fzhtemczrhv0a50uV5oW2uQE0nzUF8ZQmxZ9fUyyiFkl9oHvGZ4cJjAkO0JAsmQeVZYJMa3uP91%20foYQMwWFQ8hhEVEVPjPkZevzxzlys0uxbJHXDAd1Fy5E/YQDyRDCXnZDRKdyg4WhLSViXC8VCTH/%20PvCdId+mMysdHo19jLcMi8R9C2VeQO2QX18MsU9rVN/goGFoW6BPSSNCbLn5fmEIwYrzRNQniq0G%20XjKMETwTFfpxpsDaIdhtENwyHoHgYcjLuVARItXb5BeGEIfvJB6NB9u9tUN4QgyYiV+LA8oQL/pI%20cMsohkHFkCkmHNQcnYi9ZwhhSbla7AavYi8ZMmeyRX+aVYFlCEGZsNBHtuRWwcMQPupO5BzcAP3E%20MKkwCjnNWyWZIfiUSMvSGNi+lF82213iEWrICiqG4EikaIjf+IshDhenlGiYK+8dl30p0yBcRbM4%200Azh4PKW/Qu1il8rBxFDLD7rCsf3rb4whFvHiUNZ8lhvGcK5Yqxq2HocYIYxn9sNUX3hj8HEEMIG%20QU+au35jyBSKcR7mwd7OaXCFGDOjXR1oO4TVZvv+BV0DgoqhuKfluIfsE0O8RXRdzB/vLUNmhujo%207V3AhUcMYaF9XEHp7zHBxHCM6MR521/jIQSDJe45uIkhXSpmxQj9BAeaIRR2gyPvmoKToeZpv9kh%20jPMPw31CzlekvxJwO4xYkGF/W1O+JUj70rvYb33pMb04HuZ4zZCZJcYxo7TDEYG2Q7jYvtDX9+7N%20Bg/DvwViXsqUKYl5KeO1HcIRYmfKnQ14X4pfE1MJCr91fobRYWJgSqHfxkP4UGQ4bIfXawvIbCkn%20Ah2LuwbaDuEkHRIcXoKFYcSBSDHGb6DfGFb9IKwP2dIs78dDaFpMJBkKfQMHmuGgnW2c1zs9w8Q/%20iDqKjfPXeAiOEfk4vgA+MMTb04k9EOfpRv3FEJeFBBtDPCBEeDutd8xi6QvD6PeJYWyDLwwhrifD%20xrULAswQRr/SyhA7PcNHhBmyu7GfGALxYUYoZS30hSG4P4/IBM2m94wJLEM4OD64GFpOasTsIXcc%2034l5z/ClTf2InPvHTT4xhMwSFZmRPeTLaheKAr4zxLUax3jNDmeIXZXhsGwm0yxPS5TO0FX0Pd7E%20iYtDhW489o0hxIeUZIEO2jzfWVpyJml9ou8MhyarOxVDZm/P1KT2FQ6Y+zs1hG50rVJFu8q5V3Ci%20JMtJkGGE6V0tqfILrssjSGAILHdY0lVOkf39pAkQOKoL8x9Tz0w1v+wzQxjRUxl4htOlDwepG6M2%20jq4p4Ik41lnlrXPHj3VE+CCipm2VzBAu4djvD/2VpxMBWhl9RNlUWkH0pAo3CcYk1Si5MdXBa1Wt%20MM77+nKOw8Px+MWm/4apEH3Id4YwN56schgQhurSvq6F2I5/PR7pFSpVt+J7JRbiWqnHXl3HfUz4%201iNF9x1AOsOvaL2CVa3cX7GAdEp9KfzAP6aGcWTCDMNDN/qSVmdmW7dWKQX0XNqDj/aPyKud+G1F%20U96Ia6MMIQZkK61n7oF9ZogHG0jD/1VjZlpEKVbYxEeVtnIqasSmqSrPX/t5TR4vc64srUwzOMS4%20IDU3UnrdNRyegZoVqcvgJt9cPMJ22TU/7x8VGcI5RM4g/alcvzCEs5aybQqo6hGtR5zuOaSnafur%20McQd9d0OIZweaIZuwxDFHBKWXazQZDWiaZplWaLFIkLtT20a6MIOywSvaKRm+cvaClDxP/VtCtWO%202Qb8wxCuLVYhKQrQj8vynSEuIFxkO4Sh8qRghyW/SDkJqQ2725kOOWVoz0nv5qpIPzfOrbqkMsTR%20uz/mpFRATM9hfLdDMNHQsQyJHJdvqCW0GnFhjdgThonD9RKuigynrkO/MbQtvteFuq0l29pnw0uG%200HRedKnrWIb4FuVe12rj3A89iuVmxoa4r+mq5rRNFuBXhjjiHj/ndVlS1VZG+qQ/GMIl8R3KULnZ%20jgRcol3XAbZVXQz7wtL+0tIpww3lbio58zNE63fSMll4VFudgQmxDzTOa6vz87k7o0b6hSF4OxJ1%205JzmTfvNZh1PQZQLdSNWae7trE6M8750SUo/23TXOULamNxfYp4hjxjyN1WU82N3XZS+nfB/vRIl%20l67eEcM4Mgxln0zWWaruHY8y8K7Y+KSWKmI11gGus10XmKnm6qFUZaMbhmeVEsUq1jVOqlo1PSVe%20Q7eXDwNRlHlezUyn/R2TU0e1tF91utUiuKCxNBkp9e1eVqno/v6HuVLdJjxkyFPp8tmxF2abzTo9%20pdRQvGj4Jqu1sebZFQvCo9tgGjBnWmU/rVZXuTzPs4pt8N9fDtfFxxtnn7i6/j8uDzx4a/ry2bt2%20DR/X9/futsbO/aaPRCH9VzCcWXLxkDZ5mY7l29zcaI2SQvEp8X0vjk11Fc61Pm95qU4br62cNqdN%20v8hkFWypGG6O1aoppVJDN+uS0uvMKaVXD+8wSX8Z6DFD23ttJmbHipEJU05Of4WX6fUT+/TfXjI0%20Ebeb0hMwRalVVb/L9TQZIK85U+rBGxaT+w6FP8CUlZvYBbrNKcpgqdKmyXjQa88MTDh6a86TRt+e%2082bh6VVxM922CjO5VbzkMu1lkAYYJw4t2d6/z79OfnXiiS5PTjk3sEd4lme68oJhs4KhvaW2fwF0%20lZaqrU6kfouX5wVGcHMlWyDemrTbAy6bYbueoKDmQz1ttALKEuwiM5QZyiIzlEVmKIvMUGYoi8xQ%20FpmhLDJDmaEsMkNZZIaydGKGTFW00/+bkOrBhTpw24OZYAlihuB6fb2YGWx1ff0MD7OiJE2OanCW%20F2nhkLrL7s4v2jzig/03b36QN39RhyEERyvrNnQJXoYDUFSxYAlvUxkve5iLIYliHXMIEDwvag2v%20ujs/9bc0HaVURrFa7nJqRzF8gWqT3TuoGCqoXoL6R0SGes4QJccR7Qefib8naLUSGCoMT+/Zs5hF%20asPnRR3FUJMmMxQ/v34EeMgQpRTwtvv4iEEdkiAz7HiGeGxspscMY5+kQAW3Of1sk8zQ3wy7MgC3%20qhobgQGIwE4YMmv7ZWcyrRhiBnTFbhlCZoaWzSBHVoYBTCv3RRwBAON4Q4C/xVZHde3a+qjmT6Sn%20DH9T4tVbGDIubzRYGb4zKXPiJ11IdYQ/+21mbUK46L9GMsSW0ZrIh9XV1RNIhn+63LR3htOVg8AQ%20mlaqN24Svp2B4y9nTnSo5MjA62dqm/Y+n0VOoGY1NtUeGEQeNujwu5mZNeMJF7uqnL/zj50l7rp4%202nuNTZmXF1gIhibYY2Jm47b/M4Z7GwzZVqPxrYXCX0w7OWO20Wg1zBUK5zkwvG2rDajT0W8CgaFl%20TKTRaDSscxaLQDJkNz5j/3Zw5i1jdpRR1VAjIvx0rsGabc2OHLJEuOFN3RT8X4x1ecIzgmtVtlvk%20b/uecOZT6RkDLEvD6NEt9MHAs9yTY8JuADvDFx+Psf1FeyXIGQIHhmsMdL71krUfF3rOrn9wNySW%20smrNNLfLns+KZLgnOR+hfsnJv/xZYJg5Rrnsh1hWbbjmzg6Txqch66OWb+ryzwxUXnlpVzoKa7Lb%20k2UyzZpnXypNTrE/QPh0GMdplw/Ppw1C5mRmoDZFZ42MZbm6MjvXp0Iy7n1HKZ+bHNOyHNQiOoVD%20+bE3GbsdqhZeiMpPMesVkcVJQchQP+5iQov0RgJDUGOg/zK+CFu2zOPSBUfquP+1d75BTRxRAM9t%207vb2ILkgaFuNjHBJLg6oIAaVjAX/gIDVQUOtGlAoKohKcepf1NEWBFRQ8d9Mx9GiYHQKWKvWapUZ%20lE6d6VSlxVqsyijFmToV/eBoS/3Q6SV3e0loEm3HL9G8T5fN3r29+92+2/fu9m3iM7Ml5fIcqL/l%20oR+2zf+dBe2xsfOfYVuKAFxx8G7sFq1G5eXLcXlMQ19iAV75hfwqGHEH85i8r1nFBGlRKbJoGrSG%20mZjksAPSXFsmfQqr799LmWLv6fSP8H1mqlvSa0ntuRGl+aiLxAxRFlD8VSXl6xn4WKN/2GY2n2lL%20l20p4rXliYcvt2sU01f5IUOEtFhYJ0NbgmJbuj12MbVUBcpdnkCkfTJXEvreky1ljkUZutUU/qBa%20YGjYYx8/JEcAw1JfDBn66G4AcmZJF723GIromE1a0CjlPmhFo+sotyDCeqS/MdXOv1bLftinick1%20rJyDUmDILj8qW9tq9nGT0FZSHuM4GJ40CQVd+RqQyfghQzZEkglRMkNqEw9XSB0gBxQ7cxU5liQx%20rQU/evQt0tYZ3HwLdM7mOMhAFraS3hkml1zXA5STjq/e7CRULWpKSUKDpHVbGiE3xG2QuqpZt8bm%20+I86pGRd8lE49pwEuE0yQ9hchmNp6p0qVGwj+/gWUp5J6oJSuYvyP4agde/ENx1y/B7ADJknSmJ1%20tMUu8b+AoB75Jk4pOZ55JKOAWPBiDKXn1Fsz4QzKK8PDHQkKpIj4WKZwAamWWkSJhMNLxJaOCtbE%20FfVEy8/r8E0TwO14R6XoCjitP/6DsoQlZmYe7AZsmswQnHZq7ObBQ7Kvf8iJ+SyYY9BYFO5/DIlC%20MlxaUHC3PKapXwuRY9KQIBqUdFkEwFh2TR8dpVBoWc2LMeQmiVsZo30xDCMLAbtWLe9IftsPQUk5%20RNvmS8XvqRTK6fs6VuEe9ZMW6eRahhP4+MdzEziFIopD65wMkcuKlds13Mh/+/gVogs5G/knQ0++%20hYWwT0MUZwpCmCT63qTlsywUNWjcuHEvyhDHaZ7DUB02FhFp4c7YO490ECvf1obLqzbGKXXGQRVS%20f52rRRq5iVnYBJ5SIV2C0MQYV4ZctlNjNUwa7y1O80oxTN6H2NK9E7FIwehlBpQ/32ZJtUUSL5Uh%20w8zmNE/D5HasJ/Rzj2DdOxfL5ZbamwlKRUyd5L9qYcRBuYmik8mkc4qZq3vz8syPDF4YXoUxVa8F%20Q7qVgGlT3Wf4kb1GXU2KY7j4shnS9XuMYDnOz0OW9zOcHIN1u0fNuiJ4MEfc7AgB68k+kxCZETDK%20kT9UXeSNYSF0XyPolWUYOsTY72afQTa1MgmIrrp3hhy4+b8Y0in3NdorWGEFC+95aTBjmaJb4zAL%20obFalNMnbSAdrUcJjv5MeWMYWhoMtr4e/bAnThFXRspDdcdlqQ0Cv3pgOHyHDHs8y7c+hyFjtsV7%208vEHT9BwGdKcz9iNiilYed+sasnNRLF4APUloMdPQVwr2oiml/hkSHedg1op0Rfpi2G92Wzyb4am%200wBVLzLZjVTvZRztytWxaYL1olwYUgWQvSJ7yxfjdPedc6Y9MWS2ZIHIeA+xNqZTD+69I5V2Agj3%20xttNZIqc3WFJFyloXrUb9CsXFTAdWk3zyDz7dF/LB9iWtvDEJLPdAntlSHdq2Zo0i1BHvdkXw7Mg%206ybp1wzpvBw9ilu+pWnp2eApi6VzGRqi4XafL53XDnQyw/4Gjbbw3dWOGswP11iiofNQu49+2MhD%20mEJ6iHnTV1l9kdSqzX+ycGNBedPDFfBvm1Tz5+DbTUO/QAS6VoZ3fhCCOGP25GV7GsZmTBVPoTaI%20jYq8UHq+vMHbuJRJ3a6HXMODZQ+2f5Lsg+H7iJjjH/1wMMe7MJzWLDOkbANC9MBoNCpVT/EDz3SI%205ZVGwkhA1QL5EJ+rIGGQ/EDmQDMPiaxc0QiNCnobMxwOMMNvVDxvdu2H/FORYWjiAj5or/ROr3cE%204gmloJyPkYKvdKVB+G2EIW/I4RyGKapRQXst0Lwf3xYd51RAaKKRUOllhkkG135InRmg54HSqDR8%20ukP0mSbzzZghnyUzNPBb/YIhXWK17peBnrBaVzrzSNJt3cWVlQtndLvkDinLzl1YubD4VkWZs2z1%202RmtOGkY1XuqIDfylBibq7tzZ4NYfPeWVYqXkgOt1kcuJsrSYs0+Km2PfNLiXO981pdrBU0zsi/i%20BtW1C6rzWzeoXV/lLv6tYGFlZe4fVc6BiGVeQb5Q1HhiEf5o8sgda4XbuIiuzc6trMxvvJ4qKbZa%20pTSgGdaWDdLNNs/a8p1/MPQlwlPFNMxEkZTr6TuKaNdX+RTtkrOXoZnn5hAhvfx0z6YqKne+yg2n%20x5iG1ZN9Ro0UU28yqd0SJQtF8UIR5SuzN602xY8hQ/9DK/2UYUACDAMSYBhgGJAAw4AEGAYkwPDV%20lH8ApkyvCL+KUR0AAAAASUVORK5CYII=" height="24"></a>.</p>
 </div>
 
 <div class="pkgdown">
