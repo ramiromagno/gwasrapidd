@@ -199,10 +199,10 @@ get_studies_by_efo_id <- function(efo_id = NULL, verbose = FALSE, warnings = TRU
 #' Get GWAS Catalog studies by PubMed identifiers
 #'
 #' Gets studies whose associated publications match
-#'  \href{https://www.ncbi.nlm.nih.gov/pubmed}{PubMed} identifiers.
+#'  \href{https://pubmed.ncbi.nlm.nih.gov/}{PubMed} identifiers.
 #'
 #' @param pubmed_id An integer vector of
-#'   \href{https://www.ncbi.nlm.nih.gov/pubmed}{PubMed} identifiers.
+#'   \href{https://pubmed.ncbi.nlm.nih.gov/}{PubMed} identifiers.
 #' @param verbose Whether the function should be
 #'   verbose about the different queries or not.
 #' @param warnings Whether to print warnings.

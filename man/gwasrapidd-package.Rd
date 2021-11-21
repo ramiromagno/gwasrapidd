@@ -4,11 +4,11 @@
 \name{gwasrapidd-package}
 \alias{gwasrapidd}
 \alias{gwasrapidd-package}
-\title{gwasrapidd: REST API Client for the NHGRI-EBI GWAS Catalog}
+\title{gwasrapidd: 'REST' 'API' Client for the 'NHGRI'-'EBI' 'GWAS' Catalog}
 \description{
 \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 
-GWAS R API Data Download. This package provides easy access to the NHGRI-EBI GWAS Catalog data by accessing the REST API <https://www.ebi.ac.uk/gwas/docs/api/>.
+GWAS R API Data Download. This package provides easy access to the 'NHGRI'-'EBI' 'GWAS' Catalog data by accessing the 'REST' 'API' <https://www.ebi.ac.uk/gwas/rest/docs/api/>.
 }
 \seealso{
 Useful links:

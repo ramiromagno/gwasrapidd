@@ -38,8 +38,9 @@ A dataset containing the GRCh38 human cytogenetic bands and their genomic
 coordinates.
 }
 \details{
-Genomic coordinates are for \href{https://tinyurl.com/y4dh923p}{fully closed}
-intervals.
+Genomic coordinates are for
+\href{https://genome-blog.soe.ucsc.edu/blog/wp-content/uploads/2016/12/newInterval.png}{fully
+closed} intervals.
 }
 \section{Cytogenetic Nomenclature}{
 

@@ -15,11 +15,11 @@ setOldClass(c("tbl_df", "tbl", "data.frame"))
 #' genome build.}
 #' \item{functional_class}{Class according to Ensembl's predicted consequences
 #' that each variant allele may have on transcripts. See
-#' \href{https://tinyurl.com/y43h8pa6}{Ensembl
+#' \href{https://www.ensembl.org/info/genome/variation/prediction/predicted_data.html}{Ensembl
 #' Variation - Calculated variant consequences}.}
 #' \item{chromosome_name}{Chromosome name.}
 #' \item{chromosome_position}{Chromosome position.}
-#' \item{chromosome_region}{\href{https://tinyurl.com/yc7qrhxe}{Cytogenetic
+#' \item{chromosome_region}{\href{https://medlineplus.gov/genetics/understanding/howgeneswork/genelocation/}{Cytogenetic
 #' location}.}
 #' \item{last_update_date}{Last time this variant was updated.}
 #' }
@@ -52,7 +52,7 @@ setOldClass(c("tbl_df", "tbl", "data.frame"))
 #' \item{gene_name}{Gene symbol according to
 #' \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.}
 #' \item{ensembl_id}{The Ensembl identifier of an Ensembl gene, see Section
-#' \href{https://tinyurl.com/yxufd22b}{Gene
+#' \href{https://www.ensembl.org/info/genome/genebuild/index.html}{Gene
 #' annotation in Ensembl} for more information.}
 #' }
 #' @slot entrez_ids A \code{\link[tibble]{tibble}} listing gene Entrez
@@ -62,7 +62,7 @@ setOldClass(c("tbl_df", "tbl", "data.frame"))
 #' \item{gene_name}{Gene symbol according to
 #' \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.}
 #' \item{entrez_id}{The Entrez identifier of a gene, see ref.
-#' \href{https://doi.org/10.1093\%2Fnar\%2Fgkq1237}{10.1093/nar/gkq1237} for
+#' \doi{10.1093/nar/gkq1237} for
 #' more information.}
 #' }
 #' @export

@@ -101,11 +101,10 @@ a multi-loci entity such as a multi-SNP haplotype.}
 a multi-loci entity such as a multi-SNP haplotype.}
 \item{gene_name}{Gene symbol according to
 \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.}
-\item{entrez_id}{The Entrez identifier of a gene, see ref.
-\href{https://doi.org/10.1093\%2Fnar\%2Fgkq1237}{10.1093/nar/gkq1237} for
-more information.}
+\item{entrez_id}{The Entrez identifier of a gene, see
+\doi{10.1093/nar/gkq1237} for more information.}
 \item{ensembl_id}{The Ensembl identifier of an Ensembl gene, see Section
-\href{https://tinyurl.com/yxufd22b}{Gene
+\href{https://www.ensembl.org/info/genome/genebuild/index.html}{Gene
 annotation in Ensembl} for more information.} }}
 
 \item{\code{entrez_ids}}{A \code{\link[tibble]{tibble}} listing Entrez gene
@@ -118,7 +117,7 @@ a multi-loci entity such as a multi-SNP haplotype.}
 \item{gene_name}{Gene symbol according to
 \href{https://www.genenames.org/}{HUGO Gene Nomenclature (HGNC)}.}
 \item{entrez_id}{The Entrez identifier of a gene, see ref.
-\href{https://doi.org/10.1093\%2Fnar\%2Fgkq1237}{10.1093/nar/gkq1237} for
+\doi{10.1093/nar/gkq1237} for
 more information.}
 }}
 }}

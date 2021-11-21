@@ -13,7 +13,7 @@ get_studies_by_pubmed_id(
 }
 \arguments{
 \item{pubmed_id}{An integer vector of
-\href{https://www.ncbi.nlm.nih.gov/pubmed}{PubMed} identifiers.}
+\href{https://pubmed.ncbi.nlm.nih.gov/}{PubMed} identifiers.}
 
 \item{verbose}{Whether the function should be
 verbose about the different queries or not.}
@@ -30,6 +30,6 @@ A \linkS4class{studies} object.
 }
 \description{
 Gets studies whose associated publications match
- \href{https://www.ncbi.nlm.nih.gov/pubmed}{PubMed} identifiers.
+ \href{https://pubmed.ncbi.nlm.nih.gov/}{PubMed} identifiers.
 }
 \keyword{internal}
