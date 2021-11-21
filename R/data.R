@@ -23,7 +23,7 @@
 #' higher resolution.
 #'
 #'
-#' @format A data frame with 862 rows and 7 variables:
+#' @format A data frame with 862 rows and 8 variables:
 #' \describe{
 #'   \item{cytogenetic_band}{Cytogenetic band name. See \emph{Cytogenetic
 #'   Nomenclature} below.}
