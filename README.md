@@ -114,7 +114,3 @@ project, you agree to abide by its terms.
 This work would have not been possible without the precious help from
 the GWAS Catalog team, particularly [Daniel
 Suveges](https://www.ebi.ac.uk/about/people/daniel-suveges).
-
-We also thank [Hadley](http://hadley.nz/)’s team for all the brilliant
-software that has influenced so profoundly the development of this
-package.
