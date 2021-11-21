@@ -30,7 +30,7 @@ open_in_pubmed <- function(pubmed_id) {
 
   if (interactive()) {
   urls <-
-    glue::glue("https://www.ncbi.nlm.nih.gov/pubmed/{pubmed_id2}")
+    glue::glue("https://pubmed.ncbi.nlm.nih.gov/{pubmed_id2}")
 
   purrr::walk(urls, utils::browseURL)
 

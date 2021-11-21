@@ -589,7 +589,7 @@ get_variants_all <- function(verbose = FALSE, warnings = TRUE, page_size = 20L) 
 #' @param efo_id A character vector of \href{https://www.ebi.ac.uk/efo/}{EFO}
 #'   identifiers.
 #' @param pubmed_id An integer vector of
-#'   \href{https://www.ncbi.nlm.nih.gov/pubmed}{PubMed} identifiers.
+#'   \href{https://pubmed.ncbi.nlm.nih.gov/}{PubMed} identifiers.
 #' @param genomic_range A named list of three vectors:
 #' \describe{ \item{chromosome}{A character vector of chromosome names of the
 #' form 1--22, X or Y.} \item{start}{A numeric vector of start positions,

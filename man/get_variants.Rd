@@ -35,7 +35,7 @@ identifiers.}
 identifiers.}
 
 \item{pubmed_id}{An integer vector of
-\href{https://www.ncbi.nlm.nih.gov/pubmed}{PubMed} identifiers.}
+\href{https://pubmed.ncbi.nlm.nih.gov/}{PubMed} identifiers.}
 
 \item{genomic_range}{A named list of three vectors:
 \describe{ \item{chromosome}{A character vector of chromosome names of the
