@@ -14,7 +14,7 @@ MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.or
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html)
 [![](https://img.shields.io/badge/devel%20version-0.99.11-blue.svg)](https://github.com/ramiromagno/gwasrapidd)
 
-The goal of gwasrapidd is to provide programmatic access to the
+The goal of `{gwasrapidd}` is to provide programmatic access to the
 [NHGRI-EBI Catalog](https://www.ebi.ac.uk/gwas) of published genome-wide
 association studies.
 
@@ -23,11 +23,21 @@ Get started by reading the
 
 ## Installation
 
-You can install the current version of gwasrapidd with:
+Install `{gwasrapidd}` from CRAN:
 
 ``` r
-# install.packages("remotes")
-remotes::install_github("ramiromagno/gwasrapidd")
+install.packages("gwasrapidd")
+```
+
+You can instead install the development version of `{gwasrapidd}` by
+setting [Ramiro Magno’s universe](https://ramiromagno.r-universe.dev/)
+repository:
+
+``` r
+options(repos = c(ramiromagno = 'https://ramiromagno.r-universe.dev',
+                CRAN = 'https://cloud.r-project.org'))
+
+install.packages('gwasrapidd')
 ```
 
 ## Cheatsheet
@@ -67,7 +77,7 @@ variants@variants[c('variant_id', 'functional_class')]
 
 ## Citing this work
 
-gwasrapidd was published in Bioinformatics in 2019:
+`{gwasrapidd}` was published in Bioinformatics in 2019:
 <https://doi.org/10.1093/bioinformatics/btz605>.
 
 To generate a citation for this publication from within R:
@@ -93,11 +103,12 @@ citation('gwasrapidd')
 ##   }
 ```
 
-## Contributors
+## Code of Conduct
 
-Please note that the gwasrapidd project is released with a [Contributor
-Code of Conduct](.github/CODE_OF_CONDUCT.md). By contributing to this
-project, you agree to abide by its terms.
+Please note that the `{gwasrapidd}` project is released with a
+[Contributor Code of
+Conduct](https://rmagno.eu/gwasrapidd/CODE_OF_CONDUCT.html). By
+contributing to this project, you agree to abide by its terms.
 
 ## Similar projects
 
