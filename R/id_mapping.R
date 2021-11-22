@@ -1,34 +1,15 @@
-#' GWAS accession identifier mapping
+#' Map a study id to an association id
 #'
-#' Use these functions to map between identifiers of studies, associations,
-#' variants or traits. Each \code{association_id} maps to just one
-#' \code{study_id}; all other mappings are one-to-many. Moreover, in the case of
-#' the mapping of variant identifiers to trait identifiers (\code{efo_id}) the
-#' mapping is first performed from variant id to association id, and only then
-#' to trait identifier. All other mappings are direct in the sense that the Gwas
-#' Catalog REST API provides the endpoints that make those direct queries
-#' possible.
+#' Map a study accession identifier to an association accession identifier.
 #'
-#' @param study_id,association_id,variant_id,efo_id A character vector of
-#'   accession identifiers for either studies (\code{study_id}), associations
-#'   (\code{association_id}), variants (\code{variant_id}) or traits
-#'   (\code{efo_id}).
-#' @param keep_association_id In the case of the \code{variant_to_trait()}
-#'   function, the mapping from variant ids to EFO traits ids is performed via
-#'   association ids; this option allow you to keep the association identifier
-#'   in the final output (default is \code{FALSE}).
+#' @param study_id A character vector of study accession identifiers.
 #' @param verbose Whether the function should be
 #'   verbose about the different queries or not.
 #' @param warnings Whether to print warnings.
 #'
-#' @return A dataframe of two identifiers (three if \code{keep_association_id}
-#'   is \code{TRUE} and if \code{variant_to_trait()} used). First column is the
-#'   \emph{from} identifier and the second column is the \emph{to} identifier.
+#' @return A dataframe of two identifiers. First column is the study identifier
+#'   and the second column is the association identifier.
 #'
-#' @name identifier_mapping
-NULL
-
-#' @rdname identifier_mapping
 #' @examples
 #' # Map GWAS study identifiers to association identifiers
 #' study_to_association(c('GCST001084', 'GCST001085'))
@@ -62,7 +43,18 @@ study_to_association <- function(study_id, verbose = FALSE, warnings = TRUE) {
 
 }
 
-#' @rdname identifier_mapping
+#' Map a study id to a variant id
+#'
+#' Map a study accession identifier to a variant accession identifier.
+#'
+#' @param study_id A character vector of study accession identifiers.
+#' @param verbose Whether the function should be
+#'   verbose about the different queries or not.
+#' @param warnings Whether to print warnings.
+#'
+#' @return A dataframe of two identifiers. First column is the study identifier
+#'   and the second column is the variant identifier.
+#'
 #' @examples
 #' # Map GWAS study identifiers to variant identifiers
 #' study_to_variant(c('GCST001084', 'GCST001085'))
@@ -95,7 +87,18 @@ study_to_variant <- function(study_id, verbose = FALSE, warnings = TRUE) {
   )
 }
 
-#' @rdname identifier_mapping
+#' Map a study id to a EFO trait id
+#'
+#' Map a study accession identifier to a EFO trait identifier.
+#'
+#' @param study_id A character vector of study accession identifiers.
+#' @param verbose Whether the function should be
+#'   verbose about the different queries or not.
+#' @param warnings Whether to print warnings.
+#'
+#' @return A dataframe of two identifiers. First column is the study identifier
+#'   and the second column is the EFO identifier.
+#'
 #' @examples
 #' # Map GWAS study identifiers to EFO trait identifiers
 #' study_to_trait(c('GCST001084', 'GCST001085'))
@@ -128,7 +131,19 @@ study_to_trait <- function(study_id, verbose = FALSE, warnings = TRUE) {
   )
 }
 
-#' @rdname identifier_mapping
+#' Map an association id to a study id
+#'
+#' Map an association accession identifier to a study accession identifier.
+#'
+#' @param association_id A character vector of association accession
+#'   identifiers.
+#' @param verbose Whether the function should be
+#'   verbose about the different queries or not.
+#' @param warnings Whether to print warnings.
+#'
+#' @return A dataframe of two identifiers. First column is the association
+#'   identifier and the second column is the study identifier.
+#'
 #' @examples
 #' # Map GWAS association identifiers to study identifiers
 #' association_to_study(c('24300097', '24299759'))
@@ -162,7 +177,19 @@ association_to_study <- function(association_id, verbose = FALSE, warnings = TRU
 
 }
 
-#' @rdname identifier_mapping
+#' Map an association id to a variant id
+#'
+#' Map an association accession identifier to a variant identifier.
+#'
+#' @param association_id A character vector of association accession
+#'   identifiers.
+#' @param verbose Whether the function should be
+#'   verbose about the different queries or not.
+#' @param warnings Whether to print warnings.
+#'
+#' @return A dataframe of two identifiers. First column is the association
+#'   identifier and the second column is the variant identifier.
+#'
 #' @examples
 #' # Map GWAS association identifiers to variant identifiers
 #' association_to_variant(c('24300097', '24299759'))
@@ -195,7 +222,19 @@ association_to_variant <- function(association_id, verbose = FALSE, warnings = T
   )
 }
 
-#' @rdname identifier_mapping
+#' Map an association id to an EFO trait id
+#'
+#' Map an association accession identifier to an EFO trait id.
+#'
+#' @param association_id A character vector of association accession
+#'   identifiers.
+#' @param verbose Whether the function should be
+#'   verbose about the different queries or not.
+#' @param warnings Whether to print warnings.
+#'
+#' @return A dataframe of two identifiers. First column is the association
+#'   identifier and the second column is the EFO trait identifier.
+#'
 #' @examples
 #' # Map GWAS association identifiers to EFO trait identifiers
 #' association_to_trait(c('24300097', '24299759'))
@@ -228,7 +267,18 @@ association_to_trait <- function(association_id, verbose = FALSE, warnings = TRU
   )
 }
 
-#' @rdname identifier_mapping
+#' Map a variant id to a study id
+#'
+#' Map a variant identifier to a study accession identifier.
+#'
+#' @param variant_id A character vector of variant identifiers.
+#' @param verbose Whether the function should be
+#'   verbose about the different queries or not.
+#' @param warnings Whether to print warnings.
+#'
+#' @return A dataframe of two identifiers. First column is the variant
+#'   identifier and the second column is the study identifier.
+#'
 #' @examples
 #' # Map GWAS variant identifiers to study identifiers
 #' variant_to_study(c('rs7904579', 'rs138331350'))
@@ -261,7 +311,18 @@ variant_to_study <- function(variant_id, verbose = FALSE, warnings = TRUE) {
 
 }
 
-#' @rdname identifier_mapping
+#' Map a variant id to an association id
+#'
+#' Map a variant identifier to an association identifier.
+#'
+#' @param variant_id A character vector of variant identifiers.
+#' @param verbose Whether the function should be
+#'   verbose about the different queries or not.
+#' @param warnings Whether to print warnings.
+#'
+#' @return A dataframe of two identifiers. First column is the variant
+#'   identifier and the second column is the association identifier.
+#'
 #' @examples
 #' # Map GWAS variant identifiers to association identifiers
 #' variant_to_association(c('rs7904579', 'rs138331350'))
@@ -294,8 +355,27 @@ variant_to_association <- function(variant_id, verbose = FALSE, warnings = TRUE)
 
 }
 
+#' Map a variant id to an EFO trait
+#'
+#' Map a variant identifier to an EFO trait identifier. Variants are first
+#' mapped to association identifiers, and then to EFO traits. Set the option
+#' \code{keep_association_id} to \code{TRUE} to keep the intermediate mapping,
+#' i.e., the association identifiers.
+#'
+#' @param variant_id A character vector of variant identifiers.
+#' @param keep_association_id  Whether to keep the association identifier
+#'   in the final output (default is \code{FALSE}).
+#' @param verbose Whether the function should be
+#'   verbose about the different queries or not.
+#' @param warnings Whether to print warnings.
+#'
+#' @return A dataframe of two or three identifiers. If
+#'   \code{keep_association_id} is set to \code{FALSE}, the first column is the
+#'   variant identifier and the second column is the EFO trait identifier,
+#'   otherwise the variable \code{association_id} is also included as the second
+#'   column.
+#'
 #' @importFrom rlang .data
-#' @rdname identifier_mapping
 #' @examples
 #' # Map GWAS variant identifiers to EFO trait identifiers
 #' variant_to_trait(c('rs7904579', 'rs138331350'))
@@ -343,7 +423,18 @@ variant_to_trait <- function(variant_id, keep_association_id = FALSE, verbose = 
 
 }
 
-#' @rdname identifier_mapping
+#' Map an EFO trait id to a study id
+#'
+#' Map an EFO trait id to a study accession identifier.
+#'
+#' @param efo_id A character vector of EFO trait identifiers.
+#' @param verbose Whether the function should be
+#'   verbose about the different queries or not.
+#' @param warnings Whether to print warnings.
+#'
+#' @return A dataframe of two identifiers. First column is the EFO trait
+#'   identifier and the second column is the study identifier.
+#'
 #' @examples
 #' # Map EFO trait identifiers to study identifiers
 #' trait_to_study(c('EFO_0005108', 'EFO_0005109'))
@@ -376,7 +467,18 @@ trait_to_study <- function(efo_id, verbose = FALSE, warnings = TRUE) {
   )
 }
 
-#' @rdname identifier_mapping
+#' Map an EFO trait id to an association id
+#'
+#' Map an EFO trait id to an association identifier.
+#'
+#' @param efo_id A character vector of EFO trait identifiers.
+#' @param verbose Whether the function should be
+#'   verbose about the different queries or not.
+#' @param warnings Whether to print warnings.
+#'
+#' @return A dataframe of two identifiers. First column is the EFO trait
+#'   identifier and the second column is the association identifier.
+#'
 #' @examples
 #' # Map EFO trait identifiers to association identifiers
 #' trait_to_association(c('EFO_0005108', 'EFO_0005109'))
@@ -410,7 +512,18 @@ trait_to_association <- function(efo_id, verbose = FALSE, warnings = TRUE) {
 
 }
 
-#' @rdname identifier_mapping
+#' Map an EFO trait id to a variant id
+#'
+#' Map an EFO trait id to a variant identifier.
+#'
+#' @param efo_id A character vector of EFO trait identifiers.
+#' @param verbose Whether the function should be
+#'   verbose about the different queries or not.
+#' @param warnings Whether to print warnings.
+#'
+#' @return A dataframe of two identifiers. First column is the EFO trait
+#'   identifier and the second column is the variant identifier.
+#'
 #' @examples
 #' # Map EFO trait identifiers to variant identifiers
 #' trait_to_variant('EFO_0005229')
