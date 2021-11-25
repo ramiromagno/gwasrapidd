@@ -686,7 +686,7 @@
                        <span class="st">'chromosome_name'</span>,
                        <span class="st">'chromosome_position'</span>,
                        <span class="st">'chromosome_region'</span><span class="op">)</span><span class="op">]</span>
-<span class="co">#&gt; # A tibble: 54 × 4</span>
+<span class="co">#&gt; # A tibble: 48 × 4</span>
 <span class="co">#&gt;    variant_id  chromosome_name chromosome_position chromosome_region</span>
 <span class="co">#&gt;    &lt;chr&gt;       &lt;chr&gt;                         &lt;int&gt; &lt;chr&gt;            </span>
 <span class="co">#&gt;  1 rs3747636   1                         204434531 1q32.1           </span>
@@ -699,7 +699,7 @@
 <span class="co">#&gt;  8 rs2290854   1                         204546897 1q32.1           </span>
 <span class="co">#&gt;  9 rs3789044   1                         204619973 1q32.1           </span>
 <span class="co">#&gt; 10 rs3789045   1                         204617684 1q32.1           </span>
-<span class="co">#&gt; # … with 44 more rows</span></code></pre></div>
+<span class="co">#&gt; # … with 38 more rows</span></code></pre></div>
 <p>The code above retrieves variants whose associated <code>efo_trait</code> is equal to <code>'triple-negative breast cancer'</code> or variants that are associated with gene <code>'MDM4'</code>.</p>
 <p>Alternatively, we may use <code>set_operation = 'intersection'</code> to combine results in an AND fashion:</p>
 <div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
