@@ -65,12 +65,12 @@ passing a vector of identifiers to \code{efo_id}.
 }
 \examples{
 # Get traits by study identifier
-get_traits(study_id = 'GCST001085')
+get_traits(study_id = 'GCST001085', warnings = FALSE)
 
 # Get traits by association identifier
-get_traits(association_id = '25389945')
+get_traits(association_id = '25389945', warnings = FALSE)
 
 # Get a trait by its EFO identifier
-get_traits(efo_id = 'EFO_0005537')
+get_traits(efo_id = 'EFO_0005537', warnings = FALSE)
 
 }

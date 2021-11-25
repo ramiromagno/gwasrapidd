@@ -85,15 +85,15 @@ passing a vector of identifiers to \code{variant_id}.
 }
 \examples{
 # Get a study by its accession identifier
-get_studies(study_id = 'GCST001085')
+get_studies(study_id = 'GCST001085', warnings = FALSE)
 
 # Get a study by association identifier
-get_studies(association_id = '25389945')
+get_studies(association_id = '25389945', warnings = FALSE)
 
 # Get studies by variant identifier
-get_studies(variant_id = 'rs3798440')
+get_studies(variant_id = 'rs3798440', warnings = FALSE)
 
 # Get studies by EFO trait identifier
-get_studies(efo_id = 'EFO_0005537')
+get_studies(efo_id = 'EFO_0005537', warnings = FALSE)
 
 }

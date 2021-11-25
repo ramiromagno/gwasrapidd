@@ -70,15 +70,15 @@ passing a vector of identifiers to \code{variant_id}.
 }
 \examples{
 # Get an association by study identifier
-get_associations(study_id = 'GCST001085')
+get_associations(study_id = 'GCST001085', warnings = FALSE)
 
 # Get an association by association identifier
-get_associations(association_id = '25389945')
+get_associations(association_id = '25389945', warnings = FALSE)
 
 # Get associations by variant identifier
-get_associations(variant_id = 'rs3798440')
+get_associations(variant_id = 'rs3798440', warnings = FALSE)
 
 # Get associations by EFO trait identifier
-get_associations(efo_id = 'EFO_0005537')
+get_associations(efo_id = 'EFO_0005537', warnings = FALSE)
 
 }

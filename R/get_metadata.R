@@ -79,7 +79,7 @@ metadata_lst <- function(
 #' \item \code{usage_start_date}: Date since this combination of resource versions has been in use.
 #' }
 #' @examples
-#' get_metadata()
+#' get_metadata(warnings = FALSE)
 #' @export
 get_metadata <- function(verbose = FALSE, warnings = TRUE) {
   response <- gc_request("/metadata", verbose = verbose, warnings = warnings)
