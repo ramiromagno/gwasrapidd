@@ -3,6 +3,8 @@
 
 # gwasrapidd <img src="man/figures/logo.svg" align="right" height=140/>
 
+[![CRAN
+status](https://www.r-pkg.org/badges/version/gwasrapidd)](https://CRAN.R-project.org/package=gwasrapidd)
 [![](https://img.shields.io/badge/doi-10.1093/bioinformatics/btz605-blue.svg)](https://doi.org/10.1093/bioinformatics/btz605)
 [![](https://img.shields.io/badge/Altmetric-38-yellow.svg)](https://www.altmetric.com/details/64505748)
 [![R build
@@ -11,8 +13,6 @@ status](https://github.com/ramiromagno/gwasrapidd/workflows/R-CMD-check/badge.sv
 coverage](https://codecov.io/gh/ramiromagno/gwasrapidd/branch/master/graph/badge.svg)](https://app.codecov.io/gh/ramiromagno/gwasrapidd?branch=master)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html)
-[![](https://img.shields.io/badge/devel%20version-0.99.11-blue.svg)](https://github.com/ramiromagno/gwasrapidd)
 
 The goal of `{gwasrapidd}` is to provide programmatic access to the
 [NHGRI-EBI Catalog](https://www.ebi.ac.uk/gwas) of published genome-wide
