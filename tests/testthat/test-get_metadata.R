@@ -176,6 +176,7 @@ with_mock_api({
   })
 })
 
+with_mock_api({
 test_that("get_metadata",
           {
             lst0 <- metadata_lst()
@@ -187,4 +188,4 @@ test_that("get_metadata",
               expect_identical(get_metadata(warnings = FALSE), lst0)
             )
 })
-
+})
