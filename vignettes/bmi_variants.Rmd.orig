@@ -1,0 +1,82 @@
+---
+title: "Variants associated with Body Mass Index (BMI)"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Variants associated with Body Mass Index (BMI)}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+Start by loading `{gwasrapidd}`, and `{dplyr}` and `{tidyr}`:
+
+```{r setup, warning = FALSE, message=FALSE}
+library(dplyr)
+library(tidyr)
+library(gwasrapidd)
+```
+
+Let's say you want to retrieve all variants associated with the phenotype *Body Mass Index (BMI)*. Moreover, you want to sort them by their risk allele (minor allele), as well as the effect size (beta coefficient) and p-value.
+
+First we start by finding the  Experimental Factor Ontology (EFO) identifier(s) corresponding to BMI. To do this, we start by downloading all traits in the GWAS Catalog.
+
+```{r message = FALSE}
+all_traits <- get_traits()
+```
+
+Then look for 'BMI' in the trait description column.
+
+```{r}
+dplyr::filter(all_traits@traits, grepl('BMI', trait, ignore.case = TRUE))
+```
+
+So there are several phenotypes whose description includes the keyword 'BMI'. However, only the EFO trait `'EFO_0005937'` ('longitudinal BMI measurement') really corresponds to BMI as a phenotypic trait. All other traits are adjusted for BMI but are not BMI traits per se (you can further confirm this by looking at each trait description, just by opening your web browser with each respective URI).
+
+To get statistical association data for the trait 'longitudinal BMI measurement' (`'EFO_0005937'`), as well as associated variants and effect sizes, we use the gwasrapidd `get_associations()` function:
+
+```{r get_associations}
+bmi_associations <- get_associations(efo_id = 'EFO_0005937')
+```
+
+The S4 object `bmi_associations` contains several tables, namely `'associations'`, `'loci'`, `'risk_alleles'`, `'genes'`, `'ensembl_ids'` and `'entrez_ids'`:
+
+```{r tables}
+slotNames(bmi_associations)
+```
+
+From table `'associations'` we can extract the variables:
+
+- `'association_id'`
+- `'pvalue'`
+- `'beta_number'`
+- `'beta_unit'`
+- `'beta_direction'`
+
+whereas from table `'risk_alleles'` we can obtain:
+
+- `'association_id'`
+- `'variant_id'`
+- `'risk_allele'`.
+
+We extract all these variables and combine them into one single dataframe (`bmi_variants`), using `'association_id'` as the matching key:
+
+```{r result}
+tbl01 <- dplyr::select(bmi_associations@risk_alleles, association_id, variant_id, risk_allele)
+tbl02 <- dplyr::select(bmi_associations@associations, association_id, pvalue, beta_number, beta_unit, beta_direction)
+
+bmi_variants <- dplyr::left_join(tbl01, tbl02, by = 'association_id') %>%
+  tidyr::drop_na() %>%
+  dplyr::arrange(variant_id, risk_allele)
+```
+
+The final results show `r nrow(bmi_variants)` associations. Note that some variant/allele combinations might be repeated as the same variant/allele combination might have been assessed in more than one GWAS study.
+
+```{r final}
+bmi_variants
+```

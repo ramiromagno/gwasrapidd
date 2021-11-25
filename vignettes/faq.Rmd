@@ -8,26 +8,21 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r setup, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
-```
+
 
 ## 1 | How to be sure that I can establish a connection to the GWAS Catalog server?
 
 You can check that gwasrapidd is able to connect to [https://www.ebi.ac.uk](https://www.ebi.ac.uk) by making a connection attempt with the function `is_ebi_reachable()`:
 
-```{r eval=FALSE}
-library(gwasrapidd)
+
+```r
 is_ebi_reachable()
 ```
 
 Returns `TRUE` if the connection is possible, or `FALSE` otherwise. If the connection is not possible, use the parameter `chatty = TRUE` to learn at what point the connection is failing.
 
-```{r eval=FALSE}
-library(gwasrapidd)
+
+```r
 is_ebi_reachable(chatty = TRUE)
 ```
 
@@ -36,9 +31,20 @@ is_ebi_reachable(chatty = TRUE)
 
 The GWAS Catalog is mapped against [Ensembl](https://www.ensembl.org), [dbSNP](https://www.ncbi.nlm.nih.gov/snp/) and a specific [assembly version](https://www.ncbi.nlm.nih.gov/grc/human) of the human genome. You can get this info with `get_metadata()`:
 
-```{r}
-library(gwasrapidd)
+
+```r
 get_metadata()
+#> $ensembl_release_number
+#> [1] 104
+#> 
+#> $genome_build_version
+#> [1] "GRCh38.p13"
+#> 
+#> $dbsnp_version
+#> [1] 154
+#> 
+#> $usage_start_date
+#> [1] "2021-06-24 19:00:02 UTC"
 ```
 
 ## 3 | How to perform batch search with gwasrapidd?
@@ -47,27 +53,302 @@ The four main retrieval functions `get_studies()`, `get_associations()`, `get_va
 
 Get studies by study identifiers (GCST002420 or GCST000392):
 
-```{r}
-library(gwasrapidd)
+
+```r
 get_studies(study_id = c('GCST002420', 'GCST000392'))
+#> An object of class "studies"
+#> Slot "studies":
+#> # A tibble: 2 × 13
+#>   study_id   reported_trait   initial_sample_size  replication_sample… gxe   gxg   snp_count qualifier imputed pooled study_design_co… full_pvalue_set user_requested
+#>   <chr>      <chr>            <chr>                <chr>               <lgl> <lgl>     <int> <chr>     <lgl>   <lgl>  <chr>            <lgl>           <lgl>         
+#> 1 GCST002420 Binge eating be… 206 European ancest… 70 European ancest… FALSE FALSE   8466825 <NA>      TRUE    FALSE  <NA>             FALSE           FALSE         
+#> 2 GCST000392 Type 1 diabetes  7,514 European ance… 4,267 European anc… FALSE FALSE    841622 <NA>      TRUE    FALSE  <NA>             TRUE            FALSE         
+#> 
+#> Slot "genotyping_techs":
+#> # A tibble: 2 × 2
+#>   study_id   genotyping_technology       
+#>   <chr>      <chr>                       
+#> 1 GCST002420 Genome-wide genotyping array
+#> 2 GCST000392 Genome-wide genotyping array
+#> 
+#> Slot "platforms":
+#> # A tibble: 3 × 2
+#>   study_id   manufacturer
+#>   <chr>      <chr>       
+#> 1 GCST002420 Affymetrix  
+#> 2 GCST000392 Illumina    
+#> 3 GCST000392 Affymetrix  
+#> 
+#> Slot "ancestries":
+#> # A tibble: 4 × 4
+#>   study_id   ancestry_id type        number_of_individuals
+#>   <chr>            <int> <chr>                       <int>
+#> 1 GCST002420           1 initial                       929
+#> 2 GCST002420           2 replication                   828
+#> 3 GCST000392           1 initial                     16559
+#> 4 GCST000392           2 replication                 13279
+#> 
+#> Slot "ancestral_groups":
+#> # A tibble: 4 × 3
+#>   study_id   ancestry_id ancestral_group
+#>   <chr>            <int> <chr>          
+#> 1 GCST002420           1 European       
+#> 2 GCST002420           2 European       
+#> 3 GCST000392           1 European       
+#> 4 GCST000392           2 European       
+#> 
+#> Slot "countries_of_origin":
+#> # A tibble: 2 × 5
+#>   study_id   ancestry_id country_name major_area region
+#>   <chr>            <int> <chr>        <chr>      <chr> 
+#> 1 GCST002420           1 <NA>         <NA>       <NA>  
+#> 2 GCST002420           2 <NA>         <NA>       <NA>  
+#> 
+#> Slot "countries_of_recruitment":
+#> # A tibble: 5 × 5
+#>   study_id   ancestry_id country_name major_area       region         
+#>   <chr>            <int> <chr>        <chr>            <chr>          
+#> 1 GCST002420           1 U.S.         Northern America <NA>           
+#> 2 GCST002420           2 U.S.         Northern America <NA>           
+#> 3 GCST000392           1 U.K.         Europe           Northern Europe
+#> 4 GCST000392           2 U.K.         Europe           Northern Europe
+#> 5 GCST000392           2 Denmark      Europe           Northern Europe
+#> 
+#> Slot "publications":
+#> # A tibble: 2 × 7
+#>   study_id   pubmed_id publication_date publication     title                                                                       author_fullname author_orcid     
+#>   <chr>          <int> <date>           <chr>           <chr>                                                                       <chr>           <chr>            
+#> 1 GCST002420  24882193 2014-04-19       J Affect Disord Bipolar disorder with comorbid binge eating history: a genome-wide associa… Winham SJ       0000-0002-8492-9…
+#> 2 GCST000392  19430480 2009-05-10       Nat Genet       Genome-wide association study and meta-analysis find that over 40 loci aff… Barrett JC      <NA>
 ```
 
 Get associations by variant identifiers (rs3798440 or rs7329174):
 
-```{r}
+
+```r
 get_associations(variant_id = c('rs3798440', 'rs7329174'))
+#> An object of class "associations"
+#> Slot "associations":
+#> # A tibble: 6 × 17
+#>   association_id  pvalue pvalue_descript… pvalue_mantissa pvalue_exponent multiple_snp_ha… snp_interaction snp_type standard_error range or_per_copy_num… beta_number
+#>   <chr>            <dbl> <chr>                      <int>           <int> <lgl>            <lgl>           <chr>             <dbl> <chr>            <dbl>       <dbl>
+#> 1 24299710         3e-10 <NA>                           3             -10 FALSE            TRUE            novel                NA <NA>             NA             NA
+#> 2 16617            1e- 8 <NA>                           1              -8 FALSE            FALSE           novel                NA [1.1…             1.26          NA
+#> 3 26451            8e- 9 <NA>                           8              -9 FALSE            FALSE           novel                NA [1.1…             1.27          NA
+#> 4 26394            6e- 6 <NA>                           6              -6 FALSE            FALSE           known                NA <NA>              1.45          NA
+#> 5 17433639         3e- 6 (Chinese)                      3              -6 FALSE            FALSE           known                NA <NA>              1.27          NA
+#> 6 92481688         3e- 6 <NA>                           3              -6 FALSE            FALSE           known                NA <NA>             NA             NA
+#> # … with 5 more variables: beta_unit <chr>, beta_direction <chr>, beta_description <chr>, last_mapping_date <dttm>, last_update_date <dttm>
+#> 
+#> Slot "loci":
+#> # A tibble: 7 × 4
+#>   association_id locus_id haplotype_snp_count description          
+#>   <chr>             <int>               <int> <chr>                
+#> 1 24299710              1                  NA SNP x SNP interaction
+#> 2 24299710              2                  NA SNP x SNP interaction
+#> 3 16617                 1                  NA Single variant       
+#> 4 26451                 1                  NA Single variant       
+#> 5 26394                 1                  NA Single variant       
+#> 6 17433639              1                  NA Single variant       
+#> 7 92481688              1                  NA Single variant       
+#> 
+#> Slot "risk_alleles":
+#> # A tibble: 7 × 7
+#>   association_id locus_id variant_id risk_allele risk_frequency genome_wide limited_list
+#>   <chr>             <int> <chr>      <chr>                <dbl> <lgl>       <lgl>       
+#> 1 24299710              1 rs3798440  A                   NA     TRUE        FALSE       
+#> 2 24299710              2 rs9350602  C                   NA     TRUE        FALSE       
+#> 3 16617                 1 rs7329174  G                   NA     NA          NA          
+#> 4 26451                 1 rs7329174  G                   NA     NA          NA          
+#> 5 26394                 1 rs7329174  G                   NA     NA          NA          
+#> 6 17433639              1 rs7329174  <NA>                 0.211 FALSE       FALSE       
+#> 7 92481688              1 rs7329174  G                   NA     FALSE       FALSE       
+#> 
+#> Slot "genes":
+#> # A tibble: 10 × 3
+#>    association_id locus_id gene_name   
+#>    <chr>             <int> <chr>       
+#>  1 24299710              1 MYO6        
+#>  2 24299710              2 MYO6        
+#>  3 16617                 1 ELF1        
+#>  4 26451                 1 WBP4        
+#>  5 26451                 1 ELF1        
+#>  6 26451                 1 microRNA2276
+#>  7 26451                 1 SLC25A15    
+#>  8 26394                 1 ELF1        
+#>  9 17433639              1 ELF1        
+#> 10 92481688              1 <NA>        
+#> 
+#> Slot "ensembl_ids":
+#> # A tibble: 10 × 4
+#>    association_id locus_id gene_name    ensembl_id     
+#>    <chr>             <int> <chr>        <chr>          
+#>  1 24299710              1 MYO6         ENSG00000196586
+#>  2 24299710              2 MYO6         ENSG00000196586
+#>  3 16617                 1 ELF1         ENSG00000120690
+#>  4 26451                 1 WBP4         ENSG00000120688
+#>  5 26451                 1 ELF1         ENSG00000120690
+#>  6 26451                 1 microRNA2276 <NA>           
+#>  7 26451                 1 SLC25A15     ENSG00000102743
+#>  8 26394                 1 ELF1         ENSG00000120690
+#>  9 17433639              1 ELF1         ENSG00000120690
+#> 10 92481688              1 <NA>         <NA>           
+#> 
+#> Slot "entrez_ids":
+#> # A tibble: 10 × 4
+#>    association_id locus_id gene_name    entrez_id
+#>    <chr>             <int> <chr>        <chr>    
+#>  1 24299710              1 MYO6         4646     
+#>  2 24299710              2 MYO6         4646     
+#>  3 16617                 1 ELF1         1997     
+#>  4 26451                 1 WBP4         11193    
+#>  5 26451                 1 ELF1         1997     
+#>  6 26451                 1 microRNA2276 <NA>     
+#>  7 26451                 1 SLC25A15     10166    
+#>  8 26394                 1 ELF1         1997     
+#>  9 17433639              1 ELF1         1997     
+#> 10 92481688              1 <NA>         <NA>
 ```
 
 Get associations by traits (braces or binge eating or gambling):
 
-```{r}
+
+```r
 get_associations(efo_trait = c('braces', 'binge eating', 'gambling'))
+#> An object of class "associations"
+#> Slot "associations":
+#> # A tibble: 14 × 17
+#>    association_id pvalue pvalue_descript… pvalue_mantissa pvalue_exponent multiple_snp_ha… snp_interaction snp_type standard_error range or_per_copy_num… beta_number
+#>    <chr>           <dbl> <chr>                      <int>           <int> <lgl>            <lgl>           <chr>             <dbl> <chr>            <dbl>       <dbl>
+#>  1 15608            4e-7 (braces)                       4              -7 FALSE            FALSE           novel                NA <NA>             NA             NA
+#>  2 44592            9e-7 <NA>                           9              -7 FALSE            FALSE           novel                NA <NA>              1.99          NA
+#>  3 44589            1e-6 <NA>                           1              -6 FALSE            FALSE           novel                NA <NA>              1.92          NA
+#>  4 44590            4e-6 <NA>                           4              -6 FALSE            FALSE           novel                NA <NA>              4.89          NA
+#>  5 27460823         1e-6 <NA>                           1              -6 FALSE            FALSE           novel                NA <NA>              3.23          NA
+#>  6 27460830         1e-6 <NA>                           1              -6 FALSE            FALSE           novel                NA <NA>              2.33          NA
+#>  7 27460844         1e-8 <NA>                           1              -8 FALSE            FALSE           novel                NA <NA>              2.86          NA
+#>  8 27460858         3e-7 <NA>                           3              -7 FALSE            FALSE           novel                NA <NA>              1.75          NA
+#>  9 27460864         3e-7 <NA>                           3              -7 FALSE            FALSE           novel                NA <NA>              2.08          NA
+#> 10 27460870         1e-6 <NA>                           1              -6 FALSE            FALSE           novel                NA <NA>              2             NA
+#> 11 27460851         9e-8 <NA>                           9              -8 FALSE            FALSE           novel                NA <NA>              3.85          NA
+#> 12 27460805         3e-8 <NA>                           3              -8 FALSE            FALSE           novel                NA <NA>              1.92          NA
+#> 13 27460811         1e-7 <NA>                           1              -7 FALSE            FALSE           novel                NA <NA>              1.56          NA
+#> 14 27460817         7e-7 <NA>                           7              -7 FALSE            FALSE           novel                NA <NA>              1.6           NA
+#> # … with 5 more variables: beta_unit <chr>, beta_direction <chr>, beta_description <chr>, last_mapping_date <dttm>, last_update_date <dttm>
+#> 
+#> Slot "loci":
+#> # A tibble: 14 × 4
+#>    association_id locus_id haplotype_snp_count description   
+#>    <chr>             <int>               <int> <chr>         
+#>  1 15608                 1                  NA Single variant
+#>  2 44592                 1                  NA Single variant
+#>  3 44589                 1                  NA Single variant
+#>  4 44590                 1                  NA Single variant
+#>  5 27460823              1                  NA Single variant
+#>  6 27460830              1                  NA Single variant
+#>  7 27460844              1                  NA Single variant
+#>  8 27460858              1                  NA Single variant
+#>  9 27460864              1                  NA Single variant
+#> 10 27460870              1                  NA Single variant
+#> 11 27460851              1                  NA Single variant
+#> 12 27460805              1                  NA Single variant
+#> 13 27460811              1                  NA Single variant
+#> 14 27460817              1                  NA Single variant
+#> 
+#> Slot "risk_alleles":
+#> # A tibble: 14 × 7
+#>    association_id locus_id variant_id  risk_allele risk_frequency genome_wide limited_list
+#>    <chr>             <int> <chr>       <chr>                <dbl> <lgl>       <lgl>       
+#>  1 15608                 1 rs1535480   <NA>                 NA    NA          NA          
+#>  2 44592                 1 rs6006893   <NA>                 NA    NA          NA          
+#>  3 44589                 1 rs10198175  <NA>                 NA    NA          NA          
+#>  4 44590                 1 rs13233490  <NA>                 NA    NA          NA          
+#>  5 27460823              1 rs182107583 C                     0.04 FALSE       FALSE       
+#>  6 27460830              1 rs76087671  T                     0.05 FALSE       FALSE       
+#>  7 27460844              1 rs111940429 T                     0.04 FALSE       FALSE       
+#>  8 27460858              1 rs7337127   T                     0.15 FALSE       FALSE       
+#>  9 27460864              1 rs145763646 A                     0.1  FALSE       FALSE       
+#> 10 27460870              1 rs73057489  C                     0.07 FALSE       FALSE       
+#> 11 27460851              1 rs17810023  T                     0.02 FALSE       FALSE       
+#> 12 27460805              1 rs726170    T                     0.12 FALSE       FALSE       
+#> 13 27460811              1 rs7904579   G                     0.37 FALSE       FALSE       
+#> 14 27460817              1 rs1950038   T                     0.3  FALSE       FALSE       
+#> 
+#> Slot "genes":
+#> # A tibble: 15 × 3
+#>    association_id locus_id gene_name   
+#>    <chr>             <int> <chr>       
+#>  1 15608                 1 <NA>        
+#>  2 44592                 1 PRR5        
+#>  3 44589                 1 APOB        
+#>  4 44590                 1 PER4        
+#>  5 27460823              1 LOC101929321
+#>  6 27460830              1 intergenic  
+#>  7 27460844              1 AC096669.1  
+#>  8 27460858              1 intergenic  
+#>  9 27460864              1 SLC25A26    
+#> 10 27460870              1 intergenic  
+#> 11 27460851              1 RP11-250B2.3
+#> 12 27460805              1 PRR5        
+#> 13 27460805              1 ARHGAP8     
+#> 14 27460811              1 CUBN        
+#> 15 27460817              1 Intergenic  
+#> 
+#> Slot "ensembl_ids":
+#> # A tibble: 16 × 4
+#>    association_id locus_id gene_name    ensembl_id     
+#>    <chr>             <int> <chr>        <chr>          
+#>  1 15608                 1 <NA>         <NA>           
+#>  2 44592                 1 PRR5         ENSG00000186654
+#>  3 44589                 1 APOB         ENSG00000084674
+#>  4 44590                 1 PER4         <NA>           
+#>  5 27460823              1 LOC101929321 <NA>           
+#>  6 27460830              1 intergenic   <NA>           
+#>  7 27460844              1 AC096669.1   ENSG00000225588
+#>  8 27460858              1 intergenic   <NA>           
+#>  9 27460864              1 SLC25A26     ENSG00000282739
+#> 10 27460864              1 SLC25A26     ENSG00000144741
+#> 11 27460870              1 intergenic   <NA>           
+#> 12 27460851              1 RP11-250B2.3 <NA>           
+#> 13 27460805              1 PRR5         ENSG00000186654
+#> 14 27460805              1 ARHGAP8      ENSG00000241484
+#> 15 27460811              1 CUBN         ENSG00000107611
+#> 16 27460817              1 Intergenic   <NA>           
+#> 
+#> Slot "entrez_ids":
+#> # A tibble: 15 × 4
+#>    association_id locus_id gene_name    entrez_id
+#>    <chr>             <int> <chr>        <chr>    
+#>  1 15608                 1 <NA>         <NA>     
+#>  2 44592                 1 PRR5         55615    
+#>  3 44589                 1 APOB         338      
+#>  4 44590                 1 PER4         <NA>     
+#>  5 27460823              1 LOC101929321 101929321
+#>  6 27460830              1 intergenic   <NA>     
+#>  7 27460844              1 AC096669.1   <NA>     
+#>  8 27460858              1 intergenic   <NA>     
+#>  9 27460864              1 SLC25A26     115286   
+#> 10 27460870              1 intergenic   <NA>     
+#> 11 27460851              1 RP11-250B2.3 <NA>     
+#> 12 27460805              1 PRR5         55615    
+#> 13 27460805              1 ARHGAP8      23779    
+#> 14 27460811              1 CUBN         8029     
+#> 15 27460817              1 Intergenic   <NA>
 ```
 
 Get traits by PubMed identifiers (24882193 or 22780124):
 
-```{r}
+
+```r
 get_traits(pubmed_id = c('24882193', '22780124'))
+#> An object of class "traits"
+#> Slot "traits":
+#> # A tibble: 3 × 3
+#>   efo_id      trait              uri                                 
+#>   <chr>       <chr>              <chr>                               
+#> 1 EFO_0005924 binge eating       http://www.ebi.ac.uk/efo/EFO_0005924
+#> 2 EFO_0000289 bipolar disorder   http://www.ebi.ac.uk/efo/EFO_0000289
+#> 3 EFO_0004699 gambling behaviour http://www.ebi.ac.uk/efo/EFO_0004699
 ```
 
 The only search parameters that are not vectorised are `user_requested` and `full_pvalue_set` from `get_studies()`. These parameters are not vectorised because they take boolean values (`TRUE` or `FALSE`) and thus only one of the values is sensical to be used as a query at a given time.
@@ -84,17 +365,20 @@ As an example take the study with accession identifier `GCST000206` by EM Behren
 
 The (EFO) trait for the Behrens study is `chronic childhood arthritis`:
 
-```{r}
-library(gwasrapidd)
+
+```r
 efo_trait <- get_traits(study_id = 'GCST000206')
 efo_trait@traits$trait
+#> [1] "juvenile idiopathic arthritis"
 ```
 
 whereas the reported trait is `Arthritis (juvenile idiopathic)`:
 
-```{r}
+
+```r
 study <- get_studies(study_id = 'GCST000206')
 study@studies$reported_trait
+#> [1] "Arthritis (juvenile idiopathic)"
 ```
 
 ## 5 | Genomic coordinates of genomic contexts seem to be wrong?
@@ -113,8 +397,9 @@ For this you may use the function `get_variants()` with parameter `genomic_range
 
 For example, to search for variants in chromosome Y in the interval 14692000--14695000, you start by defining a list of 3 elements: `chromosome`, `start` and `end` that specify your genomic range:
 
-```{r}
-library(gwasrapidd)
+
+```r
+
 # 'chromosome' names are case sensitive, and should be uppercase.
 # 'start' and 'end' positions should be integer vectors.
 my_genomic_range <- list(
@@ -125,16 +410,22 @@ my_genomic_range <- list(
 
 Now you can use `my_genomic_range` to retrieve the variants:
 
-```{r}
+
+```r
 chr_Y_variants <- get_variants(genomic_range = my_genomic_range)
 chr_Y_variants@variants[c('variant_id', 'functional_class')]
+#> # A tibble: 1 × 2
+#>   variant_id functional_class
+#>   <chr>      <chr>           
+#> 1 rs2115848  intron_variant
 ```
 
 ### Multiple genomic ranges
 
 To search in multiple regions, construct your genomic range list with those locations just like in the previous example. For example, let's search now for variants in chromosome X and Y, both in range 13000000--15000000:
 
-```{r}
+
+```r
 my_genomic_range <- list(
   chromosome = c('X', 'Y'),
   start = c(13000000L, 13000000L),
@@ -144,74 +435,143 @@ chr_XY_variants <- get_variants(genomic_range = my_genomic_range)
 chr_XY_variants@variants[c('variant_id',
                            'chromosome_name',
                            'chromosome_position')]
+#> # A tibble: 19 × 3
+#>    variant_id  chromosome_name chromosome_position
+#>    <chr>       <chr>                         <int>
+#>  1 rs111689944 X                          13494655
+#>  2 rs73633565  X                          13459192
+#>  3 rs5980075   X                          14932409
+#>  4 rs142204301 X                          13358691
+#>  5 rs2361151   X                          13503433
+#>  6 rs35164803  X                          14911253
+#>  7 rs12558341  X                          13695943
+#>  8 rs138331350 X                          14841981
+#>  9 rs66819623  X                          13936278
+#> 10 rs61273829  X                          14150876
+#> 11 rs6528024   X                          13912803
+#> 12 rs850637    X                          13005622
+#> 13 rs7063195   X                          13492087
+#> 14 rs55943282  X                          13932151
+#> 15 rs139120857 X                          14875053
+#> 16 rs5978649   X                          13596999
+#> 17 rs749624882 X                          14929148
+#> 18 rs2032658   Y                          13470103
+#> 19 rs2115848   Y                          14692972
 ```
 
 ### Searching variants by cytogenetic regions
 
 To search for variants within a cytogenetic band you can use the parameter `cytogenetic_band` of `get_variants()`. Here is an example, again for chromosome Y, using the cytogenetic band `'Yq11.221'` as query:
 
-```{r}
+
+```r
 my_variants <- get_variants(cytogenetic_band = 'Yq11.221')
 my_variants@variants[c('variant_id',
                        'chromosome_name',
                        'chromosome_position')]
+#> # A tibble: 3 × 3
+#>   variant_id chromosome_name chromosome_position
+#>   <chr>      <chr>                         <int>
+#> 1 rs2115848  Y                          14692972
+#> 2 rs2032658  Y                          13470103
+#> 3 rs2032624  Y                          12914512
 ```
 
 How to know what are the cytogenetic bands for querying? We provide a dataset (dataframe) named `cytogenetic_bands` that you can use:
 
-```{r}
+
+```r
 # ?cytogenetic_bands for more details.
 cytogenetic_bands
+#> # A tibble: 862 × 8
+#>    cytogenetic_band chromosome    start      end  length assembly stain  last_download_date      
+#>    <chr>            <chr>         <int>    <int>   <dbl> <chr>    <chr>  <chr>                   
+#>  1 1p36.33          1                 1  2300000 2300000 GRCh38   gneg   Thu Jun 27 15:09:22 2019
+#>  2 1p36.32          1           2300001  5300000 3000000 GRCh38   gpos25 Thu Jun 27 15:09:22 2019
+#>  3 1p36.31          1           5300001  7100000 1800000 GRCh38   gneg   Thu Jun 27 15:09:22 2019
+#>  4 1p36.23          1           7100001  9100000 2000000 GRCh38   gpos25 Thu Jun 27 15:09:22 2019
+#>  5 1p36.22          1           9100001 12500000 3400000 GRCh38   gneg   Thu Jun 27 15:09:22 2019
+#>  6 1p36.21          1          12500001 15900000 3400000 GRCh38   gpos50 Thu Jun 27 15:09:22 2019
+#>  7 1p36.13          1          15900001 20100000 4200000 GRCh38   gneg   Thu Jun 27 15:09:22 2019
+#>  8 1p36.12          1          20100001 23600000 3500000 GRCh38   gpos25 Thu Jun 27 15:09:22 2019
+#>  9 1p36.11          1          23600001 27600000 4000000 GRCh38   gneg   Thu Jun 27 15:09:22 2019
+#> 10 1p35.3           1          27600001 29900000 2300000 GRCh38   gpos25 Thu Jun 27 15:09:22 2019
+#> # … with 852 more rows
 ```
 
 Let's say you want to search for all variants in the shorter arm (p) of chromosome 21, you can take advantage of the `cytogenetic_bands` to get all the corresponding cytogenetic band names:
 
-```{r}
+
+```r
 # Install package dplyr if you do not have it.
 chr21_p_bands <- dplyr::filter(cytogenetic_bands, grepl('^21p', cytogenetic_band)) %>%
   dplyr::pull(cytogenetic_band)
 chr21_p_bands
+#> [1] "21p13"   "21p12"   "21p11.2" "21p11.1"
 ```
 
 Now search by `cytogenetic_band`:
-```{r}
+
+```r
 my_variants <- get_variants(cytogenetic_band = chr21_p_bands)
 my_variants@variants[c('variant_id',
                        'chromosome_name',
                        'chromosome_position',
                        'chromosome_region')]
+#> # A tibble: 2 × 4
+#>   variant_id chromosome_name chromosome_position chromosome_region
+#>   <chr>      <chr>                         <int> <chr>            
+#> 1 rs240444   21                         10510446 21p11.2          
+#> 2 rs10439884 21                         10540506 21p11.2
 ```
 
 ## 7 | Genomic range for an entire chromosome?
 
-You can get the total length of a chromosome by using the provided dataset: `cytogenetic_bands`. Here is an example for chromosome 15:
+You can get the total length of a chromosome by using the provided data set: `cytogenetic_bands`. Here is an example for chromosome 15:
 
-```{r}
-library(gwasrapidd)
+
+```r
+
 # Install dplyr first.
 dplyr::filter(cytogenetic_bands, chromosome == '15') %>%
   dplyr::summarise(chromosome = dplyr::first(chromosome),
                    start = min(start),
                    end = max(end)
                    )
+#> # A tibble: 1 × 3
+#>   chromosome start       end
+#>   <chr>      <int>     <int>
+#> 1 15             1 101991189
 ```
 
 ## 8 | How to keep track of which queries generated which results?
 
-Currently, there is not an implemented solution in gwasrapidd. For example, if you search for variants by EFO identifier (`efo_id`):
+Currently, there is not an implemented solution in `{gwasrapidd}`. For example, if you search for variants by EFO identifier (`efo_id`):
 
-```{r}
-library(gwasrapidd)
+
+```r
 my_efo_ids <- c('EFO_0005543', 'EFO_0004762')
 my_variants <- get_variants(efo_id = my_efo_ids)
 my_variants@variants$variant_id
+#>   [1] "rs11706832"  "rs498872"    "rs72714270"  "rs11599775"  "rs12803321"  "rs7125115"   "rs10069690"  "rs12752552"  "rs648044"    "rs111976262" "rs11598018" 
+#>  [12] "rs4252707"   "rs688755"    "rs634537"    "rs78378222"  "rs4975538"   "rs2297433"   "rs55705857"  "rs320337"    "rs10852606"  "rs2297440"   "rs1938964"  
+#>  [23] "rs1106639"   "rs12076373"  "rs3772190"   "rs2235573"   "rs10842893"  "rs7572263"   "rs2736100"   "rs80351950"  "rs5839764"   "rs77633900"  "rs3751667"  
+#>  [34] "rs7107785"   "rs72714236"  "rs10131032"  "rs4774756"   "rs4977756"   "rs9841110"   "rs6010620"   "rs11233250"  "rs75061358"  "rs10927065"  "rs1275600"  
+#>  [45] "rs11979158"  "rs78355601"  "rs10411345"  "rs144085478" "rs12214617"  "rs181216459" "rs118086804" "rs12456390"  "rs4714729"   "rs12199215"  "rs2639990"  
+#>  [56] "rs9472155"   "rs144160960" "rs34528081"  "rs4082730"   "rs7763358"   "rs55864163"  "rs9787438"   "rs150821445" "rs12445232"  "rs6598475"   "rs10934631" 
+#>  [67] "rs6475938"   "rs6479877"   "rs6921438"   "rs10886366"  "rs10761741"  "rs114694170" "rs77961527"  "rs112215592" "rs117580153" "rs73872715"  "rs4782371"  
+#>  [78] "rs4513773"   "rs186725382" "rs139893147" "rs10153304"  "rs34524635"  "rs7043199"   "rs187918360" "rs11639051"  "rs1740073"   "rs71779653"  "rs34881325" 
+#>  [89] "rs181558074" "rs2375981"   "rs59706856"  "rs2304058"   "rs73418461"  "rs10761750"  "rs8045833"   "rs10761731"  "rs7030781"   "rs180936035" "rs550057"   
+#> [100] "rs9332599"   "rs75455100"  "rs143479231" "rs10822155"  "rs7767396"   "rs191332118" "rs186066666" "rs11392719"  "rs6993770"   "rs61818787"  "rs144820908"
+#> [111] "rs61829244"  "rs6722871"   "rs10738760"
 ```
 
 So it is not immediately obvious which variants resulted from the query `'EFO_0005543'` or `'EFO_0004762'`.
 
 A possible workaround is to make multiple independent queries and save your results in a list whose names are the respective queries:
 
-```{r}
+
+```r
 # Install purrr first.
 # Add names to my_efo_ids
 names(my_efo_ids) <- my_efo_ids
@@ -222,14 +582,28 @@ Now you can see which variants are associated with each EFO identifier.
 
 For `'EFO_0005543'` we got the following variants:
 
-```{r}
+
+```r
 my_variants[['EFO_0005543']]@variants$variant_id
+#>  [1] "rs11706832"  "rs498872"    "rs72714270"  "rs11599775"  "rs12803321"  "rs7125115"   "rs10069690"  "rs12752552"  "rs648044"    "rs111976262" "rs11598018" 
+#> [12] "rs4252707"   "rs688755"    "rs634537"    "rs78378222"  "rs4975538"   "rs2297433"   "rs55705857"  "rs320337"    "rs10852606"  "rs2297440"   "rs1938964"  
+#> [23] "rs1106639"   "rs12076373"  "rs3772190"   "rs2235573"   "rs10842893"  "rs7572263"   "rs2736100"   "rs80351950"  "rs5839764"   "rs77633900"  "rs3751667"  
+#> [34] "rs7107785"   "rs72714236"  "rs10131032"  "rs4774756"   "rs4977756"   "rs9841110"   "rs6010620"   "rs11233250"  "rs75061358"  "rs10927065"  "rs1275600"  
+#> [45] "rs11979158"
 ```
 
 And for `'EFO_0004762'`:
 
-```{r}
+
+```r
 my_variants[['EFO_0004762']]@variants$variant_id
+#>  [1] "rs78355601"  "rs10411345"  "rs144085478" "rs12214617"  "rs181216459" "rs118086804" "rs12456390"  "rs4714729"   "rs12199215"  "rs2639990"   "rs9472155"  
+#> [12] "rs144160960" "rs34528081"  "rs4082730"   "rs7763358"   "rs55864163"  "rs9787438"   "rs150821445" "rs12445232"  "rs6598475"   "rs10934631"  "rs6475938"  
+#> [23] "rs6479877"   "rs6921438"   "rs10886366"  "rs10761741"  "rs114694170" "rs77961527"  "rs112215592" "rs117580153" "rs73872715"  "rs4782371"   "rs4513773"  
+#> [34] "rs186725382" "rs139893147" "rs10153304"  "rs34524635"  "rs7043199"   "rs187918360" "rs11639051"  "rs1740073"   "rs71779653"  "rs34881325"  "rs181558074"
+#> [45] "rs2375981"   "rs59706856"  "rs2304058"   "rs73418461"  "rs10761750"  "rs8045833"   "rs10761731"  "rs7030781"   "rs180936035" "rs550057"    "rs9332599"  
+#> [56] "rs75455100"  "rs143479231" "rs10822155"  "rs7767396"   "rs191332118" "rs186066666" "rs11392719"  "rs6993770"   "rs61818787"  "rs144820908" "rs61829244" 
+#> [67] "rs6722871"   "rs10738760"
 ```
 
 ## 9 | How to combine results from multiple queries?
@@ -238,7 +612,8 @@ The four main retrieval functions `get_studies()`, `get_associations()`, `get_va
 
 Use `set_operation = 'union'` to combine results in an OR fashion:
 
-```{r}
+
+```r
 my_variants_OR <- get_variants(
   efo_trait = 'triple-negative breast cancer',
   gene_name = 'MDM4',
@@ -248,13 +623,28 @@ my_variants_OR@variants[c('variant_id',
                        'chromosome_name',
                        'chromosome_position',
                        'chromosome_region')]
+#> # A tibble: 41 × 4
+#>    variant_id  chromosome_name chromosome_position chromosome_region
+#>    <chr>       <chr>                         <int> <chr>            
+#>  1 rs3747636   1                         204434531 1q32.1           
+#>  2 rs10793765  1                         204580247 1q32.1           
+#>  3 rs116661163 1                         204641544 1q32.1           
+#>  4 rs12083887  1                         118339066 1p12             
+#>  5 rs12143943  1                         204602943 1q32.1           
+#>  6 rs1008833   1                         204457167 1q32.1           
+#>  7 rs2137255   1                         204457245 1q32.1           
+#>  8 rs2290854   1                         204546897 1q32.1           
+#>  9 rs3789044   1                         204619973 1q32.1           
+#> 10 rs3789045   1                         204617684 1q32.1           
+#> # … with 31 more rows
 ```
 
 The code above retrieves variants whose associated `efo_trait` is equal to `'triple-negative breast cancer'` or variants that are associated with gene `'MDM4'`.
 
 Alternatively, we may use `set_operation = 'intersection'` to combine results in an AND fashion:
 
-```{r}
+
+```r
 my_variants_AND <- get_variants(
   efo_trait = 'triple-negative breast cancer',
   gene_name = 'MDM4',
@@ -264,6 +654,10 @@ my_variants_AND@variants[c('variant_id',
                        'chromosome_name',
                        'chromosome_position',
                        'chromosome_region')]
+#> # A tibble: 1 × 4
+#>   variant_id chromosome_name chromosome_position chromosome_region
+#>   <chr>      <chr>                         <int> <chr>            
+#> 1 rs4245739  1                         204549714 1q32.1
 ```
 
 With `set_operation = 'intersection'`, as in the code above, we get variants whose associated `efo_trait` is equal to `'triple-negative breast cancer'` and that are associated with gene `'MDM4'`, i.e., only variants meeting both conditions simultaneously are retrieved.
@@ -272,84 +666,109 @@ Please note that almost all search criteria to be used with the retrieval functi
 
 In the following example, we will be using the gene name as the only search criterion. If we pass a vector of gene names then we get all variants that are associated with EITHER (OR) genes.
 
-```{r}
-my_variants <- get_variants(gene_name = c('RNU6-367P', 'TOPAZ1'))
+
+```r
+my_variants <- get_variants(gene_name = c('RNU6-367P', 'ABHD5'))
 
 my_variants@variants[c('variant_id',
                        'chromosome_name',
                        'chromosome_position',
                        'chromosome_region')]
+#> # A tibble: 26 × 4
+#>    variant_id  chromosome_name chromosome_position chromosome_region
+#>    <chr>       <chr>                         <int> <chr>            
+#>  1 rs7625896   3                          44021069 3p21.33          
+#>  2 rs142242702 3                          44122660 3p21.32          
+#>  3 rs1554654   3                          44002852 3p21.33          
+#>  4 rs7619427   3                          44035549 3p21.33          
+#>  5 rs11718455  3                          44015406 3p21.33          
+#>  6 rs73076675  3                          43924731 3p21.33          
+#>  7 rs113706999 3                          44117664 3p21.32          
+#>  8 rs6441814   3                          44007622 3p21.33          
+#>  9 rs4017425   3                          43987272 3p21.33          
+#> 10 rs79644353  3                          44135707 3p21.32          
+#> # … with 16 more rows
 ```
 
-In this case we retrieved `r n(my_variants)` variants. Please note that the `set_operation` parameter does not affect this result. The `set_operation` only controls the function behaviour when combining results from different criteria, e.g., when using `efo_trait` and `gene_name`.
+In this case we retrieved 26 variants. Please note that the `set_operation` parameter does not affect this result. The `set_operation` only controls the function behaviour when combining results from different criteria, e.g., when using `efo_trait` and `gene_name`.
 
-To retrieve variants that are concomitantly associated with genes RNU6-367P and TOPAZ1, the user needs to place these queries separately and then intersect them --- using the `intersect()` function, i.e., combining in an AND fashion. Here we start by retrieving variants associated with gene RNU6-367P:
+To retrieve variants that are concomitantly associated with genes RNU6-367P and ABHD5, the user needs to place these queries separately and then intersect them --- using the `intersect()` function, i.e., combining in an AND fashion. Here we start by retrieving variants associated with gene RNU6-367P:
 
-```{r}
+
+```r
 my_variants1 <- get_variants(gene_name = 'RNU6-367P')
 
 my_variants1@variants[c('variant_id',
                        'chromosome_name',
                        'chromosome_position',
                        'chromosome_region')]
+#> # A tibble: 12 × 4
+#>    variant_id  chromosome_name chromosome_position chromosome_region
+#>    <chr>       <chr>                         <int> <chr>            
+#>  1 rs7625896   3                          44021069 3p21.33          
+#>  2 rs142242702 3                          44122660 3p21.32          
+#>  3 rs1554654   3                          44002852 3p21.33          
+#>  4 rs7619427   3                          44035549 3p21.33          
+#>  5 rs11718455  3                          44015406 3p21.33          
+#>  6 rs73076675  3                          43924731 3p21.33          
+#>  7 rs113706999 3                          44117664 3p21.32          
+#>  8 rs6441814   3                          44007622 3p21.33          
+#>  9 rs4017425   3                          43987272 3p21.33          
+#> 10 rs79644353  3                          44135707 3p21.32          
+#> 11 rs7619544   3                          43852053 3p21.33          
+#> 12 rs35283240  3                          43990836 3p21.33
 ```
 
-There are `r n(my_variants1)` variants associated with gene RNU6-367P. Now, for gene TOPAZ1:
+There are 12 variants associated with gene RNU6-367P. Now, for gene ABHD5:
 
-```{r}
-my_variants2 <- get_variants(gene_name = 'TOPAZ1')
+
+```r
+my_variants2 <- get_variants(gene_name = 'ABHD5')
 
 my_variants2@variants[c('variant_id',
                        'chromosome_name',
                        'chromosome_position',
                        'chromosome_region')]
+#> # A tibble: 18 × 4
+#>    variant_id  chromosome_name chromosome_position chromosome_region
+#>    <chr>       <chr>                         <int> <chr>            
+#>  1 rs191867523 3                          43774449 3p21.33          
+#>  2 rs115421670 3                          43737217 3p21.33          
+#>  3 rs6772840   3                          43812828 3p21.33          
+#>  4 rs11720728  3                          43832420 3p21.33          
+#>  5 rs142404191 3                          43641812 3p21.33          
+#>  6 rs192944990 3                          43826178 3p21.33          
+#>  7 rs182923613 3                          43791731 3p21.33          
+#>  8 rs73087085  3                          43687796 3p21.33          
+#>  9 rs75594032  3                          43744082 3p21.33          
+#> 10 rs1468602   3                          43701242 3p21.33          
+#> 11 rs4082244   3                         135010695 3q22.2           
+#> 12 rs740838    3                          43722823 3p21.33          
+#> 13 rs73076675  3                          43924731 3p21.33          
+#> 14 rs141365045 3                          43691004 3p21.33          
+#> 15 rs4017425   3                          43987272 3p21.33          
+#> 16 rs17075898  3                          43710695 3p21.33          
+#> 17 rs7619544   3                          43852053 3p21.33          
+#> 18 rs35283240  3                          43990836 3p21.33
 ```
 
-There are `r n(my_variants2)` variants associated with gene TOPAZ1. To find those variants simultaneously associated with both genes, you can intersect the two [variants](https://rmagno.eu/gwasrapidd/reference/variants-class.html) objects using `intersect()`:
+There are 18 variants associated with gene ABHD5. To find those variants simultaneously associated with both genes, you can intersect the two [variants](https://rmagno.eu/gwasrapidd/reference/variants-class.html) objects using `gwasrapidd::intersect()`:
 
 
-```{r}
-variants_intersect <- intersect(my_variants1, my_variants2)
+
+```r
+variants_intersect <- gwasrapidd::intersect(my_variants1, my_variants2)
 variants_intersect@variants[c('variant_id',
                        'chromosome_name',
                        'chromosome_position',
                        'chromosome_region')]
+#> # A tibble: 4 × 4
+#>   variant_id chromosome_name chromosome_position chromosome_region
+#>   <chr>      <chr>                         <int> <chr>            
+#> 1 rs73076675 3                          43924731 3p21.33          
+#> 2 rs4017425  3                          43987272 3p21.33          
+#> 3 rs7619544  3                          43852053 3p21.33          
+#> 4 rs35283240 3                          43990836 3p21.33
 ```
 
-Apparently only `r n(variants_intersect)` variant(s) are related to both genes RNU6-367P and TOPAZ1.
-
-
-<!--
-## 9 | How to exclude results for specific queries?
-
-The approach here is to search first using all your queries, including those queries for results you want to exclude, and then remove them with `setdiff`.
-
-Let's get all variants in the cytogenetic region
-
-## 5 | How to search by EFO identifier, including its child terms?
-
-The [Experimental Factor Ontology (EFO)](https://www.ebi.ac.uk/efo/) identifiers can have one or more child terms as part of its EFO hierarchy. These child terms have a narrower meaning, and oftentimes one would like to search by an EFO identifier and also by all its child identifiers. This functionality is provided by the [GWAS Catalog Web User Interface](https://www.ebi.ac.uk/gwas/) in a check box, see image below.
-
-```{r echo=FALSE, fig.align="left"}
-# All defaults
-knitr::include_graphics("../man/figures/child_trait.png")
-```
-
-However there is no such option for the REST API. To circumvent this problem you can use the function `get_child_efo()` that will get all child terms of a given EFO identifier. Here's an example with the EFO identifier `'EFO_0005543'` (glioma):
-
-
-```{r}
-library(gwasrapidd)
-my_efo_id <- 'EFO_0005543'
-my_studies <- get_studies(efo_id = my_efo_id)
-n(my_studies)
-```
-
-```{r}
-child_efo_ids <- get_child_efo(efo_id = my_efo_id)
-my_studies_w_children <- get_studies(efo_id = c(my_efo_id, child_efo_ids[['my_efo_id']]))
-n(my_studies_w_children)
-```
-
-We find `r n(my_studies)` studies using `'EFO_0005543'` only, and `r n(my_studies_w_children)` studies if we include also the child EFO identifiers.
---> 
+Apparently only 4 variant(s) are related to both genes RNU6-367P and ABHD5.
