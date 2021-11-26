@@ -39,7 +39,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gwasrapidd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.11</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.12</span>
       </span>
     </div>
 
@@ -126,11 +126,7 @@
 <a href="#gwas-catalog-entities" class="anchor"></a>GWAS Catalog Entities</h2>
 <p>The Catalog REST API is organized around four core entities: studies, associations, variants, and traits. <strong>gwasrapidd</strong> provides four corresponding functions to get each of the entities: <code><a href="../reference/get_studies.html">get_studies()</a></code>, <code><a href="../reference/get_associations.html">get_associations()</a></code>, <code><a href="../reference/get_variants.html">get_variants()</a></code>, and <code><a href="../reference/get_traits.html">get_traits()</a></code>.</p>
 <p>Each function maps to an appropriately named S4 classed object: <a href="https://rmagno.eu/gwasrapidd/reference/studies-class.html">studies</a>, <a href="https://rmagno.eu/gwasrapidd/reference/associations-class.html">associations</a>, <a href="https://rmagno.eu/gwasrapidd/reference/variants-class.html">variants</a>, and <a href="https://rmagno.eu/gwasrapidd/reference/traits-class.html">traits</a> (see Figure 1).</p>
-<div class="figure" style="text-align: left">
-<img src="../man/figures/get_fns.png" alt="Figure 1 | gwasrapidd retrieval functions." width="500"><p class="caption">
-Figure 1 | gwasrapidd retrieval functions.
-</p>
-</div>
+<p><img src="../man/figures/get_fns.png" title="Figure 1 | gwasrapidd retrieval functions." alt="Figure 1 | gwasrapidd retrieval functions." width="500" style="display: block; margin: auto auto auto 0;"></p>
 <p>You can use a combination of several search criteria with each retrieval function as shown in Figure 2. For example, if you want to get studies using either one of these two criteria: <em>study accession identifier</em> and <em>variant identifier</em>, you could run the following code:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ramiromagno/gwasrapidd">gwasrapidd</a></span><span class="op">)</span>
@@ -139,13 +135,9 @@ Figure 1 | gwasrapidd retrieval functions.
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">s1</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_studies.html">get_studies</a></span><span class="op">(</span>study_id <span class="op">=</span> <span class="st">'GCST000858'</span><span class="op">)</span>
 <span class="va">s2</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_studies.html">get_studies</a></span><span class="op">(</span>variant_id <span class="op">=</span> <span class="st">'rs12752552'</span><span class="op">)</span>
-<span class="va">my_studies</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/setop.html">union</a></span><span class="op">(</span><span class="va">s1</span>, <span class="va">s2</span><span class="op">)</span></code></pre></div>
+<span class="va">my_studies</span> <span class="op">&lt;-</span> <span class="fu">gwasrapidd</span><span class="fu">::</span><span class="fu"><a href="../reference/setop.html">union</a></span><span class="op">(</span><span class="va">s1</span>, <span class="va">s2</span><span class="op">)</span></code></pre></div>
 <p>All four retrieval functions accept the <code>set_operation</code> parameter which defines the way the results obtained with each criterion are combined. The two options for this parameter are <code>'union'</code> (default) or <code>'intersection'</code>, resulting, respectively, in an OR or AND operation.</p>
-<div class="figure" style="text-align: left">
-<img src="../man/figures/get_criteria.png" alt="Figure 2 | gwasrapidd arguments for retrieval functions. Colors indicate the criteria that can be used for retrieving GWAS Catalog entities: studies (green), associations (red), variants (purple), and traits (orange)." width="500"><p class="caption">
-Figure 2 | gwasrapidd arguments for retrieval functions. Colors indicate the criteria that can be used for retrieving GWAS Catalog entities: studies (green), associations (red), variants (purple), and traits (orange).
-</p>
-</div>
+<p><img src="../man/figures/get_criteria.png" title="Figure 2 | gwasrapidd arguments for retrieval functions. Colors indicate the criteria that can be used for retrieving GWAS Catalog entities: studies (green), associations (red), variants (purple), and traits (orange)." alt="Figure 2 | gwasrapidd arguments for retrieval functions. Colors indicate the criteria that can be used for retrieving GWAS Catalog entities: studies (green), associations (red), variants (purple), and traits (orange)." width="500" style="display: block; margin: auto auto auto 0;"></p>
 </div>
 <div id="example-1-finding-risk-alleles-associated-with-autoimmune-disease" class="section level2">
 <h2 class="hasAnchor">
@@ -159,11 +151,10 @@ Figure 2 | gwasrapidd arguments for retrieval functions. Colors indicate the cri
 <code class="sourceCode R"><span class="va">my_studies</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_studies.html">get_studies</a></span><span class="op">(</span>efo_trait <span class="op">=</span> <span class="st">'autoimmune disease'</span><span class="op">)</span></code></pre></div>
 <p>We can now check how many GWAS studies we got back:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/n.html">n</a></span><span class="op">(</span><span class="va">my_studies</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu">gwasrapidd</span><span class="fu">::</span><span class="fu"><a href="../reference/n.html">n</a></span><span class="op">(</span><span class="va">my_studies</span><span class="op">)</span>
 <span class="co">#&gt; [1] 8</span>
 <span class="va">my_studies</span><span class="op">@</span><span class="va">studies</span><span class="op">$</span><span class="va">study_id</span>
-<span class="co">#&gt; [1] "GCST003097"   "GCST011008"   "GCST007071"   "GCST009873"   "GCST011005"  </span>
-<span class="co">#&gt; [6] "GCST011009"   "GCST90029015" "GCST90029016"</span></code></pre></div>
+<span class="co">#&gt; [1] "GCST003097"   "GCST011008"   "GCST007071"   "GCST009873"   "GCST011005"   "GCST011009"   "GCST90029015" "GCST90029016"</span></code></pre></div>
 <p>Apparently only 8 studies: GCST003097, GCST011008, GCST007071, GCST009873, GCST011005, GCST011009, GCST90029015, GCST90029016. Let’s see the associated publication titles:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">my_studies</span><span class="op">@</span><span class="va">publications</span><span class="op">$</span><span class="va">title</span>
@@ -178,7 +169,7 @@ Figure 2 | gwasrapidd arguments for retrieval functions. Colors indicate the cri
 <p>If you want to further inspect these publications, you can quickly browse the respective PubMed entries:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># This launches your web browser at https://www.ncbi.nlm.nih.gov/pubmed/26301688</span>
-<span class="fu"><a href="../reference/open_in_pubmed.html">open_in_pubmed</a></span><span class="op">(</span><span class="va">my_studies</span><span class="op">@</span><span class="va">publications</span><span class="op">$</span><span class="va">pubmed_id</span><span class="op">)</span> </code></pre></div>
+<span class="fu"><a href="../reference/open_in_pubmed.html">open_in_pubmed</a></span><span class="op">(</span><span class="va">my_studies</span><span class="op">@</span><span class="va">publications</span><span class="op">$</span><span class="va">pubmed_id</span><span class="op">)</span></code></pre></div>
 <p>Now if we want to know the variants previously associated with autoimmune disease, as used by <span class="citation">Light et al. (2014)</span>, we need to retrieve statistical association information on these variants, and then filter them based on the same level of significance <span class="math inline">\(P &lt; 1\times 10^{-6}\)</span> <span class="citation">(Light et al. 2014)</span>.</p>
 <p>So let’s start by getting the associations by <code>study_id</code>:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
@@ -186,7 +177,7 @@ Figure 2 | gwasrapidd arguments for retrieval functions. Colors indicate the cri
 <span class="va">my_associations</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_associations.html">get_associations</a></span><span class="op">(</span>study_id <span class="op">=</span> <span class="va">my_studies</span><span class="op">@</span><span class="va">studies</span><span class="op">$</span><span class="va">study_id</span><span class="op">)</span></code></pre></div>
 <p>Seemingly, there are 182 associations.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/n.html">n</a></span><span class="op">(</span><span class="va">my_associations</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu">gwasrapidd</span><span class="fu">::</span><span class="fu"><a href="../reference/n.html">n</a></span><span class="op">(</span><span class="va">my_associations</span><span class="op">)</span>
 <span class="co">#&gt; [1] 182</span></code></pre></div>
 <p>However, not all variants meet the level of significance, as required by <span class="citation">Light et al. (2014)</span>:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
@@ -198,195 +189,25 @@ Figure 2 | gwasrapidd arguments for retrieval functions. Colors indicate the cri
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Extract associations by association id</span>
 <span class="va">my_associations2</span> <span class="op">&lt;-</span> <span class="va">my_associations</span><span class="op">[</span><span class="va">association_ids</span><span class="op">]</span>
-<span class="fu"><a href="../reference/n.html">n</a></span><span class="op">(</span><span class="va">my_associations2</span><span class="op">)</span>
+<span class="fu">gwasrapidd</span><span class="fu">::</span><span class="fu"><a href="../reference/n.html">n</a></span><span class="op">(</span><span class="va">my_associations2</span><span class="op">)</span>
 <span class="co">#&gt; [1] 180</span></code></pre></div>
 <p>Of the 182 associations found in GWAS Catalog, 180 meet the p-value threshold of <span class="math inline">\(1\times 10^{-6}\)</span>. Here are the variants, and their respective risk allele and risk frequency:</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">my_associations2</span><span class="op">@</span><span class="va">risk_alleles</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'variant_id'</span>, <span class="st">'risk_allele'</span>, <span class="st">'risk_frequency'</span><span class="op">)</span><span class="op">]</span> <span class="op"><a href="../reference/%&gt;%.html">%&gt;%</a></span>
-  <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span>n <span class="op">=</span> <span class="cn">Inf</span><span class="op">)</span>
+<code class="sourceCode R"><span class="va">my_associations2</span><span class="op">@</span><span class="va">risk_alleles</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'variant_id'</span>, <span class="st">'risk_allele'</span>, <span class="st">'risk_frequency'</span><span class="op">)</span><span class="op">]</span>
 <span class="co">#&gt; # A tibble: 180 × 3</span>
-<span class="co">#&gt;     variant_id  risk_allele risk_frequency</span>
-<span class="co">#&gt;     &lt;chr&gt;       &lt;chr&gt;                &lt;dbl&gt;</span>
-<span class="co">#&gt;   1 rs11580078  G                    0.43 </span>
-<span class="co">#&gt;   2 rs6679677   A                    0.09 </span>
-<span class="co">#&gt;   3 rs34884278  C                    0.3  </span>
-<span class="co">#&gt;   4 rs6689858   C                    0.29 </span>
-<span class="co">#&gt;   5 rs2075184   T                    0.23 </span>
-<span class="co">#&gt;   6 rs36001488  C                    0.48 </span>
-<span class="co">#&gt;   7 rs4676410   A                    0.19 </span>
-<span class="co">#&gt;   8 rs4625      G                    0.31 </span>
-<span class="co">#&gt;   9 rs62324212  A                    0.42 </span>
-<span class="co">#&gt;  10 rs7725052   C                    0.43 </span>
-<span class="co">#&gt;  11 rs7731626   A                    0.39 </span>
-<span class="co">#&gt;  12 rs4869313   T                    0.42 </span>
-<span class="co">#&gt;  13 rs11741255  A                    0.42 </span>
-<span class="co">#&gt;  14 rs755374    T                    0.32 </span>
-<span class="co">#&gt;  15 rs36051895  T                    0.29 </span>
-<span class="co">#&gt;  16 rs4246905   T                    0.28 </span>
-<span class="co">#&gt;  17 rs11145763  C                    0.4  </span>
-<span class="co">#&gt;  18 rs706778    T                    0.41 </span>
-<span class="co">#&gt;  19 rs10822050  C                    0.39 </span>
-<span class="co">#&gt;  20 rs1250563   C                    0.29 </span>
-<span class="co">#&gt;  21 rs1332099   T                    0.46 </span>
-<span class="co">#&gt;  22 rs17885785  T                    0.2  </span>
-<span class="co">#&gt;  23 rs17466626  G                    0.02 </span>
-<span class="co">#&gt;  24 rs1689510   C                    0.31 </span>
-<span class="co">#&gt;  25 rs72743477  G                    0.21 </span>
-<span class="co">#&gt;  26 rs12598357  G                    0.39 </span>
-<span class="co">#&gt;  27 rs12928404  C                    0.38 </span>
-<span class="co">#&gt;  28 rs117372389 T                    0.02 </span>
-<span class="co">#&gt;  29 rs12232497  C                    0.45 </span>
-<span class="co">#&gt;  30 rs62131887  T                    0.28 </span>
-<span class="co">#&gt;  31 rs602662    G                    0.49 </span>
-<span class="co">#&gt;  32 rs2738774   A                    0.32 </span>
-<span class="co">#&gt;  33 rs2836882   A                    0.27 </span>
-<span class="co">#&gt;  34 rs2066363   C                    0.34 </span>
-<span class="co">#&gt;  35 rs114846446 A                    0.01 </span>
-<span class="co">#&gt;  36 rs7672495   C                    0.18 </span>
-<span class="co">#&gt;  37 rs7660520   A                    0.26 </span>
-<span class="co">#&gt;  38 rs7831697   G                    0.25 </span>
-<span class="co">#&gt;  39 rs7042370   T                    0.43 </span>
-<span class="co">#&gt;  40 rs10988542  C                    0.08 </span>
-<span class="co">#&gt;  41 rs7100025   G                    0.34 </span>
-<span class="co">#&gt;  42 rs77150043  T                    0.23 </span>
-<span class="co">#&gt;  43 rs2807264   C                    0.21 </span>
-<span class="co">#&gt;  44 rs12863738  T                    0.17 </span>
-<span class="co">#&gt;  45 rs556990455 T                    0.016</span>
-<span class="co">#&gt;  46 rs4713462   A                    0.29 </span>
-<span class="co">#&gt;  47 rs1046080   C                    0.26 </span>
-<span class="co">#&gt;  48 rs115884658 A                    0.047</span>
-<span class="co">#&gt;  49 rs3132940   T                    0.15 </span>
-<span class="co">#&gt;  50 rs114355928 T                    0.018</span>
-<span class="co">#&gt;  51 rs1064173   A                    0.25 </span>
-<span class="co">#&gt;  52 rs3104394   G                    0.16 </span>
-<span class="co">#&gt;  53 rs3957147   T                    0.21 </span>
-<span class="co">#&gt;  54 rs2071538   A                    0.24 </span>
-<span class="co">#&gt;  55 rs194679    T                    0.047</span>
-<span class="co">#&gt;  56 rs381218    T                    0.29 </span>
-<span class="co">#&gt;  57 rs10797431  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  58 rs72920202  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  59 rs10494079  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  60 rs2476601   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  61 rs1800601   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  62 rs11675342  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  63 rs1534430   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  64 rs67927699  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  65 rs5865      &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  66 rs2075302   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  67 rs142647938 &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  68 rs10202630  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  69 rs7568275   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  70 rs3087243   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  71 rs145268310 &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  72 rs1921445   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  73 rs28583049  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  74 rs1530687   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  75 rs57791671  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  76 rs114558062 &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  77 rs2030519   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  78 rs10937560  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  79 rs56817615  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  80 rs7441808   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  81 rs9683415   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  82 rs6840978   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  83 rs7655915   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  84 rs391851    &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  85 rs114378220 &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  86 rs11746555  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  87 rs1549922   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  88 rs9392504   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  89 rs72928038  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  90 rs761357    &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  91 rs11757201  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  92 rs6914622   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  93 rs9356551   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  94 rs60600003  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  95 rs221781    &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  96 rs3807307   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  97 rs1032129   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  98 rs11785816  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt;  99 rs865488    &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 100 rs7005834   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 101 rs970987    &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 102 rs1443438   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 103 rs13299616  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 104 rs10986284  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 105 rs706778    &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 106 rs2181622   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 107 rs71508903  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 108 rs10748781  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 109 rs7088058   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 110 rs1199047   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 111 rs4409785   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 112 rs773107    &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 113 rs4761587   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 114 rs1320344   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 115 rs7310615   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 116 rs191252491 &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 117 rs9507287   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 118 rs76428106  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 119 rs2093816   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 120 rs9591325   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 121 rs55984493  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 122 rs11622435  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 123 rs10444776  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 124 rs11073337  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 125 rs8061370   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 126 rs78534766  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 127 rs11117433  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 128 rs35776863  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 129 rs13380830  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 130 rs73316435  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 131 rs1893217   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 132 rs1790588   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 133 rs10425559  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 134 rs34536443  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 135 rs11086102  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 136 rs12980063  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 137 rs240753    &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 138 rs3765209   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 139 rs12482947  &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 140 rs5754100   &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 141 rs229541    &lt;NA&gt;                NA    </span>
-<span class="co">#&gt; 142 rs6664969   A                   NA    </span>
-<span class="co">#&gt; 143 rs1748041   C                   NA    </span>
-<span class="co">#&gt; 144 rs2476601   A                   NA    </span>
-<span class="co">#&gt; 145 rs1217403   C                   NA    </span>
-<span class="co">#&gt; 146 rs10912267  A                   NA    </span>
-<span class="co">#&gt; 147 rs13415465  G                   NA    </span>
-<span class="co">#&gt; 148 rs12619531  G                   NA    </span>
-<span class="co">#&gt; 149 rs10931468  A                   NA    </span>
-<span class="co">#&gt; 150 rs6749371   T                   NA    </span>
-<span class="co">#&gt; 151 rs7574865   T                   NA    </span>
-<span class="co">#&gt; 152 rs7426056   A                   NA    </span>
-<span class="co">#&gt; 153 rs3087243   A                   NA    </span>
-<span class="co">#&gt; 154 rs35677470  A                   NA    </span>
-<span class="co">#&gt; 155 rs17753641  G                   NA    </span>
-<span class="co">#&gt; 156 rs16878091  A                   NA    </span>
-<span class="co">#&gt; 157 rs1422673   T                   NA    </span>
-<span class="co">#&gt; 158 rs72928038  A                   NA    </span>
-<span class="co">#&gt; 159 rs11757201  C                   NA    </span>
-<span class="co">#&gt; 160 rs58721818  T                   NA    </span>
-<span class="co">#&gt; 161 rs212407    G                   NA    </span>
-<span class="co">#&gt; 162 rs60600003  G                   NA    </span>
-<span class="co">#&gt; 163 rs7780389   T                   NA    </span>
-<span class="co">#&gt; 164 rs4731532   A                   NA    </span>
-<span class="co">#&gt; 165 rs2812378   G                   NA    </span>
-<span class="co">#&gt; 166 rs3118470   C                   NA    </span>
-<span class="co">#&gt; 167 rs72776098  A                   NA    </span>
-<span class="co">#&gt; 168 rs947474    G                   NA    </span>
-<span class="co">#&gt; 169 rs3802604   G                   NA    </span>
-<span class="co">#&gt; 170 rs1250568   C                   NA    </span>
-<span class="co">#&gt; 171 rs10892299  T                   NA    </span>
-<span class="co">#&gt; 172 rs11171739  C                   NA    </span>
-<span class="co">#&gt; 173 rs8043085   T                   NA    </span>
-<span class="co">#&gt; 174 rs34593439  A                   NA    </span>
-<span class="co">#&gt; 175 rs1054609   C                   NA    </span>
-<span class="co">#&gt; 176 rs2542148   C                   NA    </span>
-<span class="co">#&gt; 177 rs74956615  A                   NA    </span>
-<span class="co">#&gt; 178 rs1893592   C                   NA    </span>
-<span class="co">#&gt; 179 rs66534072  G                   NA    </span>
-<span class="co">#&gt; 180 rs189071385 &lt;NA&gt;                NA</span></code></pre></div>
+<span class="co">#&gt;    variant_id risk_allele risk_frequency</span>
+<span class="co">#&gt;    &lt;chr&gt;      &lt;chr&gt;                &lt;dbl&gt;</span>
+<span class="co">#&gt;  1 rs11580078 G                     0.43</span>
+<span class="co">#&gt;  2 rs6679677  A                     0.09</span>
+<span class="co">#&gt;  3 rs34884278 C                     0.3 </span>
+<span class="co">#&gt;  4 rs6689858  C                     0.29</span>
+<span class="co">#&gt;  5 rs2075184  T                     0.23</span>
+<span class="co">#&gt;  6 rs36001488 C                     0.48</span>
+<span class="co">#&gt;  7 rs4676410  A                     0.19</span>
+<span class="co">#&gt;  8 rs4625     G                     0.31</span>
+<span class="co">#&gt;  9 rs62324212 A                     0.42</span>
+<span class="co">#&gt; 10 rs7725052  C                     0.43</span>
+<span class="co">#&gt; # … with 170 more rows</span></code></pre></div>
 </div>
 <div id="references" class="section level2 unnumbered">
 <h2 class="hasAnchor">

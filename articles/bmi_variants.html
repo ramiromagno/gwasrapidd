@@ -39,7 +39,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gwasrapidd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.11</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.12</span>
       </span>
     </div>
 
@@ -106,38 +106,39 @@
 
     
     
-<p>Start by loading gwasrapidd, and dplyr and tidyr.</p>
+<p>Start by loading <a href="https://github.com/ramiromagno/gwasrapidd">gwasrapidd</a>, and <a href="https://dplyr.tidyverse.org">dplyr</a> and <a href="https://tidyr.tidyverse.org">tidyr</a>:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ramiromagno/gwasrapidd">gwasrapidd</a></span><span class="op">)</span></code></pre></div>
 <p>Let’s say you want to retrieve all variants associated with the phenotype <em>Body Mass Index (BMI)</em>. Moreover, you want to sort them by their risk allele (minor allele), as well as the effect size (beta coefficient) and p-value.</p>
-<p>First we start by finding the Experimental Factor Ontology (EFO) identifier(s) corresponding to BMI. To do this, we start by downloading all traits in the GWAS Catalog and then look for ‘BMI’ in the trait description column.</p>
+<p>First we start by finding the Experimental Factor Ontology (EFO) identifier(s) corresponding to BMI. To do this, we start by downloading all traits in the GWAS Catalog.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">all_traits</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_traits.html">get_traits</a></span><span class="op">(</span><span class="op">)</span>
-<span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">all_traits</span><span class="op">@</span><span class="va">traits</span>, <span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">'BMI'</span>, <span class="va">trait</span>, ignore.case <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span>
+<code class="sourceCode R"><span class="va">all_traits</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_traits.html">get_traits</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<p>Then look for ‘BMI’ in the trait description column.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">all_traits</span><span class="op">@</span><span class="va">traits</span>, <span class="fu"><a href="https://rdrr.io/r/base/grep.html">grepl</a></span><span class="op">(</span><span class="st">'BMI'</span>, <span class="va">trait</span>, ignore.case <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 10 × 3</span>
-<span class="co">#&gt;    efo_id      trait                                          uri               </span>
-<span class="co">#&gt;    &lt;chr&gt;       &lt;chr&gt;                                          &lt;chr&gt;             </span>
-<span class="co">#&gt;  1 EFO_0005937 longitudinal BMI measurement                   http://www.ebi.ac…</span>
-<span class="co">#&gt;  2 EFO_0007737 BMI-adjusted adiponectin measurement           http://www.ebi.ac…</span>
-<span class="co">#&gt;  3 EFO_0007788 BMI-adjusted waist-hip ratio                   http://www.ebi.ac…</span>
-<span class="co">#&gt;  4 EFO_0007789 BMI-adjusted waist circumference               http://www.ebi.ac…</span>
-<span class="co">#&gt;  5 EFO_0007793 BMI-adjusted leptin measurement                http://www.ebi.ac…</span>
-<span class="co">#&gt;  6 EFO_0008036 BMI-adjusted fasting blood glucose measurement http://www.ebi.ac…</span>
-<span class="co">#&gt;  7 EFO_0008037 BMI-adjusted fasting blood insulin measurement http://www.ebi.ac…</span>
-<span class="co">#&gt;  8 EFO_0008038 BMI-adjusted hip bone size                     http://www.ebi.ac…</span>
-<span class="co">#&gt;  9 EFO_0008039 BMI-adjusted hip circumference                 http://www.ebi.ac…</span>
-<span class="co">#&gt; 10 EFO_0011044 BMI-adjusted neck circumference                http://www.ebi.ac…</span></code></pre></div>
+<span class="co">#&gt;    efo_id      trait                                          uri                                 </span>
+<span class="co">#&gt;    &lt;chr&gt;       &lt;chr&gt;                                          &lt;chr&gt;                               </span>
+<span class="co">#&gt;  1 EFO_0005937 longitudinal BMI measurement                   http://www.ebi.ac.uk/efo/EFO_0005937</span>
+<span class="co">#&gt;  2 EFO_0007737 BMI-adjusted adiponectin measurement           http://www.ebi.ac.uk/efo/EFO_0007737</span>
+<span class="co">#&gt;  3 EFO_0007788 BMI-adjusted waist-hip ratio                   http://www.ebi.ac.uk/efo/EFO_0007788</span>
+<span class="co">#&gt;  4 EFO_0007789 BMI-adjusted waist circumference               http://www.ebi.ac.uk/efo/EFO_0007789</span>
+<span class="co">#&gt;  5 EFO_0007793 BMI-adjusted leptin measurement                http://www.ebi.ac.uk/efo/EFO_0007793</span>
+<span class="co">#&gt;  6 EFO_0008036 BMI-adjusted fasting blood glucose measurement http://www.ebi.ac.uk/efo/EFO_0008036</span>
+<span class="co">#&gt;  7 EFO_0008037 BMI-adjusted fasting blood insulin measurement http://www.ebi.ac.uk/efo/EFO_0008037</span>
+<span class="co">#&gt;  8 EFO_0008038 BMI-adjusted hip bone size                     http://www.ebi.ac.uk/efo/EFO_0008038</span>
+<span class="co">#&gt;  9 EFO_0008039 BMI-adjusted hip circumference                 http://www.ebi.ac.uk/efo/EFO_0008039</span>
+<span class="co">#&gt; 10 EFO_0011044 BMI-adjusted neck circumference                http://www.ebi.ac.uk/efo/EFO_0011044</span></code></pre></div>
 <p>So there are several phenotypes whose description includes the keyword ‘BMI’. However, only the EFO trait <code>'EFO_0005937'</code> (‘longitudinal BMI measurement’) really corresponds to BMI as a phenotypic trait. All other traits are adjusted for BMI but are not BMI traits per se (you can further confirm this by looking at each trait description, just by opening your web browser with each respective URI).</p>
 <p>To get statistical association data for the trait ‘longitudinal BMI measurement’ (<code>'EFO_0005937'</code>), as well as associated variants and effect sizes, we use the gwasrapidd <code><a href="../reference/get_associations.html">get_associations()</a></code> function:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">bmi_associations</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_associations.html">get_associations</a></span><span class="op">(</span>efo_id <span class="op">=</span> <span class="st">'EFO_0005937'</span><span class="op">)</span></code></pre></div>
 <p>The S4 object <code>bmi_associations</code> contains several tables, namely <code>'associations'</code>, <code>'loci'</code>, <code>'risk_alleles'</code>, <code>'genes'</code>, <code>'ensembl_ids'</code> and <code>'entrez_ids'</code>:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">slotNames</span><span class="op">(</span><span class="va">bmi_associations</span><span class="op">)</span>
-<span class="co">#&gt; [1] "associations" "loci"         "risk_alleles" "genes"        "ensembl_ids" </span>
-<span class="co">#&gt; [6] "entrez_ids"</span></code></pre></div>
+<span class="co">#&gt; [1] "associations" "loci"         "risk_alleles" "genes"        "ensembl_ids"  "entrez_ids"</span></code></pre></div>
 <p>From table <code>'associations'</code> we can extract the variables:</p>
 <ul>
 <li><code>'association_id'</code></li>
@@ -154,7 +155,7 @@
 <code>'risk_allele'</code>.</li>
 </ul>
 <p>We extract all these variables and combine them into one single dataframe (<code>bmi_variants</code>), using <code>'association_id'</code> as the matching key:</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">tbl01</span> <span class="op">&lt;-</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">bmi_associations</span><span class="op">@</span><span class="va">risk_alleles</span>, <span class="va">association_id</span>, <span class="va">variant_id</span>, <span class="va">risk_allele</span><span class="op">)</span>
 <span class="va">tbl02</span> <span class="op">&lt;-</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">bmi_associations</span><span class="op">@</span><span class="va">associations</span>, <span class="va">association_id</span>, <span class="va">pvalue</span>, <span class="va">beta_number</span>, <span class="va">beta_unit</span>, <span class="va">beta_direction</span><span class="op">)</span>
 
@@ -162,54 +163,22 @@
   <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="../reference/%&gt;%.html">%&gt;%</a></span>
   <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span><span class="op">(</span><span class="va">variant_id</span>, <span class="va">risk_allele</span><span class="op">)</span></code></pre></div>
 <p>The final results show 42 associations. Note that some variant/allele combinations might be repeated as the same variant/allele combination might have been assessed in more than one GWAS study.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">bmi_variants</span>, n <span class="op">=</span> <span class="cn">Inf</span><span class="op">)</span>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">bmi_variants</span>
 <span class="co">#&gt; # A tibble: 42 × 7</span>
-<span class="co">#&gt;    association_id variant_id  risk_allele pvalue beta_number beta_unit</span>
-<span class="co">#&gt;    &lt;chr&gt;          &lt;chr&gt;       &lt;chr&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;    </span>
-<span class="co">#&gt;  1 10066323       rs10041997  A            4e- 7      0.138  unit     </span>
-<span class="co">#&gt;  2 61729722       rs10070777  A            4e- 6      0.879  unit     </span>
-<span class="co">#&gt;  3 61729714       rs10278819  C            2e- 6      0.873  unit     </span>
-<span class="co">#&gt;  4 61729787       rs10426669  G            6e- 6      0.765  unit     </span>
-<span class="co">#&gt;  5 61729731       rs1048163   G            5e- 6      0.450  unit     </span>
-<span class="co">#&gt;  6 61729771       rs1048164   A            9e- 6      0.436  unit     </span>
-<span class="co">#&gt;  7 55309232       rs10515235  A            2e- 6      0.05   unit     </span>
-<span class="co">#&gt;  8 55309249       rs10938397  G            3e- 8      0.06   unit     </span>
-<span class="co">#&gt;  9 61729763       rs112045010 C            5e- 6      0.906  unit     </span>
-<span class="co">#&gt; 10 61729759       rs11979775  C            5e- 6      0.501  unit     </span>
-<span class="co">#&gt; 11 10068861       rs12926503  A            9e- 6      1.23   unit     </span>
-<span class="co">#&gt; 12 55655431       rs13015992  G            4e- 6      0.0149 unit     </span>
-<span class="co">#&gt; 13 61729726       rs13230004  A            4e- 6      0.534  unit     </span>
-<span class="co">#&gt; 14 10066325       rs1347155   T            5e- 7      0.341  unit     </span>
-<span class="co">#&gt; 15 10066338       rs1347155   T            9e- 8      0.559  unit     </span>
-<span class="co">#&gt; 16 55309238       rs1421085   C            3e-30      0.12   unit     </span>
-<span class="co">#&gt; 17 55655441       rs1485315   C            5e- 6      0.0151 unit     </span>
-<span class="co">#&gt; 18 61729779       rs17546654  A            7e- 6      0.553  unit     </span>
-<span class="co">#&gt; 19 55655446       rs17698894  A            6e- 6      0.0169 unit     </span>
-<span class="co">#&gt; 20 61729767       rs17834779  A            7e- 6      0.447  unit     </span>
-<span class="co">#&gt; 21 10068852       rs199950    G            3e- 6      1      unit     </span>
-<span class="co">#&gt; 22 55309254       rs2055816   C            5e- 6      0.07   unit     </span>
-<span class="co">#&gt; 23 61729739       rs2129108   A            8e- 6      0.795  unit     </span>
-<span class="co">#&gt; 24 55309243       rs2817419   A            4e-11      0.08   unit     </span>
-<span class="co">#&gt; 25 61729755       rs28716841  C            9e- 6      0.872  unit     </span>
-<span class="co">#&gt; 26 61729751       rs28800     A            5e- 6      0.522  unit     </span>
-<span class="co">#&gt; 27 10066336       rs347313    G            2e- 8      0.249  unit     </span>
-<span class="co">#&gt; 28 61729747       rs41501     A            8e- 6      0.513  unit     </span>
-<span class="co">#&gt; 29 61729709       rs57818938  T            1e- 6      0.932  unit     </span>
-<span class="co">#&gt; 30 10068856       rs634010    T            5e- 6      1.04   unit     </span>
-<span class="co">#&gt; 31 10066332       rs6447650   T            2e- 7      0.416  unit     </span>
-<span class="co">#&gt; 32 55655436       rs6897876   C            6e- 6      0.0161 unit     </span>
-<span class="co">#&gt; 33 61729718       rs7024062   A            2e- 6      0.588  unit     </span>
-<span class="co">#&gt; 34 10066327       rs7565158   A            6e- 7      0.136  unit     </span>
-<span class="co">#&gt; 35 61729775       rs76356591  T            6e- 6      0.588  unit     </span>
-<span class="co">#&gt; 36 61729704       rs78310016  G            4e- 8      1.05   unit     </span>
-<span class="co">#&gt; 37 61729783       rs8092589   A            9e- 6      0.472  unit     </span>
-<span class="co">#&gt; 38 10068866       rs8105895   T            3e- 6      1.26   unit     </span>
-<span class="co">#&gt; 39 61729735       rs927899    C            9e- 6      0.742  unit     </span>
-<span class="co">#&gt; 40 13293992       rs9346455   G            6e- 6      0.013  unit     </span>
-<span class="co">#&gt; 41 55309227       rs9436303   G            8e- 9      0.07   unit     </span>
-<span class="co">#&gt; 42 61729743       rs9836481   A            8e- 6      0.977  unit     </span>
-<span class="co">#&gt; # … with 1 more variable: beta_direction &lt;chr&gt;</span></code></pre></div>
+<span class="co">#&gt;    association_id variant_id  risk_allele     pvalue beta_number beta_unit beta_direction</span>
+<span class="co">#&gt;    &lt;chr&gt;          &lt;chr&gt;       &lt;chr&gt;            &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;         </span>
+<span class="co">#&gt;  1 10066323       rs10041997  A           0.0000004        0.138 unit      increase      </span>
+<span class="co">#&gt;  2 61729722       rs10070777  A           0.000004         0.879 unit      increase      </span>
+<span class="co">#&gt;  3 61729714       rs10278819  C           0.000002         0.873 unit      increase      </span>
+<span class="co">#&gt;  4 61729787       rs10426669  G           0.000006         0.765 unit      increase      </span>
+<span class="co">#&gt;  5 61729731       rs1048163   G           0.000005         0.450 unit      increase      </span>
+<span class="co">#&gt;  6 61729771       rs1048164   A           0.000009         0.436 unit      increase      </span>
+<span class="co">#&gt;  7 55309232       rs10515235  A           0.000002         0.05  unit      increase      </span>
+<span class="co">#&gt;  8 55309249       rs10938397  G           0.00000003       0.06  unit      increase      </span>
+<span class="co">#&gt;  9 61729763       rs112045010 C           0.000005         0.906 unit      increase      </span>
+<span class="co">#&gt; 10 61729759       rs11979775  C           0.000005         0.501 unit      increase      </span>
+<span class="co">#&gt; # … with 32 more rows</span></code></pre></div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
