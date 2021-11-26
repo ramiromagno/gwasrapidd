@@ -623,14 +623,8 @@ get_variants_all <- function(verbose = FALSE, warnings = TRUE, page_size = 20L) 
 #' # Get variants by study identifier
 #' get_variants(study_id = 'GCST001085', warnings = FALSE)
 #'
-#' # Get variants by association identifier
-#' get_variants(association_id = '25389945', warnings = FALSE)
-#'
 #' # Get a variant by its identifier
 #' get_variants(variant_id = 'rs3798440', warnings = FALSE)
-#'
-#' # Get variants by EFO trait identifier
-#' get_variants(efo_id = 'EFO_0005537', warnings = FALSE)
 #'
 #' @export
 get_variants <- function(study_id = NULL,
