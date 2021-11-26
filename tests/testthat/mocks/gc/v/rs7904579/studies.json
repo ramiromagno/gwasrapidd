@@ -1,0 +1,109 @@
+{
+    "_embedded": {
+        "studies": [
+            {
+                "initialSampleSize": "398 European ancestry bipolar disorder cases, 1,231 European ancestry bipolar disorder controls",
+                "gxe": false,
+                "gxg": false,
+                "snpCount": 8000000,
+                "qualifier": null,
+                "imputed": true,
+                "pooled": false,
+                "studyDesignComment": null,
+                "accessionId": "GCST005387",
+                "fullPvalueSet": false,
+                "userRequested": false,
+                "platforms": [
+                    {
+                        "manufacturer": "Affymetrix"
+                    },
+                    {
+                        "manufacturer": "Illumina"
+                    }
+                ],
+                "ancestries": [
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 1610,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "European"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Northern America",
+                                "region": null,
+                                "countryName": "U.S."
+                            }
+                        ]
+                    }
+                ],
+                "diseaseTrait": {
+                    "trait": "Binge eating behaviour in bipolar disorder"
+                },
+                "genotypingTechnologies": [
+                    {
+                        "genotypingTechnology": "Genome-wide genotyping array"
+                    }
+                ],
+                "replicationSampleSize": "NA",
+                "publicationInfo": {
+                    "pubmedId": "29391396",
+                    "publicationDate": "2018-02-02",
+                    "publication": "Transl Psychiatry",
+                    "title": "Bipolar disorder with binge eating behavior: a genome-wide association study implicates PRR5-ARHGAP8.",
+                    "author": {
+                        "fullname": "McElroy SL",
+                        "orcid": null
+                    },
+                    "_links": {
+                        "studies": [
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005386{?projection}",
+                                "templated": true
+                            },
+                            {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005387{?projection}",
+                                "templated": true
+                            }
+                        ]
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005387"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005387{?projection}",
+                        "templated": true
+                    },
+                    "associationsByStudySummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005387/associations?projection=associationByStudy"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005387/efoTraits"
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005387/snps"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005387/associations"
+                    }
+                }
+            }
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7904579/studies"
+        }
+    }
+}

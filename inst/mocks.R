@@ -108,3 +108,23 @@ capture_requests({gwasrapidd:::gc_get('/efoTraits/search/findByPubmedId?pubmedId
 # Mock API fixtures for requests in test-post-traits.R
 #
 capture_requests({get_child_efo(efo_id = c('EFO_0005924', 'EFO_0005106'))})
+
+#
+# Mock API fixtures for requests in test-id_mapping.R
+#
+capture_requests({study_to_association(c('GCST001084'))})
+capture_requests({study_to_association(c('GCST001085'))})
+capture_requests({study_to_association(c('GCST0'))})
+capture_requests({study_to_variant(c('GCST001084', 'GCST001085'))})
+capture_requests({study_to_trait(c('GCST001084', 'GCST001085'))})
+
+capture_requests({association_to_study(c('24300097', '24299759'))})
+capture_requests({association_to_trait(c('24300097', '24299759'))})
+capture_requests({association_to_variant(c('24300097', '24299759'))})
+
+capture_requests({variant_to_association(c('rs7904579'))})
+capture_requests({variant_to_study(c('rs7904579', 'rs138331350'))})
+capture_requests({variant_to_study(c('rs0'))})
+capture_requests({variant_to_trait(c('rs7904579', 'rs138331350'))})
+capture_requests({trait_to_study(c('EFO_0005108', 'EFO_0005109'))})
+capture_requests({trait_to_variant(c('EFO_0005108'))})

@@ -1,0 +1,93 @@
+{
+    "_embedded": {
+        "associations": [
+            {
+                "riskFrequency": "0.37",
+                "pvalueDescription": null,
+                "pvalueMantissa": 1,
+                "pvalueExponent": -7,
+                "multiSnpHaplotype": false,
+                "snpInteraction": false,
+                "snpType": "novel",
+                "standardError": null,
+                "range": "[NR]",
+                "description": null,
+                "orPerCopyNum": 1.56,
+                "betaNum": null,
+                "betaUnit": null,
+                "betaDirection": null,
+                "loci": [
+                    {
+                        "haplotypeSnpCount": null,
+                        "description": "Single variant",
+                        "strongestRiskAlleles": [
+                            {
+                                "riskAlleleName": "rs7904579-G",
+                                "riskFrequency": "0.37",
+                                "genomeWide": false,
+                                "limitedList": false,
+                                "_links": {
+                                    "proxySnps": {
+                                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/NR{?projection}",
+                                        "templated": true
+                                    },
+                                    "snp": {
+                                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7904579{?projection}",
+                                        "templated": true
+                                    }
+                                }
+                            }
+                        ],
+                        "authorReportedGenes": [
+                            {
+                                "geneName": "CUBN",
+                                "entrezGeneIds": [
+                                    {
+                                        "entrezGeneId": "8029"
+                                    }
+                                ],
+                                "ensemblGeneIds": [
+                                    {
+                                        "ensemblGeneId": "ENSG00000107611"
+                                    }
+                                ]
+                            }
+                        ],
+                        "_links": {
+                            "association": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/27460811{?projection}",
+                                "templated": true
+                            }
+                        }
+                    }
+                ],
+                "lastMappingDate": "2021-06-24T19:57:27.000+0000",
+                "lastUpdateDate": "2021-06-24T19:57:28.000+0000",
+                "pvalue": 1.0E-7,
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/27460811"
+                    },
+                    "association": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/27460811{?projection}",
+                        "templated": true
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/27460811/snps"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/27460811/study"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/27460811/efoTraits"
+                    }
+                }
+            }
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7904579/associations"
+        }
+    }
+}

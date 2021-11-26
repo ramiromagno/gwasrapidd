@@ -1,0 +1,96 @@
+{
+    "_embedded": {
+        "studies": [
+            {
+                "initialSampleSize": "815 Hispanic children from 263 families",
+                "gxe": false,
+                "gxg": false,
+                "snpCount": 899892,
+                "qualifier": null,
+                "imputed": false,
+                "pooled": false,
+                "studyDesignComment": null,
+                "accessionId": "GCST001762",
+                "fullPvalueSet": false,
+                "userRequested": false,
+                "platforms": [
+                    {
+                        "manufacturer": "Illumina"
+                    }
+                ],
+                "ancestries": [
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 815,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "Hispanic or Latin American"
+                            }
+                        ],
+                        "countryOfOrigin": [
+
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Northern America",
+                                "region": null,
+                                "countryName": "U.S."
+                            }
+                        ]
+                    }
+                ],
+                "diseaseTrait": {
+                    "trait": "Obesity-related traits"
+                },
+                "genotypingTechnologies": [
+                    {
+                        "genotypingTechnology": "Genome-wide genotyping array"
+                    }
+                ],
+                "replicationSampleSize": "NA",
+                "publicationInfo": {
+                    "pubmedId": "23251661",
+                    "publicationDate": "2012-12-04",
+                    "publication": "PLoS One",
+                    "title": "Novel genetic loci identified for the pathophysiology of childhood obesity in the Hispanic population.",
+                    "author": {
+                        "fullname": "Comuzzie AG",
+                        "orcid": null
+                    },
+                    "_links": {
+                        "studies": {
+                            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001762{?projection}",
+                            "templated": true
+                        }
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001762"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001762{?projection}",
+                        "templated": true
+                    },
+                    "associationsByStudySummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001762/associations?projection=associationByStudy"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001762/efoTraits"
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001762/snps"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001762/associations"
+                    }
+                }
+            }
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/EFO_0005108/studies"
+        }
+    }
+}
