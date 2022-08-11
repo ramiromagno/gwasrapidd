@@ -33,18 +33,18 @@ Then look for 'BMI' in the trait description column.
 ```r
 dplyr::filter(all_traits@traits, grepl('BMI', trait, ignore.case = TRUE))
 #> # A tibble: 10 × 3
-#>    efo_id      trait                                          uri                                 
-#>    <chr>       <chr>                                          <chr>                               
-#>  1 EFO_0005937 longitudinal BMI measurement                   http://www.ebi.ac.uk/efo/EFO_0005937
-#>  2 EFO_0007737 BMI-adjusted adiponectin measurement           http://www.ebi.ac.uk/efo/EFO_0007737
-#>  3 EFO_0007788 BMI-adjusted waist-hip ratio                   http://www.ebi.ac.uk/efo/EFO_0007788
-#>  4 EFO_0007789 BMI-adjusted waist circumference               http://www.ebi.ac.uk/efo/EFO_0007789
-#>  5 EFO_0007793 BMI-adjusted leptin measurement                http://www.ebi.ac.uk/efo/EFO_0007793
-#>  6 EFO_0008036 BMI-adjusted fasting blood glucose measurement http://www.ebi.ac.uk/efo/EFO_0008036
-#>  7 EFO_0008037 BMI-adjusted fasting blood insulin measurement http://www.ebi.ac.uk/efo/EFO_0008037
-#>  8 EFO_0008038 BMI-adjusted hip bone size                     http://www.ebi.ac.uk/efo/EFO_0008038
-#>  9 EFO_0008039 BMI-adjusted hip circumference                 http://www.ebi.ac.uk/efo/EFO_0008039
-#> 10 EFO_0011044 BMI-adjusted neck circumference                http://www.ebi.ac.uk/efo/EFO_0011044
+#>    efo_id      trait                                          uri            
+#>    <chr>       <chr>                                          <chr>          
+#>  1 EFO_0005937 longitudinal BMI measurement                   http://www.ebi…
+#>  2 EFO_0007737 BMI-adjusted adiponectin measurement           http://www.ebi…
+#>  3 EFO_0007788 BMI-adjusted waist-hip ratio                   http://www.ebi…
+#>  4 EFO_0007789 BMI-adjusted waist circumference               http://www.ebi…
+#>  5 EFO_0007793 BMI-adjusted leptin measurement                http://www.ebi…
+#>  6 EFO_0008036 BMI-adjusted fasting blood glucose measurement http://www.ebi…
+#>  7 EFO_0008037 BMI-adjusted fasting blood insulin measurement http://www.ebi…
+#>  8 EFO_0008039 BMI-adjusted hip circumference                 http://www.ebi…
+#>  9 EFO_0011044 BMI-adjusted neck circumference                http://www.ebi…
+#> 10 EFO_0008038 BMI-adjusted hip bone size                     http://www.ebi…
 ```
 
 So there are several phenotypes whose description includes the keyword 'BMI'. However, only the EFO trait `'EFO_0005937'` ('longitudinal BMI measurement') really corresponds to BMI as a phenotypic trait. All other traits are adjusted for BMI but are not BMI traits per se (you can further confirm this by looking at each trait description, just by opening your web browser with each respective URI).
@@ -61,7 +61,8 @@ The S4 object `bmi_associations` contains several tables, namely `'associations'
 
 ```r
 slotNames(bmi_associations)
-#> [1] "associations" "loci"         "risk_alleles" "genes"        "ensembl_ids"  "entrez_ids"
+#> [1] "associations" "loci"         "risk_alleles" "genes"       
+#> [5] "ensembl_ids"  "entrez_ids"
 ```
 
 From table `'associations'` we can extract the variables:
@@ -96,17 +97,19 @@ The final results show 42 associations. Note that some variant/allele combinatio
 ```r
 bmi_variants
 #> # A tibble: 42 × 7
-#>    association_id variant_id  risk_allele     pvalue beta_number beta_unit beta_direction
-#>    <chr>          <chr>       <chr>            <dbl>       <dbl> <chr>     <chr>         
-#>  1 10066323       rs10041997  A           0.0000004        0.138 unit      increase      
-#>  2 61729722       rs10070777  A           0.000004         0.879 unit      increase      
-#>  3 61729714       rs10278819  C           0.000002         0.873 unit      increase      
-#>  4 61729787       rs10426669  G           0.000006         0.765 unit      increase      
-#>  5 61729731       rs1048163   G           0.000005         0.450 unit      increase      
-#>  6 61729771       rs1048164   A           0.000009         0.436 unit      increase      
-#>  7 55309232       rs10515235  A           0.000002         0.05  unit      increase      
-#>  8 55309249       rs10938397  G           0.00000003       0.06  unit      increase      
-#>  9 61729763       rs112045010 C           0.000005         0.906 unit      increase      
-#> 10 61729759       rs11979775  C           0.000005         0.501 unit      increase      
-#> # … with 32 more rows
+#>    association_id variant_id  risk_allele     pvalue beta_n…¹ beta_…² beta_…³
+#>    <chr>          <chr>       <chr>            <dbl>    <dbl> <chr>   <chr>  
+#>  1 10066323       rs10041997  A           0.0000004     0.138 unit    increa…
+#>  2 61729722       rs10070777  A           0.000004      0.879 unit    increa…
+#>  3 61729714       rs10278819  C           0.000002      0.873 unit    increa…
+#>  4 61729787       rs10426669  G           0.000006      0.765 unit    increa…
+#>  5 61729731       rs1048163   G           0.000005      0.450 unit    increa…
+#>  6 61729771       rs1048164   A           0.000009      0.436 unit    increa…
+#>  7 55309232       rs10515235  A           0.000002      0.05  unit    increa…
+#>  8 55309249       rs10938397  G           0.00000003    0.06  unit    increa…
+#>  9 61729763       rs112045010 C           0.000005      0.906 unit    increa…
+#> 10 61729759       rs11979775  C           0.000005      0.501 unit    increa…
+#> # … with 32 more rows, and abbreviated variable names ¹​beta_number,
+#> #   ²​beta_unit, ³​beta_direction
+#> # ℹ Use `print(n = ...)` to see more rows
 ```

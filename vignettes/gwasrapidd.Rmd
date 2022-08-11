@@ -85,7 +85,8 @@ We can now check how many GWAS studies we got back:
 gwasrapidd::n(my_studies)
 #> [1] 8
 my_studies@studies$study_id
-#> [1] "GCST003097"   "GCST011008"   "GCST007071"   "GCST009873"   "GCST011005"   "GCST011009"   "GCST90029015" "GCST90029016"
+#> [1] "GCST003097"   "GCST011008"   "GCST007071"   "GCST009873"  
+#> [5] "GCST011005"   "GCST011009"   "GCST90029015" "GCST90029016"
 ```
 
 Apparently only 8 studies: GCST003097, GCST011008, GCST007071, GCST009873, GCST011005, GCST011009, GCST90029015, GCST90029016. Let's see the associated publication titles:
@@ -167,6 +168,7 @@ my_associations2@risk_alleles[c('variant_id', 'risk_allele', 'risk_frequency')]
 #>  9 rs62324212 A                     0.42
 #> 10 rs7725052  C                     0.43
 #> # … with 170 more rows
+#> # ℹ Use `print(n = ...)` to see more rows
 ```
 
 ## References
