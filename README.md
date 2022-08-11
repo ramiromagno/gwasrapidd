@@ -53,11 +53,13 @@ library(gwasrapidd)
 studies <- get_studies(efo_trait = 'triple-negative breast cancer')
 studies@studies[1:4]
 ## # A tibble: 3 × 4
-##   study_id     reported_trait        initial_sample_size    replication_sample_…
-##   <chr>        <chr>                 <chr>                  <chr>               
-## 1 GCST002305   Breast cancer (estro… 1,529 European ancest… 2,148 European ance…
-## 2 GCST010100   Breast cancer (estro… 8,602 European ancest… <NA>                
-## 3 GCST90029052 15-year breast cance… 5,631 European ancest… <NA>
+##   study_id     reported_trait                                    initi…¹ repli…²
+##   <chr>        <chr>                                             <chr>   <chr>  
+## 1 GCST002305   Breast cancer (estrogen-receptor negative, proge… 1,529 … 2,148 …
+## 2 GCST010100   Breast cancer (estrogen-receptor negative, proge… 8,602 … <NA>   
+## 3 GCST90029052 15-year breast cancer-specific survival (ER nega… 5,631 … <NA>   
+## # … with abbreviated variable names ¹​initial_sample_size,
+## #   ²​replication_sample_size
 ```
 
 Find associated variants with study GCST002305:
