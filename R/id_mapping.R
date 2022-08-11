@@ -239,7 +239,9 @@ association_to_variant <- function(association_id, verbose = FALSE, warnings = T
 #'
 #' @examples
 #' # Map GWAS association identifiers to EFO trait identifiers
+#' \dontrun{
 #' association_to_trait(c('24300097', '24299759'))
+#' }
 #'
 #' @export
 association_to_trait <- function(association_id, verbose = FALSE, warnings = TRUE) {
