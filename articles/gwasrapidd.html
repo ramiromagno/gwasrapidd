@@ -4,7 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="gwasrapidd">
 <title>Getting started with gwasrapidd • gwasrapidd</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
@@ -12,13 +13,11 @@
 <link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png">
 <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
-<script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="../deps/bootstrap-5.1.3/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.1.3/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><link href="../extra.css" rel="stylesheet">
-<meta property="og:title" content="Getting started with gwasrapidd">
+<!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Getting started with gwasrapidd">
 <meta property="og:description" content="gwasrapidd">
 <meta property="og:image" content="https://rmagno.eu/gwasrapidd/logo.svg">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -26,223 +25,207 @@
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-<body data-spy="scroll" data-target="#toc">
-    <div class="container template-article">
-      <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">gwasrapidd</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.99.12</span>
-      </span>
-    </div>
+<body>
+    <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
+    
 
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-<li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
+    <nav class="navbar fixed-top navbar-light navbar-expand-lg bg-light"><div class="container">
+    
+    <a class="navbar-brand me-2" href="../index.html">gwasrapidd</a>
+
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.99.13</small>
+
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar" class="collapse navbar-collapse ms-3">
+      <ul class="navbar-nav me-auto">
+<li class="active nav-item">
+  <a class="nav-link" href="../articles/gwasrapidd.html">Get started</a>
 </li>
-<li>
-  <a href="../articles/gwasrapidd.html">Get started</a>
+<li class="nav-item">
+  <a class="nav-link" href="../reference/index.html">Reference</a>
 </li>
-<li>
-  <a href="../reference/index.html">Reference</a>
-</li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-<li>
-      <a href="../articles/bmi_variants.html">Variants associated with Body Mass Index (BMI)</a>
-    </li>
-    <li>
-      <a href="../articles/faq.html">Frequently asked questions</a>
-    </li>
-  </ul>
-</li>
-<li>
-  <a href="../news/index.html">Changelog</a>
-</li>
-      </ul>
-<ul class="nav navbar-nav navbar-right">
-<li>
-  <a href="https://github.com/ramiromagno/gwasrapidd/">
-    <span class="fab fa-github fa-lg"></span>
-     
-  </a>
-</li>
-      </ul>
-</div>
-<!--/.nav-collapse -->
+<li class="nav-item dropdown">
+  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
+  <div class="dropdown-menu" aria-labelledby="dropdown-articles">
+    <a class="dropdown-item" href="../articles/bmi_variants.html">Variants associated with Body Mass Index (BMI)</a>
+    <a class="dropdown-item" href="../articles/faq.html">Frequently asked questions</a>
   </div>
-<!--/.container -->
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="../news/index.html">Changelog</a>
+</li>
+      </ul>
+<form class="form-inline my-2 my-lg-0" role="search">
+        <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off">
+</form>
+
+      <ul class="navbar-nav">
+<li class="nav-item">
+  <a class="external-link nav-link" href="https://github.com/ramiromagno/gwasrapidd/" aria-label="github">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
-<!--/.navbar -->
 
-      
+    
+  </div>
+</nav><div class="container template-article">
 
-      </header><script src="gwasrapidd_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
-  <div class="col-md-9 contents">
-    <div class="page-header toc-ignore">
-      <h1 data-toc-skip>Getting started with gwasrapidd</h1>
+
+
+<script src="gwasrapidd_files/accessible-code-block-0.0.1/empty-anchor.js"></script><div class="row">
+  <main id="main" class="col-md-9"><div class="page-header">
+      <img src="../logo.svg" class="logo" alt=""><h1>Getting started with gwasrapidd</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/ramiromagno/gwasrapidd/blob/master/vignettes/gwasrapidd.Rmd"><code>vignettes/gwasrapidd.Rmd</code></a></small>
-      <div class="hidden name"><code>gwasrapidd.Rmd</code></div>
-
+      <small class="dont-index">Source: <a href="https://github.com/ramiromagno/gwasrapidd/blob/HEAD/vignettes/gwasrapidd.Rmd" class="external-link"><code>vignettes/gwasrapidd.Rmd</code></a></small>
+      <div class="d-none name"><code>gwasrapidd.Rmd</code></div>
     </div>
 
     
     
-<div id="the-gwas-catalog" class="section level2">
-<h2 class="hasAnchor">
-<a href="#the-gwas-catalog" class="anchor"></a>The GWAS Catalog</h2>
-<p>The GWAS Catalog is a service provided by the EMBL-EBI and NHGRI that offers a manually curated and freely available database of published genome-wide association studies (GWAS). The Catalog website and infrastructure is hosted by the <a href="https://www.ebi.ac.uk">EMBL-EBI</a>.</p>
+<div class="section level2">
+<h2 id="the-gwas-catalog">The GWAS Catalog<a class="anchor" aria-label="anchor" href="#the-gwas-catalog"></a>
+</h2>
+<p>The GWAS Catalog is a service provided by the EMBL-EBI and NHGRI that offers a manually curated and freely available database of published genome-wide association studies (GWAS). The Catalog website and infrastructure is hosted by the <a href="https://www.ebi.ac.uk" class="external-link">EMBL-EBI</a>.</p>
 <p>There are three ways to access the Catalog database:</p>
 <ul>
-<li>Via the Web interface at <a href="https://www.ebi.ac.uk/gwas">https://www.ebi.ac.uk/gwas</a>
+<li>Via the Web interface at <a href="https://www.ebi.ac.uk/gwas" class="external-link">https://www.ebi.ac.uk/gwas</a>
 </li>
-<li>By downloading a database dump in TSV or RDF/OWL formats: <a href="https://www.ebi.ac.uk/gwas/docs/file-downloads">https://www.ebi.ac.uk/gwas/docs/file-downloads</a>
+<li>By downloading a database dump in TSV or RDF/OWL formats: <a href="https://www.ebi.ac.uk/gwas/docs/file-downloads" class="external-link">https://www.ebi.ac.uk/gwas/docs/file-downloads</a>
 </li>
-<li>Or through the GWAS Catalog REST API: <a href="https://www.ebi.ac.uk/gwas/rest/docs/api">https://www.ebi.ac.uk/gwas/rest/docs/api</a>
+<li>Or through the GWAS Catalog REST API: <a href="https://www.ebi.ac.uk/gwas/rest/docs/api" class="external-link">https://www.ebi.ac.uk/gwas/rest/docs/api</a>
 </li>
 </ul>
 <p>gwasrapidd facilitates the access to the Catalog via the REST API, allowing you to programmatically retrieve data directly into R.</p>
 </div>
-<div id="gwas-catalog-entities" class="section level2">
-<h2 class="hasAnchor">
-<a href="#gwas-catalog-entities" class="anchor"></a>GWAS Catalog Entities</h2>
+<div class="section level2">
+<h2 id="gwas-catalog-entities">GWAS Catalog Entities<a class="anchor" aria-label="anchor" href="#gwas-catalog-entities"></a>
+</h2>
 <p>The Catalog REST API is organized around four core entities: studies, associations, variants, and traits. <strong>gwasrapidd</strong> provides four corresponding functions to get each of the entities: <code><a href="../reference/get_studies.html">get_studies()</a></code>, <code><a href="../reference/get_associations.html">get_associations()</a></code>, <code><a href="../reference/get_variants.html">get_variants()</a></code>, and <code><a href="../reference/get_traits.html">get_traits()</a></code>.</p>
 <p>Each function maps to an appropriately named S4 classed object: <a href="https://rmagno.eu/gwasrapidd/reference/studies-class.html">studies</a>, <a href="https://rmagno.eu/gwasrapidd/reference/associations-class.html">associations</a>, <a href="https://rmagno.eu/gwasrapidd/reference/variants-class.html">variants</a>, and <a href="https://rmagno.eu/gwasrapidd/reference/traits-class.html">traits</a> (see Figure 1).</p>
-<p><img src="../man/figures/get_fns.png" title="Figure 1 | gwasrapidd retrieval functions." alt="Figure 1 | gwasrapidd retrieval functions." width="500" style="display: block; margin: auto auto auto 0;"></p>
+<p><img src="../reference/figures/get_fns.png" title="Figure 1 | gwasrapidd retrieval functions." alt="Figure 1 | gwasrapidd retrieval functions." width="500" style="display: block; margin: auto auto auto 0;"></p>
 <p>You can use a combination of several search criteria with each retrieval function as shown in Figure 2. For example, if you want to get studies using either one of these two criteria: <em>study accession identifier</em> and <em>variant identifier</em>, you could run the following code:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ramiromagno/gwasrapidd">gwasrapidd</a></span><span class="op">)</span>
-<span class="va">my_studies</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_studies.html">get_studies</a></span><span class="op">(</span>study_id <span class="op">=</span> <span class="st">'GCST000858'</span>, variant_id <span class="op">=</span> <span class="st">'rs12752552'</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ramiromagno/gwasrapidd" class="external-link">gwasrapidd</a></span><span class="op">)</span></span>
+<span><span class="va">my_studies</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_studies.html">get_studies</a></span><span class="op">(</span>study_id <span class="op">=</span> <span class="st">'GCST000858'</span>, variant_id <span class="op">=</span> <span class="st">'rs12752552'</span><span class="op">)</span></span></code></pre></div>
 <p>This command returns all studies that match either <code>'GCST000858'</code> or <code>'rs12752552'</code>. This is equivalent to running <code>get_studies</code> separately on each criteria, and combining the results afterwards:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">s1</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_studies.html">get_studies</a></span><span class="op">(</span>study_id <span class="op">=</span> <span class="st">'GCST000858'</span><span class="op">)</span>
-<span class="va">s2</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_studies.html">get_studies</a></span><span class="op">(</span>variant_id <span class="op">=</span> <span class="st">'rs12752552'</span><span class="op">)</span>
-<span class="va">my_studies</span> <span class="op">&lt;-</span> <span class="fu">gwasrapidd</span><span class="fu">::</span><span class="fu"><a href="../reference/setop.html">union</a></span><span class="op">(</span><span class="va">s1</span>, <span class="va">s2</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">s1</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_studies.html">get_studies</a></span><span class="op">(</span>study_id <span class="op">=</span> <span class="st">'GCST000858'</span><span class="op">)</span></span>
+<span><span class="va">s2</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_studies.html">get_studies</a></span><span class="op">(</span>variant_id <span class="op">=</span> <span class="st">'rs12752552'</span><span class="op">)</span></span>
+<span><span class="va">my_studies</span> <span class="op">&lt;-</span> <span class="fu">gwasrapidd</span><span class="fu">::</span><span class="fu"><a href="../reference/setop.html">union</a></span><span class="op">(</span><span class="va">s1</span>, <span class="va">s2</span><span class="op">)</span></span></code></pre></div>
 <p>All four retrieval functions accept the <code>set_operation</code> parameter which defines the way the results obtained with each criterion are combined. The two options for this parameter are <code>'union'</code> (default) or <code>'intersection'</code>, resulting, respectively, in an OR or AND operation.</p>
-<p><img src="../man/figures/get_criteria.png" title="Figure 2 | gwasrapidd arguments for retrieval functions. Colors indicate the criteria that can be used for retrieving GWAS Catalog entities: studies (green), associations (red), variants (purple), and traits (orange)." alt="Figure 2 | gwasrapidd arguments for retrieval functions. Colors indicate the criteria that can be used for retrieving GWAS Catalog entities: studies (green), associations (red), variants (purple), and traits (orange)." width="500" style="display: block; margin: auto auto auto 0;"></p>
+<p><img src="../reference/figures/get_criteria.png" title="Figure 2 | gwasrapidd arguments for retrieval functions. Colors indicate the criteria that can be used for retrieving GWAS Catalog entities: studies (green), associations (red), variants (purple), and traits (orange)." alt="Figure 2 | gwasrapidd arguments for retrieval functions. Colors indicate the criteria that can be used for retrieving GWAS Catalog entities: studies (green), associations (red), variants (purple), and traits (orange)." width="500" style="display: block; margin: auto auto auto 0;"></p>
 </div>
-<div id="example-1-finding-risk-alleles-associated-with-autoimmune-disease" class="section level2">
-<h2 class="hasAnchor">
-<a href="#example-1-finding-risk-alleles-associated-with-autoimmune-disease" class="anchor"></a>Example 1 | Finding Risk Alleles Associated with Autoimmune Disease</h2>
+<div class="section level2">
+<h2 id="example-1-finding-risk-alleles-associated-with-autoimmune-disease">Example 1 | Finding Risk Alleles Associated with Autoimmune Disease<a class="anchor" aria-label="anchor" href="#example-1-finding-risk-alleles-associated-with-autoimmune-disease"></a>
+</h2>
 <p>As a first example, take the work by <span class="citation">Light et al. (2014)</span>. In this work the authors focused on variants that had been previously reported in genome-wide association studies (GWAS) for autoimmune disease.</p>
 <p>With <strong>gwasrapidd</strong> we can interrogate the GWAS Catalog for the study/studies by searching by <em>autoimmune disease</em> (an EFO trait). To do that let’s load gwasrapidd first:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ramiromagno/gwasrapidd">gwasrapidd</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ramiromagno/gwasrapidd" class="external-link">gwasrapidd</a></span><span class="op">)</span></span></code></pre></div>
 <p>Then query the GWAS Catalog by EFO trait:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">my_studies</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_studies.html">get_studies</a></span><span class="op">(</span>efo_trait <span class="op">=</span> <span class="st">'autoimmune disease'</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">my_studies</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_studies.html">get_studies</a></span><span class="op">(</span>efo_trait <span class="op">=</span> <span class="st">'autoimmune disease'</span><span class="op">)</span></span></code></pre></div>
 <p>We can now check how many GWAS studies we got back:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">gwasrapidd</span><span class="fu">::</span><span class="fu"><a href="../reference/n.html">n</a></span><span class="op">(</span><span class="va">my_studies</span><span class="op">)</span>
-<span class="co">#&gt; [1] 8</span>
-<span class="va">my_studies</span><span class="op">@</span><span class="va">studies</span><span class="op">$</span><span class="va">study_id</span>
-<span class="co">#&gt; [1] "GCST003097"   "GCST011008"   "GCST007071"   "GCST009873"   "GCST011005"   "GCST011009"   "GCST90029015" "GCST90029016"</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">gwasrapidd</span><span class="fu">::</span><span class="fu"><a href="../reference/n.html">n</a></span><span class="op">(</span><span class="va">my_studies</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 8</span></span>
+<span><span class="va">my_studies</span><span class="op">@</span><span class="va">studies</span><span class="op">$</span><span class="va">study_id</span></span>
+<span><span class="co">#&gt; [1] "GCST003097"   "GCST011008"   "GCST007071"   "GCST009873"  </span></span>
+<span><span class="co">#&gt; [5] "GCST011005"   "GCST011009"   "GCST90029015" "GCST90029016"</span></span></code></pre></div>
 <p>Apparently only 8 studies: GCST003097, GCST011008, GCST007071, GCST009873, GCST011005, GCST011009, GCST90029015, GCST90029016. Let’s see the associated publication titles:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">my_studies</span><span class="op">@</span><span class="va">publications</span><span class="op">$</span><span class="va">title</span>
-<span class="co">#&gt; [1] "Meta-analysis of shared genetic architecture across ten pediatric autoimmune diseases."                                                            </span>
-<span class="co">#&gt; [2] "Genetic factors underlying the bidirectional relationship between autoimmune and mental disorders - findings from a Danish population-based study."</span>
-<span class="co">#&gt; [3] "Leveraging Polygenic Functional Enrichment to Improve GWAS Power."                                                                                 </span>
-<span class="co">#&gt; [4] "Meta-analysis of Immunochip data of four autoimmune diseases reveals novel single-disease and cross-phenotype associations."                       </span>
-<span class="co">#&gt; [5] "Genetic factors underlying the bidirectional relationship between autoimmune and mental disorders - findings from a Danish population-based study."</span>
-<span class="co">#&gt; [6] "Genetic factors underlying the bidirectional relationship between autoimmune and mental disorders - findings from a Danish population-based study."</span>
-<span class="co">#&gt; [7] "Mixed-model association for biobank-scale datasets."                                                                                               </span>
-<span class="co">#&gt; [8] "Mixed-model association for biobank-scale datasets."</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">my_studies</span><span class="op">@</span><span class="va">publications</span><span class="op">$</span><span class="va">title</span></span>
+<span><span class="co">#&gt; [1] "Meta-analysis of shared genetic architecture across ten pediatric autoimmune diseases."                                                            </span></span>
+<span><span class="co">#&gt; [2] "Genetic factors underlying the bidirectional relationship between autoimmune and mental disorders - findings from a Danish population-based study."</span></span>
+<span><span class="co">#&gt; [3] "Leveraging Polygenic Functional Enrichment to Improve GWAS Power."                                                                                 </span></span>
+<span><span class="co">#&gt; [4] "Meta-analysis of Immunochip data of four autoimmune diseases reveals novel single-disease and cross-phenotype associations."                       </span></span>
+<span><span class="co">#&gt; [5] "Genetic factors underlying the bidirectional relationship between autoimmune and mental disorders - findings from a Danish population-based study."</span></span>
+<span><span class="co">#&gt; [6] "Genetic factors underlying the bidirectional relationship between autoimmune and mental disorders - findings from a Danish population-based study."</span></span>
+<span><span class="co">#&gt; [7] "Mixed-model association for biobank-scale datasets."                                                                                               </span></span>
+<span><span class="co">#&gt; [8] "Mixed-model association for biobank-scale datasets."</span></span></code></pre></div>
 <p>If you want to further inspect these publications, you can quickly browse the respective PubMed entries:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># This launches your web browser at https://www.ncbi.nlm.nih.gov/pubmed/26301688</span>
-<span class="fu"><a href="../reference/open_in_pubmed.html">open_in_pubmed</a></span><span class="op">(</span><span class="va">my_studies</span><span class="op">@</span><span class="va">publications</span><span class="op">$</span><span class="va">pubmed_id</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># This launches your web browser at https://www.ncbi.nlm.nih.gov/pubmed/26301688</span></span>
+<span><span class="fu"><a href="../reference/open_in_pubmed.html">open_in_pubmed</a></span><span class="op">(</span><span class="va">my_studies</span><span class="op">@</span><span class="va">publications</span><span class="op">$</span><span class="va">pubmed_id</span><span class="op">)</span></span></code></pre></div>
 <p>Now if we want to know the variants previously associated with autoimmune disease, as used by <span class="citation">Light et al. (2014)</span>, we need to retrieve statistical association information on these variants, and then filter them based on the same level of significance <span class="math inline">\(P &lt; 1\times 10^{-6}\)</span> <span class="citation">(Light et al. 2014)</span>.</p>
 <p>So let’s start by getting the associations by <code>study_id</code>:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># You could have also used get_associations(efo_trait = 'autoimmune disease')</span>
-<span class="va">my_associations</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_associations.html">get_associations</a></span><span class="op">(</span>study_id <span class="op">=</span> <span class="va">my_studies</span><span class="op">@</span><span class="va">studies</span><span class="op">$</span><span class="va">study_id</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># You could have also used get_associations(efo_trait = 'autoimmune disease')</span></span>
+<span><span class="va">my_associations</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_associations.html">get_associations</a></span><span class="op">(</span>study_id <span class="op">=</span> <span class="va">my_studies</span><span class="op">@</span><span class="va">studies</span><span class="op">$</span><span class="va">study_id</span><span class="op">)</span></span></code></pre></div>
 <p>Seemingly, there are 182 associations.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">gwasrapidd</span><span class="fu">::</span><span class="fu"><a href="../reference/n.html">n</a></span><span class="op">(</span><span class="va">my_associations</span><span class="op">)</span>
-<span class="co">#&gt; [1] 182</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">gwasrapidd</span><span class="fu">::</span><span class="fu"><a href="../reference/n.html">n</a></span><span class="op">(</span><span class="va">my_associations</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 182</span></span></code></pre></div>
 <p>However, not all variants meet the level of significance, as required by <span class="citation">Light et al. (2014)</span>:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># Get association ids for which pvalue is less than 1e-6.</span>
-<span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">my_associations</span><span class="op">@</span><span class="va">associations</span>, <span class="va">pvalue</span> <span class="op">&lt;</span> <span class="fl">1e-6</span><span class="op">)</span> <span class="op"><a href="../reference/%&gt;%.html">%&gt;%</a></span> <span class="co"># Filter by p-value</span>
-  <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="va">pvalue</span><span class="op">)</span> <span class="op"><a href="../reference/%&gt;%.html">%&gt;%</a></span>
-  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html">pull</a></span><span class="op">(</span><span class="va">association_id</span><span class="op">)</span> <span class="op">-&gt;</span> <span class="va">association_ids</span> <span class="co"># Extract column association_id</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># Get association ids for which pvalue is less than 1e-6.</span></span>
+<span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">my_associations</span><span class="op">@</span><span class="va">associations</span>, <span class="va">pvalue</span> <span class="op">&lt;</span> <span class="fl">1e-6</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> <span class="co"># Filter by p-value</span></span>
+<span>  <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html" class="external-link">drop_na</a></span><span class="op">(</span><span class="va">pvalue</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html" class="external-link">pull</a></span><span class="op">(</span><span class="va">association_id</span><span class="op">)</span> <span class="op">-&gt;</span> <span class="va">association_ids</span> <span class="co"># Extract column association_id</span></span></code></pre></div>
 <p>Here we subset the <code>my_associations</code> object by a vector of association identifiers (<code>association_ids</code>) into a smaller object, <code>my_associations2</code>:</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># Extract associations by association id</span>
-<span class="va">my_associations2</span> <span class="op">&lt;-</span> <span class="va">my_associations</span><span class="op">[</span><span class="va">association_ids</span><span class="op">]</span>
-<span class="fu">gwasrapidd</span><span class="fu">::</span><span class="fu"><a href="../reference/n.html">n</a></span><span class="op">(</span><span class="va">my_associations2</span><span class="op">)</span>
-<span class="co">#&gt; [1] 180</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># Extract associations by association id</span></span>
+<span><span class="va">my_associations2</span> <span class="op">&lt;-</span> <span class="va">my_associations</span><span class="op">[</span><span class="va">association_ids</span><span class="op">]</span></span>
+<span><span class="fu">gwasrapidd</span><span class="fu">::</span><span class="fu"><a href="../reference/n.html">n</a></span><span class="op">(</span><span class="va">my_associations2</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 180</span></span></code></pre></div>
 <p>Of the 182 associations found in GWAS Catalog, 180 meet the p-value threshold of <span class="math inline">\(1\times 10^{-6}\)</span>. Here are the variants, and their respective risk allele and risk frequency:</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">my_associations2</span><span class="op">@</span><span class="va">risk_alleles</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'variant_id'</span>, <span class="st">'risk_allele'</span>, <span class="st">'risk_frequency'</span><span class="op">)</span><span class="op">]</span>
-<span class="co">#&gt; # A tibble: 180 × 3</span>
-<span class="co">#&gt;    variant_id risk_allele risk_frequency</span>
-<span class="co">#&gt;    &lt;chr&gt;      &lt;chr&gt;                &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 rs11580078 G                     0.43</span>
-<span class="co">#&gt;  2 rs6679677  A                     0.09</span>
-<span class="co">#&gt;  3 rs34884278 C                     0.3 </span>
-<span class="co">#&gt;  4 rs6689858  C                     0.29</span>
-<span class="co">#&gt;  5 rs2075184  T                     0.23</span>
-<span class="co">#&gt;  6 rs36001488 C                     0.48</span>
-<span class="co">#&gt;  7 rs4676410  A                     0.19</span>
-<span class="co">#&gt;  8 rs4625     G                     0.31</span>
-<span class="co">#&gt;  9 rs62324212 A                     0.42</span>
-<span class="co">#&gt; 10 rs7725052  C                     0.43</span>
-<span class="co">#&gt; # … with 170 more rows</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">my_associations2</span><span class="op">@</span><span class="va">risk_alleles</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'variant_id'</span>, <span class="st">'risk_allele'</span>, <span class="st">'risk_frequency'</span><span class="op">)</span><span class="op">]</span></span>
+<span><span class="co">#&gt; # A tibble: 180 × 3</span></span>
+<span><span class="co">#&gt;    variant_id risk_allele risk_frequency</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;      &lt;chr&gt;                &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1 rs11580078 G                     0.43</span></span>
+<span><span class="co">#&gt;  2 rs6679677  A                     0.09</span></span>
+<span><span class="co">#&gt;  3 rs34884278 C                     0.3 </span></span>
+<span><span class="co">#&gt;  4 rs6689858  C                     0.29</span></span>
+<span><span class="co">#&gt;  5 rs2075184  T                     0.23</span></span>
+<span><span class="co">#&gt;  6 rs36001488 C                     0.48</span></span>
+<span><span class="co">#&gt;  7 rs4676410  A                     0.19</span></span>
+<span><span class="co">#&gt;  8 rs4625     G                     0.31</span></span>
+<span><span class="co">#&gt;  9 rs62324212 A                     0.42</span></span>
+<span><span class="co">#&gt; 10 rs7725052  C                     0.43</span></span>
+<span><span class="co">#&gt; # … with 170 more rows</span></span>
+<span><span class="co">#&gt; # ℹ Use `print(n = ...)` to see more rows</span></span></code></pre></div>
 </div>
-<div id="references" class="section level2 unnumbered">
-<h2 class="hasAnchor">
-<a href="#references" class="anchor"></a>References</h2>
+<div class="section level2 unnumbered">
+<h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
+</h2>
 <div id="refs" class="references">
 <div id="ref-Light2014">
 <p>Light, Nicholas, Véronique Adoue, Bing Ge, Shu-Huang Chen, Tony Kwan, and Tomi Pastinen. 2014. “Interrogation of Allelic Chromatin States in Human Cells by High-Density Chip-Genotyping.” <em>Epigenetics</em> 9 (9): 1238–51.</p>
 </div>
 </div>
 </div>
-  </div>
-
-  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-
-        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
-    </nav>
-</div>
-
+  </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
+    </nav></aside>
 </div>
 
 
 
-      <footer><div class="copyright">
-  <p>Developed by <a href="https://rmagno.eu/">Ramiro Magno</a>, Ana-Teresa Maia, <a href="https://cintesis.eu/"><img src="reference/figures/cintesis.svg" height="24"></a>.</p>
+    <footer><div class="pkgdown-footer-left">
+  <p></p>
+<p>Developed by <a href="https://rmagno.eu/" class="external-link">Ramiro Magno</a>, Ana-Teresa Maia, <a href="https://cintesis.eu/" class="external-link"><img src="https://maialab.org/gwasrapidd/reference/figures/cintesis.svg" height="24"></a>.</p>
 </div>
 
-<div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+<div class="pkgdown-footer-right">
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
-      </footer>
+    </footer>
 </div>
 
   
 
+  
 
   </body>
 </html>
