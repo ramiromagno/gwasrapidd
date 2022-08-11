@@ -23,7 +23,9 @@ A dataframe of two identifiers. First column is the association
 Map an association accession identifier to a variant identifier.
 }
 \examples{
+\dontrun{
 # Map GWAS association identifiers to variant identifiers
 association_to_variant(c('24300097', '24299759'))
+}
 
 }

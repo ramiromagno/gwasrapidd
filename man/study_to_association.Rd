@@ -22,7 +22,9 @@ A dataframe of two identifiers. First column is the study identifier
 Map a study accession identifier to an association accession identifier.
 }
 \examples{
+\dontrun{
 # Map GWAS study identifiers to association identifiers
 study_to_association(c('GCST001084', 'GCST001085'))
+}
 
 }

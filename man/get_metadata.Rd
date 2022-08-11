@@ -30,5 +30,7 @@ version}.In addition, the date since this combination of resource versions
 has been in use is also returned.
 }
 \examples{
+\dontrun{
 get_metadata(warnings = FALSE)
+}
 }

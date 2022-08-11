@@ -22,7 +22,9 @@ A dataframe of two identifiers. First column is the EFO trait
 Map an EFO trait id to a study accession identifier.
 }
 \examples{
+\dontrun{
 # Map EFO trait identifiers to study identifiers
 trait_to_study(c('EFO_0005108', 'EFO_0005109'))
+}
 
 }

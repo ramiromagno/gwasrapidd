@@ -96,6 +96,8 @@ passing a vector of identifiers to \code{variant_id}.
 get_variants(study_id = 'GCST001085', warnings = FALSE)
 
 # Get a variant by its identifier
+\dontrun{
 get_variants(variant_id = 'rs3798440', warnings = FALSE)
+}
 
 }

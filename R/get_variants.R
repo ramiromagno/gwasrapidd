@@ -624,7 +624,9 @@ get_variants_all <- function(verbose = FALSE, warnings = TRUE, page_size = 20L) 
 #' get_variants(study_id = 'GCST001085', warnings = FALSE)
 #'
 #' # Get a variant by its identifier
+#' \dontrun{
 #' get_variants(variant_id = 'rs3798440', warnings = FALSE)
+#' }
 #'
 #' @export
 get_variants <- function(study_id = NULL,

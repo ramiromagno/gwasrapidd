@@ -372,6 +372,7 @@ get_traits_all <- function(verbose = FALSE, warnings = TRUE, page_size = 20L) {
 #'
 #' @return A \linkS4class{traits} object.
 #' @examples
+#' \dontrun{
 #' # Get traits by study identifier
 #' get_traits(study_id = 'GCST001085', warnings = FALSE)
 #'
@@ -380,6 +381,7 @@ get_traits_all <- function(verbose = FALSE, warnings = TRUE, page_size = 20L) {
 #'
 #' # Get a trait by its EFO identifier
 #' get_traits(efo_id = 'EFO_0005537', warnings = FALSE)
+#' }
 #'
 #' @export
 get_traits <- function(study_id = NULL,

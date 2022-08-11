@@ -84,6 +84,7 @@ mode search, e.g., one can search by multiple variant identifiers at once by
 passing a vector of identifiers to \code{variant_id}.
 }
 \examples{
+\dontrun{
 # Get a study by its accession identifier
 get_studies(study_id = 'GCST001085', warnings = FALSE)
 
@@ -95,5 +96,6 @@ get_studies(variant_id = 'rs3798440', warnings = FALSE)
 
 # Get studies by EFO trait identifier
 get_studies(efo_id = 'EFO_0005537', warnings = FALSE)
+}
 
 }

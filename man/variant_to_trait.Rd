@@ -36,11 +36,13 @@ mapped to association identifiers, and then to EFO traits. Set the option
 i.e., the association identifiers.
 }
 \examples{
+\dontrun{
 # Map GWAS variant identifiers to EFO trait identifiers
 variant_to_trait(c('rs7904579', 'rs138331350'))
 
 # Map GWAS variant identifiers to EFO trait identifiers
 # but keep the intermediate association identifier
 variant_to_trait(c('rs7904579', 'rs138331350'), keep_association_id = TRUE)
+}
 
 }

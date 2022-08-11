@@ -22,8 +22,8 @@ A dataframe of two identifiers. First column is the study identifier
 Map a study accession identifier to a variant accession identifier.
 }
 \examples{
-# Map GWAS study identifiers to variant identifiers
 \dontrun{
+# Map GWAS study identifiers to variant identifiers
 study_to_variant(c('GCST001084', 'GCST001085'))
 }
 

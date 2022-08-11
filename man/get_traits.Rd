@@ -64,6 +64,7 @@ mode search, e.g., one can search by multiple trait identifiers at once by
 passing a vector of identifiers to \code{efo_id}.
 }
 \examples{
+\dontrun{
 # Get traits by study identifier
 get_traits(study_id = 'GCST001085', warnings = FALSE)
 
@@ -72,5 +73,6 @@ get_traits(association_id = '25389945', warnings = FALSE)
 
 # Get a trait by its EFO identifier
 get_traits(efo_id = 'EFO_0005537', warnings = FALSE)
+}
 
 }

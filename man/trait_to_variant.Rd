@@ -22,7 +22,9 @@ A dataframe of two identifiers. First column is the EFO trait
 Map an EFO trait id to a variant identifier.
 }
 \examples{
+\dontrun{
 # Map EFO trait identifiers to variant identifiers
 trait_to_variant('EFO_0005229')
+}
 
 }

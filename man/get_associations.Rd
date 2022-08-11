@@ -69,6 +69,7 @@ mode search, e.g., one can search by multiple variant identifiers at once by
 passing a vector of identifiers to \code{variant_id}.
 }
 \examples{
+\dontrun{
 # Get an association by study identifier
 get_associations(study_id = 'GCST001085', warnings = FALSE)
 
@@ -80,5 +81,6 @@ get_associations(variant_id = 'rs3798440', warnings = FALSE)
 
 # Get associations by EFO trait identifier
 get_associations(efo_id = 'EFO_0005537', warnings = FALSE)
+}
 
 }

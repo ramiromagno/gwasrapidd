@@ -22,8 +22,8 @@ A dataframe of two identifiers. First column is the EFO trait
 Map an EFO trait id to an association identifier.
 }
 \examples{
-# Map EFO trait identifiers to association identifiers
 \dontrun{
+# Map EFO trait identifiers to association identifiers
 trait_to_association(c('EFO_0005108', 'EFO_0005109'))
 }
 

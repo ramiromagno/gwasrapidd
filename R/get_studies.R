@@ -595,6 +595,7 @@ get_studies_all <- function(verbose = FALSE, warnings = TRUE, page_size = 20L) {
 #'
 #' @return A \linkS4class{studies} object.
 #' @examples
+#' \dontrun{
 #' # Get a study by its accession identifier
 #' get_studies(study_id = 'GCST001085', warnings = FALSE)
 #'
@@ -606,6 +607,7 @@ get_studies_all <- function(verbose = FALSE, warnings = TRUE, page_size = 20L) {
 #'
 #' # Get studies by EFO trait identifier
 #' get_studies(efo_id = 'EFO_0005537', warnings = FALSE)
+#' }
 #'
 #' @export
 get_studies <- function(study_id = NULL,

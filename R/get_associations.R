@@ -397,6 +397,7 @@ get_associations_all <- function(verbose = FALSE,
 #'
 #' @return An \linkS4class{associations} object.
 #' @examples
+#' \dontrun{
 #' # Get an association by study identifier
 #' get_associations(study_id = 'GCST001085', warnings = FALSE)
 #'
@@ -408,6 +409,7 @@ get_associations_all <- function(verbose = FALSE,
 #'
 #' # Get associations by EFO trait identifier
 #' get_associations(efo_id = 'EFO_0005537', warnings = FALSE)
+#' }
 #'
 #' @export
 get_associations <- function(study_id = NULL,
