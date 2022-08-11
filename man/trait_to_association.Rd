@@ -23,6 +23,8 @@ Map an EFO trait id to an association identifier.
 }
 \examples{
 # Map EFO trait identifiers to association identifiers
+\dontrun{
 trait_to_association(c('EFO_0005108', 'EFO_0005109'))
+}
 
 }

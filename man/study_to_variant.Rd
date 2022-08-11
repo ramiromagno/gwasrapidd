@@ -23,6 +23,8 @@ Map a study accession identifier to a variant accession identifier.
 }
 \examples{
 # Map GWAS study identifiers to variant identifiers
+\dontrun{
 study_to_variant(c('GCST001084', 'GCST001085'))
+}
 
 }

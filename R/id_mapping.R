@@ -57,7 +57,9 @@ study_to_association <- function(study_id, verbose = FALSE, warnings = TRUE) {
 #'
 #' @examples
 #' # Map GWAS study identifiers to variant identifiers
+#' \dontrun{
 #' study_to_variant(c('GCST001084', 'GCST001085'))
+#' }
 #'
 #' @export
 study_to_variant <- function(study_id, verbose = FALSE, warnings = TRUE) {
@@ -481,7 +483,9 @@ trait_to_study <- function(efo_id, verbose = FALSE, warnings = TRUE) {
 #'
 #' @examples
 #' # Map EFO trait identifiers to association identifiers
+#' \dontrun{
 #' trait_to_association(c('EFO_0005108', 'EFO_0005109'))
+#' }
 #'
 #' @export
 trait_to_association <- function(efo_id, verbose = FALSE, warnings = TRUE) {
