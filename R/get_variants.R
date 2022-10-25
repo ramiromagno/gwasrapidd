@@ -448,12 +448,11 @@ get_variants_by_gene_name <- function(gene_name = NULL, verbose = FALSE, warning
 #' @keywords internal
 get_variants_by_efo_trait <- function(efo_trait = NULL, verbose = FALSE, warnings = TRUE, page_size = 20L) {
 
-  if(rlang::is_null(efo_trait))
+  if(length(efo_trait) == 0)
     return(variants())
 
   assertthat::assert_that(
     is.character(efo_trait),
-    length(efo_trait) > 0,
     assertthat::noNA(efo_trait))
 
   resource_urls <- sprintf("%s%s", "/singleNucleotidePolymorphisms/search/findByEfoTrait?efoTrait=",
