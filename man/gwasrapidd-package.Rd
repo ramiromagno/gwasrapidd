@@ -14,6 +14,7 @@
 Useful links:
 \itemize{
   \item \url{https://github.com/ramiromagno/gwasrapidd}
+  \item \url{https://rmagno.eu/gwasrapidd/}
   \item Report bugs at \url{https://github.com/ramiromagno/gwasrapidd/issues}
 }
 
