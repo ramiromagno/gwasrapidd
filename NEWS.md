@@ -1,3 +1,7 @@
+## gwasrapidd 0.99.14
+
+- Merged pull request [#37](https://github.com/ramiromagno/gwasrapidd/pull/37).
+
 ## gwasrapidd 0.99.13
 
 - Update pkgdown documentation to use template bootstrap 5.
