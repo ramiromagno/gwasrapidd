@@ -1,85 +1,78 @@
-url: https://rmagno.eu/gwasrapidd
-
+url: https://rmagno.eu/gwasrapidd/
 template:
   bootstrap: 5
-
 reference:
-- title: "GWAS Catalog Entities"
-  desc: "S4 classes for studies, associations, variants and traits"
+- title: GWAS Catalog Entities
+  desc: S4 classes for studies, associations, variants and traits
   contents:
   - '`studies-class`'
   - '`associations-class`'
   - '`variants-class`'
   - '`traits-class`'
-- title: "Get GWAS Catalog Entities"
-  desc: "Receive data from the GWAS Catalog REST API."
+- title: Get GWAS Catalog Entities
+  desc: Receive data from the GWAS Catalog REST API.
   contents:
   - get_studies
   - get_associations
   - get_variants
   - get_traits
   - get_metadata
-- title: "Subset GWAS Catalog Entities"
-  desc: "Extract specific observations from studies, associations, variants or traits."
+- title: Subset GWAS Catalog Entities
+  desc: Extract specific observations from studies, associations, variants or traits.
   contents:
   - '`subset-studies`'
   - '`subset-associations`'
   - '`subset-variants`'
   - '`subset-traits`'
-- title: "Data Wrangling of GWAS Catalog Entities"
-  desc: >
-    S4 methods for combining and tallying studies,
-    associations, variants and traits.
+- title: Data Wrangling of GWAS Catalog Entities
+  desc: |
+    S4 methods for combining and tallying studies, associations, variants and traits.
   contents:
   - 'n'
-  - 'bind'
-  - 'union'
-  - 'intersect'
-  - 'setdiff'
-  - 'setequal'
-- title: "Accession identifier mapping"
-  desc: >
-    Translate accession identifiers between studies,
-    associations, variants and traits.
+  - bind
+  - union
+  - intersect
+  - setdiff
+  - setequal
+- title: Accession identifier mapping
+  desc: |
+    Translate accession identifiers between studies, associations, variants and traits.
   contents:
-  - 'study_to_association'
-  - 'study_to_variant'
-  - 'study_to_trait'
-  - 'association_to_study'
-  - 'association_to_variant'
-  - 'association_to_trait'
-  - 'variant_to_study'
-  - 'variant_to_association'
-  - 'variant_to_trait'
-  - 'trait_to_study'
-  - 'trait_to_association'
-  - 'trait_to_variant'
-- title: "Get data outside of GWAS Catalog"
-  desc: "Functions to provide easy access to other web resources."
-  contents:
-  - get_child_efo
-- title: "Easily navigate web resources"
-  desc: "Functions that allow you to quickly browse linked information."
+  - study_to_association
+  - study_to_variant
+  - study_to_trait
+  - association_to_study
+  - association_to_variant
+  - association_to_trait
+  - variant_to_study
+  - variant_to_association
+  - variant_to_trait
+  - trait_to_study
+  - trait_to_association
+  - trait_to_variant
+- title: Get data outside of GWAS Catalog
+  desc: Functions to provide easy access to other web resources.
+  contents: get_child_efo
+- title: Easily navigate web resources
+  desc: Functions that allow you to quickly browse linked information.
   contents:
   - open_in_pubmed
   - open_in_dbsnp
   - open_in_gtex
   - open_in_gwas_catalog
-- title: "Check functions"
-  desc: "Test and diagnose common impediments."
+- title: Check functions
+  desc: Test and diagnose common impediments.
   contents:
   - is_ebi_reachable
   - exists_variant
-- title: "Datasets"
-  desc: "Datasets shipped with gwasrapidd"
+- title: Datasets
+  desc: Datasets shipped with gwasrapidd
   contents:
   - cytogenetic_bands
   - gc_examples
-- title: "Miscellaneous"
-  desc: "Other functions"
-  contents:
-  - "`%>%`"
-
+- title: Miscellaneous
+  desc: Other functions
+  contents: '`%>%`'
 authors:
   Ramiro Magno:
     href: https://rmagno.eu/
@@ -88,5 +81,6 @@ authors:
   Ana Teresa Maia:
     href: https://www.linkedin.com/in/ana-teresa-maia-2a1a866/
   CINTESIS:
-    href: "https://cintesis.eu/"
-    html: "<img src='https://rmagno.eu/gwasrapidd/reference/figures/cintesis.svg' height=24>"
+    href: https://cintesis.eu/
+    html: <img src='https://rmagno.eu/gwasrapidd/reference/figures/cintesis.svg' height=24>
+
