@@ -37,7 +37,7 @@ The Catalog REST API is organized around four core entities: studies, associatio
 Each function maps to an appropriately named S4 classed object: [studies](https://rmagno.eu/gwasrapidd/reference/studies-class.html), [associations](https://rmagno.eu/gwasrapidd/reference/associations-class.html), [variants](https://rmagno.eu/gwasrapidd/reference/variants-class.html), and [traits](https://rmagno.eu/gwasrapidd/reference/traits-class.html) (see Figure 1).
 
 
-<img src="../man/figures/get_fns.png" title="Figure 1 | gwasrapidd retrieval functions." alt="Figure 1 | gwasrapidd retrieval functions." width="500" style="display: block; margin: auto auto auto 0;" />
+<img src="../man/figures/get_fns.png" alt="Figure 1 | gwasrapidd retrieval functions." width="500" style="display: block; margin: auto auto auto 0;" />
 
 You can use a combination of several search criteria with each retrieval function as shown in Figure 2. For example, if you want to get studies using either one of these two criteria: *study accession identifier* and *variant identifier*, you could run the following code:
 
@@ -58,7 +58,7 @@ my_studies <- gwasrapidd::union(s1, s2)
 
 All four retrieval functions accept the `set_operation` parameter which defines the way the results obtained with each criterion are combined. The two options for this parameter are `'union'` (default) or `'intersection'`, resulting, respectively, in an OR or AND operation.
 
-<img src="../man/figures/get_criteria.png" title="Figure 2 | gwasrapidd arguments for retrieval functions. Colors indicate the criteria that can be used for retrieving GWAS Catalog entities: studies (green), associations (red), variants (purple), and traits (orange)." alt="Figure 2 | gwasrapidd arguments for retrieval functions. Colors indicate the criteria that can be used for retrieving GWAS Catalog entities: studies (green), associations (red), variants (purple), and traits (orange)." width="500" style="display: block; margin: auto auto auto 0;" />
+<img src="../man/figures/get_criteria.png" alt="Figure 2 | gwasrapidd arguments for retrieval functions. Colors indicate the criteria that can be used for retrieving GWAS Catalog entities: studies (green), associations (red), variants (purple), and traits (orange)." width="500" style="display: block; margin: auto auto auto 0;" />
 
 ## Example 1 | Finding Risk Alleles Associated with Autoimmune Disease
 
@@ -83,13 +83,13 @@ We can now check how many GWAS studies we got back:
 
 ```r
 gwasrapidd::n(my_studies)
-#> [1] 8
+#> [1] 9
 my_studies@studies$study_id
-#> [1] "GCST003097"   "GCST011008"   "GCST007071"   "GCST009873"  
-#> [5] "GCST011005"   "GCST011009"   "GCST90029015" "GCST90029016"
+#> [1] "GCST003097"   "GCST011008"   "GCST007071"   "GCST009873"   "GCST011005"   "GCST011009"   "GCST90029015"
+#> [8] "GCST90029016" "GCST90012738"
 ```
 
-Apparently only 8 studies: GCST003097, GCST011008, GCST007071, GCST009873, GCST011005, GCST011009, GCST90029015, GCST90029016. Let's see the associated publication titles:
+Apparently only 9 studies: GCST003097, GCST011008, GCST007071, GCST009873, GCST011005, GCST011009, GCST90029015, GCST90029016, GCST90012738. Let's see the associated publication titles:
 
 
 ```r
@@ -101,7 +101,8 @@ my_studies@publications$title
 #> [5] "Genetic factors underlying the bidirectional relationship between autoimmune and mental disorders - findings from a Danish population-based study."
 #> [6] "Genetic factors underlying the bidirectional relationship between autoimmune and mental disorders - findings from a Danish population-based study."
 #> [7] "Mixed-model association for biobank-scale datasets."                                                                                               
-#> [8] "Mixed-model association for biobank-scale datasets."
+#> [8] "Mixed-model association for biobank-scale datasets."                                                                                               
+#> [9] "Clinical laboratory test-wide association scan of polygenic scores identifies biomarkers of complex disease."
 ```
 
 If you want to further inspect these publications, you can quickly browse the respective PubMed entries:
@@ -168,7 +169,6 @@ my_associations2@risk_alleles[c('variant_id', 'risk_allele', 'risk_frequency')]
 #>  9 rs62324212 A                     0.42
 #> 10 rs7725052  C                     0.43
 #> # … with 170 more rows
-#> # ℹ Use `print(n = ...)` to see more rows
 ```
 
 ## References

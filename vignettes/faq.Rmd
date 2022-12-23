@@ -59,15 +59,12 @@ get_studies(study_id = c('GCST002420', 'GCST000392'))
 #> An object of class "studies"
 #> Slot "studies":
 #> # A tibble: 2 × 13
-#>   study_id repor…¹ initi…² repli…³ gxe   gxg   snp_c…⁴ quali…⁵ imputed pooled
-#>   <chr>    <chr>   <chr>   <chr>   <lgl> <lgl>   <int> <chr>   <lgl>   <lgl> 
-#> 1 GCST002… Binge … 206 Eu… 70 Eur… FALSE FALSE 8466825 <NA>    TRUE    FALSE 
-#> 2 GCST000… Type 1… 7,514 … 4,267 … FALSE FALSE  841622 <NA>    TRUE    FALSE 
-#> # … with 3 more variables: study_design_comment <chr>,
-#> #   full_pvalue_set <lgl>, user_requested <lgl>, and abbreviated variable
-#> #   names ¹​reported_trait, ²​initial_sample_size, ³​replication_sample_size,
-#> #   ⁴​snp_count, ⁵​qualifier
-#> # ℹ Use `colnames()` to see all variable names
+#>   study_id   reported_trait          initi…¹ repli…² gxe   gxg   snp_c…³ quali…⁴ imputed pooled study…⁵ full_…⁶ user_…⁷
+#>   <chr>      <chr>                   <chr>   <chr>   <lgl> <lgl>   <int> <chr>   <lgl>   <lgl>  <chr>   <lgl>   <lgl>  
+#> 1 GCST002420 Binge eating behaviour… 206 Eu… 70 Eur… FALSE FALSE 8466825 <NA>    TRUE    FALSE  <NA>    FALSE   FALSE  
+#> 2 GCST000392 Type 1 diabetes         7,514 … 4,267 … FALSE FALSE  841622 <NA>    TRUE    FALSE  <NA>    TRUE    FALSE  
+#> # … with abbreviated variable names ¹​initial_sample_size, ²​replication_sample_size, ³​snp_count, ⁴​qualifier,
+#> #   ⁵​study_design_comment, ⁶​full_pvalue_set, ⁷​user_requested
 #> 
 #> Slot "genotyping_techs":
 #> # A tibble: 2 × 2
@@ -121,10 +118,10 @@ get_studies(study_id = c('GCST002420', 'GCST000392'))
 #> 
 #> Slot "publications":
 #> # A tibble: 2 × 7
-#>   study_id   pubmed_id publication_date publication     title autho…¹ autho…²
-#>   <chr>          <int> <date>           <chr>           <chr> <chr>   <chr>  
-#> 1 GCST002420  24882193 2014-04-19       J Affect Disord Bipo… Winham… 0000-0…
-#> 2 GCST000392  19430480 2009-05-10       Nat Genet       Geno… Barret… <NA>   
+#>   study_id   pubmed_id publication_date publication     title                                           autho…¹ autho…²
+#>   <chr>          <int> <date>           <chr>           <chr>                                           <chr>   <chr>  
+#> 1 GCST002420  24882193 2014-04-19       J Affect Disord Bipolar disorder with comorbid binge eating hi… Winham… 0000-0…
+#> 2 GCST000392  19430480 2009-05-10       Nat Genet       Genome-wide association study and meta-analysi… Barret… <NA>   
 #> # … with abbreviated variable names ¹​author_fullname, ²​author_orcid
 ```
 
@@ -136,21 +133,18 @@ get_associations(variant_id = c('rs3798440', 'rs7329174'))
 #> An object of class "associations"
 #> Slot "associations":
 #> # A tibble: 6 × 17
-#>   associatio…¹ pvalue pvalu…² pvalu…³ pvalu…⁴ multi…⁵ snp_i…⁶ snp_t…⁷ stand…⁸
-#>   <chr>         <dbl> <chr>     <int>   <int> <lgl>   <lgl>   <chr>     <dbl>
-#> 1 24299710      3e-10 <NA>          3     -10 FALSE   TRUE    novel        NA
-#> 2 16617         1e- 8 <NA>          1      -8 FALSE   FALSE   novel        NA
-#> 3 26451         8e- 9 <NA>          8      -9 FALSE   FALSE   novel        NA
-#> 4 26394         6e- 6 <NA>          6      -6 FALSE   FALSE   known        NA
-#> 5 17433639      3e- 6 (Chine…       3      -6 FALSE   FALSE   known        NA
-#> 6 92481688      3e- 6 <NA>          3      -6 FALSE   FALSE   known        NA
-#> # … with 8 more variables: range <chr>, or_per_copy_number <dbl>,
-#> #   beta_number <dbl>, beta_unit <chr>, beta_direction <chr>,
-#> #   beta_description <chr>, last_mapping_date <dttm>,
-#> #   last_update_date <dttm>, and abbreviated variable names ¹​association_id,
-#> #   ²​pvalue_description, ³​pvalue_mantissa, ⁴​pvalue_exponent,
-#> #   ⁵​multiple_snp_haplotype, ⁶​snp_interaction, ⁷​snp_type, ⁸​standard_error
-#> # ℹ Use `colnames()` to see all variable names
+#>   associ…¹ pvalue pvalu…² pvalu…³ pvalu…⁴ multi…⁵ snp_i…⁶ snp_t…⁷ stand…⁸ range or_pe…⁹ beta_…˟ beta_…˟ beta_…˟ beta_…˟
+#>   <chr>     <dbl> <chr>     <int>   <int> <lgl>   <lgl>   <chr>     <dbl> <chr>   <dbl>   <dbl> <chr>   <chr>   <chr>  
+#> 1 24299710  3e-10 <NA>          3     -10 FALSE   TRUE    novel        NA <NA>    NA         NA <NA>    <NA>    <NA>   
+#> 2 16617     1e- 8 <NA>          1      -8 FALSE   FALSE   novel        NA [1.1…    1.26      NA <NA>    <NA>    <NA>   
+#> 3 26451     8e- 9 <NA>          8      -9 FALSE   FALSE   novel        NA [1.1…    1.27      NA <NA>    <NA>    <NA>   
+#> 4 26394     6e- 6 <NA>          6      -6 FALSE   FALSE   known        NA <NA>     1.45      NA <NA>    <NA>    <NA>   
+#> 5 92481688  3e- 6 <NA>          3      -6 FALSE   FALSE   known        NA <NA>    NA         NA <NA>    <NA>    <NA>   
+#> 6 17433639  3e- 6 (Chine…       3      -6 FALSE   FALSE   known        NA <NA>     1.27      NA <NA>    <NA>    <NA>   
+#> # … with 2 more variables: last_mapping_date <dttm>, last_update_date <dttm>, and abbreviated variable names
+#> #   ¹​association_id, ²​pvalue_description, ³​pvalue_mantissa, ⁴​pvalue_exponent, ⁵​multiple_snp_haplotype,
+#> #   ⁶​snp_interaction, ⁷​snp_type, ⁸​standard_error, ⁹​or_per_copy_number, ˟​beta_number, ˟​beta_unit, ˟​beta_direction,
+#> #   ˟​beta_description
 #> 
 #> Slot "loci":
 #> # A tibble: 7 × 4
@@ -161,22 +155,20 @@ get_associations(variant_id = c('rs3798440', 'rs7329174'))
 #> 3 16617                 1                  NA Single variant       
 #> 4 26451                 1                  NA Single variant       
 #> 5 26394                 1                  NA Single variant       
-#> 6 17433639              1                  NA Single variant       
-#> 7 92481688              1                  NA Single variant       
+#> 6 92481688              1                  NA Single variant       
+#> 7 17433639              1                  NA Single variant       
 #> 
 #> Slot "risk_alleles":
 #> # A tibble: 7 × 7
-#>   association_id locus_id variant_id risk_allele risk_frequ…¹ genom…² limit…³
-#>   <chr>             <int> <chr>      <chr>              <dbl> <lgl>   <lgl>  
-#> 1 24299710              1 rs3798440  A                 NA     TRUE    FALSE  
-#> 2 24299710              2 rs9350602  C                 NA     TRUE    FALSE  
-#> 3 16617                 1 rs7329174  G                 NA     NA      NA     
-#> 4 26451                 1 rs7329174  G                 NA     NA      NA     
-#> 5 26394                 1 rs7329174  G                 NA     NA      NA     
-#> 6 17433639              1 rs7329174  <NA>               0.211 FALSE   FALSE  
-#> 7 92481688              1 rs7329174  G                 NA     FALSE   FALSE  
-#> # … with abbreviated variable names ¹​risk_frequency, ²​genome_wide,
-#> #   ³​limited_list
+#>   association_id locus_id variant_id risk_allele risk_frequency genome_wide limited_list
+#>   <chr>             <int> <chr>      <chr>                <dbl> <lgl>       <lgl>       
+#> 1 24299710              1 rs3798440  A                   NA     TRUE        FALSE       
+#> 2 24299710              2 rs9350602  C                   NA     TRUE        FALSE       
+#> 3 16617                 1 rs7329174  G                   NA     NA          NA          
+#> 4 26451                 1 rs7329174  G                   NA     NA          NA          
+#> 5 26394                 1 rs7329174  G                   NA     NA          NA          
+#> 6 92481688              1 rs7329174  G                   NA     FALSE       FALSE       
+#> 7 17433639              1 rs7329174  <NA>                 0.211 FALSE       FALSE       
 #> 
 #> Slot "genes":
 #> # A tibble: 10 × 3
@@ -190,8 +182,8 @@ get_associations(variant_id = c('rs3798440', 'rs7329174'))
 #>  6 26451                 1 microRNA2276
 #>  7 26451                 1 SLC25A15    
 #>  8 26394                 1 ELF1        
-#>  9 17433639              1 ELF1        
-#> 10 92481688              1 <NA>        
+#>  9 92481688              1 <NA>        
+#> 10 17433639              1 ELF1        
 #> 
 #> Slot "ensembl_ids":
 #> # A tibble: 10 × 4
@@ -205,8 +197,8 @@ get_associations(variant_id = c('rs3798440', 'rs7329174'))
 #>  6 26451                 1 microRNA2276 <NA>           
 #>  7 26451                 1 SLC25A15     ENSG00000102743
 #>  8 26394                 1 ELF1         ENSG00000120690
-#>  9 17433639              1 ELF1         ENSG00000120690
-#> 10 92481688              1 <NA>         <NA>           
+#>  9 92481688              1 <NA>         <NA>           
+#> 10 17433639              1 ELF1         ENSG00000120690
 #> 
 #> Slot "entrez_ids":
 #> # A tibble: 10 × 4
@@ -220,8 +212,8 @@ get_associations(variant_id = c('rs3798440', 'rs7329174'))
 #>  6 26451                 1 microRNA2276 <NA>     
 #>  7 26451                 1 SLC25A15     10166    
 #>  8 26394                 1 ELF1         1997     
-#>  9 17433639              1 ELF1         1997     
-#> 10 92481688              1 <NA>         <NA>
+#>  9 92481688              1 <NA>         <NA>     
+#> 10 17433639              1 ELF1         1997
 ```
 
 Get associations by traits (braces or binge eating or gambling):
@@ -232,29 +224,26 @@ get_associations(efo_trait = c('braces', 'binge eating', 'gambling'))
 #> An object of class "associations"
 #> Slot "associations":
 #> # A tibble: 14 × 17
-#>    associati…¹ pvalue pvalu…² pvalu…³ pvalu…⁴ multi…⁵ snp_i…⁶ snp_t…⁷ stand…⁸
-#>    <chr>        <dbl> <chr>     <int>   <int> <lgl>   <lgl>   <chr>     <dbl>
-#>  1 15608         4e-7 (brace…       4      -7 FALSE   FALSE   novel        NA
-#>  2 44592         9e-7 <NA>          9      -7 FALSE   FALSE   novel        NA
-#>  3 44589         1e-6 <NA>          1      -6 FALSE   FALSE   novel        NA
-#>  4 44590         4e-6 <NA>          4      -6 FALSE   FALSE   novel        NA
-#>  5 27460823      1e-6 <NA>          1      -6 FALSE   FALSE   novel        NA
-#>  6 27460811      1e-7 <NA>          1      -7 FALSE   FALSE   novel        NA
-#>  7 27460817      7e-7 <NA>          7      -7 FALSE   FALSE   novel        NA
-#>  8 27460805      3e-8 <NA>          3      -8 FALSE   FALSE   novel        NA
-#>  9 27460830      1e-6 <NA>          1      -6 FALSE   FALSE   novel        NA
-#> 10 27460844      1e-8 <NA>          1      -8 FALSE   FALSE   novel        NA
-#> 11 27460858      3e-7 <NA>          3      -7 FALSE   FALSE   novel        NA
-#> 12 27460864      3e-7 <NA>          3      -7 FALSE   FALSE   novel        NA
-#> 13 27460870      1e-6 <NA>          1      -6 FALSE   FALSE   novel        NA
-#> 14 27460851      9e-8 <NA>          9      -8 FALSE   FALSE   novel        NA
-#> # … with 8 more variables: range <chr>, or_per_copy_number <dbl>,
-#> #   beta_number <dbl>, beta_unit <chr>, beta_direction <chr>,
-#> #   beta_description <chr>, last_mapping_date <dttm>,
-#> #   last_update_date <dttm>, and abbreviated variable names ¹​association_id,
-#> #   ²​pvalue_description, ³​pvalue_mantissa, ⁴​pvalue_exponent,
-#> #   ⁵​multiple_snp_haplotype, ⁶​snp_interaction, ⁷​snp_type, ⁸​standard_error
-#> # ℹ Use `colnames()` to see all variable names
+#>    assoc…¹ pvalue pvalu…² pvalu…³ pvalu…⁴ multi…⁵ snp_i…⁶ snp_t…⁷ stand…⁸ range or_pe…⁹ beta_…˟ beta_…˟ beta_…˟ beta_…˟
+#>    <chr>    <dbl> <chr>     <int>   <int> <lgl>   <lgl>   <chr>     <dbl> <chr>   <dbl>   <dbl> <chr>   <chr>   <chr>  
+#>  1 15608     4e-7 (brace…       4      -7 FALSE   FALSE   novel        NA <NA>    NA         NA <NA>    <NA>    <NA>   
+#>  2 44592     9e-7 <NA>          9      -7 FALSE   FALSE   novel        NA <NA>     1.99      NA <NA>    <NA>    <NA>   
+#>  3 44589     1e-6 <NA>          1      -6 FALSE   FALSE   novel        NA <NA>     1.92      NA <NA>    <NA>    <NA>   
+#>  4 44590     4e-6 <NA>          4      -6 FALSE   FALSE   novel        NA <NA>     4.89      NA <NA>    <NA>    <NA>   
+#>  5 274608…   1e-6 <NA>          1      -6 FALSE   FALSE   novel        NA <NA>     3.23      NA <NA>    <NA>    <NA>   
+#>  6 274608…   1e-7 <NA>          1      -7 FALSE   FALSE   novel        NA <NA>     1.56      NA <NA>    <NA>    <NA>   
+#>  7 274608…   7e-7 <NA>          7      -7 FALSE   FALSE   novel        NA <NA>     1.6       NA <NA>    <NA>    <NA>   
+#>  8 274608…   3e-8 <NA>          3      -8 FALSE   FALSE   novel        NA <NA>     1.92      NA <NA>    <NA>    <NA>   
+#>  9 274608…   1e-6 <NA>          1      -6 FALSE   FALSE   novel        NA <NA>     2.33      NA <NA>    <NA>    <NA>   
+#> 10 274608…   1e-8 <NA>          1      -8 FALSE   FALSE   novel        NA <NA>     2.86      NA <NA>    <NA>    <NA>   
+#> 11 274608…   3e-7 <NA>          3      -7 FALSE   FALSE   novel        NA <NA>     1.75      NA <NA>    <NA>    <NA>   
+#> 12 274608…   3e-7 <NA>          3      -7 FALSE   FALSE   novel        NA <NA>     2.08      NA <NA>    <NA>    <NA>   
+#> 13 274608…   1e-6 <NA>          1      -6 FALSE   FALSE   novel        NA <NA>     2         NA <NA>    <NA>    <NA>   
+#> 14 274608…   9e-8 <NA>          9      -8 FALSE   FALSE   novel        NA <NA>     3.85      NA <NA>    <NA>    <NA>   
+#> # … with 2 more variables: last_mapping_date <dttm>, last_update_date <dttm>, and abbreviated variable names
+#> #   ¹​association_id, ²​pvalue_description, ³​pvalue_mantissa, ⁴​pvalue_exponent, ⁵​multiple_snp_haplotype,
+#> #   ⁶​snp_interaction, ⁷​snp_type, ⁸​standard_error, ⁹​or_per_copy_number, ˟​beta_number, ˟​beta_unit, ˟​beta_direction,
+#> #   ˟​beta_description
 #> 
 #> Slot "loci":
 #> # A tibble: 14 × 4
@@ -277,24 +266,22 @@ get_associations(efo_trait = c('braces', 'binge eating', 'gambling'))
 #> 
 #> Slot "risk_alleles":
 #> # A tibble: 14 × 7
-#>    association_id locus_id variant_id  risk_allele risk_fre…¹ genom…² limit…³
-#>    <chr>             <int> <chr>       <chr>            <dbl> <lgl>   <lgl>  
-#>  1 15608                 1 rs1535480   <NA>             NA    NA      NA     
-#>  2 44592                 1 rs6006893   <NA>             NA    NA      NA     
-#>  3 44589                 1 rs10198175  <NA>             NA    NA      NA     
-#>  4 44590                 1 rs13233490  <NA>             NA    NA      NA     
-#>  5 27460823              1 rs182107583 C                 0.04 FALSE   FALSE  
-#>  6 27460811              1 rs7904579   G                 0.37 FALSE   FALSE  
-#>  7 27460817              1 rs1950038   T                 0.3  FALSE   FALSE  
-#>  8 27460805              1 rs726170    T                 0.12 FALSE   FALSE  
-#>  9 27460830              1 rs76087671  T                 0.05 FALSE   FALSE  
-#> 10 27460844              1 rs111940429 T                 0.04 FALSE   FALSE  
-#> 11 27460858              1 rs7337127   T                 0.15 FALSE   FALSE  
-#> 12 27460864              1 rs145763646 A                 0.1  FALSE   FALSE  
-#> 13 27460870              1 rs73057489  C                 0.07 FALSE   FALSE  
-#> 14 27460851              1 rs17810023  T                 0.02 FALSE   FALSE  
-#> # … with abbreviated variable names ¹​risk_frequency, ²​genome_wide,
-#> #   ³​limited_list
+#>    association_id locus_id variant_id  risk_allele risk_frequency genome_wide limited_list
+#>    <chr>             <int> <chr>       <chr>                <dbl> <lgl>       <lgl>       
+#>  1 15608                 1 rs1535480   <NA>                 NA    NA          NA          
+#>  2 44592                 1 rs6006893   <NA>                 NA    NA          NA          
+#>  3 44589                 1 rs10198175  <NA>                 NA    NA          NA          
+#>  4 44590                 1 rs13233490  <NA>                 NA    NA          NA          
+#>  5 27460823              1 rs182107583 C                     0.04 FALSE       FALSE       
+#>  6 27460811              1 rs7904579   G                     0.37 FALSE       FALSE       
+#>  7 27460817              1 rs1950038   T                     0.3  FALSE       FALSE       
+#>  8 27460805              1 rs726170    T                     0.12 FALSE       FALSE       
+#>  9 27460830              1 rs76087671  T                     0.05 FALSE       FALSE       
+#> 10 27460844              1 rs111940429 T                     0.04 FALSE       FALSE       
+#> 11 27460858              1 rs7337127   T                     0.15 FALSE       FALSE       
+#> 12 27460864              1 rs145763646 A                     0.1  FALSE       FALSE       
+#> 13 27460870              1 rs73057489  C                     0.07 FALSE       FALSE       
+#> 14 27460851              1 rs17810023  T                     0.02 FALSE       FALSE       
 #> 
 #> Slot "genes":
 #> # A tibble: 15 × 3
@@ -317,7 +304,7 @@ get_associations(efo_trait = c('braces', 'binge eating', 'gambling'))
 #> 15 27460851              1 RP11-250B2.3
 #> 
 #> Slot "ensembl_ids":
-#> # A tibble: 16 × 4
+#> # A tibble: 15 × 4
 #>    association_id locus_id gene_name    ensembl_id     
 #>    <chr>             <int> <chr>        <chr>          
 #>  1 15608                 1 <NA>         <NA>           
@@ -332,10 +319,9 @@ get_associations(efo_trait = c('braces', 'binge eating', 'gambling'))
 #> 10 27460830              1 intergenic   <NA>           
 #> 11 27460844              1 AC096669.1   ENSG00000225588
 #> 12 27460858              1 intergenic   <NA>           
-#> 13 27460864              1 SLC25A26     ENSG00000282739
-#> 14 27460864              1 SLC25A26     ENSG00000144741
-#> 15 27460870              1 intergenic   <NA>           
-#> 16 27460851              1 RP11-250B2.3 <NA>           
+#> 13 27460864              1 SLC25A26     ENSG00000144741
+#> 14 27460870              1 intergenic   <NA>           
+#> 15 27460851              1 RP11-250B2.3 <NA>           
 #> 
 #> Slot "entrez_ids":
 #> # A tibble: 15 × 4
@@ -457,21 +443,20 @@ chr_XY_variants <- get_variants(genomic_range = my_genomic_range)
 chr_XY_variants@variants[c('variant_id',
                            'chromosome_name',
                            'chromosome_position')]
-#> # A tibble: 22 × 3
+#> # A tibble: 24 × 3
 #>    variant_id  chromosome_name chromosome_position
 #>    <chr>       <chr>                         <int>
 #>  1 rs111689944 X                          13494655
-#>  2 rs73633565  X                          13459192
-#>  3 rs5980075   X                          14932409
-#>  4 rs142204301 X                          13358691
-#>  5 rs2361151   X                          13503433
-#>  6 rs35164803  X                          14911253
-#>  7 rs12558341  X                          13695943
-#>  8 rs138331350 X                          14841981
-#>  9 rs66819623  X                          13936278
-#> 10 rs61273829  X                          14150876
-#> # … with 12 more rows
-#> # ℹ Use `print(n = ...)` to see more rows
+#>  2 rs7063195   X                          13492087
+#>  3 rs5978649   X                          13596999
+#>  4 rs5934106   X                          13488259
+#>  5 rs749624882 X                          14929148
+#>  6 rs61273829  X                          14150876
+#>  7 rs6528024   X                          13912803
+#>  8 rs66819623  X                          13936278
+#>  9 rs138331350 X                          14841981
+#> 10 rs5980075   X                          14932409
+#> # … with 14 more rows
 ```
 
 ### Searching variants by cytogenetic regions
@@ -487,9 +472,9 @@ my_variants@variants[c('variant_id',
 #> # A tibble: 3 × 3
 #>   variant_id chromosome_name chromosome_position
 #>   <chr>      <chr>                         <int>
-#> 1 rs2115848  Y                          14692972
-#> 2 rs2032658  Y                          13470103
-#> 3 rs2032624  Y                          12914512
+#> 1 rs2032624  Y                          12914512
+#> 2 rs2115848  Y                          14692972
+#> 3 rs2032658  Y                          13470103
 ```
 
 How to know what are the cytogenetic bands for querying? We provide a dataset (dataframe) named `cytogenetic_bands` that you can use:
@@ -499,21 +484,19 @@ How to know what are the cytogenetic bands for querying? We provide a dataset (d
 # ?cytogenetic_bands for more details.
 cytogenetic_bands
 #> # A tibble: 862 × 8
-#>    cytogenetic_band chromosome    start      end length assem…¹ stain last_…²
-#>    <chr>            <chr>         <int>    <int>  <dbl> <chr>   <chr> <chr>  
-#>  1 1p36.33          1                 1  2300000  2.3e6 GRCh38  gneg  Thu Ju…
-#>  2 1p36.32          1           2300001  5300000  3  e6 GRCh38  gpos… Thu Ju…
-#>  3 1p36.31          1           5300001  7100000  1.8e6 GRCh38  gneg  Thu Ju…
-#>  4 1p36.23          1           7100001  9100000  2  e6 GRCh38  gpos… Thu Ju…
-#>  5 1p36.22          1           9100001 12500000  3.4e6 GRCh38  gneg  Thu Ju…
-#>  6 1p36.21          1          12500001 15900000  3.4e6 GRCh38  gpos… Thu Ju…
-#>  7 1p36.13          1          15900001 20100000  4.2e6 GRCh38  gneg  Thu Ju…
-#>  8 1p36.12          1          20100001 23600000  3.5e6 GRCh38  gpos… Thu Ju…
-#>  9 1p36.11          1          23600001 27600000  4  e6 GRCh38  gneg  Thu Ju…
-#> 10 1p35.3           1          27600001 29900000  2.3e6 GRCh38  gpos… Thu Ju…
-#> # … with 852 more rows, and abbreviated variable names ¹​assembly,
-#> #   ²​last_download_date
-#> # ℹ Use `print(n = ...)` to see more rows
+#>    cytogenetic_band chromosome    start      end  length assembly stain  last_download_date      
+#>    <chr>            <chr>         <int>    <int>   <dbl> <chr>    <chr>  <chr>                   
+#>  1 1p36.33          1                 1  2300000 2300000 GRCh38   gneg   Thu Jun 27 15:09:22 2019
+#>  2 1p36.32          1           2300001  5300000 3000000 GRCh38   gpos25 Thu Jun 27 15:09:22 2019
+#>  3 1p36.31          1           5300001  7100000 1800000 GRCh38   gneg   Thu Jun 27 15:09:22 2019
+#>  4 1p36.23          1           7100001  9100000 2000000 GRCh38   gpos25 Thu Jun 27 15:09:22 2019
+#>  5 1p36.22          1           9100001 12500000 3400000 GRCh38   gneg   Thu Jun 27 15:09:22 2019
+#>  6 1p36.21          1          12500001 15900000 3400000 GRCh38   gpos50 Thu Jun 27 15:09:22 2019
+#>  7 1p36.13          1          15900001 20100000 4200000 GRCh38   gneg   Thu Jun 27 15:09:22 2019
+#>  8 1p36.12          1          20100001 23600000 3500000 GRCh38   gpos25 Thu Jun 27 15:09:22 2019
+#>  9 1p36.11          1          23600001 27600000 4000000 GRCh38   gneg   Thu Jun 27 15:09:22 2019
+#> 10 1p35.3           1          27600001 29900000 2300000 GRCh38   gpos25 Thu Jun 27 15:09:22 2019
+#> # … with 852 more rows
 ```
 
 Let's say you want to search for all variants in the shorter arm (p) of chromosome 21, you can take advantage of the `cytogenetic_bands` to get all the corresponding cytogenetic band names:
@@ -539,9 +522,9 @@ my_variants@variants[c('variant_id',
 #>   variant_id  chromosome_name chromosome_position chromosome_region
 #>   <chr>       <chr>                         <int> <chr>            
 #> 1 rs552964654 21                          9053097 21p11.2          
-#> 2 rs240444    21                         10510446 21p11.2          
-#> 3 rs10439884  21                         10540506 21p11.2          
-#> 4 rs75275574  21                          9040338 21p11.2
+#> 2 rs10439884  21                         10540506 21p11.2          
+#> 3 rs75275574  21                          9040338 21p11.2          
+#> 4 rs240444    21                         10510446 21p11.2
 ```
 
 ## 7 | Genomic range for an entire chromosome?
@@ -572,29 +555,21 @@ Currently, there is not an implemented solution in `{gwasrapidd}`. For example, 
 my_efo_ids <- c('EFO_0005543', 'EFO_0004762')
 my_variants <- get_variants(efo_id = my_efo_ids)
 my_variants@variants$variant_id
-#>   [1] "rs11706832"  "rs498872"    "rs72714270"  "rs11599775"  "rs12803321" 
-#>   [6] "rs7125115"   "rs10069690"  "rs12752552"  "rs648044"    "rs111976262"
-#>  [11] "rs11598018"  "rs4252707"   "rs688755"    "rs634537"    "rs78378222" 
-#>  [16] "rs4975538"   "rs2297433"   "rs55705857"  "rs320337"    "rs10852606" 
-#>  [21] "rs2297440"   "rs1938964"   "rs1106639"   "rs12076373"  "rs3772190"  
-#>  [26] "rs2235573"   "rs10842893"  "rs7572263"   "rs2736100"   "rs80351950" 
-#>  [31] "rs5839764"   "rs77633900"  "rs3751667"   "rs7107785"   "rs72714236" 
-#>  [36] "rs10131032"  "rs4774756"   "rs4977756"   "rs9841110"   "rs6010620"  
-#>  [41] "rs11233250"  "rs75061358"  "rs10927065"  "rs1275600"   "rs11979158" 
-#>  [46] "rs78355601"  "rs10411345"  "rs144085478" "rs12214617"  "rs181216459"
-#>  [51] "rs118086804" "rs12456390"  "rs4714729"   "rs12199215"  "rs2639990"  
-#>  [56] "rs9472155"   "rs144160960" "rs34528081"  "rs4082730"   "rs7763358"  
-#>  [61] "rs55864163"  "rs9787438"   "rs150821445" "rs12445232"  "rs6598475"  
-#>  [66] "rs10934631"  "rs6475938"   "rs6479877"   "rs6921438"   "rs10886366" 
-#>  [71] "rs10761741"  "rs114694170" "rs77961527"  "rs112215592" "rs117580153"
-#>  [76] "rs73872715"  "rs13206436"  "rs4782371"   "rs4513773"   "rs186725382"
-#>  [81] "rs139893147" "rs10153304"  "rs34524635"  "rs7043199"   "rs187918360"
-#>  [86] "rs11639051"  "rs1740073"   "rs71779653"  "rs34881325"  "rs181558074"
-#>  [91] "rs2375981"   "rs59706856"  "rs2304058"   "rs73418461"  "rs10761750" 
-#>  [96] "rs8045833"   "rs10761731"  "rs7030781"   "rs180936035" "rs550057"   
-#> [101] "rs9332599"   "rs75455100"  "rs143479231" "rs10822155"  "rs7767396"  
-#> [106] "rs191332118" "rs186066666" "rs11392719"  "rs6993770"   "rs61818787" 
-#> [111] "rs144820908" "rs61829244"  "rs6722871"   "rs10738760"
+#>   [1] "rs75061358"  "rs4252707"   "rs72714270"  "rs1106639"   "rs2736100"   "rs648044"    "rs78378222"  "rs7572263"  
+#>   [9] "rs498872"    "rs10852606"  "rs4975538"   "rs12803321"  "rs10131032"  "rs6010620"   "rs4774756"   "rs1938964"  
+#>  [17] "rs10927065"  "rs5839764"   "rs7107785"   "rs634537"    "rs72714236"  "rs12076373"  "rs1275600"   "rs11706832" 
+#>  [25] "rs111976262" "rs9841110"   "rs80351950"  "rs11598018"  "rs2297440"   "rs77633900"  "rs3751667"   "rs11599775" 
+#>  [33] "rs10842893"  "rs320337"    "rs12752552"  "rs7125115"   "rs688755"    "rs2297433"   "rs10069690"  "rs11979158" 
+#>  [41] "rs2235573"   "rs3772190"   "rs4977756"   "rs55705857"  "rs11233250"  "rs78355601"  "rs7043199"   "rs187918360"
+#>  [49] "rs75455100"  "rs10886366"  "rs6598475"   "rs150821445" "rs6479877"   "rs73418461"  "rs9787438"   "rs6993770"  
+#>  [57] "rs4782371"   "rs2375981"   "rs9472155"   "rs34528081"  "rs144160960" "rs12445232"  "rs10934631"  "rs71779653" 
+#>  [65] "rs117580153" "rs12456390"  "rs10822155"  "rs7767396"   "rs59706856"  "rs73872715"  "rs181216459" "rs10761731" 
+#>  [73] "rs10738760"  "rs186066666" "rs8045833"   "rs11392719"  "rs180936035" "rs4513773"   "rs118086804" "rs114694170"
+#>  [81] "rs181558074" "rs7763358"   "rs6722871"   "rs2304058"   "rs6921438"   "rs61829244"  "rs191332118" "rs12214617" 
+#>  [89] "rs1740073"   "rs139893147" "rs77961527"  "rs7030781"   "rs61818787"  "rs550057"    "rs11639051"  "rs10411345" 
+#>  [97] "rs10761750"  "rs4714729"   "rs4082730"   "rs9332599"   "rs10761741"  "rs12199215"  "rs186725382" "rs144820908"
+#> [105] "rs10153304"  "rs112215592" "rs13206436"  "rs2639990"   "rs6475938"   "rs144085478" "rs34524635"  "rs55864163" 
+#> [113] "rs143479231" "rs34881325"
 ```
 
 So it is not immediately obvious which variants resulted from the query `'EFO_0005543'` or `'EFO_0004762'`.
@@ -616,15 +591,12 @@ For `'EFO_0005543'` we got the following variants:
 
 ```r
 my_variants[['EFO_0005543']]@variants$variant_id
-#>  [1] "rs11706832"  "rs498872"    "rs72714270"  "rs11599775"  "rs12803321" 
-#>  [6] "rs7125115"   "rs10069690"  "rs12752552"  "rs648044"    "rs111976262"
-#> [11] "rs11598018"  "rs4252707"   "rs688755"    "rs634537"    "rs78378222" 
-#> [16] "rs4975538"   "rs2297433"   "rs55705857"  "rs320337"    "rs10852606" 
-#> [21] "rs2297440"   "rs1938964"   "rs1106639"   "rs12076373"  "rs3772190"  
-#> [26] "rs2235573"   "rs10842893"  "rs7572263"   "rs2736100"   "rs80351950" 
-#> [31] "rs5839764"   "rs77633900"  "rs3751667"   "rs7107785"   "rs72714236" 
-#> [36] "rs10131032"  "rs4774756"   "rs4977756"   "rs9841110"   "rs6010620"  
-#> [41] "rs11233250"  "rs75061358"  "rs10927065"  "rs1275600"   "rs11979158"
+#>  [1] "rs75061358"  "rs4252707"   "rs72714270"  "rs1106639"   "rs2736100"   "rs648044"    "rs78378222"  "rs7572263"  
+#>  [9] "rs498872"    "rs10852606"  "rs4975538"   "rs12803321"  "rs10131032"  "rs6010620"   "rs4774756"   "rs1938964"  
+#> [17] "rs10927065"  "rs5839764"   "rs7107785"   "rs634537"    "rs72714236"  "rs12076373"  "rs1275600"   "rs11706832" 
+#> [25] "rs111976262" "rs9841110"   "rs80351950"  "rs11598018"  "rs2297440"   "rs77633900"  "rs3751667"   "rs11599775" 
+#> [33] "rs10842893"  "rs320337"    "rs12752552"  "rs7125115"   "rs688755"    "rs2297433"   "rs10069690"  "rs11979158" 
+#> [41] "rs2235573"   "rs3772190"   "rs4977756"   "rs55705857"  "rs11233250"
 ```
 
 And for `'EFO_0004762'`:
@@ -632,20 +604,15 @@ And for `'EFO_0004762'`:
 
 ```r
 my_variants[['EFO_0004762']]@variants$variant_id
-#>  [1] "rs78355601"  "rs10411345"  "rs144085478" "rs12214617"  "rs181216459"
-#>  [6] "rs118086804" "rs12456390"  "rs4714729"   "rs12199215"  "rs2639990"  
-#> [11] "rs9472155"   "rs144160960" "rs34528081"  "rs4082730"   "rs7763358"  
-#> [16] "rs55864163"  "rs9787438"   "rs150821445" "rs12445232"  "rs6598475"  
-#> [21] "rs10934631"  "rs6475938"   "rs6479877"   "rs6921438"   "rs10886366" 
-#> [26] "rs10761741"  "rs114694170" "rs77961527"  "rs112215592" "rs117580153"
-#> [31] "rs73872715"  "rs13206436"  "rs4782371"   "rs4513773"   "rs186725382"
-#> [36] "rs139893147" "rs10153304"  "rs34524635"  "rs7043199"   "rs187918360"
-#> [41] "rs11639051"  "rs1740073"   "rs71779653"  "rs34881325"  "rs181558074"
-#> [46] "rs2375981"   "rs59706856"  "rs2304058"   "rs73418461"  "rs10761750" 
-#> [51] "rs8045833"   "rs10761731"  "rs7030781"   "rs180936035" "rs550057"   
-#> [56] "rs9332599"   "rs75455100"  "rs143479231" "rs10822155"  "rs7767396"  
-#> [61] "rs191332118" "rs186066666" "rs11392719"  "rs6993770"   "rs61818787" 
-#> [66] "rs144820908" "rs61829244"  "rs6722871"   "rs10738760"
+#>  [1] "rs78355601"  "rs7043199"   "rs187918360" "rs75455100"  "rs10886366"  "rs6598475"   "rs150821445" "rs6479877"  
+#>  [9] "rs73418461"  "rs9787438"   "rs6993770"   "rs4782371"   "rs2375981"   "rs9472155"   "rs34528081"  "rs144160960"
+#> [17] "rs12445232"  "rs10934631"  "rs71779653"  "rs117580153" "rs12456390"  "rs10822155"  "rs7767396"   "rs59706856" 
+#> [25] "rs73872715"  "rs181216459" "rs10761731"  "rs10738760"  "rs186066666" "rs8045833"   "rs11392719"  "rs180936035"
+#> [33] "rs4513773"   "rs118086804" "rs114694170" "rs181558074" "rs7763358"   "rs6722871"   "rs2304058"   "rs6921438"  
+#> [41] "rs61829244"  "rs191332118" "rs12214617"  "rs1740073"   "rs139893147" "rs77961527"  "rs7030781"   "rs61818787" 
+#> [49] "rs550057"    "rs11639051"  "rs10411345"  "rs10761750"  "rs4714729"   "rs4082730"   "rs9332599"   "rs10761741" 
+#> [57] "rs12199215"  "rs186725382" "rs144820908" "rs10153304"  "rs112215592" "rs13206436"  "rs2639990"   "rs6475938"  
+#> [65] "rs144085478" "rs34524635"  "rs55864163"  "rs143479231" "rs34881325"
 ```
 
 ## 9 | How to combine results from multiple queries?
@@ -665,7 +632,7 @@ my_variants_OR@variants[c('variant_id',
                        'chromosome_name',
                        'chromosome_position',
                        'chromosome_region')]
-#> # A tibble: 46 × 4
+#> # A tibble: 56 × 4
 #>    variant_id  chromosome_name chromosome_position chromosome_region
 #>    <chr>       <chr>                         <int> <chr>            
 #>  1 rs3747636   1                         204434531 1q32.1           
@@ -676,10 +643,9 @@ my_variants_OR@variants[c('variant_id',
 #>  6 rs1008833   1                         204457167 1q32.1           
 #>  7 rs2137255   1                         204457245 1q32.1           
 #>  8 rs2290854   1                         204546897 1q32.1           
-#>  9 rs3789044   1                         204619973 1q32.1           
-#> 10 rs12036042  1                         204500186 1q32.1           
-#> # … with 36 more rows
-#> # ℹ Use `print(n = ...)` to see more rows
+#>  9 rs12036042  1                         204500186 1q32.1           
+#> 10 rs3789045   1                         204617684 1q32.1           
+#> # … with 46 more rows
 ```
 
 The code above retrieves variants whose associated `efo_trait` is equal to `'triple-negative breast cancer'` or variants that are associated with gene `'MDM4'`.
@@ -697,10 +663,8 @@ my_variants_AND@variants[c('variant_id',
                        'chromosome_name',
                        'chromosome_position',
                        'chromosome_region')]
-#> # A tibble: 1 × 4
-#>   variant_id chromosome_name chromosome_position chromosome_region
-#>   <chr>      <chr>                         <int> <chr>            
-#> 1 rs4245739  1                         204549714 1q32.1
+#> # A tibble: 0 × 4
+#> # … with 4 variables: variant_id <chr>, chromosome_name <chr>, chromosome_position <int>, chromosome_region <chr>
 ```
 
 With `set_operation = 'intersection'`, as in the code above, we get variants whose associated `efo_trait` is equal to `'triple-negative breast cancer'` and that are associated with gene `'MDM4'`, i.e., only variants meeting both conditions simultaneously are retrieved.
@@ -712,70 +676,79 @@ In the following example, we will be using the gene name as the only search crit
 
 ```r
 my_variants <- get_variants(gene_name = c('RNU6-367P', 'ABHD5'))
+#> downloading [=======================================================================================] 100% eta: 0s
+#> downloading [=======================================================================================] 100% eta: 0s
 
 my_variants@variants[c('variant_id',
                        'chromosome_name',
                        'chromosome_position',
                        'chromosome_region')]
-#> # A tibble: 28 × 4
+#> # A tibble: 33 × 4
 #>    variant_id  chromosome_name chromosome_position chromosome_region
 #>    <chr>       <chr>                         <int> <chr>            
-#>  1 rs7625896   3                          44021069 3p21.33          
-#>  2 rs142242702 3                          44122660 3p21.32          
-#>  3 rs1554654   3                          44002852 3p21.33          
-#>  4 rs7619427   3                          44035549 3p21.33          
-#>  5 rs11718455  3                          44015406 3p21.33          
-#>  6 rs73076675  3                          43924731 3p21.33          
-#>  7 rs113706999 3                          44117664 3p21.32          
-#>  8 rs6441814   3                          44007622 3p21.33          
-#>  9 rs4017425   3                          43987272 3p21.33          
-#> 10 rs79644353  3                          44135707 3p21.32          
-#> # … with 18 more rows
-#> # ℹ Use `print(n = ...)` to see more rows
+#>  1 rs142242702 3                          44122660 3p21.32          
+#>  2 rs1554654   3                          44002852 3p21.33          
+#>  3 rs7619427   3                          44035549 3p21.33          
+#>  4 rs11718455  3                          44015406 3p21.33          
+#>  5 rs73076675  3                          43924731 3p21.33          
+#>  6 rs113706999 3                          44117664 3p21.32          
+#>  7 rs6441814   3                          44007622 3p21.33          
+#>  8 rs4017425   3                          43987272 3p21.33          
+#>  9 rs79644353  3                          44135707 3p21.32          
+#> 10 rs7619544   3                          43852053 3p21.33          
+#> # … with 23 more rows
 ```
 
-In this case we retrieved 28 variants. Please note that the `set_operation` parameter does not affect this result. The `set_operation` only controls the function behaviour when combining results from different criteria, e.g., when using `efo_trait` and `gene_name`.
+In this case we retrieved 33 variants. Please note that the `set_operation` parameter does not affect this result. The `set_operation` only controls the function behaviour when combining results from different criteria, e.g., when using `efo_trait` and `gene_name`.
 
 To retrieve variants that are concomitantly associated with genes RNU6-367P and ABHD5, the user needs to place these queries separately and then intersect them --- using the `intersect()` function, i.e., combining in an AND fashion. Here we start by retrieving variants associated with gene RNU6-367P:
 
 
 ```r
 my_variants1 <- get_variants(gene_name = 'RNU6-367P')
+#> downloading [=======================================================================================] 100% eta: 0s
 
 my_variants1@variants[c('variant_id',
                        'chromosome_name',
                        'chromosome_position',
                        'chromosome_region')]
-#> # A tibble: 14 × 4
+#> # A tibble: 19 × 4
 #>    variant_id  chromosome_name chromosome_position chromosome_region
 #>    <chr>       <chr>                         <int> <chr>            
-#>  1 rs7625896   3                          44021069 3p21.33          
-#>  2 rs142242702 3                          44122660 3p21.32          
-#>  3 rs1554654   3                          44002852 3p21.33          
-#>  4 rs7619427   3                          44035549 3p21.33          
-#>  5 rs11718455  3                          44015406 3p21.33          
-#>  6 rs73076675  3                          43924731 3p21.33          
-#>  7 rs113706999 3                          44117664 3p21.32          
-#>  8 rs6441814   3                          44007622 3p21.33          
-#>  9 rs4017425   3                          43987272 3p21.33          
-#> 10 rs79644353  3                          44135707 3p21.32          
-#> 11 rs7619544   3                          43852053 3p21.33          
-#> 12 rs189710954 3                          43800315 3p21.33          
-#> 13 rs35283240  3                          43990836 3p21.33          
-#> 14 rs62251261  3                          44106761 3p21.32
+#>  1 rs142242702 3                          44122660 3p21.32          
+#>  2 rs1554654   3                          44002852 3p21.33          
+#>  3 rs7619427   3                          44035549 3p21.33          
+#>  4 rs11718455  3                          44015406 3p21.33          
+#>  5 rs73076675  3                          43924731 3p21.33          
+#>  6 rs113706999 3                          44117664 3p21.32          
+#>  7 rs6441814   3                          44007622 3p21.33          
+#>  8 rs4017425   3                          43987272 3p21.33          
+#>  9 rs79644353  3                          44135707 3p21.32          
+#> 10 rs7619544   3                          43852053 3p21.33          
+#> 11 rs58492658  3                          44098920 3p21.33          
+#> 12 rs7635417   3                          44032957 3p21.33          
+#> 13 rs6441813   3                          43999831 3p21.33          
+#> 14 rs189710954 3                          43800315 3p21.33          
+#> 15 rs11130017  3                          43932687 3p21.33          
+#> 16 rs75619216  3                          43912969 3p21.33          
+#> 17 rs1491708   3                          43870086 3p21.33          
+#> 18 rs55807460  3                          43903734 3p21.33          
+#> 19 rs6806257   3                          43878471 3p21.33
 ```
 
-There are 14 variants associated with gene RNU6-367P. Now, for gene ABHD5:
+There are 19 variants associated with gene RNU6-367P. Now, for gene ABHD5:
 
 
 ```r
 my_variants2 <- get_variants(gene_name = 'ABHD5')
+#> downloading [=========================================================>-----------------------------] 67% eta: 4s
+#> downloading [=======================================================================================] 100% eta: 0s
 
 my_variants2@variants[c('variant_id',
                        'chromosome_name',
                        'chromosome_position',
                        'chromosome_region')]
-#> # A tibble: 19 × 4
+#> # A tibble: 23 × 4
 #>    variant_id  chromosome_name chromosome_position chromosome_region
 #>    <chr>       <chr>                         <int> <chr>            
 #>  1 rs191867523 3                          43774449 3p21.33          
@@ -788,18 +761,10 @@ my_variants2@variants[c('variant_id',
 #>  8 rs73087085  3                          43687796 3p21.33          
 #>  9 rs75594032  3                          43744082 3p21.33          
 #> 10 rs1468602   3                          43701242 3p21.33          
-#> 11 rs4082244   3                         135010695 3q22.2           
-#> 12 rs740838    3                          43722823 3p21.33          
-#> 13 rs73076675  3                          43924731 3p21.33          
-#> 14 rs141365045 3                          43691004 3p21.33          
-#> 15 rs4017425   3                          43987272 3p21.33          
-#> 16 rs17075898  3                          43710695 3p21.33          
-#> 17 rs7619544   3                          43852053 3p21.33          
-#> 18 rs189710954 3                          43800315 3p21.33          
-#> 19 rs35283240  3                          43990836 3p21.33
+#> # … with 13 more rows
 ```
 
-There are 19 variants associated with gene ABHD5. To find those variants simultaneously associated with both genes, you can intersect the two [variants](https://rmagno.eu/gwasrapidd/reference/variants-class.html) objects using `gwasrapidd::intersect()`:
+There are 23 variants associated with gene ABHD5. To find those variants simultaneously associated with both genes, you can intersect the two [variants](https://rmagno.eu/gwasrapidd/reference/variants-class.html) objects using `gwasrapidd::intersect()`:
 
 
 
@@ -809,14 +774,18 @@ variants_intersect@variants[c('variant_id',
                        'chromosome_name',
                        'chromosome_position',
                        'chromosome_region')]
-#> # A tibble: 5 × 4
+#> # A tibble: 9 × 4
 #>   variant_id  chromosome_name chromosome_position chromosome_region
 #>   <chr>       <chr>                         <int> <chr>            
-#> 1 rs73076675  3                          43924731 3p21.33          
-#> 2 rs4017425   3                          43987272 3p21.33          
-#> 3 rs7619544   3                          43852053 3p21.33          
+#> 1 rs4017425   3                          43987272 3p21.33          
+#> 2 rs7635417   3                          44032957 3p21.33          
+#> 3 rs6441813   3                          43999831 3p21.33          
 #> 4 rs189710954 3                          43800315 3p21.33          
-#> 5 rs35283240  3                          43990836 3p21.33
+#> 5 rs11130017  3                          43932687 3p21.33          
+#> 6 rs75619216  3                          43912969 3p21.33          
+#> 7 rs1491708   3                          43870086 3p21.33          
+#> 8 rs55807460  3                          43903734 3p21.33          
+#> 9 rs6806257   3                          43878471 3p21.33
 ```
 
-Apparently only 5 variant(s) are related to both genes RNU6-367P and ABHD5.
+Apparently only 9 variant(s) are related to both genes RNU6-367P and ABHD5.
