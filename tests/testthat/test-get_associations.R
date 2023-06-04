@@ -45,16 +45,15 @@ with_mock_api({
   })
 })
 
-#
-## get_associations, by efo id
-#
-# with_mock_api({
-#   test_that("get_associations: by efo id", {
-#     skip_if_testing_is_fast()
-#     my_associations <- get_associations(efo_id = 'EFO_0007990')
-#     expect_is(my_associations, 'associations')
-#   })
-# })
+
+# get_associations, by efo id
+
+with_mock_api({
+  test_that("get_associations: by efo id", {
+    my_associations <- get_associations(efo_id = 'EFO_0005108')
+    expect_is(my_associations, 'associations')
+  })
+})
 
 #
 ## get_associations, by pubmed id

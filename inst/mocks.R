@@ -40,6 +40,7 @@ capture_requests({gwasrapidd::get_associations(variant_id = 'rs3798440')})
 capture_requests({gwasrapidd::get_associations(variant_id = 'rs7329174')})
 capture_requests({gwasrapidd::get_associations(pubmed_id = '24882193')})
 capture_requests({gwasrapidd::get_associations(pubmed_id = '21626137')})
+capture_requests({gwasrapidd::get_associations(efo_id = 'EFO_0005108')})
 
 #
 # Mock API fixtures for requests of variants
