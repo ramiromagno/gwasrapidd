@@ -13,6 +13,7 @@ associations_tbl(
   multiple_snp_haplotype = logical(),
   snp_interaction = logical(),
   snp_type = character(),
+  risk_frequency = double(),
   standard_error = double(),
   range = character(),
   or_per_copy_number = double(),

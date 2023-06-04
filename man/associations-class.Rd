@@ -28,6 +28,8 @@ haplotype.}
 \item{snp_interaction}{Whether the association is for a SNP-SNP interaction.}
 \item{snp_type}{Whether the SNP has previously been reported. Either
 \code{'known'} or \code{'novel'}.}
+\item{risk_frequency}{Reported risk/effect allele frequency associated with
+strongest SNP in controls.}
 \item{standard_error}{Standard error of the effect size.}
 \item{range}{Reported 95\% confidence interval associated with strongest SNP
 risk allele, along with unit in the case of beta coefficients. If 95\% CIs

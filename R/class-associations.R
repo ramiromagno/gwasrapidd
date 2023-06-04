@@ -22,6 +22,8 @@ setOldClass(c("tbl_df", "tbl", "data.frame"))
 #' \item{snp_interaction}{Whether the association is for a SNP-SNP interaction.}
 #' \item{snp_type}{Whether the SNP has previously been reported. Either
 #' \code{'known'} or \code{'novel'}.}
+#' \item{risk_frequency}{Reported risk/effect allele frequency associated with
+#' strongest SNP in controls.}
 #' \item{standard_error}{Standard error of the effect size.}
 #' \item{range}{Reported 95\% confidence interval associated with strongest SNP
 #' risk allele, along with unit in the case of beta coefficients. If 95\% CIs
@@ -191,6 +193,7 @@ associations_tbl <- function(
   multiple_snp_haplotype = logical(),
   snp_interaction = logical(),
   snp_type = character(),
+  risk_frequency = double(),
   standard_error = double(),
   range = character(),
   or_per_copy_number = double(),
@@ -210,6 +213,7 @@ associations_tbl <- function(
     multiple_snp_haplotype = multiple_snp_haplotype,
     snp_interaction = snp_interaction,
     snp_type = snp_type,
+    risk_frequency = risk_frequency,
     standard_error = standard_error,
     range = range,
     or_per_copy_number = or_per_copy_number,
