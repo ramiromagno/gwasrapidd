@@ -1,15 +1,15 @@
 Package: gwasrapidd
 Type: Package
 Title: 'REST' 'API' Client for the 'NHGRI'-'EBI' 'GWAS' Catalog
-Version: 0.99.14
+Version: 0.99.15
 Authors@R: c(
-    person(given = "Ramiro", family = "Magno", email = "ramiro.magno@gmail.com",
+    person(given = "Ramiro", family = "Magno", email = "rmagno@pattern.institute",
     role = c("aut", "cre"), comment = c(ORCID = "0000-0001-5226-3441")),
     person(given = "Ana-Teresa", family = "Maia",
     email = "maia.anateresa@gmail.com", role = "aut", 
     comment = c(ORCID = "0000-0002-0454-9207")),
-    person("CINTESIS",
-    role = c("cph", "fnd"))
+    person("CINTESIS", role = c("cph", "fnd")),
+    person("Pattern Institute", role = c("cph", "fnd"))
     )
 Description: 'GWAS' R 'API' Data Download.
     This package provides easy access to the 'NHGRI'-'EBI' 'GWAS' Catalog data by

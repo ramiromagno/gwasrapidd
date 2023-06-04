@@ -29,17 +29,6 @@ Install `{gwasrapidd}` from CRAN:
 install.packages("gwasrapidd")
 ```
 
-You can instead install the development version of `{gwasrapidd}` by
-setting [Ramiro Magno’s universe](https://ramiromagno.r-universe.dev/)
-repository:
-
-``` r
-options(repos = c(ramiromagno = 'https://ramiromagno.r-universe.dev',
-                CRAN = 'https://cloud.r-project.org'))
-
-install.packages('gwasrapidd')
-```
-
 ## Cheatsheet
 
 <a href="https://github.com/rstudio/cheatsheets/blob/master/gwasrapidd.pdf"><img src="https://raw.githubusercontent.com/rstudio/cheatsheets/master/pngs/gwasrapidd.png" width="420" height="300"/></a>
@@ -53,13 +42,12 @@ library(gwasrapidd)
 studies <- get_studies(efo_trait = 'triple-negative breast cancer')
 studies@studies[1:4]
 ## # A tibble: 3 × 4
-##   study_id     reported_trait                                    initi…¹ repli…²
-##   <chr>        <chr>                                             <chr>   <chr>  
-## 1 GCST002305   Breast cancer (estrogen-receptor negative, proge… 1,529 … 2,148 …
-## 2 GCST010100   Breast cancer (estrogen-receptor negative, proge… 8,602 … <NA>   
-## 3 GCST90029052 15-year breast cancer-specific survival (ER nega… 5,631 … <NA>   
-## # … with abbreviated variable names ¹​initial_sample_size,
-## #   ²​replication_sample_size
+##   study_id     reported_trait         initial_sample_size replication_sample_s…¹
+##   <chr>        <chr>                  <chr>               <chr>                 
+## 1 GCST002305   Breast cancer (estrog… 1,529 European anc… 2,148 European ancest…
+## 2 GCST010100   Breast cancer (estrog… 8,602 European anc… <NA>                  
+## 3 GCST90029052 15-year breast cancer… 5,631 European anc… <NA>                  
+## # ℹ abbreviated name: ¹​replication_sample_size
 ```
 
 Find associated variants with study GCST002305:
@@ -114,13 +102,13 @@ contributing to this project, you agree to abide by its terms.
 
 ## Similar projects
 
--   Bioconductor R package *gwascat* by Vincent J Carey:
-    <https://www.bioconductor.org/packages/release/bioc/html/gwascat.html>
--   Web application *PhenoScanner V2* by Mihir A. Kamat, James R.
-    Staley, and others: <http://www.phenoscanner.medschl.cam.ac.uk/>
--   Web application *GWEHS: Genome-Wide Effect sizes and Heritability
-    Screener* by Eugenio López-Cortegano and Armando Caballero:
-    <http://gwehs.uvigo.es/>
+- Bioconductor R package *gwascat* by Vincent J Carey:
+  <https://www.bioconductor.org/packages/release/bioc/html/gwascat.html>
+- Web application *PhenoScanner V2* by Mihir A. Kamat, James R. Staley,
+  and others: <http://www.phenoscanner.medschl.cam.ac.uk/>
+- Web application *GWEHS: Genome-Wide Effect sizes and Heritability
+  Screener* by Eugenio López-Cortegano and Armando Caballero:
+  <http://gwehs.uvigo.es/>
 
 ## Acknowledgements
 

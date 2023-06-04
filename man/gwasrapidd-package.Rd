@@ -20,7 +20,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Ramiro Magno \email{ramiro.magno@gmail.com} (\href{https://orcid.org/0000-0001-5226-3441}{ORCID})
+\strong{Maintainer}: Ramiro Magno \email{rmagno@pattern.institute} (\href{https://orcid.org/0000-0001-5226-3441}{ORCID})
 
 Authors:
 \itemize{
@@ -30,6 +30,7 @@ Authors:
 Other contributors:
 \itemize{
   \item CINTESIS [copyright holder, funder]
+  \item Pattern Institute [copyright holder, funder]
 }
 
 }

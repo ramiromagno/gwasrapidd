@@ -1,3 +1,8 @@
+# gwasrapidd 0.99.15
+
+- Fixed issue [#41](https://github.com/ramiromagno/gwasrapidd/issues/41)
+- Update http mocks
+
 ## gwasrapidd 0.99.14
 
 - Merged pull request [#37](https://github.com/ramiromagno/gwasrapidd/pull/37).

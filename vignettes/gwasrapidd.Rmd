@@ -1,14 +1,19 @@
 ---
 title: "Getting started with gwasrapidd"
-output: rmarkdown::html_vignette
+output: 
+  bookdown::html_document2:
+    base_format: rmarkdown::html_vignette
+    fig_caption: yes
+    number_sections: false
+# as_is: for figure captions in pkgdown output
+pkgdown:
+  as_is: true
 vignette: >
   %\VignetteIndexEntry{Getting started with gwasrapidd}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 bibliography: gwasrapidd.bib
 ---
-
-
 
 ## The GWAS Catalog
 
@@ -17,37 +22,48 @@ manually curated and freely available database of published genome-wide
 association studies (GWAS). The Catalog website and infrastructure is hosted by
 the [EMBL-EBI](https://www.ebi.ac.uk).
 
-There are three ways to access the Catalog database:
-
-- Via the Web interface at
-[https://www.ebi.ac.uk/gwas](https://www.ebi.ac.uk/gwas)
-- By downloading a
-database dump in TSV or RDF/OWL formats:
-[https://www.ebi.ac.uk/gwas/docs/file-downloads](https://www.ebi.ac.uk/gwas/docs/file-downloads)
-- Or through the GWAS Catalog REST API:
-[https://www.ebi.ac.uk/gwas/rest/docs/api](https://www.ebi.ac.uk/gwas/rest/docs/api)
-
-gwasrapidd facilitates the access to the Catalog via the REST API,
+`{gwasrapidd}` facilitates the access to the Catalog via the REST API,
 allowing you to programmatically retrieve data directly into R.
 
 ## GWAS Catalog Entities
 
-The Catalog REST API is organized around four core entities: studies, associations, variants, and traits. **gwasrapidd** provides four corresponding functions to get each of the entities: `get_studies()`, `get_associations()`, `get_variants()`, and `get_traits()`.
+The Catalog REST API is organized around four core entities:
 
-Each function maps to an appropriately named S4 classed object: [studies](https://rmagno.eu/gwasrapidd/reference/studies-class.html), [associations](https://rmagno.eu/gwasrapidd/reference/associations-class.html), [variants](https://rmagno.eu/gwasrapidd/reference/variants-class.html), and [traits](https://rmagno.eu/gwasrapidd/reference/traits-class.html) (see Figure 1).
+- studies
+- associations
+- variants
+- traits
+
+`{gwasrapidd}` provides four corresponding functions to get each of the
+entities: `get_studies()`, `get_associations()`, `get_variants()`, and
+`get_traits()`.
+
+Each function maps to an appropriately named S4 classed object: [studies](https://rmagno.eu/gwasrapidd/reference/studies-class.html), [associations](https://rmagno.eu/gwasrapidd/reference/associations-class.html), [variants](https://rmagno.eu/gwasrapidd/reference/variants-class.html), and [traits](https://rmagno.eu/gwasrapidd/reference/traits-class.html) (see Figure \@ref(fig:fns)).
 
 
-<img src="../man/figures/get_fns.png" alt="Figure 1 | gwasrapidd retrieval functions." width="500" style="display: block; margin: auto auto auto 0;" />
+```{r fns, out.width = "70%", echo=FALSE, fig.cap='`{gwasrapidd}` retrieval functions.'}
+knitr::include_graphics('../man/figures/get_fns.png') 
+```
 
-You can use a combination of several search criteria with each retrieval function as shown in Figure 2. For example, if you want to get studies using either one of these two criteria: *study accession identifier* and *variant identifier*, you could run the following code:
+You can use a combination of several search criteria with each retrieval
+function as shown in Figure \@ref(fig:criteria). For example, if you want to get studies using
+either one of these two criteria:
 
+- study accession identifier (`study_id`)
+- variant identifier (`variant_id`)
+
+You could run the following code:
 
 ```r
 library(gwasrapidd)
+
 my_studies <- get_studies(study_id = 'GCST000858', variant_id = 'rs12752552')
+my_studies@studies
 ```
 
-This command returns all studies that match either `'GCST000858'` or `'rs12752552'`. This is equivalent to running `get_studies` separately on each criteria, and combining the results afterwards:
+This command returns all studies that match either `'GCST000858'` or
+`'rs12752552'`. This is equivalent to running `get_studies` separately on each
+criteria, and combining the results afterwards:
 
 
 ```r
@@ -58,9 +74,11 @@ my_studies <- gwasrapidd::union(s1, s2)
 
 All four retrieval functions accept the `set_operation` parameter which defines the way the results obtained with each criterion are combined. The two options for this parameter are `'union'` (default) or `'intersection'`, resulting, respectively, in an OR or AND operation.
 
-<img src="../man/figures/get_criteria.png" alt="Figure 2 | gwasrapidd arguments for retrieval functions. Colors indicate the criteria that can be used for retrieving GWAS Catalog entities: studies (green), associations (red), variants (purple), and traits (orange)." width="500" style="display: block; margin: auto auto auto 0;" />
+```{r criteria, out.width = "70%", echo=FALSE, fig.cap='`{gwasrapidd}` arguments for retrieval functions. Colors indicate the criteria that can be used for retrieving GWAS Catalog entities: studies (green), associations (red), variants (purple), and traits (orange).'}
+knitr::include_graphics('../man/figures/get_criteria.png') 
+```
 
-## Example 1 | Finding Risk Alleles Associated with Autoimmune Disease
+## Finding Risk Alleles Associated with Autoimmune Disease
 
 As a first example, take the work by @Light2014. In this work the authors focused on variants that had been previously reported in genome-wide association studies (GWAS) for autoimmune disease.
 
