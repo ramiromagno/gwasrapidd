@@ -24,15 +24,17 @@ with_mock_api({
   })
 })
 
-with_mock_api({
-  test_that("filter_variants_by_standard_chromosomes: drop mitochondrial locations", {
-    my_variants <- get_variants(variant_id = c('rs147903261', 'rs267606894'))
-    expect_is(my_variants, 'variants')
-    # Only allow autosomal and sex chromosomes (exclude the mitochondrial chr).
-    my_variants2 <- filter_variants_by_standard_chromosomes(my_variants, chromosomes = c(1:22, 'X', 'Y'))
-    expect_identical(my_variants2, variants())
-  })
-})
+# This has been commented as it seems that the GWAS Catalog does not include
+# the mitochondrial chromosome anymore.
+# with_mock_api({
+#   test_that("filter_variants_by_standard_chromosomes: drop mitochondrial locations", {
+#     my_variants <- get_variants(variant_id = c('rs111689944', 'rs2115848'))
+#     expect_is(my_variants, 'variants')
+#     # Only allow autosomal and sex chromosomes (exclude the mitochondrial chr).
+#     my_variants2 <- filter_variants_by_standard_chromosomes(my_variants, chromosomes = c(1:22, 'X', 'Y'))
+#     expect_identical(my_variants2, variants())
+#   })
+# })
 
 # Variants that also map to scaffolds other than the normal chromosomes
 # rs10910092: maps to chr 1 and to CHR_HSCHR1_1_CTG3.

@@ -39,6 +39,7 @@ capture_requests({gwasrapidd::get_associations(study_id = 'GCST002420')})
 capture_requests({gwasrapidd::get_associations(variant_id = 'rs3798440')})
 capture_requests({gwasrapidd::get_associations(variant_id = 'rs7329174')})
 capture_requests({gwasrapidd::get_associations(pubmed_id = '24882193')})
+capture_requests({gwasrapidd::get_associations(pubmed_id = '21626137')})
 
 #
 # Mock API fixtures for requests of variants
@@ -60,8 +61,8 @@ capture_requests({gwasrapidd::get_variants(efo_trait = 'braces')})
 
 # Mitochondrial genome variants
 capture_requests({
-  gwasrapidd::get_variants(variant_id = 'rs147903261')
-  gwasrapidd::get_variants(variant_id = 'rs267606894')
+  gwasrapidd::get_variants(variant_id = 'rs111689944')
+  gwasrapidd::get_variants(variant_id = 'rs2115848')
 })
 # Variants that also map to scaffolds other than the normal chromosomes
 # rs10910092: maps to chr 1 and to CHR_HSCHR1_1_CTG3.
@@ -121,6 +122,7 @@ capture_requests({study_to_trait(c('GCST001084', 'GCST001085'))})
 capture_requests({association_to_study(c('24300097', '24299759'))})
 capture_requests({association_to_trait(c('24300097', '24299759'))})
 capture_requests({association_to_variant(c('24300097', '24299759'))})
+capture_requests({association_to_variant(c('0'), warnings = FALSE)})
 
 capture_requests({variant_to_association(c('rs7904579'))})
 capture_requests({variant_to_study(c('rs7904579', 'rs138331350'))})

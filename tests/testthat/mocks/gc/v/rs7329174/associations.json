@@ -2,6 +2,87 @@
     "_embedded": {
         "associations": [
             {
+                "riskFrequency": "0.22",
+                "pvalueDescription": null,
+                "pvalueMantissa": 1,
+                "pvalueExponent": -8,
+                "multiSnpHaplotype": false,
+                "snpInteraction": false,
+                "snpType": "novel",
+                "standardError": null,
+                "range": "[1.16-1.36]",
+                "description": null,
+                "orPerCopyNum": 1.26,
+                "betaNum": null,
+                "betaUnit": null,
+                "betaDirection": null,
+                "loci": [
+                    {
+                        "haplotypeSnpCount": null,
+                        "description": "Single variant",
+                        "strongestRiskAlleles": [
+                            {
+                                "riskAlleleName": "rs7329174-G",
+                                "riskFrequency": null,
+                                "genomeWide": null,
+                                "limitedList": null,
+                                "_links": {
+                                    "snp": {
+                                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174{?projection}",
+                                        "templated": true
+                                    }
+                                }
+                            }
+                        ],
+                        "authorReportedGenes": [
+                            {
+                                "geneName": "ELF1",
+                                "entrezGeneIds": [
+                                    {
+                                        "entrezGeneId": "1997"
+                                    }
+                                ],
+                                "ensemblGeneIds": [
+                                    {
+                                        "ensemblGeneId": "ENSG00000120690"
+                                    }
+                                ]
+                            }
+                        ],
+                        "_links": {
+                            "association": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/16617{?projection}",
+                                "templated": true
+                            }
+                        }
+                    }
+                ],
+                "lastMappingDate": "2021-06-24T18:42:47.000+0000",
+                "lastUpdateDate": "2021-06-24T18:42:47.000+0000",
+                "pvalue": 1.0E-8,
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/16617"
+                    },
+                    "association": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/16617{?projection}",
+                        "templated": true
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/16617/snps"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/16617/study"
+                    },
+                    "backgroundEfoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/16617/backgroundEfoTraits"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/16617/efoTraits"
+                    }
+                }
+            },
+            {
                 "riskFrequency": "NR",
                 "pvalueDescription": null,
                 "pvalueMantissa": 8,
@@ -28,7 +109,8 @@
                                 "limitedList": null,
                                 "_links": {
                                     "snp": {
-                                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174"
+                                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174{?projection}",
+                                        "templated": true
                                     }
                                 }
                             }
@@ -91,8 +173,8 @@
                         }
                     }
                 ],
-                "lastMappingDate": "2019-02-17T19:11:32.000+0000",
-                "lastUpdateDate": "2019-02-17T19:11:32.000+0000",
+                "lastMappingDate": "2021-06-24T17:55:01.000+0000",
+                "lastUpdateDate": "2021-06-24T17:55:02.000+0000",
                 "pvalue": 8.0E-9,
                 "_links": {
                     "self": {
@@ -108,85 +190,11 @@
                     "study": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/26451/study"
                     },
+                    "backgroundEfoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/26451/backgroundEfoTraits"
+                    },
                     "efoTraits": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/26451/efoTraits"
-                    }
-                }
-            },
-            {
-                "riskFrequency": "0.22",
-                "pvalueDescription": null,
-                "pvalueMantissa": 1,
-                "pvalueExponent": -8,
-                "multiSnpHaplotype": false,
-                "snpInteraction": false,
-                "snpType": "novel",
-                "standardError": null,
-                "range": "[1.16-1.36]",
-                "description": null,
-                "orPerCopyNum": 1.26,
-                "betaNum": null,
-                "betaUnit": null,
-                "betaDirection": null,
-                "loci": [
-                    {
-                        "haplotypeSnpCount": null,
-                        "description": "Single variant",
-                        "strongestRiskAlleles": [
-                            {
-                                "riskAlleleName": "rs7329174-G",
-                                "riskFrequency": null,
-                                "genomeWide": null,
-                                "limitedList": null,
-                                "_links": {
-                                    "snp": {
-                                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174"
-                                    }
-                                }
-                            }
-                        ],
-                        "authorReportedGenes": [
-                            {
-                                "geneName": "ELF1",
-                                "entrezGeneIds": [
-                                    {
-                                        "entrezGeneId": "1997"
-                                    }
-                                ],
-                                "ensemblGeneIds": [
-                                    {
-                                        "ensemblGeneId": "ENSG00000120690"
-                                    }
-                                ]
-                            }
-                        ],
-                        "_links": {
-                            "association": {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/16617{?projection}",
-                                "templated": true
-                            }
-                        }
-                    }
-                ],
-                "lastMappingDate": "2019-02-16T13:17:05.000+0000",
-                "lastUpdateDate": "2019-02-16T13:17:05.000+0000",
-                "pvalue": 1.0E-8,
-                "_links": {
-                    "self": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/16617"
-                    },
-                    "association": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/16617{?projection}",
-                        "templated": true
-                    },
-                    "snps": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/16617/snps"
-                    },
-                    "study": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/16617/study"
-                    },
-                    "efoTraits": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/16617/efoTraits"
                     }
                 }
             },
@@ -217,7 +225,8 @@
                                 "limitedList": null,
                                 "_links": {
                                     "snp": {
-                                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174"
+                                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174{?projection}",
+                                        "templated": true
                                     }
                                 }
                             }
@@ -245,8 +254,8 @@
                         }
                     }
                 ],
-                "lastMappingDate": "2019-02-17T01:38:50.000+0000",
-                "lastUpdateDate": "2019-02-17T01:38:50.000+0000",
+                "lastMappingDate": "2021-06-24T17:54:51.000+0000",
+                "lastUpdateDate": "2021-06-24T17:54:51.000+0000",
                 "pvalue": 6.0E-6,
                 "_links": {
                     "self": {
@@ -262,8 +271,88 @@
                     "study": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/26394/study"
                     },
+                    "backgroundEfoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/26394/backgroundEfoTraits"
+                    },
                     "efoTraits": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/26394/efoTraits"
+                    }
+                }
+            },
+            {
+                "riskFrequency": "NR",
+                "pvalueDescription": null,
+                "pvalueMantissa": 3,
+                "pvalueExponent": -6,
+                "multiSnpHaplotype": false,
+                "snpInteraction": false,
+                "snpType": "known",
+                "standardError": null,
+                "range": null,
+                "description": null,
+                "orPerCopyNum": null,
+                "betaNum": null,
+                "betaUnit": null,
+                "betaDirection": null,
+                "loci": [
+                    {
+                        "haplotypeSnpCount": null,
+                        "description": "Single variant",
+                        "strongestRiskAlleles": [
+                            {
+                                "riskAlleleName": "rs7329174-G",
+                                "riskFrequency": "NR",
+                                "genomeWide": false,
+                                "limitedList": false,
+                                "_links": {
+                                    "snp": {
+                                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174{?projection}",
+                                        "templated": true
+                                    }
+                                }
+                            }
+                        ],
+                        "authorReportedGenes": [
+                            {
+                                "geneName": "NR",
+                                "entrezGeneIds": [
+
+                                ],
+                                "ensemblGeneIds": [
+
+                                ]
+                            }
+                        ],
+                        "_links": {
+                            "association": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/92481688{?projection}",
+                                "templated": true
+                            }
+                        }
+                    }
+                ],
+                "lastMappingDate": "2021-10-19T22:22:55.000+0000",
+                "lastUpdateDate": "2021-10-20T10:51:47.000+0000",
+                "pvalue": 3.0E-6,
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/92481688"
+                    },
+                    "association": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/92481688{?projection}",
+                        "templated": true
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/92481688/snps"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/92481688/study"
+                    },
+                    "backgroundEfoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/92481688/backgroundEfoTraits"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/92481688/efoTraits"
                     }
                 }
             },
@@ -293,11 +382,13 @@
                                 "genomeWide": false,
                                 "limitedList": false,
                                 "_links": {
-                                    "proxySnps": {
-                                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/NR"
-                                    },
                                     "snp": {
-                                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174"
+                                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174{?projection}",
+                                        "templated": true
+                                    },
+                                    "proxySnps": {
+                                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/NR{?projection}",
+                                        "templated": true
                                     }
                                 }
                             }
@@ -325,8 +416,8 @@
                         }
                     }
                 ],
-                "lastMappingDate": "2019-02-19T03:03:38.000+0000",
-                "lastUpdateDate": "2019-02-19T03:03:38.000+0000",
+                "lastMappingDate": "2021-06-24T19:18:41.000+0000",
+                "lastUpdateDate": "2021-06-24T19:18:41.000+0000",
                 "pvalue": 3.0E-6,
                 "_links": {
                     "self": {
@@ -342,8 +433,80 @@
                     "study": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/17433639/study"
                     },
+                    "backgroundEfoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/17433639/backgroundEfoTraits"
+                    },
                     "efoTraits": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/17433639/efoTraits"
+                    }
+                }
+            },
+            {
+                "riskFrequency": "0.0304",
+                "pvalueDescription": null,
+                "pvalueMantissa": 8,
+                "pvalueExponent": -26,
+                "multiSnpHaplotype": false,
+                "snpInteraction": false,
+                "snpType": "novel",
+                "standardError": 0.002,
+                "range": "[0.017-0.025]",
+                "description": null,
+                "orPerCopyNum": null,
+                "betaNum": 0.0211,
+                "betaUnit": "unit",
+                "betaDirection": "decrease",
+                "loci": [
+                    {
+                        "haplotypeSnpCount": null,
+                        "description": "Single variant",
+                        "strongestRiskAlleles": [
+                            {
+                                "riskAlleleName": "rs7329174-G",
+                                "riskFrequency": null,
+                                "genomeWide": false,
+                                "limitedList": false,
+                                "_links": {
+                                    "snp": {
+                                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174{?projection}",
+                                        "templated": true
+                                    }
+                                }
+                            }
+                        ],
+                        "authorReportedGenes": [
+
+                        ],
+                        "_links": {
+                            "association": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/103267749{?projection}",
+                                "templated": true
+                            }
+                        }
+                    }
+                ],
+                "lastMappingDate": "2023-02-09T00:23:53.000+0000",
+                "lastUpdateDate": "2023-02-09T13:19:21.000+0000",
+                "pvalue": 8.0E-26,
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/103267749"
+                    },
+                    "association": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/103267749{?projection}",
+                        "templated": true
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/103267749/snps"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/103267749/study"
+                    },
+                    "backgroundEfoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/103267749/backgroundEfoTraits"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/103267749/efoTraits"
                     }
                 }
             }

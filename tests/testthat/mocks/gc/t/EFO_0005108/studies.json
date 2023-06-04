@@ -56,12 +56,6 @@
                     "author": {
                         "fullname": "Comuzzie AG",
                         "orcid": null
-                    },
-                    "_links": {
-                        "studies": {
-                            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001762{?projection}",
-                            "templated": true
-                        }
                     }
                 },
                 "_links": {
@@ -75,14 +69,17 @@
                     "associationsByStudySummary": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001762/associations?projection=associationByStudy"
                     },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001762/associations"
+                    },
+                    "backgroundEfoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001762/backgroundEfoTraits"
+                    },
                     "efoTraits": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001762/efoTraits"
                     },
                     "snps": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001762/snps"
-                    },
-                    "associations": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001762/associations"
                     }
                 }
             }

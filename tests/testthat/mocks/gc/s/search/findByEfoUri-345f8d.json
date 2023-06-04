@@ -52,26 +52,6 @@
                     "author": {
                         "fullname": "Eriksson N",
                         "orcid": null
-                    },
-                    "_links": {
-                        "studies": [
-                            {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000707{?projection}",
-                                "templated": true
-                            },
-                            {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000708{?projection}",
-                                "templated": true
-                            },
-                            {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000706{?projection}",
-                                "templated": true
-                            },
-                            {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000710{?projection}",
-                                "templated": true
-                            }
-                        ]
                     }
                 },
                 "_links": {
@@ -85,11 +65,14 @@
                     "associationsByStudySummary": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000706/associations?projection=associationByStudy"
                     },
-                    "efoTraits": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000706/efoTraits"
+                    "backgroundEfoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000706/backgroundEfoTraits"
                     },
                     "snps": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000706/snps"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000706/efoTraits"
                     },
                     "associations": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000706/associations"

@@ -63,18 +63,6 @@
                     "author": {
                         "fullname": "McElroy SL",
                         "orcid": null
-                    },
-                    "_links": {
-                        "studies": [
-                            {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005386{?projection}",
-                                "templated": true
-                            },
-                            {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005387{?projection}",
-                                "templated": true
-                            }
-                        ]
                     }
                 },
                 "_links": {
@@ -88,14 +76,17 @@
                     "associationsByStudySummary": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005387/associations?projection=associationByStudy"
                     },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005387/associations"
+                    },
+                    "backgroundEfoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005387/backgroundEfoTraits"
+                    },
                     "efoTraits": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005387/efoTraits"
                     },
                     "snps": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005387/snps"
-                    },
-                    "associations": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005387/associations"
                     }
                 }
             }

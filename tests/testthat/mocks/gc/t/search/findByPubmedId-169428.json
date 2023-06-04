@@ -2,7 +2,7 @@
     "_embedded": {
         "efoTraits": [
             {
-                "trait": "gambling",
+                "trait": "gambling behaviour",
                 "uri": "http://www.ebi.ac.uk/efo/EFO_0004699",
                 "shortForm": "EFO_0004699",
                 "_links": {
@@ -10,7 +10,8 @@
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/EFO_0004699"
                     },
                     "efoTrait": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/EFO_0004699"
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/EFO_0004699{?projection}",
+                        "templated": true
                     },
                     "associationsByTraitSummary": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/EFO_0004699/associations?projection=associationByEfoTrait"

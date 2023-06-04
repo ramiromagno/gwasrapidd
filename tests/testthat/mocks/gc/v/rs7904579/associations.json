@@ -27,12 +27,12 @@
                                 "genomeWide": false,
                                 "limitedList": false,
                                 "_links": {
-                                    "proxySnps": {
-                                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/NR{?projection}",
-                                        "templated": true
-                                    },
                                     "snp": {
                                         "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7904579{?projection}",
+                                        "templated": true
+                                    },
+                                    "proxySnps": {
+                                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/NR{?projection}",
                                         "templated": true
                                     }
                                 }
@@ -77,6 +77,9 @@
                     },
                     "study": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/27460811/study"
+                    },
+                    "backgroundEfoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/27460811/backgroundEfoTraits"
                     },
                     "efoTraits": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/27460811/efoTraits"

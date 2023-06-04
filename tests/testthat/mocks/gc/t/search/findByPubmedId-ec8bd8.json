@@ -10,7 +10,8 @@
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/EFO_0005924"
                     },
                     "efoTrait": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/EFO_0005924"
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/EFO_0005924{?projection}",
+                        "templated": true
                     },
                     "associationsByTraitSummary": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/EFO_0005924/associations?projection=associationByEfoTrait"
@@ -32,7 +33,8 @@
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/EFO_0005924"
                     },
                     "efoTrait": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/EFO_0005924"
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/EFO_0005924{?projection}",
+                        "templated": true
                     },
                     "associationsByTraitSummary": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/EFO_0005924/associations?projection=associationByEfoTrait"
@@ -47,45 +49,24 @@
             },
             {
                 "trait": "bipolar disorder",
-                "uri": "http://www.ebi.ac.uk/efo/EFO_0000289",
-                "shortForm": "EFO_0000289",
+                "uri": "http://purl.obolibrary.org/obo/MONDO_0004985",
+                "shortForm": "MONDO_0004985",
                 "_links": {
                     "self": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/EFO_0000289"
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/MONDO_0004985"
                     },
                     "efoTrait": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/EFO_0000289"
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/MONDO_0004985{?projection}",
+                        "templated": true
                     },
                     "associationsByTraitSummary": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/EFO_0000289/associations?projection=associationByEfoTrait"
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/MONDO_0004985/associations?projection=associationByEfoTrait"
                     },
                     "associations": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/EFO_0000289/associations"
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/MONDO_0004985/associations"
                     },
                     "studies": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/EFO_0000289/studies"
-                    }
-                }
-            },
-            {
-                "trait": "bipolar disorder",
-                "uri": "http://www.ebi.ac.uk/efo/EFO_0000289",
-                "shortForm": "EFO_0000289",
-                "_links": {
-                    "self": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/EFO_0000289"
-                    },
-                    "efoTrait": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/EFO_0000289"
-                    },
-                    "associationsByTraitSummary": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/EFO_0000289/associations?projection=associationByEfoTrait"
-                    },
-                    "associations": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/EFO_0000289/associations"
-                    },
-                    "studies": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/EFO_0000289/studies"
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/MONDO_0004985/studies"
                     }
                 }
             }
@@ -98,7 +79,7 @@
     },
     "page": {
         "size": 20,
-        "totalElements": 4,
+        "totalElements": 3,
         "totalPages": 1,
         "number": 0
     }

@@ -129,42 +129,6 @@
                     "author": {
                         "fullname": "Hoffmann TJ",
                         "orcid": "0000-0001-6893-4449"
-                    },
-                    "_links": {
-                        "studies": [
-                            {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST007133{?projection}",
-                                "templated": true
-                            },
-                            {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST007131{?projection}",
-                                "templated": true
-                            },
-                            {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST007142{?projection}",
-                                "templated": true
-                            },
-                            {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST007132{?projection}",
-                                "templated": true
-                            },
-                            {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST007134{?projection}",
-                                "templated": true
-                            },
-                            {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST007140{?projection}",
-                                "templated": true
-                            },
-                            {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST007141{?projection}",
-                                "templated": true
-                            },
-                            {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST007143{?projection}",
-                                "templated": true
-                            }
-                        ]
                     }
                 },
                 "_links": {
@@ -178,11 +142,14 @@
                     "associationsByStudySummary": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST007140/associations?projection=associationByStudy"
                     },
-                    "efoTraits": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST007140/efoTraits"
+                    "backgroundEfoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST007140/backgroundEfoTraits"
                     },
                     "snps": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST007140/snps"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST007140/efoTraits"
                     },
                     "associations": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST007140/associations"

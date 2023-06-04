@@ -4,6 +4,87 @@
             {
                 "riskFrequency": "NR",
                 "pvalueDescription": null,
+                "pvalueMantissa": 9,
+                "pvalueExponent": -7,
+                "multiSnpHaplotype": false,
+                "snpInteraction": false,
+                "snpType": "novel",
+                "standardError": null,
+                "range": "[NR]",
+                "description": null,
+                "orPerCopyNum": 1.99,
+                "betaNum": null,
+                "betaUnit": null,
+                "betaDirection": null,
+                "loci": [
+                    {
+                        "haplotypeSnpCount": null,
+                        "description": "Single variant",
+                        "strongestRiskAlleles": [
+                            {
+                                "riskAlleleName": "rs6006893-?",
+                                "riskFrequency": null,
+                                "genomeWide": null,
+                                "limitedList": null,
+                                "_links": {
+                                    "snp": {
+                                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs6006893{?projection}",
+                                        "templated": true
+                                    }
+                                }
+                            }
+                        ],
+                        "authorReportedGenes": [
+                            {
+                                "geneName": "PRR5",
+                                "entrezGeneIds": [
+                                    {
+                                        "entrezGeneId": "55615"
+                                    }
+                                ],
+                                "ensemblGeneIds": [
+                                    {
+                                        "ensemblGeneId": "ENSG00000186654"
+                                    }
+                                ]
+                            }
+                        ],
+                        "_links": {
+                            "association": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/44592{?projection}",
+                                "templated": true
+                            }
+                        }
+                    }
+                ],
+                "lastMappingDate": "2021-06-24T19:05:19.000+0000",
+                "lastUpdateDate": "2021-06-24T19:05:19.000+0000",
+                "pvalue": 9.0E-7,
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/44592"
+                    },
+                    "association": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/44592{?projection}",
+                        "templated": true
+                    },
+                    "backgroundEfoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/44592/backgroundEfoTraits"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/44592/efoTraits"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/44592/study"
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/44592/snps"
+                    }
+                }
+            },
+            {
+                "riskFrequency": "NR",
+                "pvalueDescription": null,
                 "pvalueMantissa": 1,
                 "pvalueExponent": -6,
                 "multiSnpHaplotype": false,
@@ -28,7 +109,8 @@
                                 "limitedList": null,
                                 "_links": {
                                     "snp": {
-                                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs10198175"
+                                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs10198175{?projection}",
+                                        "templated": true
                                     }
                                 }
                             }
@@ -56,8 +138,8 @@
                         }
                     }
                 ],
-                "lastMappingDate": "2019-02-17T19:40:11.000+0000",
-                "lastUpdateDate": "2019-02-17T19:40:11.000+0000",
+                "lastMappingDate": "2021-06-24T19:05:18.000+0000",
+                "lastUpdateDate": "2021-06-24T19:05:18.000+0000",
                 "pvalue": 1.0E-6,
                 "_links": {
                     "self": {
@@ -67,14 +149,17 @@
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/44589{?projection}",
                         "templated": true
                     },
-                    "snps": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/44589/snps"
+                    "backgroundEfoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/44589/backgroundEfoTraits"
                     },
                     "efoTraits": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/44589/efoTraits"
                     },
                     "study": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/44589/study"
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/44589/snps"
                     }
                 }
             },
@@ -105,7 +190,8 @@
                                 "limitedList": null,
                                 "_links": {
                                     "snp": {
-                                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs13233490"
+                                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs13233490{?projection}",
+                                        "templated": true
                                     }
                                 }
                             }
@@ -114,9 +200,7 @@
                             {
                                 "geneName": "PER4",
                                 "entrezGeneIds": [
-                                    {
-                                        "entrezGeneId": "168741"
-                                    }
+
                                 ],
                                 "ensemblGeneIds": [
 
@@ -131,8 +215,8 @@
                         }
                     }
                 ],
-                "lastMappingDate": "2019-02-17T19:40:13.000+0000",
-                "lastUpdateDate": "2019-02-17T19:40:13.000+0000",
+                "lastMappingDate": "2021-06-24T19:05:17.000+0000",
+                "lastUpdateDate": "2021-06-24T19:05:17.000+0000",
                 "pvalue": 4.0E-6,
                 "_links": {
                     "self": {
@@ -142,91 +226,17 @@
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/44590{?projection}",
                         "templated": true
                     },
-                    "snps": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/44590/snps"
+                    "backgroundEfoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/44590/backgroundEfoTraits"
                     },
                     "efoTraits": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/44590/efoTraits"
                     },
                     "study": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/44590/study"
-                    }
-                }
-            },
-            {
-                "riskFrequency": "NR",
-                "pvalueDescription": null,
-                "pvalueMantissa": 9,
-                "pvalueExponent": -7,
-                "multiSnpHaplotype": false,
-                "snpInteraction": false,
-                "snpType": "novel",
-                "standardError": null,
-                "range": "[NR]",
-                "description": null,
-                "orPerCopyNum": 1.99,
-                "betaNum": null,
-                "betaUnit": null,
-                "betaDirection": null,
-                "loci": [
-                    {
-                        "haplotypeSnpCount": null,
-                        "description": "Single variant",
-                        "strongestRiskAlleles": [
-                            {
-                                "riskAlleleName": "rs6006893-?",
-                                "riskFrequency": null,
-                                "genomeWide": null,
-                                "limitedList": null,
-                                "_links": {
-                                    "snp": {
-                                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs6006893"
-                                    }
-                                }
-                            }
-                        ],
-                        "authorReportedGenes": [
-                            {
-                                "geneName": "PRR5",
-                                "entrezGeneIds": [
-                                    {
-                                        "entrezGeneId": "55615"
-                                    }
-                                ],
-                                "ensemblGeneIds": [
-                                    {
-                                        "ensemblGeneId": "ENSG00000186654"
-                                    }
-                                ]
-                            }
-                        ],
-                        "_links": {
-                            "association": {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/44592{?projection}",
-                                "templated": true
-                            }
-                        }
-                    }
-                ],
-                "lastMappingDate": "2019-02-17T19:40:18.000+0000",
-                "lastUpdateDate": "2019-02-17T19:40:18.000+0000",
-                "pvalue": 9.0E-7,
-                "_links": {
-                    "self": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/44592"
-                    },
-                    "association": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/44592{?projection}",
-                        "templated": true
                     },
                     "snps": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/44592/snps"
-                    },
-                    "efoTraits": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/44592/efoTraits"
-                    },
-                    "study": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/44592/study"
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/44590/snps"
                     }
                 }
             }

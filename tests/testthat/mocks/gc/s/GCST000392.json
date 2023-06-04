@@ -74,18 +74,12 @@
     "replicationSampleSize": "4,267 European ancestry cases, 4,670 European ancestry controls, 4,342 European ancestry trios from 2,319 families",
     "publicationInfo": {
         "pubmedId": "19430480",
-        "publicationDate": "2009-05-09",
+        "publicationDate": "2009-05-10",
         "publication": "Nat Genet",
         "title": "Genome-wide association study and meta-analysis find that over 40 loci affect risk of type 1 diabetes.",
         "author": {
             "fullname": "Barrett JC",
             "orcid": null
-        },
-        "_links": {
-            "studies": {
-                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000392{?projection}",
-                "templated": true
-            }
         }
     },
     "_links": {
@@ -99,11 +93,14 @@
         "associationsByStudySummary": {
             "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000392/associations?projection=associationByStudy"
         },
-        "efoTraits": {
-            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000392/efoTraits"
+        "backgroundEfoTraits": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000392/backgroundEfoTraits"
         },
         "snps": {
             "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000392/snps"
+        },
+        "efoTraits": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000392/efoTraits"
         },
         "associations": {
             "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000392/associations"

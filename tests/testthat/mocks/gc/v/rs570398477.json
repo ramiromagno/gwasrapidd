@@ -2,20 +2,8 @@
     "rsId": "rs570398477",
     "merged": 0,
     "functionalClass": "intron_variant",
-    "lastUpdateDate": "2019-02-21T19:59:02.585+0000",
+    "lastUpdateDate": "2021-06-24T20:02:58.901+0000",
     "locations": [
-        {
-            "chromosomeName": "2",
-            "chromosomePosition": 1348118,
-            "region": {
-                "name": "2p25.3"
-            },
-            "_links": {
-                "snps": {
-                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477"
-                }
-            }
-        },
         {
             "chromosomeName": "CHR_HSCHR2_4_CTG1",
             "chromosomePosition": 1346312,
@@ -24,12 +12,65 @@
             },
             "_links": {
                 "snps": {
-                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477"
+                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477{?projection}",
+                    "templated": true
+                }
+            }
+        },
+        {
+            "chromosomeName": "2",
+            "chromosomePosition": 1348118,
+            "region": {
+                "name": "2p25.3"
+            },
+            "_links": {
+                "snps": {
+                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477{?projection}",
+                    "templated": true
                 }
             }
         }
     ],
     "genomicContexts": [
+        {
+            "isIntergenic": true,
+            "isUpstream": true,
+            "isDownstream": false,
+            "distance": 33669,
+            "gene": {
+                "geneName": "LOC105373359",
+                "entrezGeneIds": [
+                    {
+                        "entrezGeneId": "105373359"
+                    }
+                ],
+                "ensemblGeneIds": [
+
+                ]
+            },
+            "location": {
+                "chromosomeName": "2",
+                "chromosomePosition": 1348118,
+                "region": {
+                    "name": "2p25.3"
+                },
+                "_links": {
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477{?projection}",
+                        "templated": true
+                    }
+                }
+            },
+            "source": "NCBI",
+            "mappingMethod": "Ensembl_pipeline",
+            "isClosestGene": true,
+            "_links": {
+                "snp": {
+                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477{?projection}",
+                    "templated": true
+                }
+            }
+        },
         {
             "isIntergenic": true,
             "isUpstream": false,
@@ -56,123 +97,8 @@
                 },
                 "_links": {
                     "snps": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477"
-                    }
-                }
-            },
-            "source": "Ensembl",
-            "mappingMethod": "Ensembl_pipeline",
-            "isClosestGene": false,
-            "_links": {
-                "snp": {
-                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477"
-                }
-            }
-        },
-        {
-            "isIntergenic": false,
-            "isUpstream": false,
-            "isDownstream": false,
-            "distance": 0,
-            "gene": {
-                "geneName": "SNTG2",
-                "entrezGeneIds": [
-                    {
-                        "entrezGeneId": "54221"
-                    }
-                ],
-                "ensemblGeneIds": [
-                    {
-                        "ensemblGeneId": "ENSG00000281020"
-                    },
-                    {
-                        "ensemblGeneId": "ENSG00000172554"
-                    }
-                ]
-            },
-            "location": {
-                "chromosomeName": "2",
-                "chromosomePosition": 1348118,
-                "region": {
-                    "name": "2p25.3"
-                },
-                "_links": {
-                    "snps": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477"
-                    }
-                }
-            },
-            "source": "NCBI",
-            "mappingMethod": "Ensembl_pipeline",
-            "isClosestGene": false,
-            "_links": {
-                "snp": {
-                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477"
-                }
-            }
-        },
-        {
-            "isIntergenic": true,
-            "isUpstream": true,
-            "isDownstream": false,
-            "distance": 33669,
-            "gene": {
-                "geneName": "LOC105373359",
-                "entrezGeneIds": [
-                    {
-                        "entrezGeneId": "105373359"
-                    }
-                ],
-                "ensemblGeneIds": [
-
-                ]
-            },
-            "location": {
-                "chromosomeName": "2",
-                "chromosomePosition": 1348118,
-                "region": {
-                    "name": "2p25.3"
-                },
-                "_links": {
-                    "snps": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477"
-                    }
-                }
-            },
-            "source": "NCBI",
-            "mappingMethod": "Ensembl_pipeline",
-            "isClosestGene": true,
-            "_links": {
-                "snp": {
-                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477"
-                }
-            }
-        },
-        {
-            "isIntergenic": true,
-            "isUpstream": true,
-            "isDownstream": false,
-            "distance": 1550,
-            "gene": {
-                "geneName": "AC108462.1",
-                "entrezGeneIds": [
-
-                ],
-                "ensemblGeneIds": [
-                    {
-                        "ensemblGeneId": "ENSG00000233553"
-                    }
-                ]
-            },
-            "location": {
-                "chromosomeName": "2",
-                "chromosomePosition": 1348118,
-                "region": {
-                    "name": "2p25.3"
-                },
-                "_links": {
-                    "snps": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477"
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477{?projection}",
+                        "templated": true
                     }
                 }
             },
@@ -181,86 +107,8 @@
             "isClosestGene": true,
             "_links": {
                 "snp": {
-                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477"
-                }
-            }
-        },
-        {
-            "isIntergenic": false,
-            "isUpstream": false,
-            "isDownstream": false,
-            "distance": 0,
-            "gene": {
-                "geneName": "SNTG2",
-                "entrezGeneIds": [
-                    {
-                        "entrezGeneId": "54221"
-                    }
-                ],
-                "ensemblGeneIds": [
-                    {
-                        "ensemblGeneId": "ENSG00000281020"
-                    },
-                    {
-                        "ensemblGeneId": "ENSG00000172554"
-                    }
-                ]
-            },
-            "location": {
-                "chromosomeName": "2",
-                "chromosomePosition": 1348118,
-                "region": {
-                    "name": "2p25.3"
-                },
-                "_links": {
-                    "snps": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477"
-                    }
-                }
-            },
-            "source": "Ensembl",
-            "mappingMethod": "Ensembl_pipeline",
-            "isClosestGene": false,
-            "_links": {
-                "snp": {
-                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477"
-                }
-            }
-        },
-        {
-            "isIntergenic": true,
-            "isUpstream": false,
-            "isDownstream": true,
-            "distance": 18116,
-            "gene": {
-                "geneName": "AC105450.1",
-                "entrezGeneIds": [
-
-                ],
-                "ensemblGeneIds": [
-                    {
-                        "ensemblGeneId": "ENSG00000231482"
-                    }
-                ]
-            },
-            "location": {
-                "chromosomeName": "2",
-                "chromosomePosition": 1348118,
-                "region": {
-                    "name": "2p25.3"
-                },
-                "_links": {
-                    "snps": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477"
-                    }
-                }
-            },
-            "source": "Ensembl",
-            "mappingMethod": "Ensembl_pipeline",
-            "isClosestGene": true,
-            "_links": {
-                "snp": {
-                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477"
+                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477{?projection}",
+                    "templated": true
                 }
             }
         },
@@ -290,7 +138,8 @@
                 },
                 "_links": {
                     "snps": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477"
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477{?projection}",
+                        "templated": true
                     }
                 }
             },
@@ -299,44 +148,8 @@
             "isClosestGene": true,
             "_links": {
                 "snp": {
-                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477"
-                }
-            }
-        },
-        {
-            "isIntergenic": true,
-            "isUpstream": true,
-            "isDownstream": false,
-            "distance": 31863,
-            "gene": {
-                "geneName": "LOC105373359",
-                "entrezGeneIds": [
-                    {
-                        "entrezGeneId": "105373359"
-                    }
-                ],
-                "ensemblGeneIds": [
-
-                ]
-            },
-            "location": {
-                "chromosomeName": "CHR_HSCHR2_4_CTG1",
-                "chromosomePosition": 1346312,
-                "region": {
-                    "name": null
-                },
-                "_links": {
-                    "snps": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477"
-                    }
-                }
-            },
-            "source": "NCBI",
-            "mappingMethod": "Ensembl_pipeline",
-            "isClosestGene": true,
-            "_links": {
-                "snp": {
-                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477"
+                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477{?projection}",
+                    "templated": true
                 }
             }
         },
@@ -354,103 +167,20 @@
                 ],
                 "ensemblGeneIds": [
                     {
-                        "ensemblGeneId": "ENSG00000281020"
-                    },
-                    {
                         "ensemblGeneId": "ENSG00000172554"
                     }
                 ]
             },
             "location": {
-                "chromosomeName": "CHR_HSCHR2_4_CTG1",
-                "chromosomePosition": 1346312,
+                "chromosomeName": "2",
+                "chromosomePosition": 1348118,
                 "region": {
-                    "name": null
+                    "name": "2p25.3"
                 },
                 "_links": {
                     "snps": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477"
-                    }
-                }
-            },
-            "source": "NCBI",
-            "mappingMethod": "Ensembl_pipeline",
-            "isClosestGene": false,
-            "_links": {
-                "snp": {
-                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477"
-                }
-            }
-        },
-        {
-            "isIntergenic": true,
-            "isUpstream": false,
-            "isDownstream": true,
-            "distance": 65523,
-            "gene": {
-                "geneName": "TPO",
-                "entrezGeneIds": [
-                    {
-                        "entrezGeneId": "7173"
-                    }
-                ],
-                "ensemblGeneIds": [
-                    {
-                        "ensemblGeneId": "ENSG00000115705"
-                    }
-                ]
-            },
-            "location": {
-                "chromosomeName": "CHR_HSCHR2_4_CTG1",
-                "chromosomePosition": 1346312,
-                "region": {
-                    "name": null
-                },
-                "_links": {
-                    "snps": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477"
-                    }
-                }
-            },
-            "source": "NCBI",
-            "mappingMethod": "Ensembl_pipeline",
-            "isClosestGene": true,
-            "_links": {
-                "snp": {
-                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477"
-                }
-            }
-        },
-        {
-            "isIntergenic": false,
-            "isUpstream": false,
-            "isDownstream": false,
-            "distance": 0,
-            "gene": {
-                "geneName": "SNTG2",
-                "entrezGeneIds": [
-                    {
-                        "entrezGeneId": "54221"
-                    }
-                ],
-                "ensemblGeneIds": [
-                    {
-                        "ensemblGeneId": "ENSG00000281020"
-                    },
-                    {
-                        "ensemblGeneId": "ENSG00000172554"
-                    }
-                ]
-            },
-            "location": {
-                "chromosomeName": "CHR_HSCHR2_4_CTG1",
-                "chromosomePosition": 1346312,
-                "region": {
-                    "name": null
-                },
-                "_links": {
-                    "snps": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477"
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477{?projection}",
+                        "templated": true
                     }
                 }
             },
@@ -459,7 +189,49 @@
             "isClosestGene": false,
             "_links": {
                 "snp": {
-                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477"
+                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477{?projection}",
+                    "templated": true
+                }
+            }
+        },
+        {
+            "isIntergenic": false,
+            "isUpstream": false,
+            "isDownstream": false,
+            "distance": 0,
+            "gene": {
+                "geneName": "SNTG2",
+                "entrezGeneIds": [
+                    {
+                        "entrezGeneId": "54221"
+                    }
+                ],
+                "ensemblGeneIds": [
+                    {
+                        "ensemblGeneId": "ENSG00000172554"
+                    }
+                ]
+            },
+            "location": {
+                "chromosomeName": "2",
+                "chromosomePosition": 1348118,
+                "region": {
+                    "name": "2p25.3"
+                },
+                "_links": {
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477{?projection}",
+                        "templated": true
+                    }
+                }
+            },
+            "source": "NCBI",
+            "mappingMethod": "Ensembl_pipeline",
+            "isClosestGene": false,
+            "_links": {
+                "snp": {
+                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477{?projection}",
+                    "templated": true
                 }
             }
         },
@@ -489,7 +261,8 @@
                 },
                 "_links": {
                     "snps": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477"
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477{?projection}",
+                        "templated": true
                     }
                 }
             },
@@ -498,23 +271,26 @@
             "isClosestGene": true,
             "_links": {
                 "snp": {
-                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477"
+                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477{?projection}",
+                    "templated": true
                 }
             }
         },
         {
-            "isIntergenic": true,
-            "isUpstream": true,
+            "isIntergenic": false,
+            "isUpstream": false,
             "isDownstream": false,
-            "distance": 1549,
+            "distance": 0,
             "gene": {
-                "geneName": "AC108489.1",
+                "geneName": "SNTG2",
                 "entrezGeneIds": [
-
+                    {
+                        "entrezGeneId": "54221"
+                    }
                 ],
                 "ensemblGeneIds": [
                     {
-                        "ensemblGeneId": "ENSG00000281232"
+                        "ensemblGeneId": "ENSG00000172554"
                     }
                 ]
             },
@@ -526,16 +302,139 @@
                 },
                 "_links": {
                     "snps": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477"
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477{?projection}",
+                        "templated": true
+                    }
+                }
+            },
+            "source": "NCBI",
+            "mappingMethod": "Ensembl_pipeline",
+            "isClosestGene": false,
+            "_links": {
+                "snp": {
+                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477{?projection}",
+                    "templated": true
+                }
+            }
+        },
+        {
+            "isIntergenic": true,
+            "isUpstream": true,
+            "isDownstream": false,
+            "distance": 31863,
+            "gene": {
+                "geneName": "LOC105373359",
+                "entrezGeneIds": [
+                    {
+                        "entrezGeneId": "105373359"
+                    }
+                ],
+                "ensemblGeneIds": [
+
+                ]
+            },
+            "location": {
+                "chromosomeName": "CHR_HSCHR2_4_CTG1",
+                "chromosomePosition": 1346312,
+                "region": {
+                    "name": null
+                },
+                "_links": {
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477{?projection}",
+                        "templated": true
+                    }
+                }
+            },
+            "source": "NCBI",
+            "mappingMethod": "Ensembl_pipeline",
+            "isClosestGene": true,
+            "_links": {
+                "snp": {
+                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477{?projection}",
+                    "templated": true
+                }
+            }
+        },
+        {
+            "isIntergenic": true,
+            "isUpstream": false,
+            "isDownstream": true,
+            "distance": 65525,
+            "gene": {
+                "geneName": "TPO",
+                "entrezGeneIds": [
+                    {
+                        "entrezGeneId": "7173"
+                    }
+                ],
+                "ensemblGeneIds": [
+                    {
+                        "ensemblGeneId": "ENSG00000115705"
+                    }
+                ]
+            },
+            "location": {
+                "chromosomeName": "CHR_HSCHR2_4_CTG1",
+                "chromosomePosition": 1346312,
+                "region": {
+                    "name": null
+                },
+                "_links": {
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477{?projection}",
+                        "templated": true
+                    }
+                }
+            },
+            "source": "NCBI",
+            "mappingMethod": "Ensembl_pipeline",
+            "isClosestGene": true,
+            "_links": {
+                "snp": {
+                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477{?projection}",
+                    "templated": true
+                }
+            }
+        },
+        {
+            "isIntergenic": false,
+            "isUpstream": false,
+            "isDownstream": false,
+            "distance": 0,
+            "gene": {
+                "geneName": "SNTG2",
+                "entrezGeneIds": [
+                    {
+                        "entrezGeneId": "54221"
+                    }
+                ],
+                "ensemblGeneIds": [
+                    {
+                        "ensemblGeneId": "ENSG00000172554"
+                    }
+                ]
+            },
+            "location": {
+                "chromosomeName": "CHR_HSCHR2_4_CTG1",
+                "chromosomePosition": 1346312,
+                "region": {
+                    "name": null
+                },
+                "_links": {
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477{?projection}",
+                        "templated": true
                     }
                 }
             },
             "source": "Ensembl",
             "mappingMethod": "Ensembl_pipeline",
-            "isClosestGene": true,
+            "isClosestGene": false,
             "_links": {
                 "snp": {
-                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477"
+                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477{?projection}",
+                    "templated": true
                 }
             }
         }
@@ -545,19 +444,20 @@
             "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477"
         },
         "singleNucleotidePolymorphism": {
-            "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477"
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477{?projection}",
+            "templated": true
         },
         "associationsBySnpSummary": {
             "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477/associations?projection=associationBySnp"
         },
-        "associations": {
-            "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477/associations"
+        "studies": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477/studies"
         },
         "currentSnp": {
             "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477/currentSnp"
         },
-        "studies": {
-            "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477/studies"
+        "associations": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs570398477/associations"
         }
     }
 }

@@ -25,7 +25,8 @@
                     "limitedList": false,
                     "_links": {
                         "snp": {
-                            "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs1333048"
+                            "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs1333048{?projection}",
+                            "templated": true
                         }
                     }
                 }
@@ -76,7 +77,8 @@
                     "limitedList": false,
                     "_links": {
                         "snp": {
-                            "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs1333049"
+                            "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs1333049{?projection}",
+                            "templated": true
                         }
                     }
                 }
@@ -117,8 +119,8 @@
             }
         }
     ],
-    "lastMappingDate": "2019-02-21T09:37:15.000+0000",
-    "lastUpdateDate": "2019-02-21T09:37:15.000+0000",
+    "lastMappingDate": "2021-06-24T18:49:18.000+0000",
+    "lastUpdateDate": "2021-06-24T18:49:19.000+0000",
     "pvalue": 7.0E-14,
     "_links": {
         "self": {
@@ -128,14 +130,17 @@
             "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/24300113{?projection}",
             "templated": true
         },
-        "snps": {
-            "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/24300113/snps"
+        "backgroundEfoTraits": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/24300113/backgroundEfoTraits"
+        },
+        "efoTraits": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/24300113/efoTraits"
         },
         "study": {
             "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/24300113/study"
         },
-        "efoTraits": {
-            "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/24300113/efoTraits"
+        "snps": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/24300113/snps"
         }
     }
 }

@@ -77,24 +77,12 @@
                 "replicationSampleSize": "70 European ancestry cases with binge eating behavior, 758 European ancestry cases without binge eating behavior",
                 "publicationInfo": {
                     "pubmedId": "24882193",
-                    "publicationDate": "2014-04-18",
+                    "publicationDate": "2014-04-19",
                     "publication": "J Affect Disord",
                     "title": "Bipolar disorder with comorbid binge eating history: a genome-wide association study implicates APOB.",
                     "author": {
                         "fullname": "Winham SJ",
                         "orcid": "0000-0002-8492-9102"
-                    },
-                    "_links": {
-                        "studies": [
-                            {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST002420{?projection}",
-                                "templated": true
-                            },
-                            {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST002419{?projection}",
-                                "templated": true
-                            }
-                        ]
                     }
                 },
                 "_links": {
@@ -107,6 +95,9 @@
                     },
                     "associationsByStudySummary": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST002420/associations?projection=associationByStudy"
+                    },
+                    "backgroundEfoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST002420/backgroundEfoTraits"
                     },
                     "snps": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST002420/snps"
@@ -195,24 +186,12 @@
                 "replicationSampleSize": "70 European ancestry cases with binge eating behavior, 758 European ancestry cases without binge eating behavior, 832 European ancestry controls",
                 "publicationInfo": {
                     "pubmedId": "24882193",
-                    "publicationDate": "2014-04-18",
+                    "publicationDate": "2014-04-19",
                     "publication": "J Affect Disord",
                     "title": "Bipolar disorder with comorbid binge eating history: a genome-wide association study implicates APOB.",
                     "author": {
                         "fullname": "Winham SJ",
                         "orcid": "0000-0002-8492-9102"
-                    },
-                    "_links": {
-                        "studies": [
-                            {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST002420{?projection}",
-                                "templated": true
-                            },
-                            {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST002419{?projection}",
-                                "templated": true
-                            }
-                        ]
                     }
                 },
                 "_links": {
@@ -225,6 +204,9 @@
                     },
                     "associationsByStudySummary": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST002419/associations?projection=associationByStudy"
+                    },
+                    "backgroundEfoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST002419/backgroundEfoTraits"
                     },
                     "snps": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST002419/snps"
@@ -299,18 +281,6 @@
                     "author": {
                         "fullname": "McElroy SL",
                         "orcid": null
-                    },
-                    "_links": {
-                        "studies": [
-                            {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005386{?projection}",
-                                "templated": true
-                            },
-                            {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005387{?projection}",
-                                "templated": true
-                            }
-                        ]
                     }
                 },
                 "_links": {
@@ -323,6 +293,9 @@
                     },
                     "associationsByStudySummary": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005387/associations?projection=associationByStudy"
+                    },
+                    "backgroundEfoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005387/backgroundEfoTraits"
                     },
                     "snps": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005387/snps"
@@ -402,18 +375,6 @@
                     "author": {
                         "fullname": "McElroy SL",
                         "orcid": null
-                    },
-                    "_links": {
-                        "studies": [
-                            {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005386{?projection}",
-                                "templated": true
-                            },
-                            {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005387{?projection}",
-                                "templated": true
-                            }
-                        ]
                     }
                 },
                 "_links": {
@@ -427,6 +388,9 @@
                     "associationsByStudySummary": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005386/associations?projection=associationByStudy"
                     },
+                    "backgroundEfoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005386/backgroundEfoTraits"
+                    },
                     "snps": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005386/snps"
                     },
@@ -435,6 +399,176 @@
                     },
                     "associations": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST005386/associations"
+                    }
+                }
+            },
+            {
+                "initialSampleSize": "604 European ancestry cases, 43,660 European ancestry controls",
+                "gxe": null,
+                "gxg": false,
+                "snpCount": 89212,
+                "qualifier": null,
+                "imputed": false,
+                "pooled": null,
+                "studyDesignComment": "UK Biobank/UK BiLEVE Axiom Array",
+                "accessionId": "GCST90078638",
+                "fullPvalueSet": true,
+                "userRequested": null,
+                "platforms": [
+                    {
+                        "manufacturer": "Illumina"
+                    },
+                    {
+                        "manufacturer": "Affymetrix"
+                    }
+                ],
+                "ancestries": [
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 44264,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "European"
+                            }
+                        ],
+                        "countryOfOrigin": [
+
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Europe",
+                                "region": "Northern Europe",
+                                "countryName": "U.K."
+                            }
+                        ]
+                    }
+                ],
+                "diseaseTrait": {
+                    "trait": "Psychological over eating or binge eating (UKB data field 20544)"
+                },
+                "genotypingTechnologies": [
+                    {
+                        "genotypingTechnology": "Exome-wide sequencing"
+                    },
+                    {
+                        "genotypingTechnology": "Genome-wide genotyping array"
+                    }
+                ],
+                "replicationSampleSize": "NA",
+                "publicationInfo": {
+                    "pubmedId": "34662886",
+                    "publicationDate": "2021-10-18",
+                    "publication": "Nature",
+                    "title": "Exome sequencing and analysis of 454,787 UK Biobank participants. ",
+                    "author": {
+                        "fullname": "Backman JD",
+                        "orcid": null
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90078638"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90078638{?projection}",
+                        "templated": true
+                    },
+                    "associationsByStudySummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90078638/associations?projection=associationByStudy"
+                    },
+                    "backgroundEfoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90078638/backgroundEfoTraits"
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90078638/snps"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90078638/efoTraits"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90078638/associations"
+                    }
+                }
+            },
+            {
+                "initialSampleSize": "604 European ancestry cases, 43,660 European ancestry controls",
+                "gxe": null,
+                "gxg": false,
+                "snpCount": 138642,
+                "qualifier": null,
+                "imputed": false,
+                "pooled": null,
+                "studyDesignComment": null,
+                "accessionId": "GCST90082624",
+                "fullPvalueSet": true,
+                "userRequested": null,
+                "platforms": [
+                    {
+                        "manufacturer": "Illumina"
+                    }
+                ],
+                "ancestries": [
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 44264,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "European"
+                            }
+                        ],
+                        "countryOfOrigin": [
+
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Europe",
+                                "region": "Northern Europe",
+                                "countryName": "U.K."
+                            }
+                        ]
+                    }
+                ],
+                "diseaseTrait": {
+                    "trait": "Psychological over eating or binge eating (UKB data field 20544) (Gene-based burden)"
+                },
+                "genotypingTechnologies": [
+                    {
+                        "genotypingTechnology": "Exome-wide sequencing"
+                    }
+                ],
+                "replicationSampleSize": "NA",
+                "publicationInfo": {
+                    "pubmedId": "34662886",
+                    "publicationDate": "2021-10-18",
+                    "publication": "Nature",
+                    "title": "Exome sequencing and analysis of 454,787 UK Biobank participants. ",
+                    "author": {
+                        "fullname": "Backman JD",
+                        "orcid": null
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90082624"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90082624{?projection}",
+                        "templated": true
+                    },
+                    "associationsByStudySummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90082624/associations?projection=associationByStudy"
+                    },
+                    "backgroundEfoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90082624/backgroundEfoTraits"
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90082624/snps"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90082624/efoTraits"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90082624/associations"
                     }
                 }
             }
@@ -447,7 +581,7 @@
     },
     "page": {
         "size": 20,
-        "totalElements": 4,
+        "totalElements": 6,
         "totalPages": 1,
         "number": 0
     }

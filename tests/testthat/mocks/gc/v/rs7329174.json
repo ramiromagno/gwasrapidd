@@ -2,7 +2,7 @@
     "rsId": "rs7329174",
     "merged": 0,
     "functionalClass": "intron_variant",
-    "lastUpdateDate": "2019-02-19T03:03:38.118+0000",
+    "lastUpdateDate": "2023-02-09T00:23:53.495+0000",
     "locations": [
         {
             "chromosomeName": "13",
@@ -12,7 +12,8 @@
             },
             "_links": {
                 "snps": {
-                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174"
+                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174{?projection}",
+                    "templated": true
                 }
             }
         }
@@ -20,95 +21,19 @@
     "genomicContexts": [
         {
             "isIntergenic": true,
-            "isUpstream": false,
-            "isDownstream": true,
-            "distance": 76764,
-            "gene": {
-                "geneName": "TRE-TTC1-2",
-                "entrezGeneIds": [
-                    {
-                        "entrezGeneId": "100189333"
-                    }
-                ],
-                "ensemblGeneIds": [
-
-                ]
-            },
-            "location": {
-                "chromosomeName": "13",
-                "chromosomePosition": 40983974,
-                "region": {
-                    "name": "13q14.11"
-                },
-                "_links": {
-                    "snps": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174"
-                    }
-                }
-            },
-            "source": "NCBI",
-            "mappingMethod": "Ensembl_pipeline",
-            "isClosestGene": false,
-            "_links": {
-                "snp": {
-                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174"
-                }
-            }
-        },
-        {
-            "isIntergenic": false,
-            "isUpstream": false,
-            "isDownstream": false,
-            "distance": 0,
-            "gene": {
-                "geneName": "ELF1",
-                "entrezGeneIds": [
-                    {
-                        "entrezGeneId": "1997"
-                    }
-                ],
-                "ensemblGeneIds": [
-                    {
-                        "ensemblGeneId": "ENSG00000120690"
-                    }
-                ]
-            },
-            "location": {
-                "chromosomeName": "13",
-                "chromosomePosition": 40983974,
-                "region": {
-                    "name": "13q14.11"
-                },
-                "_links": {
-                    "snps": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174"
-                    }
-                }
-            },
-            "source": "NCBI",
-            "mappingMethod": "Ensembl_pipeline",
-            "isClosestGene": false,
-            "_links": {
-                "snp": {
-                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174"
-                }
-            }
-        },
-        {
-            "isIntergenic": true,
             "isUpstream": true,
             "isDownstream": false,
-            "distance": 62200,
+            "distance": 62225,
             "gene": {
-                "geneName": "SUGT1P3",
+                "geneName": "TPTE2P5",
                 "entrezGeneIds": [
                     {
-                        "entrezGeneId": "283507"
+                        "entrezGeneId": "100616668"
                     }
                 ],
                 "ensemblGeneIds": [
                     {
-                        "ensemblGeneId": "ENSG00000239827"
+                        "ensemblGeneId": "ENSG00000168852"
                     }
                 ]
             },
@@ -120,94 +45,18 @@
                 },
                 "_links": {
                     "snps": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174"
-                    }
-                }
-            },
-            "source": "NCBI",
-            "mappingMethod": "Ensembl_pipeline",
-            "isClosestGene": true,
-            "_links": {
-                "snp": {
-                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174"
-                }
-            }
-        },
-        {
-            "isIntergenic": true,
-            "isUpstream": false,
-            "isDownstream": true,
-            "distance": 8821,
-            "gene": {
-                "geneName": "RGS17P1",
-                "entrezGeneIds": [
-                    {
-                        "entrezGeneId": "100128628"
-                    }
-                ],
-                "ensemblGeneIds": [
-                    {
-                        "ensemblGeneId": "ENSG00000229473"
-                    }
-                ]
-            },
-            "location": {
-                "chromosomeName": "13",
-                "chromosomePosition": 40983974,
-                "region": {
-                    "name": "13q14.11"
-                },
-                "_links": {
-                    "snps": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174"
-                    }
-                }
-            },
-            "source": "NCBI",
-            "mappingMethod": "Ensembl_pipeline",
-            "isClosestGene": true,
-            "_links": {
-                "snp": {
-                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174"
-                }
-            }
-        },
-        {
-            "isIntergenic": true,
-            "isUpstream": false,
-            "isDownstream": true,
-            "distance": 8805,
-            "gene": {
-                "geneName": "RGS17P1",
-                "entrezGeneIds": [
-                    {
-                        "entrezGeneId": "100128628"
-                    }
-                ],
-                "ensemblGeneIds": [
-                    {
-                        "ensemblGeneId": "ENSG00000229473"
-                    }
-                ]
-            },
-            "location": {
-                "chromosomeName": "13",
-                "chromosomePosition": 40983974,
-                "region": {
-                    "name": "13q14.11"
-                },
-                "_links": {
-                    "snps": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174"
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174{?projection}",
+                        "templated": true
                     }
                 }
             },
             "source": "Ensembl",
             "mappingMethod": "Ensembl_pipeline",
-            "isClosestGene": true,
+            "isClosestGene": false,
             "_links": {
                 "snp": {
-                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174"
+                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174{?projection}",
+                    "templated": true
                 }
             }
         },
@@ -215,7 +64,7 @@
             "isIntergenic": true,
             "isUpstream": false,
             "isDownstream": true,
-            "distance": 77283,
+            "distance": 77535,
             "gene": {
                 "geneName": "WBP4",
                 "entrezGeneIds": [
@@ -237,16 +86,18 @@
                 },
                 "_links": {
                     "snps": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174"
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174{?projection}",
+                        "templated": true
                     }
                 }
             },
-            "source": "NCBI",
+            "source": "Ensembl",
             "mappingMethod": "Ensembl_pipeline",
             "isClosestGene": false,
             "_links": {
                 "snp": {
-                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174"
+                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174{?projection}",
+                    "templated": true
                 }
             }
         },
@@ -276,16 +127,18 @@
                 },
                 "_links": {
                     "snps": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174"
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174{?projection}",
+                        "templated": true
                     }
                 }
             },
-            "source": "Ensembl",
+            "source": "NCBI",
             "mappingMethod": "Ensembl_pipeline",
             "isClosestGene": true,
             "_links": {
                 "snp": {
-                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174"
+                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174{?projection}",
+                    "templated": true
                 }
             }
         },
@@ -315,7 +168,8 @@
                 },
                 "_links": {
                     "snps": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174"
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174{?projection}",
+                        "templated": true
                     }
                 }
             },
@@ -324,7 +178,8 @@
             "isClosestGene": false,
             "_links": {
                 "snp": {
-                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174"
+                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174{?projection}",
+                    "templated": true
                 }
             }
         },
@@ -354,7 +209,8 @@
                 },
                 "_links": {
                     "snps": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174"
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174{?projection}",
+                        "templated": true
                     }
                 }
             },
@@ -363,7 +219,8 @@
             "isClosestGene": false,
             "_links": {
                 "snp": {
-                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174"
+                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174{?projection}",
+                    "templated": true
                 }
             }
         },
@@ -371,17 +228,17 @@
             "isIntergenic": true,
             "isUpstream": true,
             "isDownstream": false,
-            "distance": 62225,
+            "distance": 62200,
             "gene": {
-                "geneName": "TPTE2P5",
+                "geneName": "SUGT1P3",
                 "entrezGeneIds": [
                     {
-                        "entrezGeneId": "100616668"
+                        "entrezGeneId": "283507"
                     }
                 ],
                 "ensemblGeneIds": [
                     {
-                        "ensemblGeneId": "ENSG00000168852"
+                        "ensemblGeneId": "ENSG00000239827"
                     }
                 ]
             },
@@ -393,16 +250,59 @@
                 },
                 "_links": {
                     "snps": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174"
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174{?projection}",
+                        "templated": true
                     }
                 }
             },
             "source": "Ensembl",
             "mappingMethod": "Ensembl_pipeline",
+            "isClosestGene": true,
+            "_links": {
+                "snp": {
+                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174{?projection}",
+                    "templated": true
+                }
+            }
+        },
+        {
+            "isIntergenic": false,
+            "isUpstream": false,
+            "isDownstream": false,
+            "distance": 0,
+            "gene": {
+                "geneName": "ELF1",
+                "entrezGeneIds": [
+                    {
+                        "entrezGeneId": "1997"
+                    }
+                ],
+                "ensemblGeneIds": [
+                    {
+                        "ensemblGeneId": "ENSG00000120690"
+                    }
+                ]
+            },
+            "location": {
+                "chromosomeName": "13",
+                "chromosomePosition": 40983974,
+                "region": {
+                    "name": "13q14.11"
+                },
+                "_links": {
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174{?projection}",
+                        "templated": true
+                    }
+                }
+            },
+            "source": "NCBI",
+            "mappingMethod": "Ensembl_pipeline",
             "isClosestGene": false,
             "_links": {
                 "snp": {
-                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174"
+                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174{?projection}",
+                    "templated": true
                 }
             }
         },
@@ -410,7 +310,89 @@
             "isIntergenic": true,
             "isUpstream": false,
             "isDownstream": true,
-            "distance": 77300,
+            "distance": 8649,
+            "gene": {
+                "geneName": "RGS17P1",
+                "entrezGeneIds": [
+                    {
+                        "entrezGeneId": "100128628"
+                    }
+                ],
+                "ensemblGeneIds": [
+                    {
+                        "ensemblGeneId": "ENSG00000229473"
+                    }
+                ]
+            },
+            "location": {
+                "chromosomeName": "13",
+                "chromosomePosition": 40983974,
+                "region": {
+                    "name": "13q14.11"
+                },
+                "_links": {
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174{?projection}",
+                        "templated": true
+                    }
+                }
+            },
+            "source": "NCBI",
+            "mappingMethod": "Ensembl_pipeline",
+            "isClosestGene": true,
+            "_links": {
+                "snp": {
+                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174{?projection}",
+                    "templated": true
+                }
+            }
+        },
+        {
+            "isIntergenic": true,
+            "isUpstream": false,
+            "isDownstream": true,
+            "distance": 8805,
+            "gene": {
+                "geneName": "RGS17P1",
+                "entrezGeneIds": [
+                    {
+                        "entrezGeneId": "100128628"
+                    }
+                ],
+                "ensemblGeneIds": [
+                    {
+                        "ensemblGeneId": "ENSG00000229473"
+                    }
+                ]
+            },
+            "location": {
+                "chromosomeName": "13",
+                "chromosomePosition": 40983974,
+                "region": {
+                    "name": "13q14.11"
+                },
+                "_links": {
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174{?projection}",
+                        "templated": true
+                    }
+                }
+            },
+            "source": "Ensembl",
+            "mappingMethod": "Ensembl_pipeline",
+            "isClosestGene": true,
+            "_links": {
+                "snp": {
+                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174{?projection}",
+                    "templated": true
+                }
+            }
+        },
+        {
+            "isIntergenic": true,
+            "isUpstream": false,
+            "isDownstream": true,
+            "distance": 77535,
             "gene": {
                 "geneName": "WBP4",
                 "entrezGeneIds": [
@@ -432,16 +414,57 @@
                 },
                 "_links": {
                     "snps": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174"
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174{?projection}",
+                        "templated": true
                     }
                 }
             },
-            "source": "Ensembl",
+            "source": "NCBI",
             "mappingMethod": "Ensembl_pipeline",
             "isClosestGene": false,
             "_links": {
                 "snp": {
-                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174"
+                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174{?projection}",
+                    "templated": true
+                }
+            }
+        },
+        {
+            "isIntergenic": true,
+            "isUpstream": false,
+            "isDownstream": true,
+            "distance": 76764,
+            "gene": {
+                "geneName": "TRE-TTC1-2",
+                "entrezGeneIds": [
+                    {
+                        "entrezGeneId": "100189333"
+                    }
+                ],
+                "ensemblGeneIds": [
+
+                ]
+            },
+            "location": {
+                "chromosomeName": "13",
+                "chromosomePosition": 40983974,
+                "region": {
+                    "name": "13q14.11"
+                },
+                "_links": {
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174{?projection}",
+                        "templated": true
+                    }
+                }
+            },
+            "source": "NCBI",
+            "mappingMethod": "Ensembl_pipeline",
+            "isClosestGene": false,
+            "_links": {
+                "snp": {
+                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174{?projection}",
+                    "templated": true
                 }
             }
         }
@@ -451,19 +474,20 @@
             "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174"
         },
         "singleNucleotidePolymorphism": {
-            "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174"
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174{?projection}",
+            "templated": true
         },
         "associationsBySnpSummary": {
             "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174/associations?projection=associationBySnp"
-        },
-        "associations": {
-            "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174/associations"
         },
         "currentSnp": {
             "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174/currentSnp"
         },
         "studies": {
             "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174/studies"
+        },
+        "associations": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7329174/associations"
         }
     }
 }

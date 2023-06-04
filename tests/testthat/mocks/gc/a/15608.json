@@ -25,7 +25,8 @@
                     "limitedList": null,
                     "_links": {
                         "snp": {
-                            "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs1535480"
+                            "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs1535480{?projection}",
+                            "templated": true
                         }
                     }
                 }
@@ -49,8 +50,8 @@
             }
         }
     ],
-    "lastMappingDate": "2019-02-17T21:37:27.000+0000",
-    "lastUpdateDate": "2019-02-17T21:37:27.000+0000",
+    "lastMappingDate": "2021-06-24T21:40:05.000+0000",
+    "lastUpdateDate": "2021-06-24T21:40:05.000+0000",
     "pvalue": 4.0E-7,
     "_links": {
         "self": {
@@ -63,11 +64,14 @@
         "snps": {
             "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/15608/snps"
         },
-        "efoTraits": {
-            "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/15608/efoTraits"
-        },
         "study": {
             "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/15608/study"
+        },
+        "backgroundEfoTraits": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/15608/backgroundEfoTraits"
+        },
+        "efoTraits": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/15608/efoTraits"
         }
     }
 }

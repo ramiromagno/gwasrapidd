@@ -46,32 +46,12 @@
                 "replicationSampleSize": "NA",
                 "publicationInfo": {
                     "pubmedId": "20585627",
-                    "publicationDate": "2010-06-23",
+                    "publicationDate": "2010-06-24",
                     "publication": "PLoS Genet",
                     "title": "Web-based, participant-driven studies yield novel genetic associations for common traits.",
                     "author": {
                         "fullname": "Eriksson N",
                         "orcid": null
-                    },
-                    "_links": {
-                        "studies": [
-                            {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000707{?projection}",
-                                "templated": true
-                            },
-                            {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000708{?projection}",
-                                "templated": true
-                            },
-                            {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000706{?projection}",
-                                "templated": true
-                            },
-                            {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000710{?projection}",
-                                "templated": true
-                            }
-                        ]
                     }
                 },
                 "_links": {
@@ -84,6 +64,9 @@
                     },
                     "associationsByStudySummary": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000706/associations?projection=associationByStudy"
+                    },
+                    "backgroundEfoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000706/backgroundEfoTraits"
                     },
                     "snps": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000706/snps"

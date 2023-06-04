@@ -50,18 +50,12 @@
                 "replicationSampleSize": "NA",
                 "publicationInfo": {
                     "pubmedId": "22780124",
-                    "publicationDate": "2012-07-10",
+                    "publicationDate": "2012-07-11",
                     "publication": "Addict Biol",
                     "title": "Genome-wide association study of a quantitative disordered gambling trait.",
                     "author": {
                         "fullname": "Lind PA",
                         "orcid": "0000-0002-3887-2598"
-                    },
-                    "_links": {
-                        "studies": {
-                            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001601{?projection}",
-                            "templated": true
-                        }
                     }
                 },
                 "_links": {
@@ -74,6 +68,9 @@
                     },
                     "associationsByStudySummary": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001601/associations?projection=associationByStudy"
+                    },
+                    "backgroundEfoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001601/backgroundEfoTraits"
                     },
                     "snps": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001601/snps"

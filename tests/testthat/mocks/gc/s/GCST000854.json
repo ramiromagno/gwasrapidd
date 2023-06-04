@@ -87,12 +87,6 @@
         "author": {
             "fullname": "Perlis RH",
             "orcid": null
-        },
-        "_links": {
-            "studies": {
-                "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000854{?projection}",
-                "templated": true
-            }
         }
     },
     "_links": {
@@ -106,14 +100,17 @@
         "associationsByStudySummary": {
             "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000854/associations?projection=associationByStudy"
         },
+        "associations": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000854/associations"
+        },
+        "backgroundEfoTraits": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000854/backgroundEfoTraits"
+        },
         "efoTraits": {
             "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000854/efoTraits"
         },
         "snps": {
             "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000854/snps"
-        },
-        "associations": {
-            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000854/associations"
         }
     }
 }

@@ -2,129 +2,6 @@
     "_embedded": {
         "studies": [
             {
-                "initialSampleSize": "612 Chinese ancestry cases, 1,160 Chinese ancestry controls",
-                "gxe": false,
-                "gxg": false,
-                "snpCount": 513108,
-                "qualifier": null,
-                "imputed": false,
-                "pooled": false,
-                "studyDesignComment": null,
-                "accessionId": "GCST000858",
-                "fullPvalueSet": false,
-                "userRequested": false,
-                "platforms": [
-                    {
-                        "manufacturer": "Illumina"
-                    }
-                ],
-                "ancestries": [
-                    {
-                        "type": "replication",
-                        "numberOfIndividuals": 1413,
-                        "ancestralGroups": [
-                            {
-                                "ancestralGroup": "South East Asian"
-                            }
-                        ],
-                        "countryOfOrigin": [
-
-                        ],
-                        "countryOfRecruitment": [
-                            {
-                                "majorArea": "Asia",
-                                "region": "South-eastern Asia",
-                                "countryName": "Thailand"
-                            }
-                        ]
-                    },
-                    {
-                        "type": "initial",
-                        "numberOfIndividuals": 1772,
-                        "ancestralGroups": [
-                            {
-                                "ancestralGroup": "East Asian"
-                            }
-                        ],
-                        "countryOfOrigin": [
-
-                        ],
-                        "countryOfRecruitment": [
-                            {
-                                "majorArea": "Asia",
-                                "region": "Eastern Asia",
-                                "countryName": "China"
-                            }
-                        ]
-                    },
-                    {
-                        "type": "replication",
-                        "numberOfIndividuals": 4071,
-                        "ancestralGroups": [
-                            {
-                                "ancestralGroup": "East Asian"
-                            }
-                        ],
-                        "countryOfOrigin": [
-
-                        ],
-                        "countryOfRecruitment": [
-                            {
-                                "majorArea": "Asia",
-                                "region": "Eastern Asia",
-                                "countryName": "China"
-                            }
-                        ]
-                    }
-                ],
-                "diseaseTrait": {
-                    "trait": "Systemic lupus erythematosus"
-                },
-                "genotypingTechnologies": [
-                    {
-                        "genotypingTechnology": "Genome-wide genotyping array"
-                    }
-                ],
-                "replicationSampleSize": "2,090 Chinese ancestry cases, 1,981 Chinese ancestry controls, 462 Thai ancestry cases, 951 Thai ancestry controls",
-                "publicationInfo": {
-                    "pubmedId": "21044949",
-                    "publicationDate": "2010-11-02",
-                    "publication": "Hum Mol Genet",
-                    "title": "ELF1 is associated with systemic lupus erythematosus in Asian populations.",
-                    "author": {
-                        "fullname": "Yang J",
-                        "orcid": null
-                    },
-                    "_links": {
-                        "studies": {
-                            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000858{?projection}",
-                            "templated": true
-                        }
-                    }
-                },
-                "_links": {
-                    "self": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000858"
-                    },
-                    "study": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000858{?projection}",
-                        "templated": true
-                    },
-                    "associationsByStudySummary": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000858/associations?projection=associationByStudy"
-                    },
-                    "efoTraits": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000858/efoTraits"
-                    },
-                    "snps": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000858/snps"
-                    },
-                    "associations": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000858/associations"
-                    }
-                }
-            },
-            {
                 "initialSampleSize": "1,659 Chinese ancestry cases, 3,398 Chinese ancestry controls, 4,036 European ancestry cases, 6,959 European ancestry controls",
                 "gxe": false,
                 "gxg": false,
@@ -249,18 +126,12 @@
                 "replicationSampleSize": "3,043 Chinese ancestry cases, 5,074 Chinese ancestry controls, 2,643 European ancestry cases, 9,032 European ancestry controls",
                 "publicationInfo": {
                     "pubmedId": "27399966",
-                    "publicationDate": "2016-07-10",
+                    "publicationDate": "2016-07-11",
                     "publication": "Nat Genet",
                     "title": "Genome-wide association meta-analysis in Chinese and European individuals identifies ten new loci associated with systemic lupus erythematosus.",
                     "author": {
                         "fullname": "Morris DL",
                         "orcid": null
-                    },
-                    "_links": {
-                        "studies": {
-                            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST003622{?projection}",
-                            "templated": true
-                        }
                     }
                 },
                 "_links": {
@@ -274,14 +145,426 @@
                     "associationsByStudySummary": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST003622/associations?projection=associationByStudy"
                     },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST003622/associations"
+                    },
+                    "backgroundEfoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST003622/backgroundEfoTraits"
+                    },
                     "efoTraits": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST003622/efoTraits"
                     },
                     "snps": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST003622/snps"
+                    }
+                }
+            },
+            {
+                "initialSampleSize": "372 Japanese ancestry cases,3,389 Japanese ancestry controls",
+                "gxe": false,
+                "gxg": false,
+                "snpCount": 4929034,
+                "qualifier": null,
+                "imputed": true,
+                "pooled": false,
+                "studyDesignComment": null,
+                "accessionId": "GCST001785",
+                "fullPvalueSet": false,
+                "userRequested": false,
+                "platforms": [
+                    {
+                        "manufacturer": "Illumina"
+                    }
+                ],
+                "ancestries": [
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 3761,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "East Asian"
+                            }
+                        ],
+                        "countryOfOrigin": [
+
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Asia",
+                                "region": "Eastern Asia",
+                                "countryName": "Japan"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "replication",
+                        "numberOfIndividuals": 16951,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "East Asian"
+                            }
+                        ],
+                        "countryOfOrigin": [
+
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Asia",
+                                "region": "Eastern Asia",
+                                "countryName": "Japan"
+                            }
+                        ]
+                    }
+                ],
+                "diseaseTrait": {
+                    "trait": "Crohn's disease"
+                },
+                "genotypingTechnologies": [
+                    {
+                        "genotypingTechnology": "Genome-wide genotyping array"
+                    }
+                ],
+                "replicationSampleSize": "Up to 1,151 Japanese ancestry cases, up to 15,800 Japanese ancestry controls",
+                "publicationInfo": {
+                    "pubmedId": "23266558",
+                    "publicationDate": "2012-12-21",
+                    "publication": "Gastroenterology",
+                    "title": "A genome-wide association study identifies 2 susceptibility Loci for Crohn's disease in a Japanese population.",
+                    "author": {
+                        "fullname": "Yamazaki K",
+                        "orcid": null
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001785"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001785{?projection}",
+                        "templated": true
+                    },
+                    "associationsByStudySummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001785/associations?projection=associationByStudy"
                     },
                     "associations": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST003622/associations"
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001785/associations"
+                    },
+                    "backgroundEfoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001785/backgroundEfoTraits"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001785/efoTraits"
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001785/snps"
+                    }
+                }
+            },
+            {
+                "initialSampleSize": "612 Chinese ancestry cases, 1,160 Chinese ancestry controls",
+                "gxe": false,
+                "gxg": false,
+                "snpCount": 513108,
+                "qualifier": null,
+                "imputed": false,
+                "pooled": false,
+                "studyDesignComment": null,
+                "accessionId": "GCST000858",
+                "fullPvalueSet": false,
+                "userRequested": false,
+                "platforms": [
+                    {
+                        "manufacturer": "Illumina"
+                    }
+                ],
+                "ancestries": [
+                    {
+                        "type": "replication",
+                        "numberOfIndividuals": 1413,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "South East Asian"
+                            }
+                        ],
+                        "countryOfOrigin": [
+
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Asia",
+                                "region": "South-eastern Asia",
+                                "countryName": "Thailand"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 1772,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "East Asian"
+                            }
+                        ],
+                        "countryOfOrigin": [
+
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Asia",
+                                "region": "Eastern Asia",
+                                "countryName": "China"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "replication",
+                        "numberOfIndividuals": 4071,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "East Asian"
+                            }
+                        ],
+                        "countryOfOrigin": [
+
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Asia",
+                                "region": "Eastern Asia",
+                                "countryName": "China"
+                            }
+                        ]
+                    }
+                ],
+                "diseaseTrait": {
+                    "trait": "Systemic lupus erythematosus"
+                },
+                "genotypingTechnologies": [
+                    {
+                        "genotypingTechnology": "Genome-wide genotyping array"
+                    }
+                ],
+                "replicationSampleSize": "2,090 Chinese ancestry cases, 1,981 Chinese ancestry controls, 462 Thai ancestry cases, 951 Thai ancestry controls",
+                "publicationInfo": {
+                    "pubmedId": "21044949",
+                    "publicationDate": "2010-11-02",
+                    "publication": "Hum Mol Genet",
+                    "title": "ELF1 is associated with systemic lupus erythematosus in Asian populations.",
+                    "author": {
+                        "fullname": "Yang J",
+                        "orcid": null
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000858"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000858{?projection}",
+                        "templated": true
+                    },
+                    "associationsByStudySummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000858/associations?projection=associationByStudy"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000858/associations"
+                    },
+                    "backgroundEfoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000858/backgroundEfoTraits"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000858/efoTraits"
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST000858/snps"
+                    }
+                }
+            },
+            {
+                "initialSampleSize": "5,314,291 European ancestry, Hispanic or Latin American, East Asian ancestry, African ancestry, South Asian ancestry individuals",
+                "gxe": false,
+                "gxg": false,
+                "snpCount": 1385132,
+                "qualifier": null,
+                "imputed": true,
+                "pooled": false,
+                "studyDesignComment": null,
+                "accessionId": "GCST90245848",
+                "fullPvalueSet": false,
+                "userRequested": false,
+                "platforms": [
+                    {
+                        "manufacturer": "Affymetrix"
+                    },
+                    {
+                        "manufacturer": "Illumina"
+                    }
+                ],
+                "ancestries": [
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 5314291,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "European"
+                            },
+                            {
+                                "ancestralGroup": "Hispanic or Latin American"
+                            },
+                            {
+                                "ancestralGroup": "East Asian"
+                            },
+                            {
+                                "ancestralGroup": "African unspecified"
+                            },
+                            {
+                                "ancestralGroup": "South Asian"
+                            }
+                        ],
+                        "countryOfOrigin": [
+
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            },
+                            {
+                                "majorArea": "Europe",
+                                "region": "Northern Europe",
+                                "countryName": "U.K."
+                            }
+                        ]
+                    }
+                ],
+                "diseaseTrait": {
+                    "trait": "Height"
+                },
+                "genotypingTechnologies": [
+                    {
+                        "genotypingTechnology": "Genome-wide genotyping array"
+                    }
+                ],
+                "replicationSampleSize": "NA",
+                "publicationInfo": {
+                    "pubmedId": "36224396",
+                    "publicationDate": "2022-10-12",
+                    "publication": "Nature",
+                    "title": "A saturated map of common genetic variants associated with human height.",
+                    "author": {
+                        "fullname": "Yengo L",
+                        "orcid": "0000-0002-4272-9305"
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90245848"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90245848{?projection}",
+                        "templated": true
+                    },
+                    "associationsByStudySummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90245848/associations?projection=associationByStudy"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90245848/associations"
+                    },
+                    "backgroundEfoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90245848/backgroundEfoTraits"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90245848/efoTraits"
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90245848/snps"
+                    }
+                }
+            },
+            {
+                "initialSampleSize": "1,639 East Asian ancestry cases, 2,410 East Asian ancestry controls",
+                "gxe": false,
+                "gxg": false,
+                "snpCount": null,
+                "qualifier": null,
+                "imputed": true,
+                "pooled": false,
+                "studyDesignComment": null,
+                "accessionId": "GCST90020042",
+                "fullPvalueSet": false,
+                "userRequested": false,
+                "platforms": [
+                    {
+                        "manufacturer": "Illumina"
+                    }
+                ],
+                "ancestries": [
+                    {
+                        "type": "initial",
+                        "numberOfIndividuals": 4049,
+                        "ancestralGroups": [
+                            {
+                                "ancestralGroup": "East Asian"
+                            }
+                        ],
+                        "countryOfOrigin": [
+                            {
+                                "majorArea": "NR",
+                                "region": "NR",
+                                "countryName": "NR"
+                            }
+                        ],
+                        "countryOfRecruitment": [
+                            {
+                                "majorArea": "Asia",
+                                "region": "Eastern Asia",
+                                "countryName": "China, Hong Kong SAR"
+                            }
+                        ]
+                    }
+                ],
+                "diseaseTrait": {
+                    "trait": "Systemic lupus erythematosus"
+                },
+                "genotypingTechnologies": [
+                    {
+                        "genotypingTechnology": "Genome-wide genotyping array"
+                    }
+                ],
+                "replicationSampleSize": "NA",
+                "publicationInfo": {
+                    "pubmedId": "34076728",
+                    "publicationDate": "2021-06-02",
+                    "publication": "Mol Genet Genomics",
+                    "title": "Shared genetic study gives insights into the shared and distinct pathogenic immunity components of IgA nephropathy and SLE.",
+                    "author": {
+                        "fullname": "Zhang YM",
+                        "orcid": null
+                    }
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90020042"
+                    },
+                    "study": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90020042{?projection}",
+                        "templated": true
+                    },
+                    "associationsByStudySummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90020042/associations?projection=associationByStudy"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90020042/associations"
+                    },
+                    "backgroundEfoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90020042/backgroundEfoTraits"
+                    },
+                    "efoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90020042/efoTraits"
+                    },
+                    "snps": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90020042/snps"
                     }
                 }
             },
@@ -383,12 +666,6 @@
                     "author": {
                         "fullname": "Yang W",
                         "orcid": null
-                    },
-                    "_links": {
-                        "studies": {
-                            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001795{?projection}",
-                            "templated": true
-                        }
                     }
                 },
                 "_links": {
@@ -402,118 +679,17 @@
                     "associationsByStudySummary": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001795/associations?projection=associationByStudy"
                     },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001795/associations"
+                    },
+                    "backgroundEfoTraits": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001795/backgroundEfoTraits"
+                    },
                     "efoTraits": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001795/efoTraits"
                     },
                     "snps": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001795/snps"
-                    },
-                    "associations": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001795/associations"
-                    }
-                }
-            },
-            {
-                "initialSampleSize": "372 Japanese ancestry cases,3,389 Japanese ancestry controls",
-                "gxe": false,
-                "gxg": false,
-                "snpCount": 4929034,
-                "qualifier": null,
-                "imputed": true,
-                "pooled": false,
-                "studyDesignComment": null,
-                "accessionId": "GCST001785",
-                "fullPvalueSet": false,
-                "userRequested": false,
-                "platforms": [
-                    {
-                        "manufacturer": "Illumina"
-                    }
-                ],
-                "ancestries": [
-                    {
-                        "type": "initial",
-                        "numberOfIndividuals": 3761,
-                        "ancestralGroups": [
-                            {
-                                "ancestralGroup": "East Asian"
-                            }
-                        ],
-                        "countryOfOrigin": [
-
-                        ],
-                        "countryOfRecruitment": [
-                            {
-                                "majorArea": "Asia",
-                                "region": "Eastern Asia",
-                                "countryName": "Japan"
-                            }
-                        ]
-                    },
-                    {
-                        "type": "replication",
-                        "numberOfIndividuals": 16951,
-                        "ancestralGroups": [
-                            {
-                                "ancestralGroup": "East Asian"
-                            }
-                        ],
-                        "countryOfOrigin": [
-
-                        ],
-                        "countryOfRecruitment": [
-                            {
-                                "majorArea": "Asia",
-                                "region": "Eastern Asia",
-                                "countryName": "Japan"
-                            }
-                        ]
-                    }
-                ],
-                "diseaseTrait": {
-                    "trait": "Crohn's disease"
-                },
-                "genotypingTechnologies": [
-                    {
-                        "genotypingTechnology": "Genome-wide genotyping array"
-                    }
-                ],
-                "replicationSampleSize": "Up to 1,151 Japanese ancestry cases, up to 15,800 Japanese ancestry controls",
-                "publicationInfo": {
-                    "pubmedId": "23266558",
-                    "publicationDate": "2012-12-21",
-                    "publication": "Gastroenterology",
-                    "title": "A genome-wide association study identifies 2 susceptibility Loci for Crohn's disease in a Japanese population.",
-                    "author": {
-                        "fullname": "Yamazaki K",
-                        "orcid": null
-                    },
-                    "_links": {
-                        "studies": {
-                            "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001785{?projection}",
-                            "templated": true
-                        }
-                    }
-                },
-                "_links": {
-                    "self": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001785"
-                    },
-                    "study": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001785{?projection}",
-                        "templated": true
-                    },
-                    "associationsByStudySummary": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001785/associations?projection=associationByStudy"
-                    },
-                    "efoTraits": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001785/efoTraits"
-                    },
-                    "snps": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001785/snps"
-                    },
-                    "associations": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001785/associations"
                     }
                 }
             }

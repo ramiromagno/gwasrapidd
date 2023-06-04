@@ -25,7 +25,8 @@
                     "limitedList": false,
                     "_links": {
                         "snp": {
-                            "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs3798440"
+                            "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs3798440{?projection}",
+                            "templated": true
                         }
                     }
                 }
@@ -63,7 +64,8 @@
                     "limitedList": false,
                     "_links": {
                         "snp": {
-                            "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs9350602"
+                            "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs9350602{?projection}",
+                            "templated": true
                         }
                     }
                 }
@@ -91,8 +93,8 @@
             }
         }
     ],
-    "lastMappingDate": "2019-02-21T10:47:37.000+0000",
-    "lastUpdateDate": "2019-02-21T10:47:37.000+0000",
+    "lastMappingDate": "2021-06-24T19:46:30.000+0000",
+    "lastUpdateDate": "2021-06-24T19:46:30.000+0000",
     "pvalue": 3.0E-10,
     "_links": {
         "self": {
@@ -102,14 +104,17 @@
             "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/24299710{?projection}",
             "templated": true
         },
-        "snps": {
-            "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/24299710/snps"
+        "backgroundEfoTraits": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/24299710/backgroundEfoTraits"
         },
         "efoTraits": {
             "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/24299710/efoTraits"
         },
         "study": {
             "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/24299710/study"
+        },
+        "snps": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/associations/24299710/snps"
         }
     }
 }

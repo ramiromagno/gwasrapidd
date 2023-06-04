@@ -2,39 +2,6 @@
     "_embedded": {
         "singleNucleotidePolymorphisms": [
             {
-                "rsId": "rs11924705",
-                "merged": 0,
-                "functionalClass": "intergenic_variant",
-                "lastUpdateDate": "2021-06-24T18:49:18.328+0000",
-                "locations": [
-
-                ],
-                "genomicContexts": [
-
-                ],
-                "_links": {
-                    "self": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs11924705"
-                    },
-                    "singleNucleotidePolymorphism": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs11924705{?projection}",
-                        "templated": true
-                    },
-                    "associationsBySnpSummary": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs11924705/associations?projection=associationBySnp"
-                    },
-                    "associations": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs11924705/associations"
-                    },
-                    "studies": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs11924705/studies"
-                    },
-                    "currentSnp": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs11924705/currentSnp"
-                    }
-                }
-            },
-            {
                 "rsId": "rs6789378",
                 "merged": 0,
                 "functionalClass": "intergenic_variant",
@@ -55,47 +22,6 @@
                     }
                 ],
                 "genomicContexts": [
-                    {
-                        "isIntergenic": true,
-                        "isUpstream": false,
-                        "isDownstream": true,
-                        "distance": 36911,
-                        "gene": {
-                            "geneName": "TOMM22P6",
-                            "entrezGeneIds": [
-                                {
-                                    "entrezGeneId": "100287573"
-                                }
-                            ],
-                            "ensemblGeneIds": [
-                                {
-                                    "ensemblGeneId": "ENSG00000241874"
-                                }
-                            ]
-                        },
-                        "location": {
-                            "chromosomeName": "3",
-                            "chromosomePosition": 162449608,
-                            "region": {
-                                "name": "3q26.1"
-                            },
-                            "_links": {
-                                "snps": {
-                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs6789378{?projection}",
-                                    "templated": true
-                                }
-                            }
-                        },
-                        "source": "NCBI",
-                        "mappingMethod": "Ensembl_pipeline",
-                        "isClosestGene": true,
-                        "_links": {
-                            "snp": {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs6789378{?projection}",
-                                "templated": true
-                            }
-                        }
-                    },
                     {
                         "isIntergenic": true,
                         "isUpstream": false,
@@ -136,6 +62,47 @@
                                 "templated": true
                             }
                         }
+                    },
+                    {
+                        "isIntergenic": true,
+                        "isUpstream": false,
+                        "isDownstream": true,
+                        "distance": 36911,
+                        "gene": {
+                            "geneName": "TOMM22P6",
+                            "entrezGeneIds": [
+                                {
+                                    "entrezGeneId": "100287573"
+                                }
+                            ],
+                            "ensemblGeneIds": [
+                                {
+                                    "ensemblGeneId": "ENSG00000241874"
+                                }
+                            ]
+                        },
+                        "location": {
+                            "chromosomeName": "3",
+                            "chromosomePosition": 162449608,
+                            "region": {
+                                "name": "3q26.1"
+                            },
+                            "_links": {
+                                "snps": {
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs6789378{?projection}",
+                                    "templated": true
+                                }
+                            }
+                        },
+                        "source": "NCBI",
+                        "mappingMethod": "Ensembl_pipeline",
+                        "isClosestGene": true,
+                        "_links": {
+                            "snp": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs6789378{?projection}",
+                                "templated": true
+                            }
+                        }
                     }
                 ],
                 "_links": {
@@ -149,14 +116,47 @@
                     "associationsBySnpSummary": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs6789378/associations?projection=associationBySnp"
                     },
-                    "associations": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs6789378/associations"
-                    },
                     "studies": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs6789378/studies"
                     },
                     "currentSnp": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs6789378/currentSnp"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs6789378/associations"
+                    }
+                }
+            },
+            {
+                "rsId": "rs11924705",
+                "merged": 0,
+                "functionalClass": "intergenic_variant",
+                "lastUpdateDate": "2021-06-24T18:49:18.328+0000",
+                "locations": [
+
+                ],
+                "genomicContexts": [
+
+                ],
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs11924705"
+                    },
+                    "singleNucleotidePolymorphism": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs11924705{?projection}",
+                        "templated": true
+                    },
+                    "associationsBySnpSummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs11924705/associations?projection=associationBySnp"
+                    },
+                    "studies": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs11924705/studies"
+                    },
+                    "currentSnp": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs11924705/currentSnp"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs11924705/associations"
                     }
                 }
             }

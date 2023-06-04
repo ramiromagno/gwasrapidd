@@ -3,9 +3,12 @@
         "terms": [
             {
                 "iri": "http://www.ebi.ac.uk/efo/EFO_0007800",
-                "label": "body fat percentage",
+                "lang": "en",
                 "description": [
                     "Quantification of the amount of body fat as a percentage of total body mass, calculated as either total mass of fat divided by total body mass or one of a number of more complex weighted equations. Body fat includes essential body fat and storage body fat. "
+                ],
+                "synonyms": [
+
                 ],
                 "annotation": {
                     "gwas_trait": [
@@ -15,7 +18,7 @@
                         "Dani Welter"
                     ]
                 },
-                "synonyms": null,
+                "label": "body fat percentage",
                 "ontology_name": "efo",
                 "ontology_prefix": "EFO",
                 "ontology_iri": "http://www.ebi.ac.uk/efo/efo.owl",
@@ -30,9 +33,10 @@
                 "obo_definition_citation": null,
                 "obo_xref": null,
                 "obo_synonym": null,
+                "is_preferred_root": false,
                 "_links": {
                     "self": {
-                        "href": "https://www.ebi.ac.uk/ols/api/ontologies/efo/terms/http%253A%252F%252Fwww.ebi.ac.uk%252Fefo%252FEFO_0007800"
+                        "href": "https://www.ebi.ac.uk/ols/api/ontologies/efo/terms/http%253A%252F%252Fwww.ebi.ac.uk%252Fefo%252FEFO_0007800?lang=en"
                     },
                     "parents": {
                         "href": "https://www.ebi.ac.uk/ols/api/ontologies/efo/terms/http%253A%252F%252Fwww.ebi.ac.uk%252Fefo%252FEFO_0007800/parents"
@@ -56,13 +60,16 @@
             },
             {
                 "iri": "http://www.ebi.ac.uk/efo/EFO_0004341",
-                "label": "body fat distribution",
+                "lang": "en",
                 "description": [
                     "Deposits of ADIPOSE TISSUE throughout the body. The pattern of fat deposits in the body regions is an indicator of health status. Excess ABDOMINAL FAT increases health risks more than excess fat around the hips or thighs, therefore, WAIST-HIP RATIO is often used to determine health risks."
                 ],
+                "synonyms": [
+                    "body fat patterning"
+                ],
                 "annotation": {
                     "database_cross_reference": [
-                        "MSH:D050218"
+                        "MeSH:D050218"
                     ],
                     "gwas_trait": [
                         "true"
@@ -71,9 +78,7 @@
                         "Dani Welter"
                     ]
                 },
-                "synonyms": [
-                    "body fat patterning"
-                ],
+                "label": "body fat distribution",
                 "ontology_name": "efo",
                 "ontology_prefix": "EFO",
                 "ontology_iri": "http://www.ebi.ac.uk/efo/efo.owl",
@@ -88,16 +93,17 @@
                 "obo_definition_citation": null,
                 "obo_xref": [
                     {
-                        "database": "MSH",
+                        "database": "MeSH",
                         "id": "D050218",
                         "description": null,
-                        "url": null
+                        "url": "http://id.nlm.nih.gov/mesh/D050218"
                     }
                 ],
                 "obo_synonym": null,
+                "is_preferred_root": false,
                 "_links": {
                     "self": {
-                        "href": "https://www.ebi.ac.uk/ols/api/ontologies/efo/terms/http%253A%252F%252Fwww.ebi.ac.uk%252Fefo%252FEFO_0004341"
+                        "href": "https://www.ebi.ac.uk/ols/api/ontologies/efo/terms/http%253A%252F%252Fwww.ebi.ac.uk%252Fefo%252FEFO_0004341?lang=en"
                     },
                     "parents": {
                         "href": "https://www.ebi.ac.uk/ols/api/ontologies/efo/terms/http%253A%252F%252Fwww.ebi.ac.uk%252Fefo%252FEFO_0004341/parents"

@@ -2,20 +2,21 @@
     "_embedded": {
         "singleNucleotidePolymorphisms": [
             {
-                "rsId": "rs142242702",
+                "rsId": "rs62251261",
                 "merged": 0,
-                "functionalClass": "intergenic_variant",
-                "lastUpdateDate": "2019-02-19T22:35:27.123+0000",
+                "functionalClass": "regulatory_region_variant",
+                "lastUpdateDate": "2022-06-30T13:34:24.533+0000",
                 "locations": [
                     {
                         "chromosomeName": "3",
-                        "chromosomePosition": 44122660,
+                        "chromosomePosition": 44106761,
                         "region": {
                             "name": "3p21.32"
                         },
                         "_links": {
                             "snps": {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702"
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs62251261{?projection}",
+                                "templated": true
                             }
                         }
                     }
@@ -25,7 +26,7 @@
                         "isIntergenic": true,
                         "isUpstream": true,
                         "isDownstream": false,
-                        "distance": 51474,
+                        "distance": 35575,
                         "gene": {
                             "geneName": "RNU6-367P",
                             "entrezGeneIds": [
@@ -41,91 +42,14 @@
                         },
                         "location": {
                             "chromosomeName": "3",
-                            "chromosomePosition": 44122660,
+                            "chromosomePosition": 44106761,
                             "region": {
                                 "name": "3p21.32"
                             },
                             "_links": {
                                 "snps": {
-                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702"
-                                }
-                            }
-                        },
-                        "source": "Ensembl",
-                        "mappingMethod": "Ensembl_pipeline",
-                        "isClosestGene": false,
-                        "_links": {
-                            "snp": {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702"
-                            }
-                        }
-                    },
-                    {
-                        "isIntergenic": true,
-                        "isUpstream": false,
-                        "isDownstream": true,
-                        "distance": 119226,
-                        "gene": {
-                            "geneName": "TOPAZ1",
-                            "entrezGeneIds": [
-                                {
-                                    "entrezGeneId": "375337"
-                                }
-                            ],
-                            "ensemblGeneIds": [
-                                {
-                                    "ensemblGeneId": "ENSG00000173769"
-                                }
-                            ]
-                        },
-                        "location": {
-                            "chromosomeName": "3",
-                            "chromosomePosition": 44122660,
-                            "region": {
-                                "name": "3p21.32"
-                            },
-                            "_links": {
-                                "snps": {
-                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702"
-                                }
-                            }
-                        },
-                        "source": "Ensembl",
-                        "mappingMethod": "Ensembl_pipeline",
-                        "isClosestGene": true,
-                        "_links": {
-                            "snp": {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702"
-                            }
-                        }
-                    },
-                    {
-                        "isIntergenic": true,
-                        "isUpstream": false,
-                        "isDownstream": true,
-                        "distance": 119226,
-                        "gene": {
-                            "geneName": "TOPAZ1",
-                            "entrezGeneIds": [
-                                {
-                                    "entrezGeneId": "375337"
-                                }
-                            ],
-                            "ensemblGeneIds": [
-                                {
-                                    "ensemblGeneId": "ENSG00000173769"
-                                }
-                            ]
-                        },
-                        "location": {
-                            "chromosomeName": "3",
-                            "chromosomePosition": 44122660,
-                            "region": {
-                                "name": "3p21.32"
-                            },
-                            "_links": {
-                                "snps": {
-                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702"
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs62251261{?projection}",
+                                    "templated": true
                                 }
                             }
                         },
@@ -134,15 +58,16 @@
                         "isClosestGene": true,
                         "_links": {
                             "snp": {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702"
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs62251261{?projection}",
+                                "templated": true
                             }
                         }
                     },
                     {
                         "isIntergenic": true,
-                        "isUpstream": true,
-                        "isDownstream": false,
-                        "distance": 8350,
+                        "isUpstream": false,
+                        "isDownstream": true,
+                        "distance": 7451,
                         "gene": {
                             "geneName": "MIR138-1",
                             "entrezGeneIds": [
@@ -158,13 +83,14 @@
                         },
                         "location": {
                             "chromosomeName": "3",
-                            "chromosomePosition": 44122660,
+                            "chromosomePosition": 44106761,
                             "region": {
                                 "name": "3p21.32"
                             },
                             "_links": {
                                 "snps": {
-                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702"
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs62251261{?projection}",
+                                    "templated": true
                                 }
                             }
                         },
@@ -173,7 +99,49 @@
                         "isClosestGene": true,
                         "_links": {
                             "snp": {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702"
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs62251261{?projection}",
+                                "templated": true
+                            }
+                        }
+                    },
+                    {
+                        "isIntergenic": true,
+                        "isUpstream": false,
+                        "isDownstream": true,
+                        "distance": 7451,
+                        "gene": {
+                            "geneName": "MIR138-1",
+                            "entrezGeneIds": [
+                                {
+                                    "entrezGeneId": "406929"
+                                }
+                            ],
+                            "ensemblGeneIds": [
+                                {
+                                    "ensemblGeneId": "ENSG00000207954"
+                                }
+                            ]
+                        },
+                        "location": {
+                            "chromosomeName": "3",
+                            "chromosomePosition": 44106761,
+                            "region": {
+                                "name": "3p21.32"
+                            },
+                            "_links": {
+                                "snps": {
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs62251261{?projection}",
+                                    "templated": true
+                                }
+                            }
+                        },
+                        "source": "Ensembl",
+                        "mappingMethod": "Ensembl_pipeline",
+                        "isClosestGene": true,
+                        "_links": {
+                            "snp": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs62251261{?projection}",
+                                "templated": true
                             }
                         }
                     },
@@ -181,7 +149,7 @@
                         "isIntergenic": true,
                         "isUpstream": true,
                         "isDownstream": false,
-                        "distance": 51474,
+                        "distance": 35575,
                         "gene": {
                             "geneName": "RNU6-367P",
                             "entrezGeneIds": [
@@ -197,50 +165,14 @@
                         },
                         "location": {
                             "chromosomeName": "3",
-                            "chromosomePosition": 44122660,
+                            "chromosomePosition": 44106761,
                             "region": {
                                 "name": "3p21.32"
                             },
                             "_links": {
                                 "snps": {
-                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702"
-                                }
-                            }
-                        },
-                        "source": "NCBI",
-                        "mappingMethod": "Ensembl_pipeline",
-                        "isClosestGene": false,
-                        "_links": {
-                            "snp": {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702"
-                            }
-                        }
-                    },
-                    {
-                        "isIntergenic": true,
-                        "isUpstream": true,
-                        "isDownstream": false,
-                        "distance": 295,
-                        "gene": {
-                            "geneName": "AC006058.1",
-                            "entrezGeneIds": [
-
-                            ],
-                            "ensemblGeneIds": [
-                                {
-                                    "ensemblGeneId": "ENSG00000261786"
-                                }
-                            ]
-                        },
-                        "location": {
-                            "chromosomeName": "3",
-                            "chromosomePosition": 44122660,
-                            "region": {
-                                "name": "3p21.32"
-                            },
-                            "_links": {
-                                "snps": {
-                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702"
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs62251261{?projection}",
+                                    "templated": true
                                 }
                             }
                         },
@@ -249,113 +181,247 @@
                         "isClosestGene": true,
                         "_links": {
                             "snp": {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702"
-                            }
-                        }
-                    },
-                    {
-                        "isIntergenic": true,
-                        "isUpstream": true,
-                        "isDownstream": false,
-                        "distance": 8350,
-                        "gene": {
-                            "geneName": "MIR138-1",
-                            "entrezGeneIds": [
-                                {
-                                    "entrezGeneId": "406929"
-                                }
-                            ],
-                            "ensemblGeneIds": [
-                                {
-                                    "ensemblGeneId": "ENSG00000207954"
-                                }
-                            ]
-                        },
-                        "location": {
-                            "chromosomeName": "3",
-                            "chromosomePosition": 44122660,
-                            "region": {
-                                "name": "3p21.32"
-                            },
-                            "_links": {
-                                "snps": {
-                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702"
-                                }
-                            }
-                        },
-                        "source": "Ensembl",
-                        "mappingMethod": "Ensembl_pipeline",
-                        "isClosestGene": false,
-                        "_links": {
-                            "snp": {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702"
-                            }
-                        }
-                    },
-                    {
-                        "isIntergenic": true,
-                        "isUpstream": true,
-                        "isDownstream": false,
-                        "distance": 5173,
-                        "gene": {
-                            "geneName": "AC006058.4",
-                            "entrezGeneIds": [
-
-                            ],
-                            "ensemblGeneIds": [
-                                {
-                                    "ensemblGeneId": "ENSG00000280435"
-                                }
-                            ]
-                        },
-                        "location": {
-                            "chromosomeName": "3",
-                            "chromosomePosition": 44122660,
-                            "region": {
-                                "name": "3p21.32"
-                            },
-                            "_links": {
-                                "snps": {
-                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702"
-                                }
-                            }
-                        },
-                        "source": "Ensembl",
-                        "mappingMethod": "Ensembl_pipeline",
-                        "isClosestGene": false,
-                        "_links": {
-                            "snp": {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702"
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs62251261{?projection}",
+                                "templated": true
                             }
                         }
                     }
                 ],
                 "_links": {
                     "self": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702"
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs62251261"
                     },
                     "singleNucleotidePolymorphism": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702"
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs62251261{?projection}",
+                        "templated": true
                     },
                     "associationsBySnpSummary": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702/associations?projection=associationBySnp"
-                    },
-                    "associations": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702/associations"
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs62251261/associations?projection=associationBySnp"
                     },
                     "currentSnp": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702/currentSnp"
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs62251261/currentSnp"
                     },
                     "studies": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702/studies"
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs62251261/studies"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs62251261/associations"
+                    }
+                }
+            },
+            {
+                "rsId": "rs7622757",
+                "merged": 0,
+                "functionalClass": "intergenic_variant",
+                "lastUpdateDate": "2022-09-26T21:34:07.207+0000",
+                "locations": [
+                    {
+                        "chromosomeName": "3",
+                        "chromosomePosition": 44194836,
+                        "region": {
+                            "name": "3p21.32"
+                        },
+                        "_links": {
+                            "snps": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7622757{?projection}",
+                                "templated": true
+                            }
+                        }
+                    }
+                ],
+                "genomicContexts": [
+                    {
+                        "isIntergenic": true,
+                        "isUpstream": true,
+                        "isDownstream": false,
+                        "distance": 80526,
+                        "gene": {
+                            "geneName": "MIR138-1",
+                            "entrezGeneIds": [
+                                {
+                                    "entrezGeneId": "406929"
+                                }
+                            ],
+                            "ensemblGeneIds": [
+                                {
+                                    "ensemblGeneId": "ENSG00000207954"
+                                }
+                            ]
+                        },
+                        "location": {
+                            "chromosomeName": "3",
+                            "chromosomePosition": 44194836,
+                            "region": {
+                                "name": "3p21.32"
+                            },
+                            "_links": {
+                                "snps": {
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7622757{?projection}",
+                                    "templated": true
+                                }
+                            }
+                        },
+                        "source": "NCBI",
+                        "mappingMethod": "Ensembl_pipeline",
+                        "isClosestGene": true,
+                        "_links": {
+                            "snp": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7622757{?projection}",
+                                "templated": true
+                            }
+                        }
+                    },
+                    {
+                        "isIntergenic": true,
+                        "isUpstream": false,
+                        "isDownstream": true,
+                        "distance": 47050,
+                        "gene": {
+                            "geneName": "TOPAZ1",
+                            "entrezGeneIds": [
+                                {
+                                    "entrezGeneId": "375337"
+                                }
+                            ],
+                            "ensemblGeneIds": [
+                                {
+                                    "ensemblGeneId": "ENSG00000173769"
+                                }
+                            ]
+                        },
+                        "location": {
+                            "chromosomeName": "3",
+                            "chromosomePosition": 44194836,
+                            "region": {
+                                "name": "3p21.32"
+                            },
+                            "_links": {
+                                "snps": {
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7622757{?projection}",
+                                    "templated": true
+                                }
+                            }
+                        },
+                        "source": "NCBI",
+                        "mappingMethod": "Ensembl_pipeline",
+                        "isClosestGene": true,
+                        "_links": {
+                            "snp": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7622757{?projection}",
+                                "templated": true
+                            }
+                        }
+                    },
+                    {
+                        "isIntergenic": true,
+                        "isUpstream": true,
+                        "isDownstream": false,
+                        "distance": 80526,
+                        "gene": {
+                            "geneName": "MIR138-1",
+                            "entrezGeneIds": [
+                                {
+                                    "entrezGeneId": "406929"
+                                }
+                            ],
+                            "ensemblGeneIds": [
+                                {
+                                    "ensemblGeneId": "ENSG00000207954"
+                                }
+                            ]
+                        },
+                        "location": {
+                            "chromosomeName": "3",
+                            "chromosomePosition": 44194836,
+                            "region": {
+                                "name": "3p21.32"
+                            },
+                            "_links": {
+                                "snps": {
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7622757{?projection}",
+                                    "templated": true
+                                }
+                            }
+                        },
+                        "source": "Ensembl",
+                        "mappingMethod": "Ensembl_pipeline",
+                        "isClosestGene": true,
+                        "_links": {
+                            "snp": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7622757{?projection}",
+                                "templated": true
+                            }
+                        }
+                    },
+                    {
+                        "isIntergenic": true,
+                        "isUpstream": false,
+                        "isDownstream": true,
+                        "distance": 47050,
+                        "gene": {
+                            "geneName": "TOPAZ1",
+                            "entrezGeneIds": [
+                                {
+                                    "entrezGeneId": "375337"
+                                }
+                            ],
+                            "ensemblGeneIds": [
+                                {
+                                    "ensemblGeneId": "ENSG00000173769"
+                                }
+                            ]
+                        },
+                        "location": {
+                            "chromosomeName": "3",
+                            "chromosomePosition": 44194836,
+                            "region": {
+                                "name": "3p21.32"
+                            },
+                            "_links": {
+                                "snps": {
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7622757{?projection}",
+                                    "templated": true
+                                }
+                            }
+                        },
+                        "source": "Ensembl",
+                        "mappingMethod": "Ensembl_pipeline",
+                        "isClosestGene": true,
+                        "_links": {
+                            "snp": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7622757{?projection}",
+                                "templated": true
+                            }
+                        }
+                    }
+                ],
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7622757"
+                    },
+                    "singleNucleotidePolymorphism": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7622757{?projection}",
+                        "templated": true
+                    },
+                    "associationsBySnpSummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7622757/associations?projection=associationBySnp"
+                    },
+                    "currentSnp": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7622757/currentSnp"
+                    },
+                    "studies": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7622757/studies"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs7622757/associations"
                     }
                 }
             },
             {
                 "rsId": "rs4682718",
                 "merged": 0,
-                "functionalClass": "intergenic_variant",
-                "lastUpdateDate": "2019-02-24T02:31:42.988+0000",
+                "functionalClass": "regulatory_region_variant",
+                "lastUpdateDate": "2023-03-07T16:11:49.522+0000",
                 "locations": [
                     {
                         "chromosomeName": "3",
@@ -365,7 +431,8 @@
                         },
                         "_links": {
                             "snps": {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4682718"
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4682718{?projection}",
+                                "templated": true
                             }
                         }
                     }
@@ -397,7 +464,8 @@
                             },
                             "_links": {
                                 "snps": {
-                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4682718"
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4682718{?projection}",
+                                    "templated": true
                                 }
                             }
                         },
@@ -406,44 +474,8 @@
                         "isClosestGene": true,
                         "_links": {
                             "snp": {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4682718"
-                            }
-                        }
-                    },
-                    {
-                        "isIntergenic": true,
-                        "isUpstream": true,
-                        "isDownstream": false,
-                        "distance": 67353,
-                        "gene": {
-                            "geneName": "AC006058.4",
-                            "entrezGeneIds": [
-
-                            ],
-                            "ensemblGeneIds": [
-                                {
-                                    "ensemblGeneId": "ENSG00000280435"
-                                }
-                            ]
-                        },
-                        "location": {
-                            "chromosomeName": "3",
-                            "chromosomePosition": 44184840,
-                            "region": {
-                                "name": "3p21.32"
-                            },
-                            "_links": {
-                                "snps": {
-                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4682718"
-                                }
-                            }
-                        },
-                        "source": "Ensembl",
-                        "mappingMethod": "Ensembl_pipeline",
-                        "isClosestGene": false,
-                        "_links": {
-                            "snp": {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4682718"
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4682718{?projection}",
+                                "templated": true
                             }
                         }
                     },
@@ -473,7 +505,8 @@
                             },
                             "_links": {
                                 "snps": {
-                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4682718"
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4682718{?projection}",
+                                    "templated": true
                                 }
                             }
                         },
@@ -482,7 +515,49 @@
                         "isClosestGene": true,
                         "_links": {
                             "snp": {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4682718"
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4682718{?projection}",
+                                "templated": true
+                            }
+                        }
+                    },
+                    {
+                        "isIntergenic": true,
+                        "isUpstream": true,
+                        "isDownstream": false,
+                        "distance": 70530,
+                        "gene": {
+                            "geneName": "MIR138-1",
+                            "entrezGeneIds": [
+                                {
+                                    "entrezGeneId": "406929"
+                                }
+                            ],
+                            "ensemblGeneIds": [
+                                {
+                                    "ensemblGeneId": "ENSG00000207954"
+                                }
+                            ]
+                        },
+                        "location": {
+                            "chromosomeName": "3",
+                            "chromosomePosition": 44184840,
+                            "region": {
+                                "name": "3p21.32"
+                            },
+                            "_links": {
+                                "snps": {
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4682718{?projection}",
+                                    "templated": true
+                                }
+                            }
+                        },
+                        "source": "Ensembl",
+                        "mappingMethod": "Ensembl_pipeline",
+                        "isClosestGene": true,
+                        "_links": {
+                            "snp": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4682718{?projection}",
+                                "templated": true
                             }
                         }
                     },
@@ -512,7 +587,8 @@
                             },
                             "_links": {
                                 "snps": {
-                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4682718"
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4682718{?projection}",
+                                    "templated": true
                                 }
                             }
                         },
@@ -521,44 +597,93 @@
                         "isClosestGene": true,
                         "_links": {
                             "snp": {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4682718"
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4682718{?projection}",
+                                "templated": true
                             }
                         }
+                    }
+                ],
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4682718"
                     },
+                    "singleNucleotidePolymorphism": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4682718{?projection}",
+                        "templated": true
+                    },
+                    "associationsBySnpSummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4682718/associations?projection=associationBySnp"
+                    },
+                    "currentSnp": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4682718/currentSnp"
+                    },
+                    "studies": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4682718/studies"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4682718/associations"
+                    }
+                }
+            },
+            {
+                "rsId": "rs79644353",
+                "merged": 0,
+                "functionalClass": "intergenic_variant",
+                "lastUpdateDate": "2021-06-25T05:06:20.901+0000",
+                "locations": [
+                    {
+                        "chromosomeName": "3",
+                        "chromosomePosition": 44135707,
+                        "region": {
+                            "name": "3p21.32"
+                        },
+                        "_links": {
+                            "snps": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs79644353{?projection}",
+                                "templated": true
+                            }
+                        }
+                    }
+                ],
+                "genomicContexts": [
                     {
                         "isIntergenic": true,
                         "isUpstream": true,
                         "isDownstream": false,
-                        "distance": 62475,
+                        "distance": 64521,
                         "gene": {
-                            "geneName": "AC006058.1",
+                            "geneName": "RNU6-367P",
                             "entrezGeneIds": [
-
+                                {
+                                    "entrezGeneId": "106481890"
+                                }
                             ],
                             "ensemblGeneIds": [
                                 {
-                                    "ensemblGeneId": "ENSG00000261786"
+                                    "ensemblGeneId": "ENSG00000252980"
                                 }
                             ]
                         },
                         "location": {
                             "chromosomeName": "3",
-                            "chromosomePosition": 44184840,
+                            "chromosomePosition": 44135707,
                             "region": {
                                 "name": "3p21.32"
                             },
                             "_links": {
                                 "snps": {
-                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4682718"
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs79644353{?projection}",
+                                    "templated": true
                                 }
                             }
                         },
-                        "source": "Ensembl",
+                        "source": "NCBI",
                         "mappingMethod": "Ensembl_pipeline",
-                        "isClosestGene": true,
+                        "isClosestGene": false,
                         "_links": {
                             "snp": {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4682718"
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs79644353{?projection}",
+                                "templated": true
                             }
                         }
                     },
@@ -566,7 +691,7 @@
                         "isIntergenic": true,
                         "isUpstream": true,
                         "isDownstream": false,
-                        "distance": 70530,
+                        "distance": 21397,
                         "gene": {
                             "geneName": "MIR138-1",
                             "entrezGeneIds": [
@@ -582,13 +707,96 @@
                         },
                         "location": {
                             "chromosomeName": "3",
-                            "chromosomePosition": 44184840,
+                            "chromosomePosition": 44135707,
                             "region": {
                                 "name": "3p21.32"
                             },
                             "_links": {
                                 "snps": {
-                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4682718"
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs79644353{?projection}",
+                                    "templated": true
+                                }
+                            }
+                        },
+                        "source": "NCBI",
+                        "mappingMethod": "Ensembl_pipeline",
+                        "isClosestGene": true,
+                        "_links": {
+                            "snp": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs79644353{?projection}",
+                                "templated": true
+                            }
+                        }
+                    },
+                    {
+                        "isIntergenic": true,
+                        "isUpstream": true,
+                        "isDownstream": false,
+                        "distance": 21397,
+                        "gene": {
+                            "geneName": "MIR138-1",
+                            "entrezGeneIds": [
+                                {
+                                    "entrezGeneId": "406929"
+                                }
+                            ],
+                            "ensemblGeneIds": [
+                                {
+                                    "ensemblGeneId": "ENSG00000207954"
+                                }
+                            ]
+                        },
+                        "location": {
+                            "chromosomeName": "3",
+                            "chromosomePosition": 44135707,
+                            "region": {
+                                "name": "3p21.32"
+                            },
+                            "_links": {
+                                "snps": {
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs79644353{?projection}",
+                                    "templated": true
+                                }
+                            }
+                        },
+                        "source": "Ensembl",
+                        "mappingMethod": "Ensembl_pipeline",
+                        "isClosestGene": true,
+                        "_links": {
+                            "snp": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs79644353{?projection}",
+                                "templated": true
+                            }
+                        }
+                    },
+                    {
+                        "isIntergenic": true,
+                        "isUpstream": true,
+                        "isDownstream": false,
+                        "distance": 64521,
+                        "gene": {
+                            "geneName": "RNU6-367P",
+                            "entrezGeneIds": [
+                                {
+                                    "entrezGeneId": "106481890"
+                                }
+                            ],
+                            "ensemblGeneIds": [
+                                {
+                                    "ensemblGeneId": "ENSG00000252980"
+                                }
+                            ]
+                        },
+                        "location": {
+                            "chromosomeName": "3",
+                            "chromosomePosition": 44135707,
+                            "region": {
+                                "name": "3p21.32"
+                            },
+                            "_links": {
+                                "snps": {
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs79644353{?projection}",
+                                    "templated": true
                                 }
                             }
                         },
@@ -597,29 +805,655 @@
                         "isClosestGene": false,
                         "_links": {
                             "snp": {
-                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4682718"
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs79644353{?projection}",
+                                "templated": true
                             }
                         }
                     }
                 ],
                 "_links": {
                     "self": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4682718"
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs79644353"
                     },
                     "singleNucleotidePolymorphism": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4682718"
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs79644353{?projection}",
+                        "templated": true
                     },
                     "associationsBySnpSummary": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4682718/associations?projection=associationBySnp"
-                    },
-                    "associations": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4682718/associations"
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs79644353/associations?projection=associationBySnp"
                     },
                     "currentSnp": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4682718/currentSnp"
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs79644353/currentSnp"
                     },
                     "studies": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs4682718/studies"
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs79644353/studies"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs79644353/associations"
+                    }
+                }
+            },
+            {
+                "rsId": "rs11707506",
+                "merged": 0,
+                "functionalClass": "intergenic_variant",
+                "lastUpdateDate": "2021-06-25T04:37:41.821+0000",
+                "locations": [
+                    {
+                        "chromosomeName": "3",
+                        "chromosomePosition": 44183181,
+                        "region": {
+                            "name": "3p21.32"
+                        },
+                        "_links": {
+                            "snps": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs11707506{?projection}",
+                                "templated": true
+                            }
+                        }
+                    }
+                ],
+                "genomicContexts": [
+                    {
+                        "isIntergenic": true,
+                        "isUpstream": false,
+                        "isDownstream": true,
+                        "distance": 58705,
+                        "gene": {
+                            "geneName": "TOPAZ1",
+                            "entrezGeneIds": [
+                                {
+                                    "entrezGeneId": "375337"
+                                }
+                            ],
+                            "ensemblGeneIds": [
+                                {
+                                    "ensemblGeneId": "ENSG00000173769"
+                                }
+                            ]
+                        },
+                        "location": {
+                            "chromosomeName": "3",
+                            "chromosomePosition": 44183181,
+                            "region": {
+                                "name": "3p21.32"
+                            },
+                            "_links": {
+                                "snps": {
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs11707506{?projection}",
+                                    "templated": true
+                                }
+                            }
+                        },
+                        "source": "NCBI",
+                        "mappingMethod": "Ensembl_pipeline",
+                        "isClosestGene": true,
+                        "_links": {
+                            "snp": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs11707506{?projection}",
+                                "templated": true
+                            }
+                        }
+                    },
+                    {
+                        "isIntergenic": true,
+                        "isUpstream": true,
+                        "isDownstream": false,
+                        "distance": 68871,
+                        "gene": {
+                            "geneName": "MIR138-1",
+                            "entrezGeneIds": [
+                                {
+                                    "entrezGeneId": "406929"
+                                }
+                            ],
+                            "ensemblGeneIds": [
+                                {
+                                    "ensemblGeneId": "ENSG00000207954"
+                                }
+                            ]
+                        },
+                        "location": {
+                            "chromosomeName": "3",
+                            "chromosomePosition": 44183181,
+                            "region": {
+                                "name": "3p21.32"
+                            },
+                            "_links": {
+                                "snps": {
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs11707506{?projection}",
+                                    "templated": true
+                                }
+                            }
+                        },
+                        "source": "Ensembl",
+                        "mappingMethod": "Ensembl_pipeline",
+                        "isClosestGene": true,
+                        "_links": {
+                            "snp": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs11707506{?projection}",
+                                "templated": true
+                            }
+                        }
+                    },
+                    {
+                        "isIntergenic": true,
+                        "isUpstream": true,
+                        "isDownstream": false,
+                        "distance": 68871,
+                        "gene": {
+                            "geneName": "MIR138-1",
+                            "entrezGeneIds": [
+                                {
+                                    "entrezGeneId": "406929"
+                                }
+                            ],
+                            "ensemblGeneIds": [
+                                {
+                                    "ensemblGeneId": "ENSG00000207954"
+                                }
+                            ]
+                        },
+                        "location": {
+                            "chromosomeName": "3",
+                            "chromosomePosition": 44183181,
+                            "region": {
+                                "name": "3p21.32"
+                            },
+                            "_links": {
+                                "snps": {
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs11707506{?projection}",
+                                    "templated": true
+                                }
+                            }
+                        },
+                        "source": "NCBI",
+                        "mappingMethod": "Ensembl_pipeline",
+                        "isClosestGene": true,
+                        "_links": {
+                            "snp": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs11707506{?projection}",
+                                "templated": true
+                            }
+                        }
+                    },
+                    {
+                        "isIntergenic": true,
+                        "isUpstream": false,
+                        "isDownstream": true,
+                        "distance": 58705,
+                        "gene": {
+                            "geneName": "TOPAZ1",
+                            "entrezGeneIds": [
+                                {
+                                    "entrezGeneId": "375337"
+                                }
+                            ],
+                            "ensemblGeneIds": [
+                                {
+                                    "ensemblGeneId": "ENSG00000173769"
+                                }
+                            ]
+                        },
+                        "location": {
+                            "chromosomeName": "3",
+                            "chromosomePosition": 44183181,
+                            "region": {
+                                "name": "3p21.32"
+                            },
+                            "_links": {
+                                "snps": {
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs11707506{?projection}",
+                                    "templated": true
+                                }
+                            }
+                        },
+                        "source": "Ensembl",
+                        "mappingMethod": "Ensembl_pipeline",
+                        "isClosestGene": true,
+                        "_links": {
+                            "snp": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs11707506{?projection}",
+                                "templated": true
+                            }
+                        }
+                    }
+                ],
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs11707506"
+                    },
+                    "singleNucleotidePolymorphism": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs11707506{?projection}",
+                        "templated": true
+                    },
+                    "associationsBySnpSummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs11707506/associations?projection=associationBySnp"
+                    },
+                    "currentSnp": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs11707506/currentSnp"
+                    },
+                    "studies": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs11707506/studies"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs11707506/associations"
+                    }
+                }
+            },
+            {
+                "rsId": "rs113706999",
+                "merged": 0,
+                "functionalClass": "non_coding_transcript_exon_variant",
+                "lastUpdateDate": "2021-06-25T04:13:38.640+0000",
+                "locations": [
+                    {
+                        "chromosomeName": "3",
+                        "chromosomePosition": 44117664,
+                        "region": {
+                            "name": "3p21.32"
+                        },
+                        "_links": {
+                            "snps": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs113706999{?projection}",
+                                "templated": true
+                            }
+                        }
+                    }
+                ],
+                "genomicContexts": [
+                    {
+                        "isIntergenic": true,
+                        "isUpstream": true,
+                        "isDownstream": false,
+                        "distance": 46478,
+                        "gene": {
+                            "geneName": "RNU6-367P",
+                            "entrezGeneIds": [
+                                {
+                                    "entrezGeneId": "106481890"
+                                }
+                            ],
+                            "ensemblGeneIds": [
+                                {
+                                    "ensemblGeneId": "ENSG00000252980"
+                                }
+                            ]
+                        },
+                        "location": {
+                            "chromosomeName": "3",
+                            "chromosomePosition": 44117664,
+                            "region": {
+                                "name": "3p21.32"
+                            },
+                            "_links": {
+                                "snps": {
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs113706999{?projection}",
+                                    "templated": true
+                                }
+                            }
+                        },
+                        "source": "NCBI",
+                        "mappingMethod": "Ensembl_pipeline",
+                        "isClosestGene": false,
+                        "_links": {
+                            "snp": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs113706999{?projection}",
+                                "templated": true
+                            }
+                        }
+                    },
+                    {
+                        "isIntergenic": true,
+                        "isUpstream": true,
+                        "isDownstream": false,
+                        "distance": 46478,
+                        "gene": {
+                            "geneName": "RNU6-367P",
+                            "entrezGeneIds": [
+                                {
+                                    "entrezGeneId": "106481890"
+                                }
+                            ],
+                            "ensemblGeneIds": [
+                                {
+                                    "ensemblGeneId": "ENSG00000252980"
+                                }
+                            ]
+                        },
+                        "location": {
+                            "chromosomeName": "3",
+                            "chromosomePosition": 44117664,
+                            "region": {
+                                "name": "3p21.32"
+                            },
+                            "_links": {
+                                "snps": {
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs113706999{?projection}",
+                                    "templated": true
+                                }
+                            }
+                        },
+                        "source": "Ensembl",
+                        "mappingMethod": "Ensembl_pipeline",
+                        "isClosestGene": false,
+                        "_links": {
+                            "snp": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs113706999{?projection}",
+                                "templated": true
+                            }
+                        }
+                    },
+                    {
+                        "isIntergenic": true,
+                        "isUpstream": true,
+                        "isDownstream": false,
+                        "distance": 3354,
+                        "gene": {
+                            "geneName": "MIR138-1",
+                            "entrezGeneIds": [
+                                {
+                                    "entrezGeneId": "406929"
+                                }
+                            ],
+                            "ensemblGeneIds": [
+                                {
+                                    "ensemblGeneId": "ENSG00000207954"
+                                }
+                            ]
+                        },
+                        "location": {
+                            "chromosomeName": "3",
+                            "chromosomePosition": 44117664,
+                            "region": {
+                                "name": "3p21.32"
+                            },
+                            "_links": {
+                                "snps": {
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs113706999{?projection}",
+                                    "templated": true
+                                }
+                            }
+                        },
+                        "source": "NCBI",
+                        "mappingMethod": "Ensembl_pipeline",
+                        "isClosestGene": true,
+                        "_links": {
+                            "snp": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs113706999{?projection}",
+                                "templated": true
+                            }
+                        }
+                    },
+                    {
+                        "isIntergenic": true,
+                        "isUpstream": true,
+                        "isDownstream": false,
+                        "distance": 3354,
+                        "gene": {
+                            "geneName": "MIR138-1",
+                            "entrezGeneIds": [
+                                {
+                                    "entrezGeneId": "406929"
+                                }
+                            ],
+                            "ensemblGeneIds": [
+                                {
+                                    "ensemblGeneId": "ENSG00000207954"
+                                }
+                            ]
+                        },
+                        "location": {
+                            "chromosomeName": "3",
+                            "chromosomePosition": 44117664,
+                            "region": {
+                                "name": "3p21.32"
+                            },
+                            "_links": {
+                                "snps": {
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs113706999{?projection}",
+                                    "templated": true
+                                }
+                            }
+                        },
+                        "source": "Ensembl",
+                        "mappingMethod": "Ensembl_pipeline",
+                        "isClosestGene": true,
+                        "_links": {
+                            "snp": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs113706999{?projection}",
+                                "templated": true
+                            }
+                        }
+                    }
+                ],
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs113706999"
+                    },
+                    "singleNucleotidePolymorphism": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs113706999{?projection}",
+                        "templated": true
+                    },
+                    "associationsBySnpSummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs113706999/associations?projection=associationBySnp"
+                    },
+                    "currentSnp": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs113706999/currentSnp"
+                    },
+                    "studies": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs113706999/studies"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs113706999/associations"
+                    }
+                }
+            },
+            {
+                "rsId": "rs142242702",
+                "merged": 0,
+                "functionalClass": "intergenic_variant",
+                "lastUpdateDate": "2021-06-24T19:07:32.930+0000",
+                "locations": [
+                    {
+                        "chromosomeName": "3",
+                        "chromosomePosition": 44122660,
+                        "region": {
+                            "name": "3p21.32"
+                        },
+                        "_links": {
+                            "snps": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702{?projection}",
+                                "templated": true
+                            }
+                        }
+                    }
+                ],
+                "genomicContexts": [
+                    {
+                        "isIntergenic": true,
+                        "isUpstream": true,
+                        "isDownstream": false,
+                        "distance": 8350,
+                        "gene": {
+                            "geneName": "MIR138-1",
+                            "entrezGeneIds": [
+                                {
+                                    "entrezGeneId": "406929"
+                                }
+                            ],
+                            "ensemblGeneIds": [
+                                {
+                                    "ensemblGeneId": "ENSG00000207954"
+                                }
+                            ]
+                        },
+                        "location": {
+                            "chromosomeName": "3",
+                            "chromosomePosition": 44122660,
+                            "region": {
+                                "name": "3p21.32"
+                            },
+                            "_links": {
+                                "snps": {
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702{?projection}",
+                                    "templated": true
+                                }
+                            }
+                        },
+                        "source": "NCBI",
+                        "mappingMethod": "Ensembl_pipeline",
+                        "isClosestGene": true,
+                        "_links": {
+                            "snp": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702{?projection}",
+                                "templated": true
+                            }
+                        }
+                    },
+                    {
+                        "isIntergenic": true,
+                        "isUpstream": true,
+                        "isDownstream": false,
+                        "distance": 8350,
+                        "gene": {
+                            "geneName": "MIR138-1",
+                            "entrezGeneIds": [
+                                {
+                                    "entrezGeneId": "406929"
+                                }
+                            ],
+                            "ensemblGeneIds": [
+                                {
+                                    "ensemblGeneId": "ENSG00000207954"
+                                }
+                            ]
+                        },
+                        "location": {
+                            "chromosomeName": "3",
+                            "chromosomePosition": 44122660,
+                            "region": {
+                                "name": "3p21.32"
+                            },
+                            "_links": {
+                                "snps": {
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702{?projection}",
+                                    "templated": true
+                                }
+                            }
+                        },
+                        "source": "Ensembl",
+                        "mappingMethod": "Ensembl_pipeline",
+                        "isClosestGene": true,
+                        "_links": {
+                            "snp": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702{?projection}",
+                                "templated": true
+                            }
+                        }
+                    },
+                    {
+                        "isIntergenic": true,
+                        "isUpstream": true,
+                        "isDownstream": false,
+                        "distance": 51474,
+                        "gene": {
+                            "geneName": "RNU6-367P",
+                            "entrezGeneIds": [
+                                {
+                                    "entrezGeneId": "106481890"
+                                }
+                            ],
+                            "ensemblGeneIds": [
+                                {
+                                    "ensemblGeneId": "ENSG00000252980"
+                                }
+                            ]
+                        },
+                        "location": {
+                            "chromosomeName": "3",
+                            "chromosomePosition": 44122660,
+                            "region": {
+                                "name": "3p21.32"
+                            },
+                            "_links": {
+                                "snps": {
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702{?projection}",
+                                    "templated": true
+                                }
+                            }
+                        },
+                        "source": "Ensembl",
+                        "mappingMethod": "Ensembl_pipeline",
+                        "isClosestGene": false,
+                        "_links": {
+                            "snp": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702{?projection}",
+                                "templated": true
+                            }
+                        }
+                    },
+                    {
+                        "isIntergenic": true,
+                        "isUpstream": true,
+                        "isDownstream": false,
+                        "distance": 51474,
+                        "gene": {
+                            "geneName": "RNU6-367P",
+                            "entrezGeneIds": [
+                                {
+                                    "entrezGeneId": "106481890"
+                                }
+                            ],
+                            "ensemblGeneIds": [
+                                {
+                                    "ensemblGeneId": "ENSG00000252980"
+                                }
+                            ]
+                        },
+                        "location": {
+                            "chromosomeName": "3",
+                            "chromosomePosition": 44122660,
+                            "region": {
+                                "name": "3p21.32"
+                            },
+                            "_links": {
+                                "snps": {
+                                    "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702{?projection}",
+                                    "templated": true
+                                }
+                            }
+                        },
+                        "source": "NCBI",
+                        "mappingMethod": "Ensembl_pipeline",
+                        "isClosestGene": false,
+                        "_links": {
+                            "snp": {
+                                "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702{?projection}",
+                                "templated": true
+                            }
+                        }
+                    }
+                ],
+                "_links": {
+                    "self": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702"
+                    },
+                    "singleNucleotidePolymorphism": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702{?projection}",
+                        "templated": true
+                    },
+                    "associationsBySnpSummary": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702/associations?projection=associationBySnp"
+                    },
+                    "currentSnp": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702/currentSnp"
+                    },
+                    "studies": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702/studies"
+                    },
+                    "associations": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/singleNucleotidePolymorphisms/rs142242702/associations"
                     }
                 }
             }
@@ -632,7 +1466,7 @@
     },
     "page": {
         "size": 20,
-        "totalElements": 2,
+        "totalElements": 7,
         "totalPages": 1,
         "number": 0
     }

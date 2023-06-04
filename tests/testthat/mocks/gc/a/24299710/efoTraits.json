@@ -10,16 +10,17 @@
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/EFO_0000537"
                     },
                     "efoTrait": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/EFO_0000537"
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/EFO_0000537{?projection}",
+                        "templated": true
                     },
                     "associationsByTraitSummary": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/EFO_0000537/associations?projection=associationByEfoTrait"
                     },
-                    "studies": {
-                        "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/EFO_0000537/studies"
-                    },
                     "associations": {
                         "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/EFO_0000537/associations"
+                    },
+                    "studies": {
+                        "href": "https://www.ebi.ac.uk/gwas/rest/api/efoTraits/EFO_0000537/studies"
                     }
                 }
             }
