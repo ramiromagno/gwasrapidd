@@ -12,7 +12,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">gwasrapidd</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.99.14</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.99.15</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -110,15 +110,14 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> An object of class "associations"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Slot "associations":</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 17</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   associa…¹ pvalue pvalu…² pvalu…³ pvalu…⁴ multi…⁵ snp_i…⁶ snp_t…⁷ stand…⁸ range</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 22505       7<span style="color: #949494;">e</span><span style="color: #BB0000;">-6</span> <span style="color: #BB0000;">NA</span>            7      -<span style="color: #BB0000;">6</span> FALSE   FALSE   novel     0.026 [0.0…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 7 more variables: or_per_copy_number &lt;dbl&gt;, beta_number &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   beta_unit &lt;chr&gt;, beta_direction &lt;chr&gt;, beta_description &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   last_mapping_date &lt;dttm&gt;, last_update_date &lt;dttm&gt;, and abbreviated variable</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   names ¹​association_id, ²​pvalue_description, ³​pvalue_mantissa,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   ⁴​pvalue_exponent, ⁵​multiple_snp_haplotype, ⁶​snp_interaction, ⁷​snp_type,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   ⁸​standard_error</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   association_id   pvalue pvalue_description pvalue_mantissa pvalue_exponent</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 22505          0.000<span style="text-decoration: underline;">007</span> <span style="color: #BB0000;">NA</span>                               7              -<span style="color: #BB0000;">6</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 12 more variables: multiple_snp_haplotype &lt;lgl&gt;, snp_interaction &lt;lgl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   snp_type &lt;chr&gt;, standard_error &lt;dbl&gt;, range &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   or_per_copy_number &lt;dbl&gt;, beta_number &lt;dbl&gt;, beta_unit &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   beta_direction &lt;chr&gt;, beta_description &lt;chr&gt;, last_mapping_date &lt;dttm&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   last_update_date &lt;dttm&gt;</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Slot "loci":</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 4</span></span>
@@ -128,11 +127,10 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Slot "risk_alleles":</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 7</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   association_id locus_id variant_id     risk_allele risk_freq…¹ genom…² limit…³</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 22505                 1 chr22:45895495 T                    <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>      <span style="color: #BB0000;">NA</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with abbreviated variable names ¹​risk_frequency, ²​genome_wide,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   ³​limited_list</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   association_id locus_id variant_id     risk_allele risk_frequency genome_wide</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 22505                 1 chr22:45895495 T                       <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 1 more variable: limited_list &lt;lgl&gt;</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Slot "genes":</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 2 × 3</span></span>
@@ -161,15 +159,14 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> An object of class "associations"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Slot "associations":</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 17</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   associa…¹ pvalue pvalu…² pvalu…³ pvalu…⁴ multi…⁵ snp_i…⁶ snp_t…⁷ stand…⁸ range</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 22505       7<span style="color: #949494;">e</span><span style="color: #BB0000;">-6</span> <span style="color: #BB0000;">NA</span>            7      -<span style="color: #BB0000;">6</span> FALSE   FALSE   novel     0.026 [0.0…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 7 more variables: or_per_copy_number &lt;dbl&gt;, beta_number &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   beta_unit &lt;chr&gt;, beta_direction &lt;chr&gt;, beta_description &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   last_mapping_date &lt;dttm&gt;, last_update_date &lt;dttm&gt;, and abbreviated variable</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   names ¹​association_id, ²​pvalue_description, ³​pvalue_mantissa,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   ⁴​pvalue_exponent, ⁵​multiple_snp_haplotype, ⁶​snp_interaction, ⁷​snp_type,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   ⁸​standard_error</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   association_id   pvalue pvalue_description pvalue_mantissa pvalue_exponent</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 22505          0.000<span style="text-decoration: underline;">007</span> <span style="color: #BB0000;">NA</span>                               7              -<span style="color: #BB0000;">6</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 12 more variables: multiple_snp_haplotype &lt;lgl&gt;, snp_interaction &lt;lgl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   snp_type &lt;chr&gt;, standard_error &lt;dbl&gt;, range &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   or_per_copy_number &lt;dbl&gt;, beta_number &lt;dbl&gt;, beta_unit &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   beta_direction &lt;chr&gt;, beta_description &lt;chr&gt;, last_mapping_date &lt;dttm&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   last_update_date &lt;dttm&gt;</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Slot "loci":</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 4</span></span>
@@ -179,11 +176,10 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Slot "risk_alleles":</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 7</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   association_id locus_id variant_id     risk_allele risk_freq…¹ genom…² limit…³</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 22505                 1 chr22:45895495 T                    <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>      <span style="color: #BB0000;">NA</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with abbreviated variable names ¹​risk_frequency, ²​genome_wide,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   ³​limited_list</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   association_id locus_id variant_id     risk_allele risk_frequency genome_wide</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 22505                 1 chr22:45895495 T                       <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 1 more variable: limited_list &lt;lgl&gt;</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Slot "genes":</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 2 × 3</span></span>
@@ -212,17 +208,16 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> An object of class "associations"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Slot "associations":</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 3 × 17</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   associa…¹ pvalue pvalu…² pvalu…³ pvalu…⁴ multi…⁵ snp_i…⁶ snp_t…⁷ stand…⁸ range</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 22509      3<span style="color: #949494;">e</span><span style="color: #BB0000;">- 9</span> <span style="color: #BB0000;">NA</span>            3      -<span style="color: #BB0000;">9</span> FALSE   FALSE   novel     0.016 [0.0…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 19537565   7<span style="color: #949494;">e</span><span style="color: #BB0000;">-31</span> <span style="color: #BB0000;">NA</span>            7     -<span style="color: #BB0000;">31</span> FALSE   FALSE   known    <span style="color: #BB0000;">NA</span>     [0.1…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> 19537593   1<span style="color: #949494;">e</span><span style="color: #BB0000;">-11</span> <span style="color: #BB0000;">NA</span>            1     -<span style="color: #BB0000;">11</span> FALSE   FALSE   known    <span style="color: #BB0000;">NA</span>     [0.2…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 7 more variables: or_per_copy_number &lt;dbl&gt;, beta_number &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   beta_unit &lt;chr&gt;, beta_direction &lt;chr&gt;, beta_description &lt;chr&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   last_mapping_date &lt;dttm&gt;, last_update_date &lt;dttm&gt;, and abbreviated variable</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   names ¹​association_id, ²​pvalue_description, ³​pvalue_mantissa,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   ⁴​pvalue_exponent, ⁵​multiple_snp_haplotype, ⁶​snp_interaction, ⁷​snp_type,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   ⁸​standard_error</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   association_id pvalue pvalue_description pvalue_mantissa pvalue_exponent</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 22509           3<span style="color: #949494;">e</span><span style="color: #BB0000;">- 9</span> <span style="color: #BB0000;">NA</span>                               3              -<span style="color: #BB0000;">9</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 19537565        7<span style="color: #949494;">e</span><span style="color: #BB0000;">-31</span> <span style="color: #BB0000;">NA</span>                               7             -<span style="color: #BB0000;">31</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> 19537593        1<span style="color: #949494;">e</span><span style="color: #BB0000;">-11</span> <span style="color: #BB0000;">NA</span>                               1             -<span style="color: #BB0000;">11</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 12 more variables: multiple_snp_haplotype &lt;lgl&gt;, snp_interaction &lt;lgl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   snp_type &lt;chr&gt;, standard_error &lt;dbl&gt;, range &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   or_per_copy_number &lt;dbl&gt;, beta_number &lt;dbl&gt;, beta_unit &lt;chr&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   beta_direction &lt;chr&gt;, beta_description &lt;chr&gt;, last_mapping_date &lt;dttm&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   last_update_date &lt;dttm&gt;</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Slot "loci":</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 3 × 4</span></span>
@@ -234,12 +229,12 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Slot "risk_alleles":</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 3 × 7</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   association_id locus_id variant_id risk_allele risk_frequency genome…¹ limit…²</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 22509                 1 rs7089814  C                       <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>       <span style="color: #BB0000;">NA</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 19537565              1 rs10110651 <span style="color: #BB0000;">NA</span>                      <span style="color: #BB0000;">NA</span> FALSE    FALSE  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> 19537593              1 rs9397437  <span style="color: #BB0000;">NA</span>                      <span style="color: #BB0000;">NA</span> FALSE    FALSE  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with abbreviated variable names ¹​genome_wide, ²​limited_list</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   association_id locus_id variant_id risk_allele risk_frequency genome_wide</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 22509                 1 rs7089814  C                       <span style="color: #BB0000;">NA</span> <span style="color: #BB0000;">NA</span>         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 19537565              1 rs10110651 <span style="color: #BB0000;">NA</span>                      <span style="color: #BB0000;">NA</span> FALSE      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> 19537593              1 rs9397437  <span style="color: #BB0000;">NA</span>                      <span style="color: #BB0000;">NA</span> FALSE      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 1 more variable: limited_list &lt;lgl&gt;</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Slot "genes":</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 7 × 3</span></span>
@@ -285,7 +280,7 @@
 
 
     <footer><div class="pkgdown-footer-left">
-  <p></p><p>Developed by <a href="https://rmagno.eu/" class="external-link">Ramiro Magno</a>, Ana-Teresa Maia, <a href="https://cintesis.eu/" class="external-link"><img src="https://rmagno.eu/gwasrapidd/reference/figures/cintesis.svg" height="24"></a>.</p>
+  <p></p><p>Developed by <a href="https://rmagno.eu/" class="external-link">Ramiro Magno</a>, Ana-Teresa Maia, <a href="https://cintesis.eu/" class="external-link"><img src="https://rmagno.eu/gwasrapidd/reference/figures/cintesis.svg" height="24"></a>, <a href="https://www.pattern.institute" class="external-link"><img src="https://rmagno.eu/gwasrapidd/reference/figures/pi.svg" height="24"></a>.</p>
 </div>
 
 <div class="pkgdown-footer-right">

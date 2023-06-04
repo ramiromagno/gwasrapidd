@@ -33,7 +33,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">gwasrapidd</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.99.14</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.99.15</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -78,8 +78,6 @@
 </nav><div class="container template-article">
 
 
-
-
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.svg" class="logo" alt=""><h1>Getting started with gwasrapidd</h1>
@@ -94,70 +92,66 @@
 <div class="section level2">
 <h2 id="the-gwas-catalog">The GWAS Catalog<a class="anchor" aria-label="anchor" href="#the-gwas-catalog"></a>
 </h2>
-<p>The GWAS Catalog is a service provided by the EMBL-EBI and NHGRI that
-offers a manually curated and freely available database of published
-genome-wide association studies (GWAS). The Catalog website and
-infrastructure is hosted by the <a href="https://www.ebi.ac.uk" class="external-link">EMBL-EBI</a>.</p>
-<p>There are three ways to access the Catalog database:</p>
-<ul>
-<li>Via the Web interface at <a href="https://www.ebi.ac.uk/gwas" class="external-link">https://www.ebi.ac.uk/gwas</a>
-</li>
-<li>By downloading a database dump in TSV or RDF/OWL formats: <a href="https://www.ebi.ac.uk/gwas/docs/file-downloads" class="external-link">https://www.ebi.ac.uk/gwas/docs/file-downloads</a>
-</li>
-<li>Or through the GWAS Catalog REST API: <a href="https://www.ebi.ac.uk/gwas/rest/docs/api" class="external-link">https://www.ebi.ac.uk/gwas/rest/docs/api</a>
-</li>
-</ul>
-<p>gwasrapidd facilitates the access to the Catalog via the REST API,
+<p>The GWAS Catalog is a service provided by the EMBL-EBI and NHGRI that offers a
+manually curated and freely available database of published genome-wide
+association studies (GWAS). The Catalog website and infrastructure is hosted by
+the <a href="https://www.ebi.ac.uk" class="external-link">EMBL-EBI</a>.</p>
+<p><a href="https://github.com/ramiromagno/gwasrapidd" class="external-link">gwasrapidd</a> facilitates the access to the Catalog via the REST API,
 allowing you to programmatically retrieve data directly into R.</p>
 </div>
 <div class="section level2">
 <h2 id="gwas-catalog-entities">GWAS Catalog Entities<a class="anchor" aria-label="anchor" href="#gwas-catalog-entities"></a>
 </h2>
-<p>The Catalog REST API is organized around four core entities: studies,
-associations, variants, and traits. <strong>gwasrapidd</strong> provides
-four corresponding functions to get each of the entities:
-<code><a href="../reference/get_studies.html">get_studies()</a></code>, <code><a href="../reference/get_associations.html">get_associations()</a></code>,
-<code><a href="../reference/get_variants.html">get_variants()</a></code>, and <code><a href="../reference/get_traits.html">get_traits()</a></code>.</p>
-<p>Each function maps to an appropriately named S4 classed object: <a href="https://rmagno.eu/gwasrapidd/reference/studies-class.html">studies</a>,
-<a href="https://rmagno.eu/gwasrapidd/reference/associations-class.html">associations</a>,
-<a href="https://rmagno.eu/gwasrapidd/reference/variants-class.html">variants</a>,
-and <a href="https://rmagno.eu/gwasrapidd/reference/traits-class.html">traits</a>
-(see Figure 1).</p>
-<p><img src="../reference/figures/get_fns.png" alt="Figure 1 | gwasrapidd retrieval functions." width="500" style="display: block; margin: auto auto auto 0;"></p>
-<p>You can use a combination of several search criteria with each
-retrieval function as shown in Figure 2. For example, if you want to get
-studies using either one of these two criteria: <em>study accession
-identifier</em> and <em>variant identifier</em>, you could run the
-following code:</p>
+<p>The Catalog REST API is organized around four core entities:</p>
+<ul>
+<li>studies</li>
+<li>associations</li>
+<li>variants</li>
+<li>traits</li>
+</ul>
+<p><a href="https://github.com/ramiromagno/gwasrapidd" class="external-link">gwasrapidd</a> provides four corresponding functions to get each of the
+entities: <code><a href="../reference/get_studies.html">get_studies()</a></code>, <code><a href="../reference/get_associations.html">get_associations()</a></code>, <code><a href="../reference/get_variants.html">get_variants()</a></code>, and
+<code><a href="../reference/get_traits.html">get_traits()</a></code>.</p>
+<p>Each function maps to an appropriately named S4 classed object: <a href="https://rmagno.eu/gwasrapidd/reference/studies-class.html">studies</a>, <a href="https://rmagno.eu/gwasrapidd/reference/associations-class.html">associations</a>, <a href="https://rmagno.eu/gwasrapidd/reference/variants-class.html">variants</a>, and <a href="https://rmagno.eu/gwasrapidd/reference/traits-class.html">traits</a> (see Figure <a href="#fig:fns">1</a>).</p>
+<div class="figure">
+<span style="display:block;" id="fig:fns"></span>
+<img src="../reference/figures/get_fns.png" alt="`{gwasrapidd}` retrieval functions." width="70%"><p class="caption">
+Figure 1: <a href="https://github.com/ramiromagno/gwasrapidd" class="external-link">gwasrapidd</a> retrieval functions.
+</p>
+</div>
+<p>You can use a combination of several search criteria with each retrieval
+function as shown in Figure <a href="#fig:criteria">2</a>. For example, if you want to get studies using
+either one of these two criteria:</p>
+<ul>
+<li>study accession identifier (<code>study_id</code>)</li>
+<li>variant identifier (<code>variant_id</code>)</li>
+</ul>
+<p>You could run the following code:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ramiromagno/gwasrapidd" class="external-link">gwasrapidd</a></span><span class="op">)</span></span>
-<span><span class="va">my_studies</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_studies.html">get_studies</a></span><span class="op">(</span>study_id <span class="op">=</span> <span class="st">'GCST000858'</span>, variant_id <span class="op">=</span> <span class="st">'rs12752552'</span><span class="op">)</span></span></code></pre></div>
-<p>This command returns all studies that match either
-<code>'GCST000858'</code> or <code>'rs12752552'</code>. This is
-equivalent to running <code>get_studies</code> separately on each
+<span></span>
+<span><span class="va">my_studies</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_studies.html">get_studies</a></span><span class="op">(</span>study_id <span class="op">=</span> <span class="st">'GCST000858'</span>, variant_id <span class="op">=</span> <span class="st">'rs12752552'</span><span class="op">)</span></span>
+<span><span class="va">my_studies</span><span class="op">@</span><span class="va">studies</span></span></code></pre></div>
+<p>This command returns all studies that match either <code>'GCST000858'</code> or
+<code>'rs12752552'</code>. This is equivalent to running <code>get_studies</code> separately on each
 criteria, and combining the results afterwards:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">s1</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_studies.html">get_studies</a></span><span class="op">(</span>study_id <span class="op">=</span> <span class="st">'GCST000858'</span><span class="op">)</span></span>
 <span><span class="va">s2</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_studies.html">get_studies</a></span><span class="op">(</span>variant_id <span class="op">=</span> <span class="st">'rs12752552'</span><span class="op">)</span></span>
 <span><span class="va">my_studies</span> <span class="op">&lt;-</span> <span class="fu">gwasrapidd</span><span class="fu">::</span><span class="fu"><a href="../reference/setop.html">union</a></span><span class="op">(</span><span class="va">s1</span>, <span class="va">s2</span><span class="op">)</span></span></code></pre></div>
-<p>All four retrieval functions accept the <code>set_operation</code>
-parameter which defines the way the results obtained with each criterion
-are combined. The two options for this parameter are
-<code>'union'</code> (default) or <code>'intersection'</code>,
-resulting, respectively, in an OR or AND operation.</p>
-<p><img src="../reference/figures/get_criteria.png" alt="Figure 2 | gwasrapidd arguments for retrieval functions. Colors indicate the criteria that can be used for retrieving GWAS Catalog entities: studies (green), associations (red), variants (purple), and traits (orange)." width="500" style="display: block; margin: auto auto auto 0;"></p>
+<p>All four retrieval functions accept the <code>set_operation</code> parameter which defines the way the results obtained with each criterion are combined. The two options for this parameter are <code>'union'</code> (default) or <code>'intersection'</code>, resulting, respectively, in an OR or AND operation.</p>
+<div class="figure">
+<span style="display:block;" id="fig:criteria"></span>
+<img src="../reference/figures/get_criteria.png" alt="`{gwasrapidd}` arguments for retrieval functions. Colors indicate the criteria that can be used for retrieving GWAS Catalog entities: studies (green), associations (red), variants (purple), and traits (orange)." width="70%"><p class="caption">
+Figure 2: <a href="https://github.com/ramiromagno/gwasrapidd" class="external-link">gwasrapidd</a> arguments for retrieval functions. Colors indicate the criteria that can be used for retrieving GWAS Catalog entities: studies (green), associations (red), variants (purple), and traits (orange).
+</p>
+</div>
 </div>
 <div class="section level2">
-<h2 id="example-1-finding-risk-alleles-associated-with-autoimmune-disease">Example 1 | Finding Risk Alleles Associated with Autoimmune
-Disease<a class="anchor" aria-label="anchor" href="#example-1-finding-risk-alleles-associated-with-autoimmune-disease"></a>
+<h2 id="finding-risk-alleles-associated-with-autoimmune-disease">Finding Risk Alleles Associated with Autoimmune Disease<a class="anchor" aria-label="anchor" href="#finding-risk-alleles-associated-with-autoimmune-disease"></a>
 </h2>
-<p>As a first example, take the work by <span class="citation">Light et
-al. (2014)</span>. In this work the authors focused on variants that had
-been previously reported in genome-wide association studies (GWAS) for
-autoimmune disease.</p>
-<p>With <strong>gwasrapidd</strong> we can interrogate the GWAS Catalog
-for the study/studies by searching by <em>autoimmune disease</em> (an
-EFO trait). To do that let’s load gwasrapidd first:</p>
+<p>As a first example, take the work by <span class="citation">Light et al. (2014)</span>. In this work the authors focused on variants that had been previously reported in genome-wide association studies (GWAS) for autoimmune disease.</p>
+<p>With <strong>gwasrapidd</strong> we can interrogate the GWAS Catalog for the study/studies by searching by <em>autoimmune disease</em> (an EFO trait). To do that let’s load gwasrapidd first:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/ramiromagno/gwasrapidd" class="external-link">gwasrapidd</a></span><span class="op">)</span></span></code></pre></div>
 <p>Then query the GWAS Catalog by EFO trait:</p>
@@ -170,9 +164,7 @@ EFO trait). To do that let’s load gwasrapidd first:</p>
 <span><span class="va">my_studies</span><span class="op">@</span><span class="va">studies</span><span class="op">$</span><span class="va">study_id</span></span>
 <span><span class="co">#&gt; [1] "GCST003097"   "GCST011008"   "GCST007071"   "GCST009873"   "GCST011005"   "GCST011009"   "GCST90029015"</span></span>
 <span><span class="co">#&gt; [8] "GCST90029016" "GCST90012738"</span></span></code></pre></div>
-<p>Apparently only 9 studies: GCST003097, GCST011008, GCST007071,
-GCST009873, GCST011005, GCST011009, GCST90029015, GCST90029016,
-GCST90012738. Let’s see the associated publication titles:</p>
+<p>Apparently only 9 studies: GCST003097, GCST011008, GCST007071, GCST009873, GCST011005, GCST011009, GCST90029015, GCST90029016, GCST90012738. Let’s see the associated publication titles:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">my_studies</span><span class="op">@</span><span class="va">publications</span><span class="op">$</span><span class="va">title</span></span>
 <span><span class="co">#&gt; [1] "Meta-analysis of shared genetic architecture across ten pediatric autoimmune diseases."                                                            </span></span>
@@ -184,19 +176,12 @@ GCST90012738. Let’s see the associated publication titles:</p>
 <span><span class="co">#&gt; [7] "Mixed-model association for biobank-scale datasets."                                                                                               </span></span>
 <span><span class="co">#&gt; [8] "Mixed-model association for biobank-scale datasets."                                                                                               </span></span>
 <span><span class="co">#&gt; [9] "Clinical laboratory test-wide association scan of polygenic scores identifies biomarkers of complex disease."</span></span></code></pre></div>
-<p>If you want to further inspect these publications, you can quickly
-browse the respective PubMed entries:</p>
+<p>If you want to further inspect these publications, you can quickly browse the respective PubMed entries:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># This launches your web browser at https://www.ncbi.nlm.nih.gov/pubmed/26301688</span></span>
 <span><span class="fu"><a href="../reference/open_in_pubmed.html">open_in_pubmed</a></span><span class="op">(</span><span class="va">my_studies</span><span class="op">@</span><span class="va">publications</span><span class="op">$</span><span class="va">pubmed_id</span><span class="op">)</span></span></code></pre></div>
-<p>Now if we want to know the variants previously associated with
-autoimmune disease, as used by <span class="citation">Light et al.
-(2014)</span>, we need to retrieve statistical association information
-on these variants, and then filter them based on the same level of
-significance <span class="math inline">\(P &lt; 1\times 10^{-6}\)</span>
-<span class="citation">(Light et al. 2014)</span>.</p>
-<p>So let’s start by getting the associations by
-<code>study_id</code>:</p>
+<p>Now if we want to know the variants previously associated with autoimmune disease, as used by <span class="citation">Light et al. (2014)</span>, we need to retrieve statistical association information on these variants, and then filter them based on the same level of significance <span class="math inline">\(P &lt; 1\times 10^{-6}\)</span> <span class="citation">(Light et al. 2014)</span>.</p>
+<p>So let’s start by getting the associations by <code>study_id</code>:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># You could have also used get_associations(efo_trait = 'autoimmune disease')</span></span>
 <span><span class="va">my_associations</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_associations.html">get_associations</a></span><span class="op">(</span>study_id <span class="op">=</span> <span class="va">my_studies</span><span class="op">@</span><span class="va">studies</span><span class="op">$</span><span class="va">study_id</span><span class="op">)</span></span></code></pre></div>
@@ -204,25 +189,19 @@ significance <span class="math inline">\(P &lt; 1\times 10^{-6}\)</span>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">gwasrapidd</span><span class="fu">::</span><span class="fu"><a href="../reference/n.html">n</a></span><span class="op">(</span><span class="va">my_associations</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 182</span></span></code></pre></div>
-<p>However, not all variants meet the level of significance, as required
-by <span class="citation">Light et al. (2014)</span>:</p>
+<p>However, not all variants meet the level of significance, as required by <span class="citation">Light et al. (2014)</span>:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Get association ids for which pvalue is less than 1e-6.</span></span>
 <span><span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">my_associations</span><span class="op">@</span><span class="va">associations</span>, <span class="va">pvalue</span> <span class="op">&lt;</span> <span class="fl">1e-6</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span> <span class="co"># Filter by p-value</span></span>
 <span>  <span class="fu">tidyr</span><span class="fu">::</span><span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html" class="external-link">drop_na</a></span><span class="op">(</span><span class="va">pvalue</span><span class="op">)</span> <span class="op"><a href="../reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/pull.html" class="external-link">pull</a></span><span class="op">(</span><span class="va">association_id</span><span class="op">)</span> <span class="op">-&gt;</span> <span class="va">association_ids</span> <span class="co"># Extract column association_id</span></span></code></pre></div>
-<p>Here we subset the <code>my_associations</code> object by a vector of
-association identifiers (<code>association_ids</code>) into a smaller
-object, <code>my_associations2</code>:</p>
+<p>Here we subset the <code>my_associations</code> object by a vector of association identifiers (<code>association_ids</code>) into a smaller object, <code>my_associations2</code>:</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Extract associations by association id</span></span>
 <span><span class="va">my_associations2</span> <span class="op">&lt;-</span> <span class="va">my_associations</span><span class="op">[</span><span class="va">association_ids</span><span class="op">]</span></span>
 <span><span class="fu">gwasrapidd</span><span class="fu">::</span><span class="fu"><a href="../reference/n.html">n</a></span><span class="op">(</span><span class="va">my_associations2</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 180</span></span></code></pre></div>
-<p>Of the 182 associations found in GWAS Catalog, 180 meet the p-value
-threshold of <span class="math inline">\(1\times 10^{-6}\)</span>. Here
-are the variants, and their respective risk allele and risk
-frequency:</p>
+<p>Of the 182 associations found in GWAS Catalog, 180 meet the p-value threshold of <span class="math inline">\(1\times 10^{-6}\)</span>. Here are the variants, and their respective risk allele and risk frequency:</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">my_associations2</span><span class="op">@</span><span class="va">risk_alleles</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'variant_id'</span>, <span class="st">'risk_allele'</span>, <span class="st">'risk_frequency'</span><span class="op">)</span><span class="op">]</span></span>
 <span><span class="co">#&gt; # A tibble: 180 × 3</span></span>
@@ -241,14 +220,11 @@ frequency:</p>
 <span><span class="co">#&gt; # … with 170 more rows</span></span></code></pre></div>
 </div>
 <div class="section level2 unnumbered">
-<h2 class="unnumbered" id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
+<h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
 </h2>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-Light2014" class="csl-entry">
-Light, Nicholas, Véronique Adoue, Bing Ge, Shu-Huang Chen, Tony Kwan,
-and Tomi Pastinen. 2014. <span>“Interrogation of Allelic Chromatin
-States in Human Cells by High-Density ChIP-Genotyping.”</span>
-<em>Epigenetics</em> 9 (9): 1238–51.
+Light, Nicholas, Véronique Adoue, Bing Ge, Shu-Huang Chen, Tony Kwan, and Tomi Pastinen. 2014. <span>“Interrogation of Allelic Chromatin States in Human Cells by High-Density ChIP-Genotyping.”</span> <em>Epigenetics</em> 9 (9): 1238–51.
 </div>
 </div>
 </div>
@@ -260,7 +236,7 @@ States in Human Cells by High-Density ChIP-Genotyping.”</span>
 
     <footer><div class="pkgdown-footer-left">
   <p></p>
-<p>Developed by <a href="https://rmagno.eu/" class="external-link">Ramiro Magno</a>, Ana-Teresa Maia, <a href="https://cintesis.eu/" class="external-link"><img src="https://rmagno.eu/gwasrapidd/reference/figures/cintesis.svg" height="24"></a>.</p>
+<p>Developed by <a href="https://rmagno.eu/" class="external-link">Ramiro Magno</a>, Ana-Teresa Maia, <a href="https://cintesis.eu/" class="external-link"><img src="https://rmagno.eu/gwasrapidd/reference/figures/cintesis.svg" height="24"></a>, <a href="https://www.pattern.institute" class="external-link"><img src="https://rmagno.eu/gwasrapidd/reference/figures/pi.svg" height="24"></a>.</p>
 </div>
 
 <div class="pkgdown-footer-right">
