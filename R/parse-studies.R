@@ -53,6 +53,8 @@ obj_to_studies <- function(obj) {
 
   s <- studies()
 
+  if(rlang::is_empty(obj$content$studies)) return(s)
+
   # studies table
   s@studies <- studies_tbl(
     study_id = recode_missing(tws(obj$content$studies$accessionId)),
