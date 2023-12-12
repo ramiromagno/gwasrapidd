@@ -12,7 +12,7 @@ status](https://github.com/ramiromagno/gwasrapidd/workflows/R-CMD-check/badge.sv
 [![Codecov test
 coverage](https://codecov.io/gh/ramiromagno/gwasrapidd/branch/master/graph/badge.svg)](https://app.codecov.io/gh/ramiromagno/gwasrapidd?branch=master)
 [![License:
-MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/license/mit/)
 
 The goal of `{gwasrapidd}` is to provide programmatic access to the
 [NHGRI-EBI Catalog](https://www.ebi.ac.uk/gwas) of published genome-wide
@@ -74,7 +74,6 @@ To generate a citation for this publication from within R:
 
 ``` r
 citation('gwasrapidd')
-## 
 ## To cite gwasrapidd in publications use:
 ## 
 ##   Ramiro Magno, Ana-Teresa Maia, gwasrapidd: an R package to query,
