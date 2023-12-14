@@ -1,3 +1,7 @@
+# gwasrapidd 0.99.17
+
+- Fixed issue [#45](https://github.com/ramiromagno/gwasrapidd/issues/45)
+
 # gwasrapidd 0.99.16
 
 - Fixed issue [#46](https://github.com/ramiromagno/gwasrapidd/issues/46)
