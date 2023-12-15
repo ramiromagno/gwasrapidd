@@ -24,12 +24,7 @@ setClass(
 #'
 #' Constructor for the S4 \linkS4class{traits} object.
 #'
-#' @param efo_id A \code{character} vector of
-#'   \href{https://www.ebi.ac.uk/efo/}{EFO} identifiers.
-#' @param trait A \code{character} vector of
-#'   \href{https://www.ebi.ac.uk/efo/}{EFO} trait descriptions.
-#' @param uri A \code{character} vector of
-#'   \href{https://www.ebi.ac.uk/efo/}{EFO} URIs.
+#' @param traits A \code{\link{traits_tbl}} tibble.
 #'
 #' @return An object of class \linkS4class{traits}.
 #' @keywords internal
@@ -39,10 +34,23 @@ traits <- function(traits = traits_tbl()) {
   traits_drop_na(s4_traits)
 }
 
+#' Creates a traits tibble
+#'
+#' Creates a traits tibble.
+#'
+#' @param efo_id A \code{character} vector of
+#'   \href{https://www.ebi.ac.uk/efo/}{EFO} identifiers.
+#' @param trait A \code{character} vector of
+#'   \href{https://www.ebi.ac.uk/efo/}{EFO} trait descriptions.
+#' @param uri A \code{character} vector of
+#'   \href{https://www.ebi.ac.uk/efo/}{EFO} URIs.
+#'
+#' @return A \code{\link[tibble]{tibble}} whose columns are the named arguments
+#' to the function.
 #' @keywords internal
 traits_tbl <- function(efo_id = character(),
-                          trait = character(),
-                          uri = character()) {
+                       trait = character(),
+                       uri = character()) {
   tbl <- tibble::tibble(efo_id = efo_id,
                         trait = trait,
                         uri = uri)

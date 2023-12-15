@@ -1,6 +1,7 @@
 # gwasrapidd 0.99.17
 
 - Fixed issue [#45](https://github.com/ramiromagno/gwasrapidd/issues/45)
+- Fixed documentation of `traits()`
 
 # gwasrapidd 0.99.16
 
