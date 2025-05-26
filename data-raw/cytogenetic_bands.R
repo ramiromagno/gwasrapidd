@@ -29,7 +29,7 @@ library(tibble)
 library(lubridate)
 
 ensembl_json <- httr::GET(url = 'https://rest.ensembl.org/info/assembly/homo_sapiens?content-type=application/json&bands=1')
-response_code <- httr::status_code(ensembl_json)
+response_code <- status_code(ensembl_json)
 
 if (!identical(response_code, 200L))
   stop('Could not get cytogenetic band information from Ensembl.')

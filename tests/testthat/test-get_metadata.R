@@ -177,15 +177,15 @@ with_mock_api({
 })
 
 with_mock_api({
-test_that("get_metadata",
-          {
-            lst0 <- metadata_lst()
-            # Mock an unsuccessful request using code 404 but any code different from 200
-            # would do.
-            with_mock(
-              `httr::status_code` = function(...)
-                404L,
-              expect_identical(get_metadata(warnings = FALSE), lst0)
-            )
-})
+  test_that("get_metadata", {
+    lst0 <- metadata_lst()
+    # Mock an unsuccessful request using code 404 but any code different from 200
+    # would do.
+    with_mocked_bindings(
+      status_code = function(...) 404L,
+      code = {
+        expect_identical(get_metadata(warnings = FALSE), lst0)
+      }
+    )
+  })
 })

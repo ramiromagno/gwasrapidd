@@ -83,54 +83,60 @@ with_mock_api({
 test_that("get_associations_by_study_id: study_id is NULL", {
   expect_identical(get_associations_by_study_id(), associations())
 })
+
 test_that("get_associations_by_study_id: status code is not 200", {
   bad_response <- list(response_code = 404L, status = 'Not OK', url = NA, content = NA)
-  with_mock(`gwasrapidd:::gc_get` = function(...) bad_response,
-            expect_identical(get_associations_by_study_id(study_id = 'GCST002420'), associations()))
+  local_mocked_bindings(gc_get = function(...) bad_response)
+  expect_identical(get_associations_by_study_id(study_id = 'GCST002420'), associations())
 })
 
 test_that("get_associations_by_association_id: association_id is NULL", {
   expect_identical(get_associations_by_association_id(), associations())
 })
+
 test_that("get_associations_by_association_id: status code is not 200", {
   bad_response <- list(response_code = 404L, status = 'Not OK', url = NA, content = NA)
-  with_mock(`gwasrapidd:::gc_get` = function(...) bad_response,
-            expect_identical(get_associations(association_id = c('15608', '24299710')), associations()))
+  local_mocked_bindings(gc_get = function(...) bad_response)
+  expect_identical(get_associations(association_id = c('15608', '24299710')), associations())
 })
 
 test_that("get_associations_by_variant_id: variant_id is NULL", {
   expect_identical(get_associations_by_variant_id(), associations())
 })
+
 test_that("get_associations_by_variant_id: status code is not 200", {
   bad_response <- list(response_code = 404L, status = 'Not OK', url = NA, content = NA)
-  with_mock(`gwasrapidd:::gc_get` = function(...) bad_response,
-            expect_identical(get_associations(variant_id = c('rs3798440', 'rs7329174')), associations()))
+  local_mocked_bindings(gc_get = function(...) bad_response)
+  expect_identical(get_associations(variant_id = c('rs3798440', 'rs7329174')), associations())
 })
 
 
 test_that("get_associations_by_efo_id: efo_id is NULL", {
   expect_identical(get_associations_by_efo_id(), associations())
 })
+
 test_that("get_associations_by_efo_id: status code is not 200", {
   bad_response <- list(response_code = 404L, status = 'Not OK', url = NA, content = NA)
-  with_mock(`gwasrapidd:::gc_get` = function(...) bad_response,
-            expect_identical(get_associations(efo_id =  'EFO_0007990'), associations()))
+  local_mocked_bindings(gc_get = function(...) bad_response)
+  expect_identical(get_associations(efo_id =  'EFO_0007990'), associations())
 })
 
 test_that("get_associations_by_pubmed_id: pubmed is NULL", {
   expect_identical(get_associations_by_pubmed_id(), associations())
 })
+
 test_that("get_associations_by_pubmed_id: status code is not 200", {
   bad_response <- list(response_code = 404L, status = 'Not OK', url = NA, content = NA)
-  with_mock(`gwasrapidd:::gc_get` = function(...) bad_response,
-            expect_identical(get_associations(pubmed_id = c('21626137', '25890600')), associations()))
+  local_mocked_bindings(gc_get = function(...) bad_response)
+  expect_identical(get_associations(pubmed_id = c('21626137', '25890600')), associations())
 })
 
 test_that("get_associations_by_efo_trait: efo_trait is NULL", {
   expect_identical(get_associations_by_efo_trait(), associations())
 })
+
 test_that("get_associations_by_efo_trait: status code is not 200", {
   bad_response <- list(response_code = 404L, status = 'Not OK', url = NA, content = NA)
-  with_mock(`gwasrapidd:::gc_get` = function(...) bad_response,
-            expect_identical(get_associations(efo_trait = c("lung adenocarcinoma", "uric acid measurement")), associations()))
+  local_mocked_bindings(gc_get = function(...) bad_response)
+  expect_identical(get_associations(efo_trait = c("lung adenocarcinoma", "uric acid measurement")), associations())
 })

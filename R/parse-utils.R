@@ -77,7 +77,7 @@ is_rs_id <- function(str, convert_NA_to_FALSE = TRUE) {
     str2 <- str
   }
 
-  is_rs_id <- stringr::str_detect(str2, "^rs\\d+$")
+  is_rs_id <- str_detect(str2, "^rs\\d+$")
 
   return(is_rs_id)
 }
@@ -109,7 +109,7 @@ is_association_id <- function(str, convert_NA_to_FALSE = TRUE) {
     str2 <- str
   }
 
-  is_accession <- stringr::str_detect(str2, "^\\d+$")
+  is_accession <- str_detect(str2, "^\\d+$")
 
   return(is_accession)
 }
@@ -141,7 +141,7 @@ is_human_chromosome <- function(string,
 
   chrom_regex <- stringr::str_c(chromosomes, collapse = "|")
   regex <- sprintf("^(%s)$", chrom_regex)
-  return(stringr::str_detect(string2, regex))
+  return(str_detect(string2, regex))
 }
 
 #' Is a string an EFO trait ID?
@@ -171,7 +171,7 @@ is_efo_id <- function(str, convert_NA_to_FALSE = TRUE) {
     str2 <- str
   }
 
-  is_efo_trait <- stringr::str_detect(str2, "^EFO_\\d{7}$")
+  is_efo_trait <- str_detect(str2, "^EFO_\\d{7}$")
 
   return(is_efo_trait)
 }
@@ -206,7 +206,7 @@ is_efo_id2 <- function(str, convert_NA_to_FALSE = TRUE) {
     str2 <- str
   }
 
-  is_efo_trait <- stringr::str_detect(str2, "^\\w+$")
+  is_efo_trait <- str_detect(str2, "^\\w+$")
 
   return(is_efo_trait)
 }
@@ -238,7 +238,7 @@ is_study_id <- function(str, convert_NA_to_FALSE = TRUE) {
     str2 <- str
   }
 
-  is_accession <- stringr::str_detect(str2, "^GCST\\d+$")
+  is_accession <- str_detect(str2, "^GCST\\d+$")
 
   return(is_accession)
 }
@@ -270,7 +270,7 @@ is_pubmed_id <- function(str, convert_NA_to_FALSE = TRUE) {
     str2 <- str
   }
 
-  is_pubmed_id <- stringr::str_detect(str2, "^\\d+$")
+  is_pubmed_id <- str_detect(str2, "^\\d+$")
 
   return(is_pubmed_id)
 }
@@ -303,7 +303,7 @@ contains_question_mark <- function(str, convert_NA_to_FALSE = TRUE) {
     str2 <- str
   }
 
-  contains_question_mark <- stringr::str_detect(str2, "[\\?]")
+  contains_question_mark <- str_detect(str2, "[\\?]")
   return(contains_question_mark)
 }
 
@@ -332,7 +332,7 @@ is_empty_str <- function(str, convert_NA_to_FALSE = TRUE) {
   } else {
     str2 <- str
   }
-  stringr::str_detect(str2, "^\\s*$")
+  str_detect(str2, "^\\s*$")
 }
 
 #' Convert a cytogenetic band string to genomic coordinates.

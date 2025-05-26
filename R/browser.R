@@ -75,7 +75,7 @@ open_in_gwas_catalog <- function(identifier,
     )
 
     urls <- glue::glue(entity2url[gwas_catalog_entity])
-    purrr::walk(urls, utils::browseURL)
+    purrr::walk(urls, browse_url)
 
     return(invisible(TRUE))
   } else {

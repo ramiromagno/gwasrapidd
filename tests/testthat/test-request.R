@@ -141,13 +141,12 @@ test_that("object_type_from_url: url does not match any object", {
 })
 
 test_that("object_type_from_url: exception: unlikely case of multiple matching", {
-  with_mock(
+  local_mocked_bindings(
     # There are 18 patterns in object_type_from_url
     # This mock will simulate a multiple match of the URL to all object types:
     # studies, associations, variants and traits, that should lead to an error.
-    `stringr::str_detect` = function(...) rep(TRUE, 18L),
+    str_detect = function(...) rep(TRUE, 18L))
     expect_error(object_type_from_url('/studies/'))
-  )
 })
 
 
@@ -226,7 +225,7 @@ with_mock_api({
 # is_ok <- purrr::map_lgl(objs, ~ identical(.x$status, "OK"))
 # with_mock_api({
 #   test_that("gc_request_all: one or more pages failed to return 200", {
-#     with_mock(
+#     with_mocked_bindings(
 #       `purrr::map_lgl` = function(...)
 #         FALSE,
 #       expect_error(

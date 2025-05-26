@@ -6,12 +6,14 @@ test_that("open_in_pubmed: exceptions", {
 })
 
 test_that("open_in_pubmed: typical usage", {
-  with_mock(
-    `browseURL` = function(...) TRUE,
-    {
-      expect_true(open_in_pubmed(pubmed_id = 123))
-      expect_true(open_in_pubmed(pubmed_id = 123L))
-      expect_true(open_in_pubmed(pubmed_id = '123'))
-    }
+  with_mocked_bindings(
+    browse_url = function(...)
+      TRUE,
+    code =
+      {
+        expect_true(open_in_pubmed(pubmed_id = 123))
+        expect_true(open_in_pubmed(pubmed_id = 123L))
+        expect_true(open_in_pubmed(pubmed_id = '123'))
+      }
   )
 })

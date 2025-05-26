@@ -19,7 +19,7 @@ open_in_dbsnp <- function(variant_id) {
     urls <-
       glue::glue("https://www.ncbi.nlm.nih.gov/snp/{variant_id}")
 
-    purrr::walk(urls, utils::browseURL)
+    purrr::walk(urls, browse_url)
 
     return(invisible(TRUE))
   } else {
@@ -47,7 +47,7 @@ open_in_gtex <- function(variant_id) {
     urls <-
       glue::glue("https://gtexportal.org/home/snp/{variant_id}")
 
-    purrr::walk(urls, utils::browseURL)
+    purrr::walk(urls, browse_url)
 
     return(invisible(TRUE))
   } else {

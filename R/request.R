@@ -38,7 +38,7 @@ gc_request <- function(resource_url = "/", base_url = gwas_rest_api_base_url,
   if(verbose) message(glue::glue("Using the user agent: {user_agent_id$options$useragent}."))
   response <- httr::GET(url, user_agent_id)
 
-  response_code <- httr::status_code(response)
+  response_code <- status_code(response)
   if(verbose) message(glue::glue("Response code: {response_code}."))
 
   # Response object (a list of four elements):
@@ -171,7 +171,7 @@ object_type_from_url <- Vectorize(function(resource_url) {
     traits =    "^(https://www.ebi.ac.uk/gwas/rest/api)?/efoTraits/search/.*$"
   )
 
-  match <- stringr::str_detect(resource_url, patterns)
+  match <- str_detect(resource_url, patterns)
 
   if(identical(as.integer(sum(match)), 0L))
     stop("No pattern matched the URL: ", resource_url, ".")

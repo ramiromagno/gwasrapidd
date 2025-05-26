@@ -27,7 +27,8 @@ test_that('skip_if_testing_is_fast: TEST_FAST is set to true', {
   test_fast <- Sys.getenv("TEST_FAST")
   # Now erase it.
   set_testing_fast()
-  with_mock(`testthat::skip` = function(...) FALSE, expect_false(skip_if_testing_is_fast()))
+  local_mocked_bindings(skip = function(...) FALSE)
+  expect_false(skip_if_testing_is_fast())
   # Restore the original value before the test
   Sys.setenv(TEST_FAST = test_fast)
 })

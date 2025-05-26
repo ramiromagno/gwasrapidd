@@ -159,28 +159,31 @@ test_that("get_variants: by genomic range, exceptions", {
 test_that("get_variants_by_study_id: study_id is NULL", {
   expect_identical(get_variants_by_study_id(), variants())
 })
+
 test_that("get_variants_by_study_id: status code is not 200", {
   bad_response <- list(response_code = 404L, status = 'Not OK', url = NA, content = NA)
-  with_mock(`gwasrapidd:::gc_get` = function(...) bad_response,
-            expect_identical(get_variants_by_study_id(study_id = 'GCST002420'), variants()))
+  local_mocked_bindings(gc_get = function(...) bad_response)
+  expect_identical(get_variants_by_study_id(study_id = 'GCST002420'), variants())
 })
 
 test_that("get_variants_by_association_id: association_id is NULL", {
   expect_identical(get_variants_by_association_id(), variants())
 })
+
 test_that("get_variants_by_association_id: status code is not 200", {
   bad_response <- list(response_code = 404L, status = 'Not OK', url = NA, content = NA)
-  with_mock(`gwasrapidd:::gc_get` = function(...) bad_response,
-            expect_identical(get_variants(association_id = c('15608', '24299710')), variants()))
+  local_mocked_bindings(gc_get = function(...) bad_response)
+  expect_identical(get_variants(association_id = c('15608', '24299710')), variants())
 })
 
 test_that("get_variants_by_variant_id: variant_id is NULL", {
   expect_identical(get_variants_by_variant_id(), variants())
 })
+
 test_that("get_variants_by_variant_id: status code is not 200", {
   bad_response <- list(response_code = 404L, status = 'Not OK', url = NA, content = NA)
-  with_mock(`gwasrapidd:::gc_get` = function(...) bad_response,
-            expect_identical(get_variants(variant_id = c('rs3798440', 'rs7329174')), variants()))
+  local_mocked_bindings(gc_get = function(...) bad_response)
+  expect_identical(get_variants(variant_id = c('rs3798440', 'rs7329174')), variants())
 })
 
 
@@ -188,32 +191,34 @@ test_that("get_variants_by_efo_id: efo_id is NULL", {
   expect_identical(get_variants_by_efo_id(), variants())
 })
 
-
 test_that("get_variants_by_pubmed_id: pubmed is NULL", {
   expect_identical(get_variants_by_pubmed_id(), variants())
 })
+
 test_that("get_variants_by_pubmed_id: status code is not 200", {
   bad_response <- list(response_code = 404L, status = 'Not OK', url = NA, content = NA)
-  with_mock(`gwasrapidd:::gc_get` = function(...) bad_response,
-            expect_identical(get_variants(pubmed_id = c('21626137', '25890600')), variants()))
+  local_mocked_bindings(gc_get = function(...) bad_response)
+  expect_identical(get_variants(pubmed_id = c('21626137', '25890600')), variants())
 })
 
 test_that("get_variants_by_efo_trait: efo_trait is NULL", {
   expect_identical(get_variants_by_efo_trait(), variants())
 })
+
 test_that("get_variants_by_efo_trait: status code is not 200", {
   bad_response <- list(response_code = 404L, status = 'Not OK', url = NA, content = NA)
-  with_mock(`gwasrapidd:::gc_get` = function(...) bad_response,
-            expect_identical(get_variants(efo_trait = c("lung adenocarcinoma", "uric acid measurement")), variants()))
+  local_mocked_bindings(gc_get = function(...) bad_response)
+  expect_identical(get_variants(efo_trait = c("lung adenocarcinoma", "uric acid measurement")), variants())
 })
 
 test_that("get_variants_by_reported_trait: reported_trait is NULL", {
   expect_identical(get_variants_by_reported_trait(), variants())
 })
+
 test_that("get_variants_by_reported_trait: status code is not 200", {
   bad_response <- list(response_code = 404L, status = 'Not OK', url = NA, content = NA)
-  with_mock(`gwasrapidd:::gc_get` = function(...) bad_response,
-            expect_identical(get_variants(reported_trait = c("breast cancer", 'lung adenocarcinoma')), variants()))
+  local_mocked_bindings(gc_get = function(...) bad_response)
+  expect_identical(get_variants(reported_trait = c("breast cancer", 'lung adenocarcinoma')), variants())
 })
 
 #
@@ -228,9 +233,8 @@ test_that("exists_variant: 200 response", {
 
 test_that("exists_variant: 404 response", {
   not_found_response <- list(response_code = 404L, status = 'Not OK', url = NA, content = NA)
-  with_mock(`gwasrapidd:::gc_get` = function(...) not_found_response,
-            expect_false(exists_variant(variant_id = 'foo'))
-            )
+  local_mocked_bindings(gc_get = function(...) not_found_response)
+  expect_false(exists_variant(variant_id = 'foo'))
 })
 
 test_that("exists_variant: exceptions", {

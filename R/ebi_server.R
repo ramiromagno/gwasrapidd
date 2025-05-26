@@ -26,7 +26,7 @@
 #' @export
 is_ebi_reachable <-
   function(url = "https://www.ebi.ac.uk", port = 443L, chatty = FALSE) {
-    am_i_online <- suppressMessages(pingr::is_online())
+    am_i_online <- suppressMessages(is_online())
 
     # Check whether I am online
     if (is.logical(am_i_online) && !am_i_online) {
@@ -59,10 +59,10 @@ is_ebi_reachable <-
       message("Ping'ing ", domain, " on port ", port, "...")
 
     ping_response <-
-      pingr::ping_port(domain,
-                       port = port,
-                       count = 1L,
-                       timeout = 2)
+      ping_port(domain,
+                port = port,
+                count = 1L,
+                timeout = 2)
     if (is.na(ping_response)) {
       message(domain, " is not replying to ping requests on port ", port, ".")
       return(FALSE)
