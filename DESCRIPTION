@@ -1,7 +1,7 @@
 Package: gwasrapidd
 Type: Package
 Title: 'REST' 'API' Client for the 'NHGRI'-'EBI' 'GWAS' Catalog
-Version: 0.99.17
+Version: 0.99.18
 Authors@R: c(
     person(given = "Ramiro", family = "Magno", email = "rmagno@pattern.institute",
     role = c("aut", "cre"), comment = c(ORCID = "0000-0001-5226-3441")),
@@ -23,14 +23,13 @@ BugReports: https://github.com/ramiromagno/gwasrapidd/issues
 Encoding: UTF-8
 Language: en-US
 LazyData: true
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 Imports:
     magrittr,
     httr,
     urltools,
     pingr,
     stringr,
-    concatenate,
     dplyr,
     jsonlite,
     purrr,
@@ -55,6 +54,7 @@ Suggests:
     bookdown
 Collate:
     'browser.R'
+    'cc.R'
     'class-associations.R'
     'class-studies.R'
     'class-traits.R'

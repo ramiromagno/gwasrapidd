@@ -358,7 +358,7 @@ cytogenetic_band_to_genomic_range <- function(bands) {
 
   if(any(!is_band))
     stop("These are not valid cytogenetic bands: ",
-         concatenate::cc_and(bands[!is_band], oxford = TRUE), ".\n",
+         cc_and(bands[!is_band], oxford = TRUE), ".\n",
          "Check `cytogenetic_bands` dataframe for valid names.")
 
   cytogenetic_band <- rlang::expr(cytogenetic_band)

@@ -181,7 +181,7 @@ object_type_from_url <- Vectorize(function(resource_url) {
   if(length(obj_type) > 1L) {
     stop("More than one object type possible for the URL: ",
          resource_url, ": ",
-         concatenate::cc_and(obj_type),
+         cc_and(obj_type),
          ".")
   }
 

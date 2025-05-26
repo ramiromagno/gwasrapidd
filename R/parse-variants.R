@@ -203,7 +203,7 @@ filter_variants_by_standard_chromosomes <- function(s4_variants, chromosomes = c
   if (any(not_valid_chr_name_lgl))
     stop(
       "These are not valid chromosome names: ",
-      concatenate::cc_and(chromosomes[not_valid_chr_name_lgl], oxford = TRUE),
+      cc_and(chromosomes[not_valid_chr_name_lgl], oxford = TRUE),
       "."
     )
 

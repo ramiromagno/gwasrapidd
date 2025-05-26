@@ -295,22 +295,22 @@ get_variants_by_genomic_range <- function(chromosome = NULL, start = NULL, end =
   is_start_below_starting_pos <- start < starting_position
   if(any(is_start_below_starting_pos))
     stop("All start positions must be greater than ", starting_position, ", these are not: ",
-         concatenate::cc_and(start[is_start_below_starting_pos], oxford = TRUE), ".")
+         cc_and(start[is_start_below_starting_pos], oxford = TRUE), ".")
 
   is_end_below_starting_pos <- end < starting_position
   if(any(is_end_below_starting_pos))
     stop("All end positions must be greater than ", starting_position, ", these are not: ",
-         concatenate::cc_and(end[is_end_below_starting_pos], oxford = TRUE), ".")
+         cc_and(end[is_end_below_starting_pos], oxford = TRUE), ".")
 
   is_start_above_max_ending_pos <- start > max_end_position
   if(any(is_start_above_max_ending_pos))
     stop("All start positions must be lesser than ", max_end_position, ", these are not: ",
-         concatenate::cc_and(start[is_start_above_max_ending_pos], oxford = TRUE), ".")
+         cc_and(start[is_start_above_max_ending_pos], oxford = TRUE), ".")
 
   is_end_above_max_ending_pos <- end > max_end_position
   if(any(is_end_above_max_ending_pos))
     stop("All end positions must be lesser than ", max_end_position, ", these are not: ",
-         concatenate::cc_and(end[is_end_above_max_ending_pos], oxford = TRUE), ".")
+         cc_and(end[is_end_above_max_ending_pos], oxford = TRUE), ".")
 
 
 

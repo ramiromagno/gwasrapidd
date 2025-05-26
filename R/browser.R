@@ -53,7 +53,7 @@ open_in_gwas_catalog <- function(identifier,
 
   if (any(rlang::are_na(identifier)))
     stop("The following positions of `identifier` are NAs: ",
-         concatenate::cc_and(which(rlang::are_na(identifier)), oxford = TRUE),
+         cc_and(which(rlang::are_na(identifier)), oxford = TRUE),
          ".")
 
   gwas_catalog_entity <- rlang::arg_match(gwas_catalog_entity)
