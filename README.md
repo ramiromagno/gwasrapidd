@@ -8,8 +8,6 @@ status](https://www.r-pkg.org/badges/version/gwasrapidd)](https://CRAN.R-project
 [![](https://img.shields.io/badge/doi-10.1093/bioinformatics/btz605-blue.svg)](https://doi.org/10.1093/bioinformatics/btz605)
 [![](https://img.shields.io/badge/Altmetric-38-yellow.svg)](https://www.altmetric.com/details/64505748)
 [![R-CMD-check](https://github.com/ramiromagno/gwasrapidd/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ramiromagno/gwasrapidd/actions/workflows/R-CMD-check.yaml)
-[![Codecov test
-coverage](https://codecov.io/gh/ramiromagno/gwasrapidd/branch/master/graph/badge.svg)](https://app.codecov.io/gh/ramiromagno/gwasrapidd?branch=master)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/license/mit/)
 
