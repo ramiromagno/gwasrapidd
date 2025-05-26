@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# gwasrapidd <img src="man/figures/logo.svg" align="right" height=140/>
+# gwasrapidd <a href="https://rmagno.eu/gwasrapidd/"><img src="man/figures/logo.svg" align="right" height="139" alt="gwasrapidd website" /></a>
 
 [![CRAN
 status](https://www.r-pkg.org/badges/version/gwasrapidd)](https://CRAN.R-project.org/package=gwasrapidd)
@@ -41,12 +41,21 @@ Get studies related to triple-negative breast cancer:
 library(gwasrapidd)
 studies <- get_studies(efo_trait = 'triple-negative breast cancer')
 studies@studies[1:4]
-## # A tibble: 3 × 4
-##   study_id     reported_trait         initial_sample_size replication_sample_s…¹
-##   <chr>        <chr>                  <chr>               <chr>                 
-## 1 GCST002305   Breast cancer (estrog… 1,529 European anc… 2,148 European ancest…
-## 2 GCST010100   Breast cancer (estrog… 8,602 European anc… <NA>                  
-## 3 GCST90029052 15-year breast cancer… 5,631 European anc… <NA>                  
+## # A tibble: 12 × 4
+##    study_id     reported_trait        initial_sample_size replication_sample_s…¹
+##    <chr>        <chr>                 <chr>               <chr>                 
+##  1 GCST002305   Breast cancer (estro… 1,529 European anc… 2,148 European ancest…
+##  2 GCST90029052 15-year breast cance… 5,631 European anc… <NA>                  
+##  3 GCST90296722 Breast cancer (estro… 2,860 African or A… <NA>                  
+##  4 GCST90446470 Breast cancer subtyp… 16,499 European an… <NA>                  
+##  5 GCST90446471 Breast cancer subtyp… 16,499 European an… <NA>                  
+##  6 GCST90446472 Breast cancer subtyp… 16,499 European an… <NA>                  
+##  7 GCST90446474 Breast cancer subtyp… 16,499 European an… <NA>                  
+##  8 GCST010100   Breast cancer (tripl… 18,016 European an… <NA>                  
+##  9 GCST90454344 Breast cancer (tripl… ~14,900 European a… <NA>                  
+## 10 GCST90551896 Triple-negative brea… 262 Bantu-speaking… <NA>                  
+## 11 GCST90551897 Triple-negative brea… 262 Bantu-speaking… <NA>                  
+## 12 GCST90551898 Triple-negative brea… 262 Bantu-speaking… <NA>                  
 ## # ℹ abbreviated name: ¹​replication_sample_size
 ```
 
