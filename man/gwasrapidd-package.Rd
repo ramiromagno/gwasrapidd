@@ -30,7 +30,7 @@ Authors:
 Other contributors:
 \itemize{
   \item CINTESIS [copyright holder, funder]
-  \item Pattern Institute [copyright holder, funder]
+  \item Pattern Institute (04jrgd746) [copyright holder, funder]
 }
 
 }
