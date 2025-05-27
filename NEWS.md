@@ -1,3 +1,9 @@
+# gwasrapidd 0.99.18
+
+- Fixed issue [#52](https://github.com/ramiromagno/gwasrapidd/issues/52)
+- Removed dependency on [concatenate](https://doi.org/10.32614/CRAN.package.concatenate)
+- Updated pkgdown theme
+
 # gwasrapidd 0.99.17
 
 - Fixed issue [#45](https://github.com/ramiromagno/gwasrapidd/issues/45)
