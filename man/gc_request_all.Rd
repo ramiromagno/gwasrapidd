@@ -33,7 +33,7 @@ are retrieved.}
 A list four named elements:
 \describe{
 \item{url}{The URL endpoint.}
-\item{response_code}{\href{https://tinyurl.com/8yqvhwf}{HTTP
+\item{response_code}{\href{https://en.wikipedia.org/wiki/List_of_HTTP_status_codes}{HTTP
 status code}.}
 \item{status}{A string describing the status of the response obtained. It is
 "OK" if everything went OK or some other string describing the problem

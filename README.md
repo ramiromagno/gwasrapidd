@@ -9,7 +9,7 @@ status](https://www.r-pkg.org/badges/version/gwasrapidd)](https://CRAN.R-project
 [![](https://img.shields.io/badge/Altmetric-38-yellow.svg)](https://www.altmetric.com/details/64505748)
 [![R-CMD-check](https://github.com/ramiromagno/gwasrapidd/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ramiromagno/gwasrapidd/actions/workflows/R-CMD-check.yaml)
 [![License:
-MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/license/mit/)
+MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/license/mit)
 
 The goal of `{gwasrapidd}` is to provide programmatic access to the
 [NHGRI-EBI Catalog](https://www.ebi.ac.uk/gwas) of published genome-wide
@@ -110,7 +110,8 @@ contributing to this project, you agree to abide by its terms.
 - Bioconductor R package *gwascat* by Vincent J Carey:
   <https://www.bioconductor.org/packages/release/bioc/html/gwascat.html>
 - Web application *PhenoScanner V2* by Mihir A. Kamat, James R. Staley,
-  and others: <http://www.phenoscanner.medschl.cam.ac.uk/>
+  and others:
+  [doi.org/10.1093/bioinformatics/btz469](https://doi.org/10.1093/bioinformatics/btz469)
 - Web application *GWEHS: Genome-Wide Effect sizes and Heritability
   Screener* by Eugenio López-Cortegano and Armando Caballero:
   <http://gwehs.uvigo.es/>
